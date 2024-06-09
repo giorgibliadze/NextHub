@@ -23,7 +23,7 @@ const Services = () => {
               exit="hidden"
               className="h2 xl:mt-8"
             >
-              My services <span className="text-accent">.</span>
+              სერვისები <span className="text-accent">.</span>
             </motion.h2>
             <motion.p
               variants={fadeIn("up", 0.4)}
@@ -32,13 +32,10 @@ const Services = () => {
               exit="hidden"
               className="mb-4 max-w-[400px] mx-auto lg:mx-0"
             >
-              Front-end Developer with a passion for crafting captivating
-              digital experiences. With expertise in JavaScript, React, Next and
-              more, I specialize in bringing your visions to life online.
-              Whether it's building sleek websites, intuitive web applications,
-              or interactive user interfaces, I'm here to turn your ideas into
-              stunning realities. Let's collaborate and create something
-              extraordinary together!
+              გადააქციეთ იდეები ციფრულ რეალობად და გამოიყენეთ სრული პოტენციალი.
+              ჩვენ დაგეხმარებით მიზნების მიღწევაში, გთავაზობთ: ვებ საიტის
+              დამზადების, საიტის ადმინისტრირების, საიტის & SEO ოპტიმიზაციის და
+              სოციალური მედიის სერვისებს.
             </motion.p>
           </div>
           {/* slider */}

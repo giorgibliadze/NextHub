@@ -23,7 +23,7 @@ const Work = () => {
               exit="hidden"
               className="h2 xl:mt-12"
             >
-              My Work <span className="text-accent">.</span>
+              ნამუშევრები <span className="text-accent">.</span>
             </motion.h2>
             <motion.p
               variants={fadeIn("up", 0.4)}
@@ -32,12 +32,9 @@ const Work = () => {
               exit="hidden"
               className="mb-4 max-w-[400px] mx-auto lg:mx-0"
             >
-              From dynamic Next.js applications to responsive WordPress
-              websites, each project represents a unique challenge embraced with
-              passion and expertise. Whether it's optimizing performance,
-              implementing innovative features, or ensuring seamless user
-              experiences, I'm committed to delivering excellence in every
-              endeavor.
+              დინამიური Next.js აპლიკაციებიდან დაწყებული WordPress-ის
+              ვებსაიტებამდე, თითოეული პროექტი წარმოადგენს უნიკალურ გამოწვევას.
+              ჩვენ გთავაზობთ მაღალ ხარისხს, თანამედროვე და დახვეწილ დიზაინს.
             </motion.p>
           </div>
           {/* slider */}

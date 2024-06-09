@@ -26,8 +26,9 @@ const Home = () => {
             exit="hidden"
             className="h1 mt-[100px]"
           >
-            Transforming Ideas <br /> Into
-            <span className="text-accent">Digital Reality</span>
+            გადააქციეთ
+            <span className="text-accent"> იდეები </span>
+            <br /> ციფრულ რეალობად
           </motion.h1>
           {/* subtitle */}
           <motion.p
@@ -37,12 +38,8 @@ const Home = () => {
             exit="hidden"
             className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16"
           >
-            Transforming Ideas into Digital Reality. As a passionate front-end
-            developer, I specialize in crafting visually stunning and
-            user-friendly websites. With expertise in HTML, CSS, JavaScript,
-            React, and Next I bring ideas to life, ensuring they resonate with
-            your audience and leave a lasting impression. Let's create something
-            extraordinary together.
+            გამოიყენეთ სრული პოტენციალი, გაზარდეთ ცნობადობა და სანდოობა.
+            დაგეხმარებით მიზნების მიღწევაში,
           </motion.p>
           {/* btn */}
           <div className="flex justify-center xl:hidden relative">

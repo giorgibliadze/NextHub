@@ -8,8 +8,7 @@ import {
   RxArrowTopRight,
 } from "react-icons/rx";
 import { DiGoogleAnalytics } from "react-icons/di";
-import { FaReact } from "react-icons/fa";
-import { SiTailwindcss } from "react-icons/si";
+
 //import swiper react components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -19,6 +18,7 @@ import "swiper/css/free-mode";
 import "swiper/css/pagination";
 import { CiLocationOn } from "react-icons/ci";
 import { TfiLayoutMediaLeftAlt } from "react-icons/tfi";
+import { FaHandsHelping } from "react-icons/fa";
 //import required modules
 import { FreeMode, Pagination } from "swiper";
 
@@ -28,28 +28,34 @@ const serviceData = [
     icon: <RxDesktop />,
     title: "ვებ დეველოპმენტი",
     description:
-      "Crafting engaging web experiences with the latest technologies.",
-  },
-  {
-    icon: <TfiLayoutMediaLeftAlt />,
-    title: "სოციალური მედია მენეჯმენტი",
-    description: "Building responsive and dynamic front-end solutions.",
+      "თანამედროვე დიზაინი, თემატური, ყველა მოწყობილობასთან თავსებადი, სწრაფი და ადვილად ძებნადი",
   },
   {
     icon: <RxRocket />,
     title: "SEO ოპტიმიზაცია",
-    description: "Creating SEO-friendly content for your audience.",
+    description:
+      "გამოჩნდი საძიებო სისტემების TOP პოზიციებზე, გაზარდე ინტერნეტ გაყიდვების მოცულობა",
   },
+  {
+    icon: <TfiLayoutMediaLeftAlt />,
+    title: "სოციალური მედია მენეჯმენტი",
+    description: "ეფექტური ონლაინ სარეკლამო კამპანიები სოციალურ მედიაში",
+  },
+
   {
     icon: <DiGoogleAnalytics />,
     title: "ანალიტიკა",
-    description:
-      "Analyzing data to drive insights and optimize digital strategies.",
+    description: "მონაცემთა ანალიზი ციფრული სტრატეგიების ოპტიმიზაცია",
   },
   {
     icon: <CiLocationOn />,
     title: "ლოკაციის ოპტიმიზაცია",
-    description: "Building responsive and dynamic front-end solutions.",
+    description: "გამოჩნდი Google-ს რუკაზე და საძიებო კატალოგებში",
+  },
+  {
+    icon: <FaHandsHelping />,
+    title: "ტექნიკური დახმარება",
+    description: "საიტის ტექნიკური აუდიტი",
   },
 ];
 
