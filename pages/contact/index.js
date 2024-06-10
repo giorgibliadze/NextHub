@@ -1,5 +1,5 @@
 //components
-import Circles from "/components/Circles";
+
 //icons
 import { BsArrowRight } from "react-icons/bs";
 //framer
@@ -22,7 +22,7 @@ const Contact = () => {
             exit="hidden"
             className="h2 text-center mb-12"
           >
-            Lets <span>connect.</span>
+            დაგვიკავშირდით
           </motion.h2>
           {/* form */}
           <motion.form
@@ -34,14 +34,14 @@ const Contact = () => {
           >
             {/* input group */}
             <div className="flex gap-x-6 w-full">
-              <input type="text" placeholder="name" className="input" />
-              <input type="email" placeholder="email" className="input" />
+              <input type="text" placeholder="სახელი" className="input" />
+              <input type="email" placeholder="მაილი" className="input" />
             </div>
-            <input type="email" placeholder="subject" className="input" />
-            <textarea placeholder="message" className="textarea"></textarea>
+            <input type="email" placeholder="თემა" className="input" />
+            <textarea placeholder="შეტყობინება" className="textarea"></textarea>
             <button className="btn rounded-full border border-white/50 max-w-[170px] px-8 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accent group">
               <span className="group-hover:-translate-y-[120%] group-hover:opacity-0 transition-all duration-500">
-                Lets Talk
+                გაგზავნა
               </span>
               <BsArrowRight className="-translate-y-[120%] opacity-0 group-hover:flex group-hover:-translate-y-0 group-hover:opacity-100 transition-all duration-300 absolute text-[22px]" />
             </button>
