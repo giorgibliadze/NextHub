@@ -21,6 +21,7 @@ import { TfiLayoutMediaLeftAlt } from "react-icons/tfi";
 import { FaHandsHelping } from "react-icons/fa";
 //import required modules
 import { FreeMode, Pagination } from "swiper";
+import Link from "next/link";
 
 // data
 const serviceData = [
@@ -29,33 +30,39 @@ const serviceData = [
     title: "ვებ დეველოპმენტი",
     description:
       "თანამედროვე დიზაინი, თემატური, ყველა მოწყობილობასთან თავსებადი, სწრაფი და ადვილად ძებნადი",
+    link: "/services/web_Development",
   },
   {
     icon: <RxRocket />,
     title: "SEO ოპტიმიზაცია",
     description:
       "გამოჩნდი საძიებო სისტემების TOP პოზიციებზე, გაზარდე ინტერნეტ გაყიდვების მოცულობა",
+    link: "/services/seo",
   },
   {
     icon: <TfiLayoutMediaLeftAlt />,
     title: "სოციალური მედია მენეჯმენტი",
     description: "ეფექტური ონლაინ სარეკლამო კამპანიები სოციალურ მედიაში",
+    link: "/services/soc_media",
   },
 
   {
     icon: <DiGoogleAnalytics />,
     title: "ანალიტიკა",
     description: "მონაცემთა ანალიზი ციფრული სტრატეგიების ოპტიმიზაცია",
+    link: "/services/analytics",
   },
   {
     icon: <CiLocationOn />,
     title: "ლოკაციის ოპტიმიზაცია",
     description: "გამოჩნდი Google-ს რუკაზე და საძიებო კატალოგებში",
+    link: "/services/location",
   },
   {
     icon: <FaHandsHelping />,
     title: "ტექნიკური დახმარება",
     description: "საიტის ტექნიკური აუდიტი",
+    link: "/services/tech_support",
   },
 ];
 
@@ -82,21 +89,23 @@ const ServiceSlider = () => {
       {serviceData.map((item, index) => {
         return (
           <SwiperSlide key={index}>
-            <div className="bg-[rgba(65,7,123,0.15)] h-max rounded-lg px-6 py-8 flex sm:flex-col gap-x-6 sm:gap-x-0 group cursor-pointer hover:bg-[rgba(89,65,169,0.15)] transition-all duration-300">
-              {/* icon */}
-              <div className="text-4xl text-accent mb-4">{item.icon}</div>
-              {/* title & desc */}
-              <div className="mb-4">
-                <div className="mb-2 text-lg">{item.title}</div>
-                <p className="max-w-[350px] leading-normal">
-                  {item.description}
-                </p>
+            <Link href={item.link}>
+              <div className="bg-[rgba(65,7,123,0.15)] h-max rounded-lg px-6 py-8 flex sm:flex-col gap-x-6 sm:gap-x-0 group cursor-pointer hover:bg-[rgba(89,65,169,0.15)] transition-all duration-300">
+                {/* icon */}
+                <div className="text-4xl text-accent mb-4">{item.icon}</div>
+                {/* title & desc */}
+                <div className="mb-4">
+                  <div className="mb-2 text-lg">{item.title}</div>
+                  <p className="max-w-[350px] leading-normal">
+                    {item.description}
+                  </p>
+                </div>
+                {/* arrow */}
+                <div className="text-3xl">
+                  <RxArrowTopRight className="group-hover:rotate-45 group-hover:text-accent transition-all duration-300" />
+                </div>
               </div>
-              {/* arrow */}
-              <div className="text-3xl">
-                <RxArrowTopRight className="group-hover:rotate-45 group-hover:text-accent transition-all duration-300" />
-              </div>
-            </div>
+            </Link>
           </SwiperSlide>
         );
       })}

@@ -129,8 +129,8 @@ const About = () => {
             exit="hidden"
             className="h2 mt-[100px] xl:mt-[0px]"
           >
-            Crafting <span className="text-accent">digital</span> wonders from
-            imagination to reality.
+            ციფრული <span className="text-accent"> სასწაულები </span>
+            წარმოსახვიდან რელობამდე.
           </motion.h2>
           <motion.p
             variants={fadeIn("right", 0.4)}
@@ -160,7 +160,7 @@ const About = () => {
                   <CountUp start={0} end={2} duration={5} /> +
                 </div>
                 <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
-                  Years of experience
+                  წლების გამოცდილება
                 </div>
               </div>
               {/* clients */}
@@ -169,7 +169,7 @@ const About = () => {
                   <CountUp start={0} end={5} duration={5} /> +
                 </div>
                 <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
-                  Satisfied clients
+                  კმაყოფილი კლიენტი
                 </div>
               </div>
               {/* projects */}
@@ -178,7 +178,7 @@ const About = () => {
                   <CountUp start={0} end={30} duration={5} /> +
                 </div>
                 <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
-                  Finished projects
+                  დასრულებული პროექტი
                 </div>
               </div>
             </div>
