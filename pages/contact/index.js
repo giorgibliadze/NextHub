@@ -8,14 +8,16 @@ const Contact = () => {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
-  const [name, setName] = useState(""); // Add a state for name
+  const [name, setName] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [successMessage, setSuccessMessage] = useState(null); // New state for success message
 
   const send = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError(null);
+    setSuccessMessage(null);
 
     try {
       const res = await fetch("/api/sendMail", {
@@ -31,13 +33,12 @@ const Contact = () => {
           <h1>${name}</h1>
           <h1>${email}</h1>
           <h1>${message}</h1>
-
           </div>`,
         }),
       });
       const data = await res.json();
       if (res.ok) {
-        alert("Email sent successfully");
+        setSuccessMessage("Email sent successfully"); // Set success message
       } else {
         setError(`Failed to send email: ${data.message}`);
       }
@@ -113,6 +114,10 @@ const Contact = () => {
               <BsArrowRight className="-translate-y-[120%] opacity-0 group-hover:flex group-hover:-translate-y-0 group-hover:opacity-100 transition-all duration-300 absolute text-[22px]" />
             </button>
             {error && <p className="text-red-500 mt-2">{error}</p>}
+            {successMessage && (
+              <p className="text-green-500 mt-2">{successMessage}</p>
+            )}{" "}
+            {/* Render success message */}
           </motion.form>
         </div>
       </div>
