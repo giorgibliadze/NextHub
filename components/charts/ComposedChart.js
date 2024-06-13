@@ -1,8 +1,10 @@
 "use client";
 import React from "react";
 import {
-  LineChart,
+  ComposedChart,
   Line,
+  Area,
+  Bar,
   ResponsiveContainer,
   XAxis,
   YAxis,
@@ -11,59 +13,60 @@ import {
   Legend,
 } from "recharts";
 
-const LineChartComponent = () => {
+const ComposedChartComponent = () => {
   const salesData = [
     {
       name: "Jan",
+      amt: 2975,
       revenue: 3300,
       profit: 4400,
     },
     {
       name: "Feb",
+      amt: 1320,
       revenue: 3000,
       profit: 3220,
     },
     {
       name: "Mar",
+      amt: 2500,
       revenue: 3500,
       profit: 4290,
     },
     {
       name: "Apr",
+      amt: 4000,
       revenue: 2790,
       profit: 3000,
     },
     {
       name: "May",
+      amt: 2000,
       revenue: 2500,
-      profit: 4400,
+      profit: 2200,
     },
     {
       name: "Jun",
+      amt: 3000,
       revenue: 2600,
       profit: 3000,
     },
   ];
   return (
     <ResponsiveContainer width="100%" height="100%">
-      <LineChart
-        width={500}
-        height={300}
-        data={salesData}
-        margin={{ right: 30 }}
-      >
-        <YAxis />
+      <ComposedChart width={730} height={250} data={salesData}>
         <XAxis dataKey="name" />
-        <CartesianGrid strokeDasharray="3 3" />
+        <YAxis />
         <Tooltip content={<CustomTooltip />} />
         <Legend />
-        <Line type="monotone" dataKey="revenue" fill="#3b82f6" />
-        <Line type="monotone" dataKey="profit" fill="#8b5cf6" />
-      </LineChart>
+        <CartesianGrid stroke="#f5f5f5" />
+        <Area type="monotone" dataKey="amt" fill="#8884d8" stroke="#3b82f6" />
+        <Bar dataKey="revenue" barSize={20} fill="#413ea0" />
+        <Line type="monotone" dataKey="profit" stroke="#8b5cf6" />
+      </ComposedChart>
     </ResponsiveContainer>
   );
 };
-
 const CustomTooltip = ({ active, payload, label }) => {
   if (active && payload && payload.length) {
     return (
@@ -81,5 +84,4 @@ const CustomTooltip = ({ active, payload, label }) => {
     );
   }
 };
-
-export default LineChartComponent;
+export default ComposedChartComponent;
