@@ -13,26 +13,26 @@ import {
 
 const RadarChartComponent = () => {
   const data = [
-    { subject: "Targeting", Analytics: 120, NoAnalytics: 100, FullMark: 150 },
-    { subject: "Devices", Analytics: 98, NoAnalytics: 80, FullMark: 150 },
-    { subject: "User Behavior", Analytics: 86, NoAnalytics: 81, FullMark: 150 },
+    { subject: "Targeting", Analytics: 120, NoAnalytics: 100, FullMark: 100 },
+    { subject: "Devices", Analytics: 98, NoAnalytics: 80, FullMark: 100 },
+    { subject: "User Behavior", Analytics: 86, NoAnalytics: 81, FullMark: 100 },
     {
-      subject: "Conversion Rates",
+      subject: "Rates",
       Analytics: 99,
       NoAnalytics: 70,
-      FullMark: 150,
+      FullMark: 100,
     },
     {
-      subject: "Customer Retention",
+      subject: "Retention",
       Analytics: 85,
       NoAnalytics: 69,
-      FullMark: 150,
+      FullMark: 100,
     },
     {
-      subject: "Campaign Performance",
+      subject: "Performance",
       Analytics: 65,
       NoAnalytics: 64,
-      FullMark: 150,
+      FullMark: 100,
     },
   ];
 
@@ -41,7 +41,6 @@ const RadarChartComponent = () => {
       <RadarChart outerRadius={90} width={730} height={250} data={data}>
         <PolarGrid />
         <PolarAngleAxis dataKey="subject" />
-        <PolarRadiusAxis angle={30} domain={[0, 150]} />
         <Radar
           name="Analytics"
           dataKey="Analytics"

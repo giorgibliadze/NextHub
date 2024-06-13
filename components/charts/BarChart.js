@@ -15,37 +15,38 @@ const BarChartComponent = () => {
   const salesData = [
     {
       name: "Jan",
-      revenue: 3300,
-      profit: 4400,
+      revenue: 20000,
+      profit: 4900,
     },
     {
       name: "Feb",
-      revenue: 3000,
-      profit: 3220,
+      revenue: 25000,
+      profit: 5357,
     },
     {
       name: "Mar",
-      revenue: 3500,
-      profit: 4290,
+      revenue: 24000,
+      profit: 5673,
     },
     {
       name: "Apr",
-      revenue: 2790,
-      profit: 3000,
+      revenue: 23000,
+      profit: 6500,
     },
     {
       name: "May",
-      revenue: 2500,
-      profit: 4400,
+      revenue: 26000,
+      profit: 5400,
     },
     {
       name: "Jun",
-      revenue: 2600,
-      profit: 3000,
+      revenue: 30000,
+      profit: 7500,
     },
   ];
+
   return (
-    <ResponsiveContainer width="100%" height="100%">
+    <ResponsiveContainer width="100%" height={400}>
       <BarChart
         width={500}
         height={400}

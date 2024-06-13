@@ -15,37 +15,38 @@ const LineChartComponent = () => {
   const salesData = [
     {
       name: "Jan",
-      revenue: 3300,
-      profit: 4400,
+      revenue: 10000,
+      profit: 2000,
     },
     {
       name: "Feb",
-      revenue: 3000,
-      profit: 3220,
+      revenue: 12000,
+      profit: 2500,
     },
     {
       name: "Mar",
-      revenue: 3500,
-      profit: 4290,
+      revenue: 14000,
+      profit: 3000,
     },
     {
       name: "Apr",
-      revenue: 2790,
-      profit: 3000,
+      revenue: 15000,
+      profit: 3200,
     },
     {
       name: "May",
-      revenue: 2500,
-      profit: 4400,
+      revenue: 17000,
+      profit: 3500,
     },
     {
       name: "Jun",
-      revenue: 2600,
-      profit: 3000,
+      revenue: 20000,
+      profit: 4000,
     },
   ];
+
   return (
-    <ResponsiveContainer width="100%" height="100%">
+    <ResponsiveContainer width="100%" height={300}>
       <LineChart
         width={500}
         height={300}
@@ -57,8 +58,8 @@ const LineChartComponent = () => {
         <CartesianGrid strokeDasharray="3 3" />
         <Tooltip content={<CustomTooltip />} />
         <Legend />
-        <Line type="monotone" dataKey="revenue" fill="#3b82f6" />
-        <Line type="monotone" dataKey="profit" fill="#8b5cf6" />
+        <Line type="monotone" dataKey="revenue" stroke="#3b82f6" />
+        <Line type="monotone" dataKey="profit" stroke="#8b5cf6" />
       </LineChart>
     </ResponsiveContainer>
   );

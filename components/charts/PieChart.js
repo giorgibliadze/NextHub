@@ -14,53 +14,49 @@ import {
 const PieChartComponent = () => {
   const data01 = [
     {
-      name: "Group A",
+      name: "Targeting",
       value: 400,
     },
     {
-      name: "Group B",
+      name: "Devices",
       value: 300,
     },
     {
-      name: "Group C",
+      name: "Rates",
       value: 300,
     },
     {
-      name: "Group D",
+      name: "Retention",
       value: 200,
     },
     {
-      name: "Group E",
+      name: "Performance",
       value: 278,
-    },
-    {
-      name: "Group F",
-      value: 189,
     },
   ];
   const data02 = [
     {
-      name: "Group A",
+      name: "Targeting",
       value: 2400,
     },
     {
-      name: "Group B",
+      name: "Devices",
       value: 4567,
     },
     {
-      name: "Group C",
+      name: "User Behavior",
       value: 1398,
     },
     {
-      name: "Group D",
+      name: "Rates",
       value: 9800,
     },
     {
-      name: "Group E",
+      name: "Retention",
       value: 3908,
     },
     {
-      name: "Group F",
+      name: "Performance",
       value: 4800,
     },
   ];
@@ -68,21 +64,12 @@ const PieChartComponent = () => {
     <ResponsiveContainer width="100%" height="100%">
       <PieChart width={730} height={250}>
         <Pie
-          data={data01}
-          dataKey="value"
-          nameKey="name"
-          cx="50%"
-          cy="50%"
-          outerRadius={50}
-          fill="#8884d8"
-        />
-        <Pie
           data={data02}
           dataKey="value"
           nameKey="name"
           cx="50%"
           cy="50%"
-          innerRadius={60}
+          innerRadius={50}
           outerRadius={80}
           fill="#8b5cf6"
           label

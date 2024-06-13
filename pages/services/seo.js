@@ -1,20 +1,20 @@
 import React from "react";
 import AreaChartComponent from "../../components/charts/AreaChart";
 import BarChartComponent from "../../components/charts/BarChart";
-import LineChartComponent from "../../components/charts/LineChart";
+import RadarChartComponent from "../../components/charts/RadartChart";
 
 const seo = () => {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center px-4 md:px-8 xl:px-10 py-44">
       <div className="grid xl:grid-cols-3 lg:grid-cols-2 w-full gap-10 max-w-[1400px]">
-        <GridItem title="Area Chart">
+        <GridItem title="Products">
           <AreaChartComponent />
         </GridItem>
-        <GridItem title="Bar Chart">
-          <BarChartComponent />
+        <GridItem title="Sales">
+          <RadarChartComponent />
         </GridItem>
-        <GridItem title="Line Chart">
-          <LineChartComponent />
+        <GridItem title="Revenue">
+          <BarChartComponent />
         </GridItem>
       </div>
     </div>

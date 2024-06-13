@@ -1,19 +1,19 @@
 import React from "react";
 import ComposedChartComponent from "../../components/charts/ComposedChart";
-import RadartChartComponent from "../../components/charts/RadartChart";
-import PieChartComponent from "../../components/charts/PieChart";
+import RadarChartComponent from "../../components/charts/RadartChart";
+import LineChartComponent from "../../components/charts/LineChart";
 const analytics = () => {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center px-4 md:px-8 xl:px-10 py-44">
       <div className="grid xl:grid-cols-3 lg:grid-cols-2 w-full gap-10 max-w-[1400px]">
-        <GridItem title="ComposedChart">
+        <GridItem title="Profit">
           <ComposedChartComponent />
         </GridItem>
         <GridItem title="RadartChart">
-          <RadartChartComponent />
+          <RadarChartComponent />
         </GridItem>
         <GridItem title="PieChart">
-          <PieChartComponent />
+          <LineChartComponent />
         </GridItem>
       </div>
     </div>

@@ -8,7 +8,7 @@ const WebDevelopment = () => {
   // Define an array of pricing packages
   const packages = [
     {
-      name: "startup",
+      name: "Startup",
       price: "1000",
       features: [
         "5 გვერდი",

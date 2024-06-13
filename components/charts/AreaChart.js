@@ -15,37 +15,38 @@ const AreaChartComponent = () => {
   const productSales = [
     {
       name: "Jan",
-      product1: 3300,
-      product2: 4400,
+      product1: 14500,
+      product2: 10000,
     },
     {
       name: "Feb",
-      product1: 3000,
-      product2: 3220,
+      product1: 16500,
+      product2: 141000,
     },
     {
       name: "Mar",
-      product1: 3500,
-      product2: 4290,
+      product1: 16000,
+      product2: 13000,
     },
     {
       name: "Apr",
-      product1: 2790,
-      product2: 3000,
+      product1: 18000,
+      product2: 13500,
     },
     {
       name: "May",
-      product1: 2500,
-      product2: 4400,
+      product1: 17000,
+      product2: 13100,
     },
     {
       name: "Jun",
-      product1: 2600,
-      product2: 3000,
+      product1: 20000,
+      product2: 15000,
     },
   ];
+
   return (
-    <ResponsiveContainer width="100%" height="100%">
+    <ResponsiveContainer width="100%" height={400}>
       <AreaChart
         width={500}
         height={400}
