@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.translate-z-0 {
-  transform: translateZ(0px);
-}
-
 .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
 .swiper-pagination-horizontal.swiper-pagination-bullets
   .swiper-pagination-bullet {
