@@ -45,7 +45,6 @@ const serviceData = [
     description: "ეფექტური ონლაინ სარეკლამო კამპანიები სოციალურ მედიაში",
     link: "/services/soc_media",
   },
-
   {
     icon: <DiGoogleAnalytics />,
     title: "ანალიტიკა",
