@@ -6,7 +6,10 @@ const MapComponent = dynamic(() => import("../../components/MapComponent"), {
 
 const location = () => {
   return (
-    <div>
+    <div className="flex flex-col items-center p-5">
+      <h1 className="mb-5 text-2xl font-bold text-gray-800 text-center">
+        My Google Map
+      </h1>
       <MapComponent />
     </div>
   );
