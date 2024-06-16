@@ -40,7 +40,7 @@ const Services = () => {
           </div>
           {/* slider */}
           <motion.div
-            variants={fadeIn("down", 0.3)}
+            variants={fadeIn("down", 0.1)}
             initial="hidden"
             animate="show"
             exit="hidden"
