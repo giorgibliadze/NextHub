@@ -92,7 +92,7 @@ const ServiceSlider = () => {
         disableOnInteraction: false,
       }}
       modules={[FreeMode, Pagination, Autoplay]}
-      className="h-[500px] mt-9"
+      className="h-[500px] mt-9 translate-z-0"
     >
       {serviceData.map((item, index) => {
         return (
