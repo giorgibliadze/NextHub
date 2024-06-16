@@ -9,8 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@googlemaps/js-api-loader": "^1.16.6",
     "@next/font": "^13.4.4",
+    "@react-google-maps/api": "^2.19.3",
     "@tsparticles/react": "^3.0.0",
+    "@types/google.maps": "^3.55.9",
     "@types/nodemailer": "^6.4.15",
     "@vercel/analytics": "^1.2.2",
     "@vercel/speed-insights": "^1.0.10",
