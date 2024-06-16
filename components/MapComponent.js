@@ -23,7 +23,7 @@ const MapComponent = () => {
     <LoadScript googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}>
       <div className="flex justify-center items-center w-full h-screen">
         <GoogleMap
-          mapContainerClassName="w-full h-3/5 max-w-5xl rounded shadow"
+          mapContainerClassName="w-full h-3/5 max-w-5xl shadow rounded-2xl"
           center={center}
           zoom={15}
           onLoad={onLoad}
