@@ -9,18 +9,19 @@ import {
 } from "react-icons/rx";
 import { DiGoogleAnalytics } from "react-icons/di";
 
-//import swiper react components
+// import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
-//import swiper styles
+// import Swiper styles
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
+import "swiper/css/autoplay";
 import { CiLocationOn } from "react-icons/ci";
 import { TfiLayoutMediaLeftAlt } from "react-icons/tfi";
 import { FaHandsHelping } from "react-icons/fa";
-//import required modules
-import { FreeMode, Pagination } from "swiper";
+// import required modules
+import { FreeMode, Pagination, Autoplay } from "swiper";
 import Link from "next/link";
 
 // data
@@ -74,33 +75,45 @@ const ServiceSlider = () => {
           spaceBetween: 15,
         },
         640: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        1024: {
           slidesPerView: 3,
-          spaceBetween: 15,
+          spaceBetween: 30,
         },
       }}
       freeMode={true}
       pagination={{
         clickable: true,
       }}
-      modules={[FreeMode, Pagination]}
-      className="h-[300px] sm:h-[340px] mt-9"
+      autoplay={{
+        delay: 4000,
+        disableOnInteraction: false,
+      }}
+      modules={[FreeMode, Pagination, Autoplay]}
+      className="h-[500px] mt-9"
     >
       {serviceData.map((item, index) => {
         return (
           <SwiperSlide key={index}>
             <Link href={item.link}>
-              <div className="bg-[rgba(65,7,123,0.15)] h-max rounded-lg px-6 py-8 flex sm:flex-col gap-x-6 sm:gap-x-0 group cursor-pointer hover:bg-[rgba(89,65,169,0.15)] transition-all duration-300">
+              <div
+                className={`bg-[rgba(65,7,123,0.15)] h-[450px] rounded-lg px-6 py-8 flex flex-col gap-y-6 cursor-pointer hover:bg-[rgba(89,65,169,0.15)] transition-all duration-300 ${
+                  index % 2 === 0 ? "mt-0" : "mt-20"
+                }`}
+              >
                 {/* icon */}
                 <div className="text-4xl text-accent mb-4">{item.icon}</div>
                 {/* title & desc */}
                 <div className="mb-4">
-                  <div className="mb-2 text-lg">{item.title}</div>
+                  <div className="mb-2 text-lg font-semibold">{item.title}</div>
                   <p className="max-w-[350px] leading-normal">
                     {item.description}
                   </p>
                 </div>
                 {/* arrow */}
-                <div className="text-3xl">
+                <div className="text-3xl mt-auto">
                   <RxArrowTopRight className="group-hover:rotate-45 group-hover:text-accent transition-all duration-300" />
                 </div>
               </div>
