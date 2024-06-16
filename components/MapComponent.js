@@ -13,8 +13,9 @@ const center = {
 };
 
 const MapComponent = () => {
+  console.log(process.env.GOOGLE_MAPS_API_KEY);
   return (
-    <LoadScript googleMapsApiKey={process.env.GOOGLE_MAPS_API_KEY}>
+    <LoadScript googleMapsApiKey="AIzaSyCEAC2BcHnyl-_OhyuKnN5CxEl5BaYvPXs">
       <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={10}>
         <Marker position={center} />
       </GoogleMap>
