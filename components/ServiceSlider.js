@@ -96,7 +96,7 @@ const ServiceSlider = () => {
     >
       {serviceData.map((item, index) => {
         return (
-          <SwiperSlide key={index}>
+          <SwiperSlide key={index} className="translate-z-0">
             <Link href={item.link}>
               <div
                 className={`bg-[rgba(65,7,123,0.15)] h-[450px] rounded-lg px-6 py-8 flex flex-col gap-y-6 cursor-pointer hover:bg-[rgba(89,65,169,0.15)] transition-all duration-300 ${
