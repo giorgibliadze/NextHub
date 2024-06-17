@@ -92,14 +92,14 @@ const ServiceSlider = () => {
         disableOnInteraction: false,
       }}
       modules={[FreeMode, Pagination, Autoplay]}
-      className="h-[500px] mt-9 translate-z-0"
+      className="h-[500px] mt-9"
     >
       {serviceData.map((item, index) => {
         return (
-          <SwiperSlide key={index} className="translate-z-0">
+          <SwiperSlide key={index}>
             <Link href={item.link}>
               <div
-                className={`bg-[rgba(65,7,123,0.15)] h-[450px] rounded-lg px-6 py-8 flex flex-col gap-y-6 cursor-pointer hover:bg-[rgba(89,65,169,0.15)]${
+                className={`bg-[rgba(65,7,123,0.15)] h-[450px] rounded-lg px-6 py-8 flex flex-col gap-y-6 cursor-pointer hover:bg-[rgba(89,65,169,0.15)] transition-all duration-300 ${
                   index % 2 === 0 ? "mt-0" : "mt-20"
                 }`}
               >
@@ -114,7 +114,7 @@ const ServiceSlider = () => {
                 </div>
                 {/* arrow */}
                 <div className="text-3xl mt-auto">
-                  <RxArrowTopRight className="group-hover:rotate-45 group-hover:text-accent" />
+                  <RxArrowTopRight className="group-hover:rotate-45 group-hover:text-accent transition-all duration-300" />
                 </div>
               </div>
             </Link>
