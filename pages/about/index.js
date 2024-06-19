@@ -59,7 +59,6 @@ const icons = [
 const About = () => {
   return (
     <div className="min-h-screen py-16 flex items-center bg-gradient-to-r from-primary/10 via-black/30 to-black/10">
-      <Circles />
       <div className="container mx-auto px-10">
         <motion.h1
           variants={fadeIn("up", 0.1)}
@@ -83,7 +82,7 @@ const About = () => {
         </motion.p>
         <Swiper
           spaceBetween={20}
-          slidesPerView={7}
+          slidesPerView={2}
           autoplay={{
             delay: 1000,
             disableOnInteraction: false,
