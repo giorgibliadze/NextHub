@@ -15,6 +15,10 @@
   color: #f13024;
 }
 
+.slick-arrow {
+  display: none;
+}
+
 @layer base {
   body {
     @apply bg-secondary overflow-hidden leading-relaxed;
