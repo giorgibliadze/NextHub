@@ -1,8 +1,9 @@
 // pages/contact/index.js
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { BsArrowRight } from "react-icons/bs";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
+import ModernSection from "../../components/ModernSection";
 
 const Contact = () => {
   const [email, setEmail] = useState("");
@@ -11,7 +12,9 @@ const Contact = () => {
   const [name, setName] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [successMessage, setSuccessMessage] = useState(null); // New state for success message
+  const [successMessage, setSuccessMessage] = useState(null);
+
+  const formRef = useRef(null);
 
   const send = async (e) => {
     e.preventDefault();
@@ -30,15 +33,16 @@ const Contact = () => {
           name,
           subject,
           body: `<div>
-          <h1>${name}</h1>
-          <h1>${email}</h1>
-          <h1>${message}</h1>
+            <h1>${name}</h1>
+            <h1>${email}</h1>
+            <h1>${message}</h1>
           </div>`,
         }),
       });
       const data = await res.json();
       if (res.ok) {
-        setSuccessMessage("Email sent successfully"); // Set success message
+        setSuccessMessage("Email sent successfully");
+        formRef.current.reset(); // Reset form fields
       } else {
         setError(`Failed to send email: ${data.message}`);
       }
@@ -51,7 +55,8 @@ const Contact = () => {
 
   return (
     <div className="h-full lg:h-[700px] xxl:h-[950px] xll:h-[970px] bg-primary/30">
-      <div className="container mx-auto py-32 text-center xl:text-left flex items-center justify-center h-full">
+      <div className="container flex-col mx-auto py-32 text-center xl:text-left flex items-center justify-center h-full">
+        <ModernSection />
         <div className="flex flex-col w-full max-w-[700px]">
           <motion.h2
             variants={fadeIn("up", 0.2)}
@@ -63,6 +68,7 @@ const Contact = () => {
             დაგვიკავშირდით
           </motion.h2>
           <motion.form
+            ref={formRef}
             variants={fadeIn("up", 0.4)}
             initial="hidden"
             animate="show"
@@ -73,6 +79,8 @@ const Contact = () => {
             <div className="flex gap-x-6 w-full">
               <input
                 type="text"
+                id="name"
+                name="name"
                 placeholder="სახელი"
                 className="input text-center"
                 value={name}
@@ -81,6 +89,8 @@ const Contact = () => {
               />
               <input
                 type="email"
+                id="email"
+                name="email"
                 placeholder="მაილი"
                 className="input text-center"
                 value={email}
@@ -90,6 +100,8 @@ const Contact = () => {
             </div>
             <input
               type="text"
+              id="subject"
+              name="subject"
               placeholder="თემა"
               className="input text-center"
               value={subject}
@@ -97,6 +109,8 @@ const Contact = () => {
               required
             />
             <textarea
+              id="message"
+              name="message"
               placeholder="შეტყობინება"
               className="textarea text-center"
               value={message}
@@ -116,8 +130,7 @@ const Contact = () => {
             {error && <p className="text-red-500 mt-2">{error}</p>}
             {successMessage && (
               <p className="text-green-500 mt-2">{successMessage}</p>
-            )}{" "}
-            {/* Render success message */}
+            )}
           </motion.form>
         </div>
       </div>
