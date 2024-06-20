@@ -35,9 +35,9 @@ const workSlides = {
           link: "https://georent.pro/",
         },
         {
-          title: "price-wise",
-          path: "/price-wise.png",
-          link: "https://price-wise-alpha.vercel.app/",
+          title: "Hoppa",
+          path: "/Hoppa.jpg",
+          link: "https://hoppa.ge",
         },
       ],
     },
@@ -56,32 +56,37 @@ const WorkSlider = () => {
         clickable: true,
       }}
       modules={[Pagination]}
-      className="h-[280px] sm:h-[480px] mt-9"
+      className="h-auto mt-9"
     >
       {workSlides.slides.map((slide, index) => {
         return (
           <SwiperSlide key={index}>
-            <div className="grid grid-cols-2 grid-rows-2 gap-4 cursor-pointer mr-14">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 cursor-pointer p-4">
               {slide.images.map((image, index) => {
                 return (
                   <Link href={`${image.link}`} key={index}>
                     <div
                       key={index}
-                      className="relative rounded-lg overflow-hidden flex items-center group"
+                      className="relative rounded-lg overflow-hidden flex items-center justify-center group p-4 bg-white shadow-lg w-full"
                     >
-                      <div className="flex items-center justify-center relative overflow-hidden group">
-                        {/*image  */}
-                        <Image
-                          src={image.path}
-                          width={500}
-                          height={300}
-                          alt=""
-                        />
+                      <div className="relative overflow-hidden group w-full rounded-lg">
+                        {/* image */}
+                        <div className="relative w-full h-0 pb-[56.25%]">
+                          {" "}
+                          {/* 16:9 Aspect Ratio */}
+                          <Image
+                            src={image.path}
+                            layout="fill"
+                            objectFit="cover"
+                            alt={image.title}
+                            className="rounded-lg"
+                          />
+                        </div>
                         {/* overflow gradient */}
-                        <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#e838cc] to-[#4a22bd] opacity-0 group-hover:opacity-80 transition-all duration-700"></div>
+                        <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#e838cc] to-[#4a22bd] opacity-0 group-hover:opacity-80 transition-all duration-700 rounded-lg"></div>
                         {/* title */}
-                        <div className="absolute bottom-0 translate-y-full group-hover:-translate-y-10 group-hover:xl:-translate-y-20 transition-all duration-300">
-                          <div className="flex items-center gap-x-2 text-[13px] tracking-[0.2em]">
+                        <div className="absolute bottom-0 translate-y-full group-hover:-translate-y-10 group-hover:xl:-translate-y-20 transition-all duration-300 w-full text-center">
+                          <div className="flex items-center justify-center gap-x-2 text-[13px] tracking-[0.2em]">
                             {/* title part 1 */}
                             <div className="delay-100">ჩვენი</div>
                             {/* title part 2 */}
