@@ -67,7 +67,7 @@ const About = () => {
           exit="hidden"
           className="text-5xl font-bold text-center text-white mb-12"
         >
-          ჩვენს შესახებ
+          ჩვენ შესახებ
         </motion.h1>
         <motion.p
           variants={fadeIn("up", 0.1)}

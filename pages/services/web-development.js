@@ -95,7 +95,7 @@ const WebDevelopment = () => {
 
   return (
     <div className="min-h-screen py-12">
-      <div className="container mx-auto text-center">
+      <div className="container mx-auto px-4 lg:px-14 text-center">
         <motion.h1
           variants={fadeIn("up", 0.2)}
           initial="hidden"
@@ -116,8 +116,8 @@ const WebDevelopment = () => {
           {packages.map((pkg, index) => (
             <div
               key={index}
-              className={`p-6 rounded-lg shadow-lg bg-white transform transition-transform duration-300 ${
-                expandedPackage === index ? "max-h-[1000px]" : "max-h-[400px]"
+              className={`p-6 pb-10 rounded-lg shadow-lg bg-white transform transition-transform duration-300 ${
+                expandedPackage === index ? "max-h-[1000px]" : "max-h-[500px]"
               }`}
             >
               <h2 className="text-2xl font-bold mb-4 text-gray-800">
@@ -143,7 +143,7 @@ const WebDevelopment = () => {
                     <li key={featureIndex}>{feature}</li>
                   ))}
               </ul>
-              <div className="flex justify-center">
+              <div className="flex justify-center mt-4">
                 <button
                   className="w-[150px] lg:w-[200px] py-3 rounded-full bg-gradient-to-r from-red-500 to-orange-500 text-white hover:from-red-600 hover:to-orange-600 transition-colors duration-300"
                   onClick={() => handleShowMore(index)}
