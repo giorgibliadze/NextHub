@@ -15,33 +15,33 @@ const BarChartComponent = () => {
   const salesData = [
     {
       name: "Jan",
-      revenue: 20000,
-      profit: 4900,
+      revenue: 20,
+      profit: 41,
     },
     {
       name: "Feb",
-      revenue: 25000,
-      profit: 5357,
+      revenue: 30,
+      profit: 52,
     },
     {
       name: "Mar",
-      revenue: 24000,
-      profit: 5673,
+      revenue: 40,
+      profit: 56,
     },
     {
       name: "Apr",
-      revenue: 23000,
-      profit: 6500,
+      revenue: 50,
+      profit: 65,
     },
     {
       name: "May",
-      revenue: 26000,
-      profit: 5400,
+      revenue: 60,
+      profit: 69,
     },
     {
       name: "Jun",
-      revenue: 30000,
-      profit: 7500,
+      revenue: 80,
+      profit: 75,
     },
   ];
 
@@ -55,9 +55,9 @@ const BarChartComponent = () => {
       >
         <YAxis />
         <XAxis dataKey="name" />
-        <CartesianGrid strokeDasharray="5 5" />
+        <CartesianGrid strokeDasharray="6 6" />
         <Tooltip content={<CustomTooltip />} />
-        <Legend />
+        {/*  <Legend /> */}
         <Bar dataKey="revenue" fill="#2563eb" />
         <Bar dataKey="profit" fill="#8b5cf6" />
       </BarChart>
@@ -71,12 +71,12 @@ const CustomTooltip = ({ active, payload, label }) => {
       <div className="p-4 bg-slate-900 flex flex-col gap-4 rounded-md">
         <p className="text-medium text-lg">{label}</p>
         <p className="text-sm text-blue-400">
-          Revenue:
-          <span className="ml-2">${payload[0].value}</span>
+          სიმარტივე:
+          <span className="ml-2">{payload[0].value}%</span>
         </p>
         <p className="text-sm text-indigo-400">
-          Profit:
-          <span className="ml-2">${payload[1].value}</span>
+          კმაყოფილება:
+          <span className="ml-2">{payload[1].value}%</span>
         </p>
       </div>
     );

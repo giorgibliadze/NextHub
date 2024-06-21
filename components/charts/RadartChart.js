@@ -13,26 +13,26 @@ import {
 
 const RadarChartComponent = () => {
   const data = [
-    { subject: "Targeting", Analytics: 120, NoAnalytics: 100, FullMark: 100 },
-    { subject: "Devices", Analytics: 98, NoAnalytics: 80, FullMark: 100 },
-    { subject: "User Behavior", Analytics: 86, NoAnalytics: 81, FullMark: 100 },
+    { subject: "თარგეთირება", A: 140, B: 100, FullMark: 150 },
+    { subject: "მოწყობილობები", A: 134, B: 100, FullMark: 150 },
+    { subject: "მომხმარებლის ქცევა", A: 140, B: 100, FullMark: 150 },
     {
-      subject: "Rates",
-      Analytics: 99,
-      NoAnalytics: 70,
-      FullMark: 100,
+      subject: "აუდიტორია",
+      A: 145,
+      B: 100,
+      FullMark: 150,
     },
     {
-      subject: "Retention",
-      Analytics: 85,
-      NoAnalytics: 69,
-      FullMark: 100,
+      subject: "სანდოობა",
+      A: 156,
+      B: 100,
+      FullMark: 150,
     },
     {
-      subject: "Performance",
-      Analytics: 65,
-      NoAnalytics: 64,
-      FullMark: 100,
+      subject: "შესაძლებლობები",
+      A: 143,
+      B: 100,
+      FullMark: 150,
     },
   ];
 
@@ -43,20 +43,20 @@ const RadarChartComponent = () => {
         <PolarAngleAxis dataKey="subject" />
         <Radar
           name="Analytics"
-          dataKey="Analytics"
+          dataKey="A"
           stroke="#8884d8"
           fill="#8884d8"
           fillOpacity={0.6}
         />
         <Radar
           name="No Analytics"
-          dataKey="NoAnalytics"
-          stroke="#8b5cf6"
-          fill="#8b5cf6"
+          dataKey="B"
+          stroke="#3b5cf6"
+          fill="#3b5cf6"
           fillOpacity={0.6}
         />
         <Tooltip content={<CustomTooltip />} />
-        <Legend />
+        {/*  <Legend /> */}
       </RadarChart>
     </ResponsiveContainer>
   );
@@ -68,12 +68,12 @@ const CustomTooltip = ({ active, payload, label }) => {
       <div className="p-4 bg-slate-900 flex flex-col gap-4 rounded-md">
         <p className="text-medium text-lg">{label}</p>
         <p className="text-sm text-blue-300">
-          Analytics Value:
-          <span className="ml-2">{payload[0].value}</span>
+          A:
+          <span className="ml-2">{payload[0].value}%</span>
         </p>
         <p className="text-sm text-indigo-400">
-          No Analytics Value:
-          <span className="ml-2">{payload[1].value}</span>
+          B:
+          <span className="ml-2">{payload[1].value}%</span>
         </p>
       </div>
     );

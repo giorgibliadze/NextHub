@@ -101,7 +101,7 @@ const WebDevelopment = () => {
           initial="hidden"
           animate="show"
           exit="hidden"
-          className="text-4xl font-bold mt-20 mb-12 text-gray-800"
+          className="text-4xl font-bold mt-20 mb-12 text-white"
         >
           Web Development
         </motion.h1>
@@ -145,7 +145,7 @@ const WebDevelopment = () => {
               </ul>
               <div className="flex justify-center mt-4">
                 <button
-                  className="w-[150px] lg:w-[200px] py-3 rounded-full bg-gradient-to-r from-red-500 to-orange-500 text-white hover:from-red-600 hover:to-orange-600 transition-colors duration-300"
+                  className="w-[150px] lg:w-[200px] py-3 rounded-full bg-gradient-to-r from-purple-800 to-purple-500 text-white hover:from-purple-900 hover:to-purple-500 transition-colors duration-300"
                   onClick={() => handleShowMore(index)}
                 >
                   {expandedPackage === index ? "Show Less" : "Learn More"}
