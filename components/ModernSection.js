@@ -13,9 +13,10 @@ const contacts = [
     title: "ელ-ფოსტა:",
     info: "info@NextHub.ge",
     bgColor: "bg-blue-400",
-    hoverBgColor: "group-hover:bg-white",
+    hoverBgColor: "hover:bg-blue-400",
     textColor: "text-blue-400",
-    hoverTextColor: "group-hover:text-blue-400",
+    hoverTextColor: "hover:text-white",
+    shadowColor: "hover:shadow-blue-400",
   },
   {
     id: 2,
@@ -25,9 +26,10 @@ const contacts = [
     title: "ტელეფონი:",
     info: "+995 555137003",
     bgColor: "bg-green-400",
-    hoverBgColor: "group-hover:bg-white",
+    hoverBgColor: "hover:bg-green-400",
     textColor: "text-green-400",
-    hoverTextColor: "group-hover:text-green-400",
+    hoverTextColor: "hover:text-white",
+    shadowColor: "hover:shadow-green-400",
   },
   {
     id: 3,
@@ -37,9 +39,10 @@ const contacts = [
     title: "მისამართი:",
     info: "თბილისი, გაზაფხულის 6ა",
     bgColor: "bg-yellow-400",
-    hoverBgColor: "group-hover:bg-white",
+    hoverBgColor: "hover:bg-yellow-400",
     textColor: "text-yellow-400",
-    hoverTextColor: "group-hover:text-yellow-400",
+    hoverTextColor: "hover:text-white",
+    shadowColor: "hover:shadow-yellow-400",
   },
 ];
 
@@ -51,13 +54,13 @@ const ModernContainer = () => {
           key={contact.id}
           className={classNames(
             "flex items-center p-6 w-[35%] h-[160px] bg-white rounded-lg shadow-md cursor-pointer transition duration-300 transform hover:scale-105 group",
-            `hover:${contact.bgColor} hover:text-white`
+            `${contact.hoverBgColor}`
           )}
         >
           <div
             className={classNames(
               "flex items-center justify-center rounded-full w-16 h-16 transition duration-300",
-              `${contact.bgColor} ${contact.hoverBgColor}`
+              `${contact.bgColor} group-hover:bg-white group-hover:shadow-lg ${contact.shadowColor}`
             )}
           >
             {contact.icon}
@@ -65,14 +68,14 @@ const ModernContainer = () => {
           <div
             className={classNames(
               "ml-4 transition duration-300",
-              `${contact.textColor} group-hover:text-white`
+              `${contact.textColor} ${contact.hoverTextColor}`
             )}
           >
             <h3 className="text-lg font-bold">{contact.title}</h3>
             <p
               className={classNames(
                 "text-sm",
-                `${contact.textColor} group-hover:text-white`
+                `${contact.textColor} ${contact.hoverTextColor}`
               )}
             >
               {contact.info}
