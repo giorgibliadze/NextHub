@@ -17,6 +17,7 @@ const contacts = [
     textColor: "text-blue-400",
     hoverTextColor: "text-white",
     shadowColor: "hover:shadow-blue-400",
+    hoverInfoColor: "group-hover:text-white", // Change to white on hover
   },
   {
     id: 2,
@@ -30,6 +31,7 @@ const contacts = [
     textColor: "text-green-400",
     hoverTextColor: "text-white",
     shadowColor: "hover:shadow-green-400",
+    hoverInfoColor: "group-hover:text-white", // Change to white on hover
   },
   {
     id: 3,
@@ -43,6 +45,7 @@ const contacts = [
     textColor: "text-yellow-400",
     hoverTextColor: "text-white",
     shadowColor: "hover:shadow-yellow-400",
+    hoverInfoColor: "group-hover:text-white", // Change to white on hover
   },
 ];
 
@@ -58,12 +61,12 @@ const ModernContainer = () => {
   };
 
   return (
-    <div className="w-full flex justify-center gap-8 mt-[150px] z-50">
+    <div className="w-full flex flex-col md:flex-row justify-center gap-8 mt-[150px] z-50">
       {contacts.map((contact, index) => (
         <div
           key={contact.id}
           className={classNames(
-            "flex items-center p-6 w-[450px] h-[180px] bg-white rounded-lg shadow-md cursor-pointer mb-5 transition duration-300 transform hover:scale-105 group",
+            "flex items-center p-6 w-full md:w-[450px] h-[180px] bg-white rounded-lg shadow-md cursor-pointer mb-5 transition duration-300 transform hover:scale-105 group",
             {
               [contact.hoverBgColor]: hoveredIndex === index,
             }
@@ -81,12 +84,19 @@ const ModernContainer = () => {
           </div>
           <div
             className={classNames("ml-4 transition duration-300", {
-              [contact.textColor]: !hoveredIndex || hoveredIndex === index,
+              [contact.textColor]: hoveredIndex !== index,
               [contact.hoverTextColor]: hoveredIndex === index,
             })}
           >
             <h3 className="text-lg font-bold">{contact.title}</h3>
-            <p className="text-sm">{contact.info}</p>
+            <p
+              className={classNames("text-sm transition duration-300", {
+                [contact.textColor]: hoveredIndex !== index,
+                [contact.hoverInfoColor]: hoveredIndex === index,
+              })}
+            >
+              {contact.info}
+            </p>
           </div>
         </div>
       ))}
