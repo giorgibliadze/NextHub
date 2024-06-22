@@ -1,6 +1,8 @@
+// pages/seo.jsx
 import React from "react";
 import PriceCard from "../../components/PriceCard";
 import ImageGallery from "../../components/ImageGallery";
+
 const seo = () => {
   const handlePurchaseClick = (packageName) => {
     alert(`Purchasing package: ${packageName}`);
@@ -13,6 +15,35 @@ const seo = () => {
     { src: "/seo4.webp", alt: "Image 4" },
   ];
 
+  const priceCardsData = [
+    {
+      title: "ბაზის პაკეტი",
+      price: 299,
+      features: ["Keyword Research", "On-Page SEO", "Technical SEO Audit"],
+      onButtonClick: () => handlePurchaseClick("ბაზის პაკეტი"),
+    },
+    {
+      title: "სტანდარტული პაკეტი",
+      price: 599,
+      features: [
+        "Everything in Basic",
+        "Link Building",
+        "Content Optimization",
+      ],
+      onButtonClick: () => handlePurchaseClick("სტანდარტული პაკეტი"),
+    },
+    {
+      title: "პრემიუმ პაკეტი",
+      price: 999,
+      features: [
+        "Everything in Standard",
+        "Advanced Analytics",
+        "Dedicated Support",
+      ],
+      onButtonClick: () => handlePurchaseClick("პრემიუმ პაკეტი"),
+    },
+  ];
+
   return (
     <div className="flex min-h-screen flex-col items-center justify-center px-4 md:px-8 xl:px-10 py-44">
       <h1 className="text-4xl font-bold text-white mb-6">
@@ -23,47 +54,15 @@ const seo = () => {
         გამოიყენეთ თქვენი სრული პოტენციალი SEO-ს დახმარებით
       </h1>
       <div className="grid md:grid-cols-3 sm:grid-cols-1 gap-10">
-        <PriceCard
-          title="ბაზის პაკეტი"
-          price={299}
-          features={["Keyword Research", "On-Page SEO", "Technical SEO Audit"]}
-          onButtonClick={() => handlePurchaseClick("ბაზის პაკეტი")}
-        />
-        <PriceCard
-          title="სტანდარტული პაკეტი"
-          price={599}
-          features={[
-            "Everything in Basic",
-            "Link Building",
-            "Content Optimization",
-          ]}
-          onButtonClick={() => handlePurchaseClick("სტანდარტული პაკეტი")}
-        />
-        <PriceCard
-          title="პრემიუმ პაკეტი"
-          price={999}
-          features={[
-            "Everything in Standard",
-            "Advanced Analytics",
-            "Dedicated Support",
-          ]}
-          onButtonClick={() => handlePurchaseClick("პრემიუმ პაკეტი")}
-        />
+        {priceCardsData.map((cardData, index) => (
+          <PriceCard key={index} {...cardData} />
+        ))}
       </div>
     </div>
   );
 };
 
 export default seo;
-
-function GridItem({ title, children }) {
-  return (
-    <div className="flex flex-col items-center justify-center p-4 border border-slate-900 bg-slate-900/50 rounded-xl h-[400px]">
-      <h3 className="text-2xl font-semibold text-white mb-4">{title}</h3>
-      {children}
-    </div>
-  );
-}
 {
   /* <header className="text-center mb-12 max-w-[800px]">
         <h1 className="text-4xl font-bold text-white mb-6">
