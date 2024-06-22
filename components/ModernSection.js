@@ -61,7 +61,7 @@ const ModernContainer = () => {
   };
 
   return (
-    <div className="w-full flex flex-col md:flex-row justify-center gap-8 mt-[150px] z-50">
+    <div className="w-full flex flex-col md:flex-row justify-center gap-8 z-50">
       {contacts.map((contact, index) => (
         <div
           key={contact.id}
