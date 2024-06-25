@@ -14,7 +14,7 @@ import { fadeIn } from "../variants";
 
 const Home = () => {
   return (
-    <div className="bg-primary/60  h-full sm:h-[600px] lg:h-[800px]  xxl:h-[970px]  xll:h-[865px]">
+    <div className="bg-primary/60  h-full smx:h-[900px] sm:h-[900px] md:h-[900px] lg:h-[820px] lgx:h-[1200px] xl:h-[1000px]  xxl:h-[1000px]  xll:h-[865px]">
       {/* text */}
       <div className="w-full h-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10">
         <div className="text-center flex flex-col justify-center xl:text-left h-full container mx-auto ]">
@@ -57,7 +57,7 @@ const Home = () => {
         </div>
 
         {/* image */}
-        <div className="w-[1200px] h-full absolute right-0 bottom-0">
+        <div className="w-full h-full absolute right-0 bottom-0">
           {/* bg img */}
           <div className="bg-none xl:bg-explosion xl:bg-cover xl:bg-right xl:bg-no-repeat w-full h-full absolute mix-blend-color-dodge translate-z-0"></div>
           {/* particles */}
