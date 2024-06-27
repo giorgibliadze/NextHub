@@ -8,7 +8,7 @@ import { FaLinkedin, FaInstagram } from "react-icons/fa6";
 
 const Socials = () => {
   return (
-    <div className="flex items-center gap-x-5 text-lg">
+    <div className="flex items-center gap-x-5 text-lg z-50">
       <Link
         href={"https://www.facebook.com/profile.php?id=61558598683056"}
         className="hover:text-accent transition-all duration-300"
