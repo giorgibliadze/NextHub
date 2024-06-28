@@ -5,6 +5,7 @@ import Image from "next/image";
 //components
 import ParticlesContainer from "../components/ParticlesContainer";
 import ProjectBtn from "../components/ProjectsBtn";
+import RotatingWords from "../components/RotatingWords";
 
 //framer motion
 import { motion } from "framer-motion";
@@ -13,6 +14,8 @@ import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
 
 const Home = () => {
+  const words = ["იდეები", "სურვილები", "ოცნებები"];
+
   return (
     <div className="bg-primary/60  h-full smx:h-[900px] sm:h-[900px] md:h-[900px] lg:h-[820px] lgx:h-[1200px] xl:h-[1000px]  xxl:h-[1000px]  xll:h-[865px]">
       {/* text */}
@@ -27,7 +30,15 @@ const Home = () => {
             className="h1 mt-[100px]"
           >
             გადააქციეთ
-            <span className="text-accent"> იდეები </span>
+            <motion.span
+              variants={fadeIn("down", 0.2)}
+              initial="hidden"
+              animate="show"
+              exit="hidden"
+              className="text-accent"
+            >
+              <RotatingWords words={words} />
+            </motion.span>
             <br /> ციფრულ რეალობად
           </motion.h1>
           {/* subtitle */}
