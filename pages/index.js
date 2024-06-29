@@ -17,17 +17,17 @@ const Home = () => {
   const words = ["იდეები", "სურვილები", "ოცნებები"];
 
   return (
-    <div className="bg-primary/60  h-full smx:h-[900px] sm:h-[900px] md:h-[900px] lg:h-[820px] lgx:h-[1200px] xl:h-[1000px]  xxl:h-[1000px]  xll:h-[865px]">
+    <div className="bg-primary/60  h-full smx:h-[900px] sm:h-[820px] md:h-[820px] lg:h-[820px] lgx:h-[820px] xl:h-[820px]  xxl:h-[1000px]  xll:h-[865px]">
       {/* text */}
       <div className="w-full h-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10">
-        <div className="text-center flex flex-col justify-center xl:text-left h-full container mx-auto ]">
+        <div className="text-center items-center flex flex-col justify-center xl:items-start xl:text-left h-full container mx-auto">
           {/* title */}
           <motion.h1
             variants={fadeIn("down", 0.2)}
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="h1 mt-[100px]"
+            className="h1 mt-[60px] lg:mt-[100px]"
           >
             გადააქციეთ
             <motion.span
@@ -61,7 +61,7 @@ const Home = () => {
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="hidden xl:flex"
+            className="hidden xl:flex xl:mb-16"
           >
             <ProjectBtn />
           </motion.div>
