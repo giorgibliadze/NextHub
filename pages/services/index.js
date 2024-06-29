@@ -13,12 +13,12 @@ const ServiceSlider = lazy(() => import("../../components/ServiceSlider"));
 const Services = () => {
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <div className="h-full lg:h-[700px] xxl:h-[950px] xll:h-[970px] bg-primary/30 py-36 flex items-center">
+      <div className="h-full lg:h-[700px] xxl:h-[950px] xll:h-[970px] bg-primary/30 py-36 flex p-[20px]">
         <Circles />
-        <div className="container mx-auto">
-          <div className="flex flex-col md:mt-[100px]  md:flex-row  xl:flex-row gap-x-8">
+        <div className="container items-center mx-auto">
+          <div className="flex flex-col md:mt-[100px] md:flex-row xl:flex-row gap-x-8 items-center mx-auto">
             {/* text */}
-            <div className="text-center flex xl:w-[30vw] flex-col lg:text-left mb-4 xl:mb-0">
+            <div className="text-center flex xl:w-[30vw] flex-col lg:text-left mb-4 xl:mx-0">
               <motion.h2
                 variants={fadeIn("up", 0.1)}
                 initial="hidden"
@@ -33,7 +33,7 @@ const Services = () => {
                 initial="hidden"
                 animate="show"
                 exit="hidden"
-                className="mb-4 max-w-[400px] mx-auto lg:mx-0"
+                className="mb-4 max-w-[400px] lg:mx-0"
               >
                 გადააქციეთ იდეები ციფრულ რეალობად და გამოიყენეთ სრული
                 პოტენციალი. ჩვენ დაგეხმარებით მიზნების მიღწევაში, გთავაზობთ: ვებ
@@ -47,7 +47,7 @@ const Services = () => {
               initial="hidden"
               animate="show"
               exit="hidden"
-              className="w-full xl:max-w-[65%]"
+              className="w-full  min-w-[300px] xl:max-w-[65%]"
             >
               <ServiceSlider />
             </motion.div>
