@@ -61,7 +61,7 @@ const WorkSlider = () => {
       {workSlides.slides.map((slide, index) => {
         return (
           <SwiperSlide key={index}>
-            <div className="grid grid-cols-1  md:grid-cols-2 md:max-w-[900px]  sm:grid-cols-2 gap-4 cursor-pointer p-4">
+            <div className="grid grid-cols-1  md:grid-cols-2 md:max-w-[900px] sm:grid-cols-2 gap-4 cursor-pointer p-4">
               {slide.images.map((image, index) => {
                 return (
                   <Link href={`${image.link}`} key={index}>
@@ -69,7 +69,7 @@ const WorkSlider = () => {
                       key={index}
                       className="relative rounded-lg overflow-hidden flex items-center justify-center group p-4 bg-white shadow-lg w-full"
                     >
-                      <div className="relative overflow-hidden group w-full rounded-lg">
+                      <div className="relative overflow-hidden group w-full rounded-lg min-w-[250px]">
                         {/* image */}
                         <div className="relative w-full h-0 pb-[56.25%]">
                           {" "}

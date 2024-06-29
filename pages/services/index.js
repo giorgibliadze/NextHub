@@ -15,7 +15,7 @@ const Services = () => {
     <Suspense fallback={<div>Loading...</div>}>
       <div className="h-full lg:h-[700px] xxl:h-[950px] xll:h-[970px] bg-primary/30 py-36 flex p-[20px]">
         <Circles />
-        <div className="container items-center mx-auto">
+        <div className="container min-w-full items-center mx-auto">
           <div className="flex flex-col md:mt-[100px] md:flex-row xl:flex-row gap-x-8 items-center mx-auto">
             {/* text */}
             <div className="text-center flex xl:w-[30vw] flex-col lg:text-left mb-4 xl:mx-0">
