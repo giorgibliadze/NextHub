@@ -61,12 +61,12 @@ const ModernContainer = () => {
   };
 
   return (
-    <div className="w-full flex flex-col md:flex-row justify-center gap-8 z-50">
+    <div className="w-full flex flex-col mt-[250px] md:flex-row items-center gap-8 z-50 px-4 md:px-16">
       {contacts.map((contact, index) => (
         <div
           key={contact.id}
           className={classNames(
-            "flex items-center p-6 w-full md:w-[450px] h-[180px] bg-white rounded-lg shadow-md cursor-pointer mb-5 transition duration-300 transform hover:scale-105 group",
+            "container flex items-center p-4 w-full min-w-[250px] md:w-[450px] sm:w-[300px] h-[180px] bg-white rounded-lg shadow-md cursor-pointer mb-5 transition duration-300 transform hover:scale-105 group",
             {
               [contact.hoverBgColor]: hoveredIndex === index,
             }
@@ -76,24 +76,27 @@ const ModernContainer = () => {
         >
           <div
             className={classNames(
-              "flex items-center justify-center rounded-full w-16 h-16 transition duration-300",
+              "flex items-center justify-center rounded-full w-12 h-12 sm:w-16 sm:h-16 transition duration-300",
               `${contact.bgColor} group-hover:bg-white group-hover:shadow-lg ${contact.shadowColor}`
             )}
           >
             {contact.icon}
           </div>
           <div
-            className={classNames("ml-4 transition duration-300", {
+            className={classNames("ml-2 sm:ml-4 transition duration-300", {
               [contact.textColor]: hoveredIndex !== index,
               [contact.hoverTextColor]: hoveredIndex === index,
             })}
           >
-            <h3 className="text-lg font-bold">{contact.title}</h3>
+            <h3 className="text-sm sm:text-lg font-bold">{contact.title}</h3>
             <p
-              className={classNames("text-sm transition duration-300", {
-                [contact.textColor]: hoveredIndex !== index,
-                [contact.hoverInfoColor]: hoveredIndex === index,
-              })}
+              className={classNames(
+                "text-xs sm:text-sm transition duration-300",
+                {
+                  [contact.textColor]: hoveredIndex !== index,
+                  [contact.hoverInfoColor]: hoveredIndex === index,
+                }
+              )}
             >
               {contact.info}
             </p>

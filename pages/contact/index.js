@@ -4,8 +4,8 @@ import { BsArrowRight } from "react-icons/bs";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
 import ModernSection from "../../components/ModernSection";
-
 import dynamic from "next/dynamic";
+
 const MapComponent = dynamic(() => import("../../components/MapComponent"), {
   ssr: false,
 });
@@ -59,10 +59,10 @@ const Contact = () => {
   };
 
   return (
-    <div className="h-full lg:h-[700px] xxl:h-[950px] xll:h-[970px] bg-primary/30">
-      <div className="container flex-col mt-[130px] mx-auto py-32 text-center xl:text-left flex items-center justify-center h-full">
+    <div className="container min-w-full  h-full lg:h-[700px] xxl:h-[950px] xll:h-[970px] bg-primary/60 items-center">
+      <div className="container min-w-full flex-col mt-[130px]text-center xl:text-left flex items-center justify-center h-full">
         <ModernSection />
-        <div className="flex flex-col w-full max-w-[700px]">
+        <div className="flex flex-col w-full max-w-[700px] px-4 md:px-0">
           <motion.h2
             variants={fadeIn("up", 0.2)}
             initial="hidden"
@@ -82,13 +82,13 @@ const Contact = () => {
             className="flex-1 flex flex-col gap-6 w-full mx-auto"
             onSubmit={send}
           >
-            <div className="flex gap-x-6 w-full">
+            <div className="flex flex-col md:flex-row gap-6 w-full">
               <input
                 type="text"
                 id="name"
                 name="name"
                 placeholder="სახელი"
-                className="input text-center"
+                className="input text-center w-full"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
@@ -98,7 +98,7 @@ const Contact = () => {
                 id="email"
                 name="email"
                 placeholder="მაილი"
-                className="input text-center"
+                className="input text-center w-full"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -109,7 +109,7 @@ const Contact = () => {
               id="subject"
               name="subject"
               placeholder="თემა"
-              className="input text-center"
+              className="input text-center w-full"
               value={subject}
               onChange={(e) => setSubject(e.target.value)}
               required
@@ -118,7 +118,7 @@ const Contact = () => {
               id="message"
               name="message"
               placeholder="შეტყობინება"
-              className="textarea text-center"
+              className="textarea text-center w-full"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               required

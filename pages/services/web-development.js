@@ -94,8 +94,8 @@ const WebDevelopment = () => {
   };
 
   return (
-    <div className="min-h-screen py-12">
-      <div className="container mx-auto px-4 lg:px-14 text-center">
+    <div className="min-h-screen min-w-full py-12">
+      <div className="container min-w-fullxs px-4 lg:px-14 text-center">
         <motion.h1
           variants={fadeIn("up", 0.2)}
           initial="hidden"
@@ -111,12 +111,12 @@ const WebDevelopment = () => {
           initial="hidden"
           animate="show"
           exit="hidden"
-          className="mt-12 grid grid-cols-1 lg:grid-cols-3 gap-8 justify-center"
+          className="mt-12 min-w-full grid grid-cols-1 lg:grid-cols-3 gap-8 justify-center"
         >
           {packages.map((pkg, index) => (
             <div
               key={index}
-              className={`p-6 pb-10 rounded-lg shadow-lg bg-white transform transition-transform duration-300 ${
+              className={`p-6 pb-10 min-w-full rounded-lg shadow-lg bg-white transform transition-transform duration-300 ${
                 expandedPackage === index ? "max-h-[1000px]" : "max-h-[500px]"
               }`}
             >
