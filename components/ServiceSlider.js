@@ -31,7 +31,7 @@ const serviceData = [
     title: "ციფრული მარკეტინგი",
     description:
       "თანამედროვე დიზაინი, თემატური, ყველა მოწყობილობასთან თავსებადი, სწრაფი და ადვილად ძებნადი",
-    link: "/services/digital-marketing",
+    link: "/services/digital_marketing",
   },
   {
     icon: <RxDesktop />,
