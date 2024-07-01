@@ -12,7 +12,9 @@ const seo = () => {
     { src: "/seo.webp", alt: "Image 1" },
     { src: "/seo2.webp", alt: "Image 2" },
     { src: "/seo3.webp", alt: "Image 3" },
-    { src: "/seo4.webp", alt: "Image 4" },
+    // { src: "/seo4.webp", alt: "Image 4" },
+    { src: "/location.webp", alt: "Image 4" },
+    // { src: "/targeting.webp", alt: "Image 5" },
   ];
 
   const priceCardsData = [

@@ -2,12 +2,19 @@ import React from "react";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
 import CountUp from "react-countup";
-
+import ImageGallery from "../../components/ImageGallery";
+import PriceCard from "../../components/PriceCard";
 const soc_media = () => {
-  const packages = [
+  const images = [
+    { src: "/soc-media.webp", alt: "Image 1" },
+    { src: "/customer-experience.webp", alt: "Image 2" },
+    { src: "/customer-satisfaction3.webp", alt: "Image 3" },
+    { src: "/user-experience.webp", alt: "Image 4" },
+  ];
+  const priceCardsData = [
     {
-      name: "Startup",
-      price: "700",
+      title: "ბაზის პაკეტი",
+      price: 499,
       features: [
         "თვეში 4 პოსტი",
         "ბრენდის ხასიათის შექმნა სოციალურ ქსელში",
@@ -17,10 +24,11 @@ const soc_media = () => {
         "ვებსაიტთან ინტეგრაცია",
         "ავტომოპასუხის დაყენება",
       ],
+      onButtonClick: () => handlePurchaseClick("ბაზის პაკეტი"),
     },
     {
-      name: "Standard",
-      price: "1000",
+      title: "სტანდარტული პაკეტი",
+      price: 799,
       features: [
         "თვეში 8 პოსტი",
         "ბრენდის ხასიათის შექმნა სოციალურ ქსელში",
@@ -32,10 +40,11 @@ const soc_media = () => {
         "კონკურენტების ანალიზი",
         "ყოველთვიური ანგარიში",
       ],
+      onButtonClick: () => handlePurchaseClick("სტანდარტული პაკეტი"),
     },
     {
-      name: "Premium",
-      price: "1500",
+      title: "პრემიუმ პაკეტი",
+      price: 999,
       features: [
         "ორენოვანი 8 პოსტი თვეში",
         "ბრენდის ხასიათის შექმნა სოციალურ ქსელში",
@@ -49,49 +58,24 @@ const soc_media = () => {
         "E-MAIL მარკეტინგი",
         "ყოველთვიური ანგარიში",
       ],
+      onButtonClick: () => handlePurchaseClick("პრემიუმ პაკეტი"),
     },
   ];
-  return (
-    <div className="min-h-screen bg-primary/30 py-12">
-      <div className="container mx-auto text-center">
-        <motion.h1
-          variants={fadeIn("up", 0.2)}
-          initial="hidden"
-          animate="show"
-          exit="hidden"
-          className="text-4xl font-bold mt-20 mb-12"
-        >
-          სოციალური მედია მენეჯმენტი
-        </motion.h1>
 
-        {/* Pricing Segments for WordPress */}
-        <motion.div
-          variants={fadeIn("up", 0.2)}
-          initial="hidden"
-          animate="show"
-          exit="hidden"
-          className="mt-12 grid grid-cols-1 lg:grid-cols-3 gap-8 justify-center"
-        >
-          {packages.map((pkg, index) => (
-            <div
-              key={index}
-              className="p-6 rounded-lg shadow-lg max-w-[300px] text-left"
-            >
-              <h2 className="text-2xl font-bold mb-4">{pkg.name}</h2>
-              <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                ₾ <CountUp start={500} end={pkg.price} duration={1} /> +
-              </div>
-              <ul className="list-disc list-inside mb-4">
-                {pkg.features.map((feature, index) => (
-                  <li key={index}>{feature}</li>
-                ))}
-              </ul>
-              {/* Add a button or link for purchasing */}
-            </div>
-          ))}
-        </motion.div>
+  return (
+    <div className="flex min-h-screen flex-col items-center justify-center px-4 md:px-8 xl:px-10 py-44">
+      <h1 className="text-4xl font-bold text-white mb-6">
+        სოციალური მედია მენეჯმენტი
+      </h1>
+      <ImageGallery images={images} />
+      <h1 className="text-4xl font-bold text-white mb-6">
+        გამოიყენეთ თქვენი სრული პოტენციალი Analytics-ს დახმარებით
+      </h1>
+      <div className="grid md:grid-cols-3 sm:grid-cols-1 gap-10">
+        {priceCardsData.map((cardData, index) => (
+          <PriceCard key={index} {...cardData} />
+        ))}
       </div>
-      <div className="min-h-screen bg-primary/30 py-12"></div>
     </div>
   );
 };

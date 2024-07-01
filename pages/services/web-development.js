@@ -2,12 +2,23 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants"; // Importing fadeIn animation from your variants file
 import CountUp from "react-countup"; // Importing CountUp for the counter animation
-
+import ImageGallery from "../../components/ImageGallery";
+import PriceCard from "../../components/PriceCard";
 const WebDevelopment = () => {
-  // Define an array of pricing packages
-  const packages = [
+  const images = [
+    { src: "/speed-optimization2.webp", alt: "Image 1" },
+    { src: "/well-structured-3.webp", alt: "Image 2" },
+    { src: "/technology.webp", alt: "Image 3" },
+    { src: "/digital-marketing.webp", alt: "Image 4" },
+    // { src: "/technology2.webp", alt: "Image 5" },
+    // { src: "/technology3.webp", alt: "Image 6" },
+    // { src: "/speed-optimization.webp", alt: "Image 7" },
+    // { src: "/well-structured-2.webp", alt: "Image 8" },
+    // { src: "/targeting.webp", alt: "Image 9" },
+  ];
+  const priceCardsData = [
     {
-      name: "Startup",
+      title: "სტარტ პაკეტი",
       startPrice: 1000,
       price: 2500,
       features: [
@@ -25,9 +36,10 @@ const WebDevelopment = () => {
         "კონტაქტი",
         "1 თვე მხარდაჭერის სერვისი",
       ],
+      onButtonClick: () => handlePurchaseClick("ბაზის პაკეტი"),
     },
     {
-      name: "Standard",
+      title: "სტანდარტული პაკეტი",
       startPrice: 2500,
       price: 4000,
       features: [
@@ -53,9 +65,10 @@ const WebDevelopment = () => {
         "პარტნიორების ლოგოები",
         "3 თვე მხარდაჭერის სერვისი",
       ],
+      onButtonClick: () => handlePurchaseClick("სტანდარტული პაკეტი"),
     },
     {
-      name: "Premium",
+      title: "პრემიუმ პაკეტი",
       startPrice: 5000,
       price: 7000,
       features: [
@@ -84,6 +97,7 @@ const WebDevelopment = () => {
         "6 თვე მხარდაჭერის სერვისი",
         "და სხვა",
       ],
+      onButtonClick: () => handlePurchaseClick("პრემიუმ პაკეტი"),
     },
   ];
 
@@ -94,66 +108,18 @@ const WebDevelopment = () => {
   };
 
   return (
-    <div className="min-h-screen min-w-full py-12">
-      <div className="container min-w-fullxs px-4 lg:px-14 text-center">
-        <motion.h1
-          variants={fadeIn("up", 0.2)}
-          initial="hidden"
-          animate="show"
-          exit="hidden"
-          className="text-4xl font-bold mt-20 mb-12 text-white"
-        >
-          Web Development
-        </motion.h1>
-
-        <motion.div
-          variants={fadeIn("up", 0.2)}
-          initial="hidden"
-          animate="show"
-          exit="hidden"
-          className="mt-12 min-w-full grid grid-cols-1 lg:grid-cols-3 gap-8 justify-center"
-        >
-          {packages.map((pkg, index) => (
-            <div
-              key={index}
-              className={`p-6 pb-10 min-w-full rounded-lg shadow-lg bg-white transform transition-transform duration-300 ${
-                expandedPackage === index ? "max-h-[1000px]" : "max-h-[500px]"
-              }`}
-            >
-              <h2 className="text-2xl font-bold mb-4 text-gray-800">
-                {pkg.name}
-              </h2>
-              <div className="text-xl xl:text-3xl font-extrabold text-accent mb-2">
-                <span className="text-gray-800">₾</span>{" "}
-                <CountUp
-                  start={pkg.startPrice}
-                  end={pkg.startPrice}
-                  duration={0}
-                />
-                <span className="text-gray-800"> - </span>
-                <CountUp start={pkg.startPrice} end={pkg.price} duration={1} />
-              </div>
-              <ul className="list-disc list-inside mb-4 text-left text-gray-700">
-                {pkg.features
-                  .slice(
-                    0,
-                    expandedPackage === index ? pkg.features.length : 10
-                  )
-                  .map((feature, featureIndex) => (
-                    <li key={featureIndex}>{feature}</li>
-                  ))}
-              </ul>
-              <div className="flex justify-center mt-4">
-                <button
-                  className="w-[150px] lg:w-[200px] py-3 rounded-full bg-gradient-to-r from-purple-800 to-purple-500 text-white hover:from-purple-900 hover:to-purple-500 transition-colors duration-300"
-                  onClick={() => handleShowMore(index)}
-                >
-                  {expandedPackage === index ? "Show Less" : "Learn More"}
-                </button>
-              </div>
-            </div>
-          ))}
-        </motion.div>
+    <div className="flex min-h-screen flex-col items-center justify-center px-4 md:px-8 xl:px-10 py-44">
+      <h1 className="text-4xl font-bold text-white mb-6">
+        ვებ გვერდების დამზადება
+      </h1>
+      <ImageGallery images={images} />
+      <h1 className="text-4xl font-bold text-white mb-6">
+        გამოიყენეთ თქვენი სრული პოტენციალი ვებ გვერდის დახმარებით
+      </h1>
+      <div className="grid md:grid-cols-3 sm:grid-cols-1 gap-10">
+        {priceCardsData.map((cardData, index) => (
+          <PriceCard key={index} {...cardData} />
+        ))}
       </div>
     </div>
   );

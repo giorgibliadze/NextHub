@@ -1,14 +1,15 @@
 import React from "react";
 import ImageGallery from "../../components/ImageGallery";
 import PriceCard from "../../components/PriceCard";
-const analytics = () => {
+
+const digital_marketing = () => {
   const images = [
-    { src: "/analytics.webp", alt: "Image 1" },
-    { src: "/analytics2.webp", alt: "Image 2" },
-    { src: "/targeting.webp", alt: "Image 3" },
-    { src: "/Data-analytics.webp", alt: "Image 4" },
-    // { src: "/device-analytics.webp", alt: "Image 4" },
-    // { src: "/speed-optimization.webp", alt: "Image 2" },
+    { src: "/digital-marketing.webp", alt: "Image 1" },
+    { src: "/seo2.webp", alt: "Image 2" },
+    { src: "/seo3.webp", alt: "Image 3" },
+    // { src: "/seo4.webp", alt: "Image 4" },
+    // { src: "/location.webp", alt: "Image 4" },
+    { src: "/targeting.webp", alt: "Image 5" },
   ];
 
   const priceCardsData = [
@@ -42,10 +43,10 @@ const analytics = () => {
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center px-4 md:px-8 xl:px-10 py-44">
-      <h1 className="text-4xl font-bold text-white mb-6">ანალიტიკა</h1>
+      <h1 className="text-4xl font-bold text-white mb-6">ციფრული მარკეტინგი</h1>
       <ImageGallery images={images} />
       <h1 className="text-4xl font-bold text-white mb-6">
-        გამოიყენეთ თქვენი სრული პოტენციალი Analytics-ს დახმარებით
+        გამოიყენეთ თქვენი სრული პოტენციალი ვებ გვერდის დახმარებით
       </h1>
       <div className="grid md:grid-cols-3 sm:grid-cols-1 gap-10">
         {priceCardsData.map((cardData, index) => (
@@ -56,12 +57,4 @@ const analytics = () => {
   );
 };
 
-export default analytics;
-function GridItem({ title, children }) {
-  return (
-    <div className="flex flex-col items-center justify-center p-4 border border-slate-900 bg-slate-900/50 rounded-xl h-[400px]">
-      <h3 className="text-2xl font-semibold text-white mb-4">{title}</h3>
-      {children}
-    </div>
-  );
-}
+export default digital_marketing;

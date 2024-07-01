@@ -28,6 +28,13 @@ import Link from "next/link";
 const serviceData = [
   {
     icon: <RxDesktop />,
+    title: "ციფრული მარკეტინგი",
+    description:
+      "თანამედროვე დიზაინი, თემატური, ყველა მოწყობილობასთან თავსებადი, სწრაფი და ადვილად ძებნადი",
+    link: "/services/digital-marketing",
+  },
+  {
+    icon: <RxDesktop />,
     title: "ვებ დეველოპმენტი",
     description:
       "თანამედროვე დიზაინი, თემატური, ყველა მოწყობილობასთან თავსებადი, სწრაფი და ადვილად ძებნადი",
