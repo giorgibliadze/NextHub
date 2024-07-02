@@ -9,7 +9,7 @@ const PriceCard = ({ title, price, features, onButtonClick }) => {
     <motion.div
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      className="flex flex-col items-center justify-center p-6 border border-gray-300 bg-white rounded-lg shadow-lg transition-shadow duration-300 ease-in-out hover:shadow-2xl"
+      className="flex flex-col items-center p-6 border border-gray-300 bg-white rounded-lg shadow-lg transition-shadow duration-300 ease-in-out hover:shadow-2xl"
     >
       <h3 className="text-2xl font-semibold text-gray-800 mb-4">{title}</h3>
       <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">

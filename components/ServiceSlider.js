@@ -38,7 +38,7 @@ const serviceData = [
     title: "ვებ დეველოპმენტი",
     description:
       "თანამედროვე დიზაინი, თემატური, ყველა მოწყობილობასთან თავსებადი, სწრაფი და ადვილად ძებნადი",
-    link: "/services/web-development",
+    link: "/services/web_development",
   },
   {
     icon: <RxRocket />,

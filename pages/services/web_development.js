@@ -5,12 +5,13 @@ import CountUp from "react-countup"; // Importing CountUp for the counter animat
 import ImageGallery from "../../components/ImageGallery";
 import PriceCard from "../../components/PriceCard";
 import TechnologyIcons from "../../components/TechnologyIcons";
+import Bulb from "../../components/Bulb";
 const WebDevelopment = () => {
   const images = [
-    { src: "/speed-optimization2.webp", alt: "Image 1" },
+    // { src: "/speed-optimization2.webp", alt: "Image 1" },
     { src: "/well-structured-3.webp", alt: "Image 2" },
     { src: "/technology.webp", alt: "Image 3" },
-    { src: "/digital-marketing.webp", alt: "Image 4" },
+    // { src: "/digital-marketing.webp", alt: "Image 4" },
     // { src: "/technology2.webp", alt: "Image 5" },
     // { src: "/technology3.webp", alt: "Image 6" },
     // { src: "/speed-optimization.webp", alt: "Image 7" },
@@ -113,18 +114,20 @@ const WebDevelopment = () => {
       <h1 className="text-4xl font-bold text-white mb-6">
         ვებ გვერდების დამზადება
       </h1>
-      <ImageGallery images={images} />
+      <div Classname="items-center">
+        {" "}
+        <ImageGallery images={images} />
+      </div>
       <div className="min-h-[200px] flex flex-col items-center justify-center">
         <TechnologyIcons />
       </div>
-      <h1 className="text-4xl font-bold text-white mb-6">
-        გამოიყენეთ თქვენი სრული პოტენციალი ვებ გვერდის დახმარებით
-      </h1>
+
       <div className="grid md:grid-cols-3 sm:grid-cols-1 gap-10">
         {priceCardsData.map((cardData, index) => (
           <PriceCard key={index} {...cardData} />
         ))}
       </div>
+      <Bulb />
     </div>
   );
 };
