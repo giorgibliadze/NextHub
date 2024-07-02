@@ -72,6 +72,10 @@ const TechnologyIcons = () => {
               slidesPerView: 3,
               spaceBetween: 10,
             },
+            320: {
+              slidesPerView: 3,
+              spaceBetween: 10,
+            },
           }}
           className="mySwiper"
         >

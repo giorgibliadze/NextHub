@@ -49,8 +49,8 @@ const Home = () => {
             exit="hidden"
             className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16"
           >
-            გამოიყენეთ სრული პოტენციალი, გაზარდეთ ცნობადობა და სანდოობა.
-            დაგეხმარებით მიზნების მიღწევაში,
+            მიაღწიეთ დასახულ მიზნებს, გამოიყენეთ სრული პოტენციალი, გაზარდეთ
+            ცნობადობა და სანდოობა next-hub-ის გუნდთან ერთად.
           </motion.p>
           {/* btn */}
           <div className="flex justify-center xl:hidden relative">
