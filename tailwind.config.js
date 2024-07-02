@@ -38,6 +38,13 @@ module.exports = {
       },
       animation: {
         "spin-slow": "spin 6s linear infinite",
+        bounce: "bounce 1s infinite",
+      },
+      keyframes: {
+        bounce: {
+          "0%, 100%": { transform: "translateY(-10%)" },
+          "50%": { transform: "translateY(0)" },
+        },
       },
       fontFamily: {
         poppins: [`var(--font-poppins)`, "sans-serif"],

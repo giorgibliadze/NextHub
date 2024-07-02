@@ -4,6 +4,7 @@ import { fadeIn } from "../../variants"; // Importing fadeIn animation from your
 import CountUp from "react-countup"; // Importing CountUp for the counter animation
 import ImageGallery from "../../components/ImageGallery";
 import PriceCard from "../../components/PriceCard";
+import TechnologyIcons from "../../components/TechnologyIcons";
 const WebDevelopment = () => {
   const images = [
     { src: "/speed-optimization2.webp", alt: "Image 1" },
@@ -113,6 +114,9 @@ const WebDevelopment = () => {
         ვებ გვერდების დამზადება
       </h1>
       <ImageGallery images={images} />
+      <div className="min-h-[200px] flex flex-col items-center justify-center">
+        <TechnologyIcons />
+      </div>
       <h1 className="text-4xl font-bold text-white mb-6">
         გამოიყენეთ თქვენი სრული პოტენციალი ვებ გვერდის დახმარებით
       </h1>
