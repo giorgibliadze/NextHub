@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const ImageGallery = ({ images }) => {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 px-[10%] mb-[30px] z-30">
+    <div className="hidden md:grid grid-cols-2 lg:grid-cols-2 gap-4 px-[10%] mb-[30px] z-30">
       {images.map((image, index) => (
         <div
           key={index}
