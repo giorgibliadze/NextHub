@@ -111,22 +111,46 @@ const WebDevelopment = () => {
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center px-4 md:px-8 xl:px-10 py-44">
-      <h1 className="text-4xl font-bold text-white mb-6">
-        ვებ გვერდების დამზადება
-      </h1>
-      <div Classname="items-center">
+      <motion.h1
+        variants={fadeIn("up", 0.1)}
+        initial="hidden"
+        animate="show"
+        exit="hidden"
+        className="h2 xl:mt-8"
+      >
+        ვებ გვერდების დამზადება <span className="text-accent">.</span>
+      </motion.h1>
+      <motion.div
+        variants={fadeIn("up", 0.1)}
+        initial="hidden"
+        animate="show"
+        exit="hidden"
+        ClassName="mb-16"
+      >
         {" "}
         <ImageGallery images={images} />
-      </div>
-      <div className="min-h-[200px] flex flex-col items-center justify-center">
+      </motion.div>
+      <motion.div
+        variants={fadeIn("up", 0.1)}
+        initial="hidden"
+        animate="show"
+        exit="hidden"
+        className="min-h-[200px] flex flex-col items-center justify-center"
+      >
         <TechnologyIcons />
-      </div>
+      </motion.div>
 
-      <div className="grid md:grid-cols-3 sm:grid-cols-1 gap-10">
+      <motion.div
+        variants={fadeIn("up", 0.1)}
+        initial="hidden"
+        animate="show"
+        exit="hidden"
+        className="grid md:grid-cols-3 sm:grid-cols-1 gap-10"
+      >
         {priceCardsData.map((cardData, index) => (
           <PriceCard key={index} {...cardData} />
         ))}
-      </div>
+      </motion.div>
       <Bulb />
     </div>
   );

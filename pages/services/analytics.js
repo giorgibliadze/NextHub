@@ -1,12 +1,16 @@
 import React from "react";
 import ImageGallery from "../../components/ImageGallery";
 import PriceCard from "../../components/PriceCard";
+import Bulb from "../../components/Bulb";
+import { motion } from "framer-motion";
+import { fadeIn } from "../../variants";
 const analytics = () => {
   const images = [
-    { src: "/analytics.webp", alt: "Image 1" },
-    { src: "/analytics2.webp", alt: "Image 2" },
+    // { src: "/analytics.webp", alt: "Image 1" },
+    // { src: "/analytics2.webp", alt: "Image 2" },
+    { src: "/Data-analytics.webp", alt: "Image 2" },
     { src: "/targeting.webp", alt: "Image 3" },
-    { src: "/Data-analytics.webp", alt: "Image 4" },
+
     // { src: "/device-analytics.webp", alt: "Image 4" },
     // { src: "/speed-optimization.webp", alt: "Image 2" },
   ];
@@ -42,26 +46,39 @@ const analytics = () => {
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center px-4 md:px-8 xl:px-10 py-44">
-      <h1 className="text-4xl font-bold text-white mb-6">ანალიტიკა</h1>
-      <ImageGallery images={images} />
-      <h1 className="text-4xl font-bold text-white mb-6">
-        გამოიყენეთ თქვენი სრული პოტენციალი Analytics-ს დახმარებით
-      </h1>
-      <div className="grid md:grid-cols-3 sm:grid-cols-1 gap-10">
+      <motion.h1
+        variants={fadeIn("up", 0.1)}
+        initial="hidden"
+        animate="show"
+        exit="hidden"
+        className="h2 xl:mt-8"
+      >
+        ანალიტიკა <span className="text-accent">.</span>
+      </motion.h1>
+      <motion.div
+        variants={fadeIn("up", 0.1)}
+        initial="hidden"
+        animate="show"
+        exit="hidden"
+        ClassName="mb-16"
+      >
+        {" "}
+        <ImageGallery images={images} />
+      </motion.div>
+      <motion.div
+        variants={fadeIn("up", 0.1)}
+        initial="hidden"
+        animate="show"
+        exit="hidden"
+        className="grid md:grid-cols-3 sm:grid-cols-1 gap-10"
+      >
         {priceCardsData.map((cardData, index) => (
           <PriceCard key={index} {...cardData} />
         ))}
-      </div>
+      </motion.div>
+      <Bulb />
     </div>
   );
 };
 
 export default analytics;
-function GridItem({ title, children }) {
-  return (
-    <div className="flex flex-col items-center justify-center p-4 border border-slate-900 bg-slate-900/50 rounded-xl h-[400px]">
-      <h3 className="text-2xl font-semibold text-white mb-4">{title}</h3>
-      {children}
-    </div>
-  );
-}

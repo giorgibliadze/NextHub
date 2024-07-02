@@ -1,15 +1,17 @@
 import React from "react";
 import ImageGallery from "../../components/ImageGallery";
 import PriceCard from "../../components/PriceCard";
-
+import Bulb from "../../components/Bulb";
+import { motion } from "framer-motion";
+import { fadeIn } from "../../variants";
 const digital_marketing = () => {
   const images = [
-    { src: "/digital-marketing.webp", alt: "Image 1" },
-    { src: "/seo2.webp", alt: "Image 2" },
-    { src: "/seo3.webp", alt: "Image 3" },
+    // { src: "/digital-marketing.webp", alt: "Image 1" },
+    { src: "/seo3.webp", alt: "Image 2" },
+    { src: "/seo2.webp", alt: "Image 3" },
     // { src: "/seo4.webp", alt: "Image 4" },
     // { src: "/location.webp", alt: "Image 4" },
-    { src: "/targeting.webp", alt: "Image 5" },
+    // { src: "/targeting.webp", alt: "Image 5" },
   ];
 
   const priceCardsData = [
@@ -43,16 +45,37 @@ const digital_marketing = () => {
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center px-4 md:px-8 xl:px-10 py-44">
-      <h1 className="text-4xl font-bold text-white mb-6">ციფრული მარკეტინგი</h1>
-      <ImageGallery images={images} />
-      <h1 className="text-4xl font-bold text-white mb-6">
-        გამოიყენეთ თქვენი სრული პოტენციალი ვებ გვერდის დახმარებით
-      </h1>
-      <div className="grid md:grid-cols-3 sm:grid-cols-1 gap-10">
+      <motion.h1
+        variants={fadeIn("up", 0.1)}
+        initial="hidden"
+        animate="show"
+        exit="hidden"
+        className="h2 xl:mt-8"
+      >
+        ციფრული მარკეტინგი <span className="text-accent">.</span>
+      </motion.h1>
+      <motion.div
+        variants={fadeIn("up", 0.1)}
+        initial="hidden"
+        animate="show"
+        exit="hidden"
+        ClassName="mb-16"
+      >
+        {" "}
+        <ImageGallery images={images} />
+      </motion.div>
+      <motion.div
+        variants={fadeIn("up", 0.1)}
+        initial="hidden"
+        animate="show"
+        exit="hidden"
+        className="grid md:grid-cols-3 sm:grid-cols-1 gap-10"
+      >
         {priceCardsData.map((cardData, index) => (
           <PriceCard key={index} {...cardData} />
         ))}
-      </div>
+      </motion.div>
+      <Bulb />
     </div>
   );
 };
