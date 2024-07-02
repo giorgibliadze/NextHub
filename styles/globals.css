@@ -19,30 +19,38 @@
   display: none;
 }
 
-@keyframes borderGlow {
+@keyframes containerGlow {
   0%,
   100% {
     border-color: rgba(0, 112, 243, 0.5);
     box-shadow: 0 0 10px rgba(0, 112, 243, 0.5);
   }
-  33% {
-    border-color: rgba(0, 112, 243, 0.8);
-    box-shadow: 0 0 15px rgba(0, 112, 243, 0.8);
-  }
-  66% {
+  50% {
     border-color: rgba(0, 112, 243, 1);
     box-shadow: 0 0 20px rgba(0, 112, 243, 1);
   }
 }
 
-.border-glow {
-  animation: borderGlow 2s infinite alternate;
-  border-width: 3px;
-  border-style: solid;
+@keyframes priceGlow {
+  0%,
+  100% {
+    color: rgba(255, 0, 0, 0.5);
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.5), 0 0 20px rgba(255, 0, 0, 0.5),
+      0 0 30px rgba(255, 0, 0, 0.5);
+  }
+  50% {
+    color: rgba(255, 0, 0, 1);
+    text-shadow: 0 0 20px rgba(255, 0, 0, 1), 0 0 30px rgba(255, 0, 0, 1),
+      0 0 40px rgba(255, 0, 0, 1);
+  }
 }
 
-.animate-glow {
-  animation: glow 1.5s infinite alternate;
+.animate-container-glow {
+  animation: containerGlow 2s infinite alternate;
+}
+
+.animate-price-glow {
+  animation: priceGlow 2s infinite alternate;
 }
 @layer base {
   body {
