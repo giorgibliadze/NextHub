@@ -19,6 +19,31 @@
   display: none;
 }
 
+@keyframes borderGlow {
+  0%,
+  100% {
+    border-color: rgba(0, 112, 243, 0.5);
+    box-shadow: 0 0 10px rgba(0, 112, 243, 0.5);
+  }
+  33% {
+    border-color: rgba(0, 112, 243, 0.8);
+    box-shadow: 0 0 15px rgba(0, 112, 243, 0.8);
+  }
+  66% {
+    border-color: rgba(0, 112, 243, 1);
+    box-shadow: 0 0 20px rgba(0, 112, 243, 1);
+  }
+}
+
+.border-glow {
+  animation: borderGlow 2s infinite alternate;
+  border-width: 3px;
+  border-style: solid;
+}
+
+.animate-glow {
+  animation: glow 1.5s infinite alternate;
+}
 @layer base {
   body {
     @apply bg-secondary overflow-hidden leading-relaxed;

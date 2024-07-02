@@ -9,13 +9,13 @@ const PriceCard = ({ title, price, features, onButtonClick }) => {
     <motion.div
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      className="flex flex-col items-center p-6 border border-gray-300 bg-white rounded-lg shadow-lg transition-shadow duration-300 ease-in-out hover:shadow-2xl"
+      className="flex flex-col items-center p-6 border-4 border-glow bg-gradient-to-r from-primary/10 via-black/30 to-black/10 rounded-lg shadow-lg transition-shadow duration-300 ease-in-out hover:shadow-2xl"
     >
-      <h3 className="text-2xl font-semibold text-gray-800 mb-4">{title}</h3>
-      <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
+      <h3 className="text-2xl font-semibold text-gray-100 mb-4">{title}</h3>
+      <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2 animate-pulse">
         ₾ <CountUp start={500} end={price} duration={1} /> +
       </div>
-      <ul className="text-gray-700 mb-4">
+      <ul className="text-gray-200 mb-4">
         {features.map((feature, index) => (
           <li key={index} className="mb-2">
             {feature}

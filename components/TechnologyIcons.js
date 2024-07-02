@@ -1,4 +1,4 @@
-/* eslint-disable react/no-unescaped-entities */
+// components/TechnologyIcons.jsx
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
@@ -37,25 +37,20 @@ const icons = [
   { component: FaCss3, name: "CSS3", color: "#1572B6" },
   { component: FaJs, name: "JavaScript", color: "#F7DF1E" },
   { component: FaReact, name: "React", color: "#61DAFB" },
+  { component: SiNextdotjs, name: "Next.js", color: "#000000" },
+  { component: SiTypescript, name: "TypeScript", color: "#3178C6" },
   { component: FaWordpress, name: "WordPress", color: "#21759B" },
   { component: FaFigma, name: "Figma", color: "#F24E1E" },
   { component: SiTailwindcss, name: "Tailwind CSS", color: "#38B2AC" },
-  { component: SiTypescript, name: "TypeScript", color: "#3178C6" },
   { component: DiGoogleAnalytics, name: "Google Analytics", color: "#4285F4" },
-  {
-    component: PiMicrosoftExcelLogoFill,
-    name: "Microsoft Excel",
-    color: "#217346",
-  },
-  { component: SiNextdotjs, name: "Next.js", color: "#000000" },
   { component: SiFramer, name: "Framer", color: "#0055FF" },
-  { component: SiPowerbi, name: "Power BI", color: "#F2C811" },
   { component: SiMui, name: "Material UI", color: "#007FFF" },
+  { component: SiPowerbi, name: "Power BI", color: "#F2C811" },
 ];
 
 const TechnologyIcons = () => {
   return (
-    <div className="min-h-[50px] flex items-center ">
+    <div className="min-h-[50px] flex items-center">
       <div className="container">
         <Swiper
           spaceBetween={20}
@@ -92,7 +87,7 @@ const TechnologyIcons = () => {
                   className="w-20 h-20 rounded-full shadow-lg flex items-center justify-center bg-white transform transition-transform hover:scale-105"
                 >
                   <IconComponent
-                    className="text-4xl"
+                    className="text-4xl icon-glow"
                     style={{ color: icon.color }}
                   />
                 </motion.div>
