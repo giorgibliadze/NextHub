@@ -1,17 +1,12 @@
-// icons
-import { RxDesktop, RxRocket, RxArrowTopRight } from "react-icons/rx";
-import { DiGoogleAnalytics } from "react-icons/di";
-import { FaReact } from "react-icons/fa";
-
-//import swiper react components
+// import swiper react components
 import { Swiper, SwiperSlide } from "swiper/react";
 import Link from "next/link";
-//import swiper styles
+// import swiper styles
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
 
-//import required modules
+// import required modules
 import { Pagination } from "swiper";
 
 // data
@@ -44,7 +39,7 @@ const workSlides = {
   ],
 };
 
-//icons
+// icons
 import { BsArrowRight } from "react-icons/bs";
 import Image from "next/image";
 
@@ -61,7 +56,7 @@ const WorkSlider = () => {
       {workSlides.slides.map((slide, index) => {
         return (
           <SwiperSlide key={index}>
-            <div className="grid grid-cols-1  md:grid-cols-2 md:max-w-[900px] sm:grid-cols-2 gap-4 cursor-pointer p-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 md:max-w-[900px] sm:grid-cols-2 gap-4 cursor-pointer p-4">
               {slide.images.map((image, index) => {
                 return (
                   <Link href={`${image.link}`} key={index}>
@@ -77,7 +72,7 @@ const WorkSlider = () => {
                           <Image
                             src={image.path}
                             layout="fill"
-                            objectFit="cover"
+                            objectFit="contain"
                             alt={image.title}
                             className="rounded-lg"
                           />
