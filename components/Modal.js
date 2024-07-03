@@ -65,7 +65,7 @@ const Modal = ({ isOpen, onClose, cardData }) => {
         exit={{ opacity: 0, scale: 0.9 }}
         className="flex flex-col lg:mt-[280px] smx:mt-[300px] items-center p-6 border-4 border-glow bg-black rounded-lg shadow-lg transition-shadow duration-300 ease-in-out hover:shadow-2xl animate-container-glow w-11/12 md:w-1/2 lg:w-1/3"
       >
-        <h3 className="text-2xl font-semibold text-gray-100 mb-4">
+        <h3 className="text-2xl font-semibold text-gray-100 mt-[130px] mb-4">
           {cardData.title}
         </h3>
         <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2 animate-price-glow">
