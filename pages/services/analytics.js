@@ -17,13 +17,13 @@ const analytics = () => {
 
   const priceCardsData = [
     {
-      title: "ბაზის პაკეტი",
+      title: "სტანდარტი",
       price: 299,
       features: ["Keyword Research", "On-Page SEO", "Technical SEO Audit"],
       onButtonClick: () => handlePurchaseClick("ბაზის პაკეტი"),
     },
     {
-      title: "სტანდარტული პაკეტი",
+      title: "პრემიუმი",
       price: 599,
       features: [
         "Everything in Basic",
@@ -33,7 +33,7 @@ const analytics = () => {
       onButtonClick: () => handlePurchaseClick("სტანდარტული პაკეტი"),
     },
     {
-      title: "პრემიუმ პაკეტი",
+      title: "ბიზნესი",
       price: 999,
       features: [
         "Everything in Standard",

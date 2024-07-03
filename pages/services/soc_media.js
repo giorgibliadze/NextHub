@@ -15,7 +15,7 @@ const soc_media = () => {
   ];
   const priceCardsData = [
     {
-      title: "ბაზის პაკეტი",
+      title: "სტანდარტი",
       price: 499,
       features: [
         "თვეში 4 პოსტი",
@@ -29,7 +29,7 @@ const soc_media = () => {
       onButtonClick: () => handlePurchaseClick("ბაზის პაკეტი"),
     },
     {
-      title: "სტანდარტული პაკეტი",
+      title: "პრემიუმი",
       price: 799,
       features: [
         "თვეში 8 პოსტი",
@@ -45,7 +45,7 @@ const soc_media = () => {
       onButtonClick: () => handlePurchaseClick("სტანდარტული პაკეტი"),
     },
     {
-      title: "პრემიუმ პაკეტი",
+      title: "ბიზნესი",
       price: 999,
       features: [
         "ორენოვანი 8 პოსტი თვეში",

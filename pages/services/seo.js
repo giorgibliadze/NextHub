@@ -22,13 +22,13 @@ const seo = () => {
 
   const priceCardsData = [
     {
-      title: "ბაზის პაკეტი",
+      title: "სტანდარტი",
       price: 299,
       features: ["Keyword Research", "On-Page SEO", "Technical SEO Audit"],
       onButtonClick: () => handlePurchaseClick("ბაზის პაკეტი"),
     },
     {
-      title: "სტანდარტული პაკეტი",
+      title: "პრემიუმი",
       price: 599,
       features: [
         "Everything in Basic",
@@ -38,7 +38,7 @@ const seo = () => {
       onButtonClick: () => handlePurchaseClick("სტანდარტული პაკეტი"),
     },
     {
-      title: "პრემიუმ პაკეტი",
+      title: "ბიზნესი",
       price: 999,
       features: [
         "Everything in Standard",
@@ -51,38 +51,39 @@ const seo = () => {
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center px-4 md:px-8 xl:px-10 py-44">
-    <motion.h1
-      variants={fadeIn("up", 0.1)}
-      initial="hidden"
-      animate="show"
-      exit="hidden"
-      className="h2 xl:mt-8"
-    >
-      SEO- საძიებო სისტემების ოპტიმიზაცია <span className="text-accent">.</span>
-    </motion.h1>
-    <motion.div
-      variants={fadeIn("up", 0.1)}
-      initial="hidden"
-      animate="show"
-      exit="hidden"
-      ClassName="mb-16"
-    >
-      {" "}
-      <ImageGallery images={images} />
-    </motion.div>
-    <motion.div
-      variants={fadeIn("up", 0.1)}
-      initial="hidden"
-      animate="show"
-      exit="hidden"
-      className="grid md:grid-cols-3 sm:grid-cols-1 gap-10"
-    >
-      {priceCardsData.map((cardData, index) => (
-        <PriceCard key={index} {...cardData} />
-      ))}
-    </motion.div>
-    <Bulb />
-  </div>
+      <motion.h1
+        variants={fadeIn("up", 0.1)}
+        initial="hidden"
+        animate="show"
+        exit="hidden"
+        className="h2 xl:mt-8"
+      >
+        SEO- საძიებო სისტემების ოპტიმიზაცია{" "}
+        <span className="text-accent">.</span>
+      </motion.h1>
+      <motion.div
+        variants={fadeIn("up", 0.1)}
+        initial="hidden"
+        animate="show"
+        exit="hidden"
+        ClassName="mb-16"
+      >
+        {" "}
+        <ImageGallery images={images} />
+      </motion.div>
+      <motion.div
+        variants={fadeIn("up", 0.1)}
+        initial="hidden"
+        animate="show"
+        exit="hidden"
+        className="grid md:grid-cols-3 sm:grid-cols-1 gap-10"
+      >
+        {priceCardsData.map((cardData, index) => (
+          <PriceCard key={index} {...cardData} />
+        ))}
+      </motion.div>
+      <Bulb />
+    </div>
   );
 };
 

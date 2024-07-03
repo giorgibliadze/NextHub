@@ -20,7 +20,7 @@ const WebDevelopment = () => {
   ];
   const priceCardsData = [
     {
-      title: "სტარტ პაკეტი",
+      title: "სტანდარტი",
       startPrice: 1000,
       price: 2500,
       features: [
@@ -41,7 +41,7 @@ const WebDevelopment = () => {
       onButtonClick: () => handlePurchaseClick("ბაზის პაკეტი"),
     },
     {
-      title: "სტანდარტული პაკეტი",
+      title: "პრემიუმი",
       startPrice: 2500,
       price: 4000,
       features: [
@@ -70,7 +70,7 @@ const WebDevelopment = () => {
       onButtonClick: () => handlePurchaseClick("სტანდარტული პაკეტი"),
     },
     {
-      title: "პრემიუმ პაკეტი",
+      title: "ბიზნესი",
       startPrice: 5000,
       price: 7000,
       features: [

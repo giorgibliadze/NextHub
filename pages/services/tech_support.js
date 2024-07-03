@@ -14,14 +14,14 @@ const tech_support = () => {
 
   const priceCardsData = [
     {
-      title: "ბაზის პაკეტი",
-      price: 299,
+      title: "სტანდარტი",
+      price: 700,
       features: ["Keyword Research", "On-Page SEO", "Technical SEO Audit"],
       onButtonClick: () => handlePurchaseClick("ბაზის პაკეტი"),
     },
     {
-      title: "სტანდარტული პაკეტი",
-      price: 599,
+      title: "პრემიუმი",
+      price: 1000,
       features: [
         "Everything in Basic",
         "Link Building",
@@ -30,8 +30,8 @@ const tech_support = () => {
       onButtonClick: () => handlePurchaseClick("სტანდარტული პაკეტი"),
     },
     {
-      title: "პრემიუმ პაკეტი",
-      price: 999,
+      title: "ბიზნესი",
+      price: 1500,
       features: [
         "Everything in Standard",
         "Advanced Analytics",
