@@ -59,11 +59,11 @@ const Contact = () => {
   };
 
   return (
-    <div className="container min-w-full  h-full lg:h-[700px] xxl:h-[950px] xll:h-[970px] bg-primary/60 items-center">
+    <div className="container min-w-full h-full  smx:h-[900px] sm:h-[850px] md:h-[820px] lg:h-[820px] lgx:h-[820px] xl:h-[820px] xxl:h-[1000px] xll:h-[865px] bg-primary/60 items-center">
       <div className="container min-w-full flex-col mt-[130px]text-center xl:text-left flex items-center justify-center h-full">
         <ModernSection />
-        <div className="flex flex-col w-full max-w-[700px] px-4 md:px-0">
-          <motion.h2
+        <div className="flex flex-col w-full max-w-[700px] px-4 md:px-0 items-center">
+          <motion.h1
             variants={fadeIn("up", 0.2)}
             initial="hidden"
             animate="show"
@@ -71,7 +71,7 @@ const Contact = () => {
             className="h2 text-center mb-12"
           >
             დაგვიკავშირდით
-          </motion.h2>
+          </motion.h1>
 
           <motion.form
             ref={formRef}

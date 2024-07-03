@@ -65,7 +65,7 @@ const digital_marketing = () => {
   ];
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center px-4 md:px-8 xl:px-10 py-44">
+    <div className="flex min-h-screen flex-col items-center justify-center px-4 md:px-8 xl:px-10 py-44 smx:text-center">
       <motion.h1
         variants={fadeIn("up", 0.1)}
         initial="hidden"

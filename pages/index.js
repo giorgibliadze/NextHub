@@ -17,17 +17,17 @@ const Home = () => {
   const words = ["იდეები", "სურვილები", "ოცნებები"];
 
   return (
-    <div className="bg-primary/60 h-full smx:h-[900px] sm:h-[820px] md:h-[820px] lg:h-[820px] lgx:h-[820px] xl:h-[820px]  xxl:h-[1000px]  xll:h-[865px]">
+    <div className="bg-primary/60 h-full smx:h-[900px] sm:h-[820px] md:h-[820px] lg:h-[820px] lgx:h-[820px] xl:h-[820px] xxl:h-[1000px] xll:h-[865px]">
       {/* text */}
       <div className="w-full h-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10">
-        <div className="text-center items-center flex flex-col justify-center xl:items-start xl:text-left h-full container min-w-full mx-auto">
+        <div className="text-center items-center flex flex-col justify-center xl:items-start xl:text-left h-full container min-w-full mx-auto lg:ml-[150px] smx:mx-[0px]">
           {/* title */}
           <motion.h1
             variants={fadeIn("down", 0.2)}
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="h1 mt-[60px] lg:mt-[100px]"
+            className="h1 lg:mt-[100px]"
           >
             გადააქციეთ
             <motion.span
