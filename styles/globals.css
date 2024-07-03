@@ -52,6 +52,14 @@
 .animate-price-glow {
   animation: priceGlow 2s infinite alternate;
 }
+
+input:focus,
+textarea:focus {
+  color: var(
+    --accent-color
+  ); /* Adjust this color to match your button's hover text color */
+}
+
 @layer base {
   body {
     @apply bg-secondary overflow-hidden leading-relaxed;
@@ -77,7 +85,7 @@
   }
   .input,
   .textarea {
-    @apply bg-transparent outline-none focus:ring-1 focus:ring-accent border border-white/20 placeholder:text-white/30 placeholder:font-light;
+    @apply bg-transparent outline-none focus:ring-1 focus:ring-accent border border-white/20 placeholder:text-white placeholder:font-light;
   }
   .textarea {
     @apply w-full h-[180px] p-6 rounded-lg resize-none;
