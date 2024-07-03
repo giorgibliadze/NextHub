@@ -1,17 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import ImageGallery from "../../components/ImageGallery";
 import PriceCard from "../../components/PriceCard";
+import Modal from "../../components/Modal";
 import Bulb from "../../components/Bulb";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
-const digital_marketing = () => {
+
+const DigitalMarketing = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedCardData, setSelectedCardData] = useState(null);
+
+  const handlePurchaseClick = (cardData) => {
+    setSelectedCardData(cardData);
+    setIsModalOpen(true);
+  };
+
   const images = [
-    // { src: "/digital-marketing.webp", alt: "Image 1" },
     { src: "/seo3.webp", alt: "Image 2" },
     { src: "/seo2.webp", alt: "Image 3" },
-    // { src: "/seo4.webp", alt: "Image 4" },
-    // { src: "/location.webp", alt: "Image 4" },
-    // { src: "/targeting.webp", alt: "Image 5" },
   ];
 
   const priceCardsData = [
@@ -27,7 +33,20 @@ const digital_marketing = () => {
         "ვებსაიტთან ინტეგრაცია (Facebook Pixel)",
         "ავტომოპასუხის დაყენება",
       ],
-      onButtonClick: () => handlePurchaseClick("ბაზის პაკეტი"),
+      onButtonClick: () =>
+        handlePurchaseClick({
+          title: "სტანდარტი",
+          price: 700,
+          features: [
+            "თვეში 4 პოსტი",
+            "ბრენდის ხასიათის შექმნა სოციალურ ქსელში",
+            "სოციალური პლატფორმები Facebook, Instagram",
+            "გვერდის ტექნიკური გამართვა",
+            "ფასიანი სარეკლამო კამპანიების დაგეგმვა და მართვა",
+            "ვებსაიტთან ინტეგრაცია (Facebook Pixel)",
+            "ავტომოპასუხის დაყენება",
+          ],
+        }),
     },
     {
       title: "პრემიუმი",
@@ -42,13 +61,27 @@ const digital_marketing = () => {
         "ავტომოპასუხის დაყენება",
         "ყოველთვიური ანგარიში",
       ],
-      onButtonClick: () => handlePurchaseClick("სტანდარტული პაკეტი"),
+      onButtonClick: () =>
+        handlePurchaseClick({
+          title: "პრემიუმი",
+          price: 1000,
+          features: [
+            "თვეში 8 პოსტი",
+            "ბრენდის ხასიათის შექმნა სოციალურ ქსელში",
+            "სოციალური პლატფორმები: Facebook, Instagram, LinkedIn",
+            "გვერდის ტექნიკური გამართვა",
+            "ფასიანი სარეკლამო კამპანიების დაგეგმვა და მართვა",
+            "ვებსაიტთან ინტეგრაცია (Facebook Pixel)",
+            "ავტომოპასუხის დაყენება",
+            "ყოველთვიური ანგარიში",
+          ],
+        }),
     },
     {
       title: "ბიზნესი",
       price: 1500,
       features: [
-        "ორენოვანი 8 პოსტი თვეში(Geo,Eng)",
+        "ორენოვანი 8 პოსტი თვეში (Geo, Eng)",
         "ბრენდის ხასიათის შექმნა სოციალურ ქსელში",
         "სოციალური პლატფორმები: Facebook, Instagram, LinkedIn",
         "გვერდის ტექნიკური გამართვა",
@@ -60,7 +93,24 @@ const digital_marketing = () => {
         "E-mail მარკეტინგი",
         "ყოველთვიური ანგარიში",
       ],
-      onButtonClick: () => handlePurchaseClick("პრემიუმ პაკეტი"),
+      onButtonClick: () =>
+        handlePurchaseClick({
+          title: "ბიზნესი",
+          price: 1500,
+          features: [
+            "ორენოვანი 8 პოსტი თვეში (Geo, Eng)",
+            "ბრენდის ხასიათის შექმნა სოციალურ ქსელში",
+            "სოციალური პლატფორმები: Facebook, Instagram, LinkedIn",
+            "გვერდის ტექნიკური გამართვა",
+            "ფასიანი სარეკლამო კამპანიების დაგეგმვა და მართვა",
+            "კონკურენტების ანალიზი",
+            "ვებსაიტთან ინტეგრაცია (Facebook Pixel)",
+            "ავტომოპასუხის დაყენება",
+            "Google Ads კამპანიები",
+            "E-mail მარკეტინგი",
+            "ყოველთვიური ანგარიში",
+          ],
+        }),
     },
   ];
 
@@ -80,9 +130,8 @@ const digital_marketing = () => {
         initial="hidden"
         animate="show"
         exit="hidden"
-        ClassName="mb-16"
+        className="mb-16"
       >
-        {" "}
         <ImageGallery images={images} />
       </motion.div>
       <motion.div
@@ -97,8 +146,13 @@ const digital_marketing = () => {
         ))}
       </motion.div>
       <Bulb />
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        cardData={selectedCardData}
+      />
     </div>
   );
 };
 
-export default digital_marketing;
+export default DigitalMarketing;

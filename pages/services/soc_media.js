@@ -1,18 +1,25 @@
-import React from "react";
-
+import React, { useState } from "react";
+import ImageGallery from "../../components/ImageGallery";
+import PriceCard from "../../components/PriceCard";
+import Modal from "../../components/Modal";
 import Bulb from "../../components/Bulb";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
-import CountUp from "react-countup";
-import ImageGallery from "../../components/ImageGallery";
-import PriceCard from "../../components/PriceCard";
-const soc_media = () => {
+
+const SocMedia = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedCardData, setSelectedCardData] = useState(null);
+
+  const handlePurchaseClick = (cardData) => {
+    setSelectedCardData(cardData);
+    setIsModalOpen(true);
+  };
+
   const images = [
-    // { src: "/soc-media.webp", alt: "Image 1" },
     { src: "/customer-experience.webp", alt: "Image 2" },
-    // { src: "/customer-satisfaction3.webp", alt: "Image 3" },
     { src: "/user-experience.webp", alt: "Image 4" },
   ];
+
   const priceCardsData = [
     {
       title: "სტანდარტი",
@@ -26,7 +33,20 @@ const soc_media = () => {
         "ვებსაიტთან ინტეგრაცია",
         "ავტომოპასუხის დაყენება",
       ],
-      onButtonClick: () => handlePurchaseClick("ბაზის პაკეტი"),
+      onButtonClick: () =>
+        handlePurchaseClick({
+          title: "სტანდარტი",
+          price: 499,
+          features: [
+            "თვეში 4 პოსტი",
+            "ბრენდის ხასიათის შექმნა სოციალურ ქსელში",
+            "სოციალური პლატფორმები: Facebook, Instagram",
+            "გვერდის ტექნიკური გამართვა",
+            "ფასიანი სარეკლამო კამპანიების დაგეგმვა და მართვა",
+            "ვებსაიტთან ინტეგრაცია",
+            "ავტომოპასუხის დაყენება",
+          ],
+        }),
     },
     {
       title: "პრემიუმი",
@@ -34,7 +54,7 @@ const soc_media = () => {
       features: [
         "თვეში 8 პოსტი",
         "ბრენდის ხასიათის შექმნა სოციალურ ქსელში",
-        "სოციალური პლატფორმები: Facebook, Instagram, Linkdin",
+        "სოციალური პლატფორმები: Facebook, Instagram, LinkedIn",
         "გვერდის ტექნიკური გამართვა",
         "ფასიანი სარეკლამო კამპანიების დაგეგმვა და მართვა",
         "ვებსაიტთან ინტეგრაცია",
@@ -42,7 +62,22 @@ const soc_media = () => {
         "კონკურენტების ანალიზი",
         "ყოველთვიური ანგარიში",
       ],
-      onButtonClick: () => handlePurchaseClick("სტანდარტული პაკეტი"),
+      onButtonClick: () =>
+        handlePurchaseClick({
+          title: "პრემიუმი",
+          price: 799,
+          features: [
+            "თვეში 8 პოსტი",
+            "ბრენდის ხასიათის შექმნა სოციალურ ქსელში",
+            "სოციალური პლატფორმები: Facebook, Instagram, LinkedIn",
+            "გვერდის ტექნიკური გამართვა",
+            "ფასიანი სარეკლამო კამპანიების დაგეგმვა და მართვა",
+            "ვებსაიტთან ინტეგრაცია",
+            "ავტომოპასუხის დაყენება",
+            "კონკურენტების ანალიზი",
+            "ყოველთვიური ანგარიში",
+          ],
+        }),
     },
     {
       title: "ბიზნესი",
@@ -50,7 +85,7 @@ const soc_media = () => {
       features: [
         "ორენოვანი 8 პოსტი თვეში",
         "ბრენდის ხასიათის შექმნა სოციალურ ქსელში",
-        "სოციალური პლატფორმები: Facebook, Instagram, Linkdin",
+        "სოციალური პლატფორმები: Facebook, Instagram, LinkedIn",
         "გვერდის ტექნიკური გამართვა",
         "ფასიანი სარეკლამო კამპანიების დაგეგმვა და მართვა",
         "ვებსაიტთან ინტეგრაცია",
@@ -60,7 +95,24 @@ const soc_media = () => {
         "E-MAIL მარკეტინგი",
         "ყოველთვიური ანგარიში",
       ],
-      onButtonClick: () => handlePurchaseClick("პრემიუმ პაკეტი"),
+      onButtonClick: () =>
+        handlePurchaseClick({
+          title: "ბიზნესი",
+          price: 999,
+          features: [
+            "ორენოვანი 8 პოსტი თვეში",
+            "ბრენდის ხასიათის შექმნა სოციალურ ქსელში",
+            "სოციალური პლატფორმები: Facebook, Instagram, LinkedIn",
+            "გვერდის ტექნიკური გამართვა",
+            "ფასიანი სარეკლამო კამპანიების დაგეგმვა და მართვა",
+            "ვებსაიტთან ინტეგრაცია",
+            "ავტომოპასუხის დაყენება",
+            "კონკურენტების ანალიზი",
+            "Google ADS კამპანია",
+            "E-MAIL მარკეტინგი",
+            "ყოველთვიური ანგარიში",
+          ],
+        }),
     },
   ];
 
@@ -80,9 +132,8 @@ const soc_media = () => {
         initial="hidden"
         animate="show"
         exit="hidden"
-        ClassName="mb-16"
+        className="mb-16"
       >
-        {" "}
         <ImageGallery images={images} />
       </motion.div>
       <motion.div
@@ -97,8 +148,13 @@ const soc_media = () => {
         ))}
       </motion.div>
       <Bulb />
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        cardData={selectedCardData}
+      />
     </div>
   );
 };
 
-export default soc_media;
+export default SocMedia;

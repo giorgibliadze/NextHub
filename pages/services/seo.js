@@ -1,23 +1,23 @@
-// pages/seo.jsx
-import React from "react";
+import React, { useState } from "react";
 import PriceCard from "../../components/PriceCard";
 import ImageGallery from "../../components/ImageGallery";
-
+import Modal from "../../components/Modal";
 import Bulb from "../../components/Bulb";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
-const seo = () => {
-  const handlePurchaseClick = (packageName) => {
-    alert(`Purchasing package: ${packageName}`);
+
+const Seo = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedCardData, setSelectedCardData] = useState(null);
+
+  const handlePurchaseClick = (cardData) => {
+    setSelectedCardData(cardData);
+    setIsModalOpen(true);
   };
 
   const images = [
     { src: "/seo.webp", alt: "Image 1" },
-    // { src: "/seo2.webp", alt: "Image 2" },
-    // { src: "/seo3.webp", alt: "Image 3" },
-    // { src: "/seo4.webp", alt: "Image 4" },
     { src: "/location.webp", alt: "Image 4" },
-    // { src: "/targeting.webp", alt: "Image 5" },
   ];
 
   const priceCardsData = [
@@ -25,7 +25,12 @@ const seo = () => {
       title: "სტანდარტი",
       price: 299,
       features: ["Keyword Research", "On-Page SEO", "Technical SEO Audit"],
-      onButtonClick: () => handlePurchaseClick("ბაზის პაკეტი"),
+      onButtonClick: () =>
+        handlePurchaseClick({
+          title: "სტანდარტი",
+          price: 299,
+          features: ["Keyword Research", "On-Page SEO", "Technical SEO Audit"],
+        }),
     },
     {
       title: "პრემიუმი",
@@ -35,7 +40,16 @@ const seo = () => {
         "Link Building",
         "Content Optimization",
       ],
-      onButtonClick: () => handlePurchaseClick("სტანდარტული პაკეტი"),
+      onButtonClick: () =>
+        handlePurchaseClick({
+          title: "პრემიუმი",
+          price: 599,
+          features: [
+            "Everything in Basic",
+            "Link Building",
+            "Content Optimization",
+          ],
+        }),
     },
     {
       title: "ბიზნესი",
@@ -45,7 +59,16 @@ const seo = () => {
         "Advanced Analytics",
         "Dedicated Support",
       ],
-      onButtonClick: () => handlePurchaseClick("პრემიუმ პაკეტი"),
+      onButtonClick: () =>
+        handlePurchaseClick({
+          title: "ბიზნესი",
+          price: 999,
+          features: [
+            "Everything in Standard",
+            "Advanced Analytics",
+            "Dedicated Support",
+          ],
+        }),
     },
   ];
 
@@ -66,9 +89,8 @@ const seo = () => {
         initial="hidden"
         animate="show"
         exit="hidden"
-        ClassName="mb-16"
+        className="mb-16"
       >
-        {" "}
         <ImageGallery images={images} />
       </motion.div>
       <motion.div
@@ -83,8 +105,13 @@ const seo = () => {
         ))}
       </motion.div>
       <Bulb />
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        cardData={selectedCardData}
+      />
     </div>
   );
 };
 
-export default seo;
+export default Seo;

@@ -1,18 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import ImageGallery from "../../components/ImageGallery";
 import PriceCard from "../../components/PriceCard";
+import Modal from "../../components/Modal";
 import Bulb from "../../components/Bulb";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
-const analytics = () => {
+
+const Analytics = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedCardData, setSelectedCardData] = useState(null);
+
+  const handlePurchaseClick = (cardData) => {
+    setSelectedCardData(cardData);
+    setIsModalOpen(true);
+  };
+
   const images = [
-    // { src: "/analytics.webp", alt: "Image 1" },
-    // { src: "/analytics2.webp", alt: "Image 2" },
     { src: "/Data-analytics.webp", alt: "Image 2" },
     { src: "/targeting.webp", alt: "Image 3" },
-
-    // { src: "/device-analytics.webp", alt: "Image 4" },
-    // { src: "/speed-optimization.webp", alt: "Image 2" },
   ];
 
   const priceCardsData = [
@@ -20,7 +25,12 @@ const analytics = () => {
       title: "სტანდარტი",
       price: 299,
       features: ["Keyword Research", "On-Page SEO", "Technical SEO Audit"],
-      onButtonClick: () => handlePurchaseClick("ბაზის პაკეტი"),
+      onButtonClick: () =>
+        handlePurchaseClick({
+          title: "სტანდარტი",
+          price: 299,
+          features: ["Keyword Research", "On-Page SEO", "Technical SEO Audit"],
+        }),
     },
     {
       title: "პრემიუმი",
@@ -30,7 +40,16 @@ const analytics = () => {
         "Link Building",
         "Content Optimization",
       ],
-      onButtonClick: () => handlePurchaseClick("სტანდარტული პაკეტი"),
+      onButtonClick: () =>
+        handlePurchaseClick({
+          title: "პრემიუმი",
+          price: 599,
+          features: [
+            "Everything in Basic",
+            "Link Building",
+            "Content Optimization",
+          ],
+        }),
     },
     {
       title: "ბიზნესი",
@@ -40,7 +59,16 @@ const analytics = () => {
         "Advanced Analytics",
         "Dedicated Support",
       ],
-      onButtonClick: () => handlePurchaseClick("პრემიუმ პაკეტი"),
+      onButtonClick: () =>
+        handlePurchaseClick({
+          title: "ბიზნესი",
+          price: 999,
+          features: [
+            "Everything in Standard",
+            "Advanced Analytics",
+            "Dedicated Support",
+          ],
+        }),
     },
   ];
 
@@ -60,9 +88,8 @@ const analytics = () => {
         initial="hidden"
         animate="show"
         exit="hidden"
-        ClassName="mb-16"
+        className="mb-16"
       >
-        {" "}
         <ImageGallery images={images} />
       </motion.div>
       <motion.div
@@ -77,8 +104,13 @@ const analytics = () => {
         ))}
       </motion.div>
       <Bulb />
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        cardData={selectedCardData}
+      />
     </div>
   );
 };
 
-export default analytics;
+export default Analytics;
