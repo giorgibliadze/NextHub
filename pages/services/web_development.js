@@ -24,8 +24,7 @@ const WebDevelopment = () => {
   const priceCardsData = [
     {
       title: "სტანდარტი",
-      startPrice: 1000,
-      price: 2500,
+      price: 1000,
       features: [
         "1 გვერდი",
         "მობილური ვერსია (Responsive)",
@@ -44,8 +43,7 @@ const WebDevelopment = () => {
       onButtonClick: () =>
         handlePurchaseClick({
           title: "სტანდარტი",
-          startPrice: 1000,
-          price: 2500,
+          price: 1000,
           features: [
             "1 გვერდი",
             "მობილური ვერსია (Responsive)",
@@ -65,8 +63,7 @@ const WebDevelopment = () => {
     },
     {
       title: "პრემიუმი",
-      startPrice: 2500,
-      price: 4000,
+      price: 2500,
       features: [
         "5 გვერდი",
         "მარტივი სამართავი პანელი",
@@ -93,8 +90,7 @@ const WebDevelopment = () => {
       onButtonClick: () =>
         handlePurchaseClick({
           title: "პრემიუმი",
-          startPrice: 2500,
-          price: 4000,
+          price: 2500,
           features: [
             "5 გვერდი",
             "მარტივი სამართავი პანელი",
@@ -122,7 +118,6 @@ const WebDevelopment = () => {
     },
     {
       title: "ბიზნესი",
-      startPrice: 5000,
       price: 7000,
       features: [
         "მობილური ვერსია (Responsive)",
@@ -153,7 +148,6 @@ const WebDevelopment = () => {
       onButtonClick: () =>
         handlePurchaseClick({
           title: "ბიზნესი",
-          startPrice: 5000,
           price: 7000,
           features: [
             "მობილური ვერსია (Responsive)",
