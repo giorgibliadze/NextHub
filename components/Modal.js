@@ -1,5 +1,5 @@
 // components/Modal.jsx
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { BsArrowRight } from "react-icons/bs";
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
@@ -54,6 +54,23 @@ const Modal = ({ isOpen, onClose, cardData }) => {
       setLoading(false);
     }
   };
+
+  // Prevent onClose from being triggered unnecessarily
+  useEffect(() => {
+    const handleEscape = (event) => {
+      if (event.key === "Escape") {
+        onClose();
+      }
+    };
+
+    if (isOpen) {
+      window.addEventListener("keydown", handleEscape);
+    } else {
+      window.removeEventListener("keydown", handleEscape);
+    }
+
+    return () => window.removeEventListener("keydown", handleEscape);
+  }, [isOpen, onClose]);
 
   if (!isOpen) return null;
 
@@ -155,7 +172,14 @@ const Modal = ({ isOpen, onClose, cardData }) => {
             <p className="text-green-500 mt-2">{successMessage}</p>
           )}
         </motion.form>
-        <button onClick={onClose} className="mt-4 text-accent underline">
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            console.log("Modal close button clicked");
+            onClose();
+          }}
+          className="mt-4 text-accent underline"
+        >
           Close
         </button>
       </motion.div>

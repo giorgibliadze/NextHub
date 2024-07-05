@@ -98,7 +98,7 @@ const Seo = () => {
         initial="hidden"
         animate="show"
         exit="hidden"
-        className="grid md:grid-cols-3 sm:grid-cols-1 gap-10"
+        className="grid md:grid-cols-3 sm:grid-cols-1 gap-10 px-10"
       >
         {priceCardsData.map((cardData, index) => (
           <PriceCard key={index} {...cardData} />

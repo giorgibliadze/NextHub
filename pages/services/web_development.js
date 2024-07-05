@@ -12,8 +12,10 @@ const WebDevelopment = () => {
   const [selectedCardData, setSelectedCardData] = useState(null);
 
   const handlePurchaseClick = (cardData) => {
+    console.log("Button clicked with data: ", cardData);
     setSelectedCardData(cardData);
     setIsModalOpen(true);
+    console.log("Modal state set to: ", true);
   };
 
   const images = [
@@ -214,7 +216,7 @@ const WebDevelopment = () => {
         initial="hidden"
         animate="show"
         exit="hidden"
-        className="grid md:grid-cols-3 sm:grid-cols-1 gap-10"
+        className="grid md:grid-cols-3 sm:grid-cols-1 gap-10 px-10"
       >
         {priceCardsData.map((cardData, index) => (
           <PriceCard key={index} {...cardData} />
@@ -223,7 +225,10 @@ const WebDevelopment = () => {
       <Bulb />
       <Modal
         isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
+        onClose={() => {
+          console.log("Modal state set to: ", false);
+          setIsModalOpen(false);
+        }}
         cardData={selectedCardData}
       />
     </div>
