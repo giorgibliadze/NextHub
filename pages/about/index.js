@@ -135,7 +135,7 @@ const About = () => {
             <TeamMember
               name="თიკო შაიშმელაშვილი"
               position="Head of Marketing"
-              imageSrc="/tiko.webp"
+              imageSrc="/tiko1.webp"
             />
           </motion.div>
         </motion.div>
