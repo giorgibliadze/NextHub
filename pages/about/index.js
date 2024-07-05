@@ -1,6 +1,6 @@
 // next image
 import Image from "next/image";
-
+import Bulb from "../../components/Bulb";
 // components
 import TeamMember from "../../components/TeamMember";
 import ServiceSlider from "../../components/ServiceSlider";
@@ -15,7 +15,6 @@ const About = () => {
       {/* container */}
       <div className="container mx-auto mt-[50px] py-16 px-4 sm:px-6 lg:px-8">
         {/* header */}
-
         <motion.div
           variants={fadeIn("up", 0.1)}
           initial="hidden"
@@ -44,6 +43,26 @@ const About = () => {
             დეველოპმენტის, სოციალური მედიის მართვის, SEO-ს და ანალიტიკის
             სერვისებს, რათა გაზარდოთ თქვენი ბრენდის ცნობადობა და სანდოობა.
           </motion.p>
+        </motion.div>
+
+        {/* services */}
+        <motion.div
+          variants={fadeIn("up", 0.1)}
+          initial="hidden"
+          animate="show"
+          exit="hidden"
+          className="mt-16"
+        >
+          <motion.h2
+            variants={fadeIn("up", 0.1)}
+            initial="hidden"
+            animate="show"
+            exit="hidden"
+            className="text-3xl font-semibold text-white text-center mb-6"
+          >
+            სერვისები
+          </motion.h2>
+          <ServiceSlider />
         </motion.div>
 
         {/* mission */}
@@ -78,26 +97,6 @@ const About = () => {
           </motion.p>
         </motion.div>
 
-        {/* services */}
-        <motion.div
-          variants={fadeIn("up", 0.1)}
-          initial="hidden"
-          animate="show"
-          exit="hidden"
-          className="mt-16"
-        >
-          <motion.h2
-            variants={fadeIn("up", 0.1)}
-            initial="hidden"
-            animate="show"
-            exit="hidden"
-            className="text-3xl font-semibold text-white text-center mb-6"
-          >
-            სერვისები
-          </motion.h2>
-          <ServiceSlider />
-        </motion.div>
-
         {/* team */}
         <motion.div
           variants={fadeIn("up", 0.1)}
@@ -123,20 +122,25 @@ const About = () => {
             className="flex flex-wrap justify-center gap-8"
           >
             {/* team member */}
-            <TeamMember name="John Doe" position="CEO" imageSrc="/teo.webp" />
             <TeamMember
-              name="Jane Smith"
+              name="თეო ოთხოზორია"
+              position="CEO"
+              imageSrc="/teo.webp"
+            />
+            <TeamMember
+              name="გიორგი ბლიაძე"
               position="CTO"
               imageSrc="/gio1.webp"
             />
             <TeamMember
-              name="Bob Johnson"
+              name="თიკო შაიშმელაშვილი"
               position="Head of Marketing"
               imageSrc="/tiko.webp"
             />
           </motion.div>
         </motion.div>
       </div>
+      <Bulb />
     </div>
   );
 };
