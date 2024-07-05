@@ -3,6 +3,10 @@ import React, { useState } from "react";
 import { FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 import classNames from "classnames";
 
+import { motion } from "framer-motion";
+
+// variants
+import { fadeIn } from "../variants";
 // Sample data array for contacts
 const contacts = [
   {
@@ -61,7 +65,13 @@ const ModernContainer = () => {
   };
 
   return (
-    <div className="w-full flex flex-col mt-[250px] md:flex-row items-center gap-8 z-40 px-4 md:px-16">
+    <motion.div
+      variants={fadeIn("up", 0.1)}
+      initial="hidden"
+      animate="show"
+      exit="hidden"
+      className="w-full flex flex-col mt-[250px] md:flex-row items-center gap-8 z-40 px-4 md:px-16"
+    >
       {contacts.map((contact, index) => (
         <div
           key={contact.id}
@@ -103,7 +113,7 @@ const ModernContainer = () => {
           </div>
         </div>
       ))}
-    </div>
+    </motion.div>
   );
 };
 
