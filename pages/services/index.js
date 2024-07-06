@@ -13,7 +13,7 @@ const ServiceSlider = lazy(() => import("../../components/ServiceSlider"));
 const Services = () => {
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <div className="container h-full min-h-screen min-w-screen">
+      <div className="h-full lg:h-[700px] xxl:h-[950px] xll:h-[970px] bg-primary/30 py-36 flex p-[20px]">
         <Circles />
         <div className="container min-w-full items-center mx-auto">
           <div className="flex flex-col md:mt-[15px] md:flex-row xl:flex-row gap-x-8 items-center mx-auto">
