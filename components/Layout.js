@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { Sora } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -17,6 +16,7 @@ const Layout = ({ children }) => {
   return (
     <div
       className={`page bg-site text-white bg-cover bg-no-repeat ${sora.variable} font-sora relative overflow-y-auto`}
+      style={{ willChange: "transform, opacity" }}
     >
       <Analytics />
       <SpeedInsights />
