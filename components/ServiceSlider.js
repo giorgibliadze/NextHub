@@ -15,13 +15,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // import Swiper styles
 import "swiper/css";
 import "swiper/css/free-mode";
-import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import { CiLocationOn } from "react-icons/ci";
 import { TfiLayoutMediaLeftAlt } from "react-icons/tfi";
 import { FaHandsHelping } from "react-icons/fa";
 // import required modules
-import { FreeMode, Pagination, Autoplay } from "swiper";
+import { FreeMode, Autoplay } from "swiper";
 import Link from "next/link";
 
 // data
@@ -88,14 +87,11 @@ const ServiceSlider = () => {
         },
       }}
       freeMode={true}
-      pagination={{
-        clickable: true,
-      }}
       autoplay={{
         delay: 4000,
         disableOnInteraction: false,
       }}
-      modules={[FreeMode, Pagination, Autoplay]}
+      modules={[FreeMode, Autoplay]}
       className="h-[500px] mt-9"
     >
       {serviceData.map((item, index) => {
@@ -104,7 +100,7 @@ const ServiceSlider = () => {
             <Link href={item.link}>
               <div
                 className={`bg-[rgba(65,7,123,0.15)] h-[450px] md:h-[400px] rounded-lg px-4 md:px-6 py-6 flex flex-col gap-y-4 md:gap-y-6 cursor-pointer hover:bg-[rgba(116,79,238,0.15)] transition-all duration-300 ${
-                  index % 2 === 0 ? "mt-0" : "mt-10 md:mt-20"
+                  index % 2 === 0 ? "md:mt-0" : "md:mt-20"
                 }`}
               >
                 {/* icon */}
