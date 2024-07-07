@@ -58,7 +58,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="container h-full min-h-screen min-w-screen">
+    <div className="container h-full min-h-screen min-w-screen mx-auto">
       <div className="container min-w-full flex-col text-center xl:text-left flex items-center justify-center h-full">
         <ModernSection />
         <div className="flex flex-col w-full max-w-[700px] px-4 md:px-0 items-center">
