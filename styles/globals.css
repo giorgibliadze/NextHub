@@ -31,6 +31,10 @@
   }
 }
 
+.modal-open {
+  overflow: hidden;
+}
+
 @keyframes priceGlow {
   0%,
   100% {

@@ -1,4 +1,3 @@
-// components/Modal.jsx
 import { useState, useRef, useEffect } from "react";
 import { BsArrowRight } from "react-icons/bs";
 import { motion } from "framer-motion";
@@ -55,7 +54,6 @@ const Modal = ({ isOpen, onClose, cardData }) => {
     }
   };
 
-  // Prevent onClose from being triggered unnecessarily
   useEffect(() => {
     const handleEscape = (event) => {
       if (event.key === "Escape") {
@@ -64,12 +62,17 @@ const Modal = ({ isOpen, onClose, cardData }) => {
     };
 
     if (isOpen) {
+      document.body.classList.add("modal-open");
       window.addEventListener("keydown", handleEscape);
     } else {
+      document.body.classList.remove("modal-open");
       window.removeEventListener("keydown", handleEscape);
     }
 
-    return () => window.removeEventListener("keydown", handleEscape);
+    return () => {
+      document.body.classList.remove("modal-open");
+      window.removeEventListener("keydown", handleEscape);
+    };
   }, [isOpen, onClose]);
 
   if (!isOpen) return null;
@@ -88,7 +91,7 @@ const Modal = ({ isOpen, onClose, cardData }) => {
         <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2 animate-price-glow">
           ₾ {cardData.price} +
         </div>
-        <ul className="text-gray-200 mb-4">
+        <ul className="text-gray-200 mb-4 text-center">
           {cardData.features.map((feature, index) => (
             <li key={index} className="mb-2">
               {feature}
