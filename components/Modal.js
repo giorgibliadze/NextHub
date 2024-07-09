@@ -176,7 +176,7 @@ const Modal = ({ isOpen, onClose, cardData }) => {
           </div>
           {error && <p className="text-red-500 mt-2">{error}</p>}
           {successMessage && (
-            <p className="text-green-500 mt-2">{successMessage}</p>
+            <p className="text-green-500 mt-2 text-center">{successMessage}</p>
           )}
         </motion.form>
         <button
