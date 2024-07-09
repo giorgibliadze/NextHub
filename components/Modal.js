@@ -78,20 +78,24 @@ const Modal = ({ isOpen, onClose, cardData }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60 overflow-y-auto">
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60"
+      onClick={onClose}
+    >
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.9 }}
-        className="flex flex-col lg:mt-[280px] smx:mt-[300px] items-center p-6 border-4 border-glow bg-black rounded-lg shadow-lg transition-shadow duration-300 ease-in-out hover:shadow-2xl animate-container-glow w-11/12 md:w-1/2 lg:w-1/3"
+        className="relative flex flex-col items-center p-6 border-4 border-glow bg-black rounded-lg shadow-lg transition-shadow duration-300 ease-in-out hover:shadow-2xl animate-container-glow w-11/12 md:w-1/2 lg:w-1/3 max-h-full overflow-y-auto"
+        onClick={(e) => e.stopPropagation()}
       >
-        <h3 className="text-2xl font-semibold text-gray-100 mt-[130px] mb-4">
+        <h3 className="text-2xl font-semibold text-gray-100 mt-4 mb-4">
           {cardData.title}
         </h3>
         <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2 animate-price-glow">
           ₾ {cardData.price} +
         </div>
-        <ul className="text-gray-200 mb-4 text-center">
+        <ul className="text-gray-200 mb-4 text-center w-full">
           {cardData.features.map((feature, index) => (
             <li key={index} className="mb-2">
               {feature}
