@@ -78,7 +78,7 @@ const Contact = () => {
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="flex-1 flex flex-col gap-6 w-full mx-auto"
+            className="flex-1 items-center flex flex-col gap-6 w-full mx-auto"
             onSubmit={send}
           >
             <div className="flex flex-col md:flex-row gap-6 w-full">
