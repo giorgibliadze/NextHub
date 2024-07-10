@@ -64,6 +64,23 @@ textarea:focus {
   ); /* Adjust this color to match your button's hover text color */
 }
 
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.content-wrapper {
+  flex: 1;
+  overflow-y: auto; /* Adjust according to the height of your Nav */
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
 @layer base {
   body {
     @apply bg-secondary overflow-hidden leading-relaxed;

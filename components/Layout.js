@@ -15,7 +15,7 @@ const sora = Sora({
 const Layout = ({ children }) => {
   return (
     <div
-      className={`page bg-site text-white bg-cover bg-no-repeat ${sora.variable} font-sora relative overflow-y-auto`}
+      className={`page bg-site text-white bg-cover bg-no-repeat ${sora.variable} font-sora relative`}
       style={{ willChange: "transform, opacity" }}
     >
       <Analytics />
@@ -23,7 +23,7 @@ const Layout = ({ children }) => {
       <TopLeftImg />
       <Nav />
       <Header />
-      {children}
+      <div className="content-wrapper overflow-y-auto">{children}</div>
     </div>
   );
 };

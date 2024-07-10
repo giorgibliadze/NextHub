@@ -27,7 +27,7 @@ const Home = () => {
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="h1 lg:mt-[100px]"
+            className="h1"
           >
             გადააქციეთ
             <motion.span
