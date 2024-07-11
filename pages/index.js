@@ -9,8 +9,8 @@ const Home = () => {
   const words = ["იდეები", "სურვილები", "ოცნებები"];
 
   return (
-    <div className="bg-primary/60 h-full smx:h-[900px] sm:h-[820px] md:h-[820px] lg:h-[820px] lgx:h-[820px] xl:h-[847px] xxl:h-[1000px] xll:h-[865px] xxx:h-[1056px]">
-      <div className="w-full h-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10">
+    <div className="bg-primary/60 h-full smx:h-[900px] sm:h-[820px] md:h-[820px] lg:h-[820px] lgx:h-[820px] xl:h-[820px] xxl:h-[1000px] xll:h-[865px] xxx:h-[1056px]">
+      <div className="w-full h-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10 absolute">
         <div className="container mx-auto h-full flex flex-col justify-center text-center items-center lgx:items-start lgx:text-left xl:items-start xl:text-left lg:ml-[150px] smx:mx-[0px]">
           <motion.h1
             variants={fadeIn("down", 0.2)}
