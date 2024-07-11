@@ -1,3 +1,4 @@
+// components/WebDevelopment.jsx
 import React, { useState, useEffect } from "react";
 import PriceCard from "../../components/PriceCard";
 import ImageGallery from "../../components/ImageGallery";

@@ -1,3 +1,4 @@
+// components/Modal.jsx
 import { useState, useRef, useEffect } from "react";
 import { BsArrowRight } from "react-icons/bs";
 import { motion } from "framer-motion";

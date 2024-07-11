@@ -20,14 +20,14 @@ const Home = () => {
     <div className="bg-primary/60 h-full smx:h-[900px] sm:h-[820px] md:h-[820px] lg:h-[820px] lgx:h-[840px] xl:h-[848px] xxl:h-[1025px] xll:h-[865px]">
       {/* text */}
       <div className="w-full h-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10">
-        <div className="text-center items-center flex flex-col justify-center xl:items-start xl:text-left h-full container min-w-full mx-auto lg:ml-[150px] smx:mx-[0px]">
+        <div className="text-center items-center flex lg:text-center flex-col justify-center xl:items-start xl:text-left h-full container min-w-full mx-auto lg:ml-[150px] smx:mx-[0px]">
           {/* title */}
           <motion.h1
             variants={fadeIn("down", 0.2)}
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="h1"
+            className="h1 lg:mt-[350px] smx:mt-[250px]"
           >
             გადააქციეთ
             <motion.span
