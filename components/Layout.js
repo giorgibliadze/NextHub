@@ -5,7 +5,6 @@ import Nav from "../components/Nav";
 import Header from "../components/Header";
 import TopLeftImg from "../components/TopLeftImg";
 
-// Font settings
 const sora = Sora({
   subsets: ["latin"],
   variable: "--font-sora",
