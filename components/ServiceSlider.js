@@ -16,7 +16,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/autoplay";
-import { CiLocationOn } from "react-icons/ci";
+import { RiFacebookCircleFill } from "react-icons/ri";
+import { SiTaichigraphics } from "react-icons/si";
+import { SiGooglemarketingplatform } from "react-icons/si";
 import { TfiLayoutMediaLeftAlt } from "react-icons/tfi";
 import { FaHandsHelping } from "react-icons/fa";
 // import required modules
@@ -26,7 +28,7 @@ import Link from "next/link";
 // data
 const serviceData = [
   {
-    icon: <RxDesktop />,
+    icon: <SiGooglemarketingplatform />,
     title: "ციფრული მარკეტინგი",
     description:
       "გთავაზობთ ინოვაციურ ციფრულ მარკეტინგს, რაც გაზრდის თქვენი ბრენდის ცნობადობას და მომხმარებელთა ჩართულობას.",
@@ -47,14 +49,14 @@ const serviceData = [
     link: "/services/seo",
   },
   {
-    icon: <TfiLayoutMediaLeftAlt />,
+    icon: <RiFacebookCircleFill />,
     title: "სოციალური მედია მენეჯმენტი",
     description:
       "განვახორციელებთ ეფექტურ სარეკლამო კამპანიებს თქვენს სოციალურ ქსელებში.",
     link: "/services/soc_media",
   },
   {
-    icon: <TfiLayoutMediaLeftAlt />,
+    icon: <SiTaichigraphics />,
     title: "გრაფიკული დიზაინი",
     description:
       "ჩვენი გრაფიკული დიზაინის სერვისები დაგეხმარებათ შექმნათ უნიკალური ვიზუალი, რომელიც თქვენს ბიზნესს გამოარჩევს და მომხმარებლებს მიიზიდავს.",
