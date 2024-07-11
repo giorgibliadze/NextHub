@@ -13,7 +13,7 @@ const Work = () => {
     <div className="container h-full min-h-screen min-w-screen">
       <Circles />
       <div className="container min-w-full">
-        <div className="flex flex-col sm:m-[0px] md:mt-[20px] lgx:mt-[420px] md:flex-col xl:mt-[100px] md:items-center xl:flex-row gap-x-8">
+        <div className="flex flex-col sm:m-[0px] smx:mt-[120px] md:mt-[120px] lgx:mt-[120px] md:flex-col xl:mt-[100px] md:items-center xl:flex-row gap-x-8">
           {/* text */}
           <div className="text-center flex sm:w-[400px] md:w-[600px] sm:items-center md:items-center xl:w-[30vw] flex-col lg:text-left mb-4 xl:mb-0 lg:mt-[100px] xll:mt-[0px] sm:mt-[50px] z-50 lg:ml-[60px]">
             <motion.h2

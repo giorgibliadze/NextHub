@@ -54,6 +54,13 @@ const serviceData = [
     link: "/services/soc_media",
   },
   {
+    icon: <TfiLayoutMediaLeftAlt />,
+    title: "გრაფიკული დიზაინი",
+    description:
+      "ჩვენი გრაფიკული დიზაინის სერვისები დაგეხმარებათ შექმნათ უნიკალური ვიზუალი, რომელიც თქვენს ბიზნესს გამოარჩევს და მომხმარებლებს მიიზიდავს.",
+    link: "/services/graphic_design",
+  },
+  {
     icon: <DiGoogleAnalytics />,
     title: "ანალიტიკა",
     description:
