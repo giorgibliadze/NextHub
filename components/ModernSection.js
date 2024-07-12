@@ -15,7 +15,7 @@ const contacts = [
       <FaEnvelope className="text-4xl transition duration-300 text-white group-hover:text-blue-400" />
     ),
     title: "ელ-ფოსტა:",
-    info: "info@NextHub.ge",
+    info: "infonexthubsolutions@gmail.com",
     bgColor: "bg-blue-400",
     hoverBgColor: "hover:bg-blue-400",
     textColor: "text-blue-400",
@@ -70,13 +70,13 @@ const ModernContainer = () => {
       initial="hidden"
       animate="show"
       exit="hidden"
-      className="w-full flex flex-col lg:flex-row items-center gap-8 z-40 px-4 md:px-16 smx:mt-[150px] md:mt-[150px] lg:mt-[150px] lgx:mt-[250px]"
+      className="w-full flex flex-col lg:flex-row items-center gap-8 z-40 px-4 md:px-16 smx:mt-[150px] md:mt-[150px] lg:mt-[150px] lgx:mt-[250px] xxl:hidden"
     >
       {contacts.map((contact, index) => (
         <div
           key={contact.id}
           className={classNames(
-            "container flex items-center p-4 w-full min-w-[250px] xl:w-[450px] xxl:w-[450px] xll:w-[450px] xl:h-[167px] lg:h-[147px] md:h-[150px] xxl:h-[450px] xll:h-[450px] sm:w-[300px] h-[180px] smx:w-[250px] smx:h-[100px]  bg-white rounded-lg shadow-md cursor-pointer mb-5 transition duration-300 transform hover:scale-105 group",
+            "container flex items-center p-4 w-full min-w-[300px] xl:w-[450px] xxl:w-[450px] xll:w-[450px] xl:h-[167px] lg:h-[147px] md:h-[150px] xxl:h-[450px] xll:h-[450px] sm:w-[300px] h-[180px] smx:w-[250px] smx:h-[100px]  bg-white rounded-lg shadow-md cursor-pointer mb-5 transition duration-300 transform hover:scale-105 group",
             {
               [contact.hoverBgColor]: hoveredIndex === index,
             }

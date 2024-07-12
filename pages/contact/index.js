@@ -33,7 +33,7 @@ const Contact = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          to: "bliadze1997@gmail.com",
+          to: "infonexthubsolutions@gmail.com",
           name,
           subject,
           body: `<div>
@@ -61,7 +61,7 @@ const Contact = () => {
     <div className="container h-full min-h-screen min-w-screen mx-auto">
       <div className="container min-w-full flex-col text-center xl:text-left flex items-center justify-center h-full">
         <ModernSection />
-        <div className="flex flex-col w-full max-w-[700px] px-4 md:px-0 items-center">
+        <div className="flex flex-col w-full max-w-[700px] px-4 md:px-0 items-center xxl:mt-[150px] lgx:mt-[50px]">
           <motion.h1
             variants={fadeIn("up", 0.2)}
             initial="hidden"
