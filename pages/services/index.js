@@ -18,7 +18,13 @@ const Services = () => {
         <div className="container min-w-full items-center mx-auto">
           <div className="flex flex-col md:mt-[15px] md:flex-row xl:flex-row gap-x-8 items-center mx-auto">
             {/* text */}
-            <div className="text-center flex xl:w-[30vw] flex-col lg:text-left mb-4 xl:mx-0">
+            <motion.div
+              variants={fadeIn("up", 0.1)}
+              initial="hidden"
+              animate="show"
+              exit="hidden"
+              className="text-center flex xl:w-[30vw] flex-col lg:text-left mb-4 xl:mx-0"
+            >
               <motion.h2
                 variants={fadeIn("up", 0.1)}
                 initial="hidden"
@@ -40,7 +46,7 @@ const Services = () => {
                 ოპტიმიზაციას და სოციალური მედიის მენეჯმენტს, რათა მაქსიმალურად
                 გაზარდოთ თქვენი ციფრული პოტენციალი.
               </motion.p>
-            </div>
+            </motion.div>
             {/* slider */}
             <motion.div
               variants={fadeIn("down", 0.1)}
