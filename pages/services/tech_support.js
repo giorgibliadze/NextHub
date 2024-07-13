@@ -143,7 +143,7 @@ const TechSupport = () => {
               <PriceCard key={index} {...cardData} />
             ))}
           </motion.div>
-          <Bulb />
+          {/* <Bulb /> */}
         </div>
       )}
     </>

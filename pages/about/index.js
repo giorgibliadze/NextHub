@@ -11,10 +11,8 @@ import { fadeIn } from "../../variants";
 
 const About = () => {
   return (
-    <div className="h-full min-h-screen">
-      {/* container */}
-      <div className="container mx-auto mt-[50px] py-16 px-4 sm:px-6 lg:px-8">
-        {/* header */}
+    <div className="h-full bg-primary/30">
+      <div className="container mx-auto py-32 text-center xl:text-left flex flex-col items-center justify-center h-full">
         <motion.div
           variants={fadeIn("up", 0.1)}
           initial="hidden"
@@ -43,26 +41,6 @@ const About = () => {
             დეველოპმენტის, სოციალური მედიის მართვის, SEO-ს და ანალიტიკის
             სერვისებს, რათა გაზარდოთ თქვენი ბრენდის ცნობადობა და სანდოობა.
           </motion.p>
-        </motion.div>
-
-        {/* services */}
-        <motion.div
-          variants={fadeIn("up", 0.1)}
-          initial="hidden"
-          animate="show"
-          exit="hidden"
-          className="mt-16"
-        >
-          <motion.h2
-            variants={fadeIn("up", 0.1)}
-            initial="hidden"
-            animate="show"
-            exit="hidden"
-            className="text-3xl font-semibold text-white text-center mb-6"
-          >
-            სერვისები
-          </motion.h2>
-          <ServiceSlider />
         </motion.div>
 
         {/* mission */}
@@ -96,51 +74,50 @@ const About = () => {
             გაუმჯობესებას.
           </motion.p>
         </motion.div>
+      </div>
 
-        {/* team */}
+      {/* team */}
+      <motion.div
+        variants={fadeIn("up", 0.1)}
+        initial="hidden"
+        animate="show"
+        exit="hidden"
+        className="mt-16"
+      >
+        <motion.h2
+          variants={fadeIn("up", 0.1)}
+          initial="hidden"
+          animate="show"
+          exit="hidden"
+          className="text-3xl font-semibold text-white text-center mb-6"
+        >
+          ჩვენი გუნდი
+        </motion.h2>
         <motion.div
           variants={fadeIn("up", 0.1)}
           initial="hidden"
           animate="show"
           exit="hidden"
-          className="mt-16"
+          className="flex flex-wrap justify-center gap-8"
         >
-          <motion.h2
-            variants={fadeIn("up", 0.1)}
-            initial="hidden"
-            animate="show"
-            exit="hidden"
-            className="text-3xl font-semibold text-white text-center mb-6"
-          >
-            ჩვენი გუნდი
-          </motion.h2>
-          <motion.div
-            variants={fadeIn("up", 0.1)}
-            initial="hidden"
-            animate="show"
-            exit="hidden"
-            className="flex flex-wrap justify-center gap-8"
-          >
-            {/* team member */}
-            <TeamMember
-              name="თეო ოთხოზორია"
-              position="CEO"
-              imageSrc="/teo.webp"
-            />
-            <TeamMember
-              name="გიორგი ბლიაძე"
-              position="CTO"
-              imageSrc="/gio1.webp"
-            />
-            <TeamMember
-              name="თიკო შაიშმელაშვილი"
-              position="Head of Marketing"
-              imageSrc="/tiko1.webp"
-            />
-          </motion.div>
+          {/* team member */}
+          <TeamMember
+            name="თეო ოთხოზორია"
+            position="CEO"
+            imageSrc="/teo.webp"
+          />
+          <TeamMember
+            name="გიორგი ბლიაძე"
+            position="CTO"
+            imageSrc="/gio1.webp"
+          />
+          <TeamMember
+            name="თიკო შაიშმელაშვილი"
+            position="Head of Marketing"
+            imageSrc="/tiko1.webp"
+          />
         </motion.div>
-      </div>
-      <Bulb />
+      </motion.div>
     </div>
   );
 };

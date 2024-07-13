@@ -209,7 +209,7 @@ const WebDevelopment = () => {
               <PriceCard key={index} {...cardData} />
             ))}
           </motion.div>
-          <Bulb />
+          {/* <Bulb /> */}
         </div>
       )}
     </>

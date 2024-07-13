@@ -28,7 +28,7 @@ const PriceCard = ({ title, price, features, onButtonClick }) => {
           onButtonClick();
         }}
       >
-        Purchase
+        შეკვეთა
       </Button>
     </motion.div>
   );
