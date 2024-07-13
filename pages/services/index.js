@@ -11,7 +11,7 @@ import { fadeIn } from "../../variants";
 const Services = () => {
   return (
     <div className="h-full lg:h-[700px] xxl:h-[950px]  xll:h-[970px] bg-primary/30 py-36 flex items-center">
-      <Circles />
+      {/* <Circles /> */}
       <div className="container mx-auto lg:mt-[100px]">
         <div className="flex flex-col xl:flex-row gap-x-8">
           {/* text */}
@@ -50,7 +50,7 @@ const Services = () => {
           </motion.div>
         </div>
       </div>
-      <Bulb />
+      {/* <Bulb /> */}
     </div>
   );
 };

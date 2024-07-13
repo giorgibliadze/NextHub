@@ -10,8 +10,8 @@ import { fadeIn } from "../../variants";
 
 const Work = () => {
   return (
-    <div className="h-full lg:h-[700px] xxl:h-[950px]  xll:h-[970px] bg-primary/30 py-36 flex items-center">
-      <Circles />
+    <div className="h-full lg:h-[700px] xxl:h-[950px]  xll:h-[970px] bg-primary/30 py-36 flex items-center overflow-">
+      {/* <Circles /> */}
       <div className="container mx-auto lg:mt-[100px]">
         <div className="flex flex-col xl:flex-row gap-x-8">
           {/* text */}
@@ -50,7 +50,7 @@ const Work = () => {
           </motion.div>
         </div>
       </div>
-      <Bulb />
+      {/* <Bulb /> */}
     </div>
   );
 };
