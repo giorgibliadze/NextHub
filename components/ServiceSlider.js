@@ -103,37 +103,35 @@ const ServiceSlider = () => {
       modules={[FreeMode, Autoplay]}
       className="h-[500px] mt-9"
     >
-      {serviceData.map((item, index) => {
-        return (
-          <SwiperSlide key={index}>
-            <Link href={item.link}>
-              <div
-                className={`bg-[rgba(65,7,123,0.15)] h-[450px] md:h-[400px] rounded-lg px-4 md:px-6 py-6 flex flex-col gap-y-4 md:gap-y-6 cursor-pointer hover:bg-[rgba(116,79,238,0.15)] transition-all duration-300 ${
-                  index % 2 === 0 ? "md:mt-0" : "md:mt-20"
-                }`}
-              >
-                {/* icon */}
-                <div className="text-3xl md:text-4xl text-accent mb-2 md:mb-4">
-                  {item.icon}
-                </div>
-                {/* title & desc */}
-                <div className="mb-2 md:mb-4">
-                  <div className="mb-1 md:mb-2 text-base md:text-lg font-semibold">
-                    {item.title}
-                  </div>
-                  <p className="max-w-[300px] md:max-w-[350px] leading-normal text-sm md:text-base">
-                    {item.description}
-                  </p>
-                </div>
-                {/* arrow */}
-                <div className="text-2xl md:text-3xl mt-auto group">
-                  <RxArrowTopRight className="group-hover:rotate-[45deg] group-hover:text-red-500 rotate-[45deg] transition-all duration-300" />
-                </div>
+      {serviceData.map((item, index) => (
+        <SwiperSlide key={index}>
+          <Link href={item.link}>
+            <div
+              className={`bg-[rgba(65,7,123,0.15)] h-[450px] md:h-[400px] rounded-lg px-4 md:px-6 py-6 flex flex-col gap-y-4 md:gap-y-6 cursor-pointer hover:bg-[rgba(116,79,238,0.15)] transition-all duration-300 ${
+                index % 2 === 0 ? "md:mt-0" : "md:mt-20"
+              }`}
+            >
+              {/* icon */}
+              <div className="text-3xl md:text-4xl text-accent mb-2 md:mb-4">
+                {item.icon}
               </div>
-            </Link>
-          </SwiperSlide>
-        );
-      })}
+              {/* title & desc */}
+              <div className="mb-2 md:mb-4">
+                <div className="mb-1 md:mb-2 text-base md:text-lg font-semibold">
+                  {item.title}
+                </div>
+                <p className="max-w-[300px] md:max-w-[350px] leading-normal text-sm md:text-base">
+                  {item.description}
+                </p>
+              </div>
+              {/* arrow */}
+              <div className="text-2xl md:text-3xl mt-auto group">
+                <RxArrowTopRight className="group-hover:rotate-[45deg] group-hover:text-red-500 rotate-[45deg] transition-all duration-300" />
+              </div>
+            </div>
+          </Link>
+        </SwiperSlide>
+      ))}
     </Swiper>
   );
 };
