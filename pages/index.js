@@ -17,7 +17,7 @@ const Home = () => {
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="h1 lg:mt-[200px] lgx:mt-[300px] smx:mt-[220px] text-white"
+            className="h1 lg:mt-[200px] lgx:mt-[300px] smx:mt-[0px] text-white"
           >
             გადააქციეთ
             <motion.span
@@ -41,9 +41,9 @@ const Home = () => {
             მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ
             ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად.
           </motion.p>
-          <div className="flex justify-center xl:hidden relative">
+          {/* <div className="flex justify-center xl:hidden relative">
             <ProjectBtn />
-          </div>
+          </div> */}
           <motion.div
             variants={fadeIn("down", 0.4)}
             initial="hidden"
