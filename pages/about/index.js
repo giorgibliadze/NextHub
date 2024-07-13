@@ -112,6 +112,7 @@ const About = () => {
             imageSrc="/gio1.webp"
           />
           <TeamMember
+            className="mb-[100px]"
             name="თიკო შაიშმელაშვილი"
             position="Head of Marketing"
             imageSrc="/tiko1.webp"

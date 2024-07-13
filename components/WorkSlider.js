@@ -56,7 +56,7 @@ const WorkSlider = () => {
       {workSlides.slides.map((slide, index) => {
         return (
           <SwiperSlide key={index}>
-            <div className="grid grid-cols-1 md:grid-cols-2 md:max-w-[900px] sm:grid-cols-2 gap-4 cursor-pointer p-4 mb-[70px] lg:mr-[50px]">
+            <div className="grid grid-cols-1 md:grid-cols-2 md:max-w-[900px] sm:grid-cols-2 gap-4 cursor-pointer p-4 mb-[120px] lg:mr-[50px]">
               {slide.images.map((image, index) => {
                 return (
                   <Link href={`${image.link}`} key={index}>

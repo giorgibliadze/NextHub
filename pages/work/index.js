@@ -10,7 +10,7 @@ import { fadeIn } from "../../variants";
 
 const Work = () => {
   return (
-    <div className="h-full lg:h-[700px] xxl:h-[950px]  xll:h-[970px] bg-primary/30 py-36 flex items-center overflow-">
+    <div className="h-full bg-primary/30">
       <Circles />
       <div className="container mx-auto lg:mt-[100px]">
         <div className="flex flex-col xl:flex-row gap-x-8">
@@ -21,7 +21,7 @@ const Work = () => {
               initial="hidden"
               animate="show"
               exit="hidden"
-              className="h2 xl:mt-12"
+              className="h2 xl:mt-12 mt-[120px]"
             >
               პროექტები <span className="text-accent">.</span>
             </motion.h2>

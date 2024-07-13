@@ -11,7 +11,7 @@ const Home = () => {
 
   return (
     <div className="bg-primary/60 min-h-screen">
-      <div className="w-full h-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10 absolute overflow-x-hidden">
+      <div className="w-full h-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10 absolute overflow-y-hidden overflow-x-hidden">
         <div className="container mx-auto h-full flex flex-col justify-center text-center items-center lgx:items-start lgx:text-left xl:items-start xl:text-left lg:ml-[150px]">
           <motion.h1
             variants={fadeIn("down", 0.2)}

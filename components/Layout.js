@@ -20,9 +20,12 @@ const Layout = ({ children }) => {
       <Analytics />
       <SpeedInsights />
       <TopLeftImg />
-      <Nav />
+      <div className="sticky top-0 z-50">
+        <Nav />
+      </div>
+
       <Header />
-      <div className="content-wrapper">{children}</div>
+      <div className="content-wrapper flex-1 overflow-y-auto">{children}</div>
     </div>
   );
 };
