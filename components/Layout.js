@@ -22,7 +22,7 @@ const Layout = ({ children }) => {
       <TopLeftImg />
       <Nav />
       <Header />
-      <div className="content-wrapper overflow-y-auto">{children}</div>
+      <div className="content-wrapper">{children}</div>
     </div>
   );
 };
