@@ -25,7 +25,7 @@ const About = () => {
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="h2 xl:mt-8"
+            className="h2"
           >
             ჩვენ შესახებ <span className="text-accent">.</span>
           </motion.h2>
@@ -74,51 +74,50 @@ const About = () => {
             გაუმჯობესებას.
           </motion.p>
         </motion.div>
-      </div>
-
-      {/* team */}
-      <motion.div
-        variants={fadeIn("up", 0.1)}
-        initial="hidden"
-        animate="show"
-        exit="hidden"
-        className="mt-16"
-      >
-        <motion.h2
-          variants={fadeIn("up", 0.1)}
-          initial="hidden"
-          animate="show"
-          exit="hidden"
-          className="text-3xl font-semibold text-white text-center mb-6"
-        >
-          ჩვენი გუნდი
-        </motion.h2>
+        {/* team */}
         <motion.div
           variants={fadeIn("up", 0.1)}
           initial="hidden"
           animate="show"
           exit="hidden"
-          className="flex flex-wrap justify-center gap-8"
+          className="mt-16"
         >
-          {/* team member */}
-          <TeamMember
-            name="თეო ოთხოზორია"
-            position="CEO"
-            imageSrc="/teo.webp"
-          />
-          <TeamMember
-            name="გიორგი ბლიაძე"
-            position="CTO"
-            imageSrc="/gio1.webp"
-          />
-          <TeamMember
-            className="mb-[100px]"
-            name="თიკო შაიშმელაშვილი"
-            position="Head of Marketing"
-            imageSrc="/tiko1.webp"
-          />
+          <motion.h2
+            variants={fadeIn("up", 0.1)}
+            initial="hidden"
+            animate="show"
+            exit="hidden"
+            className="text-3xl font-semibold text-white text-center mb-6"
+          >
+            ჩვენი გუნდი
+          </motion.h2>
+          <motion.div
+            variants={fadeIn("up", 0.1)}
+            initial="hidden"
+            animate="show"
+            exit="hidden"
+            className="flex flex-wrap justify-center gap-8"
+          >
+            {/* team member */}
+            <TeamMember
+              name="თეო ოთხოზორია"
+              position="CEO"
+              imageSrc="/teo.webp"
+            />
+            <TeamMember
+              name="გიორგი ბლიაძე"
+              position="CTO"
+              imageSrc="/gio1.webp"
+            />
+            <TeamMember
+              className="mb-[100px]"
+              name="თიკო შაიშმელაშვილი"
+              position="Head of Marketing"
+              imageSrc="/tiko1.webp"
+            />
+          </motion.div>
         </motion.div>
-      </motion.div>
+      </div>
     </div>
   );
 };
