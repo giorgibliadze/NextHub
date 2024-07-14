@@ -59,16 +59,25 @@ const Contact = () => {
 
   return (
     <div className="h-screen bg-primary/30">
-      <div className="container mx-auto py-32 text-center xl:text-left flex flex-col items-center justify-center h-full">
+      <motion.div
+        variants={fadeIn("up", 0.4)}
+        initial="hidden"
+        animate="show"
+        exit="hidden"
+        className="flex flex-col items-center p-5 rounded-2xl mt-[16px]"
+      >
+        <MapComponent />
+      </motion.div>
+      <div className="container mx-auto py-24 text-center xl:text-left flex flex-col items-center justify-center h-full mt-[85px]">
         <ModernSection />
         {/* text & form */}
-        <div className="flex flex-col w-full max-w-[700px] px-4 md:px-0 mt-20">
+        <div className="flex flex-col w-full max-w-[700px] px-4 md:px-0 mt-16">
           <motion.h1
             variants={fadeIn("up", 0.2)}
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="h2 text-center mb-12"
+            className="h2 text-center mb-10"
           >
             დაგვიკავშირდით
           </motion.h1>
@@ -79,10 +88,10 @@ const Contact = () => {
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="flex-1 items-center flex flex-col gap-6 w-full mx-auto"
+            className="flex-1 items-center flex flex-col gap-4 w-full mx-auto mb-[100px]"
             onSubmit={send}
           >
-            <div className="flex flex-col md:flex-row gap-6 w-full">
+            <div className="flex flex-col md:flex-row gap-4 w-full">
               <input
                 type="text"
                 id="name"
@@ -140,16 +149,6 @@ const Contact = () => {
           </motion.form>
         </div>
       </div>
-
-      <motion.div
-        variants={fadeIn("up", 0.4)}
-        initial="hidden"
-        animate="show"
-        exit="hidden"
-        className="flex flex-col items-center p-5 rounded-2xl"
-      >
-        <MapComponent />
-      </motion.div>
     </div>
   );
 };
