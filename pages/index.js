@@ -10,15 +10,15 @@ const Home = () => {
   const words = ["იდეები", "სურვილები", "ოცნებები"];
 
   return (
-    <div className="bg-primary/60 min-h-screen">
-      <div className="w-full h-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10 absolute overflow-y-hidden overflow-x-hidden">
-        <div className="container mx-auto h-full flex flex-col justify-center text-center items-center lgx:items-start lgx:text-left xl:items-start xl:text-left lg:ml-[150px]">
+    <div className="bg-primary/60  h-full sm:h-[600px] lg:h-[847px]  xxl:h-[970px]  xll:h-[865px] min-h-screen">
+      <div className="w-full h-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10 absolute overflow-x-hidden">
+        <div className="container mx-auto h-full flex flex-col justify-center text-center items-center lgx:items-start lgx:text-left xl:items-start xl:text-left lg:ml-[150px] overflow-y-auto">
           <motion.h1
             variants={fadeIn("down", 0.2)}
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="h1 lg:mt-[100px] lgx:mt-[40px] smx:mt-[0px] text-white"
+            className="h1 lg:mt-[100px] lgx:mt-[40px] smx:mt-[150px] text-white"
           >
             გადააქციეთ
             <motion.span
@@ -42,7 +42,7 @@ const Home = () => {
             მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ
             ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად.
           </motion.p>
-          <div className="flex justify-center xl:hidden relative">
+          <div className="flex justify-center xl:hidden relative mb-[100px]">
             <ProjectBtn />
           </div>
           <motion.div
