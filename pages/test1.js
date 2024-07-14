@@ -1,6 +1,4 @@
 /* eslint-disable react/no-unescaped-entities */
-// next image
-/* eslint-disable react/no-unescaped-entities */
 import Image from "next/image";
 import ParticlesContainer from "../components/ParticlesContainer";
 import ProjectBtn from "../components/ProjectsBtn";
@@ -10,18 +8,17 @@ import { fadeIn } from "../variants";
 
 const Home = () => {
   const words = ["იდეები", "სურვილები", "ოცნებები"];
+
   return (
-    <div className="bg-primary/60  h-full sm:h-[600px] lg:h-[800px]  xxl:h-[970px]  xll:h-[865px]">
-      {/* text */}
-      <div className="w-full h-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10">
-        <div className="text-center flex flex-col justify-center xl:text-left h-full container mx-auto ]">
-          {/* title */}
+    <div className="bg-primary/60 min-h-screen">
+      <div className="w-full h-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10 absolute overflow-y-hidden overflow-x-hidden">
+        <div className="container mx-auto h-full flex flex-col justify-center text-center items-center lgx:items-start lgx:text-left xl:items-start xl:text-left lg:ml-[150px]">
           <motion.h1
             variants={fadeIn("down", 0.2)}
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="h1 mt-[100px]"
+            className="h1 lg:mt-[100px] lgx:mt-[40px] smx:mt-[0px] text-white"
           >
             გადააქციეთ
             <motion.span
@@ -35,18 +32,16 @@ const Home = () => {
             </motion.span>
             <br /> ციფრულ რეალობად
           </motion.h1>
-          {/* subtitle */}
           <motion.p
             variants={fadeIn("down", 0.3)}
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16"
+            className="max-w-sm xl:max-w-xl xl:mx-0 mb-10 xl:mb-16 text-white"
           >
             მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ
             ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად.
           </motion.p>
-          {/* btn */}
           <div className="flex justify-center xl:hidden relative">
             <ProjectBtn />
           </div>
@@ -55,17 +50,13 @@ const Home = () => {
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="hidden xl:flex"
+            className="hidden xl:flex xl:mb-16 smx:mb-[16px]"
           >
             <ProjectBtn />
           </motion.div>
         </div>
-
-        {/* image */}
-        <div className="w-[1200px] h-full absolute right-0 bottom-0">
-          {/* bg img */}
+        <div className="w-full h-full absolute right-0 bottom-0">
           <div className="bg-none xl:bg-explosion xl:bg-cover xl:bg-right xl:bg-no-repeat w-full h-full absolute mix-blend-color-dodge translate-z-0"></div>
-          {/* particles */}
           <div>
             <ParticlesContainer />
           </div>

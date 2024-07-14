@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Sora } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -5,6 +6,7 @@ import Nav from "../components/Nav";
 import Header from "../components/Header";
 import TopLeftImg from "../components/TopLeftImg";
 
+// Font settings
 const sora = Sora({
   subsets: ["latin"],
   variable: "--font-sora",
@@ -15,17 +17,13 @@ const Layout = ({ children }) => {
   return (
     <div
       className={`page bg-site text-white bg-cover bg-no-repeat ${sora.variable} font-sora relative overflow-y-auto`}
-      style={{ willChange: "transform, opacity" }}
     >
       <Analytics />
       <SpeedInsights />
       <TopLeftImg />
-      <div className="sticky top-0 z-50">
-        <Nav />
-      </div>
-
+      <Nav />
       <Header />
-      <div className="content-wrapper flex-1 overflow-y-auto">{children}</div>
+      {children}
     </div>
   );
 };
