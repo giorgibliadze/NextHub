@@ -58,10 +58,11 @@ const Contact = () => {
   };
 
   return (
-    <div className="h-full bg-primary/30">
-      <div className="container mx-auto py-4 text-center xl:text-left flex items-center justify-center h-full">
+    <div className="h-screen bg-primary/30">
+      <div className="container mx-auto py-32 text-center xl:text-left flex flex-col items-center justify-center h-full">
+        <ModernSection />
         {/* text & form */}
-        <div className="flex flex-col w-full max-w-[700px] px-4 md:px-0 items-center xxl:mt-[150px] lgx:mt-[50px]">
+        <div className="flex flex-col w-full max-w-[700px] px-4 md:px-0 mt-20">
           <motion.h1
             variants={fadeIn("up", 0.2)}
             initial="hidden"
@@ -139,7 +140,7 @@ const Contact = () => {
           </motion.form>
         </div>
       </div>
-      <ModernSection />
+
       <motion.div
         variants={fadeIn("up", 0.4)}
         initial="hidden"

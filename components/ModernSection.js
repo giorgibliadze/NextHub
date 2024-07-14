@@ -70,7 +70,7 @@ const ModernContainer = () => {
       initial="hidden"
       animate="show"
       exit="hidden"
-      className="w-full flex flex-col lg:flex-row items-center gap-8 z-40 px-4 md:px-16 xxl:hidden"
+      className="w-full flex flex-col lg:flex-row items-center gap-8 z-40 px-4 md:px-16 xxl:hidden mt-60"
     >
       {contacts.map((contact, index) => (
         <div
