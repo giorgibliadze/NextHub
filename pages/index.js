@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 // next image
 import Image from "next/image";
-
+import RotatingWords from "../components/RotatingWords";
 //components
 import ParticlesContainer from "../components/ParticlesContainer";
 import ProjectBtn from "../components/ProjectsBtn";
@@ -13,8 +13,9 @@ import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
 
 const Home = () => {
+  const words = ["იდეები", "სურვილები", "ოცნებები"];
   return (
-    <div className="bg-primary/60  h-full sm:h-[600px] lg:h-[800px]  xxl:h-[970px]  xll:h-[865px]">
+    <div className="bg-primary/60 h-full sm:h-[600px] lg:h-[847px] xxl:h-[970px] xll:h-[865px]">
       {/* text */}
       <div className="w-full h-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10">
         <div className="text-center flex flex-col justify-center xl:text-left h-full container mx-auto ]">
@@ -26,8 +27,16 @@ const Home = () => {
             exit="hidden"
             className="h1 mt-[100px]"
           >
-            Transforming Ideas <br /> Into
-            <span className="text-accent">Digital Reality</span>
+            გადააქციეთ
+            <motion.span
+              variants={fadeIn("down", 0.2)}
+              initial="hidden"
+              animate="show"
+              exit="hidden"
+              className="text-accent"
+            >
+              <RotatingWords words={words} />
+            </motion.span>
           </motion.h1>
           {/* subtitle */}
           <motion.p
@@ -37,12 +46,8 @@ const Home = () => {
             exit="hidden"
             className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16"
           >
-            Transforming Ideas into Digital Reality. As a passionate front-end
-            developer, I specialize in crafting visually stunning and
-            user-friendly websites. With expertise in HTML, CSS, JavaScript,
-            React, and Next I bring ideas to life, ensuring they resonate with
-            your audience and leave a lasting impression. Let's create something
-            extraordinary together.
+            მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ
+            ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად.
           </motion.p>
           {/* btn */}
           <div className="flex justify-center xl:hidden relative">
