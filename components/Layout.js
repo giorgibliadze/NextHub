@@ -21,7 +21,8 @@ const Layout = ({ children }) => {
     >
       <DefaultSeo
         title="Next-Hub Solutions"
-        description="Transform your ideas into digital reality with Next-Hub Solutions. Achieve your goals and maximize your brand's potential with our expert team."
+        description="მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ
+            ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად."
         openGraph={{
           type: "website",
           locale: "en_US",
