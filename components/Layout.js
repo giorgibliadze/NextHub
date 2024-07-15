@@ -6,7 +6,7 @@ import Nav from "../components/Nav";
 import Header from "../components/Header";
 import TopLeftImg from "../components/TopLeftImg";
 import { DefaultSeo } from "next-seo";
-import Script from "next/script"
+import Script from "next/script";
 
 // Font settings
 const sora = Sora({
@@ -45,16 +45,18 @@ const Layout = ({ children }) => {
         }}
       />
       <head>
-<Script async src="https://www.googletagmanager.com/gtag/js?id=G-MCWYDWRTCY"></Script>
-<Script id="google-analytics">
-  {
-    `window.dataLayer = window.dataLayer || [];
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-MCWYDWRTCY"
+        ></Script>
+        <Script id="google-analytics">
+          {`window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-MCWYDWRTCY');`
-  }
-</Script></head>
+  gtag('config', 'G-MCWYDWRTCY');`}
+        </Script>
+      </head>
       <Analytics />
       <SpeedInsights />
       <TopLeftImg />
