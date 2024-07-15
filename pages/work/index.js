@@ -12,8 +12,8 @@ const Work = () => {
   return (
     <div className="h-full bg-primary/30">
       <Circles />
-      <div className="container mx-auto lg:mt-[100px] mb-4">
-        <div className="flex flex-col xl:flex-row gap-x-8">
+      <div className="container mx-auto mb-4">
+        <div className="flex flex-col xl:flex-row gap-x-8 lg:mt-[100px]">
           {/* text */}
           <div className="text-center flex xl:w-[30vw] flex-col lg:text-left mb-4 xl:mb-0">
             <motion.h2
