@@ -5,6 +5,7 @@ import Bulb from "../../components/Bulb";
 import TeamMember from "../../components/TeamMember";
 import ServiceSlider from "../../components/ServiceSlider";
 import { motion } from "framer-motion";
+import Head from "next/head";
 
 // variants
 import { fadeIn } from "../../variants";
@@ -12,6 +13,17 @@ import { fadeIn } from "../../variants";
 const About = () => {
   return (
     <div className="h-full bg-primary/30">
+      <Head>
+        <title>About Us - Next-Hub Solutions</title>
+        <meta
+          name="description"
+          content="Learn more about Next-Hub Solutions and how we help companies transform in the digital era with web development, social media management, SEO, and analytics services."
+        />
+        <meta
+          name="keywords"
+          content="Next-Hub, About, Web Development, SEO, Digital Marketing"
+        />
+      </Head>
       <div className="container mx-auto py-32 text-center xl:text-left flex flex-col items-center justify-center h-full">
         <motion.div
           variants={fadeIn("up", 0.1)}

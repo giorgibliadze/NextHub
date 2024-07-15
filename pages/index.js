@@ -8,7 +8,7 @@ import ProjectBtn from "../components/ProjectsBtn";
 
 //framer motion
 import { motion } from "framer-motion";
-
+import Head from "next/head";
 //variants
 import { fadeIn } from "../variants";
 
@@ -16,6 +16,36 @@ const Home = () => {
   const words = ["იდეები", "სურვილები", "ოცნებები"];
   return (
     <div className="bg-primary/60 w-full h-full smx:h-[640px] sm:h-[600px] lg:h-[820px] xxl:h-[970px] xll:h-[865px]">
+      <Head>
+        <title>Next-Hub Solutions</title>
+        <meta
+          name="description"
+          content="Transform your ideas into digital reality with Next-Hub Solutions. Achieve your goals and maximize your brand's potential with our expert team."
+        />
+        <meta
+          name="keywords"
+          content="Next.js, SEO, Web Development, Digital Marketing"
+        />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "http://schema.org",
+            "@type": "Organization",
+            name: "Next-Hub Solutions",
+            url: "https://www.next-hub.pro",
+            logo: "https://www.next-hub.pro/logo.png",
+            sameAs: [
+              "https://www.facebook.com/NextHub",
+              "https://www.twitter.com/NextHub",
+              "https://www.linkedin.com/company/NextHub",
+            ],
+            contactPoint: {
+              "@type": "ContactPoint",
+              telephone: "+1-800-555-5555",
+              contactType: "Customer Service",
+            },
+          })}
+        </script>
+      </Head>
       {/* text */}
       <div className="w-full h-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10">
         <div className="text-center flex flex-col justify-center xl:text-left h-full container mx-auto ]">
