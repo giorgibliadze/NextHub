@@ -14,8 +14,10 @@ import { fadeIn } from "../variants";
 
 const Home = () => {
   const words = ["იდეები", "სურვილები", "ოცნებები"];
+  const imageUrl = "https://www.next-hub.pro/bg-explosion.png";
   return (
     <div className="bg-primary/60 w-full h-full smx:h-[640px] sm:h-[600px] lg:h-[820px] xxl:h-[970px] xll:h-[865px]">
+      {/* Head for SEO */}
       <Head>
         <title>Next-Hub Solutions</title>
         <meta
@@ -26,6 +28,24 @@ const Home = () => {
           name="keywords"
           content="Next.js, SEO, Web Development, Digital Marketing"
         />
+        {/* Open Graph */}
+        <meta property="og:title" content="Next-Hub Solutions" />
+        <meta
+          property="og:description"
+          content="Transform your ideas into digital reality with Next-Hub Solutions. Achieve your goals and maximize your brand's potential with our expert team."
+        />
+        <meta property="og:image" content={imageUrl} />
+        <meta property="og:url" content="https://www.next-hub.pro" />
+        <meta property="og:type" content="website" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Next-Hub Solutions" />
+        <meta
+          name="twitter:description"
+          content="Transform your ideas into digital reality with Next-Hub Solutions. Achieve your goals and maximize your brand's potential with our expert team."
+        />
+        <meta name="twitter:image" content={imageUrl} />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "http://schema.org",
