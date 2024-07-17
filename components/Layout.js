@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-script-component-in-head */
+/* eslint-disable @next/next/no-head-element */
 import { useEffect, useState } from "react";
 import { Sora } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
@@ -7,7 +9,7 @@ import Header from "../components/Header";
 import TopLeftImg from "../components/TopLeftImg";
 import { DefaultSeo } from "next-seo";
 import Script from "next/script";
-
+import Head from "next/head";
 // Font settings
 const sora = Sora({
   subsets: ["latin"],
@@ -26,7 +28,7 @@ const Layout = ({ children }) => {
             ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად."
         openGraph={{
           type: "website",
-          locale: "en_US",
+          locale: "ka_GE",
           url: "https://www.next-hub.pro",
           site_name: "Next-Hub Solutions",
           images: [
@@ -43,20 +45,22 @@ const Layout = ({ children }) => {
           site: "@NextHub",
           cardType: "summary_large_image",
         }}
+        // eslint-disable-next-line react/jsx-no-comment-textnodes
       />
-      <head>
+
+      <Head>
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-MCWYDWRTCY"
         ></Script>
         <Script id="google-analytics">
           {`window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-MCWYDWRTCY');`}
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-MCWYDWRTCY');`}
         </Script>
-      </head>
+        <link rel="icon" href="/favicon.png" sizes="any" />
+      </Head>
       <Analytics />
       <SpeedInsights />
       <TopLeftImg />
