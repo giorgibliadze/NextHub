@@ -10,6 +10,7 @@ import TopLeftImg from "../components/TopLeftImg";
 import { DefaultSeo } from "next-seo";
 import Script from "next/script";
 import Head from "next/head";
+
 // Font settings
 const sora = Sora({
   subsets: ["latin"],
@@ -24,8 +25,7 @@ const Layout = ({ children }) => {
     >
       <DefaultSeo
         title="Next-Hub Solutions"
-        description="მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ
-            ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად."
+        description="მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად."
         openGraph={{
           type: "website",
           locale: "ka_GE",
@@ -45,10 +45,20 @@ const Layout = ({ children }) => {
           site: "@NextHub",
           cardType: "summary_large_image",
         }}
-        // eslint-disable-next-line react/jsx-no-comment-textnodes
       />
 
       <Head>
+        <title>Next-Hub Solutions</title>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="robots" content="index, follow" />
+        <link rel="icon" href="/favicon.png" sizes="any" type="image/png" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
+        <meta
+          name="description"
+          content="მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად."
+        />
+
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-MCWYDWRTCY"
@@ -59,7 +69,6 @@ const Layout = ({ children }) => {
           gtag('js', new Date());
           gtag('config', 'G-MCWYDWRTCY');`}
         </Script>
-        <link rel="icon" href="/favicon.png" sizes="any" />
       </Head>
       <Analytics />
       <SpeedInsights />
