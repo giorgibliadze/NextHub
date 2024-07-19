@@ -5,7 +5,7 @@ import Modal from "../../components/Modal";
 import Bulb from "../../components/Bulb";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
-
+import Head from "next/head";
 const SocMedia = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedCardData, setSelectedCardData] = useState(null);
@@ -126,6 +126,56 @@ const SocMedia = () => {
 
   return (
     <>
+      <Head>
+        <title>Next-Hub Solutions | Social Media Management</title>
+        <meta
+          name="description"
+          content="Next-Hub Solutions-ის სოციალური მედია მენეჯმენტის სერვისები. მიიღეთ პროფესიონალური მხარდაჭერა ბრენდის ხასიათის შექმნაში, სოციალური მედიის მართვაში და სარეკლამო კამპანიების დაგეგმვაში."
+        />
+        <meta
+          name="keywords"
+          content="Next-Hub, Social Media Management, სოციალური მედია, ბრენდის ხასიათი, სარეკლამო კამპანიები, Facebook, Instagram, LinkedIn"
+        />
+        <meta name="author" content="Next-Hub Solutions" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+          property="og:title"
+          content="Next-Hub Solutions | Social Media Management"
+        />
+        <meta
+          property="og:description"
+          content="Next-Hub Solutions-ის სოციალური მედია მენეჯმენტის სერვისები. მიიღეთ პროფესიონალური მხარდაჭერა ბრენდის ხასიათის შექმნაში, სოციალური მედიის მართვაში და სარეკლამო კამპანიების დაგეგმვაში."
+        />
+        <meta
+          property="og:url"
+          content="https://www.next-hub.pro/services/soc_media"
+        />
+        <meta
+          property="og:image"
+          content="https://www.next-hub.pro/bg-explosion.png"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="ka_GE" />
+        <meta property="og:site_name" content="Next-Hub Solutions" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@NextHub" />
+        <meta
+          name="twitter:title"
+          content="Next-Hub Solutions | Social Media Management"
+        />
+        <meta
+          name="twitter:description"
+          content="Next-Hub Solutions-ის სოციალური მედია მენეჯმენტის სერვისები. მიიღეთ პროფესიონალური მხარდაჭერა ბრენდის ხასიათის შექმნაში, სოციალური მედიის მართვაში და სარეკლამო კამპანიების დაგეგმვაში."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.next-hub.pro/bg-explosion.png"
+        />
+        <link rel="icon" href="/favicon.png" sizes="any" type="image/png" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
+        <meta name="robots" content="index, follow" />
+      </Head>
+
       {isModalOpen ? (
         <Modal
           isOpen={isModalOpen}

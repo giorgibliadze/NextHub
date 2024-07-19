@@ -7,7 +7,7 @@ import TechnologyIcons from "../../components/TechnologyIcons";
 import Bulb from "../../components/Bulb";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
-
+import Head from "next/head";
 const WebDevelopment = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedCardData, setSelectedCardData] = useState(null);
@@ -159,6 +159,55 @@ const WebDevelopment = () => {
 
   return (
     <>
+      <Head>
+        <title>Next-Hub Solutions | Web Development</title>
+        <meta
+          name="description"
+          content="Next-Hub Solutions-ის ვებ გვერდების დამზადების სერვისები. მიიღეთ პროფესიონალური ვებ გვერდების შექმნა, მობილური ვერსია, სოციალური ქსელების ინტეგრაცია და ტექნიკური მხარდაჭერა."
+        />
+        <meta
+          name="keywords"
+          content="Next-Hub, Web Development, ვებ გვერდების დამზადება, მობილური ვერსია, სოციალური ქსელების ინტეგრაცია, ტექნიკური მხარდაჭერა, B2B, B2C"
+        />
+        <meta name="author" content="Next-Hub Solutions" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+          property="og:title"
+          content="Next-Hub Solutions | Web Development"
+        />
+        <meta
+          property="og:description"
+          content="Next-Hub Solutions-ის ვებ გვერდების დამზადების სერვისები. მიიღეთ პროფესიონალური ვებ გვერდების შექმნა, მობილური ვერსია, სოციალური ქსელების ინტეგრაცია და ტექნიკური მხარდაჭერა."
+        />
+        <meta
+          property="og:url"
+          content="https://www.next-hub.pro/services/web_development"
+        />
+        <meta
+          property="og:image"
+          content="https://www.next-hub.pro/bg-explosion.png"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="ka_GE" />
+        <meta property="og:site_name" content="Next-Hub Solutions" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@NextHub" />
+        <meta
+          name="twitter:title"
+          content="Next-Hub Solutions | Web Development"
+        />
+        <meta
+          name="twitter:description"
+          content="Next-Hub Solutions-ის ვებ გვერდების დამზადების სერვისები. მიიღეთ პროფესიონალური ვებ გვერდების შექმნა, მობილური ვერსია, სოციალური ქსელების ინტეგრაცია და ტექნიკური მხარდაჭერა."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.next-hub.pro/bg-explosion.png"
+        />
+        <link rel="icon" href="/favicon.png" sizes="any" type="image/png" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
+        <meta name="robots" content="index, follow" />
+      </Head>
       {isModalOpen ? (
         <Modal
           isOpen={isModalOpen}
