@@ -17,6 +17,7 @@ const Work = () => {
           name="description"
           content="Next-Hub Solutions-ის პროექტები, დაწყებული დინამიური Next.js აპლიკაციებიდან WordPress-ის ვებსაიტებამდე, უნიკალური გამოწვევებით და მაღალი ხარისხით."
         />
+        <meta name="changefreq" content="always" />
         <meta
           name="keywords"
           content="Next-Hub, Projects, Work, Next.js აპლიკაციები, WordPress ვებსაიტები, მაღალი ხარისხი, თანამედროვე დიზაინი"

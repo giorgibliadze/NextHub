@@ -119,6 +119,7 @@ const TechSupport = () => {
         <meta name="author" content="Next-Hub Solutions" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta property="og:title" content="Next-Hub Solutions | Tech Support" />
+        <meta name="changefreq" content="always" />
         <meta
           property="og:description"
           content="Next-Hub Solutions-ის საიტის მართვის სერვისები. მიიღეთ საიტის ოპტიმიზაცია, SEO მართვა, სოციალური მედიის მართვა და ტექნიკური მხარდაჭერა."

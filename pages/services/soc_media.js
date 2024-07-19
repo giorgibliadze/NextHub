@@ -150,6 +150,7 @@ const SocMedia = () => {
           property="og:url"
           content="https://www.next-hub.pro/services/soc_media"
         />
+        <meta name="changefreq" content="always" />
         <meta
           property="og:image"
           content="https://www.next-hub.pro/bg-explosion.png"

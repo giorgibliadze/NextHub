@@ -187,6 +187,7 @@ const WebDevelopment = () => {
           property="og:image"
           content="https://www.next-hub.pro/bg-explosion.png"
         />
+        <meta name="changefreq" content="always" />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="ka_GE" />
         <meta property="og:site_name" content="Next-Hub Solutions" />

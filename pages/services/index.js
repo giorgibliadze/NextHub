@@ -23,6 +23,7 @@ const Services = () => {
           name="keywords"
           content="Next-Hub, Services, ვებ-გვერდების შექმნა, საიტის ადმინისტრირება, SEO, სოციალური მედიის მენეჯმენტი, ციფრული პოტენციალი"
         />
+        <meta name="changefreq" content="always" />
         <meta name="author" content="Next-Hub Solutions" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta property="og:title" content="Next-Hub Solutions | Services" />

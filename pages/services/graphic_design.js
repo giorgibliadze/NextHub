@@ -24,6 +24,7 @@ const graphic_design = () => {
           property="og:description"
           content="გრაფიკული დიზაინის სერვისები Next-Hub Solutions-ისგან. შექმენით უნიკალური და მიმზიდველი დიზაინები ჩვენი გამოცდილ დიზაინერების დახმარებით."
         />
+        <meta name="changefreq" content="always" />
         <meta property="og:url" content="https://www.next-hub.pro/services/graphic_design" />
         <meta
           property="og:image"
