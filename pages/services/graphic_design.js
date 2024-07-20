@@ -19,13 +19,19 @@ const graphic_design = () => {
         />
         <meta name="author" content="Next-Hub Solutions" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta property="og:title" content="Next-Hub Solutions | Graphic Design" />
+        <meta
+          property="og:title"
+          content="Next-Hub Solutions | Graphic Design"
+        />
         <meta
           property="og:description"
           content="გრაფიკული დიზაინის სერვისები Next-Hub Solutions-ისგან. შექმენით უნიკალური და მიმზიდველი დიზაინები ჩვენი გამოცდილ დიზაინერების დახმარებით."
         />
         <meta name="changefreq" content="always" />
-        <meta property="og:url" content="https://www.next-hub.pro/services/graphic_design" />
+        <meta
+          property="og:url"
+          content="https://www.next-hub.pro/services/graphic_design"
+        />
         <meta
           property="og:image"
           content="https://www.next-hub.pro/bg-explosion.png"
@@ -35,7 +41,10 @@ const graphic_design = () => {
         <meta property="og:site_name" content="Next-Hub Solutions" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@NextHub" />
-        <meta name="twitter:title" content="Next-Hub Solutions | Graphic Design" />
+        <meta
+          name="twitter:title"
+          content="Next-Hub Solutions | Graphic Design"
+        />
         <meta
           name="twitter:description"
           content="გრაფიკული დიზაინის სერვისები Next-Hub Solutions-ისგან. შექმენით უნიკალური და მიმზიდველი დიზაინები ჩვენი გამოცდილ დიზაინერების დახმარებით."
@@ -44,8 +53,8 @@ const graphic_design = () => {
           name="twitter:image"
           content="https://www.next-hub.pro/bg-explosion.png"
         />
-        <link rel="icon" href="/favicon.png" sizes="any" type="image/png" />
-        <link rel="apple-touch-icon" href="/favicon.png" />
+        <link rel="icon" href="/favicon.jpg" sizes="any" type="image/png" />
+        <link rel="apple-touch-icon" href="/favicon.jpg" />
         <meta name="robots" content="index, follow" />
       </Head>
       <Circles />

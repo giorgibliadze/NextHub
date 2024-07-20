@@ -53,8 +53,8 @@ const Layout = ({ children }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="robots" content="index, follow" />
         <meta name="changefreq" content="always" />
-        <link rel="icon" href="/favicon.png" sizes="any" type="image/png" />
-        <link rel="apple-touch-icon" href="/favicon.png" />
+        <link rel="icon" href="/favicon.jpg" sizes="any" type="image/png" />
+        <link rel="apple-touch-icon" href="/favicon.jpg" />
         <meta
           name="description"
           content="მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად."

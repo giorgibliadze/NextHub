@@ -50,8 +50,8 @@ const Services = () => {
           name="twitter:image"
           content="https://www.next-hub.pro/bg-explosion.png"
         />
-        <link rel="icon" href="/favicon.png" sizes="any" type="image/png" />
-        <link rel="apple-touch-icon" href="/favicon.png" />
+        <link rel="icon" href="/favicon.jpg" sizes="any" type="image/png" />
+        <link rel="apple-touch-icon" href="/favicon.jpg" />
         <meta name="robots" content="index, follow" />
       </Head>
       <div className="h-full lg:h-[700px] xxl:h-[950px] xll:h-[970px] bg-primary/30 py-36 flex p-[20px]">
