@@ -18,6 +18,9 @@ const sora = Sora({
 const Layout = ({ children }) => {
   return (
     <>
+    <Head>
+    <link rel="icon" href="/favicon.jpg" sizes="any" type="image/png" />
+    </Head>
       <div
         className={`page bg-site text-white bg-cover bg-no-repeat ${sora.variable} font-sora relative overflow-y-auto`}
       >

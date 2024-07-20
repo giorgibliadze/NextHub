@@ -30,7 +30,7 @@ const Home = () => {
             "მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად.",
           images: [
             {
-              url: "https://www.next-hub.pro/bg-explosion.png",
+              url: "https://www.next-hub.pro/nexthub.jpg",
               width: 800,
               height: 600,
               alt: "Next-Hub Solutions",
