@@ -8,50 +8,63 @@ import Circles from "../../components/Circles";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
 import Head from "next/head";
+import { NextSeo } from "next-seo";
 const Work = () => {
   return (
     <>
-      <Head>
-        <title>Next-Hub Solutions | Our Work</title>
-        <meta
-          name="description"
-          content="Next-Hub Solutions-ის პროექტები, დაწყებული დინამიური Next.js აპლიკაციებიდან WordPress-ის ვებსაიტებამდე, უნიკალური გამოწვევებით და მაღალი ხარისხით."
-        />
-        <meta name="changefreq" content="always" />
-        <meta
-          name="keywords"
-          content="Next-Hub, Projects, Work, Next.js აპლიკაციები, WordPress ვებსაიტები, მაღალი ხარისხი, თანამედროვე დიზაინი"
-        />
-        <meta name="author" content="Next-Hub Solutions" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta property="og:title" content="Next-Hub Solutions | Our Work" />
-        <meta
-          property="og:description"
-          content="Next-Hub Solutions-ის პროექტები, დაწყებული დინამიური Next.js აპლიკაციებიდან WordPress-ის ვებსაიტებამდე, უნიკალური გამოწვევებით და მაღალი ხარისხით."
-        />
-        <meta property="og:url" content="https://www.next-hub.pro/work" />
-        <meta
-          property="og:image"
-          content="https://www.next-hub.pro/bg-explosion.png"
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:locale" content="ka_GE" />
-        <meta property="og:site_name" content="Next-Hub Solutions" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@NextHub" />
-        <meta name="twitter:title" content="Next-Hub Solutions | Our Work" />
-        <meta
-          name="twitter:description"
-          content="Next-Hub Solutions-ის პროექტები, დაწყებული დინამიური Next.js აპლიკაციებიდან WordPress-ის ვებსაიტებამდე, უნიკალური გამოწვევებით და მაღალი ხარისხით."
-        />
-        <meta
-          name="twitter:image"
-          content="https://www.next-hub.pro/bg-explosion.png"
-        />
-        <link rel="icon" href="/favicon.jpg" sizes="any" type="image/png" />
-        <link rel="apple-touch-icon" href="/favicon.jpg" />
-        <meta name="robots" content="index, follow" />
-      </Head>
+      <NextSeo
+        title="Next-Hub Solutions | Our Work"
+        description="Next-Hub Solutions-ის პროექტები, დაწყებული დინამიური Next.js აპლიკაციებიდან WordPress-ის ვებსაიტებამდე, უნიკალური გამოწვევებით და მაღალი ხარისხით."
+        additionalMetaTags={[
+          {
+            name: "keywords",
+            content:
+              "Next-Hub, Projects, Work, Next.js აპლიკაციები, WordPress ვებსაიტები, მაღალი ხარისხი, თანამედროვე დიზაინი",
+          },
+          {
+            name: "author",
+            content: "Next-Hub Solutions",
+          },
+          {
+            name: "viewport",
+            content: "width=device-width, initial-scale=1.0",
+          },
+          {
+            name: "robots",
+            content: "index, follow",
+          },
+          {
+            name: "changefreq",
+            content: "always",
+          },
+        ]}
+        openGraph={{
+          type: "website",
+          locale: "ka_GE",
+          url: "https://www.next-hub.pro/work",
+          site_name: "Next-Hub Solutions",
+          title: "Next-Hub Solutions | Our Work",
+          description:
+            "Next-Hub Solutions-ის პროექტები, დაწყებული დინამიური Next.js აპლიკაციებიდან WordPress-ის ვებსაიტებამდე, უნიკალური გამოწვევებით და მაღალი ხარისხით.",
+          images: [
+            {
+              url: "https://www.next-hub.pro/bg-explosion.png",
+              width: 800,
+              height: 600,
+              alt: "Next-Hub Solutions",
+            },
+          ],
+        }}
+        twitter={{
+          handle: "@NextHub",
+          site: "@NextHub",
+          cardType: "summary_large_image",
+          title: "Next-Hub Solutions | Our Work",
+          description:
+            "Next-Hub Solutions-ის პროექტები, დაწყებული დინამიური Next.js აპლიკაციებიდან WordPress-ის ვებსაიტებამდე, უნიკალური გამოწვევებით და მაღალი ხარისხით.",
+          image: "https://www.next-hub.pro/bg-explosion.png",
+        }}
+      />
       <div className="h-full bg-primary/30">
         <Circles />
         <div className="container mx-auto mb-4">

@@ -5,62 +5,73 @@ import RotatingWords from "../components/RotatingWords";
 //components
 import ParticlesContainer from "../components/ParticlesContainer";
 import ProjectBtn from "../components/ProjectsBtn";
-
+import { DefaultSeo } from "next-seo";
 //framer motion
 import { motion } from "framer-motion";
 import Head from "next/head";
 //variants
 import { fadeIn } from "../variants";
-
+import { NextSeo } from "next-seo";
 const Home = () => {
   const words = ["იდეები", "სურვილები", "ოცნებები"];
-  const imageUrl = "https://www.next-hub.pro/bg-explosion.png";
   return (
     <>
-      <Head>
-        <title>Next-Hub Solutions | Home</title>
-        <meta
-          name="description"
-          content="მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად."
-        />
-        <meta
-          name="keywords"
-          content="Next-Hub, ციფრული რეალობა, იდეები, სურვილები, ოცნებები, ბრენდის ცნობადობა, სანდოობა, ციფრული ტრანსფორმაცია, ვებ აპლიკაციები, სოციალური მედია, SEO, ანალიტიკა"
-        />
-        <meta name="changefreq" content="always" />
-        <meta name="author" content="Next-Hub Solutions" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta property="og:title" content="Next-Hub Solutions | Home" />
-        <meta
-          property="og:description"
-          content="მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად."
-        />
-        <meta property="og:url" content="https://www.next-hub.pro" />
+      <NextSeo
+        title="Next-Hub Solutions | Home"
+        description="მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად."
+        keywords="Next-Hub, ციფრული რეალობა, იდეები, სურვილები, ოცნებები, ბრენდის ცნობადობა, სანდოობა, ციფრული ტრანსფორმაცია, ვებ აპლიკაციები, სოციალური მედია, SEO, ანალიტიკა"
+        openGraph={{
+          type: "website",
+          locale: "ka_GE",
+          url: "https://www.next-hub.pro",
+          site_name: "Next-Hub Solutions",
+          title: "Next-Hub Solutions | Home",
+          description:
+            "მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად.",
+          images: [
+            {
+              url: "https://www.next-hub.pro/bg-explosion.png",
+              width: 800,
+              height: 600,
+              alt: "Next-Hub Solutions",
+            },
+          ],
+        }}
+        twitter={{
+          handle: "@NextHub",
+          site: "@NextHub",
+          cardType: "summary_large_image",
+          title: "Next-Hub Solutions | Home",
+          description:
+            "მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად.",
+          image: "https://www.next-hub.pro/bg-explosion.png",
+        }}
+        additionalMetaTags={[
+          {
+            name: "keywords",
+            content:
+              "Next-Hub, ციფრული რეალობა, იდეები, სურვილები, ოცნებები, ბრენდის ცნობადობა, სანდოობა, ციფრული ტრანსფორმაცია, ვებ აპლიკაციები, სოციალური მედია, SEO, ანალიტიკა",
+          },
+          {
+            name: "author",
+            content: "Next-Hub Solutions",
+          },
+          {
+            name: "viewport",
+            content: "width=device-width, initial-scale=1.0",
+          },
+          {
+            name: "robots",
+            content: "index, follow",
+          },
+          {
+            name: "changefreq",
+            content: "always",
+          },
+        ]}
+      />
 
-        <meta
-          property="og:image"
-          content="https://www.next-hub.pro/bg-explosion.png"
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:locale" content="ka_GE" />
-        <meta property="og:site_name" content="Next-Hub Solutions" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@NextHub" />
-        <meta name="twitter:title" content="Next-Hub Solutions | Home" />
-        <meta
-          name="twitter:description"
-          content="მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად."
-        />
-        <meta
-          name="twitter:image"
-          content="https://www.next-hub.pro/bg-explosion.png"
-        />
-        <link rel="icon" href="/favicon.jpg" sizes="any" type="image/png" />
-        <link rel="apple-touch-icon" href="/favicon.jpg" />
-        <meta name="robots" content="index, follow" />
-      </Head>
-
-      <div className="bg-primary/60 w-full h-full smx:h-[640px] sm:h-[600px] lg:h-[820px] xxl:h-[970px] xll:h-[865px]">
+      <div className="bg-primary/60 h-screen w-full smx:h-[640px] sm:h-[600px] lg:h-[847px] xxl:h-[970px] xll:h-[865px]">
         {/* text */}
         <div className="w-full h-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10">
           <div className="text-center flex flex-col justify-center xl:text-left h-full container mx-auto ]">
