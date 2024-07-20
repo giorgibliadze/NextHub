@@ -33,7 +33,7 @@ const Layout = ({ children }) => {
           site_name: "Next-Hub Solutions",
           images: [
             {
-              url: "https://www.next-hub.pro/bg-explosion.png",
+              url: "https://www.next-hub.pro/nexthub.jpg",
               width: 800,
               height: 600,
               alt: "Next-Hub Solutions",
@@ -47,19 +47,7 @@ const Layout = ({ children }) => {
         }}
       />
 
-      <Head>
-        <title>Next-Hub Solutions</title>
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="robots" content="index, follow" />
-        <meta name="changefreq" content="always" />
-        <link rel="icon" href="/favicon.jpg" sizes="any" type="image/png" />
-        <link rel="apple-touch-icon" href="/favicon.jpg" />
-        <meta
-          name="description"
-          content="მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად."
-        />
-
+      <head>
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-MCWYDWRTCY"
@@ -70,7 +58,7 @@ const Layout = ({ children }) => {
           gtag('js', new Date());
           gtag('config', 'G-MCWYDWRTCY');`}
         </Script>
-      </Head>
+      </head>
       <Analytics />
       <SpeedInsights />
       <TopLeftImg />
