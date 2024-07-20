@@ -20,34 +20,8 @@ const sora = Sora({
 
 const Layout = ({ children }) => {
   return (
-    <div
-      className={`page bg-site text-white bg-cover bg-no-repeat ${sora.variable} font-sora relative overflow-y-auto`}
-    >
-      <DefaultSeo
-        title="Next-Hub Solutions"
-        description="მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად."
-        openGraph={{
-          type: "website",
-          locale: "ka_GE",
-          url: "https://www.next-hub.pro",
-          site_name: "Next-Hub Solutions",
-          images: [
-            {
-              url: "https://www.next-hub.pro/nexthub.jpg",
-              width: 800,
-              height: 600,
-              alt: "Next-Hub Solutions",
-            },
-          ],
-        }}
-        twitter={{
-          handle: "@NextHub",
-          site: "@NextHub",
-          cardType: "summary_large_image",
-        }}
-      />
-
-      <head>
+    <>
+      <Head>
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-MCWYDWRTCY"
@@ -58,14 +32,42 @@ const Layout = ({ children }) => {
           gtag('js', new Date());
           gtag('config', 'G-MCWYDWRTCY');`}
         </Script>
-      </head>
-      <Analytics />
-      <SpeedInsights />
-      <TopLeftImg />
-      <Nav />
-      <Header />
-      {children}
-    </div>
+      </Head>
+      <div
+        className={`page bg-site text-white bg-cover bg-no-repeat ${sora.variable} font-sora relative overflow-y-auto`}
+      >
+        <DefaultSeo
+          title="Next-Hub Solutions"
+          description="მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად."
+          openGraph={{
+            type: "website",
+            locale: "ka_GE",
+            url: "https://www.next-hub.pro",
+            site_name: "Next-Hub Solutions",
+            images: [
+              {
+                url: "https://www.next-hub.pro/nexthub.jpg",
+                width: 800,
+                height: 600,
+                alt: "Next-Hub Solutions",
+              },
+            ],
+          }}
+          twitter={{
+            handle: "@NextHub",
+            site: "@NextHub",
+            cardType: "summary_large_image",
+          }}
+        />
+
+        <Analytics />
+        <SpeedInsights />
+        <TopLeftImg />
+        <Nav />
+        <Header />
+        {children}
+      </div>
+    </>
   );
 };
 
