@@ -7,7 +7,7 @@ import TopLeftImg from "../components/TopLeftImg";
 import { DefaultSeo } from "next-seo";
 import Script from "next/script";
 import Head from "next/head";
-
+import { GoogleTagManager } from '@next/third-parties/google'
 // Font settings
 const sora = Sora({
   subsets: ["latin"],
@@ -19,6 +19,7 @@ const Layout = ({ children }) => {
   return (
     <>
     <Head>
+    <GoogleTagManager gtmId="GTM-KHQ9N3M5" />
     <link rel="icon" href="/favicon.jpg" sizes="any" type="image/png" />
     <Head>
   <meta name="robots" content="index, follow" />
