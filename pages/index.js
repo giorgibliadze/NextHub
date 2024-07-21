@@ -9,6 +9,7 @@ import { DefaultSeo } from "next-seo";
 //framer motion
 import { motion } from "framer-motion";
 import Head from "next/head";
+import { GoogleTagManager } from "@next/third-parties/google";
 //variants
 import { fadeIn } from "../variants";
 import { NextSeo } from "next-seo";
@@ -16,6 +17,7 @@ const Home = () => {
   const words = ["იდეები", "სურვილები", "ოცნებები"];
   return (
     <>
+      <GoogleTagManager gtmId="GTM-KHQ9N3M5" />
       <NextSeo
         title="Next-Hub Solutions | Home"
         description="მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად."
