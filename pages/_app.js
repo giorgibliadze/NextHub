@@ -15,9 +15,10 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <Layout>
-      <GoogleTagManager gtmId="GTM-KHQ9N3M5" />
+     
       <AnimatePresence mode="wait">
         <motion.div key={router.route}>
+        <GoogleTagManager gtmId="GTM-KHQ9N3M5" />
           {/* <Transition /> */}
           <Component {...pageProps} />
         </motion.div>
