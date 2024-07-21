@@ -38,7 +38,7 @@ const getAllRoutes = () => {
 
 module.exports = {
   siteUrl: process.env.SITE_URL || "https://www.next-hub.pro",
-  generateRobotsTxt: true,
+  generateRobotsTxt: false,
   changefreq: "daily",
   priority: 0.7,
   sitemapSize: 5000,
