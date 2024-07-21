@@ -20,6 +20,10 @@ const Layout = ({ children }) => {
     <>
     <Head>
     <link rel="icon" href="/favicon.jpg" sizes="any" type="image/png" />
+    <Head>
+  <meta name="robots" content="index, follow" />
+  <meta name="changefreq" content="always" />
+</Head>
     </Head>
       <div
         className={`page bg-site text-white bg-cover bg-no-repeat ${sora.variable} font-sora relative overflow-y-auto`}

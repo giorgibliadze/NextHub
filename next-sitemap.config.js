@@ -50,9 +50,6 @@ module.exports = {
     }));
   },
   robotsTxtOptions: {
-    additionalSitemaps: [
-      "https://www.next-hub.pro/sitemap-0.xml",
-      "https://www.next-hub.pro/sitemap.xml",
-    ],
+    additionalSitemaps: ["https://www.next-hub.pro/sitemap-0.xml"],
   },
 };
