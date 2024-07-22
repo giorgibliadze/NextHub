@@ -141,7 +141,7 @@ const SocMedia = () => {
             "Next-Hub Solutions-ის სოციალური მედია მენეჯმენტის სერვისები. მიიღეთ პროფესიონალური მხარდაჭერა ბრენდის ხასიათის შექმნაში, სოციალური მედიის მართვაში და სარეკლამო კამპანიების დაგეგმვაში.",
           images: [
             {
-              url: "https://www.next-hub.pro/bg-explosion.png",
+              url: "https://www.next-hub.pro/nexthub.jpg",
               width: 800,
               height: 600,
               alt: "Next-Hub Solutions",
@@ -155,7 +155,7 @@ const SocMedia = () => {
           title: "Next-Hub Solutions | Social Media Management",
           description:
             "Next-Hub Solutions-ის სოციალური მედია მენეჯმენტის სერვისები. მიიღეთ პროფესიონალური მხარდაჭერა ბრენდის ხასიათის შექმნაში, სოციალური მედიის მართვაში და სარეკლამო კამპანიების დაგეგმვაში.",
-          image: "https://www.next-hub.pro/bg-explosion.png",
+          image: "https://www.next-hub.pro/nexthub.jpg",
         }}
         additionalMetaTags={[
           {

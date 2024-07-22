@@ -6,6 +6,7 @@ import Bulb from "../../components/Bulb";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
 import Head from "next/head";
+import { NextSeo } from "next-seo";
 import { GoogleTagManager } from "@next/third-parties/google";
 const Seo = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -113,51 +114,61 @@ const Seo = () => {
 
   return (
     <>
+      <NextSeo
+        title="Next-Hub Solutions | SEO"
+        description="Next-Hub Solutions-ის სოციალური მედია მენეჯმენტის სერვისები. მიიღეთ პროფესიონალური მხარდაჭერა ბრენდის ხასიათის შექმნაში, სოციალური მედიის მართვაში და სარეკლამო კამპანიების დაგეგმვაში."
+        openGraph={{
+          type: "website",
+          locale: "ka_GE",
+          url: "https://www.next-hub.pro/services/soc_media",
+          site_name: "Next-Hub Solutions",
+          title: "Next-Hub Solutions | SEO",
+          description:
+            "Next-Hub Solutions-ის სოციალური მედია მენეჯმენტის სერვისები. მიიღეთ პროფესიონალური მხარდაჭერა ბრენდის ხასიათის შექმნაში, სოციალური მედიის მართვაში და სარეკლამო კამპანიების დაგეგმვაში.",
+          images: [
+            {
+              url: "https://www.next-hub.pro/nexthub.jpg",
+              width: 800,
+              height: 600,
+              alt: "Next-Hub Solutions",
+            },
+          ],
+        }}
+        twitter={{
+          handle: "@NextHub",
+          site: "@NextHub",
+          cardType: "summary_large_image",
+          title: "Next-Hub Solutions | SEO",
+          description:
+            "Next-Hub Solutions-ის სოციალური მედია მენეჯმენტის სერვისები. მიიღეთ პროფესიონალური მხარდაჭერა ბრენდის ხასიათის შექმნაში, სოციალური მედიის მართვაში და სარეკლამო კამპანიების დაგეგმვაში.",
+          image: "https://www.next-hub.pro/nexthub.jpg",
+        }}
+        additionalMetaTags={[
+          {
+            name: "keywords",
+            content:
+              "Next-Hub, SEO, საძიებო სისტემების ოპტიმიზაცია, საკვანძო სიტყვების კვლევა, ბმულების შენება, კონტენტის ოპტიმიზაცია, Google Analytics, ადგილობრივი SEO",
+          },
+          {
+            name: "author",
+            content: "Next-Hub Solutions",
+          },
+          {
+            name: "viewport",
+            content: "width=device-width, initial-scale=1.0",
+          },
+          {
+            name: "robots",
+            content: "index, follow",
+          },
+          {
+            name: "changefreq",
+            content: "always",
+          },
+        ]}
+      />
       <GoogleTagManager gtmId="GTM-KHQ9N3M5" />
-      <Head>
-        <title>Next-Hub Solutions | SEO</title>
-        <meta
-          name="description"
-          content="Next-Hub Solutions-ის SEO სერვისები. მიიღეთ საძიებო სისტემების ოპტიმიზაცია, საკვანძო სიტყვების კვლევა, ბმულების შენება და კონტენტის ოპტიმიზაცია."
-        />
-        <meta
-          name="keywords"
-          content="Next-Hub, SEO, საძიებო სისტემების ოპტიმიზაცია, საკვანძო სიტყვების კვლევა, ბმულების შენება, კონტენტის ოპტიმიზაცია, Google Analytics, ადგილობრივი SEO"
-        />
-        <meta name="changefreq" content="always" />
-        <meta name="author" content="Next-Hub Solutions" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta property="og:title" content="Next-Hub Solutions | SEO" />
-        <meta
-          property="og:description"
-          content="Next-Hub Solutions-ის SEO სერვისები. მიიღეთ საძიებო სისტემების ოპტიმიზაცია, საკვანძო სიტყვების კვლევა, ბმულების შენება და კონტენტის ოპტიმიზაცია."
-        />
-        <meta
-          property="og:url"
-          content="https://www.next-hub.pro/services/seo"
-        />
-        <meta
-          property="og:image"
-          content="https://www.next-hub.pro/bg-explosion.png"
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:locale" content="ka_GE" />
-        <meta property="og:site_name" content="Next-Hub Solutions" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@NextHub" />
-        <meta name="twitter:title" content="Next-Hub Solutions | SEO" />
-        <meta
-          name="twitter:description"
-          content="Next-Hub Solutions-ის SEO სერვისები. მიიღეთ საძიებო სისტემების ოპტიმიზაცია, საკვანძო სიტყვების კვლევა, ბმულების შენება და კონტენტის ოპტიმიზაცია."
-        />
-        <meta
-          name="twitter:image"
-          content="https://www.next-hub.pro/bg-explosion.png"
-        />
-        <link rel="icon" href="/favicon.jpg" sizes="any" type="image/png" />
-        <link rel="apple-touch-icon" href="/favicon.jpg" />
-        <meta name="robots" content="index, follow" />
-      </Head>
+
       {isModalOpen ? (
         <Modal
           isOpen={isModalOpen}
