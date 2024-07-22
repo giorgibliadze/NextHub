@@ -76,7 +76,7 @@ const ModernContainer = () => {
         <div
           key={contact.id}
           className={classNames(
-            "container flex items-center p-4 w-full min-w-[300px] xl:w-[450px] xxl:w-[450px] xll:w-[450px] xl:h-[167px] lg:h-[147px] md:h-[150px] xxl:h-[450px] xll:h-[450px] sm:w-[300px] h-[180px] smx:w-[250px] smx:h-[100px]  bg-white rounded-lg shadow-md cursor-pointer mb-5 transition duration-300 transform hover:scale-105 group",
+            "container xxl:mx-auto flex items-center p-4 w-full min-w-[300px] xl:w-[450px] xxl:w-[450px] xll:w-[450px] xl:h-[167px] lg:h-[147px] md:h-[150px] xxl:h-[250px] xll:h-[250px] sm:w-[300px] h-[180px] smx:w-[250px] smx:h-[100px]  bg-white rounded-lg shadow-md cursor-pointer mb-5 transition duration-300 transform hover:scale-105 group",
             {
               [contact.hoverBgColor]: hoveredIndex === index,
             }
