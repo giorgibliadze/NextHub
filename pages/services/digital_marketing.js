@@ -1,21 +1,28 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
+import dynamic from "next/dynamic";
 import ImageGallery from "../../components/ImageGallery";
-import PriceCard from "../../components/PriceCard";
-import Modal from "../../components/Modal";
-import Bulb from "../../components/Bulb";
 import { GoogleTagManager } from "@next/third-parties/google";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
 import Head from "next/head";
 import { NextSeo } from "next-seo";
+
+// Dynamically import PriceCard and Modal to enable code splitting
+const PriceCard = dynamic(() => import("../../components/PriceCard"), {
+  loading: () => <p>Loading...</p>,
+});
+const Modal = dynamic(() => import("../../components/Modal"), {
+  loading: () => <p>Loading...</p>,
+});
+
 const DigitalMarketing = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedCardData, setSelectedCardData] = useState(null);
 
-  const handlePurchaseClick = (cardData) => {
+  const handlePurchaseClick = useCallback((cardData) => {
     setSelectedCardData(cardData);
     setIsModalOpen(true);
-  };
+  }, []);
 
   useEffect(() => {
     if (isModalOpen) {
@@ -26,8 +33,8 @@ const DigitalMarketing = () => {
   }, [isModalOpen]);
 
   const images = [
-    { src: "/seo3.webp", alt: "Image 2" },
-    { src: "/seo2.webp", alt: "Image 3" },
+    { src: "/seo3.webp", alt: "Image 2", loading: "lazy" },
+    { src: "/seo2.webp", alt: "Image 3", loading: "lazy" },
   ];
 
   const priceCardsData = [
@@ -126,6 +133,11 @@ const DigitalMarketing = () => {
 
   return (
     <>
+      <Head>
+        {/* Preload critical resources */}
+        <link rel="preload" href="/seo3.webp" as="image" />
+        <link rel="preload" href="/seo2.webp" as="image" />
+      </Head>
       <NextSeo
         title="Next-Hub Solutions | Digital Marketing"
         description="Next-Hub Solutions-ის ციფრული მარკეტინგის სერვისები. მიიღეთ პროფესიონალური მხარდაჭერა ბრენდის ხასიათის შექმნაში, სოციალური მედიის მართვაში და სარეკლამო კამპანიების დაგეგმვაში."
