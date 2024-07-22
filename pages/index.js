@@ -73,7 +73,7 @@ const Home = () => {
         ]}
       />
 
-      <div className="bg-primary/60 h-screen w-full smx:h-[640px] sm:h-[600px] lg:h-[847px] xxl:h-[970px] xll:h-[865px]">
+      <div className="bg-primary/60 h-screen w-full smx:h-[640px] sm:h-[600px] lg:h-[847px] xxl:h-[990px] xll:h-[885px]">
         {/* text */}
         <div className="w-full h-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10">
           <div className="text-center flex flex-col justify-center xl:text-left h-full container mx-auto ]">
