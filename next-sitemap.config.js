@@ -29,8 +29,6 @@ const getAllRoutes = () => {
     "/contact",
     "/services",
     "/work",
-    // Add any additional dynamic routes here
-    "/test1", // Example of a new page
   ];
 
   return [...staticPages, ...dynamicRoutes];
@@ -52,7 +50,9 @@ module.exports = {
     }));
   },
   robotsTxtOptions: {
-    additionalSitemaps: ["https://www.next-hub.pro/sitemap.xml"],
-    additionalSitemaps: ["https://www.next-hub.pro/sitemap-0.xml"],
+    additionalSitemaps: [
+      "https://www.next-hub.pro/sitemap-0.xml",
+      "https://www.next-hub.pro/sitemap.xml",
+    ],
   },
 };
