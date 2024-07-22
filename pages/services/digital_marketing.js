@@ -3,6 +3,7 @@ import ImageGallery from "../../components/ImageGallery";
 import PriceCard from "../../components/PriceCard";
 import Modal from "../../components/Modal";
 import Bulb from "../../components/Bulb";
+import { GoogleTagManager } from "@next/third-parties/google";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
 import Head from "next/head";
@@ -124,6 +125,7 @@ const DigitalMarketing = () => {
 
   return (
     <>
+      <GoogleTagManager gtmId="GTM-KHQ9N3M5" />
       <Head>
         <title>Next-Hub Solutions | Digital Marketing</title>
         <meta

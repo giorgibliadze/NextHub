@@ -7,12 +7,13 @@ import Head from "next/head";
 //framer motion
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
-
+import { GoogleTagManager } from "@next/third-parties/google";
 const ServiceSlider = lazy(() => import("../../components/ServiceSlider"));
 
 const Services = () => {
   return (
     <Suspense fallback={<div>Loading...</div>}>
+      <GoogleTagManager gtmId="GTM-KHQ9N3M5" />
       <Head>
         <title>Next-Hub Solutions | Services</title>
         <meta

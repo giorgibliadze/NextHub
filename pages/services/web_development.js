@@ -8,6 +8,7 @@ import Bulb from "../../components/Bulb";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
 import Head from "next/head";
+import { GoogleTagManager } from "@next/third-parties/google";
 const WebDevelopment = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedCardData, setSelectedCardData] = useState(null);
@@ -159,6 +160,7 @@ const WebDevelopment = () => {
 
   return (
     <>
+      <GoogleTagManager gtmId="GTM-KHQ9N3M5" />
       {isModalOpen ? (
         <Modal
           isOpen={isModalOpen}

@@ -1,6 +1,7 @@
 // next image
 import Image from "next/image";
 import Bulb from "../../components/Bulb";
+import { GoogleTagManager } from "@next/third-parties/google";
 // components
 import TeamMember from "../../components/TeamMember";
 import ServiceSlider from "../../components/ServiceSlider";
@@ -13,6 +14,7 @@ import { fadeIn } from "../../variants";
 const About = () => {
   return (
     <>
+      <GoogleTagManager gtmId="GTM-KHQ9N3M5" />
       <Head>
         <title>Next-Hub Solutions | About</title>
         <meta

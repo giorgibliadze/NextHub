@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
 import ModernSection from "../../components/ModernSection";
 import dynamic from "next/dynamic";
+import { GoogleTagManager } from "@next/third-parties/google";
 import Head from "next/head";
 
 const MapComponent = dynamic(() => import("../../components/MapComponent"), {
@@ -60,6 +61,7 @@ const Contact = () => {
 
   return (
     <>
+      <GoogleTagManager gtmId="GTM-KHQ9N3M5" />
       <Head>
         <title>Next-Hub Solutions | Contact</title>
         <meta

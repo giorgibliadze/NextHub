@@ -6,6 +6,7 @@ import Bulb from "../../components/Bulb";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
 import Head from "next/head";
+import { GoogleTagManager } from "@next/third-parties/google";
 const Seo = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedCardData, setSelectedCardData] = useState(null);
@@ -112,7 +113,7 @@ const Seo = () => {
 
   return (
     <>
-      ;
+      <GoogleTagManager gtmId="GTM-KHQ9N3M5" />
       <Head>
         <title>Next-Hub Solutions | SEO</title>
         <meta

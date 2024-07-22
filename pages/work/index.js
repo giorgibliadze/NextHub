@@ -3,7 +3,7 @@
 import WorkSlider from "../../components/WorkSlider";
 import Bulb from "../../components/Bulb";
 import Circles from "../../components/Circles";
-
+import { GoogleTagManager } from "@next/third-parties/google";
 //framer motion
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
@@ -12,6 +12,7 @@ import { NextSeo } from "next-seo";
 const Work = () => {
   return (
     <>
+      <GoogleTagManager gtmId="GTM-KHQ9N3M5" />
       <NextSeo
         title="Next-Hub Solutions | Our Work"
         description="Next-Hub Solutions-ის პროექტები, დაწყებული დინამიური Next.js აპლიკაციებიდან WordPress-ის ვებსაიტებამდე, უნიკალური გამოწვევებით და მაღალი ხარისხით."

@@ -9,7 +9,7 @@ import { useRouter } from "next/router";
 
 //framer motion
 import { AnimatePresence, motion } from "framer-motion";
-import { GoogleTagManager } from "@next/third-parties/google";
+
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
 
@@ -18,7 +18,6 @@ function MyApp({ Component, pageProps }) {
      
       <AnimatePresence mode="wait">
         <motion.div key={router.route}>
-        <GoogleTagManager gtmId="GTM-KHQ9N3M5" />
           {/* <Transition /> */}
           <Component {...pageProps} />
         </motion.div>
