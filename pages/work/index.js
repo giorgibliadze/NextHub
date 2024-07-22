@@ -49,7 +49,7 @@ const Work = () => {
             "Next-Hub Solutions-ის პროექტები, დაწყებული დინამიური Next.js აპლიკაციებიდან WordPress-ის ვებსაიტებამდე, უნიკალური გამოწვევებით და მაღალი ხარისხით.",
           images: [
             {
-              url: "https://www.next-hub.pro/bg-explosion.png",
+              url: "https://www.next-hub.pro/nexthub.jpg",
               width: 800,
               height: 600,
               alt: "Next-Hub Solutions",
@@ -63,7 +63,7 @@ const Work = () => {
           title: "Next-Hub Solutions | Our Work",
           description:
             "Next-Hub Solutions-ის პროექტები, დაწყებული დინამიური Next.js აპლიკაციებიდან WordPress-ის ვებსაიტებამდე, უნიკალური გამოწვევებით და მაღალი ხარისხით.",
-          image: "https://www.next-hub.pro/bg-explosion.png",
+          image: "https://www.next-hub.pro/nexthub.jpg",
         }}
       />
       <div className="h-full bg-primary/30">

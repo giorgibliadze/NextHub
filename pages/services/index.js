@@ -8,53 +8,68 @@ import Head from "next/head";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
 import { GoogleTagManager } from "@next/third-parties/google";
+import { NextSeo } from "next-seo";
 const ServiceSlider = lazy(() => import("../../components/ServiceSlider"));
 
 const Services = () => {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <GoogleTagManager gtmId="GTM-KHQ9N3M5" />
-      <Head>
-        <title>Next-Hub Solutions | Services</title>
-        <meta
-          name="description"
-          content="გადააქციეთ თქვენი იდეები ციფრულ რეალობად ჩვენი სერვისებით. ჩვენ გთავაზობთ ვებ-გვერდების შექმნას, საიტის ადმინისტრირებას, SEO ოპტიმიზაციას და სოციალური მედიის მენეჯმენტს."
-        />
-        <meta
-          name="keywords"
-          content="Next-Hub, Services, ვებ-გვერდების შექმნა, საიტის ადმინისტრირება, SEO, სოციალური მედიის მენეჯმენტი, ციფრული პოტენციალი"
-        />
-        <meta name="changefreq" content="always" />
-        <meta name="author" content="Next-Hub Solutions" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta property="og:title" content="Next-Hub Solutions | Services" />
-        <meta
-          property="og:description"
-          content="გადააქციეთ თქვენი იდეები ციფრულ რეალობად ჩვენი სერვისებით. ჩვენ გთავაზობთ ვებ-გვერდების შექმნას, საიტის ადმინისტრირებას, SEO ოპტიმიზაციას და სოციალური მედიის მენეჯმენტს."
-        />
-        <meta property="og:url" content="https://www.next-hub.pro/services" />
-        <meta
-          property="og:image"
-          content="https://www.next-hub.pro/bg-explosion.png"
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:locale" content="ka_GE" />
-        <meta property="og:site_name" content="Next-Hub Solutions" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@NextHub" />
-        <meta name="twitter:title" content="Next-Hub Solutions | Services" />
-        <meta
-          name="twitter:description"
-          content="გადააქციეთ თქვენი იდეები ციფრულ რეალობად ჩვენი სერვისებით. ჩვენ გთავაზობთ ვებ-გვერდების შექმნას, საიტის ადმინისტრირებას, SEO ოპტიმიზაციას და სოციალური მედიის მენეჯმენტს."
-        />
-        <meta
-          name="twitter:image"
-          content="https://www.next-hub.pro/bg-explosion.png"
-        />
-        <link rel="icon" href="/favicon.jpg" sizes="any" type="image/png" />
-        <link rel="apple-touch-icon" href="/favicon.jpg" />
-        <meta name="robots" content="index, follow" />
-      </Head>
+      <NextSeo
+        title="Next-Hub Solutions | Services"
+        description="მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად."
+        keywords="Next-Hub, ციფრული რეალობა, იდეები, სურვილები, ოცნებები, ბრენდის ცნობადობა, სანდოობა, ციფრული ტრანსფორმაცია, ვებ აპლიკაციები, სოციალური მედია, SEO, ანალიტიკა"
+        openGraph={{
+          type: "website",
+          locale: "ka_GE",
+          url: "https://www.next-hub.pro/services",
+          site_name: "Next-Hub Solutions",
+          title: "Next-Hub Solutions | Services",
+          description:
+            "მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად.",
+          images: [
+            {
+              url: "https://www.next-hub.pro/nexthub.jpg",
+              width: 800,
+              height: 600,
+              alt: "Next-Hub Solutions",
+            },
+          ],
+        }}
+        twitter={{
+          handle: "@NextHub",
+          site: "@NextHub",
+          cardType: "summary_large_image",
+          title: "Next-Hub Solutions | Services",
+          description:
+            "მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად.",
+          image: "https://www.next-hub.pro/nexthub.jpg",
+        }}
+        additionalMetaTags={[
+          {
+            name: "keywords",
+            content:
+              "Next-Hub, ციფრული რეალობა, იდეები, სურვილები, ოცნებები, ბრენდის ცნობადობა, სანდოობა, ციფრული ტრანსფორმაცია, ვებ აპლიკაციები, სოციალური მედია, SEO, ანალიტიკა",
+          },
+          {
+            name: "author",
+            content: "Next-Hub Solutions",
+          },
+          {
+            name: "viewport",
+            content: "width=device-width, initial-scale=1.0",
+          },
+          {
+            name: "robots",
+            content: "index, follow",
+          },
+          {
+            name: "changefreq",
+            content: "always",
+          },
+        ]}
+      />
+
       <div className="h-full lg:h-[700px] xxl:h-[950px] xll:h-[970px] bg-primary/30 py-36 flex p-[20px]">
         <Circles />
         <div className="container min-w-full items-center mx-auto">

@@ -46,7 +46,7 @@ const Home = () => {
           title: "Next-Hub Solutions | Home",
           description:
             "მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად.",
-          image: "https://www.next-hub.pro/bg-explosion.png",
+          image: "https://www.next-hub.pro/nexthub.jpg",
         }}
         additionalMetaTags={[
           {

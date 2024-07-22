@@ -120,7 +120,7 @@ const Seo = () => {
         openGraph={{
           type: "website",
           locale: "ka_GE",
-          url: "https://www.next-hub.pro/services/soc_media",
+          url: "https://www.next-hub.pro/services/seo",
           site_name: "Next-Hub Solutions",
           title: "Next-Hub Solutions | SEO",
           description:
