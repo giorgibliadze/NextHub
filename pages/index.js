@@ -13,10 +13,21 @@ import { GoogleTagManager } from "@next/third-parties/google";
 //variants
 import { fadeIn } from "../variants";
 import { NextSeo } from "next-seo";
+import Script from "next/script";
 const Home = () => {
   const words = ["იდეები", "სურვილები", "ოცნებები"];
   return (
     <>
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-MCWYDWRTCY"
+      ></Script>
+      <Script id="google-analytics">
+        {`window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-MCWYDWRTCY');`}
+      </Script>
       <Head>
         <meta
           name="google-site-verification"
