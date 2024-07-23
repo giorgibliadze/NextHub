@@ -17,6 +17,12 @@ const Home = () => {
   const words = ["იდეები", "სურვილები", "ოცნებები"];
   return (
     <>
+      <Head>
+        <meta
+          name="google-site-verification"
+          content="AV_Rqc6RXH1HpfaYzYb7la24kvaGW8sqHpeTaW2NU50"
+        />
+      </Head>
       <GoogleTagManager gtmId="GTM-KHQ9N3M5" />
       <NextSeo
         title="Next-Hub Solutions | Home"
