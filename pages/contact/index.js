@@ -35,7 +35,7 @@ const Contact = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          to: "infonexthubsolutions@gmail.com",
+          to: "info@next-hub.pro",
           name,
           subject,
           body: `<div>

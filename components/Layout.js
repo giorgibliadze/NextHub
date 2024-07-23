@@ -19,6 +19,17 @@ const Layout = ({ children }) => {
   return (
     <>
       <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              url: "https://www.next-hub.pro",
+              logo: "https://www.next-hub.pro/favicon.jpg",
+            }),
+          }}
+        />
         <link rel="icon" href="/favicon.jpg" sizes="any" type="image/png" />
         <Head>
           <meta name="robots" content="index, follow" />

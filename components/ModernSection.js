@@ -15,7 +15,7 @@ const contacts = [
       <FaEnvelope className="text-4xl transition duration-300 text-white group-hover:text-blue-400" />
     ),
     title: "ელ-ფოსტა:",
-    info: "infonexthubsolutions@gmail.com",
+    info: "info@next-hub.pro",
     bgColor: "bg-blue-400",
     hoverBgColor: "hover:bg-blue-400",
     textColor: "text-blue-400",

@@ -29,7 +29,7 @@ const Modal = ({ isOpen, onClose, cardData }) => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          to: "infonexthubsolutions@gmail.com",
+          to: "info@next-hub.pro",
           name,
           phone,
           subject,
