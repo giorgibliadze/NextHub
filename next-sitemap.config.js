@@ -1,58 +1,59 @@
-const fs = require("fs");
-const path = require("path");
+// next-sitemap.config.js
 
-const getAllRoutes = () => {
-  const staticPages = fs
-    .readdirSync(path.join(__dirname, "pages"))
-    .filter((file) => {
-      return (
-        file.endsWith(".js") &&
-        !file.startsWith("_") &&
-        !file.includes("[[") &&
-        !file.includes("[")
-      );
-    })
-    .map((page) => {
-      const path = page.replace(".js", "");
-      return path === "index" ? "/" : `/${path}`;
-    });
-
-  const dynamicRoutes = [
-    "/services/analytics",
-    "/services/digital_marketing",
-    "/services/graphic_design",
-    "/services/seo",
-    "/services/soc_media",
-    "/services/tech_support",
-    "/services/web_development",
-    "/about",
-    "/contact",
-    "/services",
-    "/work",
-  ];
-
-  return [...staticPages, ...dynamicRoutes];
-};
-
+/** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.SITE_URL || "https://www.next-hub.pro",
-  generateRobotsTxt: true,
-  changefreq: "daily",
-  priority: 0.7,
-  sitemapSize: 5000,
-  exclude: ["/api/*"],
-  additionalPaths: async (config) => {
-    const allRoutes = getAllRoutes();
-    return allRoutes.map((route) => ({
-      loc: route,
-      changefreq: "daily",
-      priority: 0.7,
-    }));
-  },
+  siteUrl: "https://www.next-hub.pro",
+  generateRobotsTxt: true, // Generate robots.txt file
+  sitemapSize: 5000, // Max number of URLs per sitemap file
+  changefreq: "daily", // Change frequency of the URLs
+  priority: 0.7, // Priority of the URLs
+  exclude: ["/admin/*", "/login"], // Paths to exclude from the sitemap
+  alternateRefs: [
+    {
+      href: "https://es.next-hub.pro",
+      hreflang: "es",
+    },
+  ], // List of alternate URLs for different languages
+  transform: async (config, path) => {
+    return {
+      loc: path, // Use the default location
+      changefreq: config.changefreq,
+      priority: config.priority,
+      lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
+      alternateRefs: config.alternateRefs ?? [],
+    };
+  }, // Function to modify sitemap fields
+  additionalPaths: async (config) => [
+    await config.transform(config, "/work"),
+    await config.transform(config, "/about"),
+    await config.transform(config, "/contact"),
+    await config.transform(config, "/services"),
+    await config.transform(config, "/services/analytics"),
+    await config.transform(config, "/services/digital_marketing"),
+    await config.transform(config, "/services/web_development"),
+    await config.transform(config, "/services/seo"),
+    await config.transform(config, "/services/soc_media"),
+    await config.transform(config, "/services/tech_support"),
+  ], // Additional paths to include in the sitemap
   robotsTxtOptions: {
+    policies: [
+      {
+        userAgent: "*",
+        allow: "/",
+      },
+      {
+        userAgent: "Googlebot",
+        allow: "/",
+      },
+      {
+        userAgent: "*",
+        disallow: "/admin",
+      },
+    ], // Policies for robots.txt
     additionalSitemaps: [
-      "https://www.next-hub.pro/sitemap-0.xml",
-      "https://www.next-hub.pro/sitemap.xml",
-    ],
+      "https://www.next-hub.pro/my-custom-sitemap-1.xml",
+      "https://www.next-hub.pro/my-custom-sitemap-2.xml",
+    ], // Additional sitemaps
   },
+  autoLastmod: true, // Automatically set last modified date
 };
