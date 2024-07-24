@@ -13,6 +13,10 @@ import Script from "next/script";
 const Work = () => {
   return (
     <>
+    <Head>
+          <meta name="robots" content="index, follow" />
+        </Head>
+
       <GoogleTagManager gtmId="GTM-KHQ9N3M5" />
       <NextSeo
         title="Next-Hub Solutions | Our Work"

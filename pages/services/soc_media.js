@@ -128,6 +128,9 @@ const SocMedia = () => {
 
   return (
     <>
+    <Head>
+          <meta name="robots" content="index, follow" />
+        </Head>
       <NextSeo
         title="Next-Hub Solutions | Social Media Management"
         description="Next-Hub Solutions-ის სოციალური მედია მენეჯმენტის სერვისები. მიიღეთ პროფესიონალური მხარდაჭერა ბრენდის ხასიათის შექმნაში, სოციალური მედიის მართვაში და სარეკლამო კამპანიების დაგეგმვაში."

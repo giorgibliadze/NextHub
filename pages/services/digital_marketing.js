@@ -134,10 +134,8 @@ const DigitalMarketing = () => {
   return (
     <>
       <Head>
-        {/* Preload critical resources */}
-        <link rel="preload" href="/seo3.webp" as="image" />
-        <link rel="preload" href="/seo2.webp" as="image" />
-      </Head>
+          <meta name="robots" content="index, follow" />
+        </Head>
       <NextSeo
         title="Next-Hub Solutions | Digital Marketing"
         description="Next-Hub Solutions-ის ციფრული მარკეტინგის სერვისები. მიიღეთ პროფესიონალური მხარდაჭერა ბრენდის ხასიათის შექმნაში, სოციალური მედიის მართვაში და სარეკლამო კამპანიების დაგეგმვაში."

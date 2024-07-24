@@ -161,6 +161,9 @@ const WebDevelopment = () => {
 
   return (
     <>
+    <Head>
+          <meta name="robots" content="index, follow" />
+        </Head>
       <NextSeo
         title="Next-Hub Solutions | Web Development"
         description="მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად."

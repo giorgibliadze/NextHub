@@ -108,6 +108,9 @@ const TechSupport = () => {
 
   return (
     <>
+    <Head>
+          <meta name="robots" content="index, follow" />
+        </Head>
       <NextSeo
         title="Next-Hub Solutions | Tech Support"
         description="მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად."

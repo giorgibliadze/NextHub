@@ -29,6 +29,7 @@ const Home = () => {
           gtag('config', 'G-MCWYDWRTCY');`}
       </Script>
       <Head>
+      <meta name="robots" content="index, follow" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

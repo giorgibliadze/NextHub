@@ -9,6 +9,9 @@ import { NextSeo } from "next-seo";
 const graphic_design = () => {
   return (
     <>
+    <Head>
+          <meta name="robots" content="index, follow" />
+        </Head>
       <NextSeo
         title="Next-Hub Solutions | Graphic Design"
         description="მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად."
