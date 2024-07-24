@@ -15,5 +15,4 @@ Host: https://www.next-hub.pro
 
 # Sitemaps
 Sitemap: https://www.next-hub.pro/sitemap.xml
-Sitemap: https://www.next-hub.pro/my-custom-sitemap-1.xml
-Sitemap: https://www.next-hub.pro/my-custom-sitemap-2.xml
+Sitemap: https://www.next-hub.pro/sitemap-0.xml

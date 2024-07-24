@@ -1,5 +1,3 @@
-// next-sitemap.config.js
-
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
   siteUrl: "https://www.next-hub.pro",
@@ -51,8 +49,7 @@ module.exports = {
       },
     ],
     additionalSitemaps: [
-      "https://www.next-hub.pro/my-custom-sitemap-1.xml",
-      "https://www.next-hub.pro/my-custom-sitemap-2.xml",
+      "https://www.next-hub.pro/sitemap-0.xml",
     ],
   },
   autoLastmod: true,
