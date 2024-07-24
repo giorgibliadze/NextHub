@@ -45,6 +45,7 @@ const Home = () => {
       </Head>
       <GoogleTagManager gtmId="GTM-KHQ9N3M5" />
       <NextSeo
+      canonical="https://www.next-hub.pro"
         title="Next-Hub Solutions | Home"
         description="მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად."
         keywords="Next-Hub, ციფრული რეალობა, იდეები, სურვილები, ოცნებები, ბრენდის ცნობადობა, სანდოობა, ციფრული ტრანსფორმაცია, ვებ აპლიკაციები, სოციალური მედია, SEO, ანალიტიკა"

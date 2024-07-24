@@ -112,6 +112,7 @@ const Analytics = () => {
           <meta name="robots" content="index, follow" />
         </Head>
       <NextSeo
+      canonical="https://www.next-hub.pro/services/analytics"
         title="Next-Hub Solutions | Analytics"
         description="მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად."
         keywords="Next-Hub, Analytics, მონაცემთა შეგროვება, შეფასება, ანალიზი, Google Analytics, მონაცემთა ვიზუალიზაცია"

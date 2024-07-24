@@ -165,6 +165,7 @@ const WebDevelopment = () => {
           <meta name="robots" content="index, follow" />
         </Head>
       <NextSeo
+      canonical="https://www.next-hub.pro/services/web_development"
         title="Next-Hub Solutions | Web Development"
         description="მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად."
         keywords="Next-Hub, ციფრული რეალობა, იდეები, სურვილები, ოცნებები, ბრენდის ცნობადობა, სანდოობა, ციფრული ტრანსფორმაცია, ვებ აპლიკაციები, სოციალური მედია, SEO, ანალიტიკა"

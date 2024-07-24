@@ -30,6 +30,7 @@ const Layout = ({ children }) => {
           gtag('config', 'G-MCWYDWRTCY');`}
       </Script>
       <Head>
+      <link rel="icon" href="/favicon.jpg" />
       <meta name="robots" content="index, follow" />
         <script
           type="application/ld+json"
@@ -49,6 +50,7 @@ const Layout = ({ children }) => {
       </Head>
       <GoogleTagManager gtmId="GTM-KHQ9N3M5" />
       <NextSeo
+      canonical="https://www.next-hub.pro"
         title="Next-Hub Solutions | Home"
         description="მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად."
         keywords="Next-Hub, ციფრული რეალობა, იდეები, სურვილები, ოცნებები, ბრენდის ცნობადობა, სანდოობა, ციფრული ტრანსფორმაცია, ვებ აპლიკაციები, სოციალური მედია, SEO, ანალიტიკა"
