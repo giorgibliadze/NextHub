@@ -1,19 +1,16 @@
 /* eslint-disable react/no-unescaped-entities */
-// next image
 import Image from "next/image";
 import RotatingWords from "../components/RotatingWords";
-//components
 import ParticlesContainer from "../components/ParticlesContainer";
 import ProjectBtn from "../components/ProjectsBtn";
 import { DefaultSeo } from "next-seo";
-//framer motion
 import { motion } from "framer-motion";
 import Head from "next/head";
 import { GoogleTagManager } from "@next/third-parties/google";
-//variants
 import { fadeIn } from "../variants";
 import { NextSeo } from "next-seo";
 import Script from "next/script";
+
 const Home = () => {
   const words = ["იდეები", "სურვილები", "ოცნებები"];
   return (
@@ -29,7 +26,7 @@ const Home = () => {
           gtag('config', 'G-MCWYDWRTCY');`}
       </Script>
       <Head>
-      <meta name="robots" content="index, follow" />
+        <meta name="robots" content="index, follow" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
