@@ -48,13 +48,13 @@ const serviceData = [
       "ჩვენი SEO სერვისები დაგეხმარებათ საძიებო სისტემებში მოწინავე პოზიციების დაკავებაში და გაყიდვების ზრდაში.",
     link: "/services/seo",
   },
-  {
-    icon: <RiFacebookCircleFill />,
-    title: "სოციალური მედია მენეჯმენტი",
-    description:
-      "განვახორციელებთ ეფექტურ სარეკლამო კამპანიებს თქვენს სოციალურ ქსელებში.",
-    link: "/services/soc_media",
-  },
+  // {
+  //   icon: <RiFacebookCircleFill />,
+  //   title: "სოციალური მედია მენეჯმენტი",
+  //   description:
+  //     "განვახორციელებთ ეფექტურ სარეკლამო კამპანიებს თქვენს სოციალურ ქსელებში.",
+  //   link: "/services/soc_media",
+  // },
   {
     icon: <SiTaichigraphics />,
     title: "გრაფიკული დიზაინი",
