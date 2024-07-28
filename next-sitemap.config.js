@@ -6,19 +6,12 @@ module.exports = {
   changefreq: "daily",
   priority: 0.7,
   exclude: ["/admin/*", "/login"],
-  alternateRefs: [
-    {
-      href: "https://es.next-hub.pro",
-      hreflang: "es",
-    },
-  ],
   transform: async (config, path) => {
     return {
       loc: path,
       changefreq: config.changefreq,
       priority: config.priority,
       lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
-      alternateRefs: config.alternateRefs ?? [],
     };
   },
   additionalPaths: async (config) => [
@@ -47,9 +40,6 @@ module.exports = {
         userAgent: "*",
         disallow: "/admin",
       },
-    ],
-    additionalSitemaps: [
-      "https://www.next-hub.pro/sitemap-0.xml",
     ],
   },
   autoLastmod: true,
