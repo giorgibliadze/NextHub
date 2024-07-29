@@ -1,14 +1,15 @@
+/* eslint-disable @next/next/no-script-component-in-head */
 import { Sora } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Nav from "../components/Nav";
 import Header from "../components/Header";
 import TopLeftImg from "../components/TopLeftImg";
-import { DefaultSeo } from "next-seo";
+import { DefaultSeo, NextSeo } from "next-seo";
 import Script from "next/script";
 import Head from "next/head";
 import { GoogleTagManager } from "@next/third-parties/google";
-import { NextSeo } from "next-seo";
+
 // Font settings
 const sora = Sora({
   subsets: ["latin"],
@@ -19,19 +20,43 @@ const sora = Sora({
 const Layout = ({ children }) => {
   return (
     <>
-    <Script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=G-MCWYDWRTCY"
-      ></Script>
-      <Script id="google-analytics">
-        {`window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-MCWYDWRTCY');`}
-      </Script>
       <Head>
-      <link rel="icon" href="/favicon.jpg" />
-      <meta name="robots" content="index, follow" />
+        {/* Google Analytics */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-MCWYDWRTCY"
+        />
+        <Script id="google-analytics">
+          {`window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-MCWYDWRTCY');`}
+        </Script>
+
+        {/* Meta Pixel Code */}
+        <Script id="meta-pixel">
+          {`!function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '2226173814403074');
+            fbq('track', 'PageView');`}
+        </Script>
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            src="https://www.facebook.com/tr?id=2226173814403074&ev=PageView&noscript=1"
+          />
+        </noscript>
+
+        <link rel="icon" href="/favicon.jpg" />
+        <meta name="robots" content="index, follow" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -48,12 +73,11 @@ const Layout = ({ children }) => {
           content="AV_Rqc6RXH1HpfaYzYb7la24kvaGW8sqHpeTaW2NU50"
         />
       </Head>
-      <GoogleTagManager gtmId="GTM-KHQ9N3M5" />
-      <NextSeo
-      canonical="https://www.next-hub.pro"
+
+      <DefaultSeo
+        canonical="https://www.next-hub.pro"
         title="Next-Hub Solutions | Home"
         description="მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად."
-        keywords="Next-Hub, ციფრული რეალობა, იდეები, სურვილები, ოცნებები, ბრენდის ცნობადობა, სანდოობა, ციფრული ტრანსფორმაცია, ვებ აპლიკაციები, სოციალური მედია, SEO, ანალიტიკა"
         openGraph={{
           type: "website",
           locale: "ka_GE",
@@ -104,20 +128,11 @@ const Layout = ({ children }) => {
           },
         ]}
       />
+
+      <GoogleTagManager gtmId="GTM-KHQ9N3M5" />
       <div
         className={`page bg-site text-white bg-cover bg-no-repeat ${sora.variable} font-sora relative overflow-y-auto`}
       >
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-MCWYDWRTCY"
-        ></Script>
-        <Script id="google-analytics">
-          {`window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-MCWYDWRTCY');`}
-        </Script>
-        <GoogleTagManager gtmId="GTM-KHQ9N3M5" />
         <Analytics />
         <SpeedInsights />
         <TopLeftImg />
