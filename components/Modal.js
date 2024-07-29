@@ -104,7 +104,7 @@ const Modal = ({ isOpen, onClose, cardData }) => {
           ))}
         </ul>
         <motion.form
-          id="form"
+          id="card-form"
           ref={formRef}
           variants={fadeIn("up", 0.1)}
           initial="hidden"
