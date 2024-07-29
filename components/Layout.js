@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-script-component-in-head */
 import { Sora } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -20,21 +19,19 @@ const sora = Sora({
 const Layout = ({ children }) => {
   return (
     <>
+      <Script
+        async
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`}
+      ></Script>
+      <Script id="google-analytics">
+        {`window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}');`}
+      </Script>
       <Head>
-        {/* Google Analytics */}
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-MCWYDWRTCY"
-        />
-        <Script id="google-analytics">
-          {`window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-MCWYDWRTCY');`}
-        </Script>
-
         {/* Meta Pixel Code */}
-        <Script id="meta-pixel">
+        <script>
           {`!function(f,b,e,v,n,t,s)
             {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
             n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -43,18 +40,18 @@ const Layout = ({ children }) => {
             t.src=v;s=b.getElementsByTagName(e)[0];
             s.parentNode.insertBefore(t,s)}(window, document,'script',
             'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '2226173814403074');
+            fbq('init', '${process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID}');
             fbq('track', 'PageView');`}
-        </Script>
+        </script>
         <noscript>
           <img
             height="1"
             width="1"
             style={{ display: "none" }}
-            src="https://www.facebook.com/tr?id=2226173814403074&ev=PageView&noscript=1"
+            src={`https://www.facebook.com/tr?id=${process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID}&ev=PageView&noscript=1`}
           />
         </noscript>
-
+        {/* End Meta Pixel Code */}
         <link rel="icon" href="/favicon.jpg" />
         <meta name="robots" content="index, follow" />
         <script
@@ -73,11 +70,12 @@ const Layout = ({ children }) => {
           content="AV_Rqc6RXH1HpfaYzYb7la24kvaGW8sqHpeTaW2NU50"
         />
       </Head>
-
-      <DefaultSeo
+      <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID} />
+      <NextSeo
         canonical="https://www.next-hub.pro"
         title="Next-Hub Solutions | Home"
         description="მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად."
+        keywords="Next-Hub, ციფრული რეალობა, იდეები, სურვილები, ოცნებები, ბრენდის ცნობადობა, სანდოობა, ციფრული ტრანსფორმაცია, ვებ აპლიკაციები, სოციალური მედია, SEO, ანალიტიკა"
         openGraph={{
           type: "website",
           locale: "ka_GE",
@@ -128,8 +126,6 @@ const Layout = ({ children }) => {
           },
         ]}
       />
-
-      <GoogleTagManager gtmId="GTM-KHQ9N3M5" />
       <div
         className={`page bg-site text-white bg-cover bg-no-repeat ${sora.variable} font-sora relative overflow-y-auto`}
       >
