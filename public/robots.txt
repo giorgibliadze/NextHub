@@ -1,15 +1,16 @@
-# *
+# All User-agents
 User-agent: *
 Allow: /
-# *
-user-agent: *
-disallow: /downloads/
 
-# Googlebot
+# Block Downloads for All User-agents
+User-agent: *
+Disallow: /downloads/
+
+# Specific Rules for Googlebot
 User-agent: Googlebot
 Allow: /
 
-# Host
+# Host Directive
 Host: https://www.next-hub.pro
 
 # Sitemaps
