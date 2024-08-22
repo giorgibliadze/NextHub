@@ -119,7 +119,7 @@ const Modal = ({ isOpen, onClose, cardData }) => {
               id="name"
               name="name"
               placeholder="სახელი"
-              className="text-white bg-transparent border-b border-gray-500 focus:outline-none focus:border-accent input text-center w-full focus:text-accent"
+              className="text-white bg-transparent border-b border-gray-500 focus:outline-none focus:border-accent input text-center w-full focus:text-accent focus:bg-transparent"
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
@@ -129,7 +129,7 @@ const Modal = ({ isOpen, onClose, cardData }) => {
               id="email"
               name="email"
               placeholder="მაილი"
-              className="text-white bg-transparent border-b border-gray-500 focus:outline-none focus:border-accent input text-center w-full focus:text-accent"
+              className="text-white bg-transparent border-b border-gray-500 focus:outline-none focus:border-accent input text-center w-full focus:text-accent focus:bg-transparent"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -140,7 +140,7 @@ const Modal = ({ isOpen, onClose, cardData }) => {
             id="phone"
             name="phone"
             placeholder="ტელეფონი"
-            className="text-white bg-transparent border-b border-gray-500 focus:outline-none focus:border-accent input text-center w-full focus:text-accent"
+            className="text-white bg-transparent border-b border-gray-500 focus:outline-none focus:border-accent input text-center w-full focus:text-accent focus:bg-transparent"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
             required
@@ -150,7 +150,7 @@ const Modal = ({ isOpen, onClose, cardData }) => {
             id="subject"
             name="subject"
             placeholder="თემა"
-            className="text-white bg-transparent border-b border-gray-500 focus:outline-none focus:border-accent input text-center w-full focus:text-accent"
+            className="text-white bg-transparent border-b border-gray-500 focus:outline-none focus:border-accent input text-center w-full focus:text-accent focus:bg-transparent"
             value={subject}
             onChange={(e) => setSubject(e.target.value)}
             required
@@ -159,7 +159,7 @@ const Modal = ({ isOpen, onClose, cardData }) => {
             id="message"
             name="message"
             placeholder="შეტყობინება"
-            className="text-white bg-transparent border-b border-gray-500 focus:outline-none focus:border-accent textarea text-center w-full focus:text-accent"
+            className="text-white bg-transparent border-b border-gray-500 focus:outline-none focus:border-accent input text-center w-full focus:text-accent focus:bg-transparent"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             required
