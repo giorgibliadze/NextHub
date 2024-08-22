@@ -14,8 +14,6 @@ Disallow: /downloads/
 User-agent: Googlebot
 Allow: /
 
-# Host Directive
-Host: https://www.next-hub.pro
 
 # Sitemaps
 Sitemap: https://www.next-hub.pro/sitemap.xml
