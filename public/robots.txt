@@ -1,9 +1,9 @@
 # *
-user-agent: *
-disallow: /downloads/
-
 User-agent: *
 Allow: /
+# *
+user-agent: *
+disallow: /downloads/
 
 # Googlebot
 User-agent: Googlebot
