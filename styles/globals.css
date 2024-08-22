@@ -112,3 +112,36 @@ nav {
     @apply w-full h-[180px] p-6 capitalize rounded-lg resize-none;
   }
 }
+
+/* Autofill background and text color fix for WebKit browsers (like Chrome) */
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  background-color: transparent !important;
+  -webkit-text-fill-color: #ffffff !important; /* Ensures text color is white */
+  font-size: inherit;
+  font-family: inherit;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Ensure text color remains white on focus */
+input:focus,
+textarea:focus {
+  color: #ffffff !important;
+}
+
+/* Firefox specific autofill fix */
+input:-moz-autofill,
+textarea:-moz-autofill,
+select:-moz-autofill {
+  background-color: transparent;
+  color: #ffffff;
+}
+
+/* General fix */
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder,
+select:-ms-input-placeholder {
+  background-color: transparent;
+  color: #ffffff;
+}
