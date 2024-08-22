@@ -2,6 +2,10 @@
 User-agent: *
 Allow: /
 
+# Explicitly Allow the /services/ Folder for All User-agents
+User-agent: *
+Allow: /services/
+
 # Block Downloads for All User-agents
 User-agent: *
 Disallow: /downloads/
