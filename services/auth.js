@@ -22,12 +22,20 @@ export const getAuthToken = async () => {
       }
     );
 
-    // Extract the access token from the response
-    const { access_token } = response.data;
-    console.log(`Access Token: ${access_token}`);
-    return access_token;
+    console.log("Response:", response);
+    return response.data.access_token;
   } catch (error) {
-    console.error("Error fetching auth token:", error.toJSON ? error.toJSON() : error);
+    console.error("Error fetching auth token:", error);
+    if (error.response) {
+      // Server responded with a status other than 200
+      console.error("Error response data:", error.response.data);
+    } else if (error.request) {
+      // No response received
+      console.error("No response received:", error.request);
+    } else {
+      // Something else caused the error
+      console.error("Error message:", error.message);
+    }
     throw new Error("Authentication failed");
   }
 };
