@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { BsArrowRight } from "react-icons/bs";
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
-import { makePaymentRequest } from "../services/payment"; // Import the payment function
+import { createPaymentOrder, getPaymentDetails } from "../services/payment"; // Import payment functions
 
 const Modal = ({ isOpen, onClose, cardData }) => {
   const [email, setEmail] = useState("");
@@ -61,18 +61,53 @@ const Modal = ({ isOpen, onClose, cardData }) => {
     setSuccessMessage(null);
 
     try {
-      const paymentData = {
-        amount: cardData.price, // Example data
-        currency: "GEL", // Example currency
-        description: subject,
-        // Add other necessary payment data
+      // Prepare order data
+      const orderData = {
+        callback_url: "https://example.com/callback",
+        external_order_id: "id123", // თქვენ შეგიძლიათ გამოიყენოთ დინამიური ID
+        purchase_units: {
+          currency: "GEL",
+          total_amount: cardData.price, // გადახდის სრული თანხა
+          basket: [
+            {
+              quantity: 1,
+              unit_price: cardData.price, // ერთეულის ფასი
+              product_id: cardData.id, // პროდუქტის ID
+            },
+          ],
+        },
+        redirect_urls: {
+          fail: "https://example.com/fail",
+          success: "https://example.com/success",
+        },
       };
 
-      const response = await makePaymentRequest(paymentData);
+      const response = await createPaymentOrder(orderData);
 
-      setSuccessMessage("გადახდა წარმატებით განხორციელდა");
+      // თუ შეკვეთა წარმატებით შეიქმნა, გადაამისამართეთ მომხმარებელი გადახდის გვერდზე
+      if (response && response._links && response._links.redirect) {
+        window.location.href = response._links.redirect.href;
+      } else {
+        setError("გადახდის URL მისამართი ვერ მოიძებნა.");
+      }
     } catch (err) {
       setError(`გადახდა ვერ მოხერხდა: ${err.message}`);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleGetPaymentDetails = async (orderId) => {
+    setLoading(true);
+    setError(null);
+    setSuccessMessage(null);
+
+    try {
+      const paymentDetails = await getPaymentDetails(orderId);
+      console.log("Payment Details:", paymentDetails);
+      setSuccessMessage("გადახდის დეტალები წარმატებით მოიძებნა");
+    } catch (err) {
+      setError(`გადახდის დეტალები ვერ მოიძებნა: ${err.message}`);
     } finally {
       setLoading(false);
     }
@@ -208,6 +243,19 @@ const Modal = ({ isOpen, onClose, cardData }) => {
             >
               <span className="group-hover:-translate-y-[120%] group-hover:opacity-0 transition-all duration-500">
                 {loading ? "გადახდა..." : "გადახდა"}
+              </span>
+              <BsArrowRight className="-translate-y-[120%] opacity-0 group-hover:flex group-hover:-translate-y-0 group-hover:opacity-100 transition-all duration-300 absolute text-[22px]" />
+            </button>
+          </div>
+          <div className="flex justify-center mt-4">
+            <button
+              type="button"
+              className="btn rounded-full border border-white max-w-[170px] px-8 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accent group text-white"
+              onClick={() => handleGetPaymentDetails("order_id")} // შეცვალეთ "order_id" ნამდვილი შეკვეთის ID-ით
+              disabled={loading}
+            >
+              <span className="group-hover:-translate-y-[120%] group-hover:opacity-0 transition-all duration-500">
+                {loading ? "დეტალები..." : "დეტალები"}
               </span>
               <BsArrowRight className="-translate-y-[120%] opacity-0 group-hover:flex group-hover:-translate-y-0 group-hover:opacity-100 transition-all duration-300 absolute text-[22px]" />
             </button>
