@@ -6,6 +6,8 @@ const CLIENT_SECRET = process.env.NEXT_PUBLIC_CLIENT_SECRET; // Store in .env fi
 const AUTH_URL =
   "https://oauth2.bog.ge/auth/realms/bog/protocol/openid-connect/token";
 
+axios.defaults.timeout = 10000; // 10 seconds
+
 export const getAuthToken = async () => {
   try {
     const credentials = Buffer.from(`${CLIENT_ID}:${CLIENT_SECRET}`).toString(
