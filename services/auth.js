@@ -24,7 +24,7 @@ export const getAuthToken = async () => {
 
     // Extract the access token from the response
     const { access_token } = response.data;
-    console.log(`access_token: ${access_token}`);
+    console.log(`Access Token: ${access_token}`);
     return access_token;
   } catch (error) {
     console.error("Error fetching auth token:", error.toJSON ? error.toJSON() : error);
