@@ -11,25 +11,25 @@ export const getAuthToken = async () => {
     const credentials = Buffer.from(`${CLIENT_ID}:${CLIENT_SECRET}`).toString(
       "base64"
     );
-    const response = await axios.post(
-      AUTH_URL,
-      qs.stringify({
+    const response = await fetch(AUTH_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        Authorization: `Basic ${credentials}`,
+      },
+      body: new URLSearchParams({
         grant_type: "client_credentials",
       }),
-      {
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-          Authorization: `Basic ${credentials}`,
-        },
-      }
-    );
+    });
 
-    return response.data.access_token;
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    return data.access_token;
   } catch (error) {
-    console.error(
-      "Error fetching auth token:",
-      error.toJSON ? error.toJSON() : error
-    );
+    console.error("Error fetching auth token:", error);
     throw new Error("Authentication failed");
   }
 };
