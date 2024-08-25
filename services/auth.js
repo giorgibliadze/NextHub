@@ -17,7 +17,9 @@ export const getAuthToken = async () => {
       timeout: 10000, // 10 seconds timeout
     });
 
-    return response.data.access_token;
+    // Extract the access token from the response
+    const { access_token } = response.data;
+    return access_token;
   } catch (error) {
     console.error('Error fetching auth token:', error);
     throw new Error('Authentication failed');
