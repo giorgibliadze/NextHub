@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { BsArrowRight } from "react-icons/bs";
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
-import { getAuthToken } from "../services/auth"; // Import the auth function
+import { makePaymentRequest } from "../services/payment"; // Import the payment function
 
 const Modal = ({ isOpen, onClose, cardData }) => {
   const [email, setEmail] = useState("");
@@ -61,30 +61,16 @@ const Modal = ({ isOpen, onClose, cardData }) => {
     setSuccessMessage(null);
 
     try {
-      const token = await getAuthToken(); // Get the Bearer token
+      const paymentData = {
+        amount: cardData.price, // Example data
+        currency: "GEL", // Example currency
+        description: subject,
+        // Add other necessary payment data
+      };
 
-      const paymentResponse = await fetch("https://api.bog.ge/endpoint", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({
-          // Include the necessary payment data here
-          amount: cardData.price, // Example data
-          currency: "GEL", // Example currency
-          description: subject,
-          // Add other necessary payment data
-        }),
-      });
+      const response = await makePaymentRequest(paymentData);
 
-      const paymentData = await paymentResponse.json();
-
-      if (paymentResponse.ok) {
-        setSuccessMessage("გადახდა წარმატებით განხორციელდა");
-      } else {
-        setError(`გადახდა ვერ მოხერხდა: ${paymentData.message}`);
-      }
+      setSuccessMessage("გადახდა წარმატებით განხორციელდა");
     } catch (err) {
       setError(`გადახდა ვერ მოხერხდა: ${err.message}`);
     } finally {
@@ -234,7 +220,6 @@ const Modal = ({ isOpen, onClose, cardData }) => {
         <button
           onClick={(e) => {
             e.stopPropagation();
-            console.log("Modal close button clicked");
             onClose();
           }}
           className="mt-4 text-accent underline"
