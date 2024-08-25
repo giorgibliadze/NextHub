@@ -1,8 +1,8 @@
-// components/Modal.jsx
 import { useState, useRef, useEffect } from "react";
 import { BsArrowRight } from "react-icons/bs";
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
+import { getAuthToken } from "../services/auth"; // Import the auth function
 
 const Modal = ({ isOpen, onClose, cardData }) => {
   const [email, setEmail] = useState("");
@@ -50,6 +50,43 @@ const Modal = ({ isOpen, onClose, cardData }) => {
       }
     } catch (err) {
       setError(`შეკვეთის მიღება ვერ მოხერხდა: ${err.message}`);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handlePayment = async () => {
+    setLoading(true);
+    setError(null);
+    setSuccessMessage(null);
+
+    try {
+      const token = await getAuthToken(); // Get the Bearer token
+
+      const paymentResponse = await fetch("https://api.bog.ge/endpoint", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          // Include the necessary payment data here
+          amount: cardData.price, // Example data
+          currency: "GEL", // Example currency
+          description: subject,
+          // Add other necessary payment data
+        }),
+      });
+
+      const paymentData = await paymentResponse.json();
+
+      if (paymentResponse.ok) {
+        setSuccessMessage("გადახდა წარმატებით განხორციელდა");
+      } else {
+        setError(`გადახდა ვერ მოხერხდა: ${paymentData.message}`);
+      }
+    } catch (err) {
+      setError(`გადახდა ვერ მოხერხდა: ${err.message}`);
     } finally {
       setLoading(false);
     }
@@ -172,6 +209,19 @@ const Modal = ({ isOpen, onClose, cardData }) => {
             >
               <span className="group-hover:-translate-y-[120%] group-hover:opacity-0 transition-all duration-500">
                 {loading ? "შეკვეთა..." : "შეკვეთა"}
+              </span>
+              <BsArrowRight className="-translate-y-[120%] opacity-0 group-hover:flex group-hover:-translate-y-0 group-hover:opacity-100 transition-all duration-300 absolute text-[22px]" />
+            </button>
+          </div>
+          <div className="flex justify-center mt-4">
+            <button
+              type="button"
+              className="btn rounded-full border border-white max-w-[170px] px-8 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accent group text-white"
+              onClick={handlePayment}
+              disabled={loading}
+            >
+              <span className="group-hover:-translate-y-[120%] group-hover:opacity-0 transition-all duration-500">
+                {loading ? "გადახდა..." : "გადახდა"}
               </span>
               <BsArrowRight className="-translate-y-[120%] opacity-0 group-hover:flex group-hover:-translate-y-0 group-hover:opacity-100 transition-all duration-300 absolute text-[22px]" />
             </button>
