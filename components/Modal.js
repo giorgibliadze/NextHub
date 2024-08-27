@@ -234,7 +234,7 @@ const Modal = ({ isOpen, onClose, cardData }) => {
               <BsArrowRight className="-translate-y-[120%] opacity-0 group-hover:flex group-hover:-translate-y-0 group-hover:opacity-100 transition-all duration-300 absolute text-[22px]" />
             </button>
           </div>
-          <div className="flex justify-center mt-4">
+          {/* <div className="flex justify-center mt-4">
             <button
               type="button"
               className="btn rounded-full border border-white max-w-[170px] px-8 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accent group text-white"
@@ -259,7 +259,7 @@ const Modal = ({ isOpen, onClose, cardData }) => {
               </span>
               <BsArrowRight className="-translate-y-[120%] opacity-0 group-hover:flex group-hover:-translate-y-0 group-hover:opacity-100 transition-all duration-300 absolute text-[22px]" />
             </button>
-          </div>
+          </div> */}
           {error && <p className="text-red-500 mt-2">{error}</p>}
           {successMessage && (
             <p className="text-green-500 mt-2 text-center">{successMessage}</p>
