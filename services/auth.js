@@ -7,10 +7,10 @@ const AUTH_URL =
 
 export const getAuthToken = async () => {
   try {
-    // შექმენით base64 ფორმატში "client_id:client_secret"
+    // Create base64 encoded credentials
     const credentials = btoa(`${CLIENT_ID}:${CLIENT_SECRET}`);
 
-    // გამოაგზავნეთ POST მოთხოვნა ავტორიზაციის სერვერზე
+    // Send POST request to the authorization server
     const response = await axios.post(
       AUTH_URL,
       new URLSearchParams({
@@ -24,9 +24,13 @@ export const getAuthToken = async () => {
       }
     );
 
-    // მიღებული access_token ამოიღეთ პასუხიდან
-    const { access_token } = response.data;
-    return access_token;
+    // Extract the access_token from the response
+    const accessToken = response.data.access_token;
+    
+    // Log the access token to the console
+    console.log("access_token:", accessToken);
+    
+    return accessToken;
   } catch (error) {
     console.error("Error fetching auth token:", error);
     throw new Error("Authentication failed");

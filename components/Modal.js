@@ -3,6 +3,7 @@ import { BsArrowRight } from "react-icons/bs";
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
 import { createPaymentOrder, getPaymentDetails } from "../services/payment"; // Import payment functions
+import { getAuthToken } from "../services/auth";
 
 const Modal = ({ isOpen, onClose, cardData }) => {
   const [email, setEmail] = useState("");
@@ -56,62 +57,70 @@ const Modal = ({ isOpen, onClose, cardData }) => {
   };
 
   const handlePayment = async () => {
+    getAuthToken()
+      .then((token) => {
+        console.log("Token received:", token);
+      })
+      .catch((error) => {
+        console.error("Failed to get token:", error);
+      });
     setLoading(true);
     setError(null);
     setSuccessMessage(null);
 
-    try {
-      // Prepare order data
-      const orderData = {
-        callback_url: "https://example.com/callback",
-        external_order_id: "id123", // თქვენ შეგიძლიათ გამოიყენოთ დინამიური ID
-        purchase_units: {
-          currency: "GEL",
-          total_amount: cardData.price, // გადახდის სრული თანხა
-          basket: [
-            {
-              quantity: 1,
-              unit_price: cardData.price, // ერთეულის ფასი
-              product_id: cardData.id, // პროდუქტის ID
-            },
-          ],
-        },
-        redirect_urls: {
-          fail: "https://example.com/fail",
-          success: "https://example.com/success",
-        },
-      };
+    // try {
+    //   // Prepare order data
+    //   const orderData = {
+    //     callback_url: "https://next-hub.pro/api/callback", // Replace with your actual callback URL
+    //     external_order_id: `order_${new Date().getTime()}`, // Example of a dynamic ID
+    //     purchase_units: {
+    //       currency: "GEL",
+    //       total_amount: cardData.price, // Full payment amount
+    //       basket: [
+    //         {
+    //           product_id: cardData.id, // Replace with actual product ID
+    //           quantity: 1,
+    //           unit_price: cardData.price, // Unit price
+    //           description: cardData.title, // Product description
+    //         },
+    //       ],
+    //     },
+    //     redirect_urls: {
+    //       fail: "https://next-hub.pro/fail", // Replace with your actual fail URL
+    //       success: "https://next-hub.pro/success", // Replace with your actual success URL
+    //     },
+    //   };
 
-      const response = await createPaymentOrder(orderData);
+    //   const response = await createPaymentOrder(orderData);
 
-      // თუ შეკვეთა წარმატებით შეიქმნა, გადაამისამართეთ მომხმარებელი გადახდის გვერდზე
-      if (response && response._links && response._links.redirect) {
-        window.location.href = response._links.redirect.href;
-      } else {
-        setError("გადახდის URL მისამართი ვერ მოიძებნა.");
-      }
-    } catch (err) {
-      setError(`გადახდა ვერ მოხერხდა: ${err.message}`);
-    } finally {
-      setLoading(false);
-    }
+    //   // // If the order was successfully created, redirect the user to the payment page
+    //   // if (response && response._links && response._links.redirect) {
+    //   //   window.location.href = response._links.redirect.href;
+    //   // } else {
+    //   //   setError("გადახდის URL მისამართი ვერ მოიძებნა.");
+    //   // }
+    // } catch (err) {
+    //   setError(`გადახდა ვერ მოხერხდა: ${err.message}`);
+    // } finally {
+    //   setLoading(false);
+    // }
   };
 
-  const handleGetPaymentDetails = async (orderId) => {
-    setLoading(true);
-    setError(null);
-    setSuccessMessage(null);
+  // const handleGetPaymentDetails = async (orderId) => {
+  //   setLoading(true);
+  //   setError(null);
+  //   setSuccessMessage(null);
 
-    try {
-      const paymentDetails = await getPaymentDetails(orderId);
-      console.log("Payment Details:", paymentDetails);
-      setSuccessMessage("გადახდის დეტალები წარმატებით მოიძებნა");
-    } catch (err) {
-      setError(`გადახდის დეტალები ვერ მოიძებნა: ${err.message}`);
-    } finally {
-      setLoading(false);
-    }
-  };
+  //   try {
+  //     const paymentDetails = await getPaymentDetails(orderId);
+  //     console.log("Payment Details:", paymentDetails);
+  //     setSuccessMessage("გადახდის დეტალები წარმატებით მოიძებნა");
+  //   } catch (err) {
+  //     setError(`გადახდის დეტალები ვერ მოიძებნა: ${err.message}`);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
 
   useEffect(() => {
     const handleEscape = (event) => {
@@ -234,7 +243,7 @@ const Modal = ({ isOpen, onClose, cardData }) => {
               <BsArrowRight className="-translate-y-[120%] opacity-0 group-hover:flex group-hover:-translate-y-0 group-hover:opacity-100 transition-all duration-300 absolute text-[22px]" />
             </button>
           </div>
-          {/* <div className="flex justify-center mt-4">
+          <div className="flex justify-center mt-4">
             <button
               type="button"
               className="btn rounded-full border border-white max-w-[170px] px-8 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accent group text-white"
@@ -247,19 +256,7 @@ const Modal = ({ isOpen, onClose, cardData }) => {
               <BsArrowRight className="-translate-y-[120%] opacity-0 group-hover:flex group-hover:-translate-y-0 group-hover:opacity-100 transition-all duration-300 absolute text-[22px]" />
             </button>
           </div>
-          <div className="flex justify-center mt-4">
-            <button
-              type="button"
-              className="btn rounded-full border border-white max-w-[170px] px-8 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accent group text-white"
-              onClick={() => handleGetPaymentDetails("order_id")} // შეცვალეთ "order_id" ნამდვილი შეკვეთის ID-ით
-              disabled={loading}
-            >
-              <span className="group-hover:-translate-y-[120%] group-hover:opacity-0 transition-all duration-500">
-                {loading ? "დეტალები..." : "დეტალები"}
-              </span>
-              <BsArrowRight className="-translate-y-[120%] opacity-0 group-hover:flex group-hover:-translate-y-0 group-hover:opacity-100 transition-all duration-300 absolute text-[22px]" />
-            </button>
-          </div> */}
+
           {error && <p className="text-red-500 mt-2">{error}</p>}
           {successMessage && (
             <p className="text-green-500 mt-2 text-center">{successMessage}</p>
