@@ -5,10 +5,11 @@ const AUTH_URL =
 
 export const getAuthToken = async () => {
   try {
-    // Create base64 encoded credentials
     const credentials = btoa(`${CLIENT_ID}:${CLIENT_SECRET}`);
 
-    // Send POST request to the authorization server
+    console.log("Sending request to:", AUTH_URL);
+    console.log("Encoded Credentials:", credentials);
+
     const response = await fetch(AUTH_URL, {
       method: "POST",
       headers: {
@@ -24,11 +25,9 @@ export const getAuthToken = async () => {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
 
-    // Extract the access_token from the response
     const data = await response.json();
     const accessToken = data.access_token;
 
-    // Log the access token to the console
     console.log("access_token:", accessToken);
     return accessToken;
   } catch (error) {
