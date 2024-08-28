@@ -2,8 +2,6 @@ import { useState, useRef, useEffect } from "react";
 import { BsArrowRight } from "react-icons/bs";
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
-import { createPaymentOrder, getPaymentDetails } from "../services/payment"; // Import payment functions
-import { getAuthToken } from "../services/auth";
 
 const Modal = ({ isOpen, onClose, cardData }) => {
   const [email, setEmail] = useState("");
@@ -56,71 +54,17 @@ const Modal = ({ isOpen, onClose, cardData }) => {
     }
   };
 
-  const handlePayment = async () => {
-    getAuthToken()
-      .then((token) => {
-        console.log("Token received:", token);
-      })
-      .catch((error) => {
-        console.error("Failed to get token:", error);
-      });
-    setLoading(true);
-    setError(null);
-    setSuccessMessage(null);
+  const getAuthToken = async () => {
+    try {
+      const response = await fetch("/api/getAuthToken");
+      const data = await response.json();
+      console.log(data.access_token, data.token_type, data);
+      return data.access_token;
+    } catch (error) {
+      console.error("Error fetching auth token:", error);
+      throw new Error("Authentication failed");
+    }
   };
-  // try {
-  //   // Prepare order data
-  //   const orderData = {
-  //     callback_url: "https://next-hub.pro/api/callback", // Replace with your actual callback URL
-  //     external_order_id: `order_${new Date().getTime()}`, // Example of a dynamic ID
-  //     purchase_units: {
-  //       currency: "GEL",
-  //       total_amount: cardData.price, // Full payment amount
-  //       basket: [
-  //         {
-  //           product_id: cardData.id, // Replace with actual product ID
-  //           quantity: 1,
-  //           unit_price: cardData.price, // Unit price
-  //           description: cardData.title, // Product description
-  //         },
-  //       ],
-  //     },
-  //     redirect_urls: {
-  //       fail: "https://next-hub.pro/fail", // Replace with your actual fail URL
-  //       success: "https://next-hub.pro/success", // Replace with your actual success URL
-  //     },
-  //   };
-
-  //   const response = await createPaymentOrder(orderData);
-
-  //   // // If the order was successfully created, redirect the user to the payment page
-  //   // if (response && response._links && response._links.redirect) {
-  //   //   window.location.href = response._links.redirect.href;
-  //   // } else {
-  //   //   setError("გადახდის URL მისამართი ვერ მოიძებნა.");
-  //   // }
-  // } catch (err) {
-  //   setError(`გადახდა ვერ მოხერხდა: ${err.message}`);
-  // } finally {
-  //   setLoading(false);
-  // }
-  // };
-
-  // const handleGetPaymentDetails = async (orderId) => {
-  //   setLoading(true);
-  //   setError(null);
-  //   setSuccessMessage(null);
-
-  //   try {
-  //     const paymentDetails = await getPaymentDetails(orderId);
-  //     console.log("Payment Details:", paymentDetails);
-  //     setSuccessMessage("გადახდის დეტალები წარმატებით მოიძებნა");
-  //   } catch (err) {
-  //     setError(`გადახდის დეტალები ვერ მოიძებნა: ${err.message}`);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
 
   useEffect(() => {
     const handleEscape = (event) => {
@@ -247,7 +191,7 @@ const Modal = ({ isOpen, onClose, cardData }) => {
             <button
               type="button"
               className="btn rounded-full border border-white max-w-[170px] px-8 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accent group text-white"
-              onClick={handlePayment}
+              onClick={getAuthToken}
               disabled={loading}
             >
               <span className="group-hover:-translate-y-[120%] group-hover:opacity-0 transition-all duration-500">
