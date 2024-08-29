@@ -34,6 +34,7 @@ const TechSupport = () => {
     {
       title: "სტანდარტი",
       price: 700,
+      product_id: 4,
       features: [
         "საიტის ოპტიმიზაცია",
         "საბაზისო SEO მართვა",
@@ -45,6 +46,7 @@ const TechSupport = () => {
         handlePurchaseClick({
           title: "სტანდარტი",
           price: 700,
+          product_id: 4,
           features: [
             "საიტის ოპტიმიზაცია",
             "საბაზისო SEO მართვა",
@@ -57,6 +59,7 @@ const TechSupport = () => {
     {
       title: "პრემიუმი",
       price: 1000,
+      product_id: 5,
       features: [
         "ყველაფერი სტანდარტში",
         "გაფართოებული SEO მართვა",
@@ -69,6 +72,7 @@ const TechSupport = () => {
         handlePurchaseClick({
           title: "პრემიუმი",
           price: 1000,
+          product_id: 5,
           features: [
             "ყველაფერი სტანდარტში",
             "გაფართოებული SEO მართვა",
@@ -82,6 +86,7 @@ const TechSupport = () => {
     {
       title: "ბიზნესი",
       price: 1500,
+      product_id: 6,
       features: [
         "ყველაფერი პრემიუმში",
         "მუდმივი მხარდაჭერა და კონსულტაცია",
@@ -94,6 +99,7 @@ const TechSupport = () => {
         handlePurchaseClick({
           title: "ბიზნესი",
           price: 1500,
+          product_id: 6,
           features: [
             "ყველაფერი პრემიუმში",
             "მუდმივი მხარდაჭერა და კონსულტაცია",

@@ -34,6 +34,7 @@ const Analytics = () => {
     {
       title: "სტანდარტი",
       price: 500,
+      product_id: 16,
       features: [
         "მონაცემთა შეგროვება და შეფასება",
         "საბაზისო ანალიტიკური დეშბორდი",
@@ -45,6 +46,7 @@ const Analytics = () => {
         handlePurchaseClick({
           title: "სტანდარტი",
           price: 500,
+          product_id: 16,
           features: [
             "მონაცემთა შეგროვება და შეფასება",
             "საბაზისო ანალიტიკური დეშბორდი",
@@ -57,6 +59,7 @@ const Analytics = () => {
     {
       title: "პრემიუმი",
       price: 900,
+      product_id: 17,
       features: [
         "ყველაფერი სტანდარტში",
         "მოწინავე მონაცემთა ვიზუალიზაცია",
@@ -69,6 +72,7 @@ const Analytics = () => {
         handlePurchaseClick({
           title: "პრემიუმი",
           price: 900,
+          product_id: 17,
           features: [
             "ყველაფერი სტანდარტში",
             "მოწინავე მონაცემთა ვიზუალიზაცია",
@@ -82,6 +86,7 @@ const Analytics = () => {
     {
       title: "ბიზნესი",
       price: 1500,
+      product_id: 18,
       features: [
         "ყველაფერი პრემიუმში",
         "გაფართოებული მონაცემთა ანალიზი",
@@ -94,6 +99,7 @@ const Analytics = () => {
         handlePurchaseClick({
           title: "ბიზნესი",
           price: 1500,
+          product_id: 18,
           features: [
             "ყველაფერი პრემიუმში",
             "გაფართოებული მონაცემთა ანალიზი",
@@ -108,11 +114,11 @@ const Analytics = () => {
 
   return (
     <>
-    <Head>
-          <meta name="robots" content="index, follow" />
-        </Head>
+      <Head>
+        <meta name="robots" content="index, follow" />
+      </Head>
       <NextSeo
-      canonical="https://www.next-hub.pro/services/analytics"
+        canonical="https://www.next-hub.pro/services/analytics"
         title="Next-Hub Solutions | Analytics"
         description="მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად."
         keywords="Next-Hub, Analytics, მონაცემთა შეგროვება, შეფასება, ანალიზი, Google Analytics, მონაცემთა ვიზუალიზაცია"

@@ -41,6 +41,7 @@ const DigitalMarketing = () => {
     {
       title: "სტანდარტი",
       price: 700,
+      product_id: 13,
       features: [
         "თვეში 4 პოსტი",
         "ბრენდის ხასიათის შექმნა სოციალურ ქსელში",
@@ -54,6 +55,7 @@ const DigitalMarketing = () => {
         handlePurchaseClick({
           title: "სტანდარტი",
           price: 700,
+          product_id: 13,
           features: [
             "თვეში 4 პოსტი",
             "ბრენდის ხასიათის შექმნა სოციალურ ქსელში",
@@ -68,6 +70,7 @@ const DigitalMarketing = () => {
     {
       title: "პრემიუმი",
       price: 1000,
+      product_id: 14,
       features: [
         "თვეში 8 პოსტი",
         "ბრენდის ხასიათის შექმნა სოციალურ ქსელში",
@@ -82,6 +85,7 @@ const DigitalMarketing = () => {
         handlePurchaseClick({
           title: "პრემიუმი",
           price: 1000,
+          product_id: 14,
           features: [
             "თვეში 8 პოსტი",
             "ბრენდის ხასიათის შექმნა სოციალურ ქსელში",
@@ -97,6 +101,7 @@ const DigitalMarketing = () => {
     {
       title: "ბიზნესი",
       price: 1500,
+      product_id: 15,
       features: [
         "ორენოვანი 8 პოსტი თვეში (Geo, Eng)",
         "ბრენდის ხასიათის შექმნა სოციალურ ქსელში",
@@ -114,6 +119,7 @@ const DigitalMarketing = () => {
         handlePurchaseClick({
           title: "ბიზნესი",
           price: 1500,
+          product_id: 15,
           features: [
             "ორენოვანი 8 პოსტი თვეში (Geo, Eng)",
             "ბრენდის ხასიათის შექმნა სოციალურ ქსელში",
@@ -134,10 +140,10 @@ const DigitalMarketing = () => {
   return (
     <>
       <Head>
-          <meta name="robots" content="index, follow" />
-        </Head>
+        <meta name="robots" content="index, follow" />
+      </Head>
       <NextSeo
-      canonical="https://www.next-hub.pro/services/digital_marketing"
+        canonical="https://www.next-hub.pro/services/digital_marketing"
         title="Next-Hub Solutions | Digital Marketing"
         description="Next-Hub Solutions-ის ციფრული მარკეტინგის სერვისები. მიიღეთ პროფესიონალური მხარდაჭერა ბრენდის ხასიათის შექმნაში, სოციალური მედიის მართვაში და სარეკლამო კამპანიების დაგეგმვაში."
         keywords="Next-Hub, Digital Marketing, ციფრული მარკეტინგი, სოციალური მედია, ბრენდის ხასიათი, სარეკლამო კამპანიები"

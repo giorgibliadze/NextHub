@@ -38,6 +38,7 @@ const WebDevelopment = () => {
     {
       title: "სტანდარტი",
       price: 1000,
+      product_id: 1,
       features: [
         "1 გვერდი",
         "მობილური ვერსია (Responsive)",
@@ -57,6 +58,7 @@ const WebDevelopment = () => {
         handlePurchaseClick({
           title: "სტანდარტი",
           price: 1000,
+          product_id: 1,
           features: [
             "1 გვერდი",
             "მობილური ვერსია (Responsive)",
@@ -77,6 +79,7 @@ const WebDevelopment = () => {
     {
       title: "პრემიუმი",
       price: 2500,
+      product_id: 2,
       features: [
         "ყველაფერი სტანდარტში",
         "5 გვერდი",
@@ -96,6 +99,7 @@ const WebDevelopment = () => {
         handlePurchaseClick({
           title: "პრემიუმი",
           price: 2500,
+          product_id: 2,
           features: [
             "ყველაფერი სტანდარტში",
             "5 გვერდი",
@@ -116,6 +120,7 @@ const WebDevelopment = () => {
     {
       title: "ბიზნესი",
       price: 7000,
+      product_id: 3,
       features: [
         "ყველაფერი პრემიუმში",
         "Top პროდუქცია",
@@ -137,6 +142,7 @@ const WebDevelopment = () => {
         handlePurchaseClick({
           title: "ბიზნესი",
           price: 7000,
+          product_id: 3,
           features: [
             "ყველაფერი პრემიუმში",
             "Top პროდუქცია",
@@ -161,11 +167,11 @@ const WebDevelopment = () => {
 
   return (
     <>
-    <Head>
-          <meta name="robots" content="index, follow" />
-        </Head>
+      <Head>
+        <meta name="robots" content="index, follow" />
+      </Head>
       <NextSeo
-      canonical="https://www.next-hub.pro/services/web_development"
+        canonical="https://www.next-hub.pro/services/web_development"
         title="Next-Hub Solutions | Web Development"
         description="მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად."
         keywords="Next-Hub, ციფრული რეალობა, იდეები, სურვილები, ოცნებები, ბრენდის ცნობადობა, სანდოობა, ციფრული ტრანსფორმაცია, ვებ აპლიკაციები, სოციალური მედია, SEO, ანალიტიკა"

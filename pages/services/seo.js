@@ -34,6 +34,7 @@ const Seo = () => {
     {
       title: "სტანდარტი",
       price: 299,
+      product_id: 10,
       features: [
         "საკვანძო სიტყვების კვლევა",
         "On-Page SEO",
@@ -46,6 +47,7 @@ const Seo = () => {
         handlePurchaseClick({
           title: "სტანდარტი",
           price: 299,
+          product_id: 10,
           features: [
             "საკვანძო სიტყვების კვლევა",
             "On-Page SEO",
@@ -59,6 +61,7 @@ const Seo = () => {
     {
       title: "პრემიუმი",
       price: 599,
+      product_id: 11,
       features: [
         "ყველაფერი სტანდარტში",
         "ბმულების შენება",
@@ -72,6 +75,7 @@ const Seo = () => {
         handlePurchaseClick({
           title: "პრემიუმი",
           price: 599,
+          product_id: 11,
           features: [
             "ყველაფერი სტანდარტში",
             "ბმულების შენება",
@@ -86,6 +90,7 @@ const Seo = () => {
     {
       title: "ბიზნესი",
       price: 999,
+      product_id: 12,
       features: [
         "ყველაფერი პრემიუმში",
         "გაფართოებული ანალიტიკა",
@@ -99,6 +104,7 @@ const Seo = () => {
         handlePurchaseClick({
           title: "ბიზნესი",
           price: 999,
+          product_id: 12,
           features: [
             "ყველაფერი პრემიუმში",
             "გაფართოებული ანალიტიკა",
@@ -114,11 +120,11 @@ const Seo = () => {
 
   return (
     <>
-    <Head>
-          <meta name="robots" content="index, follow" />
-        </Head>
+      <Head>
+        <meta name="robots" content="index, follow" />
+      </Head>
       <NextSeo
-      canonical="https://www.next-hub.pro/services/seo"
+        canonical="https://www.next-hub.pro/services/seo"
         title="Next-Hub Solutions | SEO"
         description="Next-Hub Solutions-ის სოციალური მედია მენეჯმენტის სერვისები. მიიღეთ პროფესიონალური მხარდაჭერა ბრენდის ხასიათის შექმნაში, სოციალური მედიის მართვაში და სარეკლამო კამპანიების დაგეგმვაში."
         openGraph={{

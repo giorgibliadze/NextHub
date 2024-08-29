@@ -54,11 +54,67 @@ const Modal = ({ isOpen, onClose, cardData }) => {
     }
   };
 
+  const createOrder = async () => {
+    setLoading(true);
+    setError(null);
+    setSuccessMessage(null);
+
+    try {
+      const token = await getAuthToken(); // Retrieve the token first
+      console.log(token);
+      const orderDetails = {
+        callback_url: "https://next-hub.pro/api/callback",
+        external_order_id: "id123", // replace with your own logic
+        purchase_units: {
+          currency: "GEL",
+          total_amount: cardData.price,
+          basket: [
+            {
+              quantity: 1,
+              unit_price: cardData.price,
+              product_id: cardData.product_id, // replace with your own logic
+            },
+          ],
+        },
+        redirect_urls: {
+          fail: "https://example.com/fail",
+          success: "https://example.com/success",
+        },
+      };
+
+      // Log the order details before sending
+      console.log("Creating order with details:", orderDetails);
+
+      const res = await fetch("/api/createOrder", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ token, orderDetails }),
+      });
+
+      const data = await res.json();
+      console.log(data);
+      if (res.ok) {
+        console.log("Order created successfully:", data);
+        window.location.href = data._links.redirect.href;
+      } else {
+        setError(`Order creation failed: ${data.message}`);
+        console.error("Order creation failed:", data);
+      }
+    } catch (err) {
+      setError(`Order creation failed: ${err.message}`);
+      console.error("Order creation error:", err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const getAuthToken = async () => {
     try {
       const response = await fetch("/api/getAuthToken");
       const data = await response.json();
-      console.log(data.access_token, data.token_type, data);
+      console.log("Token fetched successfully:", data.access_token);
       return data.access_token;
     } catch (error) {
       console.error("Error fetching auth token:", error);
@@ -191,7 +247,7 @@ const Modal = ({ isOpen, onClose, cardData }) => {
             <button
               type="button"
               className="btn rounded-full border border-white max-w-[170px] px-8 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accent group text-white"
-              onClick={getAuthToken}
+              onClick={createOrder}
               disabled={loading}
             >
               <span className="group-hover:-translate-y-[120%] group-hover:opacity-0 transition-all duration-500">

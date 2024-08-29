@@ -34,6 +34,7 @@ const SocMedia = () => {
     {
       title: "სტანდარტი",
       price: 499,
+      product_id: 7,
       features: [
         "თვეში 4 პოსტი",
         "ბრენდის ხასიათის შექმნა სოციალურ ქსელში",
@@ -47,6 +48,7 @@ const SocMedia = () => {
         handlePurchaseClick({
           title: "სტანდარტი",
           price: 499,
+          product_id: 7,
           features: [
             "თვეში 4 პოსტი",
             "ბრენდის ხასიათის შექმნა სოციალურ ქსელში",
@@ -61,6 +63,7 @@ const SocMedia = () => {
     {
       title: "პრემიუმი",
       price: 799,
+      product_id: 8,
       features: [
         "თვეში 8 პოსტი",
         "ბრენდის ხასიათის შექმნა სოციალურ ქსელში",
@@ -76,6 +79,7 @@ const SocMedia = () => {
         handlePurchaseClick({
           title: "პრემიუმი",
           price: 799,
+          product_id: 8,
           features: [
             "თვეში 8 პოსტი",
             "ბრენდის ხასიათის შექმნა სოციალურ ქსელში",
@@ -92,6 +96,7 @@ const SocMedia = () => {
     {
       title: "ბიზნესი",
       price: 999,
+      product_id: 9,
       features: [
         "ორენოვანი 8 პოსტი თვეში",
         "ბრენდის ხასიათის შექმნა სოციალურ ქსელში",
@@ -109,6 +114,7 @@ const SocMedia = () => {
         handlePurchaseClick({
           title: "ბიზნესი",
           price: 999,
+          product_id: 9,
           features: [
             "ორენოვანი 8 პოსტი თვეში",
             "ბრენდის ხასიათის შექმნა სოციალურ ქსელში",
