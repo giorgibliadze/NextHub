@@ -12,6 +12,7 @@ const Modal = ({ isOpen, onClose, cardData }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [successMessage, setSuccessMessage] = useState(null);
+  const [paymentDetails, setPaymentDetails] = useState(null); // State for payment details
 
   const formRef = useRef(null);
 
@@ -54,6 +55,35 @@ const Modal = ({ isOpen, onClose, cardData }) => {
     }
   };
 
+  const getAuthToken = async () => {
+    try {
+      const response = await fetch("/api/getAuthToken");
+      const data = await response.json();
+      console.log("Token fetched successfully:", data.access_token);
+      return data.access_token;
+    } catch (error) {
+      console.error("Error fetching auth token:", error);
+      throw new Error("Authentication failed");
+    }
+  };
+
+  const fetchPaymentDetails = async (orderId) => {
+    try {
+      const res = await fetch(`/api/getPaymentDetails?order_id=${orderId}`);
+      const data = await res.json();
+
+      if (res.ok) {
+        console.log("Payment Details:", data);
+        setPaymentDetails(data); // Update state with payment details
+      } else {
+        setError(`Failed to fetch payment details: ${data.message}`);
+      }
+    } catch (err) {
+      setError(`Failed to fetch payment details: ${err.message}`);
+      console.error("Payment details error:", err);
+    }
+  };
+
   const createOrder = async () => {
     setLoading(true);
     setError(null);
@@ -61,7 +91,7 @@ const Modal = ({ isOpen, onClose, cardData }) => {
 
     try {
       const token = await getAuthToken(); // Retrieve the token first
-      console.log(token);
+
       const orderDetails = {
         callback_url: "https://next-hub.pro/api/callback",
         external_order_id: "id123", // replace with your own logic
@@ -82,9 +112,6 @@ const Modal = ({ isOpen, onClose, cardData }) => {
         },
       };
 
-      // Log the order details before sending
-      console.log("Creating order with details:", orderDetails);
-
       const res = await fetch("/api/createOrder", {
         method: "POST",
         headers: {
@@ -94,8 +121,11 @@ const Modal = ({ isOpen, onClose, cardData }) => {
       });
 
       const data = await res.json();
-      console.log(data);
+
       if (res.ok) {
+        // Fetch payment details after order creation
+        await fetchPaymentDetails(data.order_id);
+
         console.log("Order created successfully:", data);
         window.location.href = data._links.redirect.href;
       } else {
@@ -107,18 +137,6 @@ const Modal = ({ isOpen, onClose, cardData }) => {
       console.error("Order creation error:", err);
     } finally {
       setLoading(false);
-    }
-  };
-
-  const getAuthToken = async () => {
-    try {
-      const response = await fetch("/api/getAuthToken");
-      const data = await response.json();
-      console.log("Token fetched successfully:", data.access_token);
-      return data.access_token;
-    } catch (error) {
-      console.error("Error fetching auth token:", error);
-      throw new Error("Authentication failed");
     }
   };
 
@@ -170,6 +188,21 @@ const Modal = ({ isOpen, onClose, cardData }) => {
             </li>
           ))}
         </ul>
+
+        {/* Display payment details if available */}
+        {paymentDetails && (
+          <div className="text-white mt-4">
+            <h4 className="text-xl font-bold">Payment Details:</h4>
+            <p>Order ID: {paymentDetails.order_id}</p>
+            <p>Status: {paymentDetails.order_status?.value}</p>
+            <p>
+              Amount: {paymentDetails.purchase_units?.request_amount}{" "}
+              {paymentDetails.purchase_units?.currency_code}
+            </p>
+            {/* Add more fields as needed */}
+          </div>
+        )}
+
         <motion.form
           id="card-form"
           ref={formRef}
