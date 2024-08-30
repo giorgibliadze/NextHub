@@ -2,19 +2,30 @@ import { useState, useRef, useEffect } from "react";
 import { BsArrowRight } from "react-icons/bs";
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
+import { v4 as uuidv4 } from "uuid";
 
 const Modal = ({ isOpen, onClose, cardData }) => {
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [subject, setSubject] = useState("");
-  const [message, setMessage] = useState("");
-  const [name, setName] = useState("");
+  const [formData, setFormData] = useState({
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
+    name: "",
+  });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [successMessage, setSuccessMessage] = useState(null);
   const [paymentDetails, setPaymentDetails] = useState(null); // State for payment details
-
+  const [generatedOrderId, setGeneratedOrderId] = useState(null);
   const formRef = useRef(null);
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
 
   const send = async (e) => {
     e.preventDefault();
@@ -30,21 +41,27 @@ const Modal = ({ isOpen, onClose, cardData }) => {
         },
         body: JSON.stringify({
           to: "info@next-hub.pro",
-          name,
-          phone,
-          subject,
+          ...formData,
           body: `<div>
-            <h1>${name}</h1>
-            <h1>${email}</h1>
-            <h1>${phone}</h1>
-            <h1>${message}</h1>
+            <h1>${formData.name}</h1>
+            <h1>${formData.email}</h1>
+            <h1>${formData.phone}</h1>
+            <h1>${formData.message}</h1>
           </div>`,
         }),
       });
+
       const data = await res.json();
       if (res.ok) {
         setSuccessMessage("შეკვეთა მიღებულია");
         formRef.current.reset(); // Reset form fields
+        setFormData({
+          email: "",
+          phone: "",
+          subject: "",
+          message: "",
+          name: "",
+        });
       } else {
         setError(`შეკვეთის მიღება ვერ მოხერხდა: ${data.message}`);
       }
@@ -57,30 +74,15 @@ const Modal = ({ isOpen, onClose, cardData }) => {
 
   const getAuthToken = async () => {
     try {
-      const response = await fetch("/api/getAuthToken");
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/getAuthToken`
+      );
       const data = await response.json();
       console.log("Token fetched successfully:", data.access_token);
       return data.access_token;
     } catch (error) {
       console.error("Error fetching auth token:", error);
       throw new Error("Authentication failed");
-    }
-  };
-
-  const fetchPaymentDetails = async (orderId) => {
-    try {
-      const res = await fetch(`/api/getPaymentDetails?order_id=${orderId}`);
-      const data = await res.json();
-
-      if (res.ok) {
-        console.log("Payment Details:", data);
-        setPaymentDetails(data); // Update state with payment details
-      } else {
-        setError(`Failed to fetch payment details: ${data.message}`);
-      }
-    } catch (err) {
-      setError(`Failed to fetch payment details: ${err.message}`);
-      console.error("Payment details error:", err);
     }
   };
 
@@ -91,10 +93,11 @@ const Modal = ({ isOpen, onClose, cardData }) => {
 
     try {
       const token = await getAuthToken(); // Retrieve the token first
-
+      const orderId = uuidv4(); // Generate a unique ID
+      setGeneratedOrderId(orderId); // Store the generated ID
       const orderDetails = {
         callback_url: "https://next-hub.pro/api/callback",
-        external_order_id: "id123", // replace with your own logic
+        external_order_id: orderId,
         purchase_units: {
           currency: "GEL",
           total_amount: cardData.price,
@@ -102,7 +105,7 @@ const Modal = ({ isOpen, onClose, cardData }) => {
             {
               quantity: 1,
               unit_price: cardData.price,
-              product_id: cardData.product_id, // replace with your own logic
+              product_id: cardData.product_id,
             },
           ],
         },
@@ -123,9 +126,8 @@ const Modal = ({ isOpen, onClose, cardData }) => {
       const data = await res.json();
 
       if (res.ok) {
-        // Fetch payment details after order creation
-        await fetchPaymentDetails(data.order_id);
-
+        const orderIdFromResponse = data.id; // Get the correct order ID
+        await fetchPaymentDetails(orderIdFromResponse); // Pass it to the fetchPaymentDetails function
         console.log("Order created successfully:", data);
         window.location.href = data._links.redirect.href;
       } else {
@@ -137,6 +139,24 @@ const Modal = ({ isOpen, onClose, cardData }) => {
       console.error("Order creation error:", err);
     } finally {
       setLoading(false);
+    }
+  };
+
+  const fetchPaymentDetails = async (orderId) => {
+    console.log("Fetching payment details for order ID:", orderId); // Add this line to debug
+    try {
+      const res = await fetch(`/api/getPaymentDetails?order_id=${orderId}`);
+      const data = await res.json();
+
+      if (res.ok) {
+        console.log("Payment Details:", data);
+        setPaymentDetails(data); // Update state with payment details
+      } else {
+        setError(`Failed to fetch payment details: ${data.message}`);
+      }
+    } catch (err) {
+      setError(`Failed to fetch payment details: ${err.message}`);
+      console.error("Payment details error:", err);
     }
   };
 
@@ -220,8 +240,8 @@ const Modal = ({ isOpen, onClose, cardData }) => {
               name="name"
               placeholder="სახელი"
               className="text-white bg-transparent border-b border-gray-500 focus:outline-none focus:border-accent input text-center w-full focus:text-accent focus:bg-transparent"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
+              value={formData.name}
+              onChange={handleInputChange}
               required
             />
             <input
@@ -230,8 +250,8 @@ const Modal = ({ isOpen, onClose, cardData }) => {
               name="email"
               placeholder="მაილი"
               className="text-white bg-transparent border-b border-gray-500 focus:outline-none focus:border-accent input text-center w-full focus:text-accent focus:bg-transparent"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              value={formData.email}
+              onChange={handleInputChange}
               required
             />
           </div>
@@ -241,8 +261,8 @@ const Modal = ({ isOpen, onClose, cardData }) => {
             name="phone"
             placeholder="ტელეფონი"
             className="text-white bg-transparent border-b border-gray-500 focus:outline-none focus:border-accent input text-center w-full focus:text-accent focus:bg-transparent"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
+            value={formData.phone}
+            onChange={handleInputChange}
             required
           />
           <input
@@ -251,8 +271,8 @@ const Modal = ({ isOpen, onClose, cardData }) => {
             name="subject"
             placeholder="თემა"
             className="text-white bg-transparent border-b border-gray-500 focus:outline-none focus:border-accent input text-center w-full focus:text-accent focus:bg-transparent"
-            value={subject}
-            onChange={(e) => setSubject(e.target.value)}
+            value={formData.subject}
+            onChange={handleInputChange}
             required
           />
           <textarea
@@ -260,8 +280,8 @@ const Modal = ({ isOpen, onClose, cardData }) => {
             name="message"
             placeholder="შეტყობინება"
             className="text-white bg-transparent border-b border-gray-500 focus:outline-none focus:border-accent input text-center w-full focus:text-accent focus:bg-transparent"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
+            value={formData.message}
+            onChange={handleInputChange}
             required
           ></textarea>
           <div className="flex justify-center">

@@ -14,18 +14,36 @@ generator client {
 }
 
 model User {
-id           String   @id @default(auto()) @map("_id") @db.ObjectId
-name String
-email String
-hashedPassword String?
+  id             String   @id @default(auto()) @map("_id") @db.ObjectId
+  name           String
+  email          String
+  hashedPassword String?
 }
 
 model Payment {
-  id           String   @id @default(auto()) @map("_id") @db.ObjectId
-  orderId      String
-  status       String
-  amount       Float
-  currency     String
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
+  id              String   @id @default(auto()) @map("_id") @db.ObjectId
+  orderId         String
+  status          String
+  amount          Float
+  currency        String
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  buyerName       String?  // Buyer's full name
+  buyerEmail      String?  // Buyer's email
+  buyerPhone      String?  // Buyer's phone number
+  industry        String?  // Business industry
+  captureMethod   String?  // Authorization method
+  paymentDetails  PaymentDetails[]
+}
+
+model PaymentDetails {
+  id              String   @id @default(auto()) @map("_id") @db.ObjectId
+  paymentId       String   @db.ObjectId
+  payment         Payment  @relation(fields: [paymentId], references: [id])
+  transactionId   String
+  method          String
+  amount          Float
+  currencyCode    String
+  items           Json
+  createdAt       DateTime @default(now())
 }
