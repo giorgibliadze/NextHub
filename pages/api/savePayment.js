@@ -25,9 +25,10 @@ export default async function handler(req, res) {
     // Return a JSON response
     return res.status(200).json(payment);
   } catch (error) {
-    console.error("Error saving payment:", error);
+    console.error("Error saving payment:", error.message);
+    console.error("Stack trace:", error.stack);
 
     // Return an error as JSON
-    return res.status(500).json({ error: "Failed to save payment" });
+    return res.status(500).json({ error: "Failed to save payment", message: error.message });
   }
 }

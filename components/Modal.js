@@ -186,13 +186,14 @@ const Modal = ({ isOpen, onClose, cardData }) => {
         body: JSON.stringify(paymentData),
       });
   
-      const responseText = await res.text();
+      const responseText = await res.text(); // Raw response text for debugging
       console.log("Raw response:", responseText);
   
       if (!res.ok) {
-        console.error("Failed to save payment:", responseText);
+        const errorData = JSON.parse(responseText); // Attempt to parse the response
+        console.error("Failed to save payment:", errorData);
       } else {
-        const data = JSON.parse(responseText); // Parse the JSON manually
+        const data = JSON.parse(responseText); // Parse the JSON response
         console.log("Payment saved successfully:", data);
       }
     } catch (err) {
