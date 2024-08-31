@@ -88,9 +88,7 @@ const Modal = ({ isOpen, onClose, cardData }) => {
 
   const getAuthToken = async () => {
     try {
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/getAuthToken`
-      );
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/getAuthToken`);
       const data = await response.json();
       console.log("Token fetched successfully:", data.access_token);
       return data.access_token;
