@@ -20,17 +20,16 @@ export default async function handler(req, res) {
 
     if (!response.ok) {
       const errorData = await response.json();
-      return res
-        .status(response.status)
-        .json({
-          error: errorData.message || "Failed to fetch payment details",
-        });
+      console.error(`Failed to fetch payment details: ${response.statusText}`);
+      return res.status(response.status).json({
+        error: errorData.message || "Failed to fetch payment details",
+      });
     }
 
     const paymentDetails = await response.json();
     res.status(200).json(paymentDetails);
   } catch (error) {
-    console.error("Error fetching payment details:", error);
+    console.error("Error fetching payment details:", error.message);
     res.status(500).json({ error: "Internal Server Error" });
   }
 }
@@ -40,10 +39,14 @@ async function getAuthToken() {
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_API_URL}/api/getAuthToken`
     );
+    if (!response.ok) {
+      console.error(`Failed to fetch auth token: ${response.statusText}`);
+      throw new Error("Failed to fetch auth token");
+    }
     const data = await response.json();
     return data.access_token;
   } catch (error) {
-    console.error("Error fetching auth token:", error);
+    console.error("Error fetching auth token:", error.message);
     throw new Error("Authentication failed");
   }
 }
