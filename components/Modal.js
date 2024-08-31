@@ -88,7 +88,9 @@ const Modal = ({ isOpen, onClose, cardData }) => {
 
   const getAuthToken = async () => {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/getAuthToken`);
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/getAuthToken`
+      );
       const data = await response.json();
       console.log("Token fetched successfully:", data.access_token);
       return data.access_token;
@@ -185,15 +187,20 @@ const Modal = ({ isOpen, onClose, cardData }) => {
         },
         body: JSON.stringify(paymentData),
       });
-  
-      const responseText = await res.text(); // Raw response text for debugging
+
+      const responseText = await res.text();
       console.log("Raw response:", responseText);
-  
+
       if (!res.ok) {
-        const errorData = JSON.parse(responseText); // Attempt to parse the response
-        console.error("Failed to save payment:", errorData);
+        let errorData;
+        try {
+          errorData = JSON.parse(responseText);
+        } catch (e) {
+          console.error("Failed to parse error response:", responseText);
+        }
+        console.error("Failed to save payment:", errorData || responseText);
       } else {
-        const data = JSON.parse(responseText); // Parse the JSON response
+        const data = JSON.parse(responseText);
         console.log("Payment saved successfully:", data);
       }
     } catch (err) {

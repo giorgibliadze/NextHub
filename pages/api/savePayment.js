@@ -22,13 +22,16 @@ export default async function handler(req, res) {
       },
     });
 
-    // Return a JSON response
     return res.status(200).json(payment);
   } catch (error) {
     console.error("Error saving payment:", error.message);
-    console.error("Stack trace:", error.stack);
+    console.error("Error details:", error); // Log the entire error object
+    console.error("Stack trace:", error.stack); // Log the stack trace for more context
 
-    // Return an error as JSON
-    return res.status(500).json({ error: "Failed to save payment", message: error.message });
+    return res.status(500).json({
+      error: "Failed to save payment",
+      message: error.message,
+      details: error.details || null, // Some errors may have additional details
+    });
   }
 }
