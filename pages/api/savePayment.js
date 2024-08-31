@@ -3,8 +3,6 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 export default async function handler(req, res) {
-  console.log("Request received:", req.body);
-
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
   }
@@ -17,6 +15,8 @@ export default async function handler(req, res) {
     buyerName,
     buyerEmail,
     buyerPhone,
+    industry, // optional
+    captureMethod, // optional
   } = req.body;
 
   try {
@@ -29,6 +29,8 @@ export default async function handler(req, res) {
         buyerName,
         buyerEmail,
         buyerPhone,
+        industry: industry || null, // ensure optional fields are handled
+        captureMethod: captureMethod || null,
       },
     });
 
