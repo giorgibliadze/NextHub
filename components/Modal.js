@@ -27,6 +27,20 @@ const Modal = ({ isOpen, onClose, cardData }) => {
     }));
   };
 
+  const validateForm = () => {
+    if (
+      !formData.name ||
+      !formData.email ||
+      !formData.phone ||
+      !formData.subject ||
+      !formData.message
+    ) {
+      setError("გთხოვთ შეავსოთ ყველა ველი.");
+      return false;
+    }
+    return true;
+  };
+
   const send = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -86,10 +100,17 @@ const Modal = ({ isOpen, onClose, cardData }) => {
     }
   };
 
-  const createOrder = async () => {
-    setLoading(true);
+  const createOrder = async (e) => {
+    e.preventDefault(); // Prevent default form submission
     setError(null);
     setSuccessMessage(null);
+
+    // Validate the form first
+    if (!validateForm()) {
+      return;
+    }
+
+    setLoading(true);
 
     try {
       const token = await getAuthToken(); // Retrieve the token first
@@ -298,7 +319,7 @@ const Modal = ({ isOpen, onClose, cardData }) => {
           </div>
           <div className="flex justify-center mt-4">
             <button
-              type="button"
+              type="submit"
               className="btn rounded-full border border-white max-w-[170px] px-8 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accent group text-white"
               onClick={createOrder}
               disabled={loading}
