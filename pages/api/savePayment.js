@@ -9,7 +9,15 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  const { orderId, status, amount, currency, buyerName, buyerEmail, buyerPhone } = req.body;
+  const {
+    orderId,
+    status,
+    amount,
+    currency,
+    buyerName,
+    buyerEmail,
+    buyerPhone,
+  } = req.body;
 
   try {
     const payment = await prisma.payment.create({
