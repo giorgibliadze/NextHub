@@ -187,22 +187,31 @@ const Modal = ({ isOpen, onClose, cardData }) => {
         },
         body: JSON.stringify(paymentData),
       });
-
-      const responseText = await res.text(); // Capture the raw response
-
+  
+      const responseText = await res.text(); // Capture the raw response text
+  
+      // Check if the response is empty
+      if (!responseText) {
+        throw new Error("Empty response from server");
+      }
+  
+      // Try to parse the JSON response
+      let data;
       try {
-        const data = JSON.parse(responseText); // Attempt to parse the JSON response
-        if (!res.ok) {
-          console.error("Failed to save payment:", data);
-        } else {
-          console.log("Payment saved successfully:", data);
-        }
+        data = JSON.parse(responseText);
       } catch (parseError) {
         console.error("Failed to parse JSON response:", responseText);
-        console.error("Original parse error:", parseError);
+        throw new Error("Failed to parse JSON response");
       }
+  
+      if (!res.ok) {
+        console.error("Failed to save payment:", data);
+        return;
+      }
+  
+      console.log("Payment saved successfully:", data);
     } catch (err) {
-      console.error("Error saving payment:", err);
+      console.error("Error saving payment:", err.message);
     }
   };
 
