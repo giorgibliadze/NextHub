@@ -7,21 +7,13 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  const {
-    orderId,
-    status,
-    amount,
-    currency,
-    buyerName,
-    buyerEmail,
-    buyerPhone,
-  } = req.body;
+  const { orderId, status, amount, currency, buyerName, buyerEmail, buyerPhone } = req.body;
 
   try {
     const payment = await prisma.payment.create({
       data: {
         orderId,
-        status, // Include the status field here
+        status,
         amount,
         currency,
         buyerName,
@@ -30,9 +22,12 @@ export default async function handler(req, res) {
       },
     });
 
-    res.status(200).json(payment);
+    // Return a JSON response
+    return res.status(200).json(payment);
   } catch (error) {
     console.error("Error saving payment:", error);
-    res.status(500).json({ error: "Failed to save payment" });
+
+    // Return an error as JSON
+    return res.status(500).json({ error: "Failed to save payment" });
   }
 }
