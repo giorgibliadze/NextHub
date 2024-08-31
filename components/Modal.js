@@ -210,24 +210,18 @@ const Modal = ({ isOpen, onClose, cardData }) => {
     console.log("Fetching payment details for order ID:", orderId);
     try {
       const res = await fetch(`/api/getPaymentDetails?order_id=${orderId}`);
-      
+
       // Capture the raw response text
       const responseText = await res.text();
-      
+
       // Check if the response is empty or invalid before parsing
       if (!responseText) {
         throw new Error("Empty response from the server.");
       }
-  
+
       // Try to parse the JSON response
-      let data;
-      try {
-        data = JSON.parse(responseText);
-      } catch (parseError) {
-        console.error("Failed to parse JSON response:", responseText);
-        throw new Error("Failed to parse JSON response");
-      }
-  
+      const data = JSON.parse(responseText);
+
       if (res.ok) {
         if (data && Object.keys(data).length > 0) {
           console.log("Payment Details:", data);
