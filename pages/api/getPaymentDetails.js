@@ -1,12 +1,12 @@
 export default async function handler(req, res) {
-  const { order_id } = req.query; // Get the order_id from the query parameters
+  const { order_id } = req.query;
 
   if (!order_id) {
     return res.status(400).json({ error: "Order ID is required" });
   }
 
   try {
-    const token = await getAuthToken(); // Retrieve the auth token
+    const token = await getAuthToken();
 
     const response = await fetch(
       `https://api.bog.ge/payments/v1/receipt/${order_id}`,
@@ -18,7 +18,6 @@ export default async function handler(req, res) {
       }
     );
 
-    // Check if the response is OK (status code 200-299)
     if (!response.ok) {
       let errorData;
       try {
@@ -33,22 +32,12 @@ export default async function handler(req, res) {
       });
     }
 
-    // Parse the JSON response
-    let paymentDetails;
-    try {
-      paymentDetails = await response.json();
-    } catch (jsonError) {
-      console.error("Failed to parse payment details as JSON:", jsonError);
-      return res.status(500).json({ error: "Failed to parse payment details" });
-    }
-
-    // Ensure the response contains data
+    const paymentDetails = await response.json();
     if (!paymentDetails || Object.keys(paymentDetails).length === 0) {
       console.error("Payment details are empty or undefined.");
       return res.status(404).json({ error: "Payment details not found" });
     }
 
-    // Return the payment details
     res.status(200).json(paymentDetails);
   } catch (error) {
     console.error("Error fetching payment details:", error.message);
