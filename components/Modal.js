@@ -187,9 +187,9 @@ const Modal = ({ isOpen, onClose, cardData }) => {
         },
         body: JSON.stringify(paymentData),
       });
-  
+
       const responseText = await res.text(); // Capture the raw response
-  
+
       try {
         const data = JSON.parse(responseText); // Attempt to parse the JSON response
         if (!res.ok) {
@@ -207,20 +207,36 @@ const Modal = ({ isOpen, onClose, cardData }) => {
   };
 
   const fetchPaymentDetails = async (orderId) => {
-    console.log("Fetching payment details for order ID:", orderId); // Add this line to debug
+    console.log("Fetching payment details for order ID:", orderId);
     try {
       const res = await fetch(`/api/getPaymentDetails?order_id=${orderId}`);
-      const data = await res.json();
+
+      // Capture the raw response text
+      const responseText = await res.text();
+
+      // Check if the response is empty or invalid before parsing
+      if (!responseText) {
+        throw new Error("Empty response from the server.");
+      }
+
+      // Try to parse the JSON response
+      const data = JSON.parse(responseText);
 
       if (res.ok) {
-        console.log("Payment Details:", data);
-        setPaymentDetails(data); // Update state with payment details
+        if (data && Object.keys(data).length > 0) {
+          console.log("Payment Details:", data);
+          setPaymentDetails(data); // Update state with payment details
+        } else {
+          console.error("Payment details are empty or undefined.");
+          setError("Payment details are unavailable.");
+        }
       } else {
+        console.error("Failed to fetch payment details:", data.message);
         setError(`Failed to fetch payment details: ${data.message}`);
       }
     } catch (err) {
+      console.error("Payment details error:", err.message);
       setError(`Failed to fetch payment details: ${err.message}`);
-      console.error("Payment details error:", err);
     }
   };
 

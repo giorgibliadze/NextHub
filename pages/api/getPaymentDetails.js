@@ -6,7 +6,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const token = await getAuthToken(); // Assuming you have a function to retrieve the token
+    const token = await getAuthToken(); // Retrieve the auth token
 
     const response = await fetch(
       `https://api.bog.ge/payments/v1/receipt/${order_id}`,
@@ -18,15 +18,37 @@ export default async function handler(req, res) {
       }
     );
 
+    // Check if the response is OK (status code 200-299)
     if (!response.ok) {
-      const errorData = await response.json();
+      let errorData;
+      try {
+        errorData = await response.json();
+      } catch (jsonError) {
+        console.error("Failed to parse error response as JSON:", jsonError);
+        errorData = { message: "Unknown error occurred" };
+      }
       console.error(`Failed to fetch payment details: ${response.statusText}`);
       return res.status(response.status).json({
         error: errorData.message || "Failed to fetch payment details",
       });
     }
 
-    const paymentDetails = await response.json();
+    // Parse the JSON response
+    let paymentDetails;
+    try {
+      paymentDetails = await response.json();
+    } catch (jsonError) {
+      console.error("Failed to parse payment details as JSON:", jsonError);
+      return res.status(500).json({ error: "Failed to parse payment details" });
+    }
+
+    // Ensure the response contains data
+    if (!paymentDetails || Object.keys(paymentDetails).length === 0) {
+      console.error("Payment details are empty or undefined.");
+      return res.status(404).json({ error: "Payment details not found" });
+    }
+
+    // Return the payment details
     res.status(200).json(paymentDetails);
   } catch (error) {
     console.error("Error fetching payment details:", error.message);
