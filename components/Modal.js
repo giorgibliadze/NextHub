@@ -148,8 +148,22 @@ const Modal = ({ isOpen, onClose, cardData }) => {
 
       if (res.ok) {
         const orderIdFromResponse = data.id; // Get the correct order ID
+        const orderStatus = data.status || "pending"; // Assuming "pending" is a valid status
+
         await fetchPaymentDetails(orderIdFromResponse); // Pass it to the fetchPaymentDetails function
         console.log("Order created successfully:", data);
+
+        // Save payment details to MongoDB using Prisma
+        await savePayment({
+          orderId: orderIdFromResponse,
+          status: orderStatus, // Include the status field here
+          amount: cardData.price,
+          currency: "GEL",
+          buyerName: formData.name,
+          buyerEmail: formData.email,
+          buyerPhone: formData.phone,
+        });
+
         window.location.href = data._links.redirect.href;
       } else {
         setError(`Order creation failed: ${data.message}`);
@@ -160,6 +174,29 @@ const Modal = ({ isOpen, onClose, cardData }) => {
       console.error("Order creation error:", err);
     } finally {
       setLoading(false);
+    }
+  };
+
+  // Function to save payment details
+  const savePayment = async (paymentData) => {
+    try {
+      const res = await fetch("/api/savePayment", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(paymentData),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        console.error("Failed to save payment:", data);
+      } else {
+        console.log("Payment saved successfully:", data);
+      }
+    } catch (err) {
+      console.error("Error saving payment:", err);
     }
   };
 
@@ -270,7 +307,7 @@ const Modal = ({ isOpen, onClose, cardData }) => {
               id="email"
               name="email"
               placeholder="მაილი"
-              className="text-white bg-transparent border-b border-gray-500 focus:outline-none focus:border-accent input text-center w-full focus:text-accent focus:bg-transparent"
+              className="text-white bg-transparent border-b border-gray-500 focus:outline-none focus:border-accent input text-center w/full focus:text-accent focus:bg-transparent"
               value={formData.email}
               onChange={handleInputChange}
               required
@@ -291,7 +328,7 @@ const Modal = ({ isOpen, onClose, cardData }) => {
             id="subject"
             name="subject"
             placeholder="თემა"
-            className="text-white bg-transparent border-b border-gray-500 focus:outline-none focus:border-accent input text-center w-full focus:text-accent focus:bg-transparent"
+            className="text-white bg-transparent border-b border-gray-500 focus:outline-none focus:border-accent input text-center w/full focus:text-accent focus:bg-transparent"
             value={formData.subject}
             onChange={handleInputChange}
             required
@@ -300,7 +337,7 @@ const Modal = ({ isOpen, onClose, cardData }) => {
             id="message"
             name="message"
             placeholder="შეტყობინება"
-            className="text-white bg-transparent border-b border-gray-500 focus:outline-none focus:border-accent input text-center w-full focus:text-accent focus:bg-transparent"
+            className="text-white bg-transparent border-b border-gray-500 focus:outline-none focus:border-accent input text-center w/full focus:text-accent focus:bg-transparent"
             value={formData.message}
             onChange={handleInputChange}
             required
@@ -319,7 +356,7 @@ const Modal = ({ isOpen, onClose, cardData }) => {
           </div>
           <div className="flex justify-center mt-4">
             <button
-              type="submit"
+              type="button" // Change to type "button" to avoid form submission
               className="btn rounded-full border border-white max-w-[170px] px-8 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accent group text-white"
               onClick={createOrder}
               disabled={loading}
