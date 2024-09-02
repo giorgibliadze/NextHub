@@ -33,7 +33,7 @@ const Seo = () => {
   const priceCardsData = [
     {
       title: "სტანდარტი",
-      price: 299,
+      price: 400,
       product_id: 10,
       features: [
         "საკვანძო სიტყვების კვლევა",
@@ -46,7 +46,7 @@ const Seo = () => {
       onButtonClick: () =>
         handlePurchaseClick({
           title: "სტანდარტი",
-          price: 299,
+          price: 400,
           product_id: 10,
           features: [
             "საკვანძო სიტყვების კვლევა",
@@ -60,7 +60,7 @@ const Seo = () => {
     },
     {
       title: "პრემიუმი",
-      price: 599,
+      price: 700,
       product_id: 11,
       features: [
         "ყველაფერი სტანდარტში",
@@ -74,7 +74,7 @@ const Seo = () => {
       onButtonClick: () =>
         handlePurchaseClick({
           title: "პრემიუმი",
-          price: 599,
+          price: 700,
           product_id: 11,
           features: [
             "ყველაფერი სტანდარტში",
@@ -89,7 +89,7 @@ const Seo = () => {
     },
     {
       title: "ბიზნესი",
-      price: 999,
+      price: 1200,
       product_id: 12,
       features: [
         "ყველაფერი პრემიუმში",
@@ -103,7 +103,7 @@ const Seo = () => {
       onButtonClick: () =>
         handlePurchaseClick({
           title: "ბიზნესი",
-          price: 999,
+          price: 1200,
           product_id: 12,
           features: [
             "ყველაფერი პრემიუმში",
