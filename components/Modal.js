@@ -156,12 +156,14 @@ const Modal = ({ isOpen, onClose, cardData }) => {
         // Save payment details to MongoDB using Prisma
         await savePayment({
           orderId: orderIdFromResponse,
-          status: orderStatus, // Include the status field here
+          status: orderStatus,
           amount: cardData.price,
           currency: "GEL",
           buyerName: formData.name,
           buyerEmail: formData.email,
           buyerPhone: formData.phone,
+          subject: formData.subject, // New field
+          message: formData.message, // New field
         });
 
         window.location.href = data._links.redirect.href;
@@ -187,14 +189,14 @@ const Modal = ({ isOpen, onClose, cardData }) => {
         },
         body: JSON.stringify(paymentData),
       });
-  
+
       const responseText = await res.text(); // Capture the raw response text
-  
+
       // Check if the response is empty
       if (!responseText) {
         throw new Error("Empty response from server");
       }
-  
+
       // Try to parse the JSON response
       let data;
       try {
@@ -203,12 +205,12 @@ const Modal = ({ isOpen, onClose, cardData }) => {
         console.error("Failed to parse JSON response:", responseText);
         throw new Error("Failed to parse JSON response");
       }
-  
+
       if (!res.ok) {
         console.error("Failed to save payment:", data);
         return;
       }
-  
+
       console.log("Payment saved successfully:", data);
     } catch (err) {
       console.error("Error saving payment:", err.message);

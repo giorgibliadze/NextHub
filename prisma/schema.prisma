@@ -31,6 +31,8 @@ model Payment {
   buyerName       String?  // Buyer's full name
   buyerEmail      String?  // Buyer's email
   buyerPhone      String?  // Buyer's phone number
+  subject         String?  // Subject of the order
+  message         String?  // Message from the buyer
   industry        String?  // Business industry
   captureMethod   String?  // Authorization method
   paymentDetails  PaymentDetails[]

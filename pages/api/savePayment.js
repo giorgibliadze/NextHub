@@ -17,6 +17,8 @@ export default async function handler(req, res) {
     buyerName,
     buyerEmail,
     buyerPhone,
+    industry, // Add optional fields only if they exist in the schema
+    captureMethod, // Add optional fields only if they exist in the schema
   } = req.body;
 
   try {
@@ -29,6 +31,8 @@ export default async function handler(req, res) {
         buyerName,
         buyerEmail,
         buyerPhone,
+        industry, // Only pass optional fields if needed
+        captureMethod, // Only pass optional fields if needed
       },
     });
 
