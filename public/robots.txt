@@ -1,19 +1,17 @@
-# All User-agents
+# *
 User-agent: *
 Allow: /
 
-# Explicitly Allow the /services/ Folder for All User-agents
-User-agent: *
-Allow: /services/
-
-# Block Downloads for All User-agents
-User-agent: *
-Disallow: /downloads/
-
-# Specific Rules for Googlebot
+# Googlebot
 User-agent: Googlebot
 Allow: /
 
+# *
+User-agent: *
+Disallow: /admin
+
+# Host
+Host: https://www.next-hub.pro
 
 # Sitemaps
 Sitemap: https://www.next-hub.pro/sitemap.xml
