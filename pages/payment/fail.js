@@ -1,14 +1,8 @@
-import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { motion } from "framer-motion";
 
 const PaymentFail = () => {
   const router = useRouter();
-  const { orderId } = router.query;
-
-  useEffect(() => {
-    // Any additional logic, like logging the failure
-  }, [orderId]);
 
   return (
     <div className="min-h-screen flex items-center justify-center">
@@ -24,7 +18,6 @@ const PaymentFail = () => {
         <p className="mt-4 text-gray-700">
           თქვენი გადახდის პროცესი წარუმატებლად დასრულდა. გთხოვთ სცადოთ თავიდან.
         </p>
-        {orderId && <p className="mt-4 text-gray-500">Order ID: {orderId}</p>}
 
         <motion.button
           whileHover={{ scale: 1.05 }}
