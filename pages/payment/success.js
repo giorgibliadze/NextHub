@@ -1,14 +1,8 @@
-import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { motion } from "framer-motion";
 
 const PaymentSuccess = () => {
   const router = useRouter();
-  const { orderId } = router.query; // Assuming the payment system redirects with orderId in the URL
-
-  useEffect(() => {
-    // Any logic to fetch more payment details or update status if needed
-  }, [orderId]);
 
   return (
     <div className="min-h-screen flex items-center justify-center">
@@ -19,14 +13,12 @@ const PaymentSuccess = () => {
         className="bg-white p-8 rounded-lg shadow-lg"
       >
         <h1 className="text-2xl font-bold text-green-600">
-          გადახდა წარმატებით დასრულდა!
+          გადახდა წარმატებით დასრულდა
         </h1>
         <p className="mt-4 text-gray-700">
-          გმადლობთ შესყიდვისთვის. თქვენი შეკვეთა დასრულებულია წარმატებით.
+          გმადლობთ! თქვენი გადახდა წარმატებით შესრულდა.
         </p>
-        {orderId && <p className="mt-4 text-gray-500">Order ID: {orderId}</p>}
 
-        {/* Adding hover effect on the button */}
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
