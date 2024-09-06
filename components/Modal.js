@@ -131,8 +131,8 @@ const Modal = ({ isOpen, onClose, cardData }) => {
           ],
         },
         redirect_urls: {
-          fail: "https://example.com/fail",
-          success: "https://example.com/success",
+          fail: "https://next-hub.pro/payment/fail",
+          success: "https://next-hub.pro/payment/success",
         },
       };
 

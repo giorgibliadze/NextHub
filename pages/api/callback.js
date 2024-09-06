@@ -1,7 +1,14 @@
 import { PrismaClient } from "@prisma/client";
 import crypto from "crypto";
+import getRawBody from "raw-body";
 
 const prisma = new PrismaClient();
+
+export const config = {
+  api: {
+    bodyParser: false, // Disable Next.js's default body parsing
+  },
+};
 
 export default async function handler(req, res) {
   // Ensure it's a POST request
@@ -26,34 +33,40 @@ export default async function handler(req, res) {
   PwIDAQAB
   -----END PUBLIC KEY-----`;
 
-  // Verify the signature
-  const verify = crypto.createVerify("RSA-SHA256");
-  verify.update(req.body);
-  verify.end();
-  const isValidSignature = verify.verify(publicKey, signature, "base64");
-
-  if (!isValidSignature) {
-    return res.status(400).json({ error: "Invalid signature" });
-  }
-
-  // Parse the callback body
-  const { event, zoned_request_time, body } = req.body;
-
-  if (event !== "order_payment") {
-    return res.status(400).json({ error: "Invalid event type" });
-  }
-
-  const {
-    order_id,
-    status,
-    amount,
-    currency,
-    buyerName,
-    buyerEmail,
-    buyerPhone,
-  } = body;
-
   try {
+    // Parse the raw body
+    const rawBody = await getRawBody(req);
+    
+    // Verify the signature
+    const verify = crypto.createVerify("RSA-SHA256");
+    verify.update(rawBody);
+    verify.end();
+
+    const isValidSignature = verify.verify(publicKey, signature, "base64");
+
+    if (!isValidSignature) {
+      return res.status(400).json({ error: "Invalid signature" });
+    }
+
+    // Parse the raw body as JSON
+    const parsedBody = JSON.parse(rawBody.toString());
+
+    const { event, zoned_request_time, body } = parsedBody;
+
+    if (event !== "order_payment") {
+      return res.status(400).json({ error: "Invalid event type" });
+    }
+
+    const {
+      order_id,
+      status,
+      amount,
+      currency,
+      buyerName,
+      buyerEmail,
+      buyerPhone,
+    } = body;
+
     // Update the payment status in the database
     const payment = await prisma.payment.update({
       where: { orderId: order_id },
@@ -73,9 +86,9 @@ export default async function handler(req, res) {
     // Respond with HTTP 200 to acknowledge the callback
     return res.status(200).json({ success: true });
   } catch (error) {
-    console.error("Error updating payment:", error.message);
+    console.error("Error handling callback:", error.message);
     return res.status(500).json({
-      error: "Failed to update payment",
+      error: "Failed to handle callback",
       message: error.message,
     });
   }
