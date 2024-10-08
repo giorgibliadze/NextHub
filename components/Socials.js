@@ -17,13 +17,13 @@ const Socials = () => {
       </Link>
 
       <Link
-        href={"https://gitlab.com/bliadze1997"}
+        href={"https://www.instagram.com/next.hub.pro/"}
         className="hover:text-accent transition-all duration-300"
       >
         <FaInstagram />
       </Link>
       <Link
-        href={"https://www.linkedin.com/in/giorgi-bliadze-040413145/"}
+        href={"https://www.linkedin.com/company/next-hub-solutions/"}
         className="hover:text-accent transition-all duration-300"
       >
         <FaLinkedin />
