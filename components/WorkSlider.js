@@ -15,6 +15,11 @@ const workSlides = {
     {
       images: [
         {
+          title: "TenaHandmade",
+          path: "/TenaHandmade.png",
+          link: "https://tenahandmade.ge",
+        },
+        {
           title: "Ninos-ia",
           path: "/ninos-ia.png",
           link: "https://ninosia.pro/shop/",
@@ -25,14 +30,39 @@ const workSlides = {
           link: "https://core.org.ge/",
         },
         {
-          title: "GeoRent",
-          path: "/GeoRent.jpg",
-          link: "https://georent.pro/",
-        },
-        {
           title: "Hoppa",
           path: "/Hoppa.jpg",
           link: "https://hoppa.ge",
+        },
+        {
+          title: "Bigloans",
+          path: "/Bigloans.png",
+          link: "https://bigloans.ge",
+        },
+        {
+          title: "WearHouse",
+          path: "/WearHouse.png",
+          link: "https://wearhouse.ge",
+        },
+        {
+          title: "WakeUp",
+          path: "/WakeUp.png",
+          link: "https://wakeup.ge",
+        },
+        {
+          title: "EchelonEngineering",
+          path: "/EchelonEngineering.png",
+          link: "https://echelonengineering.ge",
+        },
+        {
+          title: "GeoArtConstruction",
+          path: "/GeoArtConstruction.png",
+          link: "https://geoartconstruction.ge",
+        },
+        {
+          title: "katta",
+          path: "/Katta.png",
+          link: "https://katta.ge",
         },
       ],
     },
