@@ -33,12 +33,6 @@ const workSlides = {
           status: "დასრულებული",
         },
         {
-          title: "PaLocksmith",
-          path: "/PaLocksmith.png",
-          link: "https://palocksmithservice.com/",
-          status: "დასრულებული",
-        },
-        {
           title: "Hoppa",
           path: "/Hoppa.jpg",
           link: "https://hoppa.ge",
@@ -55,6 +49,12 @@ const workSlides = {
           title: "WearHouse",
           path: "/WearHouse.png",
           link: "https://wearhouse.ge",
+          status: "დასრულებული",
+        },
+        {
+          title: "PaLocksmith",
+          path: "/PaLocksmith.png",
+          link: "https://palocksmithservice.com/",
           status: "დასრულებული",
         },
         {
