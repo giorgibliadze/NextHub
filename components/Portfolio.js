@@ -31,11 +31,11 @@ export default function Portfolio() {
       : portfolioItems.filter((item) => item.category === activeCategory);
 
   return (
-    <div className="w-[80%] mt-[150px] mx-auto px-4 py-12 items-center">
+    <div className="w-[80%] mt-[150px] smx:mt-[100px] mx-auto px-4 py-12 items-center">
         {/* Sidebar filter buttons */}
-        <div className="gap-4 md:min-w-[150px] ml-[15px] mr-[15px] flex">
+        <div className="gap-4 md:min-w-[150px] ml-[15px] mr-[15px] md:flex md:flex-row smx:flex smx:flex-col items-center">
           {categories.map((category) => (
-            <div key={category} className="flex flex-col">
+            <div key={category} className="flex flex-row">
                 <Button
               onClick={() => setActiveCategory(category)}
               type="button"
