@@ -6,6 +6,7 @@ import Circles from "../../components/Circles";
 import Head from "next/head";
 import { GoogleTagManager } from "@next/third-parties/google";
 import { NextSeo } from "next-seo";
+import Portfolio from "../../components/Portfolio";
 const graphic_design = () => {
   return (
     <>
@@ -70,7 +71,8 @@ const graphic_design = () => {
       <GoogleTagManager gtmId="GTM-KHQ9N3M5" />
       <div className="flex justify-center items-center min-h-screen">
         <Circles />
-        <GraphicDesignPriceCard />
+        {/* <GraphicDesignPriceCard /> */}
+        <Portfolio />
         <Bulb />
       </div>
     </>
