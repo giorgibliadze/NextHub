@@ -10,6 +10,7 @@ const portfolioItems = [
   { title: "TenaHandmade", path: "/TenaHandmade.png", link: "https://tenahandmade.ge", category: "დასრულებული" },
   { title: "Ninos-ia", path: "/ninos-ia.png", link: "https://ninosia.pro/shop/", category: "დასრულებული" },
   { title: "Core", path: "/core.png", link: "https://core.org.ge/", category: "დასრულებული" },
+  { title: "PaLocksmith", path: "/PaLocksmith.png", link: "https://palocksmithservice.com/", category: "დასრულებული" },
   { title: "Hoppa", path: "/Hoppa.jpg", link: "https://hoppa.ge", category: "დასრულებული" },
   { title: "Bigloans", path: "/Bigloans.png", link: "https://bigloans.ge", category: "დასრულებული" },
   { title: "WearHouse", path: "/WearHouse.png", link: "https://wearhouse.ge", category: "დასრულებული" },
