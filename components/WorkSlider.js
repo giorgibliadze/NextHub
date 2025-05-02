@@ -18,51 +18,62 @@ const workSlides = {
           title: "TenaHandmade",
           path: "/TenaHandmade.png",
           link: "https://tenahandmade.ge",
+          status: "დასრულებული",
         },
         {
           title: "Ninos-ia",
           path: "/ninos-ia.png",
           link: "https://ninosia.pro/shop/",
+          status: "დასრულებული",
         },
         {
           title: "Core",
           path: "/core.png",
           link: "https://core.org.ge/",
+          status: "დასრულებული",
         },
         {
           title: "Hoppa",
           path: "/Hoppa.jpg",
           link: "https://hoppa.ge",
+          status: "დასრულებული",
+          
         },
         {
           title: "Bigloans",
           path: "/Bigloans.png",
           link: "https://bigloans.ge",
+          status: "დასრულებული",
         },
         {
           title: "WearHouse",
           path: "/WearHouse.png",
           link: "https://wearhouse.ge",
+          status: "დასრულებული",
         },
         {
           title: "WakeUp",
           path: "/WakeUp.png",
           link: "https://wakeup.ge",
+          status: "მიმდინარე",
         },
         {
           title: "EchelonEngineering",
           path: "/EchelonEngineering.png",
           link: "https://echelonengineering.ge",
+          status: "მიმდინარე",
         },
         {
           title: "GeoArtConstruction",
           path: "/GeoArtConstruction.png",
           link: "https://geoartconstruction.ge",
+          status: "მიმდინარე",
         },
         {
           title: "katta",
           path: "/Katta.png",
           link: "https://katta.ge",
+          status: "მიმდინარე",
         },
       ],
     },
@@ -113,7 +124,7 @@ const WorkSlider = () => {
                         <div className="absolute bottom-0 translate-y-full group-hover:-translate-y-10 group-hover:xl:-translate-y-20 transition-all duration-300 w-full text-center">
                           <div className="flex items-center justify-center gap-x-2 text-[13px] tracking-[0.2em]">
                             {/* title part 1 */}
-                            <div className="delay-100">ჩვენი</div>
+                            <div className="delay-100">{image.status}</div>
                             {/* title part 2 */}
                             <div className="translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-150">
                               პროექტი
