@@ -17,7 +17,7 @@ const workSlides = {
         {
           title: "TenaHandmade",
           path: "/TenaHandmade.png",
-          link: "https://tenahandmade.ge",
+          link: "https://tenahandmade.com",
           status: "დასრულებული",
         },
         {
