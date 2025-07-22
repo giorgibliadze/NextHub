@@ -21,6 +21,18 @@ const workSlides = {
           status: "დასრულებული",
         },
         {
+          title: "EvakuatorService",
+          path: "/EvakuatorService.png",
+          link: "https://evakuatorservice.ge/",
+          status: "დასრულებული",
+        },
+        {
+          title: "JewelryTools",
+          path: "/JewelryTools.png",
+          link: "https://jewelrytools.ge/",
+          status: "დასრულებული",
+        },
+        {
           title: "Ninos-ia",
           path: "/ninos-ia.png",
           link: "https://ninosia.pro/shop/",
@@ -36,6 +48,13 @@ const workSlides = {
           title: "Hoppa",
           path: "/Hoppa.jpg",
           link: "https://hoppa.ge",
+          status: "დასრულებული",
+          
+        },
+        {
+          title: "Teba",
+          path: "/Teba.png",
+          link: "https://teba.ge/",
           status: "დასრულებული",
           
         },
