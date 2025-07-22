@@ -45,13 +45,6 @@ const workSlides = {
           status: "დასრულებული",
         },
         {
-          title: "Hoppa",
-          path: "/Hoppa.jpg",
-          link: "https://hoppa.ge",
-          status: "დასრულებული",
-          
-        },
-        {
           title: "Teba",
           path: "/Teba.png",
           link: "https://teba.ge/",
