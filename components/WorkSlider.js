@@ -28,7 +28,7 @@ const workSlides = {
         },
         {
           title: "JewelryTools",
-          path: "/JewelryTools.png",
+          path: "/Jewelrytools.png",
           link: "https://jewelrytools.ge/",
           status: "დასრულებული",
         },
