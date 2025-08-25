@@ -33,6 +33,12 @@ const workSlides = {
           status: "დასრულებული",
         },
         {
+          title: "NbFurniture",
+          path: "/NbFurniture.png",
+          link: "https://nbfurniture.ge/",
+          status: "დასრულებული",
+        },
+        {
           title: "Ninos-ia",
           path: "/ninos-ia.png",
           link: "https://ninosia.pro/shop/",
