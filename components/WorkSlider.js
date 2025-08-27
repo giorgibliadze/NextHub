@@ -21,12 +21,6 @@ const workSlides = {
           status: "დასრულებული",
         },
         {
-          title: "EvakuatorService",
-          path: "/EvakuatorService.png",
-          link: "https://evakuatorservice.ge/",
-          status: "დასრულებული",
-        },
-        {
           title: "JewelryTools",
           path: "/Jewelrytools.png",
           link: "https://jewelrytools.ge/",
