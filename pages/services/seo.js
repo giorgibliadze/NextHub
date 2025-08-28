@@ -124,13 +124,13 @@ const Seo = () => {
         <meta name="robots" content="index, follow" />
       </Head>
       <NextSeo
-        canonical="https://www.next-hub.pro/services/seo"
+        canonical="https://next-hub.pro/services/seo"
         title="Next-Hub Solutions | SEO"
         description="Next-Hub Solutions-ის სოციალური მედია მენეჯმენტის სერვისები. მიიღეთ პროფესიონალური მხარდაჭერა ბრენდის ხასიათის შექმნაში, სოციალური მედიის მართვაში და სარეკლამო კამპანიების დაგეგმვაში."
         openGraph={{
           type: "website",
           locale: "ka_GE",
-          url: "https://www.next-hub.pro/services/seo",
+          url: "https://next-hub.pro/services/seo",
           site_name: "Next-Hub Solutions",
           title: "Next-Hub Solutions | SEO",
           description:

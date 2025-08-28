@@ -125,7 +125,7 @@ const Analytics = () => {
         openGraph={{
           type: "website",
           locale: "ka_GE",
-          url: "https://www.next-hub.pro/services/analytics",
+          url: "https://next-hub.pro/services/analytics",
           site_name: "Next-Hub Solutions",
           title: "Next-Hub Solutions | Analytics",
           description:
