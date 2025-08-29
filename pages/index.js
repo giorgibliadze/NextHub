@@ -60,8 +60,8 @@ const Home = () => {
           images: [
             {
               url: "https://www.next-hub.pro/web.jpg",
-              width: 250,
-              height: 250,
+              width: 800,
+              height: 400,
               alt: "Next-Hub Solutions",
             },
           ],
