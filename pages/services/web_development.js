@@ -185,7 +185,7 @@ const WebDevelopment = () => {
             "მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად.",
           images: [
             {
-              url: "https://www.next-hub.pro/nexthub.jpg",
+              url: "https://www.next-hub.pro/web.jpg",
               width: 800,
               height: 600,
               alt: "Next-Hub Solutions",
@@ -199,7 +199,7 @@ const WebDevelopment = () => {
           title: "Next-Hub Solutions | Web Development",
           description:
             "მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად.",
-          image: "https://www.next-hub.pro/nexthub.jpg",
+          image: "https://www.next-hub.pro/web.jpg",
         }}
         additionalMetaTags={[
           {
