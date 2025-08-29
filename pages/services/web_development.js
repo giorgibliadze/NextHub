@@ -188,7 +188,7 @@ const WebDevelopment = () => {
               url: "https://www.next-hub.pro/web.jpg",
               width: 800,
               height: 600,
-              alt: "Next-Hub Solutions",
+              alt: "საიტების დამზადება",
             },
           ],
         }}
