@@ -73,7 +73,7 @@ const Layout = ({ children }) => {
       <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID} />
       <NextSeo
         canonical="https://www.next-hub.pro"
-        title="Next-Hub Solutions | Home"
+        title="Next-Hub | საიტების დამზადება"
         description="მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად."
         keywords="Next-Hub, ციფრული რეალობა, იდეები, სურვილები, ოცნებები, ბრენდის ცნობადობა, სანდოობა, ციფრული ტრანსფორმაცია, ვებ აპლიკაციები, სოციალური მედია, SEO, ანალიტიკა"
         openGraph={{
@@ -97,7 +97,7 @@ const Layout = ({ children }) => {
           handle: "@NextHub",
           site: "@NextHub",
           cardType: "summary_large_image",
-          title: "Next-Hub Solutions | Home",
+          title: "Next-Hub | საიტების დამზადება",
           description:
             "მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად.",
           image: "https://www.next-hub.pro/nexthub.jpg",
