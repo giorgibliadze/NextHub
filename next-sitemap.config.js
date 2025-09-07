@@ -1,46 +1,76 @@
+// next-sitemap.config.js
 /** @type {import('next-sitemap').IConfig} */
+const SITE_URL =
+  (process.env.SITE_URL || "https://www.next-hub.pro").replace(/\/$/, "");
+
+const priorityFor = (path) => {
+  if (path === "/") return 1.0;
+  if (path.startsWith("/services")) return 0.8;
+  if (["/work", "/about", "/contact"].includes(path)) return 0.8;
+  return 0.7;
+};
+
+const EXTRA_PATHS = [
+  "/work",
+  "/about",
+  "/contact",
+  "/services",
+  "/services/analytics",
+  "/services/digital_marketing",
+  "/services/web_development",
+  "/services/seo",
+  "/services/soc_media",
+  "/services/tech_support",
+  "/services/graphic_design",
+];
+
 module.exports = {
-  siteUrl: "https://next-hub.pro",
+  siteUrl: SITE_URL,
+  outDir: "public",
+  generateIndexSitemap: true,
   generateRobotsTxt: true,
   sitemapSize: 5000,
-  changefreq: "daily",
-  priority: 0.7,
-  exclude: ["/admin/*", "/login"],
-  transform: async (config, path) => {
-    return {
-      loc: path,
-      changefreq: config.changefreq,
-      priority: config.priority,
-      lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
-    };
-  },
-  additionalPaths: async (config) => [
-    await config.transform(config, "/work"),
-    await config.transform(config, "/about"),
-    await config.transform(config, "/contact"),
-    await config.transform(config, "/services"),
-    await config.transform(config, "/services/analytics"),
-    await config.transform(config, "/services/digital_marketing"),
-    await config.transform(config, "/services/web_development"),
-    await config.transform(config, "/services/seo"),
-    await config.transform(config, "/services/soc_media"),
-    await config.transform(config, "/services/tech_support"),
+  changefreq: "weekly",
+  autoLastmod: true,
+
+  exclude: [
+    "/admin",
+    "/admin/*",
+    "/login",
+    "/api/*",
+    "/payment/*",
+    "/404",
+    "/500",
   ],
+
+  transform: async (config, path) => ({
+    loc: path,
+    changefreq: path === "/" ? "daily" : config.changefreq,
+    priority: priorityFor(path),
+    lastmod: new Date().toISOString(),
+  }),
+
+  additionalPaths: async (config) =>
+    Promise.all(EXTRA_PATHS.map((p) => config.transform(config, p))),
+
   robotsTxtOptions: {
     policies: [
       {
         userAgent: "*",
         allow: "/",
-      },
-      {
-        userAgent: "Googlebot",
-        allow: "/",
-      },
-      {
-        userAgent: "*",
-        disallow: "/admin",
+        disallow: ["/admin", "/admin/*", "/login", "/api/*", "/payment/*"],
       },
     ],
+    // remove any Host: line if present
+    transformRobotsTxt: async (_cfg, robotsTxt) =>
+      robotsTxt
+        .split("\n")
+        .filter(
+          (line) =>
+            line.trim() &&
+            !/^#\s*Host/i.test(line) &&
+            !/^Host:/i.test(line)
+        )
+        .join("\n")+ '\n',
   },
-  autoLastmod: true,
 };

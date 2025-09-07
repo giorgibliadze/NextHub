@@ -1,17 +1,10 @@
 # *
 User-agent: *
 Allow: /
-
-# Googlebot
-User-agent: Googlebot
-Allow: /
-
-# *
-User-agent: *
 Disallow: /admin
-
-# Host
-Host: https://next-hub.pro
-
+Disallow: /admin/*
+Disallow: /login
+Disallow: /api/*
+Disallow: /payment/*
 # Sitemaps
-Sitemap: https://next-hub.pro/sitemap.xml
+Sitemap: https://www.next-hub.pro/sitemap.xml
