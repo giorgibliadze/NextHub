@@ -29,47 +29,51 @@ const Layout = ({ children }) => {
           gtag('js', new Date());
           gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}');`}
       </Script>
-      <Head>
-        {/* Meta Pixel Code */}
-        <script>
-          {`!function(f,b,e,v,n,t,s)
-            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}(window, document,'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '${process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID}');
-            fbq('track', 'PageView');`}
-        </script>
-        <noscript>
-          <img
-            height="1"
-            width="1"
-            style={{ display: "none" }}
-            src={`https://www.facebook.com/tr?id=${process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID}&ev=PageView&noscript=1`}
-          />
-        </noscript>
-        {/* End Meta Pixel Code */}
-        <link rel="icon" href="/favicon.jpg" />
-        <meta name="robots" content="index, follow" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              url: "https://www.next-hub.pro",
-              logo: "https://www.next-hub.pro/favicon.jpg",
-            }),
-          }}
-        />
-        <meta
-          name="google-site-verification"
-          content="AV_Rqc6RXH1HpfaYzYb7la24kvaGW8sqHpeTaW2NU50"
-        />
-      </Head>
+
+<Head>
+  <link rel="icon" href="/favicon.jpg" />
+  <meta name="robots" content="index, follow" />
+  <meta
+    name="google-site-verification"
+    content="AV_Rqc6RXH1HpfaYzYb7la24kvaGW8sqHpeTaW2NU50"
+  />
+</Head>
+<Script
+  id="org-schema"
+  type="application/ld+json"
+  strategy="afterInteractive"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      url: "https://www.next-hub.pro",
+      logo: "https://www.next-hub.pro/favicon.jpg",
+    }),
+  }}
+/>
+
+<Script id="fb-pixel" strategy="afterInteractive">
+  {`!function(f,b,e,v,n,t,s){if(f.fbq)return;
+n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
+t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','${process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID}');
+fbq('track','PageView');`}
+</Script>
+
+{/* FB Pixel <noscript> fallback */}
+<noscript id="fb-pixel-noscript">
+  {/* eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text */}
+  <img
+    height="1"
+    width="1"
+    alt=""
+    aria-hidden="true"
+    style={{ display: "none" }}
+    src={`https://www.facebook.com/tr?id=${process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID}&ev=PageView&noscript=1`}
+  />
+</noscript>
       <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID} />
       <NextSeo
         canonical="https://www.next-hub.pro"

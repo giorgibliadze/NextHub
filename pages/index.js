@@ -25,24 +25,7 @@ const Home = () => {
           gtag('js', new Date());
           gtag('config', 'G-MCWYDWRTCY');`}
       </Script>
-      <Head>
-        <meta name="robots" content="index, follow" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              url: "https://www.next-hub.pro",
-              logo: "https://www.next-hub.pro/favicon.jpg",
-            }),
-          }}
-        />
-        <meta
-          name="google-site-verification"
-          content="AV_Rqc6RXH1HpfaYzYb7la24kvaGW8sqHpeTaW2NU50"
-        />
-      </Head>
+      
       <GoogleTagManager gtmId="GTM-KHQ9N3M5" />
       <NextSeo
       canonical="https://www.next-hub.pro"

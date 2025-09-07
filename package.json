@@ -12,7 +12,6 @@
   },
   "dependencies": {
     "@googlemaps/js-api-loader": "^1.16.6",
-    "@next/font": "^13.4.4",
     "@next/third-parties": "^14.2.5",
     "@prisma/client": "^5.19.0",
     "@react-google-maps/api": "^2.19.3",
