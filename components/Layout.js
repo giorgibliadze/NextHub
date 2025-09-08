@@ -90,7 +90,7 @@ fbq('track','PageView');`}
             "მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად.",
           images: [
             {
-              url: "https://www.next-hub.pro/nexthub.jpg",
+              url: "https://www.next-hub.pro/nexthub.png",
               width: 800,
               height: 600,
               alt: "Next-Hub Solutions",
@@ -104,7 +104,7 @@ fbq('track','PageView');`}
           title: "Next-Hub | საიტების დამზადება",
           description:
             "მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად.",
-          image: "https://www.next-hub.pro/nexthub.jpg",
+          image: "https://www.next-hub.pro/nexthub.png",
         }}
         additionalMetaTags={[
           {
