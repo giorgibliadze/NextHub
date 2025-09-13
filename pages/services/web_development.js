@@ -174,13 +174,13 @@ const WebDevelopment = () => {
         canonical="https://next-hub.pro/services/web_development"
         title="Next-Hub Solutions | საიტის დამზადება"
         description="მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად."
-        keywords="Next-Hub, საიტის დამზადება, საიტების შექმნა, ვებსაიტების დამზადება, საიტების დამზადება, ვებ აპლიკაციები"
+        keywords="Next-Hub, ვებსაიტის დამზადება, საიტის დამზადება, საიტების შექმნა, ვებსაიტების დამზადება, საიტების დამზადება, ვებ აპლიკაციები"
         openGraph={{
           type: "website",
           locale: "ka_GE",
           url: "https://next-hub.pro/services/web_development",
           site_name: "Next-Hub Solutions",
-          title: "Next-Hub Solutions | საიტის დამზადება",
+          title: "Next-Hub Solutions | ვებსაიტის დამზადება",
           description:
             "მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად.",
           images: [
@@ -188,7 +188,7 @@ const WebDevelopment = () => {
               url: "https://www.next-hub.pro/web.jpg",
               width: 800,
               height: 600,
-              alt: "საიტების დამზადება",
+              alt: "ვებსაიტის დამზადება",
             },
           ],
         }}
@@ -196,7 +196,7 @@ const WebDevelopment = () => {
           handle: "@NextHub",
           site: "@NextHub",
           cardType: "summary_large_image",
-          title: "Next-Hub Solutions | საიტის დამზადება",
+          title: "Next-Hub Solutions | ვებსაიტის დამზადება",
           description:
             "მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად.",
           image: "https://www.next-hub.pro/web.jpg",
@@ -244,7 +244,7 @@ const WebDevelopment = () => {
             exit="hidden"
             className="h2 xl:mt-8"
           >
-            საიტის დამზადება <span className="text-accent">.</span>
+            ვებსაიტის დამზადება <span className="text-accent">.</span>
           </motion.h1>
           <motion.div
             variants={fadeIn("up", 0.1)}
