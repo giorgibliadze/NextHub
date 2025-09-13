@@ -167,64 +167,36 @@ const WebDevelopment = () => {
 
   return (
     <>
-      <Head>
-        <meta name="robots" content="index, follow" />
-      </Head>
       <NextSeo
-        canonical="https://next-hub.pro/services/web_development"
-        title="Next-Hub Solutions | Web Development"
-        description="მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად."
-        keywords="Next-Hub, ციფრული რეალობა, იდეები, სურვილები, ოცნებები, ბრენდის ცნობადობა, სანდოობა, ციფრული ტრანსფორმაცია, ვებ აპლიკაციები, სოციალური მედია, SEO, ანალიტიკა"
+        title="საიტის დამზადება | Next Hub Solutions"
+        description="ვებგვერდების სრულფასოვანი შექმნა: Next.js/React, სწრაფი ჩატვირთვა, SEO, ანალიტიკა და უსაფრთხო გადახდები. ბიზნესზე მორგებული დიზაინი და მხარდაჭერა."
+        canonical={canonical}
         openGraph={{
-          type: "website",
-          locale: "ka_GE",
-          url: "https://next-hub.pro/services/web_development",
-          site_name: "Next-Hub Solutions",
-          title: "Next-Hub Solutions | Web Development",
+          url: canonical,
+          site_name: "Next Hub Solutions",
+          title: "საიტის დამზადება | Next Hub Solutions",
           description:
-            "მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად.",
+            "ვებგვერდების სრულფასოვანი შექმნა: Next.js/React, სწრაფი ჩატვირთვა, SEO, ანალიტიკა და უსაფრთხო გადახდები.",
           images: [
             {
-              url: "https://www.next-hub.pro/web.jpg",
-              width: 800,
-              height: 600,
-              alt: "საიტების დამზადება",
+              url: `${SITE_URL}/web.jpg`,
+              width: 1200,
+              height: 630,
+              alt: "საიტის დამზადება",
             },
           ],
         }}
-        twitter={{
-          handle: "@NextHub",
-          site: "@NextHub",
-          cardType: "summary_large_image",
-          title: "Next-Hub Solutions | Web Development",
-          description:
-            "მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად.",
-          image: "https://www.next-hub.pro/web.jpg",
-        }}
-        additionalMetaTags={[
-          {
-            name: "keywords",
-            content:
-              "Next-Hub, ციფრული რეალობა, იდეები, სურვილები, ოცნებები, ბრენდის ცნობადობა, სანდოობა, ციფრული ტრანსფორმაცია, ვებ აპლიკაციები, სოციალური მედია, SEO, ანალიტიკა",
-          },
-          {
-            name: "author",
-            content: "Next-Hub Solutions",
-          },
-          {
-            name: "viewport",
-            content: "width=device-width, initial-scale=1.0",
-          },
-          {
-            name: "robots",
-            content: "index, follow",
-          },
-          {
-            name: "changefreq",
-            content: "always",
-          },
-        ]}
+        twitter={{ handle: "@NextHub", site: "@NextHub", cardType: "summary_large_image" }}
+        noindex={false}
+        nofollow={false}
       />
+
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }}
+        />
+      </Head>
       <GoogleTagManager gtmId="GTM-KHQ9N3M5" />
       {isModalOpen ? (
         <Modal
@@ -244,7 +216,7 @@ const WebDevelopment = () => {
             exit="hidden"
             className="h2 xl:mt-8"
           >
-            ვებ გვერდების დამზადება <span className="text-accent">.</span>
+            საიტის დამზადება <span className="text-accent">.</span>
           </motion.h1>
           <motion.div
             variants={fadeIn("up", 0.1)}
