@@ -77,9 +77,9 @@ fbq('track','PageView');`}
       <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID} />
       <NextSeo
         canonical="https://www.next-hub.pro"
-        title="Next-Hub | საიტების დამზადება"
+        title="Next-Hub | ვებსაიტის დამზადება"
         description="მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად."
-        keywords="Next-Hub, საიტების შექმნა, ვებსაიტების დამზადება, საიტების დამზადება, ვებ აპლიკაციები,"
+        keywords="Next-Hub, ვებსაიტის დამზადება, საიტის დამზადება, საიტების შექმნა, ვებსაიტების დამზადება, საიტების დამზადება, ვებ აპლიკაციები"
         openGraph={{
           type: "website",
           locale: "ka_GE",
@@ -101,7 +101,7 @@ fbq('track','PageView');`}
           handle: "@NextHub",
           site: "@NextHub",
           cardType: "summary_large_image",
-          title: "Next-Hub | საიტების დამზადება",
+          title: "Next-Hub | ვებსაიტის დამზადება",
           description:
             "მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად.",
           image: "https://www.next-hub.pro/nexthub.png",
@@ -110,7 +110,7 @@ fbq('track','PageView');`}
           {
             name: "keywords",
             content:
-              "Next-Hub, საიტების შექმნა, ვებსაიტების დამზადება, საიტების დამზადება, ვებ აპლიკაციები,",
+              "Next-Hub, ვებსაიტის დამზადება, საიტის დამზადება, საიტების შექმნა, ვებსაიტების დამზადება, საიტების დამზადება, ვებ აპლიკაციები",
           },
           {
             name: "author",
