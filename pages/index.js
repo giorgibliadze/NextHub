@@ -53,7 +53,7 @@ const Home = () => {
           handle: "@NextHub",
           site: "@NextHub",
           cardType: "summary_large_image",
-          title: "Next-Hub | საიტების დამზადება",
+          title: "Next-Hub | ვებსაიტის დამზადება",
           description:
             "მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად.",
           image: "https://www.next-hub.pro/nexthub.png",
