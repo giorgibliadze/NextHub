@@ -150,7 +150,7 @@ const DigitalMarketing = () => {
         openGraph={{
           type: "website",
           locale: "ka_GE",
-          url: "https://next-hub.pro/services/digital_marketing",
+          url: "https://www.next-hub.pro/services/digital_marketing",
           site_name: "Next-Hub Solutions",
           title: "Next-Hub Solutions | Digital Marketing",
           description:

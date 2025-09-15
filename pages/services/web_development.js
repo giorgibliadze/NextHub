@@ -178,7 +178,7 @@ const WebDevelopment = () => {
         openGraph={{
           type: "website",
           locale: "ka_GE",
-          url: "https://next-hub.pro/services/web_development",
+          url: "https://www.next-hub.pro/services/web_development",
           site_name: "Next-Hub Solutions",
           title: "Next-Hub Solutions | ვებსაიტის დამზადება",
           description:

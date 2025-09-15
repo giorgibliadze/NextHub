@@ -125,7 +125,7 @@ const TechSupport = () => {
         openGraph={{
           type: "website",
           locale: "ka_GE",
-          url: "https://next-hub.pro/services/tech_support",
+          url: "https://www.next-hub.pro/services/tech_support",
           site_name: "Next-Hub Solutions",
           title: "Next-Hub Solutions | Tech Support",
           description:

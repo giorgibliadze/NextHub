@@ -21,7 +21,7 @@ const graphic_design = () => {
         openGraph={{
           type: "website",
           locale: "ka_GE",
-          url: "https://next-hub.pro/services/graphic_design",
+          url: "https://www.next-hub.pro/services/graphic_design",
           site_name: "Next-Hub Solutions",
           title: "Next-Hub Solutions | Graphic Design",
           description:

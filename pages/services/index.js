@@ -26,7 +26,7 @@ const Services = () => {
         openGraph={{
           type: "website",
           locale: "ka_GE",
-          url: "https://next-hub.pro/services",
+          url: "https://www.next-hub.pro/services",
           site_name: "Next-Hub Solutions",
           title: "Next-Hub Solutions | Services",
           description:

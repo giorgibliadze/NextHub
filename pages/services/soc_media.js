@@ -144,7 +144,7 @@ const SocMedia = () => {
         openGraph={{
           type: "website",
           locale: "ka_GE",
-          url: "https://next-hub.pro/services/soc_media",
+          url: "https://www.next-hub.pro/services/soc_media",
           site_name: "Next-Hub Solutions",
           title: "Next-Hub Solutions | Social Media Management",
           description:
