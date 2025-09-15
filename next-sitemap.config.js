@@ -1,7 +1,7 @@
 // next-sitemap.config.js
 /** @type {import('next-sitemap').IConfig} */
 const SITE_URL =
-  (process.env.SITE_URL || "https://www.next-hub.pro").replace(/\/$/, "");
+  (process.env.SITE_URL_PRODUCTION || "https://www.next-hub.pro").replace(/\/$/, "");
 
 const priorityFor = (path) => {
   if (path === "/") return 1.0;
