@@ -14,7 +14,7 @@ const graphic_design = () => {
           <meta name="robots" content="index, follow" />
         </Head>
       <NextSeo
-      canonical="https://next-hub.pro/services/graphic_design"
+      canonical="https://www.next-hub.pro/services/graphic_design"
         title="Next-Hub Solutions | Graphic Design"
         description="მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად."
         keywords="Next-Hub, ციფრული რეალობა, იდეები, სურვილები, ოცნებები, ბრენდის ცნობადობა, სანდოობა, ციფრული ტრანსფორმაცია, ვებ აპლიკაციები, სოციალური მედია, SEO, ანალიტიკა"

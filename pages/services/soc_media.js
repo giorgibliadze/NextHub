@@ -138,7 +138,7 @@ const SocMedia = () => {
           <meta name="robots" content="index, follow" />
         </Head>
       <NextSeo
-      canonical="https://next-hub.pro/services/soc_media"
+      canonical="https://www.next-hub.pro/services/soc_media"
         title="Next-Hub Solutions | Social Media Management"
         description="Next-Hub Solutions-ის სოციალური მედია მენეჯმენტის სერვისები. მიიღეთ პროფესიონალური მხარდაჭერა ბრენდის ხასიათის შექმნაში, სოციალური მედიის მართვაში და სარეკლამო კამპანიების დაგეგმვაში."
         openGraph={{

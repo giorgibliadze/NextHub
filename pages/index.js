@@ -3,9 +3,9 @@ import Image from "next/image";
 import RotatingWords from "../components/RotatingWords";
 import ParticlesContainer from "../components/ParticlesContainer";
 import ProjectBtn from "../components/ProjectsBtn";
-import { DefaultSeo } from "next-seo";
+
 import { motion } from "framer-motion";
-import Head from "next/head";
+
 import { GoogleTagManager } from "@next/third-parties/google";
 import { fadeIn } from "../variants";
 import { NextSeo } from "next-seo";

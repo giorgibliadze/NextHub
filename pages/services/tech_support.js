@@ -118,7 +118,7 @@ const TechSupport = () => {
           <meta name="robots" content="index, follow" />
         </Head>
       <NextSeo
-      canonical="https://next-hub.pro/services/tech_support"
+      canonical="https://www.next-hub.pro/services/tech_support"
         title="Next-Hub Solutions | Tech Support"
         description="მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად."
         keywords="Next-Hub, ციფრული რეალობა, იდეები, სურვილები, ოცნებები, ბრენდის ცნობადობა, სანდოობა, ციფრული ტრანსფორმაცია, ვებ აპლიკაციები, სოციალური მედია, SEO, ანალიტიკა"
