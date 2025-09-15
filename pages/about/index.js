@@ -1,10 +1,7 @@
-// next image
-import Image from "next/image";
-import Bulb from "../../components/Bulb";
+
 import { GoogleTagManager } from "@next/third-parties/google";
 // components
 import TeamMember from "../../components/TeamMember";
-import ServiceSlider from "../../components/ServiceSlider";
 import { motion } from "framer-motion";
 import Head from "next/head";
 import { NextSeo } from "next-seo";

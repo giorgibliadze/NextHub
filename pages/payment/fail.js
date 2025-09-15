@@ -1,10 +1,12 @@
 import { useRouter } from "next/router";
 import { motion } from "framer-motion";
-
+import { NextSeo } from "next-seo";
 const PaymentFail = () => {
   const router = useRouter();
 
   return (
+    <>
+    <NextSeo noindex={true} nofollow={true} />
     <div className="min-h-screen flex items-center justify-center">
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
@@ -29,6 +31,7 @@ const PaymentFail = () => {
         </motion.button>
       </motion.div>
     </div>
+    </>
   );
 };
 
