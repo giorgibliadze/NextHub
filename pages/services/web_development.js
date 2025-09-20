@@ -167,9 +167,7 @@ const WebDevelopment = () => {
 
   return (
     <>
-      <Head>
-        <meta name="robots" content="index, follow" />
-      </Head>
+      
       <NextSeo
         canonical= "https://www.next-hub.pro/services/web_development"
         title="Next-Hub Solutions | ვებსაიტის დამზადება"

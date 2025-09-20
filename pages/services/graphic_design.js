@@ -10,9 +10,7 @@ import Portfolio from "../../components/Portfolio";
 const graphic_design = () => {
   return (
     <>
-    <Head>
-          <meta name="robots" content="index, follow" />
-        </Head>
+    
       <NextSeo
       canonical="https://www.next-hub.pro/services/graphic_design"
         title="Next-Hub Solutions | Graphic Design"

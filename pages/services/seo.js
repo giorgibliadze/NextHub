@@ -120,9 +120,7 @@ const Seo = () => {
 
   return (
     <>
-      <Head>
-        <meta name="robots" content="index, follow" />
-      </Head>
+      
       <NextSeo
         canonical="https://www.next-hub.pro/services/seo"
         title="Next-Hub Solutions | SEO"

@@ -134,9 +134,7 @@ const SocMedia = () => {
 
   return (
     <>
-    <Head>
-          <meta name="robots" content="index, follow" />
-        </Head>
+  
       <NextSeo
       canonical="https://www.next-hub.pro/services/soc_media"
         title="Next-Hub Solutions | Social Media Management"
