@@ -1,34 +1,28 @@
 // next-sitemap.config.js
 /** @type {import('next-sitemap').IConfig} */
-const SITE_URL =
-  (process.env.SITE_URL_PRODUCTION || "https://www.next-hub.pro").replace(/\/$/, "");
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.next-hub.pro";
+
+const EXTRA_PATHS = [
+  "/services/analytics",
+  "/services/digital_marketing",
+  "/services/graphic_design",
+  "/services/seo",
+  "/services/soc_media",
+  "/services/tech_support",
+  "/services/web_development",
+];
 
 const priorityFor = (path) => {
   if (path === "/") return 1.0;
   if (path.startsWith("/services")) return 0.8;
-  if (["/work", "/about", "/contact"].includes(path)) return 0.8;
-  return 0.7;
+  return 0.8;
 };
-
-const EXTRA_PATHS = [
-  "/work",
-  "/about",
-  "/contact",
-  "/services",
-  "/services/analytics",
-  "/services/digital_marketing",
-  "/services/web_development",
-  "/services/seo",
-  "/services/soc_media",
-  "/services/tech_support",
-  "/services/graphic_design",
-];
 
 module.exports = {
   siteUrl: SITE_URL,
   outDir: "public",
   generateIndexSitemap: true,
-  generateRobotsTxt: true,
+  generateRobotsTxt: true,            // ← remove any manual robots.txt from /public
   sitemapSize: 5000,
   changefreq: "weekly",
   autoLastmod: true,
@@ -44,7 +38,8 @@ module.exports = {
   ],
 
   transform: async (config, path) => ({
-    loc: path,
+    // IMPORTANT: absolute URL for <loc>
+    loc: `${SITE_URL}${path}`,
     changefreq: path === "/" ? "daily" : config.changefreq,
     priority: priorityFor(path),
     lastmod: new Date().toISOString(),
@@ -61,16 +56,6 @@ module.exports = {
         disallow: ["/admin", "/admin/*", "/login", "/api/*", "/payment/*"],
       },
     ],
-    // remove any Host: line if present
-    transformRobotsTxt: async (_cfg, robotsTxt) =>
-      robotsTxt
-        .split("\n")
-        .filter(
-          (line) =>
-            line.trim() &&
-            !/^#\s*Host/i.test(line) &&
-            !/^Host:/i.test(line)
-        )
-        .join("\n")+ '\n',
+    additionalSitemaps: [`${SITE_URL}/sitemap.xml`],
   },
 };

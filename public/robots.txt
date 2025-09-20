@@ -6,5 +6,9 @@ Disallow: /admin/*
 Disallow: /login
 Disallow: /api/*
 Disallow: /payment/*
+
+# Host
+Host: https://www.next-hub.pro
+
 # Sitemaps
 Sitemap: https://www.next-hub.pro/sitemap.xml
