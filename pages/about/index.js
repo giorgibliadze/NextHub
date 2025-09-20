@@ -11,9 +11,6 @@ import { fadeIn } from "../../variants";
 const About = () => {
   return (
     <>
-    <Head>
-          <meta name="robots" content="index, follow" />
-        </Head>
       <GoogleTagManager gtmId="GTM-KHQ9N3M5" />
       <NextSeo
       canonical="https://www.next-hub.pro/about"
