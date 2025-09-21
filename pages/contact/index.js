@@ -61,9 +61,8 @@ const Contact = () => {
 
   return (
     <>
-      <GoogleTagManager gtmId="GTM-KHQ9N3M5" />
       <NextSeo
-      canonical="https://www.next-hub.pro/contact"
+      canonical="https://www.next-hub.pro/contact/"
         title="Next-Hub Solutions | Contact"
         description="დაგვიკავშირდით და მიიღეთ პასუხები თქვენს შეკითხვებზე. Next-Hub Solutions-ის გამოცდილ გუნდთან ერთად მიაღწიეთ თქვენს მიზნებს."
         keywords="Next-Hub, ციფრული რეალობა, იდეები, სურვილები, ოცნებები, ბრენდის ცნობადობა, სანდოობა, ციფრული ტრანსფორმაცია, ვებ აპლიკაციები, სოციალური მედია, SEO, ანალიტიკა"

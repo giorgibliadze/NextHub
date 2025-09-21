@@ -15,18 +15,7 @@ const Home = () => {
   const words = ["იდეები", "სურვილები", "ოცნებები"];
   return (
     <>
-      <Script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=G-MCWYDWRTCY"
-      ></Script>
-      <Script id="google-analytics">
-        {`window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-MCWYDWRTCY');`}
-      </Script>
       
-      <GoogleTagManager gtmId="GTM-KHQ9N3M5" />
       <NextSeo
       canonical="https://www.next-hub.pro"
         title="Next-Hub | ვებსაიტის დამზადება"

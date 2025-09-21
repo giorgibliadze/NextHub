@@ -136,13 +136,13 @@ const SocMedia = () => {
     <>
   
       <NextSeo
-      canonical="https://www.next-hub.pro/services/soc_media"
+      canonical="https://www.next-hub.pro/services/soc_media/"
         title="Next-Hub Solutions | Social Media Management"
         description="Next-Hub Solutions-ის სოციალური მედია მენეჯმენტის სერვისები. მიიღეთ პროფესიონალური მხარდაჭერა ბრენდის ხასიათის შექმნაში, სოციალური მედიის მართვაში და სარეკლამო კამპანიების დაგეგმვაში."
         openGraph={{
           type: "website",
           locale: "ka_GE",
-          url: "https://www.next-hub.pro/services/soc_media",
+          url: "https://www.next-hub.pro/services/soc_media/",
           site_name: "Next-Hub Solutions",
           title: "Next-Hub Solutions | Social Media Management",
           description:
@@ -189,7 +189,6 @@ const SocMedia = () => {
           },
         ]}
       />
-      <GoogleTagManager gtmId="GTM-KHQ9N3M5" />
 
       {isModalOpen ? (
         <Modal

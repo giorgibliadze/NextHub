@@ -21,56 +21,7 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.next-hub.pro";
 const Layout = ({ children }) => {
   return (
     <>
-      {/* Default SEO setup */}
-      <DefaultSeo
-        titleTemplate="%s | Next-Hub"
-        defaultTitle="Next-Hub | ვებსაიტის დამზადება"
-        description="მიაღწიეთ თქვენს მიზნებს Next-Hub-ის გამოცდილ გუნდთან ერთად — ვებსაიტები, ვებ აპლიკაციები, SEO და ანალიტიკა."
-        canonical={SITE_URL}
-        openGraph={{
-          type: "website",
-          locale: "ka_GE",
-          url: SITE_URL,
-          site_name: "Next-Hub Solutions",
-          title: "Next-Hub Solutions",
-          description:
-            "ვებ-დეველოპმენტი, დიზაინი, SEO და ანალიტიკა — თქვენი ციფრული ზრდისთვის.",
-          images: [
-            {
-              url: `${SITE_URL}/nexthub.png`,
-              width: 1200,
-              height: 630,
-              alt: "Next-Hub Solutions",
-            },
-          ],
-        }}
-        twitter={{
-          handle: "@NextHub",
-          site: "@NextHub",
-          cardType: "summary_large_image",
-        }}
-        additionalMetaTags={[
-          {
-            name: "author",
-            content: "Next-Hub Solutions",
-          },
-        ]}
-      />
-
-      {/* Favicon + robots + verification */}
-      <Head>
-        <link rel="icon" href="/favicon.jpg" />
-        <link rel="apple-touch-icon" href="/favicon.jpg" />
-        <meta name="robots" content="index, follow" />
-        <meta
-          name="google-site-verification"
-          content="AV_Rqc6RXH1HpfaYzYb7la24kvaGW8sqHpeTaW2NU50"
-        />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0, viewport-fit=cover"
-        />
-      </Head>
+      
 
       {/* Google Analytics via gtag */}
       {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID && (

@@ -15,16 +15,16 @@ const Services = () => {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       
-      <GoogleTagManager gtmId="GTM-KHQ9N3M5" />
+      
       <NextSeo
-      canonical="https://www.next-hub.pro/services"
+      canonical="https://www.next-hub.pro/services/"
         title="Next-Hub Solutions | Services"
         description="მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად."
         keywords="Next-Hub, ციფრული რეალობა, იდეები, სურვილები, ოცნებები, ბრენდის ცნობადობა, სანდოობა, ციფრული ტრანსფორმაცია, ვებ აპლიკაციები, სოციალური მედია, SEO, ანალიტიკა"
         openGraph={{
           type: "website",
           locale: "ka_GE",
-          url: "https://www.next-hub.pro/services",
+          url: "https://www.next-hub.pro/services/",
           site_name: "Next-Hub Solutions",
           title: "Next-Hub Solutions | Services",
           description:

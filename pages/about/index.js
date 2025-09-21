@@ -11,9 +11,8 @@ import { fadeIn } from "../../variants";
 const About = () => {
   return (
     <>
-      <GoogleTagManager gtmId="GTM-KHQ9N3M5" />
       <NextSeo
-      canonical="https://www.next-hub.pro/about"
+      canonical="https://www.next-hub.pro/about/"
         title="Next-Hub Solutions | About"
         description="მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად."
         keywords="Next-Hub, ციფრული რეალობა, იდეები, სურვილები, ოცნებები, ბრენდის ცნობადობა, სანდოობა, ციფრული ტრანსფორმაცია, ვებ აპლიკაციები, სოციალური მედია, SEO, ანალიტიკა"
