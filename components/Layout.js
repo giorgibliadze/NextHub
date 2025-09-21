@@ -33,7 +33,6 @@ const Layout = ({ children }) => {
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon.jpg" />
   <link rel="apple-touch-icon" href="/favicon.jpg" />
   <link rel="mask-icon" href="/favicon.jpg" color="#ea4335" />
-  <link rel="manifest" href="/site.webmanifest" />
   <meta name="theme-color" content="#0b0b0b" />
 </Head>
           <Script
