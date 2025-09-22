@@ -1,0 +1,14 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /admin/*
+Disallow: /login
+Disallow: /api/*
+Disallow: /payment/*
+
+# Host
+Host: https://next-hub.pro
+
+# Sitemaps
+Sitemap: https://next-hub.pro/sitemap.xml
