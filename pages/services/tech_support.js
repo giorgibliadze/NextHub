@@ -118,7 +118,7 @@ const TechSupport = () => {
       <NextSeo
       canonical="https://next-hub.pro/services/tech_support/"
         title="Next-Hub Solutions | Tech Support"
-        description="მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად."
+        description="ტექნიკური მხარდაჭერა: ვებსაიტის ოპტიმიზაცია, უსაფრთხოება და სრული ტექნიკური სერვისი თქვენი ბიზნესის საიმედოობისთვის."
         keywords="Next-Hub, ციფრული რეალობა, იდეები, სურვილები, ოცნებები, ბრენდის ცნობადობა, სანდოობა, ციფრული ტრანსფორმაცია, ვებ აპლიკაციები, სოციალური მედია, SEO, ანალიტიკა"
         openGraph={{
           type: "website",
@@ -127,7 +127,7 @@ const TechSupport = () => {
           site_name: "Next-Hub Solutions",
           title: "Next-Hub Solutions | Tech Support",
           description:
-            "Next-Hub Solutions-ის საიტის მართვის სერვისები. მიიღეთ საიტის ოპტიმიზაცია, SEO მართვა, სოციალური მედიის მართვა და ტექნიკური მხარდაჭერა.",
+            "ტექნიკური მხარდაჭერა: ვებსაიტის ოპტიმიზაცია, უსაფრთხოება და სრული ტექნიკური სერვისი თქვენი ბიზნესის საიმედოობისთვის.",
           images: [
             {
               url: "https://www.next-hub.pro/nexthub.jpg",
@@ -143,7 +143,7 @@ const TechSupport = () => {
           cardType: "summary_large_image",
           title: "Next-Hub Solutions | Tech Support",
           description:
-            "მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად.",
+            "ტექნიკური მხარდაჭერა: ვებსაიტის ოპტიმიზაცია, უსაფრთხოება და სრული ტექნიკური სერვისი თქვენი ბიზნესის საიმედოობისთვის.",
           image: "https://www.next-hub.pro/nexthub.jpg",
         }}
         additionalMetaTags={[

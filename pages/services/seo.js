@@ -124,7 +124,7 @@ const Seo = () => {
       <NextSeo
         canonical="https://next-hub.pro/services/seo/"
         title="Next-Hub Solutions | SEO"
-        description="Next-Hub Solutions-ის სოციალური მედია მენეჯმენტის სერვისები. მიიღეთ პროფესიონალური მხარდაჭერა ბრენდის ხასიათის შექმნაში, სოციალური მედიის მართვაში და სარეკლამო კამპანიების დაგეგმვაში."
+        description="SEO ოპტიმიზაცია: გაზარდეთ თქვენი ვებსაიტის ხილვადობა Google-ში, მიაღწიეთ მაღალ რეიტინგს და მოიზიდეთ მეტი მომხმარებელი."
         openGraph={{
           type: "website",
           locale: "ka_GE",
@@ -132,7 +132,7 @@ const Seo = () => {
           site_name: "Next-Hub Solutions",
           title: "Next-Hub Solutions | SEO",
           description:
-            "Next-Hub Solutions-ის სოციალური მედია მენეჯმენტის სერვისები. მიიღეთ პროფესიონალური მხარდაჭერა ბრენდის ხასიათის შექმნაში, სოციალური მედიის მართვაში და სარეკლამო კამპანიების დაგეგმვაში.",
+            "SEO ოპტიმიზაცია: გაზარდეთ თქვენი ვებსაიტის ხილვადობა Google-ში, მიაღწიეთ მაღალ რეიტინგს და მოიზიდეთ მეტი მომხმარებელი.",
           images: [
             {
               url: "https://www.next-hub.pro/nexthub.jpg",
@@ -148,7 +148,7 @@ const Seo = () => {
           cardType: "summary_large_image",
           title: "Next-Hub Solutions | SEO",
           description:
-            "Next-Hub Solutions-ის სოციალური მედია მენეჯმენტის სერვისები. მიიღეთ პროფესიონალური მხარდაჭერა ბრენდის ხასიათის შექმნაში, სოციალური მედიის მართვაში და სარეკლამო კამპანიების დაგეგმვაში.",
+            "SEO ოპტიმიზაცია: გაზარდეთ თქვენი ვებსაიტის ხილვადობა Google-ში, მიაღწიეთ მაღალ რეიტინგს და მოიზიდეთ მეტი მომხმარებელი.",
           image: "https://www.next-hub.pro/nexthub.jpg",
         }}
         additionalMetaTags={[

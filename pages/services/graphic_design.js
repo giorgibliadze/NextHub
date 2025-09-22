@@ -14,7 +14,7 @@ const graphic_design = () => {
       <NextSeo
       canonical="https://next-hub.pro/services/graphic_design/"
         title="Next-Hub Solutions | Graphic Design"
-        description="მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად."
+        description="პროფესიონალური გრაფიკული დიზაინი: ბრენდინგი, ლოგო, ვიზუალური მასალები და კრეატიული დიზაინი თქვენი ბიზნესის იმიჯის გასაძლიერებლად."
         keywords="Next-Hub, ციფრული რეალობა, იდეები, სურვილები, ოცნებები, ბრენდის ცნობადობა, სანდოობა, ციფრული ტრანსფორმაცია, ვებ აპლიკაციები, სოციალური მედია, SEO, ანალიტიკა"
         openGraph={{
           type: "website",
@@ -23,7 +23,7 @@ const graphic_design = () => {
           site_name: "Next-Hub Solutions",
           title: "Next-Hub Solutions | Graphic Design",
           description:
-            "მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად.",
+            "პროფესიონალური გრაფიკული დიზაინი: ბრენდინგი, ლოგო, ვიზუალური მასალები და კრეატიული დიზაინი თქვენი ბიზნესის იმიჯის გასაძლიერებლად.",
           images: [
             {
               url: "https://www.next-hub.pro/nexthub.jpg",

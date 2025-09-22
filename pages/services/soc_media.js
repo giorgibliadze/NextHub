@@ -138,7 +138,7 @@ const SocMedia = () => {
       <NextSeo
       canonical="https://next-hub.pro/services/soc_media/"
         title="Next-Hub Solutions | Social Media Management"
-        description="Next-Hub Solutions-ის სოციალური მედია მენეჯმენტის სერვისები. მიიღეთ პროფესიონალური მხარდაჭერა ბრენდის ხასიათის შექმნაში, სოციალური მედიის მართვაში და სარეკლამო კამპანიების დაგეგმვაში."
+        description="სოციალური მედიის მართვა: პროფესიონალური კონტენტი, კამპანიები და სტრატეგიები Facebook, Instagram და სხვა პლატფორმებისთვის."
         openGraph={{
           type: "website",
           locale: "ka_GE",
@@ -146,7 +146,7 @@ const SocMedia = () => {
           site_name: "Next-Hub Solutions",
           title: "Next-Hub Solutions | Social Media Management",
           description:
-            "Next-Hub Solutions-ის სოციალური მედია მენეჯმენტის სერვისები. მიიღეთ პროფესიონალური მხარდაჭერა ბრენდის ხასიათის შექმნაში, სოციალური მედიის მართვაში და სარეკლამო კამპანიების დაგეგმვაში.",
+            "სოციალური მედიის მართვა: პროფესიონალური კონტენტი, კამპანიები და სტრატეგიები Facebook, Instagram და სხვა პლატფორმებისთვის.",
           images: [
             {
               url: "https://www.next-hub.pro/nexthub.jpg",
@@ -162,7 +162,7 @@ const SocMedia = () => {
           cardType: "summary_large_image",
           title: "Next-Hub Solutions | Social Media Management",
           description:
-            "Next-Hub Solutions-ის სოციალური მედია მენეჯმენტის სერვისები. მიიღეთ პროფესიონალური მხარდაჭერა ბრენდის ხასიათის შექმნაში, სოციალური მედიის მართვაში და სარეკლამო კამპანიების დაგეგმვაში.",
+            "სოციალური მედიის მართვა: პროფესიონალური კონტენტი, კამპანიები და სტრატეგიები Facebook, Instagram და სხვა პლატფორმებისთვის.",
           image: "https://www.next-hub.pro/nexthub.jpg",
         }}
         additionalMetaTags={[
