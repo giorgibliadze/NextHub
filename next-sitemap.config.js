@@ -1,6 +1,6 @@
 // next-sitemap.config.js
 /** @type {import('next-sitemap').IConfig} */
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.next-hub.pro";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://next-hub.pro";
 
 const EXTRA_PATHS = [
   "/services/analytics",

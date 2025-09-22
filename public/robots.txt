@@ -8,7 +8,7 @@ Disallow: /api/*
 Disallow: /payment/*
 
 # Host
-Host: https://www.next-hub.pro
+Host: https://next-hub.pro
 
 # Sitemaps
-Sitemap: https://www.next-hub.pro/sitemap.xml
+Sitemap: https://next-hub.pro/sitemap.xml
