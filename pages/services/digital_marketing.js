@@ -141,14 +141,14 @@ const DigitalMarketing = () => {
     <>
       
       <NextSeo
-        canonical="https://www.next-hub.pro/services/digital_marketing/"
+        canonical="https://next-hub.pro/services/digital_marketing/"
         title="Next-Hub Solutions | Digital Marketing"
         description="Next-Hub Solutions-ის ციფრული მარკეტინგის სერვისები. მიიღეთ პროფესიონალური მხარდაჭერა ბრენდის ხასიათის შექმნაში, სოციალური მედიის მართვაში და სარეკლამო კამპანიების დაგეგმვაში."
         keywords="Next-Hub, Digital Marketing, ციფრული მარკეტინგი, სოციალური მედია, ბრენდის ხასიათი, სარეკლამო კამპანიები"
         openGraph={{
           type: "website",
           locale: "ka_GE",
-          url: "https://www.next-hub.pro/services/digital_marketing/",
+          url: "https://next-hub.pro/services/digital_marketing/",
           site_name: "Next-Hub Solutions",
           title: "Next-Hub Solutions | Digital Marketing",
           description:

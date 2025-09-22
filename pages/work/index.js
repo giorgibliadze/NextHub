@@ -15,7 +15,7 @@ const Work = () => {
     <>
     
       <NextSeo
-      canonical="https://www.next-hub.pro/work/"
+      canonical="https://next-hub.pro/work/"
         title="Next-Hub Solutions | Our Work"
         description="Next-Hub Solutions-ის პროექტები, დაწყებული დინამიური Next.js აპლიკაციებიდან WordPress-ის ვებსაიტებამდე, უნიკალური გამოწვევებით და მაღალი ხარისხით."
         additionalMetaTags={[
@@ -44,7 +44,7 @@ const Work = () => {
         openGraph={{
           type: "website",
           locale: "ka_GE",
-          url: "https://www.next-hub.pro/work/",
+          url: "https://next-hub.pro/work/",
           site_name: "Next-Hub Solutions",
           title: "Next-Hub Solutions | Our Work",
           description:

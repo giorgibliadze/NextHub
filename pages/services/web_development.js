@@ -169,14 +169,14 @@ const WebDevelopment = () => {
     <>
       
       <NextSeo
-        canonical= "https://www.next-hub.pro/services/web_development/"
+        canonical= "https://next-hub.pro/services/web_development/"
         title="Next-Hub Solutions | ვებსაიტის დამზადება"
         description="საიტის დამზადება გჭირდება? გთავაზობთ ვებსაიტის დამზადების სერვისს, ჩვენთან შეგიძლია ვებსაიტის აწყობა იაფად. თუ გაინტერესებს რა ღირს საიტის შექმნა? დაგვიკავშირდით ახლავე და დაგეხმარებით."
         keywords="Next-Hub, ვებსაიტის დამზადება, საიტის დამზადება, საიტების შექმნა, ვებსაიტების დამზადება, საიტების დამზადება, ვებ აპლიკაციები"
         openGraph={{
           type: "website",
           locale: "ka_GE",
-          url: "https://www.next-hub.pro/services/web_development/",
+          url: "https://next-hub.pro/services/web_development/",
           site_name: "Next-Hub Solutions",
           title: "Next-Hub Solutions | ვებსაიტის დამზადება",
           description:

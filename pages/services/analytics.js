@@ -116,14 +116,14 @@ const Analytics = () => {
     <>
       
       <NextSeo
-        canonical="https://www.next-hub.pro/services/analytics/"
+        canonical="https://next-hub.pro/services/analytics/"
         title="Next-Hub Solutions | Analytics"
         description="მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად."
         keywords="Next-Hub, Analytics, მონაცემთა შეგროვება, შეფასება, ანალიზი, Google Analytics, მონაცემთა ვიზუალიზაცია"
         openGraph={{
           type: "website",
           locale: "ka_GE",
-          url: "https://www.next-hub.pro/services/analytics/",
+          url: "https://next-hub.pro/services/analytics/",
           site_name: "Next-Hub Solutions",
           title: "Next-Hub Solutions | Analytics",
           description:

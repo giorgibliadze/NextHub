@@ -62,14 +62,14 @@ const Contact = () => {
   return (
     <>
       <NextSeo
-      canonical="https://www.next-hub.pro/contact/"
+      canonical="https://next-hub.pro/contact/"
         title="Next-Hub Solutions | Contact"
         description="დაგვიკავშირდით და მიიღეთ პასუხები თქვენს შეკითხვებზე. Next-Hub Solutions-ის გამოცდილ გუნდთან ერთად მიაღწიეთ თქვენს მიზნებს."
         keywords="Next-Hub, ციფრული რეალობა, იდეები, სურვილები, ოცნებები, ბრენდის ცნობადობა, სანდოობა, ციფრული ტრანსფორმაცია, ვებ აპლიკაციები, სოციალური მედია, SEO, ანალიტიკა"
         openGraph={{
           type: "website",
           locale: "ka_GE",
-          url: "https://www.next-hub.pro/contact",
+          url: "https://next-hub.pro/contact",
           site_name: "Next-Hub Solutions",
           title: "Next-Hub Solutions | Contact",
           description:
