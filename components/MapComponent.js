@@ -1,49 +1,68 @@
-import React, { useState, useCallback } from "react";
-import dynamic from "next/dynamic";
+'use client';
 
-const LoadScript = dynamic(
-  () => import("@react-google-maps/api").then((mod) => mod.LoadScript),
-  { ssr: false }
-);
-const GoogleMap = dynamic(
-  () => import("@react-google-maps/api").then((mod) => mod.GoogleMap),
-  { ssr: false }
-);
-const Marker = dynamic(
-  () => import("@react-google-maps/api").then((mod) => mod.Marker),
-  { ssr: false }
-);
+import { useEffect, useState } from 'react';
+import Script from 'next/script';
 
-const center = {
-  lat: 41.729583,
-  lng: 44.741778,
-};
+const center = { lat: 41.729583, lng: 44.741778 };
 
-const MapComponent = () => {
-  const [markerIcon, setMarkerIcon] = useState(null);
+export default function MapComponent() {
+  const [apiReady, setApiReady] = useState(false);
+  const [scriptError, setScriptError] = useState(false);
 
-  const onLoad = useCallback((map) => {
+  const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || '';
+
+  useEffect(() => {
+    if (!apiReady || !window.google) return;
+
+    const el = document.getElementById('gmap-container');
+    if (!el) return;
+
+    const map = new window.google.maps.Map(el, {
+      center,
+      zoom: 16,
+      disableDefaultUI: true,
+      zoomControl: true,
+    });
+
     const icon = {
-      url: "/public/location-map.webp",
-      scaledSize: new window.google.maps.Size(40, 40),
+      url: '/location-map.png',
+      scaledSize: new window.google.maps.Size(44, 44),
+      anchor: new window.google.maps.Point(22, 44),
     };
-    setMarkerIcon(icon);
-  }, []);
+
+    new window.google.maps.Marker({
+      map,
+      position: center,
+      title: 'Our location',
+      icon,
+    });
+  }, [apiReady]);
+
+  const showFallback = !apiKey || scriptError;
 
   return (
-    <LoadScript googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}>
-      <div className="flex justify-center items-center w-full h-screen z-30">
-        <GoogleMap
-          mapContainerClassName="w-full h-3/5 max-w-5xl shadow rounded-2xl"
-          center={center}
-          zoom={15}
-          onLoad={onLoad}
-        >
-          {markerIcon && <Marker position={center} icon={markerIcon} />}
-        </GoogleMap>
-      </div>
-    </LoadScript>
+    <div className="w-full max-w-5xl mx-auto">
+      <div
+        id="gmap-container"
+        className="w-full h-[420px] md:h-[520px] rounded-2xl shadow overflow-hidden bg-gray-100"
+      />
+      {showFallback && (
+        <iframe
+          title="Google Map"
+          className="w-full h-[320px] mt-3 rounded-2xl border-0 shadow"
+          src={`https://www.google.com/maps?q=${center.lat},${center.lng}&z=16&output=embed`}
+          loading="lazy"
+        />
+      )}
+      {apiKey && (
+        <Script
+          id="google-maps"
+          src={`https://maps.googleapis.com/maps/api/js?key=${apiKey}&v=weekly`}
+          strategy="afterInteractive"
+          onLoad={() => setApiReady(true)}
+          onError={() => setScriptError(true)}
+        />
+      )}
+    </div>
   );
-};
-
-export default MapComponent;
+}
