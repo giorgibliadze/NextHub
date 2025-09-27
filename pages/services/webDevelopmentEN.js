@@ -34,7 +34,7 @@ const WebDevelopmentEN = () => {
   const priceCardsData = [
     {
       title: 'Standard',
-      price: 1000,
+      price: 500,
       product_id: 1,
       features: [
         '1 page',
@@ -54,7 +54,7 @@ const WebDevelopmentEN = () => {
       onButtonClick: () =>
         handlePurchaseClick({
           title: 'Standard',
-          price: 1000,
+          price: 500,
           product_id: 1,
           features: [
             '1 page',
@@ -75,7 +75,7 @@ const WebDevelopmentEN = () => {
     },
     {
       title: 'Premium',
-      price: 2500,
+      price: 1300,
       product_id: 2,
       features: [
         'Everything in Standard',
@@ -95,7 +95,7 @@ const WebDevelopmentEN = () => {
       onButtonClick: () =>
         handlePurchaseClick({
           title: 'Premium',
-          price: 2500,
+          price: 1300,
           product_id: 2,
           features: [
             'Everything in Standard',
@@ -116,7 +116,7 @@ const WebDevelopmentEN = () => {
     },
     {
       title: 'Business',
-      price: 7000,
+      price: 3000,
       product_id: 3,
       features: [
         'Everything in Premium',
@@ -137,7 +137,7 @@ const WebDevelopmentEN = () => {
       onButtonClick: () =>
         handlePurchaseClick({
           title: 'Business',
-          price: 7000,
+          price: 3000,
           product_id: 3,
           features: [
             'Everything in Premium',
