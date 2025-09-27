@@ -2,9 +2,9 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import PriceCard from '../../components/PriceCard';
+import PriceCardEN from '../../components/PriceCardEN';
 import ImageGallery from '../../components/ImageGallery';
-import Modal from '../../components/Modal';
+import ModalEN from '../../components/ModalEN';
 import TechnologyIcons from '../../components/TechnologyIcons';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../variants';
@@ -200,7 +200,7 @@ const WebDevelopmentEN = () => {
       />
 
       {isModalOpen ? (
-        <Modal
+        <ModalEN
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
           cardData={selectedCardData}
@@ -257,7 +257,7 @@ const WebDevelopmentEN = () => {
             className="grid md:grid-cols-3 sm:grid-cols-1 gap-10 px-4 md:px-10 w-full max-w-6xl"
           >
             {priceCardsData.map((cardData, index) => (
-              <PriceCard key={index} {...cardData} />
+              <PriceCardEN key={index} {...cardData} />
             ))}
           </motion.div>
         </div>
