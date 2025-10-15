@@ -128,7 +128,7 @@ const Contact = () => {
 >
   <MapComponent />
 </motion.div>
-        <div className="container mx-auto py-24 text-center xl:text-left flex flex-col items-center justify-center h-full mt-[400px] lg:mt-0 lgx-mt-[40px]">
+        <div className="container mx-auto py-24 text-center xl:text-left flex flex-col items-center justify-center h-full mt-[300px] lg:mt-0 lgx-mt-[40px]">
           <ModernSection />
           {/* text & form */}
           <div className="flex flex-col w-full max-w-[700px] px-4 md:px-0 mt-16">
