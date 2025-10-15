@@ -120,15 +120,15 @@ const Contact = () => {
       {/* page */}
       <div className="h-screen bg-primary/30">
         <motion.div
-          variants={fadeIn("up", 0.4)}
-          initial="hidden"
-          animate="show"
-          exit="hidden"
-          className="flex flex-col items-center p-5 rounded-2xl"
-        >
-          <MapComponent />
-        </motion.div>
-        <div className="container mx-auto py-24 text-center xl:text-left flex flex-col items-center justify-center h-full mt-[85px]">
+  variants={fadeIn("up", 0.4)}
+  initial="hidden"
+  animate="show"
+  exit="hidden"
+  className="flex flex-col items-center p-5 rounded-2xl mb-12 sm:mb-16 md:mb-20 my-[80px]"
+>
+  <MapComponent />
+</motion.div>
+        <div className="container mx-auto py-24 text-center xl:text-left flex flex-col items-center justify-center h-full mt-[400px] lg:mt-0 lgx-mt-[40px]">
           <ModernSection />
           {/* text & form */}
           <div className="flex flex-col w-full max-w-[700px] px-4 md:px-0 mt-16">
@@ -137,7 +137,7 @@ const Contact = () => {
               initial="hidden"
               animate="show"
               exit="hidden"
-              className="h2 text-center mb-10"
+              className="h2 text-center mb-10 lg:text-[45px] xxx:text-[60px] smx:text-[30px]"
             >
               დაგვიკავშირდით
             </motion.h1>
@@ -166,7 +166,7 @@ const Contact = () => {
                   type="email"
                   id="email"
                   name="email"
-                  placeholder="მაილი"
+                  placeholder="ელ-ფოსტა"
                   className="input text-center w-full"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
