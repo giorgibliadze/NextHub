@@ -124,7 +124,7 @@ const Contact = () => {
   initial="hidden"
   animate="show"
   exit="hidden"
-  className="flex flex-col items-center p-5 rounded-2xl mb-12 sm:mb-16 md:mb-20 my-[80px]"
+  className="flex flex-col items-center p-5 rounded-2xl mb-12 md:mb-20 mt-[80px]"
 >
   <MapComponent />
 </motion.div>
