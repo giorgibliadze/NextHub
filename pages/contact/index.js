@@ -148,7 +148,7 @@ const Contact = () => {
               initial="hidden"
               animate="show"
               exit="hidden"
-              className="flex-1 items-center flex flex-col gap-4 w-full mx-auto mb-[100px]"
+              className="flex-1 items-center flex flex-col gap-4 w-full mx-auto mb-[150px] lg:mb-[100px]"
               onSubmit={send}
             >
               <div className="flex flex-col md:flex-row gap-4 w-full">
