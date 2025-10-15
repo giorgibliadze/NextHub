@@ -1,47 +1,39 @@
 /** @type {import('next-sitemap').IConfig} */
-const SITE_URL = "https://next-hub.pro";
+const SITE_URL = 'https://next-hub.pro';
 
 const EXTRA_PATHS = [
-  "/about",
-  "/contact",
-  "/work",
-  "/services/analytics",
-  "/services/digital_marketing",
-  "/services/graphic_design",
-  "/services/seo",
-  "/services/soc_media",
-  "/services/tech_support",
-  "/services/web_development",
+  '/about',
+  '/contact',
+  '/work',
+  '/services/analytics',
+  '/services/digital_marketing',
+  '/services/graphic_design',
+  '/services/seo',
+  '/services/soc_media',
+  '/services/tech_support',
+  '/services/web_development',
 ];
 
 const priorityFor = (path) => {
-  if (path === "/") return 1.0;
-  if (path.startsWith("/services")) return 0.8;
-  return 0.8;
+  if (path === '/') return 1.0;
+  if (path.startsWith('/services')) return 0.9;
+  return 0.7;
 };
 
 module.exports = {
   siteUrl: SITE_URL,
-  outDir: "public",
+  outDir: 'public',
   generateIndexSitemap: true,
   generateRobotsTxt: true,
   sitemapSize: 5000,
-  changefreq: "weekly",
+  changefreq: 'weekly',
   autoLastmod: true,
 
-  exclude: [
-    "/admin",
-    "/admin/*",
-    "/login",
-    "/api/*",
-    "/payment/*",
-    "/404",
-    "/500",
-  ],
+  exclude: ['/admin', '/admin/*', '/login', '/api/*', '/payment/*', '/404', '/500'],
 
   transform: async (config, path) => ({
-    loc: `${SITE_URL}${path}`,
-    changefreq: path === "/" ? "daily" : config.changefreq,
+    loc: `${SITE_URL}${path}`, // must be the final, non-redirecting URL
+    changefreq: path === '/' ? 'daily' : config.changefreq,
     priority: priorityFor(path),
     lastmod: new Date().toISOString(),
   }),
@@ -51,12 +43,7 @@ module.exports = {
 
   robotsTxtOptions: {
     policies: [
-      {
-        userAgent: "*",
-        allow: "/",
-        disallow: ["/admin", "/admin/*", "/login", "/api/*", "/payment/*"],
-      },
+      { userAgent: '*', allow: '/', disallow: ['/admin', '/admin/*', '/login', '/api/*', '/payment/*'] },
     ],
-   
   },
 };

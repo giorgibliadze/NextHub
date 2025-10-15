@@ -16,25 +16,41 @@ const sora = Sora({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
 });
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.next-hub.pro";
+// ✅ default to non-www canonical root
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://next-hub.pro";
 
-const Layout = ({ children }) => {
+export default function Layout({ children }) {
   return (
     <>
-      
+      {/* Global SEO defaults (you can still override per page with <NextSeo />) */}
+      <DefaultSeo
+        canonical={SITE_URL}
+        openGraph={{
+          type: "website",
+          locale: "ka_GE",
+          url: SITE_URL,
+          site_name: "Next-Hub Solutions",
+          images: [{ url: `${SITE_URL}/nexthub.png` }], // ensure this file exists in /public
+        }}
+        additionalMetaTags={[
+          { name: "robots", content: "index, follow" },
+          { name: "viewport", content: "width=device-width, initial-scale=1.0" },
+        ]}
+      />
 
-      {/* Google Analytics via gtag */}
+      <Head>
+        {/* Favicons */}
+        <link rel="icon" href="/favicon.jpg" sizes="any" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon.jpg" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon.jpg" />
+        <link rel="apple-touch-icon" href="/favicon.jpg" />
+        <link rel="mask-icon" href="/favicon.jpg" color="#ea4335" />
+        <meta name="theme-color" content="#0b0b0b" />
+      </Head>
+
+      {/* Google Analytics via gtag (optional if you use only GTM) */}
       {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID && (
         <>
-        <Head>
-  {/* Favicons */}
-  <link rel="icon" href="/favicon.jpg" sizes="any" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.jpg" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.jpg" />
-  <link rel="apple-touch-icon" href="/favicon.jpg" />
-  <link rel="mask-icon" href="/favicon.jpg" color="#ea4335" />
-  <meta name="theme-color" content="#0b0b0b" />
-</Head>
           <Script
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`}
@@ -50,12 +66,12 @@ const Layout = ({ children }) => {
         </>
       )}
 
-      {/* GTM (remove GA block above if you want GTM only) */}
+      {/* GTM (safe to keep with GA, or use GTM only) */}
       {process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID && (
         <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID} />
       )}
 
-      {/* Organization JSON-LD */}
+      {/* Organization JSON-LD (uses non-www SITE_URL) */}
       <Script
         id="org-schema"
         type="application/ld+json"
@@ -66,12 +82,12 @@ const Layout = ({ children }) => {
             "@type": "Organization",
             url: SITE_URL,
             name: "Next-Hub Solutions",
-            logo: `${SITE_URL}/favicon.png`,
+            logo: `${SITE_URL}/favicon.jpg`, // keep consistent with actual file
           }),
         }}
       />
 
-      {/* Facebook Pixel */}
+      {/* Facebook Pixel (optional) */}
       {process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID && (
         <>
           <Script id="fb-pixel" strategy="afterInteractive">
@@ -97,9 +113,7 @@ const Layout = ({ children }) => {
       )}
 
       {/* Page wrapper */}
-      <div
-        className={`page bg-site text-white bg-cover bg-no-repeat ${sora.variable} font-sora relative overflow-y-auto`}
-      >
+      <div className={`page bg-site text-white bg-cover bg-no-repeat ${sora.variable} font-sora relative overflow-y-auto`}>
         <Analytics />
         <SpeedInsights />
         <TopLeftImg />
@@ -109,6 +123,4 @@ const Layout = ({ children }) => {
       </div>
     </>
   );
-};
-
-export default Layout;
+}

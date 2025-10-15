@@ -4,34 +4,28 @@ import PriceCard from "../../components/PriceCard";
 import ImageGallery from "../../components/ImageGallery";
 import Modal from "../../components/Modal";
 import TechnologyIcons from "../../components/TechnologyIcons";
-import Bulb from "../../components/Bulb";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
-import Head from "next/head";
-import { GoogleTagManager } from "@next/third-parties/google";
 import { NextSeo } from "next-seo";
+
+const CANONICAL = "https://next-hub.pro/services/web_development";
+
 const WebDevelopment = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedCardData, setSelectedCardData] = useState(null);
 
   const handlePurchaseClick = (cardData) => {
-    console.log("Button clicked with data: ", cardData);
     setSelectedCardData(cardData);
     setIsModalOpen(true);
-    console.log("Modal state set to: ", true);
   };
 
   useEffect(() => {
-    if (isModalOpen) {
-      document.body.classList.add("modal-open");
-    } else {
-      document.body.classList.remove("modal-open");
-    }
+    document.body.classList.toggle("modal-open", isModalOpen);
   }, [isModalOpen]);
 
   const images = [
-    { src: "/well-structured-3.webp", alt: "Image 2" },
-    { src: "/technology.webp", alt: "Image 3" },
+    { src: "/well-structured-3.webp", alt: "Well structured layout" },
+    { src: "/technology.webp", alt: "Technology" },
   ];
 
   const priceCardsData = [
@@ -124,7 +118,6 @@ const WebDevelopment = () => {
       features: [
         "ყველაფერი პრემიუმში",
         "Top პროდუქცია",
-
         "პროდუქციის სორტირება და ფილტრაცია",
         "სასურველი პროდუქცია (Wish List)",
         "პროდუქციის კალათაში დამატება",
@@ -146,7 +139,6 @@ const WebDevelopment = () => {
           features: [
             "ყველაფერი პრემიუმში",
             "Top პროდუქცია",
-
             "პროდუქციის სორტირება და ფილტრაცია",
             "სასურველი პროდუქცია (Wish List)",
             "პროდუქციის კალათაში დამატება",
@@ -154,7 +146,6 @@ const WebDevelopment = () => {
             "რეგისტრაციის ფორმა (ფიზიკური და იურიდიული პირებისთვის)",
             "Facebook-ით რეგისტრაცია",
             "Google-ით რეგისტრაცია",
-
             "პროდუქციის შეძენა ონლაინ განვადებით",
             "გაყიდვების სტატისტიკა",
             "ადგილზე მიტანის მოდული",
@@ -167,23 +158,21 @@ const WebDevelopment = () => {
 
   return (
     <>
-      
       <NextSeo
-        canonical= "https://next-hub.pro/services/web_development/"
+        canonical={CANONICAL}
         title="Next-Hub Solutions | ვებსაიტის დამზადება"
         description="საიტის დამზადება გჭირდება? გთავაზობთ ვებსაიტის დამზადების სერვისს, ჩვენთან შეგიძლია ვებსაიტის აწყობა იაფად. თუ გაინტერესებს რა ღირს საიტის შექმნა? დაგვიკავშირდით ახლავე და დაგეხმარებით."
-        keywords="Next-Hub, ვებსაიტის დამზადება, საიტის დამზადება, საიტების შექმნა, ვებსაიტების დამზადება, საიტების დამზადება, ვებ აპლიკაციები"
         openGraph={{
           type: "website",
           locale: "ka_GE",
-          url: "https://next-hub.pro/services/web_development/",
+          url: CANONICAL,
           site_name: "Next-Hub Solutions",
           title: "Next-Hub Solutions | ვებსაიტის დამზადება",
           description:
-            "საიტის დამზადება გჭირდება? გთავაზობთ ვებსაიტის დამზადების სერვისს, ჩვენთან შეგიძლია ვებსაიტის აწყობა იაფად. თუ გაინტერესებს რა ღირს საიტის შექმნა? დაგვიკავშირდით და დაგეხმარებით.",
+            "საიტის დამზადება გჭირდება? გთავაზობთ ვებსაიტის დამზადების სერვისს, ჩვენთან შეგიძლია ვებსაიტის აწყობა იაფად. თუ გაინტერესებს რა ღირს საიტის შექმნა? დაგვიკავშირდით ახლავე და დაგეხმარებით.",
           images: [
             {
-              url: "https://www.next-hub.pro/web.jpg",
+              url: "https://next-hub.pro/web.jpg",
               width: 800,
               height: 600,
               alt: "ვებსაიტის დამზადება",
@@ -197,39 +186,24 @@ const WebDevelopment = () => {
           title: "Next-Hub Solutions | ვებსაიტის დამზადება",
           description:
             "საიტის დამზადება გჭირდება? გთავაზობთ ვებსაიტის დამზადების სერვისს, ჩვენთან შეგიძლია ვებსაიტის აწყობა იაფად. თუ გაინტერესებს რა ღირს საიტის შექმნა? დაგვიკავშირდით ახლავე და დაგეხმარებით.",
-          image: "https://www.next-hub.pro/web.jpg",
+          image: "https://next-hub.pro/web.jpg",
         }}
         additionalMetaTags={[
           {
             name: "keywords",
             content:
-              "Next-Hub, ციფრული რეალობა, იდეები, სურვილები, ოცნებები, ბრენდის ცნობადობა, სანდოობა, ციფრული ტრანსფორმაცია, ვებ აპლიკაციები, სოციალური მედია, SEO, ანალიტიკა",
+              "Next-Hub, ვებსაიტის დამზადება, საიტის დამზადება, საიტების შექმნა, ვებსაიტების დამზადება, ვებ აპლიკაციები",
           },
-          {
-            name: "author",
-            content: "Next-Hub Solutions",
-          },
-          {
-            name: "viewport",
-            content: "width=device-width, initial-scale=1.0",
-          },
-          {
-            name: "robots",
-            content: "index, follow",
-          },
-          {
-            name: "changefreq",
-            content: "always",
-          },
+          { name: "author", content: "Next-Hub Solutions" },
+          { name: "viewport", content: "width=device-width, initial-scale=1.0" },
+          { name: "robots", content: "index, follow" },
         ]}
       />
+
       {isModalOpen ? (
         <Modal
           isOpen={isModalOpen}
-          onClose={() => {
-            console.log("Modal state set to: ", false);
-            setIsModalOpen(false);
-          }}
+          onClose={() => setIsModalOpen(false)}
           cardData={selectedCardData}
         />
       ) : (
@@ -243,6 +217,7 @@ const WebDevelopment = () => {
           >
             ვებსაიტის დამზადება <span className="text-accent">.</span>
           </motion.h1>
+
           <motion.div
             variants={fadeIn("up", 0.1)}
             initial="hidden"
@@ -252,6 +227,7 @@ const WebDevelopment = () => {
           >
             <ImageGallery images={images} />
           </motion.div>
+
           <motion.div
             variants={fadeIn("up", 0.1)}
             initial="hidden"
@@ -273,9 +249,27 @@ const WebDevelopment = () => {
               <PriceCard key={index} {...cardData} />
             ))}
           </motion.div>
-          {/* <Bulb /> */}
         </div>
       )}
+
+      {/* Service schema (uses the defined constant) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: "Web Development — Next Hub Solutions",
+            provider: {
+              "@type": "Organization",
+              name: "Next Hub Solutions",
+              url: "https://next-hub.pro",
+            },
+            areaServed: "Georgia",
+            url: CANONICAL,
+          }),
+        }}
+      />
     </>
   );
 };
