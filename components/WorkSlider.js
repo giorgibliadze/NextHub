@@ -12,10 +12,14 @@ const workSlides = {
   slides: [
     {
       images: [
+        { title: "Nailauri", path: "/nailauri.png", link: "https://nailauri.com", status: "დასრულებული" },
+        { title: "IndianExpress", path: "/indian.png", link: "https://indianexpress.ge", status: "დასრულებული" },
         { title: "TenaHandmade", path: "/TenaHandmade.png", link: "https://tenahandmade.com", status: "დასრულებული" },
         { title: "Carway", path: "/carwayimport.png", link: "https://carwayimport.com/", status: "დასრულებული" },
         { title: "Ecplus", path: "/ecplus.png", link: "https://ecplus.ge/", status: "დასრულებული" },
+        { title: "Saojaxo", path: "/saojaxo.png", link: "https://saojaxo.ge/", status: "დასრულებული" },
         { title: "Avrent", path: "/avrent.png", link: "https://avrent.ge/", status: "დასრულებული" },
+        { title: "TaboGroup", path: "/tabo.png", link: "https://tabogroup.ge/", status: "დასრულებული" },
         { title: "Printerman", path: "/printerman.png", link: "https://printerman.ge/", status: "დასრულებული" },
         { title: "JewelryTools", path: "/Jewelrytools.png", link: "https://jewelrytools.ge/", status: "დასრულებული" },
         { title: "NbFurniture", path: "/NbFurniture.png", link: "https://nbfurniture.ge/", status: "დასრულებული" },
