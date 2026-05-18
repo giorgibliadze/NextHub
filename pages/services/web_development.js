@@ -160,14 +160,14 @@ const WebDevelopment = () => {
     <>
       <NextSeo
         canonical={CANONICAL}
-        title="Next-Hub Solutions | ვებსაიტის დამზადება"
+        title="ვებსაიტის დამზადება | Next-Hub Solutions"
         description="საიტის დამზადება გჭირდება? გთავაზობთ ვებსაიტის დამზადების სერვისს, ჩვენთან შეგიძლია ვებსაიტის აწყობა იაფად. თუ გაინტერესებს რა ღირს საიტის შექმნა? დაგვიკავშირდით ახლავე და დაგეხმარებით."
         openGraph={{
           type: "website",
           locale: "ka_GE",
           url: CANONICAL,
           site_name: "Next-Hub Solutions",
-          title: "Next-Hub Solutions | ვებსაიტის დამზადება",
+          title: "ვებსაიტის დამზადება | Next-Hub Solutions",
           description:
             "საიტის დამზადება გჭირდება? გთავაზობთ ვებსაიტის დამზადების სერვისს, ჩვენთან შეგიძლია ვებსაიტის აწყობა იაფად. თუ გაინტერესებს რა ღირს საიტის შექმნა? დაგვიკავშირდით ახლავე და დაგეხმარებით.",
           images: [
@@ -183,7 +183,7 @@ const WebDevelopment = () => {
           handle: "@NextHub",
           site: "@NextHub",
           cardType: "summary_large_image",
-          title: "Next-Hub Solutions | ვებსაიტის დამზადება",
+          title: "ვებსაიტის დამზადება | Next-Hub Solutions",
           description:
             "საიტის დამზადება გჭირდება? გთავაზობთ ვებსაიტის დამზადების სერვისს, ჩვენთან შეგიძლია ვებსაიტის აწყობა იაფად. თუ გაინტერესებს რა ღირს საიტის შექმნა? დაგვიკავშირდით ახლავე და დაგეხმარებით.",
           image: "https://next-hub.pro/web.jpg",

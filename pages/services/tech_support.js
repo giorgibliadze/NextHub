@@ -117,7 +117,7 @@ const TechSupport = () => {
    
       <NextSeo
       canonical="https://next-hub.pro/services/tech_support/"
-        title="Next-Hub Solutions | Tech Support"
+        title="ტექნიკური მხარდაჭერა | Next-Hub Solutions"
         description="ტექნიკური მხარდაჭერა: ვებსაიტის ოპტიმიზაცია, უსაფრთხოება და სრული ტექნიკური სერვისი თქვენი ბიზნესის საიმედოობისთვის."
         keywords="Next-Hub, ციფრული რეალობა, იდეები, სურვილები, ოცნებები, ბრენდის ცნობადობა, სანდოობა, ციფრული ტრანსფორმაცია, ვებ აპლიკაციები, სოციალური მედია, SEO, ანალიტიკა"
         openGraph={{
@@ -125,7 +125,7 @@ const TechSupport = () => {
           locale: "ka_GE",
           url: "https://next-hub.pro/services/tech_support/",
           site_name: "Next-Hub Solutions",
-          title: "Next-Hub Solutions | Tech Support",
+          title: "ტექნიკური მხარდაჭერა | Next-Hub Solutions",
           description:
             "ტექნიკური მხარდაჭერა: ვებსაიტის ოპტიმიზაცია, უსაფრთხოება და სრული ტექნიკური სერვისი თქვენი ბიზნესის საიმედოობისთვის.",
           images: [
@@ -141,7 +141,7 @@ const TechSupport = () => {
           handle: "@NextHub",
           site: "@NextHub",
           cardType: "summary_large_image",
-          title: "Next-Hub Solutions | Tech Support",
+          title: "ტექნიკური მხარდაჭერა | Next-Hub Solutions",
           description:
             "ტექნიკური მხარდაჭერა: ვებსაიტის ოპტიმიზაცია, უსაფრთხოება და სრული ტექნიკური სერვისი თქვენი ბიზნესის საიმედოობისთვის.",
           image: "https://www.next-hub.pro/nexthub.jpg",

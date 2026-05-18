@@ -117,7 +117,7 @@ const Analytics = () => {
       
       <NextSeo
         canonical="https://next-hub.pro/services/analytics/"
-        title="Next-Hub Solutions | Analytics"
+        title="ანალიტიკა | Next-Hub Solutions"
         description="Next-Hub Solutions გთავაზობთ ბიზნეს ანალიტიკას და მონაცემთა ანალიზს, რათა მიიღოთ სტრატეგიული გადაწყვეტილებები და გაზარდოთ თქვენი კომპანიის შედეგები."
         keywords="Next-Hub, Analytics, მონაცემთა შეგროვება, შეფასება, ანალიზი, Google Analytics, მონაცემთა ვიზუალიზაცია"
         openGraph={{
@@ -125,7 +125,7 @@ const Analytics = () => {
           locale: "ka_GE",
           url: "https://next-hub.pro/services/analytics/",
           site_name: "Next-Hub Solutions",
-          title: "Next-Hub Solutions | Analytics",
+          title: "ანალიტიკა | Next-Hub Solutions",
           description:
             "Next-Hub Solutions გთავაზობთ ბიზნეს ანალიტიკას და მონაცემთა ანალიზს, რათა მიიღოთ სტრატეგიული გადაწყვეტილებები და გაზარდოთ თქვენი კომპანიის შედეგები.",
           images: [
@@ -141,7 +141,7 @@ const Analytics = () => {
           handle: "@NextHub",
           site: "@NextHub",
           cardType: "summary_large_image",
-          title: "Next-Hub Solutions | Analytics",
+          title: "ანალიტიკა | Next-Hub Solutions",
           description:
             "Next-Hub Solutions-ის ანალიტიკის სერვისები. მონაცემთა შეგროვება, შეფასება, და მონაცემთა ანალიზი ჩვენი ექსპერტებისგან.",
           image: "https://www.next-hub.pro/nexthub.jpg",

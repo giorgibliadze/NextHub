@@ -142,7 +142,7 @@ const DigitalMarketing = () => {
       
       <NextSeo
         canonical="https://next-hub.pro/services/digital_marketing/"
-        title="Next-Hub Solutions | Digital Marketing"
+        title="ციფრული მარკეტინგი | Next-Hub Solutions"
         description="Next-Hub Solutions-ის ციფრული მარკეტინგის სერვისები. მიიღეთ პროფესიონალური მხარდაჭერა ბრენდის ხასიათის შექმნაში, სოციალური მედიის მართვაში და სარეკლამო კამპანიების დაგეგმვაში."
         keywords="Next-Hub, Digital Marketing, ციფრული მარკეტინგი, სოციალური მედია, ბრენდის ხასიათი, სარეკლამო კამპანიები"
         openGraph={{
@@ -150,7 +150,7 @@ const DigitalMarketing = () => {
           locale: "ka_GE",
           url: "https://next-hub.pro/services/digital_marketing/",
           site_name: "Next-Hub Solutions",
-          title: "Next-Hub Solutions | Digital Marketing",
+          title: "ციფრული მარკეტინგი | Next-Hub Solutions",
           description:
             "მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად.",
           images: [
@@ -166,7 +166,7 @@ const DigitalMarketing = () => {
           handle: "@NextHub",
           site: "@NextHub",
           cardType: "summary_large_image",
-          title: "Next-Hub Solutions | Digital Marketing",
+          title: "ციფრული მარკეტინგი | Next-Hub Solutions",
           description:
             "მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად.",
           image: "https://www.next-hub.pro/nexthub.jpg",

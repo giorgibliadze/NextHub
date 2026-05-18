@@ -123,14 +123,14 @@ const Seo = () => {
       
       <NextSeo
         canonical="https://next-hub.pro/services/seo/"
-        title="Next-Hub Solutions | SEO"
+        title="SEO | Next-Hub Solutions"
         description="SEO ოპტიმიზაცია: გაზარდეთ თქვენი ვებსაიტის ხილვადობა Google-ში, მიაღწიეთ მაღალ რეიტინგს და მოიზიდეთ მეტი მომხმარებელი."
         openGraph={{
           type: "website",
           locale: "ka_GE",
           url: "https://next-hub.pro/services/seo/",
           site_name: "Next-Hub Solutions",
-          title: "Next-Hub Solutions | SEO",
+          title: "SEO | Next-Hub Solutions",
           description:
             "SEO ოპტიმიზაცია: გაზარდეთ თქვენი ვებსაიტის ხილვადობა Google-ში, მიაღწიეთ მაღალ რეიტინგს და მოიზიდეთ მეტი მომხმარებელი.",
           images: [
@@ -146,7 +146,7 @@ const Seo = () => {
           handle: "@NextHub",
           site: "@NextHub",
           cardType: "summary_large_image",
-          title: "Next-Hub Solutions | SEO",
+          title: "SEO | Next-Hub Solutions",
           description:
             "SEO ოპტიმიზაცია: გაზარდეთ თქვენი ვებსაიტის ხილვადობა Google-ში, მიაღწიეთ მაღალ რეიტინგს და მოიზიდეთ მეტი მომხმარებელი.",
           image: "https://www.next-hub.pro/nexthub.jpg",

@@ -13,7 +13,7 @@ const About = () => {
     <>
       <NextSeo
       canonical="https://next-hub.pro/about/"
-        title="Next-Hub Solutions | About"
+        title="ვებსაიტის დამზადება | Next-Hub Solutions"
         description="Next-Hub-ში ჩვენ ვეხმარებით კომპანიებს, ციფრული ეპოქის
               ტრანსფორმაციაში. ჩვენი ექსპერტების გუნდი გთავაზობთ ვებ
               დეველოპმენტის, სოციალური მედიის მართვის, SEO-ს და ანალიტიკის
@@ -24,7 +24,7 @@ const About = () => {
           locale: "ka_GE",
           url: "https://next-hub.pro/about",
           site_name: "Next-Hub Solutions",
-          title: "Next-Hub Solutions | About",
+          title: "ვებსაიტის დამზადება | Next-Hub Solutions",
           description:
             "მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად.",
           images: [
@@ -40,7 +40,7 @@ const About = () => {
           handle: "@NextHub",
           site: "@NextHub",
           cardType: "summary_large_image",
-          title: "Next-Hub Solutions | About",
+          title: "ვებსაიტის დამზადება | Next-Hub Solutions",
           description:
             "მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად.",
           image: "https://www.next-hub.pro/nexthub.jpg",

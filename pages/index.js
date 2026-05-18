@@ -18,7 +18,7 @@ const Home = () => {
       
       <NextSeo
       canonical="https://next-hub.pro"
-        title="Next-Hub | ვებსაიტის დამზადება"
+        title="ვებსაიტის დამზადება | Next-Hub"
         description="მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად."
         keywords="Next-Hub, ვებსაიტის დამზადება, საიტის დამზადება, საიტების შექმნა, ვებსაიტების დამზადება, საიტების დამზადება, ვებ აპლიკაციები"
         openGraph={{
@@ -26,7 +26,7 @@ const Home = () => {
           locale: "ka_GE",
           url: "https://next-hub.pro",
           site_name: "Next-Hub Solutions",
-          title: "Next-Hub | ვებსაიტის დამზადება",
+          title: "ვებსაიტის დამზადება | Next-Hub",
           description:
             "მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად.",
           images: [
@@ -42,7 +42,7 @@ const Home = () => {
           handle: "@NextHub",
           site: "@NextHub",
           cardType: "summary_large_image",
-          title: "Next-Hub | ვებსაიტის დამზადება",
+          title: "ვებსაიტის დამზადება | Next-Hub",
           description:
             "მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად.",
           image: "https://www.next-hub.pro/nexthub.png",

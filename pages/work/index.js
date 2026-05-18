@@ -16,7 +16,7 @@ const Work = () => {
     
       <NextSeo
       canonical="https://next-hub.pro/work/"
-        title="Next-Hub Solutions | Our Work"
+        title="ვებსაიტის დამზადება | Next-Hub"
         description="Next-Hub Solutions-ის პროექტები, დაწყებული დინამიური Next.js აპლიკაციებიდან WordPress-ის ვებსაიტებამდე, უნიკალური გამოწვევებით და მაღალი ხარისხით."
         additionalMetaTags={[
           {
@@ -46,7 +46,7 @@ const Work = () => {
           locale: "ka_GE",
           url: "https://next-hub.pro/work/",
           site_name: "Next-Hub Solutions",
-          title: "Next-Hub Solutions | Our Work",
+          title: "ვებსაიტის დამზადება | Next-Hub",
           description:
             "Next-Hub Solutions-ის პროექტები, დაწყებული დინამიური Next.js აპლიკაციებიდან WordPress-ის ვებსაიტებამდე, უნიკალური გამოწვევებით და მაღალი ხარისხით.",
           images: [
@@ -62,7 +62,7 @@ const Work = () => {
           handle: "@NextHub",
           site: "@NextHub",
           cardType: "summary_large_image",
-          title: "Next-Hub Solutions | Our Work",
+          title: "ვებსაიტის დამზადება | Next-Hub",
           description:
             "Next-Hub Solutions-ის პროექტები, დაწყებული დინამიური Next.js აპლიკაციებიდან WordPress-ის ვებსაიტებამდე, უნიკალური გამოწვევებით და მაღალი ხარისხით.",
           image: "https://www.next-hub.pro/nexthub.jpg",
