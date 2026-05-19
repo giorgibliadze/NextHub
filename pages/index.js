@@ -8,7 +8,7 @@ import { NextSeo } from "next-seo";
 import Script from "next/script";
 
 const Home = () => {
-  const words = ["ვებსაიტები", "ონლაინ მაღაზიები", "ვებ აპლიკაციები"];
+  const words = ["ვებსაიტები ", "ონლაინ მაღაზიები ", "ვებ აპლიკაციები "];
 
   return (
     <>
@@ -74,13 +74,15 @@ const Home = () => {
   animate="show"
   exit="hidden"
   className="
-  mt-[100px]
-  text-[34px]
-  leading-tight
-  sm:text-[44px]
-  xl:text-[64px]
-  font-bold
-  "
+mt-[60px]
+sm:mt-[80px]
+xl:mt-[100px]
+text-[34px]
+leading-tight
+sm:text-[44px]
+xl:text-[64px]
+font-bold
+"
 >
   ვებსაიტის დამზადება <span>.</span>
 
