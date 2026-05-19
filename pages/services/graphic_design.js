@@ -11,61 +11,41 @@ const graphic_design = () => {
   return (
     <>
     
-      <NextSeo
-      canonical="https://next-hub.pro/services/graphic_design/"
-        title="გრაფიკული დიზაინი | Next-Hub Solutions"
-        description="პროფესიონალური გრაფიკული დიზაინი: ბრენდინგი, ლოგო, ვიზუალური მასალები და კრეატიული დიზაინი თქვენი ბიზნესის იმიჯის გასაძლიერებლად."
-        keywords="Next-Hub, ციფრული რეალობა, იდეები, სურვილები, ოცნებები, ბრენდის ცნობადობა, სანდოობა, ციფრული ტრანსფორმაცია, ვებ აპლიკაციები, სოციალური მედია, SEO, ანალიტიკა"
-        openGraph={{
-          type: "website",
-          locale: "ka_GE",
-          url: "https://next-hub.pro/services/graphic_design/",
-          site_name: "Next-Hub Solutions",
-          title: "გრაფიკული დიზაინი | Next-Hub Solutions",
-          description:
-            "პროფესიონალური გრაფიკული დიზაინი: ბრენდინგი, ლოგო, ვიზუალური მასალები და კრეატიული დიზაინი თქვენი ბიზნესის იმიჯის გასაძლიერებლად.",
-          images: [
-            {
-              url: "https://www.next-hub.pro/nexthub.jpg",
-              width: 800,
-              height: 600,
-              alt: "Next-Hub Solutions",
-            },
-          ],
-        }}
-        twitter={{
-          handle: "@NextHub",
-          site: "@NextHub",
-          cardType: "summary_large_image",
-          title: "გრაფიკული დიზაინი | Next-Hub Solutions",
-          description:
-            "გრაფიკული დიზაინის სერვისები Next-Hub Solutions-ისგან. შექმენით უნიკალური და მიმზიდველი დიზაინები ჩვენი გამოცდილ დიზაინერების დახმარებით.",
-          image: "https://www.next-hub.pro/nexthub.jpg",
-        }}
-        additionalMetaTags={[
-          {
-            name: "keywords",
-            content:
-              "Next-Hub, Graphic Design, გრაფიკული დიზაინი, უნიკალური დიზაინები, დიზაინერების დახმარება",
-          },
-          {
-            name: "author",
-            content: "Next-Hub Solutions",
-          },
-          {
-            name: "viewport",
-            content: "width=device-width, initial-scale=1.0",
-          },
-          {
-            name: "robots",
-            content: "index, follow",
-          },
-          {
-            name: "changefreq",
-            content: "always",
-          },
-        ]}
-      />
+     <NextSeo
+  canonical="https://next-hub.pro/services/graphic_design/"
+  title="გრაფიკული დიზაინი | ბრენდინგი და ვიზუალური მასალები | Next-Hub"
+  description="Next-Hub გთავაზობთ გრაფიკული დიზაინის სერვისებს: ლოგოს დიზაინი, ბრენდინგი, სოციალური მედიის ვიზუალები, ბანერები და ბიზნესისთვის მორგებული კრეატიული მასალები."
+  openGraph={{
+    type: "website",
+    locale: "ka_GE",
+    url: "https://next-hub.pro/services/graphic_design/",
+    site_name: "Next-Hub Solutions",
+    title: "გრაფიკული დიზაინი | ბრენდინგი და ვიზუალური მასალები | Next-Hub",
+    description:
+      "Next-Hub გთავაზობთ გრაფიკული დიზაინის სერვისებს: ლოგოს დიზაინი, ბრენდინგი, სოციალური მედიის ვიზუალები, ბანერები და ბიზნესისთვის მორგებული კრეატიული მასალები.",
+    images: [
+      {
+        url: "https://next-hub.pro/nexthub.jpg",
+        width: 1200,
+        height: 630,
+        alt: "გრაფიკული დიზაინი Next-Hub Solutions",
+      },
+    ],
+  }}
+  twitter={{
+    cardType: "summary_large_image",
+  }}
+  additionalMetaTags={[
+    {
+      name: "author",
+      content: "Next-Hub Solutions",
+    },
+    {
+      name: "robots",
+      content: "index,follow,max-image-preview:large",
+    },
+  ]}
+/>
       <div className="flex justify-center items-center min-h-screen">
         <Circles />
         {/* <GraphicDesignPriceCard /> */}

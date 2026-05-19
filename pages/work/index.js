@@ -14,60 +14,41 @@ const Work = () => {
   return (
     <>
     
-      <NextSeo
-      canonical="https://next-hub.pro/work/"
-        title="ვებსაიტის დამზადება | Next-Hub"
-        description="Next-Hub Solutions-ის პროექტები, დაწყებული დინამიური Next.js აპლიკაციებიდან WordPress-ის ვებსაიტებამდე, უნიკალური გამოწვევებით და მაღალი ხარისხით."
-        additionalMetaTags={[
-          {
-            name: "keywords",
-            content:
-              "Next-Hub, Projects, Work, Next.js აპლიკაციები, WordPress ვებსაიტები, მაღალი ხარისხი, თანამედროვე დიზაინი",
-          },
-          {
-            name: "author",
-            content: "Next-Hub Solutions",
-          },
-          {
-            name: "viewport",
-            content: "width=device-width, initial-scale=1.0",
-          },
-          {
-            name: "robots",
-            content: "index, follow",
-          },
-          {
-            name: "changefreq",
-            content: "always",
-          },
-        ]}
-        openGraph={{
-          type: "website",
-          locale: "ka_GE",
-          url: "https://next-hub.pro/work/",
-          site_name: "Next-Hub Solutions",
-          title: "ვებსაიტის დამზადება | Next-Hub",
-          description:
-            "Next-Hub Solutions-ის პროექტები, დაწყებული დინამიური Next.js აპლიკაციებიდან WordPress-ის ვებსაიტებამდე, უნიკალური გამოწვევებით და მაღალი ხარისხით.",
-          images: [
-            {
-              url: "https://www.next-hub.pro/nexthub.jpg",
-              width: 800,
-              height: 600,
-              alt: "Next-Hub Solutions",
-            },
-          ],
-        }}
-        twitter={{
-          handle: "@NextHub",
-          site: "@NextHub",
-          cardType: "summary_large_image",
-          title: "ვებსაიტის დამზადება | Next-Hub",
-          description:
-            "Next-Hub Solutions-ის პროექტები, დაწყებული დინამიური Next.js აპლიკაციებიდან WordPress-ის ვებსაიტებამდე, უნიკალური გამოწვევებით და მაღალი ხარისხით.",
-          image: "https://www.next-hub.pro/nexthub.jpg",
-        }}
-      />
+     <NextSeo
+  canonical="https://next-hub.pro/work/"
+  title="ჩვენი ნამუშევრები | ვებსაიტების პორტფოლიო | Next-Hub"
+  description="ნახეთ Next-Hub Solutions-ის შესრულებული ვებსაიტები, Next.js აპლიკაციები, WordPress პროექტები, ონლაინ მაღაზიები და ბიზნესზე მორგებული ციფრული გადაწყვეტილებები."
+  openGraph={{
+    type: "website",
+    locale: "ka_GE",
+    url: "https://next-hub.pro/work/",
+    site_name: "Next-Hub Solutions",
+    title: "ჩვენი ნამუშევრები | ვებსაიტების პორტფოლიო | Next-Hub",
+    description:
+      "ნახეთ Next-Hub Solutions-ის შესრულებული ვებსაიტები, Next.js აპლიკაციები, WordPress პროექტები, ონლაინ მაღაზიები და ბიზნესზე მორგებული ციფრული გადაწყვეტილებები.",
+    images: [
+      {
+        url: "https://next-hub.pro/nexthub.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Next-Hub Solutions პორტფოლიო",
+      },
+    ],
+  }}
+  twitter={{
+    cardType: "summary_large_image",
+  }}
+  additionalMetaTags={[
+    {
+      name: "author",
+      content: "Next-Hub Solutions",
+    },
+    {
+      name: "robots",
+      content: "index,follow,max-image-preview:large",
+    },
+  ]}
+/>
       <div className="h-full bg-primary/30">
         <Circles />
         <div className="container mx-auto mb-4">

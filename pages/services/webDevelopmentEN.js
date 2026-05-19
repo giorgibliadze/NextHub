@@ -161,43 +161,41 @@ const WebDevelopmentEN = () => {
 
   return (
     <>
-      <NextSeo
-        canonical="https://next-hub.pro/en/services/web-development"
-        title="Web Development | WordPress, React & Next.js | Next-Hub Solutions"
-        description="We build fast, modern websites and apps with WordPress, React, and Next.js. From landing pages to full e-commerce, analytics, SEO, and ongoing support."
-        openGraph={{
-          type: 'website',
-          locale: 'en_US',
-          url: 'https://next-hub.pro/en/services/web-development',
-          site_name: 'Next-Hub Solutions',
-          title: 'Web Development | WordPress, React & Next.js | Next-Hub Solutions',
-          description:
-            'We build fast, modern websites and apps with WordPress, React, and Next.js. From landing pages to full e-commerce, analytics, SEO, and ongoing support.',
-          images: [
-            {
-              url: 'https://www.next-hub.pro/web.jpg',
-              width: 1200,
-              height: 630,
-              alt: 'Web development by Next-Hub Solutions',
-            },
-          ],
-        }}
-        twitter={{
-          handle: '@NextHub',
-          site: '@NextHub',
-          cardType: 'summary_large_image',
-        }}
-        additionalMetaTags={[
-          {
-            name: 'keywords',
-            content:
-              'web development, WordPress development, React apps, Next.js apps, ecommerce websites, SEO, analytics, Tbilisi web agency, Georgia',
-          },
-          { name: 'author', content: 'Next-Hub Solutions' },
-          { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
-          { name: 'robots', content: 'index, follow' },
-        ]}
-      />
+    <NextSeo
+  canonical="https://next-hub.pro/en/services/web-development/"
+  title="Web Development Services | WordPress, React & Next.js | Next-Hub"
+  description="Next-Hub builds fast, SEO-friendly websites, WordPress platforms, React and Next.js applications, e-commerce stores, analytics setup and ongoing technical support."
+  openGraph={{
+    type: "website",
+    locale: "en_US",
+    url: "https://next-hub.pro/en/services/web-development/",
+    site_name: "Next-Hub Solutions",
+    title: "Web Development Services | WordPress, React & Next.js | Next-Hub",
+    description:
+      "Next-Hub builds fast, SEO-friendly websites, WordPress platforms, React and Next.js applications, e-commerce stores, analytics setup and ongoing technical support.",
+    images: [
+      {
+        url: "https://next-hub.pro/web.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Web development services by Next-Hub Solutions",
+      },
+    ],
+  }}
+  twitter={{
+    cardType: "summary_large_image",
+  }}
+  additionalMetaTags={[
+    {
+      name: "author",
+      content: "Next-Hub Solutions",
+    },
+    {
+      name: "robots",
+      content: "index,follow,max-image-preview:large",
+    },
+  ]}
+/>
 
       {isModalOpen ? (
         <ModalEN

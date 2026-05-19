@@ -141,60 +141,40 @@ const DigitalMarketing = () => {
     <>
       
       <NextSeo
-        canonical="https://next-hub.pro/services/digital_marketing/"
-        title="ციფრული მარკეტინგი | Next-Hub Solutions"
-        description="Next-Hub Solutions-ის ციფრული მარკეტინგის სერვისები. მიიღეთ პროფესიონალური მხარდაჭერა ბრენდის ხასიათის შექმნაში, სოციალური მედიის მართვაში და სარეკლამო კამპანიების დაგეგმვაში."
-        keywords="Next-Hub, Digital Marketing, ციფრული მარკეტინგი, სოციალური მედია, ბრენდის ხასიათი, სარეკლამო კამპანიები"
-        openGraph={{
-          type: "website",
-          locale: "ka_GE",
-          url: "https://next-hub.pro/services/digital_marketing/",
-          site_name: "Next-Hub Solutions",
-          title: "ციფრული მარკეტინგი | Next-Hub Solutions",
-          description:
-            "მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად.",
-          images: [
-            {
-              url: "https://www.next-hub.pro/nexthub.jpg",
-              width: 800,
-              height: 600,
-              alt: "Next-Hub Solutions",
-            },
-          ],
-        }}
-        twitter={{
-          handle: "@NextHub",
-          site: "@NextHub",
-          cardType: "summary_large_image",
-          title: "ციფრული მარკეტინგი | Next-Hub Solutions",
-          description:
-            "მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად.",
-          image: "https://www.next-hub.pro/nexthub.jpg",
-        }}
-        additionalMetaTags={[
-          {
-            name: "keywords",
-            content:
-              "Next-Hub, ციფრული რეალობა, იდეები, სურვილები, ოცნებები, ბრენდის ცნობადობა, სანდოობა, ციფრული ტრანსფორმაცია, ვებ აპლიკაციები, სოციალური მედია, SEO, ანალიტიკა",
-          },
-          {
-            name: "author",
-            content: "Next-Hub Solutions",
-          },
-          {
-            name: "viewport",
-            content: "width=device-width, initial-scale=1.0",
-          },
-          {
-            name: "robots",
-            content: "index, follow",
-          },
-          {
-            name: "changefreq",
-            content: "always",
-          },
-        ]}
-      />
+  canonical="https://next-hub.pro/services/digital_marketing/"
+  title="ციფრული მარკეტინგი | Google Ads და სოციალური მედია | Next-Hub"
+  description="Next-Hub გთავაზობთ ციფრული მარკეტინგის სერვისებს: Google Ads, სოციალური მედიის რეკლამა, კონტენტის სტრატეგია, ბრენდის ზრდა და შედეგზე ორიენტირებული კამპანიები."
+  openGraph={{
+    type: "website",
+    locale: "ka_GE",
+    url: "https://next-hub.pro/services/digital_marketing/",
+    site_name: "Next-Hub Solutions",
+    title: "ციფრული მარკეტინგი | Google Ads და სოციალური მედია | Next-Hub",
+    description:
+      "Next-Hub გთავაზობთ ციფრული მარკეტინგის სერვისებს: Google Ads, სოციალური მედიის რეკლამა, კონტენტის სტრატეგია, ბრენდის ზრდა და შედეგზე ორიენტირებული კამპანიები.",
+    images: [
+      {
+        url: "https://next-hub.pro/nexthub.jpg",
+        width: 1200,
+        height: 630,
+        alt: "ციფრული მარკეტინგი Next-Hub Solutions",
+      },
+    ],
+  }}
+  twitter={{
+    cardType: "summary_large_image",
+  }}
+  additionalMetaTags={[
+    {
+      name: "author",
+      content: "Next-Hub Solutions",
+    },
+    {
+      name: "robots",
+      content: "index,follow,max-image-preview:large",
+    },
+  ]}
+/>
 
       {isModalOpen ? (
         <Modal

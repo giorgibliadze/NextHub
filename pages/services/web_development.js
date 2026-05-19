@@ -159,46 +159,46 @@ const WebDevelopment = () => {
   return (
     <>
       <NextSeo
-        canonical={CANONICAL}
-        title="ვებსაიტის დამზადება | Next-Hub Solutions"
-        description="საიტის დამზადება გჭირდება? გთავაზობთ ვებსაიტის დამზადების სერვისს, ჩვენთან შეგიძლია ვებსაიტის აწყობა იაფად. თუ გაინტერესებს რა ღირს საიტის შექმნა? დაგვიკავშირდით ახლავე და დაგეხმარებით."
-        openGraph={{
-          type: "website",
-          locale: "ka_GE",
-          url: CANONICAL,
-          site_name: "Next-Hub Solutions",
-          title: "ვებსაიტის დამზადება | Next-Hub Solutions",
-          description:
-            "საიტის დამზადება გჭირდება? გთავაზობთ ვებსაიტის დამზადების სერვისს, ჩვენთან შეგიძლია ვებსაიტის აწყობა იაფად. თუ გაინტერესებს რა ღირს საიტის შექმნა? დაგვიკავშირდით ახლავე და დაგეხმარებით.",
-          images: [
-            {
-              url: "https://next-hub.pro/web.jpg",
-              width: 800,
-              height: 600,
-              alt: "ვებსაიტის დამზადება",
-            },
-          ],
-        }}
-        twitter={{
-          handle: "@NextHub",
-          site: "@NextHub",
-          cardType: "summary_large_image",
-          title: "ვებსაიტის დამზადება | Next-Hub Solutions",
-          description:
-            "საიტის დამზადება გჭირდება? გთავაზობთ ვებსაიტის დამზადების სერვისს, ჩვენთან შეგიძლია ვებსაიტის აწყობა იაფად. თუ გაინტერესებს რა ღირს საიტის შექმნა? დაგვიკავშირდით ახლავე და დაგეხმარებით.",
-          image: "https://next-hub.pro/web.jpg",
-        }}
-        additionalMetaTags={[
-          {
-            name: "keywords",
-            content:
-              "Next-Hub, ვებსაიტის დამზადება, საიტის დამზადება, საიტების შექმნა, ვებსაიტების დამზადება, ვებ აპლიკაციები",
-          },
-          { name: "author", content: "Next-Hub Solutions" },
-          { name: "viewport", content: "width=device-width, initial-scale=1.0" },
-          { name: "robots", content: "index, follow" },
-        ]}
-      />
+  canonical={CANONICAL}
+  title="ვებსაიტის დამზადება | Next-Hub Solutions"
+  description="Next-Hub გთავაზობთ თანამედროვე ვებსაიტების, ონლაინ მაღაზიებისა და ვებ აპლიკაციების შექმნას. SEO ოპტიმიზაცია, სწრაფი ჩატვირთვა და ბიზნესზე მორგებული გადაწყვეტილებები."
+
+  openGraph={{
+    type: "website",
+    locale: "ka_GE",
+    url: CANONICAL,
+    site_name: "Next-Hub Solutions",
+
+    title: "ვებსაიტის დამზადება | Next-Hub Solutions",
+
+    description:
+      "Next-Hub გთავაზობთ თანამედროვე ვებსაიტების, ონლაინ მაღაზიებისა და ვებ აპლიკაციების შექმნას. SEO ოპტიმიზაცია, სწრაფი ჩატვირთვა და ბიზნესზე მორგებული გადაწყვეტილებები.",
+
+    images: [
+      {
+        url: "https://next-hub.pro/web.jpg",
+        width: 1200,
+        height: 630,
+        alt: "ვებსაიტის დამზადება Next-Hub Solutions",
+      },
+    ],
+  }}
+
+  twitter={{
+    cardType: "summary_large_image",
+  }}
+
+  additionalMetaTags={[
+    {
+      name: "author",
+      content: "Next-Hub Solutions",
+    },
+    {
+      name: "robots",
+      content: "index,follow,max-image-preview:large",
+    },
+  ]}
+/>
 
       {isModalOpen ? (
         <Modal

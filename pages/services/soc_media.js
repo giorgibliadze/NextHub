@@ -136,59 +136,40 @@ const SocMedia = () => {
     <>
   
       <NextSeo
-      canonical="https://next-hub.pro/services/soc_media/"
-        title="სოციალური მედიის მართვა | Next-Hub Solutions"
-        description="სოციალური მედიის მართვა: პროფესიონალური კონტენტი, კამპანიები და სტრატეგიები Facebook, Instagram და სხვა პლატფორმებისთვის."
-        openGraph={{
-          type: "website",
-          locale: "ka_GE",
-          url: "https://next-hub.pro/services/soc_media/",
-          site_name: "Next-Hub Solutions",
-          title: "სოციალური მედიის მართვა | Next-Hub Solutions",
-          description:
-            "სოციალური მედიის მართვა: პროფესიონალური კონტენტი, კამპანიები და სტრატეგიები Facebook, Instagram და სხვა პლატფორმებისთვის.",
-          images: [
-            {
-              url: "https://www.next-hub.pro/nexthub.jpg",
-              width: 800,
-              height: 600,
-              alt: "Next-Hub Solutions",
-            },
-          ],
-        }}
-        twitter={{
-          handle: "@NextHub",
-          site: "@NextHub",
-          cardType: "summary_large_image",
-          title: "სოციალური მედიის მართვა | Next-Hub Solutions",
-          description:
-            "სოციალური მედიის მართვა: პროფესიონალური კონტენტი, კამპანიები და სტრატეგიები Facebook, Instagram და სხვა პლატფორმებისთვის.",
-          image: "https://www.next-hub.pro/nexthub.jpg",
-        }}
-        additionalMetaTags={[
-          {
-            name: "keywords",
-            content:
-              "Next-Hub, Social Media Management, სოციალური მედია, ბრენდის ხასიათი, სარეკლამო კამპანიები, Facebook, Instagram, LinkedIn",
-          },
-          {
-            name: "author",
-            content: "Next-Hub Solutions",
-          },
-          {
-            name: "viewport",
-            content: "width=device-width, initial-scale=1.0",
-          },
-          {
-            name: "robots",
-            content: "index, follow",
-          },
-          {
-            name: "changefreq",
-            content: "always",
-          },
-        ]}
-      />
+  canonical="https://next-hub.pro/services/soc_media/"
+  title="სოციალური მედიის მართვა | Facebook & Instagram მარკეტინგი | Next-Hub"
+  description="Next-Hub გთავაზობთ სოციალური მედიის მართვას, კონტენტის შექმნას, რეკლამების მართვასა და Facebook, Instagram და სხვა პლატფორმებზე ბრენდის ზრდის სტრატეგიებს."
+  openGraph={{
+    type: "website",
+    locale: "ka_GE",
+    url: "https://next-hub.pro/services/soc_media/",
+    site_name: "Next-Hub Solutions",
+    title: "სოციალური მედიის მართვა | Facebook & Instagram მარკეტინგი | Next-Hub",
+    description:
+      "Next-Hub გთავაზობთ სოციალური მედიის მართვას, კონტენტის შექმნას, რეკლამების მართვასა და Facebook, Instagram და სხვა პლატფორმებზე ბრენდის ზრდის სტრატეგიებს.",
+    images: [
+      {
+        url: "https://next-hub.pro/nexthub.jpg",
+        width: 1200,
+        height: 630,
+        alt: "სოციალური მედიის მართვა Next-Hub Solutions",
+      },
+    ],
+  }}
+  twitter={{
+    cardType: "summary_large_image",
+  }}
+  additionalMetaTags={[
+    {
+      name: "author",
+      content: "Next-Hub Solutions",
+    },
+    {
+      name: "robots",
+      content: "index,follow,max-image-preview:large",
+    },
+  ]}
+/>
 
       {isModalOpen ? (
         <Modal

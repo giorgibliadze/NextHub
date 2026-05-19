@@ -122,59 +122,40 @@ const Seo = () => {
     <>
       
       <NextSeo
-        canonical="https://next-hub.pro/services/seo/"
-        title="SEO | Next-Hub Solutions"
-        description="SEO ოპტიმიზაცია: გაზარდეთ თქვენი ვებსაიტის ხილვადობა Google-ში, მიაღწიეთ მაღალ რეიტინგს და მოიზიდეთ მეტი მომხმარებელი."
-        openGraph={{
-          type: "website",
-          locale: "ka_GE",
-          url: "https://next-hub.pro/services/seo/",
-          site_name: "Next-Hub Solutions",
-          title: "SEO | Next-Hub Solutions",
-          description:
-            "SEO ოპტიმიზაცია: გაზარდეთ თქვენი ვებსაიტის ხილვადობა Google-ში, მიაღწიეთ მაღალ რეიტინგს და მოიზიდეთ მეტი მომხმარებელი.",
-          images: [
-            {
-              url: "https://www.next-hub.pro/nexthub.jpg",
-              width: 800,
-              height: 600,
-              alt: "Next-Hub Solutions",
-            },
-          ],
-        }}
-        twitter={{
-          handle: "@NextHub",
-          site: "@NextHub",
-          cardType: "summary_large_image",
-          title: "SEO | Next-Hub Solutions",
-          description:
-            "SEO ოპტიმიზაცია: გაზარდეთ თქვენი ვებსაიტის ხილვადობა Google-ში, მიაღწიეთ მაღალ რეიტინგს და მოიზიდეთ მეტი მომხმარებელი.",
-          image: "https://www.next-hub.pro/nexthub.jpg",
-        }}
-        additionalMetaTags={[
-          {
-            name: "keywords",
-            content:
-              "Next-Hub, SEO, საძიებო სისტემების ოპტიმიზაცია, საკვანძო სიტყვების კვლევა, ბმულების შენება, კონტენტის ოპტიმიზაცია, Google Analytics, ადგილობრივი SEO",
-          },
-          {
-            name: "author",
-            content: "Next-Hub Solutions",
-          },
-          {
-            name: "viewport",
-            content: "width=device-width, initial-scale=1.0",
-          },
-          {
-            name: "robots",
-            content: "index, follow",
-          },
-          {
-            name: "changefreq",
-            content: "always",
-          },
-        ]}
-      />
+  canonical="https://next-hub.pro/services/seo/"
+  title="SEO ოპტიმიზაცია | Google-ში ხილვადობის გაზრდა | Next-Hub"
+  description="Next-Hub გთავაზობთ SEO ოპტიმიზაციას, ტექნიკურ SEO-ს, საკვანძო სიტყვების კვლევას, Google Search Console-ის გამართვას და საძიებო სისტემებში პოზიციების გაუმჯობესებას."
+  openGraph={{
+    type: "website",
+    locale: "ka_GE",
+    url: "https://next-hub.pro/services/seo/",
+    site_name: "Next-Hub Solutions",
+    title: "SEO ოპტიმიზაცია | Google-ში ხილვადობის გაზრდა | Next-Hub",
+    description:
+      "Next-Hub გთავაზობთ SEO ოპტიმიზაციას, ტექნიკურ SEO-ს, საკვანძო სიტყვების კვლევას, Google Search Console-ის გამართვას და საძიებო სისტემებში პოზიციების გაუმჯობესებას.",
+    images: [
+      {
+        url: "https://next-hub.pro/nexthub.jpg",
+        width: 1200,
+        height: 630,
+        alt: "SEO ოპტიმიზაცია Next-Hub Solutions",
+      },
+    ],
+  }}
+  twitter={{
+    cardType: "summary_large_image",
+  }}
+  additionalMetaTags={[
+    {
+      name: "author",
+      content: "Next-Hub Solutions",
+    },
+    {
+      name: "robots",
+      content: "index,follow,max-image-preview:large",
+    },
+  ]}
+/>
 
       {isModalOpen ? (
         <Modal

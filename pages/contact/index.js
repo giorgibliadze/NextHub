@@ -61,61 +61,47 @@ const Contact = () => {
 
   return (
     <>
-      <NextSeo
-      canonical="https://next-hub.pro/contact/"
-        title="Next-Hub Solutions | Contact"
-        description="დაგვიკავშირდით და მიიღეთ პასუხები თქვენს შეკითხვებზე. Next-Hub Solutions-ის გამოცდილ გუნდთან ერთად მიაღწიეთ თქვენს მიზნებს. ელ-ფოსტა: info@next-hub.pro ; ტელეფონი: +995 555137003 ; მისამართი: თბილისი, გაზაფხულის 6ა"
-        keywords="Next-Hub, ციფრული რეალობა, იდეები, სურვილები, ოცნებები, ბრენდის ცნობადობა, სანდოობა, ციფრული ტრანსფორმაცია, ვებ აპლიკაციები, სოციალური მედია, SEO, ანალიტიკა"
-        openGraph={{
-          type: "website",
-          locale: "ka_GE",
-          url: "https://next-hub.pro/contact",
-          site_name: "Next-Hub Solutions",
-          title: "Next-Hub Solutions | Contact",
-          description:
-            "დაგვიკავშირდით და მიიღეთ პასუხები თქვენს შეკითხვებზე. Next-Hub Solutions-ის გამოცდილ გუნდთან ერთად მიაღწიეთ თქვენს მიზნებს.",
-          images: [
-            {
-              url: "https://www.next-hub.pro/nexthub.jpg",
-              width: 800,
-              height: 600,
-              alt: "Next-Hub Solutions",
-            },
-          ],
-        }}
-        twitter={{
-          handle: "@NextHub",
-          site: "@NextHub",
-          cardType: "summary_large_image",
-          title: "Next-Hub Solutions | Contact",
-          description:
-            "მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად.",
-          image: "https://www.next-hub.pro/nexthub.jpg",
-        }}
-        additionalMetaTags={[
-          {
-            name: "keywords",
-            content:
-              "Next-Hub, ციფრული რეალობა, იდეები, სურვილები, ოცნებები, ბრენდის ცნობადობა, სანდოობა, ციფრული ტრანსფორმაცია, ვებ აპლიკაციები, სოციალური მედია, SEO, ანალიტიკა",
-          },
-          {
-            name: "author",
-            content: "Next-Hub Solutions",
-          },
-          {
-            name: "viewport",
-            content: "width=device-width, initial-scale=1.0",
-          },
-          {
-            name: "robots",
-            content: "index, follow",
-          },
-          {
-            name: "changefreq",
-            content: "always",
-          },
-        ]}
-      />
+     <NextSeo
+  canonical="https://next-hub.pro/contact/"
+  title="კონტაქტი | Next-Hub Solutions"
+  description="დაუკავშირდით Next-Hub Solutions-ს ვებსაიტების შექმნის, SEO ოპტიმიზაციის, სოციალური მედიის მართვისა და ციფრული სერვისების შესახებ. ჩვენი გუნდი მზადაა დაგეხმაროთ."
+
+  openGraph={{
+    type: "website",
+    locale: "ka_GE",
+    url: "https://next-hub.pro/contact/",
+    site_name: "Next-Hub Solutions",
+
+    title: "კონტაქტი | Next-Hub Solutions",
+
+    description:
+      "დაუკავშირდით Next-Hub Solutions-ს ვებსაიტების შექმნის, SEO ოპტიმიზაციის, სოციალური მედიის მართვისა და ციფრული სერვისების შესახებ.",
+
+    images: [
+      {
+        url: "https://next-hub.pro/nexthub.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Next-Hub Solutions კონტაქტი",
+      },
+    ],
+  }}
+
+  twitter={{
+    cardType: "summary_large_image",
+  }}
+
+  additionalMetaTags={[
+    {
+      name: "author",
+      content: "Next-Hub Solutions",
+    },
+    {
+      name: "robots",
+      content: "index,follow,max-image-preview:large",
+    },
+  ]}
+/>
 
       {/* page */}
       <div className="h-screen bg-primary/30">
@@ -215,3 +201,23 @@ const Contact = () => {
 };
 
 export default Contact;
+
+<script
+type="application/ld+json"
+dangerouslySetInnerHTML={{
+__html: JSON.stringify({
+"@context":"https://schema.org",
+"@type":"LocalBusiness",
+"name":"Next-Hub Solutions",
+"url":"https://next-hub.pro",
+"telephone":"+995555137003",
+"email":"info@next-hub.pro",
+"address":{
+"@type":"PostalAddress",
+"streetAddress":"გაზაფხულის 6ა",
+"addressLocality":"თბილისი",
+"addressCountry":"GE"
+}
+})
+}}
+/>

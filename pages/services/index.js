@@ -16,61 +16,48 @@ const Services = () => {
     <Suspense fallback={<div>Loading...</div>}>
       
       
-      <NextSeo
-      canonical="https://next-hub.pro/services/"
-        title="სერვისები | Next-Hub Solutions"
-        description="მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად."
-        keywords="Next-Hub, ციფრული რეალობა, იდეები, სურვილები, ოცნებები, ბრენდის ცნობადობა, სანდოობა, ციფრული ტრანსფორმაცია, ვებ აპლიკაციები, სოციალური მედია, SEO, ანალიტიკა"
-        openGraph={{
-          type: "website",
-          locale: "ka_GE",
-          url: "https://next-hub.pro/services/",
-          site_name: "Next-Hub Solutions",
-          title: "სერვისები | Next-Hub Solutions",
-          description:
-            "მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად.",
-          images: [
-            {
-              url: "https://www.next-hub.pro/nexthub.jpg",
-              width: 800,
-              height: 600,
-              alt: "Next-Hub Solutions",
-            },
-          ],
-        }}
-        twitter={{
-          handle: "@NextHub",
-          site: "@NextHub",
-          cardType: "summary_large_image",
-          title: "სერვისები | Next-Hub Solutions",
-          description:
-            "მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად.",
-          image: "https://www.next-hub.pro/nexthub.jpg",
-        }}
-        additionalMetaTags={[
-          {
-            name: "keywords",
-            content:
-              "Next-Hub, ციფრული რეალობა, იდეები, სურვილები, ოცნებები, ბრენდის ცნობადობა, სანდოობა, ციფრული ტრანსფორმაცია, ვებ აპლიკაციები, სოციალური მედია, SEO, ანალიტიკა",
-          },
-          {
-            name: "author",
-            content: "Next-Hub Solutions",
-          },
-          {
-            name: "viewport",
-            content: "width=device-width, initial-scale=1.0",
-          },
-          {
-            name: "robots",
-            content: "index, follow",
-          },
-          {
-            name: "changefreq",
-            content: "always",
-          },
-        ]}
-      />
+     <NextSeo
+  canonical="https://next-hub.pro/services/"
+  title="ჩვენი სერვისები | ვებსაიტები, SEO და მარკეტინგი | Next-Hub"
+  description="Next-Hub გთავაზობთ ვებსაიტების შექმნას, SEO ოპტიმიზაციას, სოციალური მედიის მართვას, ტექნიკურ მხარდაჭერასა და ბიზნესზე მორგებულ ციფრულ სერვისებს."
+
+  openGraph={{
+    type: "website",
+    locale: "ka_GE",
+    url: "https://next-hub.pro/services/",
+    site_name: "Next-Hub Solutions",
+
+    title:
+      "ჩვენი სერვისები | ვებსაიტები, SEO და მარკეტინგი | Next-Hub",
+
+    description:
+      "Next-Hub გთავაზობთ ვებსაიტების შექმნას, SEO ოპტიმიზაციას, სოციალური მედიის მართვას, ტექნიკურ მხარდაჭერასა და ბიზნესზე მორგებულ ციფრულ სერვისებს.",
+
+    images: [
+      {
+        url: "https://next-hub.pro/nexthub.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Next-Hub Solutions სერვისები",
+      },
+    ],
+  }}
+
+  twitter={{
+    cardType: "summary_large_image",
+  }}
+
+  additionalMetaTags={[
+    {
+      name: "author",
+      content: "Next-Hub Solutions",
+    },
+    {
+      name: "robots",
+      content: "index,follow,max-image-preview:large",
+    },
+  ]}
+/>
 
       <div className="h-full lg:h-[700px] xxl:h-[950px] xll:h-[970px] bg-primary/30 py-36 flex p-[20px]">
         <Circles />

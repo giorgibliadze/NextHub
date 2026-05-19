@@ -115,61 +115,41 @@ const TechSupport = () => {
   return (
     <>
    
-      <NextSeo
-      canonical="https://next-hub.pro/services/tech_support/"
-        title="ტექნიკური მხარდაჭერა | Next-Hub Solutions"
-        description="ტექნიკური მხარდაჭერა: ვებსაიტის ოპტიმიზაცია, უსაფრთხოება და სრული ტექნიკური სერვისი თქვენი ბიზნესის საიმედოობისთვის."
-        keywords="Next-Hub, ციფრული რეალობა, იდეები, სურვილები, ოცნებები, ბრენდის ცნობადობა, სანდოობა, ციფრული ტრანსფორმაცია, ვებ აპლიკაციები, სოციალური მედია, SEO, ანალიტიკა"
-        openGraph={{
-          type: "website",
-          locale: "ka_GE",
-          url: "https://next-hub.pro/services/tech_support/",
-          site_name: "Next-Hub Solutions",
-          title: "ტექნიკური მხარდაჭერა | Next-Hub Solutions",
-          description:
-            "ტექნიკური მხარდაჭერა: ვებსაიტის ოპტიმიზაცია, უსაფრთხოება და სრული ტექნიკური სერვისი თქვენი ბიზნესის საიმედოობისთვის.",
-          images: [
-            {
-              url: "https://www.next-hub.pro/nexthub.jpg",
-              width: 800,
-              height: 600,
-              alt: "Next-Hub Solutions",
-            },
-          ],
-        }}
-        twitter={{
-          handle: "@NextHub",
-          site: "@NextHub",
-          cardType: "summary_large_image",
-          title: "ტექნიკური მხარდაჭერა | Next-Hub Solutions",
-          description:
-            "ტექნიკური მხარდაჭერა: ვებსაიტის ოპტიმიზაცია, უსაფრთხოება და სრული ტექნიკური სერვისი თქვენი ბიზნესის საიმედოობისთვის.",
-          image: "https://www.next-hub.pro/nexthub.jpg",
-        }}
-        additionalMetaTags={[
-          {
-            name: "keywords",
-            content:
-              "Next-Hub, Tech Support, საიტის მართვა, SEO მართვა, სოციალური მედიის მართვა, Google Ads, ციფრული მარკეტინგი, ტექნიკური მხარდაჭერა",
-          },
-          {
-            name: "author",
-            content: "Next-Hub Solutions",
-          },
-          {
-            name: "viewport",
-            content: "width=device-width, initial-scale=1.0",
-          },
-          {
-            name: "robots",
-            content: "index, follow",
-          },
-          {
-            name: "changefreq",
-            content: "always",
-          },
-        ]}
-      />
+   <NextSeo
+  canonical="https://next-hub.pro/services/tech_support/"
+  title="ტექნიკური მხარდაჭერა | საიტის მართვა და უსაფრთხოება | Next-Hub"
+  description="Next-Hub გთავაზობთ ვებსაიტის ტექნიკურ მხარდაჭერას, უსაფრთხოების მონიტორინგს, სიჩქარის ოპტიმიზაციას, SEO კონტროლს და საიტის გამართულ მუშაობაზე ზრუნვას."
+  openGraph={{
+    type: "website",
+    locale: "ka_GE",
+    url: "https://next-hub.pro/services/tech_support/",
+    site_name: "Next-Hub Solutions",
+    title: "ტექნიკური მხარდაჭერა | საიტის მართვა და უსაფრთხოება | Next-Hub",
+    description:
+      "Next-Hub გთავაზობთ ვებსაიტის ტექნიკურ მხარდაჭერას, უსაფრთხოების მონიტორინგს, სიჩქარის ოპტიმიზაციას, SEO კონტროლს და საიტის გამართულ მუშაობაზე ზრუნვას.",
+    images: [
+      {
+        url: "https://next-hub.pro/nexthub.jpg",
+        width: 1200,
+        height: 630,
+        alt: "ვებსაიტის ტექნიკური მხარდაჭერა Next-Hub Solutions",
+      },
+    ],
+  }}
+  twitter={{
+    cardType: "summary_large_image",
+  }}
+  additionalMetaTags={[
+    {
+      name: "author",
+      content: "Next-Hub Solutions",
+    },
+    {
+      name: "robots",
+      content: "index,follow,max-image-preview:large",
+    },
+  ]}
+/>
       {isModalOpen ? (
         <Modal
           isOpen={isModalOpen}

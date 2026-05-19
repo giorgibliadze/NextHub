@@ -16,61 +16,48 @@ const Home = () => {
   return (
     <>
       
-      <NextSeo
-      canonical="https://next-hub.pro"
-        title="ვებსაიტის დამზადება | Next-Hub"
-        description="მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად."
-        keywords="Next-Hub, ვებსაიტის დამზადება, საიტის დამზადება, საიტების შექმნა, ვებსაიტების დამზადება, საიტების დამზადება, ვებ აპლიკაციები"
-        openGraph={{
-          type: "website",
-          locale: "ka_GE",
-          url: "https://next-hub.pro",
-          site_name: "Next-Hub Solutions",
-          title: "ვებსაიტის დამზადება | Next-Hub",
-          description:
-            "მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად.",
-          images: [
-            {
-              url: "https://www.next-hub.pro/nexthub.png",
-              width: 800,
-              height: 400,
-              alt: "Next-Hub Solutions",
-            },
-          ],
-        }}
-        twitter={{
-          handle: "@NextHub",
-          site: "@NextHub",
-          cardType: "summary_large_image",
-          title: "ვებსაიტის დამზადება | Next-Hub",
-          description:
-            "მიაღწიეთ თქვენს მიზნებს, გამოიყენეთ სრული პოტენციალი და გაზარდეთ ბრენდის ცნობადობა და სანდოობა next-hub-ის გამოცდილ გუნდთან ერთად.",
-          image: "https://www.next-hub.pro/nexthub.png",
-        }}
-        additionalMetaTags={[
-          {
-            name: "keywords",
-            content:
-              "Next-Hub, ვებსაიტის დამზადება, საიტის დამზადება, საიტების შექმნა, ვებსაიტების დამზადება, საიტების დამზადება, ვებ აპლიკაციები",
-          },
-          {
-            name: "author",
-            content: "Next-Hub Solutions",
-          },
-          {
-            name: "viewport",
-            content: "width=device-width, initial-scale=1.0",
-          },
-          {
-            name: "robots",
-            content: "index, follow",
-          },
-          {
-            name: "changefreq",
-            content: "always",
-          },
-        ]}
-      />
+<NextSeo
+  canonical="https://next-hub.pro/"
+  title="ვებსაიტის დამზადება | Next-Hub"
+
+  description="Next-Hub ქმნის თანამედროვე ვებსაიტებს, ონლაინ მაღაზიებსა და ვებ აპლიკაციებს. SEO ოპტიმიზაცია, მაღალი სიჩქარე და ბიზნესზე მორგებული გადაწყვეტილებები."
+
+  openGraph={{
+    type: "website",
+    locale: "ka_GE",
+    url: "https://next-hub.pro/",
+    site_name: "Next-Hub Solutions",
+
+    title:"ვებსაიტის დამზადება | Next-Hub",
+
+    description:
+      "Next-Hub ქმნის თანამედროვე ვებსაიტებს, ონლაინ მაღაზიებსა და ვებ აპლიკაციებს.",
+
+    images:[
+      {
+        url:"https://next-hub.pro/nexthub.png",
+        width:1200,
+        height:630,
+        alt:"Next-Hub Solutions"
+      }
+    ]
+  }}
+
+  twitter={{
+    cardType:"summary_large_image"
+  }}
+
+  additionalMetaTags={[
+    {
+      name:"author",
+      content:"Next-Hub Solutions"
+    },
+    {
+      name:"robots",
+      content:"index,follow,max-image-preview:large"
+    }
+  ]}
+/>
 
       <div className="bg-primary/60 h-screen w-full smx:h-[640px] sm:h-[600px] lg:h-[847px] xxl:h-[990px] xll:h-[885px]">
         {/* text */}
@@ -138,3 +125,16 @@ const Home = () => {
 };
 
 export default Home;
+
+<script
+type="application/ld+json"
+dangerouslySetInnerHTML={{
+__html: JSON.stringify({
+"@context":"https://schema.org",
+"@type":"Organization",
+"name":"Next-Hub Solutions",
+"url":"https://next-hub.pro",
+"logo":"https://next-hub.pro/nexthub.png",
+})
+}}
+/>
