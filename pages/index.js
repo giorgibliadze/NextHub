@@ -131,7 +131,7 @@ font-bold
   initial="hidden"
   animate="show"
   exit="hidden"
-  className="flex justify-center xl:justify-start"
+  className="flex justify-center xl:justify-start relative z-50"
 >
   <a
     href="tel:+995555137003"
