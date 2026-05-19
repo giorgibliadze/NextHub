@@ -1,7 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import RotatingWords from "../components/RotatingWords";
 import ParticlesContainer from "../components/ParticlesContainer";
-import ProjectBtn from "../components/ProjectsBtn";
 
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
@@ -9,14 +8,14 @@ import { NextSeo } from "next-seo";
 import Script from "next/script";
 
 const Home = () => {
-  const words = ["ვებსაიტები ", "ონლაინ მაღაზიები ", "ვებ აპლიკაციები "];
+  const words = ["ვებსაიტები", "ონლაინ მაღაზიები", "ვებ აპლიკაციები"];
 
   return (
     <>
       <NextSeo
         canonical="https://next-hub.pro/"
         title="ვებსაიტის დამზადება და საიტის შექმნა | Next-Hub"
-        description="Next-Hub ქმნის თანამედროვე ვებსაიტებს, ონლაინ მაღაზიებსა და ვებ აპლიკაციებს. ვამზადებთ სწრაფ, SEO-ზე მორგებულ და ბიზნესის მიზნებზე აწყობილ საიტებს."
+        description="Next-Hub ქმნის თანამედროვე ვებსაიტებს, ონლაინ მაღაზიებსა და ვებ აპლიკაციებს. ვამზადებთ სწრაფ, SEO-ზე მორგებულ და ბიზნესის მიზნებზე შექმნილ საიტებს."
         openGraph={{
           type: "website",
           locale: "ka_GE",
@@ -24,7 +23,7 @@ const Home = () => {
           site_name: "Next-Hub Solutions",
           title: "ვებსაიტის დამზადება და საიტის შექმნა | Next-Hub",
           description:
-            "Next-Hub ქმნის თანამედროვე ვებსაიტებს, ონლაინ მაღაზიებსა და ვებ აპლიკაციებს. ვამზადებთ სწრაფ, SEO-ზე მორგებულ და ბიზნესის მიზნებზე აწყობილ საიტებს.",
+            "Next-Hub ქმნის თანამედროვე ვებსაიტებს, ონლაინ მაღაზიებსა და ვებ აპლიკაციებს. ვამზადებთ სწრაფ, SEO-ზე მორგებულ და ბიზნესის მიზნებზე შექმნილ საიტებს.",
           images: [
             {
               url: "https://next-hub.pro/nexthub.png",
@@ -67,59 +66,98 @@ const Home = () => {
       <div className="bg-primary/60 h-screen w-full smx:h-[640px] sm:h-[600px] lg:h-[847px] xxl:h-[990px] xll:h-[885px]">
         <div className="w-full h-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10">
           <div className="text-center flex flex-col justify-center xl:text-left h-full container mx-auto">
-            <motion.h1
-              variants={fadeIn("down", 0.2)}
-              initial="hidden"
-              animate="show"
-              exit="hidden"
-              className="h1 mt-[100px]"
-            >
-              ვებსაიტის დამზადება <span >.</span>
-              <br/>
-              <motion.span
-                variants={fadeIn("down", 0.2)}
-                initial="hidden"
-                animate="show"
-                exit="hidden"
-                className="text-accent"
-              >
-                <RotatingWords words={words} />
-              </motion.span>
-                ბიზნესისთვის
-            </motion.h1>
 
+            {/* title */}
+            <motion.h1
+  variants={fadeIn("down", 0.2)}
+  initial="hidden"
+  animate="show"
+  exit="hidden"
+  className="
+  mt-[100px]
+  text-[34px]
+  leading-tight
+  sm:text-[44px]
+  xl:text-[64px]
+  font-bold
+  "
+>
+  ვებსაიტის დამზადება <span>.</span>
+
+  <br />
+
+  <motion.span
+    variants={fadeIn("down", 0.2)}
+    initial="hidden"
+    animate="show"
+    exit="hidden"
+    className="text-accent"
+  >
+    <RotatingWords words={words} />
+  </motion.span>
+
+  ბიზნესისთვის
+</motion.h1>
+
+            {/* subtitle */}
             <motion.p
               variants={fadeIn("down", 0.3)}
               initial="hidden"
               animate="show"
               exit="hidden"
-              className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16"
+              className="
+              max-w-sm
+              text-[15px]
+              leading-8
+              xl:text-[18px]
+              xl:max-w-xl
+              mx-auto
+              xl:mx-0
+              mb-10
+              xl:mb-16
+              "
             >
-              Next-Hub გთავაზობთ თანამედროვე ვებსაიტების, ონლაინ მაღაზიებისა
-              და ვებ აპლიკაციების შექმნას. ვამზადებთ სწრაფ, SEO-ზე მორგებულ
-              და ბიზნესის მიზნებზე შექმნილ საიტებს.
+              Next-Hub გთავაზობთ თანამედროვე ვებსაიტების, ონლაინ
+              მაღაზიებისა და ვებ აპლიკაციების შექმნას. ვამზადებთ სწრაფ,
+              SEO-ზე მორგებულ და ბიზნესის მიზნებზე შექმნილ საიტებს.
             </motion.p>
 
-            <div className="flex justify-center xl:hidden relative">
-              <ProjectBtn />
-            </div>
+            {/* mobile button */}
+            {/* contact button */}
+<motion.div
+  variants={fadeIn("down", 0.4)}
+  initial="hidden"
+  animate="show"
+  exit="hidden"
+  className="flex justify-center xl:justify-start"
+>
+  <a
+    href="tel:+995555137003"
+    className="
+      px-8
+      py-4
+      rounded-full
+      bg-accent
+      text-white
+      font-semibold
+      text-[14px]
+      xl:text-[16px]
+      hover:scale-105
+      transition-all
+      shadow-lg
+      whitespace-nowrap
+    "
+  >
+    დაგვიკავშირდით
+  </a>
+</motion.div>
 
-            <motion.div
-              variants={fadeIn("down", 0.4)}
-              initial="hidden"
-              animate="show"
-              exit="hidden"
-              className="hidden xl:flex"
-            >
-              <ProjectBtn />
-            </motion.div>
           </div>
 
           <div className="w-full h-full absolute right-0 bottom-0">
             <div className="bg-none xl:bg-explosion xl:bg-cover xl:bg-right xl:bg-no-repeat w-full h-full absolute mix-blend-color-dodge translate-z-0"></div>
-            <div>
-              <ParticlesContainer />
-            </div>
+
+            <ParticlesContainer />
           </div>
         </div>
       </div>
