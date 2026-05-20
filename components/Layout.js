@@ -29,7 +29,7 @@ export default function Layout({ children }) {
           type: "website",
           locale: "ka_GE",
           url: SITE_URL,
-          site_name: "Next-Hub Solutions |ვებსაიტის დამზადება | საიტის შექმნა",
+          site_name: "Next-Hub Solutions | ვებსაიტის დამზადება",
           images: [{ url: `${SITE_URL}/nexthub.png` }], // ensure this file exists in /public
         }}
         additionalMetaTags={[
