@@ -20,7 +20,7 @@ const Home = () => {
           type: "website",
           locale: "ka_GE",
           url: "https://next-hub.pro/",
-          site_name: "Next-Hub Solutions",
+          site_name: "ვებსაიტის დამზადება | საიტის შექმნა | Next-Hub Solutions",
           title: "ვებსაიტის დამზადება | საიტის შექმნა | Next-Hub",
           description:
             "Next-Hub ქმნის თანამედროვე ვებსაიტებს, ონლაინ მაღაზიებსა და ვებ აპლიკაციებს. ვამზადებთ სწრაფ, SEO-ზე მორგებულ და ბიზნესის მიზნებზე შექმნილ საიტებს.",
@@ -56,7 +56,7 @@ const Home = () => {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Organization",
-            name: "Next-Hub Solutions",
+            name: "ვებსაიტის დამზადება | საიტის შექმნა | Next-Hub Solutions",
             url: "https://next-hub.pro/",
             logo: "https://next-hub.pro/nexthub.png",
           }),
