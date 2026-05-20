@@ -14,14 +14,14 @@ const Home = () => {
     <>
       <NextSeo
         canonical="https://next-hub.pro/"
-        title="ვებსაიტის დამზადება და საიტის შექმნა | Next-Hub"
+        title="ვებსაიტის დამზადება | საიტის შექმნა | Next-Hub"
         description="Next-Hub ქმნის თანამედროვე ვებსაიტებს, ონლაინ მაღაზიებსა და ვებ აპლიკაციებს. ვამზადებთ სწრაფ, SEO-ზე მორგებულ და ბიზნესის მიზნებზე შექმნილ საიტებს."
         openGraph={{
           type: "website",
           locale: "ka_GE",
           url: "https://next-hub.pro/",
           site_name: "Next-Hub Solutions",
-          title: "ვებსაიტის დამზადება და საიტის შექმნა | Next-Hub",
+          title: "ვებსაიტის დამზადება | საიტის შექმნა | Next-Hub",
           description:
             "Next-Hub ქმნის თანამედროვე ვებსაიტებს, ონლაინ მაღაზიებსა და ვებ აპლიკაციებს. ვამზადებთ სწრაფ, SEO-ზე მორგებულ და ბიზნესის მიზნებზე შექმნილ საიტებს.",
           images: [
