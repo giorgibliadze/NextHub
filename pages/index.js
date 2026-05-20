@@ -20,7 +20,7 @@ const Home = () => {
           type: "website",
           locale: "ka_GE",
           url: "https://next-hub.pro/",
-          site_name: "ვებსაიტის დამზადება | საიტის შექმნა | Next-Hub Solutions",
+          site_name: "Next-Hub Solutions |ვებსაიტის დამზადება | საიტის შექმნა",
           title: "ვებსაიტის დამზადება | საიტის შექმნა | Next-Hub",
           description:
             "Next-Hub ქმნის თანამედროვე ვებსაიტებს, ონლაინ მაღაზიებსა და ვებ აპლიკაციებს. ვამზადებთ სწრაფ, SEO-ზე მორგებულ და ბიზნესის მიზნებზე შექმნილ საიტებს.",
