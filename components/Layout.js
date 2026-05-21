@@ -29,7 +29,7 @@ export default function Layout({ children }) {
           type: "website",
           locale: "ka_GE",
           url: SITE_URL,
-          site_name: "Next-Hub Solutions | ვებსაიტის დამზადება",
+          site_name: "Next-Hub Solutions",
           images: [{ url: `${SITE_URL}/nexthub.png` }], // ensure this file exists in /public
         }}
         additionalMetaTags={[
@@ -81,7 +81,7 @@ export default function Layout({ children }) {
             "@context": "https://schema.org",
             "@type": "Organization",
             url: SITE_URL,
-            name: "Next-Hub Solutions |ვებსაიტის დამზადება | საიტის შექმნა",
+            name: "Next-Hub Solutions",
             logo: `${SITE_URL}/favicon.jpg`, // keep consistent with actual file
           }),
         }}
