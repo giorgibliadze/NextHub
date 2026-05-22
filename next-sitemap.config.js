@@ -24,7 +24,7 @@ module.exports = {
     return {
       loc: path,
       changefreq: path === '/' ? 'daily' : 'weekly',
-      priority: path === '/' ? 1.0 : path.startsWith('/services') ? 0.9 : 0.7,
+      priority: path === '/' ? 1.0 : path.startsWith('/services') ? 0.9 : 1.0,
       lastmod: new Date().toISOString(),
     };
   },
