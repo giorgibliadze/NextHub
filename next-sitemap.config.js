@@ -23,7 +23,7 @@ module.exports = {
   transform: async (config, path) => {
     return {
       loc: path,
-      changefreq: path === '/' ? 'daily' : 'weekly',
+      changefreq: path === '/' ? 'daily' : 'daily',
       priority: path === '/' ? 1.0 : path.startsWith('/services') ? 0.9 : 1.0,
       lastmod: new Date().toISOString(),
     };
