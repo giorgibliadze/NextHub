@@ -252,7 +252,7 @@ const WebDevelopment = () => {
     </span>
 
     <h2 className="text-3xl md:text-5xl font-bold mb-6">
-      ვებსაიტის დამზადება და საიტის შექმნა
+      ვებსაიტის დამზადება  <br/>(საიტის შექმნა)
     </h2>
 
     <p className="max-w-3xl mx-auto text-white/70 text-base md:text-lg leading-8">
