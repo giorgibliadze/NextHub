@@ -28,19 +28,20 @@ import Link from "next/link";
 // data
 const serviceData = [
   {
-    icon: <SiGooglemarketingplatform />,
-    title: "ციფრული მარკეტინგი",
-    description:
-      "გთავაზობთ ინოვაციურ ციფრულ მარკეტინგს, რაც გაზრდის თქვენი ბრენდის ცნობადობას და მომხმარებელთა ჩართულობას.",
-    link: "/services/digital_marketing",
-  },
-  {
     icon: <RxDesktop />,
     title: "ვებსაიტის დამზადება",
     description:
       "დაგიმზადებთ თანამედროვე და მომხმარებლისთვის მოსახერხებელ ვებ-გვერდებს, რომელიც თავსებადია ყველა მოწყობილობასთან.",
     link: "/services/web_development",
   },
+  {
+    icon: <SiGooglemarketingplatform />,
+    title: "ციფრული მარკეტინგი",
+    description:
+      "გთავაზობთ ინოვაციურ ციფრულ მარკეტინგს, რაც გაზრდის თქვენი ბრენდის ცნობადობას და მომხმარებელთა ჩართულობას.",
+    link: "/services/digital_marketing",
+  },
+  
   {
     icon: <RxRocket />,
     title: "SEO ოპტიმიზაცია",
