@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
 import { NextSeo } from "next-seo";
 
-const CANONICAL = "https://next-hub.pro/services/web_development";
+const CANONICAL = "https://next-hub.pro/webdevelopment";
 
 const WebDevelopment = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
