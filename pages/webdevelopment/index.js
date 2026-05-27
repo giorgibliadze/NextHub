@@ -258,7 +258,7 @@ const WebDevelopment = () => {
     <p className="max-w-3xl mx-auto text-white/70 text-base md:text-lg leading-8">
       Next-Hub ქმნის თანამედროვე, სწრაფ და SEO-ზე მორგებულ ვებსაიტებს
       ბიზნესებისთვის, რომლებიც ონლაინ სივრცეში სანდოობასა და შედეგზე
-      ორიენტირებულ განვითარებას ეძებენ.
+      არის ორიენტირებული.
     </p>
   </div>
 
