@@ -48,17 +48,39 @@ const Home = () => {
         ]}
       />
 
+      {/* Specific Professional Service Schema for better local ranking */}
       <Script
-        id="organization-schema"
+        id="local-business-schema"
         type="application/ld+json"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Organization",
-            name: "ვებსაიტის დამზადება | საიტის შექმნა | Next-Hub Solutions",
-            url: "https://next-hub.pro/",
-            logo: "https://next-hub.pro/nexthub.png",
+            "@type": "ProfessionalService",
+            "name": "Next-Hub Solutions",
+            "image": "https://next-hub.pro/nexthub.png",
+            "@id": "https://next-hub.pro/#organization",
+            "url": "https://next-hub.pro/",
+            "telephone": "+995555137003",
+            "email": "info@next-hub.pro",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Tbilisi",
+              "addressLocality": "Tbilisi",
+              "addressCountry": "GE"
+            },
+            "openingHoursSpecification": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+              ],
+              "opens": "09:00",
+              "closes": "19:00"
+            }
           }),
         }}
       />

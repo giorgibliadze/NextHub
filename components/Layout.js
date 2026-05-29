@@ -22,21 +22,7 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://next-hub.pro";
 export default function Layout({ children }) {
   return (
     <>
-      {/* Global SEO defaults (you can still override per page with <NextSeo />) */}
-      <DefaultSeo
-        canonical={SITE_URL}
-        openGraph={{
-          type: "website",
-          locale: "ka_GE",
-          url: SITE_URL,
-          site_name: "ვებსაიტის დამზადება | საიტის შექმნა | Next-Hub Solutions",
-          images: [{ url: `${SITE_URL}/nexthub.png` }], // ensure this file exists in /public
-        }}
-        additionalMetaTags={[
-          { name: "robots", content: "index, follow" },
-          { name: "viewport", content: "width=device-width, initial-scale=1.0" },
-        ]}
-      />
+  
 
       <Head>
         {/* Favicons */}
