@@ -15,7 +15,7 @@ export default async function handler(req, res) {
         headers: {
           Authorization: `Bearer ${token}`,
         },
-      }
+      },
     );
 
     if (!response.ok) {
@@ -30,14 +30,16 @@ export default async function handler(req, res) {
     res.status(200).json(paymentDetails);
   } catch (error) {
     console.error("Error fetching payment details:", error.message);
-    return res.status(500).json({ error: "Internal Server Error", details: error.message });
+    return res
+      .status(500)
+      .json({ error: "Internal Server Error", details: error.message });
   }
 }
 
 async function getAuthToken() {
   try {
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/api/getAuthToken`
+      `${process.env.NEXT_PUBLIC_API_URL}/api/getAuthToken`,
     );
     if (!response.ok) {
       throw new Error("Failed to fetch auth token");

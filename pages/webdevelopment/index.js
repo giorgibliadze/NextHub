@@ -159,46 +159,43 @@ const WebDevelopment = () => {
   return (
     <>
       <NextSeo
-  canonical={CANONICAL}
-  title="ვებსაიტის დამზადება | Next-Hub Solutions"
-  description="Next-Hub გთავაზობთ თანამედროვე ვებსაიტების, ონლაინ მაღაზიებისა და ვებ აპლიკაციების შექმნას. SEO ოპტიმიზაცია, სწრაფი ჩატვირთვა და ბიზნესზე მორგებული გადაწყვეტილებები."
+        canonical={CANONICAL}
+        title="ვებსაიტის დამზადება | Next-Hub Solutions"
+        description="Next-Hub გთავაზობთ თანამედროვე ვებსაიტების, ონლაინ მაღაზიებისა და ვებ აპლიკაციების შექმნას. SEO ოპტიმიზაცია, სწრაფი ჩატვირთვა და ბიზნესზე მორგებული გადაწყვეტილებები."
+        openGraph={{
+          type: "website",
+          locale: "ka_GE",
+          url: CANONICAL,
+          site_name: "Next-Hub Solutions",
 
-  openGraph={{
-    type: "website",
-    locale: "ka_GE",
-    url: CANONICAL,
-    site_name: "Next-Hub Solutions",
+          title: "ვებსაიტის დამზადება | Next-Hub Solutions",
 
-    title: "ვებსაიტის დამზადება | Next-Hub Solutions",
+          description:
+            "Next-Hub გთავაზობთ თანამედროვე ვებსაიტების, ონლაინ მაღაზიებისა და ვებ აპლიკაციების შექმნას. SEO ოპტიმიზაცია, სწრაფი ჩატვირთვა და ბიზნესზე მორგებული გადაწყვეტილებები.",
 
-    description:
-      "Next-Hub გთავაზობთ თანამედროვე ვებსაიტების, ონლაინ მაღაზიებისა და ვებ აპლიკაციების შექმნას. SEO ოპტიმიზაცია, სწრაფი ჩატვირთვა და ბიზნესზე მორგებული გადაწყვეტილებები.",
-
-    images: [
-      {
-        url: "https://next-hub.pro/web.jpg",
-        width: 1200,
-        height: 630,
-        alt: "ვებსაიტის დამზადება Next-Hub Solutions",
-      },
-    ],
-  }}
-
-  twitter={{
-    cardType: "summary_large_image",
-  }}
-
-  additionalMetaTags={[
-    {
-      name: "author",
-      content: "Next-Hub Solutions",
-    },
-    {
-      name: "robots",
-      content: "index,follow,max-image-preview:large",
-    },
-  ]}
-/>
+          images: [
+            {
+              url: "https://next-hub.pro/web.jpg",
+              width: 1200,
+              height: 630,
+              alt: "ვებსაიტის დამზადება Next-Hub Solutions",
+            },
+          ],
+        }}
+        twitter={{
+          cardType: "summary_large_image",
+        }}
+        additionalMetaTags={[
+          {
+            name: "author",
+            content: "Next-Hub Solutions",
+          },
+          {
+            name: "robots",
+            content: "index,follow,max-image-preview:large",
+          },
+        ]}
+      />
 
       {isModalOpen ? (
         <Modal
@@ -227,12 +224,12 @@ const WebDevelopment = () => {
           >
             <ImageGallery images={images} />
           </motion.div>
-<motion.section
-  variants={fadeIn("up", 0.1)}
-  initial="hidden"
-  animate="show"
-  exit="hidden"
-  className="
+          <motion.section
+            variants={fadeIn("up", 0.1)}
+            initial="hidden"
+            animate="show"
+            exit="hidden"
+            className="
     max-w-6xl
     mx-auto
     mb-20
@@ -245,83 +242,85 @@ const WebDevelopment = () => {
     backdrop-blur-md
     shadow-2xl
   "
->
-  <div className="text-center mb-10">
-    <span className="inline-block mb-4 px-5 py-2 rounded-full bg-accent/10 text-accent text-sm font-semibold">
-      ვებ დეველოპმენტი
-    </span>
+          >
+            <div className="text-center mb-10">
+              <span className="inline-block mb-4 px-5 py-2 rounded-full bg-accent/10 text-accent text-sm font-semibold">
+                ვებ დეველოპმენტი
+              </span>
 
-    <h2 className="text-3xl md:text-5xl font-bold mb-6">
-      ვებსაიტის დამზადება  <br/>(საიტის შექმნა)
-    </h2>
+              <h2 className="text-3xl md:text-5xl font-bold mb-6">
+                ვებსაიტის დამზადება <br />
+                (საიტის შექმნა)
+              </h2>
 
-    <p className="max-w-3xl mx-auto text-white/70 text-base md:text-lg leading-8">
-      Next-Hub ქმნის თანამედროვე, სწრაფ და SEO-ზე მორგებულ ვებსაიტებს
-      ბიზნესებისთვის, რომლებიც ონლაინ სივრცეში სანდოობასა და შედეგზე
-      არის ორიენტირებული.
-    </p>
-  </div>
+              <p className="max-w-3xl mx-auto text-white/70 text-base md:text-lg leading-8">
+                Next-Hub ქმნის თანამედროვე, სწრაფ და SEO-ზე მორგებულ ვებსაიტებს
+                ბიზნესებისთვის, რომლებიც ონლაინ სივრცეში სანდოობასა და შედეგზე
+                არის ორიენტირებული.
+              </p>
+            </div>
 
-  <div className="grid md:grid-cols-3 gap-6 mb-10">
-    <div className="rounded-2xl bg-black/20 border border-white/10 p-6">
-      <h3 className="text-xl font-bold mb-3 text-accent">
-        ბიზნეს საიტები
-      </h3>
-      <p className="text-white/70 leading-7 text-sm">
-        ვამზადებთ კომპანიის პრეზენტაციულ ვებსაიტებს, რომლებიც სწორად
-        წარმოაჩენს ბრენდს, სერვისებსა და საკონტაქტო ინფორმაციას.
-      </p>
-    </div>
+            <div className="grid md:grid-cols-3 gap-6 mb-10">
+              <div className="rounded-2xl bg-black/20 border border-white/10 p-6">
+                <h3 className="text-xl font-bold mb-3 text-accent">
+                  ბიზნეს საიტები
+                </h3>
+                <p className="text-white/70 leading-7 text-sm">
+                  ვამზადებთ კომპანიის პრეზენტაციულ ვებსაიტებს, რომლებიც სწორად
+                  წარმოაჩენს ბრენდს, სერვისებსა და საკონტაქტო ინფორმაციას.
+                </p>
+              </div>
 
-    <div className="rounded-2xl bg-black/20 border border-white/10 p-6">
-      <h3 className="text-xl font-bold mb-3 text-accent">
-        ონლაინ მაღაზიები
-      </h3>
-      <p className="text-white/70 leading-7 text-sm">
-        ვქმნით ონლაინ მაღაზიებს პროდუქციის კატალოგით, შეკვეთებით,
-        გადახდებითა და მომხმარებლისთვის მარტივი მართვის სისტემით.
-      </p>
-    </div>
+              <div className="rounded-2xl bg-black/20 border border-white/10 p-6">
+                <h3 className="text-xl font-bold mb-3 text-accent">
+                  ონლაინ მაღაზიები
+                </h3>
+                <p className="text-white/70 leading-7 text-sm">
+                  ვქმნით ონლაინ მაღაზიებს პროდუქციის კატალოგით, შეკვეთებით,
+                  გადახდებითა და მომხმარებლისთვის მარტივი მართვის სისტემით.
+                </p>
+              </div>
 
-    <div className="rounded-2xl bg-black/20 border border-white/10 p-6">
-      <h3 className="text-xl font-bold mb-3 text-accent">
-        SEO ოპტიმიზაცია
-      </h3>
-      <p className="text-white/70 leading-7 text-sm">
-        ვებგვერდის სტრუქტურას ვაწყობთ ისე, რომ Google-მა სწორად წაიკითხოს
-        გვერდები, სერვისები და მნიშვნელოვანი საძიებო ფრაზები.
-      </p>
-    </div>
-  </div>
+              <div className="rounded-2xl bg-black/20 border border-white/10 p-6">
+                <h3 className="text-xl font-bold mb-3 text-accent">
+                  SEO ოპტიმიზაცია
+                </h3>
+                <p className="text-white/70 leading-7 text-sm">
+                  ვებგვერდის სტრუქტურას ვაწყობთ ისე, რომ Google-მა სწორად
+                  წაიკითხოს გვერდები, სერვისები და მნიშვნელოვანი საძიებო
+                  ფრაზები.
+                </p>
+              </div>
+            </div>
 
-  <div className="grid md:grid-cols-2 gap-8 items-center">
-    <div>
-      <h3 className="text-2xl font-bold mb-4">
-        რა შედის ვებსაიტის შექმნის სერვისში?
-      </h3>
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h3 className="text-2xl font-bold mb-4">
+                  რა შედის ვებსაიტის შექმნის სერვისში?
+                </h3>
 
-      <ul className="space-y-3 text-white/75 leading-7">
-        <li>• ინდივიდუალური დიზაინის დაგეგმვა</li>
-        <li>• მობილურ ვერსიაზე მორგებული ვებსაიტი</li>
-        <li>• WordPress ან Next.js ტექნოლოგიით აწყობა</li>
-        <li>• Google Analytics და Search Console ინტეგრაცია</li>
-        <li>• ტექნიკური მხარდაჭერა და საიტის განვითარება</li>
-      </ul>
-    </div>
+                <ul className="space-y-3 text-white/75 leading-7">
+                  <li>• ინდივიდუალური დიზაინის დაგეგმვა</li>
+                  <li>• მობილურ ვერსიაზე მორგებული ვებსაიტი</li>
+                  <li>• WordPress ან Next.js ტექნოლოგიით აწყობა</li>
+                  <li>• Google Analytics და Search Console ინტეგრაცია</li>
+                  <li>• ტექნიკური მხარდაჭერა და საიტის განვითარება</li>
+                </ul>
+              </div>
 
-    <div className="rounded-3xl bg-accent/10 border border-accent/30 p-8">
-      <h3 className="text-2xl font-bold mb-4 text-accent">
-        გჭირდებათ საიტის შექმნა?
-      </h3>
+              <div className="rounded-3xl bg-accent/10 border border-accent/30 p-8">
+                <h3 className="text-2xl font-bold mb-4 text-accent">
+                  გჭირდებათ საიტის შექმნა?
+                </h3>
 
-      <p className="text-white/75 leading-8 mb-6">
-        მოგვწერეთ ან დაგვირეკეთ და დაგეხმარებით სწორად შეარჩიოთ ვებსაიტის
-        ტიპი, ფუნქციონალი და ბიუჯეტი.
-      </p>
+                <p className="text-white/75 leading-8 mb-6">
+                  მოგვწერეთ ან დაგვირეკეთ და დაგეხმარებით სწორად შეარჩიოთ
+                  ვებსაიტის ტიპი, ფუნქციონალი და ბიუჯეტი.
+                </p>
 
-      <a
-        href="tel:+995555137003"
-        className="
+                <a
+                  href="tel:+995555137003"
+                  className="
           inline-flex
           items-center
           justify-center
@@ -335,12 +334,12 @@ const WebDevelopment = () => {
           transition-all
           shadow-lg
         "
-      >
-        დაგვიკავშირდით
-      </a>
-    </div>
-  </div>
-</motion.section>
+                >
+                  დაგვიკავშირდით
+                </a>
+              </div>
+            </div>
+          </motion.section>
           <motion.div
             variants={fadeIn("up", 0.1)}
             initial="hidden"

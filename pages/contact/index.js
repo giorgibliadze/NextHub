@@ -61,59 +61,56 @@ const Contact = () => {
 
   return (
     <>
-     <NextSeo
-  canonical="https://next-hub.pro/contact/"
-  title="კონტაქტი | Next-Hub Solutions"
-  description="დაუკავშირდით Next-Hub Solutions-ს ვებსაიტების შექმნის, SEO ოპტიმიზაციის, სოციალური მედიის მართვისა და ციფრული სერვისების შესახებ. ჩვენი გუნდი მზადაა დაგეხმაროთ."
+      <NextSeo
+        canonical="https://next-hub.pro/contact/"
+        title="კონტაქტი | Next-Hub Solutions"
+        description="დაუკავშირდით Next-Hub Solutions-ს ვებსაიტების შექმნის, SEO ოპტიმიზაციის, სოციალური მედიის მართვისა და ციფრული სერვისების შესახებ. ჩვენი გუნდი მზადაა დაგეხმაროთ."
+        openGraph={{
+          type: "website",
+          locale: "ka_GE",
+          url: "https://next-hub.pro/contact/",
+          site_name: "Next-Hub Solutions",
 
-  openGraph={{
-    type: "website",
-    locale: "ka_GE",
-    url: "https://next-hub.pro/contact/",
-    site_name: "Next-Hub Solutions",
+          title: "კონტაქტი | Next-Hub Solutions",
 
-    title: "კონტაქტი | Next-Hub Solutions",
+          description:
+            "დაუკავშირდით Next-Hub Solutions-ს ვებსაიტების შექმნის, SEO ოპტიმიზაციის, სოციალური მედიის მართვისა და ციფრული სერვისების შესახებ.",
 
-    description:
-      "დაუკავშირდით Next-Hub Solutions-ს ვებსაიტების შექმნის, SEO ოპტიმიზაციის, სოციალური მედიის მართვისა და ციფრული სერვისების შესახებ.",
-
-    images: [
-      {
-        url: "https://next-hub.pro/nexthub.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Next-Hub Solutions კონტაქტი",
-      },
-    ],
-  }}
-
-  twitter={{
-    cardType: "summary_large_image",
-  }}
-
-  additionalMetaTags={[
-    {
-      name: "author",
-      content: "Next-Hub Solutions",
-    },
-    {
-      name: "robots",
-      content: "index,follow,max-image-preview:large",
-    },
-  ]}
-/>
+          images: [
+            {
+              url: "https://next-hub.pro/nexthub.jpg",
+              width: 1200,
+              height: 630,
+              alt: "Next-Hub Solutions კონტაქტი",
+            },
+          ],
+        }}
+        twitter={{
+          cardType: "summary_large_image",
+        }}
+        additionalMetaTags={[
+          {
+            name: "author",
+            content: "Next-Hub Solutions",
+          },
+          {
+            name: "robots",
+            content: "index,follow,max-image-preview:large",
+          },
+        ]}
+      />
 
       {/* page */}
       <div className="h-screen bg-primary/30">
         <motion.div
-  variants={fadeIn("up", 0.4)}
-  initial="hidden"
-  animate="show"
-  exit="hidden"
-  className="flex flex-col items-center p-5 rounded-2xl mb-12 md:mb-20 mt-[80px]"
->
-  <MapComponent />
-</motion.div>
+          variants={fadeIn("up", 0.4)}
+          initial="hidden"
+          animate="show"
+          exit="hidden"
+          className="flex flex-col items-center p-5 rounded-2xl mb-12 md:mb-20 mt-[80px]"
+        >
+          <MapComponent />
+        </motion.div>
         <div className="container mx-auto py-24 text-center xl:text-left flex flex-col items-center justify-center h-full mt-[250px] lg:mt-0 lgx-mt-[40px]">
           <ModernSection />
           {/* text & form */}
@@ -203,21 +200,21 @@ const Contact = () => {
 export default Contact;
 
 <script
-type="application/ld+json"
-dangerouslySetInnerHTML={{
-__html: JSON.stringify({
-"@context":"https://schema.org",
-"@type":"LocalBusiness",
-"name":"Next-Hub Solutions",
-"url":"https://next-hub.pro",
-"telephone":"+995555137003",
-"email":"info@next-hub.pro",
-"address":{
-"@type":"PostalAddress",
-"streetAddress":"გაზაფხულის 6ა",
-"addressLocality":"თბილისი",
-"addressCountry":"GE"
-}
-})
-}}
-/>
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      name: "Next-Hub Solutions",
+      url: "https://next-hub.pro",
+      telephone: "+995555137003",
+      email: "info@next-hub.pro",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "გაზაფხულის 6ა",
+        addressLocality: "თბილისი",
+        addressCountry: "GE",
+      },
+    }),
+  }}
+/>;

@@ -1,7 +1,7 @@
 export default async function handler(req, res) {
   try {
     const credentials = Buffer.from(
-      `${process.env.NEXT_PUBLIC_CLIENT_ID}:${process.env.NEXT_PUBLIC_CLIENT_SECRET}`
+      `${process.env.NEXT_PUBLIC_CLIENT_ID}:${process.env.NEXT_PUBLIC_CLIENT_SECRET}`,
     ).toString("base64");
 
     const response = await fetch(
@@ -15,7 +15,7 @@ export default async function handler(req, res) {
         body: new URLSearchParams({
           grant_type: "client_credentials",
         }),
-      }
+      },
     );
 
     const data = await response.json();

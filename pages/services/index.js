@@ -14,50 +14,44 @@ const ServiceSlider = lazy(() => import("../../components/ServiceSlider"));
 const Services = () => {
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      
-      
-     <NextSeo
-  canonical="https://next-hub.pro/services/"
-  title="ჩვენი სერვისები | ვებსაიტები, SEO და მარკეტინგი | Next-Hub"
-  description="Next-Hub გთავაზობთ ვებსაიტების შექმნას, SEO ოპტიმიზაციას, სოციალური მედიის მართვას, ტექნიკურ მხარდაჭერასა და ბიზნესზე მორგებულ ციფრულ სერვისებს."
+      <NextSeo
+        canonical="https://next-hub.pro/services/"
+        title="ჩვენი სერვისები | ვებსაიტები, SEO და მარკეტინგი | Next-Hub"
+        description="Next-Hub გთავაზობთ ვებსაიტების შექმნას, SEO ოპტიმიზაციას, სოციალური მედიის მართვას, ტექნიკურ მხარდაჭერასა და ბიზნესზე მორგებულ ციფრულ სერვისებს."
+        openGraph={{
+          type: "website",
+          locale: "ka_GE",
+          url: "https://next-hub.pro/services/",
+          site_name: "Next-Hub Solutions",
 
-  openGraph={{
-    type: "website",
-    locale: "ka_GE",
-    url: "https://next-hub.pro/services/",
-    site_name: "Next-Hub Solutions",
+          title: "ჩვენი სერვისები | ვებსაიტები, SEO და მარკეტინგი | Next-Hub",
 
-    title:
-      "ჩვენი სერვისები | ვებსაიტები, SEO და მარკეტინგი | Next-Hub",
+          description:
+            "Next-Hub გთავაზობთ ვებსაიტების შექმნას, SEO ოპტიმიზაციას, სოციალური მედიის მართვას, ტექნიკურ მხარდაჭერასა და ბიზნესზე მორგებულ ციფრულ სერვისებს.",
 
-    description:
-      "Next-Hub გთავაზობთ ვებსაიტების შექმნას, SEO ოპტიმიზაციას, სოციალური მედიის მართვას, ტექნიკურ მხარდაჭერასა და ბიზნესზე მორგებულ ციფრულ სერვისებს.",
-
-    images: [
-      {
-        url: "https://next-hub.pro/nexthub.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Next-Hub Solutions სერვისები",
-      },
-    ],
-  }}
-
-  twitter={{
-    cardType: "summary_large_image",
-  }}
-
-  additionalMetaTags={[
-    {
-      name: "author",
-      content: "Next-Hub Solutions",
-    },
-    {
-      name: "robots",
-      content: "index,follow,max-image-preview:large",
-    },
-  ]}
-/>
+          images: [
+            {
+              url: "https://next-hub.pro/nexthub.jpg",
+              width: 1200,
+              height: 630,
+              alt: "Next-Hub Solutions სერვისები",
+            },
+          ],
+        }}
+        twitter={{
+          cardType: "summary_large_image",
+        }}
+        additionalMetaTags={[
+          {
+            name: "author",
+            content: "Next-Hub Solutions",
+          },
+          {
+            name: "robots",
+            content: "index,follow,max-image-preview:large",
+          },
+        ]}
+      />
 
       <div className="h-full lg:h-[700px] xxl:h-[950px] xll:h-[970px] bg-primary/30 py-36 flex p-[20px]">
         <Circles />

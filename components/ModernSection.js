@@ -79,7 +79,7 @@ const ModernContainer = () => {
             "container xxl:mx-auto flex items-center p-4 w-full min-w-[300px] xl:w-[450px] xxl:w-[450px] xll:w-[450px] xl:h-[167px] lg:h-[147px] md:h-[150px] xxl:h-[250px] xll:h-[250px] sm:w-[300px] h-[180px] smx:w-[250px] smx:h-[100px]  bg-white rounded-lg shadow-md cursor-pointer mb-5 transition duration-300 transform hover:scale-105 group",
             {
               [contact.hoverBgColor]: hoveredIndex === index,
-            }
+            },
           )}
           onMouseEnter={() => handleMouseEnter(index)}
           onMouseLeave={handleMouseLeave}
@@ -87,7 +87,7 @@ const ModernContainer = () => {
           <div
             className={classNames(
               "flex items-center justify-center rounded-full w-12 h-12 sm:w-16 sm:h-16 transition duration-300",
-              `${contact.bgColor} group-hover:bg-white group-hover:shadow-lg ${contact.shadowColor}`
+              `${contact.bgColor} group-hover:bg-white group-hover:shadow-lg ${contact.shadowColor}`,
             )}
           >
             {contact.icon}
@@ -105,7 +105,7 @@ const ModernContainer = () => {
                 {
                   [contact.textColor]: hoveredIndex !== index,
                   [contact.hoverInfoColor]: hoveredIndex === index,
-                }
+                },
               )}
             >
               {contact.info}

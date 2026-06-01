@@ -114,42 +114,42 @@ const Analytics = () => {
 
   return (
     <>
-      
       <NextSeo
-  canonical="https://next-hub.pro/services/analytics/"
-  title="ვებ ანალიტიკა | Google Analytics და მონაცემთა ანალიზი | Next-Hub"
-  description="Next-Hub გთავაზობთ Google Analytics 4-ის, Google Search Console-ის და მონაცემთა ანალიზის სერვისებს. მიიღეთ სწორი ინფორმაცია მომხმარებლების ქცევისა და ბიზნესის ზრდისთვის."
-  openGraph={{
-    type: "website",
-    locale: "ka_GE",
-    url: "https://next-hub.pro/services/analytics/",
-    site_name: "Next-Hub Solutions",
-    title: "ვებ ანალიტიკა | Google Analytics და მონაცემთა ანალიზი | Next-Hub",
-    description:
-      "Next-Hub გთავაზობთ Google Analytics 4-ის, Google Search Console-ის და მონაცემთა ანალიზის სერვისებს. მიიღეთ სწორი ინფორმაცია მომხმარებლების ქცევისა და ბიზნესის ზრდისთვის.",
-    images: [
-      {
-        url: "https://next-hub.pro/nexthub.jpg",
-        width: 1200,
-        height: 630,
-        alt: "ვებ ანალიტიკა და მონაცემთა ანალიზი Next-Hub Solutions",
-      },
-    ],
-  }}
-  twitter={{
-    cardType: "summary_large_image",
-  }}
-  additionalMetaTags={[
-    {
-      name: "author",
-      content: "Next-Hub Solutions",
-    },
-    {
-      name: "robots",
-      content: "index,follow,max-image-preview:large",
-    },
-  ]}
-/>
+        canonical="https://next-hub.pro/services/analytics/"
+        title="ვებ ანალიტიკა | Google Analytics და მონაცემთა ანალიზი | Next-Hub"
+        description="Next-Hub გთავაზობთ Google Analytics 4-ის, Google Search Console-ის და მონაცემთა ანალიზის სერვისებს. მიიღეთ სწორი ინფორმაცია მომხმარებლების ქცევისა და ბიზნესის ზრდისთვის."
+        openGraph={{
+          type: "website",
+          locale: "ka_GE",
+          url: "https://next-hub.pro/services/analytics/",
+          site_name: "Next-Hub Solutions",
+          title:
+            "ვებ ანალიტიკა | Google Analytics და მონაცემთა ანალიზი | Next-Hub",
+          description:
+            "Next-Hub გთავაზობთ Google Analytics 4-ის, Google Search Console-ის და მონაცემთა ანალიზის სერვისებს. მიიღეთ სწორი ინფორმაცია მომხმარებლების ქცევისა და ბიზნესის ზრდისთვის.",
+          images: [
+            {
+              url: "https://next-hub.pro/nexthub.jpg",
+              width: 1200,
+              height: 630,
+              alt: "ვებ ანალიტიკა და მონაცემთა ანალიზი Next-Hub Solutions",
+            },
+          ],
+        }}
+        twitter={{
+          cardType: "summary_large_image",
+        }}
+        additionalMetaTags={[
+          {
+            name: "author",
+            content: "Next-Hub Solutions",
+          },
+          {
+            name: "robots",
+            content: "index,follow,max-image-preview:large",
+          },
+        ]}
+      />
 
       {isModalOpen && (
         <Modal

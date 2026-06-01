@@ -12,27 +12,132 @@ const workSlides = {
   slides: [
     {
       images: [
-        { title: "Nailauri", path: "/nailauri.png", link: "https://nailauri.com", status: "დასრულებული" },
-        { title: "IndianExpress", path: "/indian.png", link: "https://indianexpress.ge", status: "დასრულებული" },
-        { title: "TenaHandmade", path: "/TenaHandmade.png", link: "https://tenahandmade.com", status: "დასრულებული" },
-        { title: "Carway", path: "/carwayimport.png", link: "https://carwayimport.com/", status: "დასრულებული" },
-        { title: "Ecplus", path: "/ecplus.png", link: "https://ecplus.ge/", status: "დასრულებული" },
-        { title: "Saojaxo", path: "/saojaxo.png", link: "https://saojaxo.ge/", status: "დასრულებული" },
-        { title: "Avrent", path: "/avrent.png", link: "https://avrent.ge/", status: "დასრულებული" },
-        { title: "TaboGroup", path: "/tabo.png", link: "https://tabogroup.ge/", status: "დასრულებული" },
-        { title: "Printerman", path: "/printerman.png", link: "https://printerman.ge/", status: "დასრულებული" },
-        { title: "JewelryTools", path: "/Jewelrytools.png", link: "https://jewelrytools.ge/", status: "დასრულებული" },
-        { title: "NbFurniture", path: "/NbFurniture.png", link: "https://nbfurniture.ge/", status: "დასრულებული" },
-        { title: "Ninos-ia", path: "/ninos-ia.png", link: "https://ninosia.pro/shop/", status: "დასრულებული" },
-        { title: "Core", path: "/core.png", link: "https://core.org.ge/", status: "დასრულებული" },
-        { title: "Teba", path: "/Teba.png", link: "https://teba.ge/", status: "დასრულებული" },
-        { title: "Bigloans", path: "/Bigloans.png", link: "https://bigloans.ge", status: "დასრულებული" },
-        { title: "WearHouse", path: "/WearHouse.png", link: "https://wearhouse.ge", status: "დასრულებული" },
-        { title: "PaLocksmith", path: "/PaLocksmith.png", link: "https://palocksmithservice.com/", status: "დასრულებული" },
-        { title: "WakeUp", path: "/WakeUp.png", link: "https://wakeup.ge", status: "მიმდინარე" },
-        { title: "EchelonEngineering", path: "/EchelonEngineering.png", link: "https://echelonengineering.ge", status: "მიმდინარე" },
-        { title: "GeoArtConstruction", path: "/GeoArtConstruction.png", link: "https://geoartconstruction.ge", status: "მიმდინარე" },
-        { title: "katta", path: "/Katta.png", link: "https://katta.ge", status: "მიმდინარე" },
+        {
+          title: "Nailauri",
+          path: "/nailauri.png",
+          link: "https://nailauri.com",
+          status: "დასრულებული",
+        },
+        {
+          title: "IndianExpress",
+          path: "/indian.png",
+          link: "https://indianexpress.ge",
+          status: "დასრულებული",
+        },
+        {
+          title: "TenaHandmade",
+          path: "/TenaHandmade.png",
+          link: "https://tenahandmade.com",
+          status: "დასრულებული",
+        },
+        {
+          title: "Carway",
+          path: "/carwayimport.png",
+          link: "https://carwayimport.com/",
+          status: "დასრულებული",
+        },
+        {
+          title: "Ecplus",
+          path: "/ecplus.png",
+          link: "https://ecplus.ge/",
+          status: "დასრულებული",
+        },
+        {
+          title: "Saojaxo",
+          path: "/saojaxo.png",
+          link: "https://saojaxo.ge/",
+          status: "დასრულებული",
+        },
+        {
+          title: "Avrent",
+          path: "/avrent.png",
+          link: "https://avrent.ge/",
+          status: "დასრულებული",
+        },
+        {
+          title: "TaboGroup",
+          path: "/tabo.png",
+          link: "https://tabogroup.ge/",
+          status: "დასრულებული",
+        },
+        {
+          title: "Printerman",
+          path: "/printerman.png",
+          link: "https://printerman.ge/",
+          status: "დასრულებული",
+        },
+        {
+          title: "JewelryTools",
+          path: "/Jewelrytools.png",
+          link: "https://jewelrytools.ge/",
+          status: "დასრულებული",
+        },
+        {
+          title: "NbFurniture",
+          path: "/NbFurniture.png",
+          link: "https://nbfurniture.ge/",
+          status: "დასრულებული",
+        },
+        {
+          title: "Ninos-ia",
+          path: "/ninos-ia.png",
+          link: "https://ninosia.pro/shop/",
+          status: "დასრულებული",
+        },
+        {
+          title: "Core",
+          path: "/core.png",
+          link: "https://core.org.ge/",
+          status: "დასრულებული",
+        },
+        {
+          title: "Teba",
+          path: "/Teba.png",
+          link: "https://teba.ge/",
+          status: "დასრულებული",
+        },
+        {
+          title: "Bigloans",
+          path: "/Bigloans.png",
+          link: "https://bigloans.ge",
+          status: "დასრულებული",
+        },
+        {
+          title: "WearHouse",
+          path: "/WearHouse.png",
+          link: "https://wearhouse.ge",
+          status: "დასრულებული",
+        },
+        {
+          title: "PaLocksmith",
+          path: "/PaLocksmith.png",
+          link: "https://palocksmithservice.com/",
+          status: "დასრულებული",
+        },
+        {
+          title: "WakeUp",
+          path: "/WakeUp.png",
+          link: "https://wakeup.ge",
+          status: "მიმდინარე",
+        },
+        {
+          title: "EchelonEngineering",
+          path: "/EchelonEngineering.png",
+          link: "https://echelonengineering.ge",
+          status: "მიმდინარე",
+        },
+        {
+          title: "GeoArtConstruction",
+          path: "/GeoArtConstruction.png",
+          link: "https://geoartconstruction.ge",
+          status: "მიმდინარე",
+        },
+        {
+          title: "katta",
+          path: "/Katta.png",
+          link: "https://katta.ge",
+          status: "მიმდინარე",
+        },
       ],
     },
   ],
@@ -50,7 +155,12 @@ export default function WorkSlider() {
         <SwiperSlide key={i}>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 md:max-w-[900px] gap-4 cursor-pointer p-4 smx:mb-[150px] lg:mr-[50px]">
             {slide.images.map((image, idx) => (
-              <Link href={image.link} key={idx} target="_blank" rel="noopener noreferrer">
+              <Link
+                href={image.link}
+                key={idx}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <div className="relative rounded-lg overflow-hidden flex items-center justify-center group p-4 bg-white shadow-lg w-full">
                   <div className="relative w-full rounded-lg min-w-[250px]">
                     {/* 16:9 box for the logo/image */}

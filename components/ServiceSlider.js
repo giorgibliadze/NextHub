@@ -32,7 +32,7 @@ const serviceData = [
     title: "ვებსაიტის დამზადება",
     description:
       "დაგიმზადებთ თანამედროვე და მომხმარებლისთვის მოსახერხებელ ვებ-გვერდებს, რომელიც თავსებადია ყველა მოწყობილობასთან.",
-    link: "/services/web_development",
+    link: "/webdevelopment",
   },
   {
     icon: <SiGooglemarketingplatform />,

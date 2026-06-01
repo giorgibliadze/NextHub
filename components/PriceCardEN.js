@@ -1,7 +1,7 @@
 // pages/en/services/PriceCardEN.jsx
 import React from "react";
 import { motion } from "framer-motion";
-import Button from "../components/Button";  // adjust path if needed
+import Button from "../components/Button"; // adjust path if needed
 import CountUp from "react-countup";
 
 const PriceCardEN = ({ title, price, features, onButtonClick }) => {

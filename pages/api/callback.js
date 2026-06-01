@@ -36,7 +36,7 @@ export default async function handler(req, res) {
   try {
     // Parse the raw body
     const rawBody = await getRawBody(req);
-    
+
     // Verify the signature
     const verify = crypto.createVerify("RSA-SHA256");
     verify.update(rawBody);

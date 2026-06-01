@@ -57,30 +57,29 @@ const Home = () => {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ProfessionalService",
-            "name": "Next-Hub Solutions",
-            "image": "https://next-hub.pro/nexthub.png",
+            name: "Next-Hub Solutions",
+            image: "https://next-hub.pro/nexthub.png",
             "@id": "https://next-hub.pro/#organization",
-            "url": "https://next-hub.pro/",
-            "telephone": "+995555137003",
-            "email": "info@next-hub.pro",
-            "address": {
+            url: "https://next-hub.pro/",
+            telephone: "+995555137003",
+            email: "info@next-hub.pro",
+            address: {
               "@type": "PostalAddress",
-              "streetAddress": "Tbilisi",
-              "addressLocality": "Tbilisi",
-              "addressCountry": "GE"
+              addressLocality: "Tbilisi",
+              addressCountry: "GE",
             },
-            "openingHoursSpecification": {
+            openingHoursSpecification: {
               "@type": "OpeningHoursSpecification",
-              "dayOfWeek": [
+              dayOfWeek: [
                 "Monday",
                 "Tuesday",
                 "Wednesday",
                 "Thursday",
-                "Friday"
+                "Friday",
               ],
-              "opens": "09:00",
-              "closes": "19:00"
-            }
+              opens: "09:00",
+              closes: "19:00",
+            },
           }),
         }}
       />
@@ -88,14 +87,13 @@ const Home = () => {
       <div className="bg-primary/60 h-screen w-full smx:h-[640px] sm:h-[600px] lg:h-[847px] xxl:h-[990px] xll:h-[885px]">
         <div className="w-full h-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10">
           <div className="text-center flex flex-col justify-center xl:text-left h-full container mx-auto">
-
             {/* title */}
             <motion.h1
-  variants={fadeIn("down", 0.2)}
-  initial="hidden"
-  animate="show"
-  exit="hidden"
-  className="
+              variants={fadeIn("down", 0.2)}
+              initial="hidden"
+              animate="show"
+              exit="hidden"
+              className="
 mt-[60px]
 sm:mt-[80px]
 xl:mt-[100px]
@@ -105,23 +103,20 @@ sm:text-[44px]
 xl:text-[64px]
 font-bold
 "
->
-  ვებსაიტის დამზადება <span>.</span>
-
-  <br />
-
-  <motion.span
-    variants={fadeIn("down", 0.2)}
-    initial="hidden"
-    animate="show"
-    exit="hidden"
-    className="text-accent"
-  >
-    <RotatingWords words={words} />
-  </motion.span>
-
-  ბიზნესისთვის
-</motion.h1>
+            >
+              ვებსაიტის დამზადება <span>.</span>
+              <br />
+              <motion.span
+                variants={fadeIn("down", 0.2)}
+                initial="hidden"
+                animate="show"
+                exit="hidden"
+                className="text-accent"
+              >
+                <RotatingWords words={words} />
+              </motion.span>
+              ბიზნესისთვის
+            </motion.h1>
 
             {/* subtitle */}
             <motion.p
@@ -141,23 +136,23 @@ font-bold
               xl:mb-16
               "
             >
-              Next-Hub გთავაზობთ თანამედროვე ვებსაიტების, ონლაინ
-              მაღაზიებისა და ვებ აპლიკაციების შექმნას. ვამზადებთ სწრაფ,
-              SEO-ზე მორგებულ და ბიზნესის მიზნებზე შექმნილ საიტებს.
+              Next-Hub გთავაზობთ თანამედროვე ვებსაიტების, ონლაინ მაღაზიებისა და
+              ვებ აპლიკაციების შექმნას. ვამზადებთ სწრაფ, SEO-ზე მორგებულ და
+              ბიზნესის მიზნებზე შექმნილ საიტებს.
             </motion.p>
 
             {/* mobile button */}
             {/* contact button */}
-<motion.div
-  variants={fadeIn("down", 0.4)}
-  initial="hidden"
-  animate="show"
-  exit="hidden"
-  className="flex justify-center xl:justify-start relative z-50"
->
-  <a
-    href="tel:+995555137003"
-    className="
+            <motion.div
+              variants={fadeIn("down", 0.4)}
+              initial="hidden"
+              animate="show"
+              exit="hidden"
+              className="flex justify-center xl:justify-start relative z-50"
+            >
+              <a
+                href="tel:+995555137003"
+                className="
       px-8
       py-4
       rounded-full
@@ -171,11 +166,10 @@ font-bold
       shadow-lg
       whitespace-nowrap
     "
-  >
-    დაგვიკავშირდით
-  </a>
-</motion.div>
-
+              >
+                დაგვიკავშირდით
+              </a>
+            </motion.div>
           </div>
 
           <div className="w-full h-full absolute right-0 bottom-0">

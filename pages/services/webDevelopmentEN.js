@@ -1,14 +1,14 @@
 // pages/en/services/web-development.jsx  (or app/en/services/web-development/page.jsx)
-'use client';
+"use client";
 
-import React, { useState, useEffect } from 'react';
-import PriceCardEN from '../../components/PriceCardEN';
-import ImageGallery from '../../components/ImageGallery';
-import ModalEN from '../../components/ModalEN';
-import TechnologyIcons from '../../components/TechnologyIcons';
-import { motion } from 'framer-motion';
-import { fadeIn } from '../../variants';
-import { NextSeo } from 'next-seo';
+import React, { useState, useEffect } from "react";
+import PriceCardEN from "../../components/PriceCardEN";
+import ImageGallery from "../../components/ImageGallery";
+import ModalEN from "../../components/ModalEN";
+import TechnologyIcons from "../../components/TechnologyIcons";
+import { motion } from "framer-motion";
+import { fadeIn } from "../../variants";
+import { NextSeo } from "next-seo";
 
 const WebDevelopmentEN = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -20,140 +20,143 @@ const WebDevelopmentEN = () => {
   };
 
   useEffect(() => {
-    if (isModalOpen) document.body.classList.add('modal-open');
-    else document.body.classList.remove('modal-open');
+    if (isModalOpen) document.body.classList.add("modal-open");
+    else document.body.classList.remove("modal-open");
   }, [isModalOpen]);
 
   // Use your existing images, just update alts
   const images = [
-    { src: '/well-structured-3.webp', alt: 'Well-structured web development process' },
-    { src: '/technology.webp', alt: 'Technologies: WordPress, React, Next.js' },
+    {
+      src: "/well-structured-3.webp",
+      alt: "Well-structured web development process",
+    },
+    { src: "/technology.webp", alt: "Technologies: WordPress, React, Next.js" },
   ];
 
   // EN pricing plans (mirrors your Georgian tiers)
   const priceCardsData = [
     {
-      title: 'Standard',
+      title: "Standard",
       price: 500,
       product_id: 1,
       features: [
-        '1 page',
-        'Responsive (mobile-friendly)',
-        'Analytics access',
-        'Social media integration',
-        'Image slideshow',
-        'About page',
-        'News / Blog section',
-        'Services section',
-        'Partner logos',
-        'Photo gallery',
-        'Live chat',
-        'Contact page',
-        '1 month support',
+        "1 page",
+        "Responsive (mobile-friendly)",
+        "Analytics access",
+        "Social media integration",
+        "Image slideshow",
+        "About page",
+        "News / Blog section",
+        "Services section",
+        "Partner logos",
+        "Photo gallery",
+        "Live chat",
+        "Contact page",
+        "1 month support",
       ],
       onButtonClick: () =>
         handlePurchaseClick({
-          title: 'Standard',
+          title: "Standard",
           price: 500,
           product_id: 1,
           features: [
-            '1 page',
-            'Responsive (mobile-friendly)',
-            'Analytics access',
-            'Social media integration',
-            'Image slideshow',
-            'About page',
-            'News / Blog section',
-            'Services section',
-            'Partner logos',
-            'Photo gallery',
-            'Live chat',
-            'Contact page',
-            '1 month support',
+            "1 page",
+            "Responsive (mobile-friendly)",
+            "Analytics access",
+            "Social media integration",
+            "Image slideshow",
+            "About page",
+            "News / Blog section",
+            "Services section",
+            "Partner logos",
+            "Photo gallery",
+            "Live chat",
+            "Contact page",
+            "1 month support",
           ],
         }),
     },
     {
-      title: 'Premium',
+      title: "Premium",
       price: 1300,
       product_id: 2,
       features: [
-        'Everything in Standard',
-        'Up to 5 pages',
-        'Simple admin panel (CMS)',
-        'Home page',
-        'Locations/Branches page',
-        'Ongoing & completed projects',
-        'Video gallery',
-        'Visitor analytics',
-        'Popular posts',
-        'Online payments (Visa/Mastercard/Amex)',
-        'Product search',
-        'Clients module',
-        '3 months support',
+        "Everything in Standard",
+        "Up to 5 pages",
+        "Simple admin panel (CMS)",
+        "Home page",
+        "Locations/Branches page",
+        "Ongoing & completed projects",
+        "Video gallery",
+        "Visitor analytics",
+        "Popular posts",
+        "Online payments (Visa/Mastercard/Amex)",
+        "Product search",
+        "Clients module",
+        "3 months support",
       ],
       onButtonClick: () =>
         handlePurchaseClick({
-          title: 'Premium',
+          title: "Premium",
           price: 1300,
           product_id: 2,
           features: [
-            'Everything in Standard',
-            'Up to 5 pages',
-            'Simple admin panel (CMS)',
-            'Home page',
-            'Locations/Branches page',
-            'Ongoing & completed projects',
-            'Video gallery',
-            'Visitor analytics',
-            'Popular posts',
-            'Online payments (Visa/Mastercard/Amex)',
-            'Product search',
-            'Clients module',
-            '3 months support',
+            "Everything in Standard",
+            "Up to 5 pages",
+            "Simple admin panel (CMS)",
+            "Home page",
+            "Locations/Branches page",
+            "Ongoing & completed projects",
+            "Video gallery",
+            "Visitor analytics",
+            "Popular posts",
+            "Online payments (Visa/Mastercard/Amex)",
+            "Product search",
+            "Clients module",
+            "3 months support",
           ],
         }),
     },
     {
-      title: 'Business',
+      title: "Business",
       price: 3000,
       product_id: 3,
       features: [
-        'Everything in Premium',
-        'Top products',
-        'Product sorting & filtering',
-        'Wishlist',
-        'Add to cart',
-        'Checkout',
-        'Registration (individual & company)',
-        'Login with Facebook',
-        'Login with Google',
-        'Installment payments',
-        'Sales analytics',
-        'Delivery/shipping module',
-        'B2B & B2C modules',
-        '6 months support',
+        "Everything in Premium",
+        "Top products",
+        "Product sorting & filtering",
+        "Wishlist",
+        "Add to cart",
+        "Checkout",
+        "Registration (individual & company)",
+        "Login with Facebook",
+        "Login with Google",
+        "Installment payments",
+        "Sales analytics",
+        "Delivery/shipping module",
+        "B2B & B2C modules",
+        "6 months support",
       ],
       onButtonClick: () =>
         handlePurchaseClick({
-          title: 'Business',
+          title: "Business",
           price: 3000,
           product_id: 3,
           features: [
-            'Everything in Premium',
-            'Top products',
-            'Product sorting & filtering',
-            'Wishlist',
-            'Add to cart',
-            'Checkout',
-            'Registration (individual & company)',
-            'Login with Facebook',
-            'Login with Google',
-            'Installment payments',
-            'Sales analytics',
-            'Delivery/shipping module',
-            'B2B & B2C modules',
-            '6 months support',
+            "Everything in Premium",
+            "Top products",
+            "Product sorting & filtering",
+            "Wishlist",
+            "Add to cart",
+            "Checkout",
+            "Registration (individual & company)",
+            "Login with Facebook",
+            "Login with Google",
+            "Installment payments",
+            "Sales analytics",
+            "Delivery/shipping module",
+            "B2B & B2C modules",
+            "6 months support",
           ],
         }),
     },
@@ -161,41 +164,42 @@ const WebDevelopmentEN = () => {
 
   return (
     <>
-    <NextSeo
-  canonical="https://next-hub.pro/en/services/web-development/"
-  title="Web Development Services | WordPress, React & Next.js | Next-Hub"
-  description="Next-Hub builds fast, SEO-friendly websites, WordPress platforms, React and Next.js applications, e-commerce stores, analytics setup and ongoing technical support."
-  openGraph={{
-    type: "website",
-    locale: "en_US",
-    url: "https://next-hub.pro/en/services/web-development/",
-    site_name: "Next-Hub Solutions",
-    title: "Web Development Services | WordPress, React & Next.js | Next-Hub",
-    description:
-      "Next-Hub builds fast, SEO-friendly websites, WordPress platforms, React and Next.js applications, e-commerce stores, analytics setup and ongoing technical support.",
-    images: [
-      {
-        url: "https://next-hub.pro/web.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Web development services by Next-Hub Solutions",
-      },
-    ],
-  }}
-  twitter={{
-    cardType: "summary_large_image",
-  }}
-  additionalMetaTags={[
-    {
-      name: "author",
-      content: "Next-Hub Solutions",
-    },
-    {
-      name: "robots",
-      content: "index,follow,max-image-preview:large",
-    },
-  ]}
-/>
+      <NextSeo
+        canonical="https://next-hub.pro/en/services/web-development/"
+        title="Web Development Services | WordPress, React & Next.js | Next-Hub"
+        description="Next-Hub builds fast, SEO-friendly websites, WordPress platforms, React and Next.js applications, e-commerce stores, analytics setup and ongoing technical support."
+        openGraph={{
+          type: "website",
+          locale: "en_US",
+          url: "https://next-hub.pro/en/services/web-development/",
+          site_name: "Next-Hub Solutions",
+          title:
+            "Web Development Services | WordPress, React & Next.js | Next-Hub",
+          description:
+            "Next-Hub builds fast, SEO-friendly websites, WordPress platforms, React and Next.js applications, e-commerce stores, analytics setup and ongoing technical support.",
+          images: [
+            {
+              url: "https://next-hub.pro/web.jpg",
+              width: 1200,
+              height: 630,
+              alt: "Web development services by Next-Hub Solutions",
+            },
+          ],
+        }}
+        twitter={{
+          cardType: "summary_large_image",
+        }}
+        additionalMetaTags={[
+          {
+            name: "author",
+            content: "Next-Hub Solutions",
+          },
+          {
+            name: "robots",
+            content: "index,follow,max-image-preview:large",
+          },
+        ]}
+      />
 
       {isModalOpen ? (
         <ModalEN
@@ -206,7 +210,7 @@ const WebDevelopmentEN = () => {
       ) : (
         <div className="flex min-h-screen flex-col items-center justify-center px-4 md:px-8 xl:px-10 py-24 smx:text-center overflow-x-hidden">
           <motion.h1
-            variants={fadeIn('up', 0.1)}
+            variants={fadeIn("up", 0.1)}
             initial="hidden"
             animate="show"
             exit="hidden"
@@ -217,18 +221,19 @@ const WebDevelopmentEN = () => {
           </motion.h1>
 
           <motion.p
-            variants={fadeIn('up', 0.15)}
+            variants={fadeIn("up", 0.15)}
             initial="hidden"
             animate="show"
             exit="hidden"
             className="mt-4 max-w-3xl text-center text-base md:text-lg text-white/80"
           >
             Launch faster with modern, SEO-friendly websites and apps. We handle
-            UX/UI, performance, payments, and integrations — then support you after launch.
+            UX/UI, performance, payments, and integrations — then support you
+            after launch.
           </motion.p>
 
           <motion.div
-            variants={fadeIn('up', 0.2)}
+            variants={fadeIn("up", 0.2)}
             initial="hidden"
             animate="show"
             exit="hidden"
@@ -238,7 +243,7 @@ const WebDevelopmentEN = () => {
           </motion.div>
 
           <motion.div
-            variants={fadeIn('up', 0.25)}
+            variants={fadeIn("up", 0.25)}
             initial="hidden"
             animate="show"
             exit="hidden"
@@ -248,7 +253,7 @@ const WebDevelopmentEN = () => {
           </motion.div>
 
           <motion.div
-            variants={fadeIn('up', 0.3)}
+            variants={fadeIn("up", 0.3)}
             initial="hidden"
             animate="show"
             exit="hidden"
@@ -265,4 +270,3 @@ const WebDevelopmentEN = () => {
 };
 
 export default WebDevelopmentEN;
-

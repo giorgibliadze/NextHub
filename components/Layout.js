@@ -22,8 +22,6 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://next-hub.pro";
 export default function Layout({ children }) {
   return (
     <>
-  
-
       <Head>
         {/* Favicons */}
         <link rel="icon" href="/favicon.jpg" sizes="any" />
@@ -54,7 +52,9 @@ export default function Layout({ children }) {
 
       {/* GTM (safe to keep with GA, or use GTM only) */}
       {process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID && (
-        <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID} />
+        <GoogleTagManager
+          gtmId={process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID}
+        />
       )}
 
       {/* Organization JSON-LD (uses non-www SITE_URL) */}
@@ -99,7 +99,9 @@ export default function Layout({ children }) {
       )}
 
       {/* Page wrapper */}
-      <div className={`page bg-site text-white bg-cover bg-no-repeat ${sora.variable} font-sora relative overflow-y-auto`}>
+      <div
+        className={`page bg-site text-white bg-cover bg-no-repeat ${sora.variable} font-sora relative overflow-y-auto`}
+      >
         <Analytics />
         <SpeedInsights />
         <TopLeftImg />

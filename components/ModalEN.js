@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useState, useRef, useEffect } from "react";
 import { BsArrowRight } from "react-icons/bs";
@@ -94,7 +94,7 @@ const ModalEN = ({ isOpen, onClose, cardData }) => {
   const getAuthToken = async () => {
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/getAuthToken`
+        `${process.env.NEXT_PUBLIC_API_URL}/api/getAuthToken`,
       );
       const data = await response.json();
       return data.access_token;

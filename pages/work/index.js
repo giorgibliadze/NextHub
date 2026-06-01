@@ -13,42 +13,41 @@ import Script from "next/script";
 const Work = () => {
   return (
     <>
-    
-     <NextSeo
-  canonical="https://next-hub.pro/work/"
-  title="ჩვენი ნამუშევრები | ვებსაიტების პორტფოლიო | Next-Hub"
-  description="ნახეთ Next-Hub Solutions-ის შესრულებული ვებსაიტები, Next.js აპლიკაციები, WordPress პროექტები, ონლაინ მაღაზიები და ბიზნესზე მორგებული ციფრული გადაწყვეტილებები."
-  openGraph={{
-    type: "website",
-    locale: "ka_GE",
-    url: "https://next-hub.pro/work/",
-    site_name: "Next-Hub Solutions",
-    title: "ჩვენი ნამუშევრები | ვებსაიტების პორტფოლიო | Next-Hub",
-    description:
-      "ნახეთ Next-Hub Solutions-ის შესრულებული ვებსაიტები, Next.js აპლიკაციები, WordPress პროექტები, ონლაინ მაღაზიები და ბიზნესზე მორგებული ციფრული გადაწყვეტილებები.",
-    images: [
-      {
-        url: "https://next-hub.pro/nexthub.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Next-Hub Solutions პორტფოლიო",
-      },
-    ],
-  }}
-  twitter={{
-    cardType: "summary_large_image",
-  }}
-  additionalMetaTags={[
-    {
-      name: "author",
-      content: "Next-Hub Solutions",
-    },
-    {
-      name: "robots",
-      content: "index,follow,max-image-preview:large",
-    },
-  ]}
-/>
+      <NextSeo
+        canonical="https://next-hub.pro/work/"
+        title="ჩვენი ნამუშევრები | ვებსაიტების პორტფოლიო | Next-Hub"
+        description="ნახეთ Next-Hub Solutions-ის შესრულებული ვებსაიტები, Next.js აპლიკაციები, WordPress პროექტები, ონლაინ მაღაზიები და ბიზნესზე მორგებული ციფრული გადაწყვეტილებები."
+        openGraph={{
+          type: "website",
+          locale: "ka_GE",
+          url: "https://next-hub.pro/work/",
+          site_name: "Next-Hub Solutions",
+          title: "ჩვენი ნამუშევრები | ვებსაიტების პორტფოლიო | Next-Hub",
+          description:
+            "ნახეთ Next-Hub Solutions-ის შესრულებული ვებსაიტები, Next.js აპლიკაციები, WordPress პროექტები, ონლაინ მაღაზიები და ბიზნესზე მორგებული ციფრული გადაწყვეტილებები.",
+          images: [
+            {
+              url: "https://next-hub.pro/nexthub.jpg",
+              width: 1200,
+              height: 630,
+              alt: "Next-Hub Solutions პორტფოლიო",
+            },
+          ],
+        }}
+        twitter={{
+          cardType: "summary_large_image",
+        }}
+        additionalMetaTags={[
+          {
+            name: "author",
+            content: "Next-Hub Solutions",
+          },
+          {
+            name: "robots",
+            content: "index,follow,max-image-preview:large",
+          },
+        ]}
+      />
       <div className="h-full bg-primary/30">
         <Circles />
         <div className="container mx-auto mb-4">

@@ -1,4 +1,3 @@
-
 import { GoogleTagManager } from "@next/third-parties/google";
 // components
 import TeamMember from "../../components/TeamMember";
@@ -11,41 +10,41 @@ import { fadeIn } from "../../variants";
 const About = () => {
   return (
     <>
- <NextSeo
-  canonical="https://next-hub.pro/about/"
-  title="ჩვენ შესახებ | Next-Hub Solutions"
-  description="Next-Hub Solutions ეხმარება ბიზნესებს ვებსაიტების შექმნაში, SEO ოპტიმიზაციაში, სოციალური მედიის მართვაში, ანალიტიკასა და ციფრული განვითარებისთვის საჭირო ტექნიკურ მხარდაჭერაში."
-  openGraph={{
-    type: "website",
-    locale: "ka_GE",
-    url: "https://next-hub.pro/about/",
-    site_name: "Next-Hub Solutions",
-    title: "ჩვენ შესახებ | Next-Hub Solutions",
-    description:
-      "Next-Hub Solutions ეხმარება ბიზნესებს ვებსაიტების შექმნაში, SEO ოპტიმიზაციაში, სოციალური მედიის მართვაში, ანალიტიკასა და ციფრულ განვითარებაში.",
-    images: [
-      {
-        url: "https://next-hub.pro/nexthub.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Next-Hub Solutions ჩვენ შესახებ",
-      },
-    ],
-  }}
-  twitter={{
-    cardType: "summary_large_image",
-  }}
-  additionalMetaTags={[
-    {
-      name: "author",
-      content: "Next-Hub Solutions",
-    },
-    {
-      name: "robots",
-      content: "index,follow,max-image-preview:large",
-    },
-  ]}
-/>
+      <NextSeo
+        canonical="https://next-hub.pro/about/"
+        title="ჩვენ შესახებ | Next-Hub Solutions"
+        description="Next-Hub Solutions ეხმარება ბიზნესებს ვებსაიტების შექმნაში, SEO ოპტიმიზაციაში, სოციალური მედიის მართვაში, ანალიტიკასა და ციფრული განვითარებისთვის საჭირო ტექნიკურ მხარდაჭერაში."
+        openGraph={{
+          type: "website",
+          locale: "ka_GE",
+          url: "https://next-hub.pro/about/",
+          site_name: "Next-Hub Solutions",
+          title: "ჩვენ შესახებ | Next-Hub Solutions",
+          description:
+            "Next-Hub Solutions ეხმარება ბიზნესებს ვებსაიტების შექმნაში, SEO ოპტიმიზაციაში, სოციალური მედიის მართვაში, ანალიტიკასა და ციფრულ განვითარებაში.",
+          images: [
+            {
+              url: "https://next-hub.pro/nexthub.jpg",
+              width: 1200,
+              height: 630,
+              alt: "Next-Hub Solutions ჩვენ შესახებ",
+            },
+          ],
+        }}
+        twitter={{
+          cardType: "summary_large_image",
+        }}
+        additionalMetaTags={[
+          {
+            name: "author",
+            content: "Next-Hub Solutions",
+          },
+          {
+            name: "robots",
+            content: "index,follow,max-image-preview:large",
+          },
+        ]}
+      />
 
       <div className="h-full bg-primary/30">
         <div className="container mx-auto py-32 text-center xl:text-left flex flex-col items-center justify-center h-full">

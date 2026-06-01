@@ -120,42 +120,41 @@ const Seo = () => {
 
   return (
     <>
-      
       <NextSeo
-  canonical="https://next-hub.pro/services/seo/"
-  title="SEO ოპტიმიზაცია | Google-ში ხილვადობის გაზრდა | Next-Hub"
-  description="Next-Hub გთავაზობთ SEO ოპტიმიზაციას, ტექნიკურ SEO-ს, საკვანძო სიტყვების კვლევას, Google Search Console-ის გამართვას და საძიებო სისტემებში პოზიციების გაუმჯობესებას."
-  openGraph={{
-    type: "website",
-    locale: "ka_GE",
-    url: "https://next-hub.pro/services/seo/",
-    site_name: "Next-Hub Solutions",
-    title: "SEO ოპტიმიზაცია | Google-ში ხილვადობის გაზრდა | Next-Hub",
-    description:
-      "Next-Hub გთავაზობთ SEO ოპტიმიზაციას, ტექნიკურ SEO-ს, საკვანძო სიტყვების კვლევას, Google Search Console-ის გამართვას და საძიებო სისტემებში პოზიციების გაუმჯობესებას.",
-    images: [
-      {
-        url: "https://next-hub.pro/nexthub.jpg",
-        width: 1200,
-        height: 630,
-        alt: "SEO ოპტიმიზაცია Next-Hub Solutions",
-      },
-    ],
-  }}
-  twitter={{
-    cardType: "summary_large_image",
-  }}
-  additionalMetaTags={[
-    {
-      name: "author",
-      content: "Next-Hub Solutions",
-    },
-    {
-      name: "robots",
-      content: "index,follow,max-image-preview:large",
-    },
-  ]}
-/>
+        canonical="https://next-hub.pro/services/seo/"
+        title="SEO ოპტიმიზაცია | Google-ში ხილვადობის გაზრდა | Next-Hub"
+        description="Next-Hub გთავაზობთ SEO ოპტიმიზაციას, ტექნიკურ SEO-ს, საკვანძო სიტყვების კვლევას, Google Search Console-ის გამართვას და საძიებო სისტემებში პოზიციების გაუმჯობესებას."
+        openGraph={{
+          type: "website",
+          locale: "ka_GE",
+          url: "https://next-hub.pro/services/seo/",
+          site_name: "Next-Hub Solutions",
+          title: "SEO ოპტიმიზაცია | Google-ში ხილვადობის გაზრდა | Next-Hub",
+          description:
+            "Next-Hub გთავაზობთ SEO ოპტიმიზაციას, ტექნიკურ SEO-ს, საკვანძო სიტყვების კვლევას, Google Search Console-ის გამართვას და საძიებო სისტემებში პოზიციების გაუმჯობესებას.",
+          images: [
+            {
+              url: "https://next-hub.pro/nexthub.jpg",
+              width: 1200,
+              height: 630,
+              alt: "SEO ოპტიმიზაცია Next-Hub Solutions",
+            },
+          ],
+        }}
+        twitter={{
+          cardType: "summary_large_image",
+        }}
+        additionalMetaTags={[
+          {
+            name: "author",
+            content: "Next-Hub Solutions",
+          },
+          {
+            name: "robots",
+            content: "index,follow,max-image-preview:large",
+          },
+        ]}
+      />
 
       {isModalOpen ? (
         <Modal

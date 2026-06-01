@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import Script from 'next/script';
+import { useEffect, useState } from "react";
+import Script from "next/script";
 
 const center = { lat: 41.729583, lng: 44.741778 };
 
@@ -9,12 +9,12 @@ export default function MapComponent() {
   const [apiReady, setApiReady] = useState(false);
   const [scriptError, setScriptError] = useState(false);
 
-  const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || '';
+  const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "";
 
   useEffect(() => {
     if (!apiReady || !window.google) return;
 
-    const el = document.getElementById('gmap-container');
+    const el = document.getElementById("gmap-container");
     if (!el) return;
 
     const map = new window.google.maps.Map(el, {
@@ -25,7 +25,7 @@ export default function MapComponent() {
     });
 
     const icon = {
-      url: '/location-map.png',
+      url: "/location-map.png",
       scaledSize: new window.google.maps.Size(44, 44),
       anchor: new window.google.maps.Point(22, 44),
     };
@@ -33,7 +33,7 @@ export default function MapComponent() {
     new window.google.maps.Marker({
       map,
       position: center,
-      title: 'Our location',
+      title: "Our location",
       icon,
     });
   }, [apiReady]);

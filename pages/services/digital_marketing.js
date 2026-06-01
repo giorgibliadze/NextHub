@@ -139,42 +139,42 @@ const DigitalMarketing = () => {
 
   return (
     <>
-      
       <NextSeo
-  canonical="https://next-hub.pro/services/digital_marketing/"
-  title="ციფრული მარკეტინგი | Google Ads და სოციალური მედია | Next-Hub"
-  description="Next-Hub გთავაზობთ ციფრული მარკეტინგის სერვისებს: Google Ads, სოციალური მედიის რეკლამა, კონტენტის სტრატეგია, ბრენდის ზრდა და შედეგზე ორიენტირებული კამპანიები."
-  openGraph={{
-    type: "website",
-    locale: "ka_GE",
-    url: "https://next-hub.pro/services/digital_marketing/",
-    site_name: "Next-Hub Solutions",
-    title: "ციფრული მარკეტინგი | Google Ads და სოციალური მედია | Next-Hub",
-    description:
-      "Next-Hub გთავაზობთ ციფრული მარკეტინგის სერვისებს: Google Ads, სოციალური მედიის რეკლამა, კონტენტის სტრატეგია, ბრენდის ზრდა და შედეგზე ორიენტირებული კამპანიები.",
-    images: [
-      {
-        url: "https://next-hub.pro/nexthub.jpg",
-        width: 1200,
-        height: 630,
-        alt: "ციფრული მარკეტინგი Next-Hub Solutions",
-      },
-    ],
-  }}
-  twitter={{
-    cardType: "summary_large_image",
-  }}
-  additionalMetaTags={[
-    {
-      name: "author",
-      content: "Next-Hub Solutions",
-    },
-    {
-      name: "robots",
-      content: "index,follow,max-image-preview:large",
-    },
-  ]}
-/>
+        canonical="https://next-hub.pro/services/digital_marketing/"
+        title="ციფრული მარკეტინგი | Google Ads და სოციალური მედია | Next-Hub"
+        description="Next-Hub გთავაზობთ ციფრული მარკეტინგის სერვისებს: Google Ads, სოციალური მედიის რეკლამა, კონტენტის სტრატეგია, ბრენდის ზრდა და შედეგზე ორიენტირებული კამპანიები."
+        openGraph={{
+          type: "website",
+          locale: "ka_GE",
+          url: "https://next-hub.pro/services/digital_marketing/",
+          site_name: "Next-Hub Solutions",
+          title:
+            "ციფრული მარკეტინგი | Google Ads და სოციალური მედია | Next-Hub",
+          description:
+            "Next-Hub გთავაზობთ ციფრული მარკეტინგის სერვისებს: Google Ads, სოციალური მედიის რეკლამა, კონტენტის სტრატეგია, ბრენდის ზრდა და შედეგზე ორიენტირებული კამპანიები.",
+          images: [
+            {
+              url: "https://next-hub.pro/nexthub.jpg",
+              width: 1200,
+              height: 630,
+              alt: "ციფრული მარკეტინგი Next-Hub Solutions",
+            },
+          ],
+        }}
+        twitter={{
+          cardType: "summary_large_image",
+        }}
+        additionalMetaTags={[
+          {
+            name: "author",
+            content: "Next-Hub Solutions",
+          },
+          {
+            name: "robots",
+            content: "index,follow,max-image-preview:large",
+          },
+        ]}
+      />
 
       {isModalOpen ? (
         <Modal

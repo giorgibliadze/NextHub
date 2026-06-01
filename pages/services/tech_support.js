@@ -114,42 +114,42 @@ const TechSupport = () => {
 
   return (
     <>
-   
-   <NextSeo
-  canonical="https://next-hub.pro/services/tech_support/"
-  title="ტექნიკური მხარდაჭერა | საიტის მართვა და უსაფრთხოება | Next-Hub"
-  description="Next-Hub გთავაზობთ ვებსაიტის ტექნიკურ მხარდაჭერას, უსაფრთხოების მონიტორინგს, სიჩქარის ოპტიმიზაციას, SEO კონტროლს და საიტის გამართულ მუშაობაზე ზრუნვას."
-  openGraph={{
-    type: "website",
-    locale: "ka_GE",
-    url: "https://next-hub.pro/services/tech_support/",
-    site_name: "Next-Hub Solutions",
-    title: "ტექნიკური მხარდაჭერა | საიტის მართვა და უსაფრთხოება | Next-Hub",
-    description:
-      "Next-Hub გთავაზობთ ვებსაიტის ტექნიკურ მხარდაჭერას, უსაფრთხოების მონიტორინგს, სიჩქარის ოპტიმიზაციას, SEO კონტროლს და საიტის გამართულ მუშაობაზე ზრუნვას.",
-    images: [
-      {
-        url: "https://next-hub.pro/nexthub.jpg",
-        width: 1200,
-        height: 630,
-        alt: "ვებსაიტის ტექნიკური მხარდაჭერა Next-Hub Solutions",
-      },
-    ],
-  }}
-  twitter={{
-    cardType: "summary_large_image",
-  }}
-  additionalMetaTags={[
-    {
-      name: "author",
-      content: "Next-Hub Solutions",
-    },
-    {
-      name: "robots",
-      content: "index,follow,max-image-preview:large",
-    },
-  ]}
-/>
+      <NextSeo
+        canonical="https://next-hub.pro/services/tech_support/"
+        title="ტექნიკური მხარდაჭერა | საიტის მართვა და უსაფრთხოება | Next-Hub"
+        description="Next-Hub გთავაზობთ ვებსაიტის ტექნიკურ მხარდაჭერას, უსაფრთხოების მონიტორინგს, სიჩქარის ოპტიმიზაციას, SEO კონტროლს და საიტის გამართულ მუშაობაზე ზრუნვას."
+        openGraph={{
+          type: "website",
+          locale: "ka_GE",
+          url: "https://next-hub.pro/services/tech_support/",
+          site_name: "Next-Hub Solutions",
+          title:
+            "ტექნიკური მხარდაჭერა | საიტის მართვა და უსაფრთხოება | Next-Hub",
+          description:
+            "Next-Hub გთავაზობთ ვებსაიტის ტექნიკურ მხარდაჭერას, უსაფრთხოების მონიტორინგს, სიჩქარის ოპტიმიზაციას, SEO კონტროლს და საიტის გამართულ მუშაობაზე ზრუნვას.",
+          images: [
+            {
+              url: "https://next-hub.pro/nexthub.jpg",
+              width: 1200,
+              height: 630,
+              alt: "ვებსაიტის ტექნიკური მხარდაჭერა Next-Hub Solutions",
+            },
+          ],
+        }}
+        twitter={{
+          cardType: "summary_large_image",
+        }}
+        additionalMetaTags={[
+          {
+            name: "author",
+            content: "Next-Hub Solutions",
+          },
+          {
+            name: "robots",
+            content: "index,follow,max-image-preview:large",
+          },
+        ]}
+      />
       {isModalOpen ? (
         <Modal
           isOpen={isModalOpen}
