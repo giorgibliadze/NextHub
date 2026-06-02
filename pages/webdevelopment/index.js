@@ -24,8 +24,14 @@ const WebDevelopment = () => {
   }, [isModalOpen]);
 
   const images = [
-    { src: "/well-structured-3.webp", alt: "Well structured layout" },
-    { src: "/technology.webp", alt: "Technology" },
+    {
+      src: "/well-structured-3.webp",
+      alt: "ვებსაიტის დამზადება და საიტის სტრუქტურა",
+    },
+    {
+      src: "/technology.webp",
+      alt: "Next.js და WordPress ვებ დეველოპმენტი",
+    },
   ];
 
   const priceCardsData = [
@@ -160,19 +166,16 @@ const WebDevelopment = () => {
     <>
       <NextSeo
         canonical={CANONICAL}
-        title="ვებსაიტის დამზადება | Next-Hub Solutions"
-        description="Next-Hub გთავაზობთ თანამედროვე ვებსაიტების, ონლაინ მაღაზიებისა და ვებ აპლიკაციების შექმნას. SEO ოპტიმიზაცია, სწრაფი ჩატვირთვა და ბიზნესზე მორგებული გადაწყვეტილებები."
+        title="ვებსაიტის დამზადება, საიტის შექმნა და ონლაინ მაღაზიის აწყობა | Next-Hub"
+        description="ვებსაიტის დამზადება, საიტის შექმნა, ონლაინ მაღაზიის აწყობა, WordPress და Next.js დეველოპმენტი. SEO ოპტიმიზაცია, სწრაფი ვებგვერდები და ბიზნესზე მორგებული გადაწყვეტილებები."
         openGraph={{
           type: "website",
           locale: "ka_GE",
           url: CANONICAL,
           site_name: "Next-Hub Solutions",
-
-          title: "ვებსაიტის დამზადება | Next-Hub Solutions",
-
+          title: "ვებსაიტის დამზადება და საიტის შექმნა | Next-Hub",
           description:
-            "Next-Hub გთავაზობთ თანამედროვე ვებსაიტების, ონლაინ მაღაზიებისა და ვებ აპლიკაციების შექმნას. SEO ოპტიმიზაცია, სწრაფი ჩატვირთვა და ბიზნესზე მორგებული გადაწყვეტილებები.",
-
+            "თანამედროვე ვებსაიტების, ონლაინ მაღაზიებისა და ვებ აპლიკაციების შექმნა. SEO ოპტიმიზაცია, სწრაფი ჩატვირთვა და ბიზნესზე მორგებული გადაწყვეტილებები.",
           images: [
             {
               url: "https://next-hub.pro/web.jpg",
@@ -194,6 +197,11 @@ const WebDevelopment = () => {
             name: "robots",
             content: "index,follow,max-image-preview:large",
           },
+          {
+            name: "keywords",
+            content:
+              "ვებსაიტის დამზადება, საიტის შექმნა, ვებ საიტის დამზადება, ვებ გვერდის შექმნა, ვებსაიტების დამზადება, ონლაინ მაღაზიის შექმნა, ონლაინ მაღაზიის დამზადება, wordpress საიტის შექმნა, next js development, web development georgia, website development georgia, website design georgia, seo ოპტიმიზაცია, ბიზნეს საიტი, კორპორატიული ვებსაიტი, next hub",
+          },
         ]}
       />
 
@@ -204,13 +212,13 @@ const WebDevelopment = () => {
           cardData={selectedCardData}
         />
       ) : (
-        <div className="flex min-h-screen flex-col items-center justify-center px-4 md:px-8 xl:px-10 py-44 smx:text-center overflow-x-hidden">
+        <div className="flex min-h-screen flex-col items-center justify-start px-4 md:px-8 xl:px-10 py-28 md:py-44 smx:text-center overflow-x-hidden">
           <motion.h1
             variants={fadeIn("up", 0.1)}
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="h2 xl:mt-8"
+            className="text-4xl md:text-6xl font-bold xl:mt-8 text-center"
           >
             ვებსაიტის დამზადება <span className="text-accent">.</span>
           </motion.h1>
@@ -220,49 +228,38 @@ const WebDevelopment = () => {
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="mb-16"
+            className="mb-10 mt-10 md:mb-16 w-full"
           >
             <ImageGallery images={images} />
           </motion.div>
+
           <motion.section
             variants={fadeIn("up", 0.1)}
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="
-    max-w-6xl
-    mx-auto
-    mb-20
-    px-6
-    py-12
-    rounded-[32px]
-    border
-    border-white/10
-    bg-white/5
-    backdrop-blur-md
-    shadow-2xl
-  "
+            className="max-w-6xl mx-auto mb-14 md:mb-20 px-4 md:px-6 py-8 md:py-12 rounded-[24px] md:rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-md shadow-2xl"
           >
-            <div className="text-center mb-10">
-              <span className="inline-block mb-4 px-5 py-2 rounded-full bg-accent/10 text-accent text-sm font-semibold">
+            <div className="text-center mb-8 md:mb-10">
+              <span className="inline-block mb-4 px-4 md:px-5 py-2 rounded-full bg-accent/10 text-accent text-xs md:text-sm font-semibold">
                 ვებ დეველოპმენტი
               </span>
 
-              <h2 className="text-3xl md:text-5xl font-bold mb-6">
+              <h2 className="text-2xl md:text-5xl font-bold mb-5 md:mb-6 leading-tight">
                 ვებსაიტის დამზადება <br />
                 (საიტის შექმნა)
               </h2>
 
-              <p className="max-w-3xl mx-auto text-white/70 text-base md:text-lg leading-8">
+              <p className="max-w-3xl mx-auto text-white/70 text-sm md:text-lg leading-7 md:leading-8">
                 Next-Hub ქმნის თანამედროვე, სწრაფ და SEO-ზე მორგებულ ვებსაიტებს
                 ბიზნესებისთვის, რომლებიც ონლაინ სივრცეში სანდოობასა და შედეგზე
                 არის ორიენტირებული.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6 mb-10">
-              <div className="rounded-2xl bg-black/20 border border-white/10 p-6">
-                <h3 className="text-xl font-bold mb-3 text-accent">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-10">
+              <div className="rounded-2xl bg-black/20 border border-white/10 p-5 md:p-6">
+                <h3 className="text-lg md:text-xl font-bold mb-3 text-accent">
                   ბიზნეს საიტები
                 </h3>
                 <p className="text-white/70 leading-7 text-sm">
@@ -271,8 +268,8 @@ const WebDevelopment = () => {
                 </p>
               </div>
 
-              <div className="rounded-2xl bg-black/20 border border-white/10 p-6">
-                <h3 className="text-xl font-bold mb-3 text-accent">
+              <div className="rounded-2xl bg-black/20 border border-white/10 p-5 md:p-6">
+                <h3 className="text-lg md:text-xl font-bold mb-3 text-accent">
                   ონლაინ მაღაზიები
                 </h3>
                 <p className="text-white/70 leading-7 text-sm">
@@ -281,8 +278,8 @@ const WebDevelopment = () => {
                 </p>
               </div>
 
-              <div className="rounded-2xl bg-black/20 border border-white/10 p-6">
-                <h3 className="text-xl font-bold mb-3 text-accent">
+              <div className="rounded-2xl bg-black/20 border border-white/10 p-5 md:p-6">
+                <h3 className="text-lg md:text-xl font-bold mb-3 text-accent">
                   SEO ოპტიმიზაცია
                 </h3>
                 <p className="text-white/70 leading-7 text-sm">
@@ -293,13 +290,13 @@ const WebDevelopment = () => {
               </div>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center mb-10 md:mb-12">
               <div>
-                <h3 className="text-2xl font-bold mb-4">
+                <h3 className="text-xl md:text-2xl font-bold mb-4">
                   რა შედის ვებსაიტის შექმნის სერვისში?
                 </h3>
 
-                <ul className="space-y-3 text-white/75 leading-7">
+                <ul className="space-y-3 text-white/75 leading-7 text-sm md:text-base">
                   <li>• ინდივიდუალური დიზაინის დაგეგმვა</li>
                   <li>• მობილურ ვერსიაზე მორგებული ვებსაიტი</li>
                   <li>• WordPress ან Next.js ტექნოლოგიით აწყობა</li>
@@ -308,44 +305,78 @@ const WebDevelopment = () => {
                 </ul>
               </div>
 
-              <div className="rounded-3xl bg-accent/10 border border-accent/30 p-8">
-                <h3 className="text-2xl font-bold mb-4 text-accent">
+              <div className="rounded-3xl bg-accent/10 border border-accent/30 p-5 md:p-8">
+                <h3 className="text-xl md:text-2xl font-bold mb-4 text-accent">
                   გჭირდებათ საიტის შექმნა?
                 </h3>
 
-                <p className="text-white/75 leading-8 mb-6">
+                <p className="text-white/75 leading-7 md:leading-8 mb-6 text-sm md:text-base">
                   მოგვწერეთ ან დაგვირეკეთ და დაგეხმარებით სწორად შეარჩიოთ
                   ვებსაიტის ტიპი, ფუნქციონალი და ბიუჯეტი.
                 </p>
 
                 <a
                   href="tel:+995555137003"
-                  className="
-          inline-flex
-          items-center
-          justify-center
-          px-7
-          py-4
-          rounded-full
-          bg-accent
-          text-white
-          font-semibold
-          hover:scale-105
-          transition-all
-          shadow-lg
-        "
+                  className="inline-flex items-center justify-center w-full md:w-auto px-7 py-4 rounded-full bg-accent text-white font-semibold hover:scale-105 transition-all shadow-lg"
                 >
                   დაგვიკავშირდით
                 </a>
               </div>
             </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+              <div className="rounded-2xl bg-black/20 border border-white/10 p-5 md:p-6">
+                <h2 className="text-xl md:text-2xl font-bold mb-4">
+                  ვებსაიტის დამზადება საქართველოში
+                </h2>
+                <p className="text-white/70 leading-7 md:leading-8 text-sm md:text-base">
+                  ვამზადებთ თანამედროვე ვებსაიტებს ქართული ბიზნესებისთვის,
+                  რომლებსაც სურთ Google-ში უკეთ გამოჩენა, მომხმარებლის ნდობის
+                  გაზრდა და ონლაინ გაყიდვების განვითარება.
+                </p>
+              </div>
+
+              <div className="rounded-2xl bg-black/20 border border-white/10 p-5 md:p-6">
+                <h2 className="text-xl md:text-2xl font-bold mb-4">
+                  საიტის შექმნა ბიზნესისთვის
+                </h2>
+                <p className="text-white/70 leading-7 md:leading-8 text-sm md:text-base">
+                  სწორად აწყობილი ბიზნეს საიტი ეხმარება კომპანიას სერვისების
+                  წარმოჩენაში, მომხმარებელთან კომუნიკაციაში და ახალი კლიენტების
+                  მოზიდვაში.
+                </p>
+              </div>
+
+              <div className="rounded-2xl bg-black/20 border border-white/10 p-5 md:p-6">
+                <h2 className="text-xl md:text-2xl font-bold mb-4">
+                  ონლაინ მაღაზიის დამზადება
+                </h2>
+                <p className="text-white/70 leading-7 md:leading-8 text-sm md:text-base">
+                  ვქმნით ონლაინ მაღაზიებს პროდუქციის მართვით, შეკვეთების
+                  სისტემით, გადახდებით, კატალოგით და მომხმარებლისთვის მარტივი
+                  გამოცდილებით.
+                </p>
+              </div>
+
+              <div className="rounded-2xl bg-black/20 border border-white/10 p-5 md:p-6">
+                <h2 className="text-xl md:text-2xl font-bold mb-4">
+                  WordPress და Next.js ვებ დეველოპმენტი
+                </h2>
+                <p className="text-white/70 leading-7 md:leading-8 text-sm md:text-base">
+                  პროექტის საჭიროებიდან გამომდინარე ვიყენებთ WordPress-ს,
+                  Elementor-ს, WooCommerce-ს, Next.js-ს და React-ს, რათა საიტი
+                  იყოს სწრაფი, მოქნილი და მარტივად განვითარებადი.
+                </p>
+              </div>
+            </div>
           </motion.section>
+
           <motion.div
             variants={fadeIn("up", 0.1)}
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="min-h-[200px] flex flex-col items-center justify-center"
+            className="min-h-[160px] md:min-h-[200px] flex flex-col items-center justify-center"
           >
             <TechnologyIcons />
           </motion.div>
@@ -355,7 +386,7 @@ const WebDevelopment = () => {
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="grid md:grid-cols-3 sm:grid-cols-1 gap-10 px-10"
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 px-4 md:px-10 w-full"
           >
             {priceCardsData.map((cardData, index) => (
               <PriceCard key={index} {...cardData} />
@@ -364,21 +395,33 @@ const WebDevelopment = () => {
         </div>
       )}
 
-      {/* Service schema (uses the defined constant) */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Service",
-            name: "Web Development — Next Hub Solutions",
+            name: "ვებსაიტის დამზადება",
+            serviceType: "Web Development",
             provider: {
               "@type": "Organization",
-              name: "Next Hub Solutions",
+              name: "Next-Hub Solutions",
               url: "https://next-hub.pro",
+              logo: "https://next-hub.pro/logo.png",
             },
-            areaServed: "Georgia",
+            areaServed: {
+              "@type": "Country",
+              name: "Georgia",
+            },
             url: CANONICAL,
+            description:
+              "ვებსაიტის დამზადება, საიტის შექმნა, ონლაინ მაღაზიის აწყობა, WordPress და Next.js დეველოპმენტი, SEO ოპტიმიზაცია.",
+            offers: {
+              "@type": "Offer",
+              priceCurrency: "GEL",
+              price: "1000",
+              availability: "https://schema.org/InStock",
+            },
           }),
         }}
       />

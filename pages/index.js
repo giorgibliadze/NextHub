@@ -14,16 +14,16 @@ const Home = () => {
     <>
       <NextSeo
         canonical="https://next-hub.pro/"
-        title="ვებსაიტის დამზადება | საიტის შექმნა | Next-Hub"
-        description="ვებსაიტის დამზადება. Next-Hub ქმნის თანამედროვე ვებსაიტებს, ონლაინ მაღაზიებსა და ვებ აპლიკაციებს. ვამზადებთ სწრაფ, SEO-ზე მორგებულ და ბიზნესის მიზნებზე შექმნილ საიტებს."
+        title="ვებსაიტის დამზადება და საიტის შექმნა | Next-Hub Solutions"
+        description="ვებსაიტის დამზადება, საიტის შექმნა, ონლაინ მაღაზიის აწყობა და ვებ აპლიკაციების შექმნა. Next-Hub ქმნის სწრაფ, თანამედროვე და SEO-ზე მორგებულ ვებსაიტებს ბიზნესისთვის."
         openGraph={{
           type: "website",
           locale: "ka_GE",
           url: "https://next-hub.pro/",
-          site_name: "ვებსაიტის დამზადება | საიტის შექმნა | Next-Hub Solutions",
-          title: "ვებსაიტის დამზადება | საიტის შექმნა | Next-Hub",
+          site_name: "Next-Hub Solutions",
+          title: "ვებსაიტის დამზადება და საიტის შექმნა | Next-Hub Solutions",
           description:
-            "Next-Hub ქმნის თანამედროვე ვებსაიტებს, ონლაინ მაღაზიებსა და ვებ აპლიკაციებს. ვამზადებთ სწრაფ, SEO-ზე მორგებულ და ბიზნესის მიზნებზე შექმნილ საიტებს.",
+            "Next-Hub ქმნის თანამედროვე ვებსაიტებს, ონლაინ მაღაზიებსა და ვებ აპლიკაციებს. სწრაფი, SEO-ზე მორგებული და ბიზნესის მიზნებზე შექმნილი საიტები.",
           images: [
             {
               url: "https://next-hub.pro/nexthub.png",
@@ -45,10 +45,14 @@ const Home = () => {
             name: "robots",
             content: "index,follow,max-image-preview:large",
           },
+          {
+            name: "keywords",
+            content:
+              "ვებსაიტის დამზადება, საიტის შექმნა, ვებ გვერდის შექმნა, ვებსაიტების დამზადება, საიტების შექმნა, ონლაინ მაღაზიის შექმნა, ონლაინ მაღაზიის დამზადება, ვებ აპლიკაციის შექმნა, ვებ დეველოპმენტი, ვებ დიზაინი, wordpress საიტის შექმნა, next js საიტი, react development, seo ოპტიმიზაცია, ბიზნეს საიტი, კორპორატიული ვებსაიტი, საიტის დამზადება თბილისში, website development georgia, web development georgia, Next-Hub Solutions",
+          },
         ]}
       />
 
-      {/* Specific Professional Service Schema for better local ranking */}
       <Script
         id="local-business-schema"
         type="application/ld+json"
@@ -63,10 +67,17 @@ const Home = () => {
             url: "https://next-hub.pro/",
             telephone: "+995555137003",
             email: "info@next-hub.pro",
+            description:
+              "ვებსაიტის დამზადება, საიტის შექმნა, ონლაინ მაღაზიის აწყობა, ვებ აპლიკაციების შექმნა და SEO ოპტიმიზაცია საქართველოში.",
+            priceRange: "₾₾",
             address: {
               "@type": "PostalAddress",
               addressLocality: "Tbilisi",
               addressCountry: "GE",
+            },
+            areaServed: {
+              "@type": "Country",
+              name: "Georgia",
             },
             openingHoursSpecification: {
               "@type": "OpeningHoursSpecification",
@@ -80,6 +91,48 @@ const Home = () => {
               opens: "09:00",
               closes: "19:00",
             },
+            makesOffer: [
+              {
+                "@type": "Offer",
+                itemOffered: {
+                  "@type": "Service",
+                  name: "ვებსაიტის დამზადება",
+                  serviceType: "Web Development",
+                  description:
+                    "თანამედროვე, სწრაფი და SEO-ზე მორგებული ვებსაიტების დამზადება ბიზნესისთვის.",
+                },
+              },
+              {
+                "@type": "Offer",
+                itemOffered: {
+                  "@type": "Service",
+                  name: "საიტის შექმნა",
+                  serviceType: "Website Creation",
+                  description:
+                    "ბიზნეს საიტების, კორპორატიული ვებსაიტებისა და სერვისებზე მორგებული გვერდების შექმნა.",
+                },
+              },
+              {
+                "@type": "Offer",
+                itemOffered: {
+                  "@type": "Service",
+                  name: "ონლაინ მაღაზიის დამზადება",
+                  serviceType: "E-commerce Development",
+                  description:
+                    "ონლაინ მაღაზიის აწყობა პროდუქციის კატალოგით, შეკვეთების სისტემითა და გადახდების ინტეგრაციით.",
+                },
+              },
+              {
+                "@type": "Offer",
+                itemOffered: {
+                  "@type": "Service",
+                  name: "SEO ოპტიმიზაცია",
+                  serviceType: "SEO Optimization",
+                  description:
+                    "ვებსაიტის ტექნიკური და სტრუქტურული ოპტიმიზაცია საძიებო სისტემებისთვის.",
+                },
+              },
+            ],
           }),
         }}
       />
@@ -88,52 +141,80 @@ const Home = () => {
         <div className="w-full h-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10">
           <div className="text-center flex flex-col justify-center xl:text-left h-full container mx-auto">
             {/* title */}
-            <motion.h1
-              variants={fadeIn("down", 0.2)}
-              initial="hidden"
-              animate="show"
-              exit="hidden"
+            <div
               className="
-mt-[60px]
-sm:mt-[80px]
-xl:mt-[100px]
-text-[34px]
-leading-tight
-sm:text-[44px]
-xl:text-[64px]
-font-bold
-"
+                mt-[60px]
+                sm:mt-[80px]
+                xl:mt-[100px]
+                text-[34px]
+                leading-tight
+                sm:text-[44px]
+                xl:text-[64px]
+                font-bold
+              "
             >
-              ვებსაიტის დამზადება <span>.</span>
-              <br />
-              <motion.span
+              <motion.h1
                 variants={fadeIn("down", 0.2)}
                 initial="hidden"
                 animate="show"
                 exit="hidden"
-                className="text-accent"
+                className="inline font-bold"
+              >
+                ვებსაიტის დამზადება <span className="text-accent">.</span>
+              </motion.h1>
+
+              <br />
+
+              <motion.div
+                variants={fadeIn("down", 0.25)}
+                initial="hidden"
+                animate="show"
+                exit="hidden"
+                className="
+    inline
+    text-accent
+    font-bold
+    text-[20px]
+    sm:text-[34px]
+    xl:text-[64px]
+  "
               >
                 <RotatingWords words={words} />
+              </motion.div>
+
+              <motion.span
+                variants={fadeIn("down", 0.3)}
+                initial="hidden"
+                animate="show"
+                exit="hidden"
+                className="
+    inline
+    font-bold
+    text-[20px]
+    sm:text-[34px]
+    xl:text-[64px]
+  "
+              >
+                ბიზნესისთვის
               </motion.span>
-              ბიზნესისთვის
-            </motion.h1>
+            </div>
 
             {/* subtitle */}
             <motion.p
-              variants={fadeIn("down", 0.3)}
+              variants={fadeIn("down", 0.35)}
               initial="hidden"
               animate="show"
               exit="hidden"
               className="
-              max-w-sm
-              text-[15px]
-              leading-8
-              xl:text-[18px]
-              xl:max-w-xl
-              mx-auto
-              xl:mx-0
-              mb-10
-              xl:mb-16
+                max-w-sm
+                text-[15px]
+                leading-8
+                xl:text-[18px]
+                xl:max-w-xl
+                mx-auto
+                xl:mx-0
+                mb-10
+                xl:mb-16
               "
             >
               Next-Hub გთავაზობთ თანამედროვე ვებსაიტების, ონლაინ მაღაზიებისა და
@@ -141,7 +222,6 @@ font-bold
               ბიზნესის მიზნებზე შექმნილ საიტებს.
             </motion.p>
 
-            {/* mobile button */}
             {/* contact button */}
             <motion.div
               variants={fadeIn("down", 0.4)}
@@ -153,19 +233,19 @@ font-bold
               <a
                 href="tel:+995555137003"
                 className="
-      px-8
-      py-4
-      rounded-full
-      bg-accent
-      text-white
-      font-semibold
-      text-[14px]
-      xl:text-[16px]
-      hover:scale-105
-      transition-all
-      shadow-lg
-      whitespace-nowrap
-    "
+                  px-8
+                  py-4
+                  rounded-full
+                  bg-accent
+                  text-white
+                  font-semibold
+                  text-[14px]
+                  xl:text-[16px]
+                  hover:scale-105
+                  transition-all
+                  shadow-lg
+                  whitespace-nowrap
+                "
               >
                 დაგვიკავშირდით
               </a>

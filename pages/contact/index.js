@@ -7,10 +7,12 @@ import dynamic from "next/dynamic";
 import { GoogleTagManager } from "@next/third-parties/google";
 import Head from "next/head";
 import { NextSeo } from "next-seo";
+import Script from "next/script";
 const MapComponent = dynamic(() => import("../../components/MapComponent"), {
   ssr: false,
 });
 
+const CANONICAL = "https://next-hub.pro/contact/";
 const Contact = () => {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
@@ -62,20 +64,17 @@ const Contact = () => {
   return (
     <>
       <NextSeo
-        canonical="https://next-hub.pro/contact/"
-        title="კონტაქტი | Next-Hub Solutions"
-        description="დაუკავშირდით Next-Hub Solutions-ს ვებსაიტების შექმნის, SEO ოპტიმიზაციის, სოციალური მედიის მართვისა და ციფრული სერვისების შესახებ. ჩვენი გუნდი მზადაა დაგეხმაროთ."
+        canonical={CANONICAL}
+        title="კონტაქტი | ვებსაიტის დამზადება და SEO მომსახურება | Next-Hub"
+        description="დაუკავშირდით Next-Hub Solutions-ს ვებსაიტის დამზადების, საიტის შექმნის, SEO ოპტიმიზაციის, სოციალური მედიის მართვის, Google Ads-ისა და ციფრული სერვისების შესახებ."
         openGraph={{
           type: "website",
           locale: "ka_GE",
-          url: "https://next-hub.pro/contact/",
+          url: CANONICAL,
           site_name: "Next-Hub Solutions",
-
-          title: "კონტაქტი | Next-Hub Solutions",
-
+          title: "კონტაქტი | ვებსაიტის დამზადება და SEO მომსახურება | Next-Hub",
           description:
             "დაუკავშირდით Next-Hub Solutions-ს ვებსაიტების შექმნის, SEO ოპტიმიზაციის, სოციალური მედიის მართვისა და ციფრული სერვისების შესახებ.",
-
           images: [
             {
               url: "https://next-hub.pro/nexthub.jpg",
@@ -97,7 +96,48 @@ const Contact = () => {
             name: "robots",
             content: "index,follow,max-image-preview:large",
           },
+          {
+            name: "keywords",
+            content:
+              "Next-Hub კონტაქტი, ვებსაიტის დამზადება, საიტის შექმნა, SEO მომსახურება, SEO ოპტიმიზაცია, სოციალური მედიის მართვა, Google Ads მართვა, ვებ დეველოპმენტი, ციფრული მარკეტინგი, ვებსაიტის დამზადება თბილისში, website development Georgia, Next-Hub Solutions",
+          },
         ]}
+      />
+
+      <Script
+        id="contact-local-business-schema"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            name: "Next-Hub Solutions",
+            image: "https://next-hub.pro/nexthub.jpg",
+            url: "https://next-hub.pro",
+            telephone: "+995555137003",
+            email: "info@next-hub.pro",
+            priceRange: "₾₾",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "გაზაფხულის 6ა",
+              addressLocality: "თბილისი",
+              addressCountry: "GE",
+            },
+            areaServed: {
+              "@type": "Country",
+              name: "Georgia",
+            },
+            contactPoint: {
+              "@type": "ContactPoint",
+              telephone: "+995555137003",
+              contactType: "customer service",
+              email: "info@next-hub.pro",
+              availableLanguage: ["Georgian", "English"],
+            },
+            sameAs: ["https://next-hub.pro/"],
+          }),
+        }}
       />
 
       {/* page */}
