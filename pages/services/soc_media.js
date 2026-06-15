@@ -7,7 +7,7 @@ import { fadeIn } from "../../variants";
 import { NextSeo } from "next-seo";
 import Script from "next/script";
 
-const CANONICAL = "https://next-hub.pro/services/soc_media/";
+const CANONICAL = "https://next-hub.pro/services/soc_media";
 
 const SocMedia = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

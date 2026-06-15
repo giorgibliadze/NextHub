@@ -13,7 +13,7 @@ const Home = () => {
   return (
     <>
       <NextSeo
-        canonical="https://next-hub.pro/"
+        canonical="https://next-hub.pro"
         title="ვებსაიტის დამზადება"
         description="ვებსაიტის დამზადება, საიტის შექმნა, ონლაინ მაღაზიის აწყობა და ვებ აპლიკაციების შექმნა. Next-Hub ქმნის სწრაფ, თანამედროვე და SEO-ზე მორგებულ ვებსაიტებს ბიზნესისთვის."
         openGraph={{

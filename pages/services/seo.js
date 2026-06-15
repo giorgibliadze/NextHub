@@ -7,7 +7,7 @@ import { fadeIn } from "../../variants";
 import { NextSeo } from "next-seo";
 import Script from "next/script";
 
-const CANONICAL = "https://next-hub.pro/services/seo/";
+const CANONICAL = "https://next-hub.pro/services/seo";
 
 const Seo = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

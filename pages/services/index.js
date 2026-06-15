@@ -12,7 +12,7 @@ import Script from "next/script";
 
 const ServiceSlider = lazy(() => import("../../components/ServiceSlider"));
 
-const CANONICAL = "https://next-hub.pro/services/";
+const CANONICAL = "https://next-hub.pro/services";
 
 const Services = () => {
   return (

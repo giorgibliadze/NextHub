@@ -14,7 +14,7 @@ const Work = () => {
   return (
     <>
       <NextSeo
-        canonical="https://next-hub.pro/work/"
+        canonical="https://next-hub.pro/work"
         title="ჩვენი ნამუშევრები | ვებსაიტების პორტფოლიო | Next-Hub Solutions"
         description="დაათვალიერეთ Next-Hub Solutions-ის შესრულებული პროექტები. ვებსაიტების პორტფოლიო, WordPress და Next.js პროექტები, ონლაინ მაღაზიები და ბიზნესზე მორგებული ციფრული გადაწყვეტილებები."
         openGraph={{

@@ -7,7 +7,7 @@ import Script from "next/script";
 // variants
 import { fadeIn } from "../../variants";
 
-const CANONICAL = "https://next-hub.pro/about/";
+const CANONICAL = "https://next-hub.pro/about";
 
 const About = () => {
   return (

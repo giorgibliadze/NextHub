@@ -12,7 +12,7 @@ const MapComponent = dynamic(() => import("../../components/MapComponent"), {
   ssr: false,
 });
 
-const CANONICAL = "https://next-hub.pro/contact/";
+const CANONICAL = "https://next-hub.pro/contact";
 const Contact = () => {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");

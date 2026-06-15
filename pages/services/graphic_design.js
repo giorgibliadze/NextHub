@@ -7,7 +7,7 @@ import { NextSeo } from "next-seo";
 import Script from "next/script";
 import Portfolio from "../../components/Portfolio";
 
-const CANONICAL = "https://next-hub.pro/services/graphic_design/";
+const CANONICAL = "https://next-hub.pro/services/graphic_design";
 
 const GraphicDesign = () => {
   return (

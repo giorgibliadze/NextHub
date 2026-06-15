@@ -15,7 +15,7 @@ const Modal = dynamic(() => import("../../components/Modal"), {
   loading: () => <p>Loading...</p>,
 });
 
-const CANONICAL = "https://next-hub.pro/services/digital_marketing/";
+const CANONICAL = "https://next-hub.pro/services/digital_marketing";
 
 const DigitalMarketing = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
