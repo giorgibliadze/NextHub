@@ -173,7 +173,7 @@ const WebDevelopment = () => {
           locale: "ka_GE",
           url: CANONICAL,
           // site_name: "Next-Hub Solutions",
-          title: "ვებსაიტის დამზადება და საიტის შექმნა | Next-Hub",
+          title: "ვებსაიტის დამზადება - საიტის შექმნა | Next-Hub",
           description:
             "თანამედროვე ვებსაიტების, ონლაინ მაღაზიებისა და ვებ აპლიკაციების შექმნა. SEO ოპტიმიზაცია, სწრაფი ჩატვირთვა და ბიზნესზე მორგებული გადაწყვეტილებები.",
           images: [
