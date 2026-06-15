@@ -19,7 +19,7 @@ const Home = () => {
         openGraph={{
           type: "website",
           locale: "ka_GE",
-          url: "https://next-hub.pro/",
+          url: "https://next-hub.pro",
           // site_name: "Next-Hub Solutions",
           title: "ვებსაიტის დამზადება - Next-Hub Solutions",
           description:
