@@ -16,7 +16,13 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
-    "target": "ES2017"
+    "target": "ES2017",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "strictNullChecks": true
   },
   "include": [
     "next-env.d.ts",
@@ -24,7 +30,9 @@
     "**/*.tsx",
     "components/charts/LineChart.jsx",
     "components/charts/BarChart.js",
-    "components/charts/AreaChart.js"
+    "components/charts/AreaChart.js",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"

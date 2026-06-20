@@ -1,5 +1,3 @@
-// components/Layout.js
-import { Sora } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Nav from "../components/Nav";
@@ -9,12 +7,6 @@ import Script from "next/script";
 import Head from "next/head";
 import { GoogleTagManager } from "@next/third-parties/google";
 import { DefaultSeo } from "next-seo";
-
-const sora = Sora({
-  subsets: ["latin"],
-  variable: "--font-sora",
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
-});
 
 // ✅ default to non-www canonical root
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://next-hub.pro";
@@ -100,7 +92,7 @@ export default function Layout({ children }) {
 
       {/* Page wrapper */}
       <div
-        className={`page bg-site text-white bg-cover bg-no-repeat ${sora.variable} font-sora relative overflow-y-auto`}
+        className="page bg-site text-white bg-cover bg-no-repeat font-sora relative overflow-y-auto"
       >
         <Analytics />
         <SpeedInsights />
