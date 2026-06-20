@@ -29,7 +29,7 @@ export default function WebDesignBlogCategoryPage() {
 function CategoryPage({ category, posts }) {
   return (
     <main className="flex min-h-screen flex-col items-center justify-start px-4 md:px-8 xl:px-10 py-28 md:py-44 overflow-x-hidden">
-      <section className="max-w-6xl w-full mx-auto">
+      <section className="mobile-bottom-safe-space max-w-6xl w-full mx-auto">
         <div className="text-center mb-10 md:mb-12">
           <span className="inline-block mb-4 px-4 md:px-5 py-2 rounded-full bg-accent/10 text-accent text-xs md:text-sm font-semibold">ბლოგის კატეგორია</span>
           <h1 className="text-4xl md:text-6xl font-bold xl:mt-8 text-center">{category.title} <span className="text-accent">.</span></h1>

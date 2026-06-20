@@ -1,9 +1,10 @@
 import "../styles/globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import AppNav from "../components/AppNav";
+import Nav from "../components/Nav";
 import Header from "../components/Header";
 import TopLeftImg from "../components/TopLeftImg";
+import { faviconIcons } from "../lib/faviconConfig";
 
 export const metadata = {
   metadataBase: new URL("https://next-hub.pro"),
@@ -13,6 +14,7 @@ export const metadata = {
   },
   description:
     "Next-Hub Solutions ქმნის SEO-ზე მორგებულ ვებსაიტებს, პროგრამულ სისტემებს, ვებ დიზაინს, ლოკალურ SEO კამპანიებს და საიტის მოვლის გეგმებს ბიზნესებისთვის.",
+  icons: faviconIcons,
 };
 
 export default function RootLayout({ children }) {
@@ -23,7 +25,7 @@ export default function RootLayout({ children }) {
           <Analytics />
           <SpeedInsights />
           <TopLeftImg />
-          <AppNav />
+          <Nav />
           <Header />
           {children}
         </div>

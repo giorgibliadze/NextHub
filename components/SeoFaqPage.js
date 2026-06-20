@@ -113,7 +113,7 @@ export default function SeoFaqPage({ groups, schemas }) {
             ))}
           </div>
 
-          <div className="rounded-3xl bg-accent/10 border border-accent/30 p-5 md:p-8 mt-10 md:mt-12">
+          <div className="mobile-bottom-safe-space rounded-3xl bg-accent/10 border border-accent/30 p-5 md:p-8 mt-10 md:mt-12">
             <h2 className="text-xl md:text-2xl font-bold mb-4 text-accent">
               ჯერ კიდევ გეგმავთ პროექტს?
             </h2>

@@ -163,7 +163,7 @@ const Services = () => {
               initial="hidden"
               animate="show"
               exit="hidden"
-              className="w-full min-w-[300px] xl:max-w-[65%]"
+              className="mobile-bottom-safe-space w-full min-w-[300px] xl:max-w-[65%]"
             >
               <ServiceSlider />
             </motion.div>

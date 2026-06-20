@@ -7,6 +7,7 @@ import Script from "next/script";
 import Head from "next/head";
 import { GoogleTagManager } from "@next/third-parties/google";
 import { DefaultSeo } from "next-seo";
+import { faviconLinks } from "../lib/faviconConfig";
 
 // ✅ default to non-www canonical root
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://next-hub.pro";
@@ -16,11 +17,9 @@ export default function Layout({ children }) {
     <>
       <Head>
         {/* Favicons */}
-        <link rel="icon" href="/favicon.jpg" sizes="any" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon.jpg" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon.jpg" />
-        <link rel="apple-touch-icon" href="/favicon.jpg" />
-        <link rel="mask-icon" href="/favicon.jpg" color="#ea4335" />
+        {faviconLinks.map((link) => (
+          <link key={link.rel} {...link} />
+        ))}
         <meta name="theme-color" content="#0b0b0b" />
       </Head>
 
@@ -60,7 +59,7 @@ export default function Layout({ children }) {
             "@type": "Organization",
             url: SITE_URL,
             name: "Next-Hub Solutions",
-            logo: `${SITE_URL}/favicon.jpg`, // keep consistent with actual file
+            logo: `${SITE_URL}/favicon.jpg`,
           }),
         }}
       />

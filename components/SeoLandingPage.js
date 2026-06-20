@@ -233,7 +233,7 @@ export default function SeoLandingPage({ page, schemas }) {
           initial="hidden"
           animate="show"
           exit="hidden"
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 px-4 md:px-10 w-full max-w-6xl"
+          className="mobile-bottom-safe-space grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 px-4 md:px-10 w-full max-w-6xl"
         >
           {page.pricing.map((plan) => (
             <PricingCard key={plan.name} plan={plan} />

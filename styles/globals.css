@@ -90,6 +90,12 @@ textarea:focus {
   text-wrap: pretty;
 }
 
+@media (max-width: 768px) {
+  .mobile-bottom-safe-space {
+    padding-bottom: calc(120px + env(safe-area-inset-bottom));
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }

@@ -127,7 +127,7 @@ export default function BlogPage() {
           </div>
         </section>
 
-        <section>
+        <section className="mobile-bottom-safe-space">
           <div className="mb-6 flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
             <div>
               <span className="mb-3 inline-block rounded-full border border-accent/20 bg-accent/10 px-4 py-2 text-xs font-semibold text-accent">

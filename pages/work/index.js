@@ -125,7 +125,7 @@ const Work = () => {
               initial="hidden"
               animate="show"
               exit="hidden"
-              className="w-full xl:max-w-[65%] lg:mt-[100px]"
+              className="mobile-bottom-safe-space w-full xl:max-w-[65%] lg:mt-[100px]"
             >
               <WorkSlider />
             </motion.div>

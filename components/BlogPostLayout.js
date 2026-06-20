@@ -202,7 +202,7 @@ export default function BlogPostLayout({ post, relatedPosts, schemas }) {
           </div>
         </div>
 
-        <div className="max-w-6xl w-full mx-auto">
+        <div className="mobile-bottom-safe-space max-w-6xl w-full mx-auto">
           <RelatedPosts posts={relatedPosts} />
         </div>
       </article>

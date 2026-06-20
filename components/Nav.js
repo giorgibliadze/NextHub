@@ -1,3 +1,5 @@
+"use client";
+
 // icons
 import {
   HiHome,
@@ -20,15 +22,36 @@ export const navData = [
   },
 ];
 
+const servicePaths = [
+  "/google-business-profile-optimization",
+  "/seo-services",
+  "/software-development",
+  "/web-design",
+  "/webdevelopment",
+  "/website-maintenance-services",
+];
+
 //next link
 import Link from "next/link";
 
-//next router
-import { useRouter } from "next/router";
+//next navigation
+import { usePathname } from "next/navigation";
+
+function isActivePath(pathname, path) {
+  if (path === "/") {
+    return pathname === path;
+  }
+
+  if (path === "/services" && servicePaths.includes(pathname)) {
+    return true;
+  }
+
+  return pathname === path || pathname.startsWith(`${path}/`);
+}
 
 const Nav = () => {
-  const router = useRouter();
-  const pathname = router.pathname;
+  const pathname = usePathname() || "/";
+
   return (
     <nav className="flex flex-col items-center xl:justify-center gap-y-4 fixed h-max bottom-0 mt-auto xl:right-[2%] z-150 top-0 w-full xl:w-16 xl:max-w-md xl:h-screen">
       {/* inner */}
@@ -37,7 +60,7 @@ const Nav = () => {
           return (
             <Link
               className={`${
-                link.path === pathname && "text-accent"
+                isActivePath(pathname, link.path) ? "text-accent" : ""
               } relative flex item-center group hover:text-accent transition-all duration-300`}
               key={index}
               href={link.path}
