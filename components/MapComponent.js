@@ -41,19 +41,26 @@ export default function MapComponent() {
   const showFallback = !apiKey || scriptError;
 
   return (
-    <div className="w-full max-w-5xl mx-auto">
+    <div className="w-full max-w-5xl mx-auto mt-6 mb-10 md:mt-0 md:mb-0">
       <div
-        id="gmap-container"
-        className="w-full h-[420px] md:h-[520px] rounded-2xl shadow overflow-hidden bg-gray-100"
-      />
-      {showFallback && (
-        <iframe
-          title="Google Map"
-          className="w-full h-[320px] mt-3 rounded-2xl border-0 shadow"
-          src={`https://www.google.com/maps?q=${center.lat},${center.lng}&z=16&output=embed`}
-          loading="lazy"
+        className="contact-map-card relative w-full h-[280px] sm:h-[320px] md:h-[520px] overflow-hidden rounded-[24px] md:rounded-[28px] border border-white/10 bg-white/[0.05] shadow-2xl shadow-accent/10"
+      >
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(241,48,36,0.12),transparent_42%)]" />
+        <div
+          id="gmap-container"
+          className={`relative z-10 h-full w-full bg-[#10091b] ${
+            showFallback ? "hidden" : "block"
+          }`}
         />
-      )}
+        {showFallback && (
+          <iframe
+            title="Google Map"
+            className="relative z-10 block h-full w-full border-0 bg-[#10091b]"
+            src={`https://www.google.com/maps?q=${center.lat},${center.lng}&z=16&output=embed`}
+            loading="lazy"
+          />
+        )}
+      </div>
       {apiKey && (
         <Script
           id="google-maps"

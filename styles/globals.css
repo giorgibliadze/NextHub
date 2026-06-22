@@ -61,13 +61,6 @@
   animation: priceGlow 2s infinite alternate;
 }
 
-input:focus,
-textarea:focus {
-  color: var(
-    --accent-color
-  ); /* Adjust this color to match your button's hover text color */
-}
-
 .page {
   display: flex;
   flex-direction: column;
@@ -130,40 +123,83 @@ nav {
     @apply w-full h-[52px] rounded-lg pl-6 capitalize;
   }
   .input,
-  .textarea {
-    @apply bg-transparent outline-none focus:ring-1 focus:ring-accent border border-white/20 placeholder:text-white/30 placeholder:font-light;
+  .textarea,
+  select {
+    @apply bg-transparent text-white outline-none focus:ring-1 focus:ring-accent border border-white/10 placeholder:text-white/40 placeholder:font-light;
   }
   .textarea {
     @apply w-full h-[180px] p-6 capitalize rounded-lg resize-none;
   }
 }
 
-/* Autofill background and text color fix for WebKit browsers (like Chrome) */
+input,
+textarea,
+select {
+  background-color: transparent !important;
+  color: #ffffff !important;
+  caret-color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 0.75rem;
+}
+
+input::placeholder,
+textarea::placeholder,
+select::placeholder {
+  color: rgba(255, 255, 255, 0.45) !important;
+  opacity: 1;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  color: #ffffff !important;
+  caret-color: #ffffff !important;
+  border-color: rgba(255, 45, 45, 0.95) !important;
+  box-shadow: 0 0 0 1px rgba(255, 45, 45, 0.45),
+    0 0 18px rgba(255, 45, 45, 0.14) !important;
+  outline: none !important;
+}
+
+@media (max-width: 768px) {
+  input,
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+}
+
 input:-webkit-autofill,
 textarea:-webkit-autofill,
 select:-webkit-autofill {
-  background-color: transparent !important;
-  -webkit-text-fill-color: #ffffff !important; /* Ensures text color is white */
-  font-size: inherit;
-  font-family: inherit;
-  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: #ffffff !important;
+  caret-color: #ffffff !important;
+  -webkit-box-shadow: 0 0 0px 1000px rgba(24, 16, 52, 1) inset !important;
+  box-shadow: 0 0 0px 1000px rgba(24, 16, 52, 1) inset !important;
+  border-color: rgba(255, 45, 45, 0.8) !important;
+  transition: background-color 9999s ease-in-out 0s;
 }
 
-/* Ensure text color remains white on focus */
-input:focus,
-textarea:focus {
-  color: #ffffff !important;
+input:-webkit-autofill:hover,
+textarea:-webkit-autofill:hover,
+select:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: #ffffff !important;
+  caret-color: #ffffff !important;
+  -webkit-box-shadow: 0 0 0px 1000px rgba(24, 16, 52, 1) inset !important;
+  box-shadow: 0 0 0px 1000px rgba(24, 16, 52, 1) inset !important;
+  border-color: rgba(255, 45, 45, 0.95) !important;
 }
 
-/* Firefox specific autofill fix */
 input:-moz-autofill,
 textarea:-moz-autofill,
 select:-moz-autofill {
-  background-color: transparent;
-  color: #ffffff;
+  background-color: rgba(24, 16, 52, 1) !important;
+  color: #ffffff !important;
+  caret-color: #ffffff !important;
 }
 
-/* General fix */
 input:-ms-input-placeholder,
 textarea:-ms-input-placeholder,
 select:-ms-input-placeholder {
