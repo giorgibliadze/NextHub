@@ -2,6 +2,7 @@
 // components
 import React, { Suspense, lazy } from "react";
 import Link from "next/link";
+import BrandedLoader from "../../components/BrandedLoader";
 import Bulb from "../../components/Bulb";
 import Circles from "../../components/Circles";
 
@@ -104,7 +105,7 @@ const Services = () => {
   };
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<BrandedLoader fullscreen={false} />}>
       <NextSeo
         canonical={CANONICAL}
         title="სერვისები | ვებსაიტის დამზადება, SEO, ვებ დიზაინი და პროგრამული უზრუნველყოფა | Next-Hub"
