@@ -1,9 +1,6 @@
 // icons
 import {
-  RxCrop,
-  RxPencil2,
   RxDesktop,
-  RxReader,
   RxRocket,
   RxArrowTopRight,
 } from "react-icons/rx";
@@ -16,10 +13,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/autoplay";
-import { RiFacebookCircleFill } from "react-icons/ri";
 import { SiTaichigraphics } from "react-icons/si";
 import { SiGooglemarketingplatform } from "react-icons/si";
-import { TfiLayoutMediaLeftAlt } from "react-icons/tfi";
 import { FaHandsHelping } from "react-icons/fa";
 // import required modules
 import { FreeMode, Autoplay } from "swiper";
@@ -36,18 +31,17 @@ const serviceData = [
   },
   {
     icon: <SiGooglemarketingplatform />,
-    title: "ციფრული მარკეტინგი",
+    title: "პროგრამული უზრუნველყოფა",
     description:
-      "გთავაზობთ ინოვაციურ ციფრულ მარკეტინგს, რაც გაზრდის თქვენი ბრენდის ცნობადობას და მომხმარებელთა ჩართულობას.",
-    link: "/services/digital_marketing",
+      "ვქმნით ბიზნესზე მორგებულ სისტემებს, პორტალებს, CRM გადაწყვეტილებებს და ინდივიდუალურ ვებ აპლიკაციებს.",
+    link: "/software-development",
   },
-  
   {
     icon: <RxRocket />,
     title: "SEO ოპტიმიზაცია",
     description:
       "ჩვენი SEO სერვისები დაგეხმარებათ საძიებო სისტემებში მოწინავე პოზიციების დაკავებაში და გაყიდვების ზრდაში.",
-    link: "/services/seo",
+    link: "/seo-services",
   },
   // {
   //   icon: <RiFacebookCircleFill />,
@@ -58,24 +52,24 @@ const serviceData = [
   // },
   {
     icon: <SiTaichigraphics />,
-    title: "გრაფიკული დიზაინი",
+    title: "ვებ დიზაინი",
     description:
-      "ჩვენი გრაფიკული დიზაინის სერვისები დაგეხმარებათ შექმნათ უნიკალური ვიზუალი, რომელიც თქვენს ბიზნესს გამოარჩევს და მომხმარებლებს მიიზიდავს.",
-    link: "/services/graphic_design",
+      "ვქმნით თანამედროვე, სუფთა და კონვერსიაზე ორიენტირებულ დიზაინს ვებსაიტებისთვის, ლენდინგებისთვის და ციფრული პროდუქტებისთვის.",
+    link: "/web-design",
   },
   {
     icon: <DiGoogleAnalytics />,
-    title: "ანალიტიკა",
+    title: "Google Business Profile",
     description:
-      "მონაცემთა დეტალური ანალიზით ვზომავთ და ვაუმჯობესებთ ციფრულ სტრატეგიებს.",
-    link: "/services/analytics",
+      "ვამართავთ Google Business Profile-ს და Google Maps ოპტიმიზაციას, რომ ადგილობრივმა მომხმარებლებმა მარტივად გიპოვონ.",
+    link: "/google-business-profile-optimization",
   },
   {
     icon: <FaHandsHelping />,
-    title: "ტექნიკური დახმარება",
+    title: "საიტის მხარდაჭერა",
     description:
-      "ვაწარმოებთ საიტის ტექნიკურ აუდიტს და ვაძლიერებთ მის ფუნქციონირებას.",
-    link: "/services/tech_support",
+      "ვზრუნავთ საიტის მოვლაზე, ტექნიკურ მხარდაჭერაზე, უსაფრთხოების განახლებებზე და სტაბილურ მუშაობაზე.",
+    link: "/website-maintenance-services",
   },
 ];
 
