@@ -39,6 +39,10 @@
   overflow: hidden;
 }
 
+body.loading-active {
+  overflow: hidden;
+}
+
 @keyframes priceGlow {
   0%,
   100% {
@@ -81,6 +85,36 @@
 
 .blog-article-content {
   text-wrap: pretty;
+}
+
+@media (max-width: 425px) {
+  .blog-post-hero.blog-post-hero {
+    min-height: 380px;
+    gap: 0.75rem;
+    padding: 1.75rem 1.25rem;
+  }
+
+  .blog-post-hero .blog-post-hero-meta {
+    gap: 0.5rem;
+  }
+
+  .blog-post-hero .blog-post-hero-badge {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.6875rem;
+    line-height: 1.25;
+  }
+
+  .blog-post-hero .blog-post-hero-title {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    font-size: 1.75rem;
+    line-height: 1.15;
+  }
+
+  .blog-post-hero .blog-post-hero-description {
+    font-size: 0.8125rem;
+    line-height: 1.65;
+  }
 }
 
 @media (max-width: 768px) {

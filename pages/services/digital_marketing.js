@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
 import dynamic from "next/dynamic";
-import BrandedLoader from "../../components/BrandedLoader";
 import ImageGallery from "../../components/ImageGallery";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
@@ -9,11 +8,11 @@ import Script from "next/script";
 
 // Dynamic imports
 const PriceCard = dynamic(() => import("../../components/PriceCard"), {
-  loading: () => <BrandedLoader fullscreen={false} />,
+  loading: () => null,
 });
 
 const Modal = dynamic(() => import("../../components/Modal"), {
-  loading: () => <BrandedLoader fullscreen={false} />,
+  loading: () => null,
 });
 
 const CANONICAL = "https://next-hub.pro/services/digital_marketing";

@@ -39,27 +39,27 @@ export default function BlogPostLayout({ post, relatedPosts, schemas }) {
       ))}
 
       <article className="flex min-h-screen flex-col items-center justify-start overflow-x-hidden px-4 py-28 md:px-8 md:py-40 xl:px-10">
-        <header className="relative mx-auto mb-10 w-full max-w-6xl overflow-hidden rounded-[30px] border border-white/10 bg-white/[0.045] p-6 text-center shadow-[0_28px_95px_rgba(0,0,0,0.30)] backdrop-blur-md md:mb-12 md:p-10 lg:p-12">
+        <header className="blog-post-hero relative mx-auto mb-10 flex min-h-[420px] w-full max-w-6xl flex-col items-center justify-center gap-5 overflow-hidden rounded-[30px] border border-white/10 bg-white/[0.045] px-6 py-12 text-center shadow-[0_28px_95px_rgba(0,0,0,0.30)] backdrop-blur-md md:mb-12 md:min-h-[480px] md:gap-6 md:px-10 md:py-14 lg:px-12 xl:min-h-[520px] xl:py-16">
           <div className="absolute inset-x-12 top-0 h-px bg-gradient-to-r from-transparent via-accent/60 to-transparent" />
-          <div className="mb-5 flex flex-wrap justify-center gap-2">
+          <div className="blog-post-hero-meta flex flex-wrap justify-center gap-2">
             <Link
               href={`/blog/${post.category}`}
-              className="inline-block rounded-full border border-accent/20 bg-accent/10 px-4 py-2 text-xs font-semibold text-accent md:px-5 md:text-sm"
+              className="blog-post-hero-badge inline-block rounded-full border border-accent/20 bg-accent/10 px-4 py-2 text-xs font-semibold text-accent md:px-5 md:text-sm"
             >
               {post.categoryTitle}
             </Link>
-            <span className="inline-block rounded-full border border-white/10 bg-white/10 px-4 py-2 text-xs text-white/65 md:px-5 md:text-sm">
+            <span className="blog-post-hero-badge inline-block rounded-full border border-white/10 bg-white/10 px-4 py-2 text-xs text-white/65 md:px-5 md:text-sm">
               {post.readingTime}
             </span>
-            <span className="inline-block rounded-full border border-white/10 bg-black/20 px-4 py-2 text-xs text-white/50 md:px-5 md:text-sm">
+            <span className="blog-post-hero-badge inline-block rounded-full border border-white/10 bg-black/20 px-4 py-2 text-xs text-white/50 md:px-5 md:text-sm">
               {post.date}
             </span>
           </div>
 
-          <h1 className="mx-auto max-w-5xl text-4xl font-bold leading-tight md:text-6xl">
+          <h1 className="blog-post-hero-title mx-auto max-w-5xl text-4xl font-bold leading-tight md:text-6xl">
             {post.title} <span className="text-accent">.</span>
           </h1>
-          <p className="mx-auto mt-6 max-w-3xl text-sm leading-7 text-white/78 md:text-lg md:leading-8">
+          <p className="blog-post-hero-description mx-auto max-w-3xl text-sm leading-7 text-white/78 md:text-lg md:leading-8">
             {post.description}
           </p>
         </header>
