@@ -18,6 +18,10 @@ module.exports = {
     '/payment/*',
     '/404',
     '/500',
+    '/services/seo',
+    '/services/tech_support',
+    '/services/webDevelopmentEN',
+    '/services/web_development',
   ],
 
   transform: async (config, path) => {
@@ -32,13 +36,10 @@ module.exports = {
   robotsTxtOptions: {
     policies: [
       {
-        userAgent: '*',
-        allow: '/',
-        disallow: ['/admin', '/login', '/api/*', '/payment/*'],
+        userAgent: "*",
+        allow: "/",
+        disallow: ["/admin", "/login", "/api/*", "/payment/*"],
       },
-    ],
-    additionalSitemaps: [
-      `${SITE_URL}/sitemap.xml`,
     ],
   },
 };
