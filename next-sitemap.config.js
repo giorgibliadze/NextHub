@@ -41,5 +41,18 @@ module.exports = {
         disallow: ["/admin", "/login", "/api/*", "/payment/*"],
       },
     ],
+    additionalSitemaps: [`${SITE_URL}/sitemap.xml`],
+    transformRobotsTxt: async () =>
+      [
+        "User-agent: *",
+        "Allow: /",
+        "Disallow: /admin",
+        "Disallow: /login",
+        "Disallow: /api/*",
+        "Disallow: /payment/*",
+        "",
+        `Sitemap: ${SITE_URL}/sitemap.xml`,
+        "",
+      ].join("\n"),
   },
 };
