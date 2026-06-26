@@ -1,16 +1,42 @@
 /* eslint-disable react/no-unescaped-entities */
+import { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
+import Image from "next/image";
 import Link from "next/link";
 import RotatingWords from "../components/RotatingWords";
-import ParticlesContainer from "../components/ParticlesContainer";
 
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
 import { NextSeo } from "next-seo";
 import Script from "next/script";
 
+const ParticlesContainer = dynamic(
+  () => import("../components/ParticlesContainer"),
+  {
+    ssr: false,
+    loading: () => null,
+  }
+);
+
 const Home = () => {
+  const [showParticles, setShowParticles] = useState(false);
   const words = ["ვებსაიტები ", "ონლაინ მაღაზიები ", "ვებ აპლიკაციები "];
   const canonical = "https://next-hub.pro";
+
+  useEffect(() => {
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+    const isDesktop = window.matchMedia("(min-width: 769px)").matches;
+
+    if (!isDesktop || prefersReducedMotion) return;
+
+    const timer = window.setTimeout(() => {
+      setShowParticles(true);
+    }, 800);
+
+    return () => window.clearTimeout(timer);
+  }, []);
 
   const services = [
     {
@@ -353,9 +379,18 @@ const Home = () => {
           </div>
 
           <div className="w-full h-full absolute right-0 bottom-0">
-            <div className="bg-none xl:bg-explosion xl:bg-cover xl:bg-right xl:bg-no-repeat w-full h-full absolute mix-blend-color-dodge translate-z-0"></div>
+            <Image
+              src="/bg-explosion.webp"
+              alt=""
+              fill
+              priority
+              fetchPriority="high"
+              sizes="100vw"
+              aria-hidden="true"
+              className="hidden xl:block object-cover object-right mix-blend-color-dodge translate-z-0"
+            />
 
-            <ParticlesContainer />
+            {showParticles && <ParticlesContainer />}
           </div>
         </div>
       </div>

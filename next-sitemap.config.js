@@ -20,7 +20,6 @@ module.exports = {
     '/500',
     '/services/seo',
     '/services/tech_support',
-    '/services/webDevelopmentEN',
     '/services/web_development',
   ],
 

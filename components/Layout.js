@@ -5,7 +5,6 @@ import Header from "../components/Header";
 import TopLeftImg from "../components/TopLeftImg";
 import Script from "next/script";
 import Head from "next/head";
-import { GoogleTagManager } from "@next/third-parties/google";
 import { DefaultSeo } from "next-seo";
 import { faviconLinks } from "../lib/faviconConfig";
 
@@ -27,10 +26,11 @@ export default function Layout({ children }) {
       {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID && (
         <>
           <Script
+            strategy="lazyOnload"
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`}
           />
-          <Script id="ga-gtag" strategy="afterInteractive">
+          <Script id="ga-gtag" strategy="lazyOnload">
             {`
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
@@ -43,9 +43,20 @@ export default function Layout({ children }) {
 
       {/* GTM (safe to keep with GA, or use GTM only) */}
       {process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID && (
-        <GoogleTagManager
-          gtmId={process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID}
-        />
+        <Script id="google-tag-manager" strategy="lazyOnload">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+              'gtm.start': new Date().getTime(),
+              event: 'gtm.js'
+            });
+            var firstScript = document.getElementsByTagName('script')[0];
+            var gtmScript = document.createElement('script');
+            gtmScript.async = true;
+            gtmScript.src = 'https://www.googletagmanager.com/gtm.js?id=${process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID}';
+            firstScript.parentNode.insertBefore(gtmScript, firstScript);
+          `}
+        </Script>
       )}
 
       {/* Organization JSON-LD (uses non-www SITE_URL) */}
@@ -67,7 +78,7 @@ export default function Layout({ children }) {
       {/* Facebook Pixel (optional) */}
       {process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID && (
         <>
-          <Script id="fb-pixel" strategy="afterInteractive">
+          <Script id="fb-pixel" strategy="lazyOnload">
             {`!function(f,b,e,v,n,t,s){if(f.fbq)return;
               n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
               if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
