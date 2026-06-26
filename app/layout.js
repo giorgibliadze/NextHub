@@ -20,7 +20,10 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="ka">
+    <html lang="ka-GE">
+      <head>
+        <meta httpEquiv="content-language" content="ka-GE" />
+      </head>
       <body>
         <MicrosoftClarity />
         <div className="page bg-site text-white bg-cover bg-no-repeat font-sora relative overflow-y-auto">
