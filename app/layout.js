@@ -5,6 +5,7 @@ import Nav from "../components/Nav";
 import Header from "../components/Header";
 import TopLeftImg from "../components/TopLeftImg";
 import { faviconIcons } from "../lib/faviconConfig";
+import MicrosoftClarity from "../components/MicrosoftClarity";
 
 export const metadata = {
   metadataBase: new URL("https://next-hub.pro"),
@@ -21,6 +22,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="ka">
       <body>
+        <MicrosoftClarity />
         <div className="page bg-site text-white bg-cover bg-no-repeat font-sora relative overflow-y-auto">
           <Analytics />
           <SpeedInsights />

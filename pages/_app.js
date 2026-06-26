@@ -4,6 +4,7 @@ import "../styles/globals.css";
 import { useCallback, useEffect, useRef, useState } from "react";
 import Layout from "../components/Layout";
 import BrandedLoader from "../components/BrandedLoader";
+import MicrosoftClarity from "../components/MicrosoftClarity";
 
 //router
 import { useRouter } from "next/router";
@@ -126,6 +127,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
+      <MicrosoftClarity />
       <AnimatePresence mode="wait">
         {phase === "loading" && <BrandedLoader key="global-loader" />}
       </AnimatePresence>
