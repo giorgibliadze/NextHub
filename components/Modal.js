@@ -330,7 +330,7 @@ const Modal = ({ isOpen, onClose, cardData }) => {
               id="name"
               name="name"
               placeholder="სახელი"
-              className="nh-input input text-center w-full focus:text-accent"
+              className="nh-field input text-center w-full"
               value={formData.name}
               onChange={handleInputChange}
               required
@@ -340,7 +340,7 @@ const Modal = ({ isOpen, onClose, cardData }) => {
               id="email"
               name="email"
               placeholder="მაილი"
-              className="nh-input input text-center w-full focus:text-accent"
+              className="nh-field input text-center w-full"
               value={formData.email}
               onChange={handleInputChange}
               required
@@ -351,7 +351,7 @@ const Modal = ({ isOpen, onClose, cardData }) => {
             id="phone"
             name="phone"
             placeholder="ტელეფონი"
-            className="nh-input input text-center w-full focus:text-accent"
+            className="nh-field input text-center w-full"
             value={formData.phone}
             onChange={handleInputChange}
             required
@@ -361,7 +361,7 @@ const Modal = ({ isOpen, onClose, cardData }) => {
             id="subject"
             name="subject"
             placeholder="თემა"
-            className="nh-input input text-center w-full focus:text-accent"
+            className="nh-field input text-center w-full"
             value={formData.subject}
             onChange={handleInputChange}
             required
@@ -370,7 +370,7 @@ const Modal = ({ isOpen, onClose, cardData }) => {
             id="message"
             name="message"
             placeholder="შეტყობინება"
-            className="nh-input input text-center w-full focus:text-accent"
+            className="nh-field input text-center w-full"
             value={formData.message}
             onChange={handleInputChange}
             required
