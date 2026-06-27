@@ -292,7 +292,7 @@ export default function WebsitePriceCalculator() {
               name="website"
               value={leadForm.website}
               onChange={updateLeadForm}
-              className="nh-field hidden"
+              className="hidden"
               tabIndex={-1}
               autoComplete="off"
               aria-hidden="true"
@@ -302,16 +302,20 @@ export default function WebsitePriceCalculator() {
               <label htmlFor="calculator-name" className="mb-2 block text-sm text-white/75">
                 სახელი
               </label>
-              <input
-                id="calculator-name"
-                name="name"
-                type="text"
-                value={leadForm.name}
-                onChange={updateLeadForm}
-                className="nh-field w-full px-4 py-3 text-sm transition placeholder:text-white/35"
-                placeholder="თქვენი სახელი"
-                required
-              />
+              <div className="form-field-shell">
+                <input
+                  id="calculator-name"
+                  name="name"
+                  type="text"
+                  value={leadForm.name}
+                  onChange={updateLeadForm}
+                  className="nh-field text-sm transition"
+                  placeholder="თქვენი სახელი"
+                  autoComplete="name"
+                  data-autofill-safe="true"
+                  required
+                />
+              </div>
             </div>
 
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
@@ -319,30 +323,38 @@ export default function WebsitePriceCalculator() {
                 <label htmlFor="calculator-phone" className="mb-2 block text-sm text-white/75">
                   ტელეფონი
                 </label>
-                <input
-                  id="calculator-phone"
-                  name="phone"
-                  type="tel"
-                  value={leadForm.phone}
-                  onChange={updateLeadForm}
-                  className="nh-field w-full px-4 py-3 text-sm transition placeholder:text-white/35"
-                  placeholder="+995"
-                />
+                <div className="form-field-shell">
+                  <input
+                    id="calculator-phone"
+                    name="phone"
+                    type="tel"
+                    value={leadForm.phone}
+                    onChange={updateLeadForm}
+                    className="nh-field text-sm transition"
+                    placeholder="+995"
+                    autoComplete="tel"
+                    data-autofill-safe="true"
+                  />
+                </div>
               </div>
 
               <div>
                 <label htmlFor="calculator-email" className="mb-2 block text-sm text-white/75">
                   ელფოსტა
                 </label>
-                <input
-                  id="calculator-email"
-                  name="email"
-                  type="email"
-                  value={leadForm.email}
-                  onChange={updateLeadForm}
-                  className="nh-field w-full px-4 py-3 text-sm transition placeholder:text-white/35"
-                  placeholder="name@example.com"
-                />
+                <div className="form-field-shell">
+                  <input
+                    id="calculator-email"
+                    name="email"
+                    type="email"
+                    value={leadForm.email}
+                    onChange={updateLeadForm}
+                    className="nh-field text-sm transition"
+                    placeholder="name@example.com"
+                    autoComplete="email"
+                    data-autofill-safe="true"
+                  />
+                </div>
               </div>
             </div>
 
@@ -350,30 +362,37 @@ export default function WebsitePriceCalculator() {
               <label htmlFor="calculator-company" className="mb-2 block text-sm text-white/75">
                 კომპანიის სახელი
               </label>
-              <input
-                id="calculator-company"
-                name="company"
-                type="text"
-                value={leadForm.company}
-                onChange={updateLeadForm}
-                className="nh-field w-full px-4 py-3 text-sm transition placeholder:text-white/35"
-                placeholder="კომპანია"
-              />
+              <div className="form-field-shell">
+                <input
+                  id="calculator-company"
+                  name="company"
+                  type="text"
+                  value={leadForm.company}
+                  onChange={updateLeadForm}
+                  className="nh-field text-sm transition"
+                  placeholder="კომპანია"
+                  autoComplete="organization"
+                  data-autofill-safe="true"
+                />
+              </div>
             </div>
 
             <div>
               <label htmlFor="calculator-comment" className="mb-2 block text-sm text-white/75">
                 დამატებითი კომენტარი
               </label>
-              <textarea
-                id="calculator-comment"
-                name="comment"
-                value={leadForm.comment}
-                onChange={updateLeadForm}
-                rows={4}
-                className="nh-field w-full resize-none px-4 py-3 text-sm transition placeholder:text-white/35"
-                placeholder="მოკლედ აღწერეთ პროექტი"
-              />
+              <div className="form-field-shell">
+                <textarea
+                  id="calculator-comment"
+                  name="comment"
+                  value={leadForm.comment}
+                  onChange={updateLeadForm}
+                  rows={4}
+                  className="nh-field text-sm transition"
+                  placeholder="მოკლედ აღწერეთ პროექტი"
+                  autoComplete="off"
+                />
+              </div>
             </div>
 
             <label className="flex cursor-pointer items-start gap-3 rounded-2xl border border-white/10 bg-black/20 p-4 text-sm leading-6 text-white/75">

@@ -175,46 +175,61 @@ const Contact = () => {
               onSubmit={send}
             >
               <div className="flex flex-col md:flex-row gap-4 w-full">
+                <div className="form-field-shell w-full">
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="სახელი"
+                    className="nh-field text-center"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    autoComplete="name"
+                    data-autofill-safe="true"
+                    required
+                  />
+                </div>
+                <div className="form-field-shell w-full">
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="ელ-ფოსტა"
+                    className="nh-field text-center"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    autoComplete="email"
+                    data-autofill-safe="true"
+                    required
+                  />
+                </div>
+              </div>
+              <div className="form-field-shell w-full">
                 <input
                   type="text"
-                  id="name"
-                  name="name"
-                  placeholder="სახელი"
-                  className="nh-field input text-center w-full"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  required
-                />
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="ელ-ფოსტა"
-                  className="nh-field input text-center w-full"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  id="subject"
+                  name="subject"
+                  placeholder="თემა"
+                  className="nh-field text-center"
+                  value={subject}
+                  onChange={(e) => setSubject(e.target.value)}
+                  autoComplete="off"
+                  data-autofill-safe="true"
                   required
                 />
               </div>
-              <input
-                type="text"
-                id="subject"
-                name="subject"
-                placeholder="თემა"
-                className="nh-field input text-center w-full"
-                value={subject}
-                onChange={(e) => setSubject(e.target.value)}
-                required
-              />
-              <textarea
-                id="message"
-                name="message"
-                placeholder="შეტყობინება"
-                className="nh-field textarea text-center w-full"
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                required
-              ></textarea>
+              <div className="form-field-shell w-full">
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="შეტყობინება"
+                  className="nh-field text-center"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  autoComplete="off"
+                  required
+                ></textarea>
+              </div>
               <button
                 type="submit"
                 className="btn rounded-full border border-white/50 max-w-[170px] px-8 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accent group"
