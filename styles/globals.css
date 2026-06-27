@@ -183,12 +183,20 @@ select {
   );
   border: 1px solid rgba(255, 255, 255, 0.14);
   overflow: hidden;
+  transition: border-color 250ms ease, box-shadow 250ms ease,
+    background 250ms ease;
 }
 
 .form-field-shell:focus-within {
+  background: #ffffff;
   border-color: rgba(255, 45, 45, 0.95);
   box-shadow: 0 0 0 1px rgba(255, 45, 45, 0.35),
     0 0 24px rgba(255, 45, 45, 0.18);
+}
+
+.form-field-shell:has(.nh-field:not(:placeholder-shown)) {
+  background: #ffffff;
+  border-color: rgba(255, 45, 45, 0.75);
 }
 
 input::placeholder,
@@ -247,6 +255,9 @@ select:-ms-input-placeholder {
   -webkit-background-clip: padding-box !important;
   background-clip: padding-box !important;
   box-shadow: none !important;
+  transition: background-color 250ms ease, background-image 250ms ease,
+    color 250ms ease, -webkit-text-fill-color 250ms ease,
+    caret-color 250ms ease;
 }
 
 textarea.nh-field {
@@ -262,12 +273,29 @@ textarea.nh-field {
 }
 
 .nh-field:-moz-autofill {
-  background-color: #120b2f !important;
-  color: #ffffff !important;
-  box-shadow: 0 0 0 1000px #120b2f inset !important;
+  background-color: #ffffff !important;
+  color: #111827 !important;
+  caret-color: #111827 !important;
+  box-shadow: 0 0 0 1000px #ffffff inset !important;
 }
 
 
+
+.nh-field:focus,
+.nh-field:not(:placeholder-shown) {
+  background-color: #ffffff !important;
+  background-image: linear-gradient(180deg, #ffffff, #ffffff) !important;
+  color: #111827 !important;
+  -webkit-text-fill-color: #111827 !important;
+  caret-color: #111827 !important;
+  box-shadow: none !important;
+}
+
+.nh-field:focus::placeholder,
+.nh-field:not(:placeholder-shown)::placeholder {
+  color: rgba(17, 24, 39, 0.45) !important;
+  -webkit-text-fill-color: rgba(17, 24, 39, 0.45) !important;
+}
 
 /* ---------- Safari / Chrome Autofill ---------- */
 
@@ -283,21 +311,14 @@ textarea:-webkit-autofill,
 textarea:-webkit-autofill:hover,
 textarea:-webkit-autofill:focus,
 textarea:-webkit-autofill:active {
-
-  -webkit-box-shadow: 0 0 0 1000px #120b2f inset !important;
-  box-shadow: 0 0 0 1000px #120b2f inset !important;
-
-  background-color: #120b2f !important;
-  background-image: none !important;
-
+  -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+  box-shadow: 0 0 0 1000px #ffffff inset !important;
+  background-color: #ffffff !important;
+  background-image: linear-gradient(180deg, #ffffff, #ffffff) !important;
   -webkit-text-fill-color: #111827 !important;
   color: #111827 !important;
-
   caret-color: #111827 !important;
-
   border: none !important;
-
-  transition:
-    background-color 999999s ease-in-out,
-    color 999999s ease-in-out;
+  transition: background-color 999999s ease-in-out,
+    color 250ms ease, -webkit-text-fill-color 250ms ease !important;
 }
