@@ -173,6 +173,43 @@ select {
   caret-color: #ffffff;
 }
 
+.nh-input {
+  background-color: #120b2f !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  caret-color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 18px;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.nh-input::placeholder {
+  color: rgba(255, 255, 255, 0.45) !important;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.45) !important;
+}
+
+.nh-input:-webkit-autofill,
+.nh-input:-webkit-autofill:hover,
+.nh-input:-webkit-autofill:focus,
+.nh-input:-webkit-autofill:active {
+  -webkit-text-fill-color: #ffffff !important;
+  caret-color: #ffffff !important;
+  background-color: #120b2f !important;
+  background-image: none !important;
+  -webkit-box-shadow: 0 0 0 1000px #120b2f inset !important;
+  box-shadow: 0 0 0 1000px #120b2f inset !important;
+  border-color: rgba(255, 45, 45, 0.9) !important;
+  transition: background-color 999999s ease-in-out 0s !important;
+}
+
+.nh-input:focus {
+  outline: none;
+  border-color: rgba(255, 45, 45, 0.95) !important;
+  box-shadow: 0 0 0 1px rgba(255, 45, 45, 0.5),
+    0 0 24px rgba(255, 45, 45, 0.12) !important;
+}
+
 input::placeholder,
 textarea::placeholder,
 select::placeholder {
@@ -195,6 +232,10 @@ select:focus {
   input,
   textarea,
   select {
+    font-size: 16px !important;
+  }
+
+  .nh-input {
     font-size: 16px !important;
   }
 }

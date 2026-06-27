@@ -308,7 +308,7 @@ export default function WebsitePriceCalculator() {
                 type="text"
                 value={leadForm.name}
                 onChange={updateLeadForm}
-                className="w-full rounded-2xl border border-white/10 bg-[#120b2f]/90 px-4 py-3 text-sm text-white outline-none transition placeholder:text-white/35 focus:border-accent/70"
+                className="nh-input w-full px-4 py-3 text-sm transition placeholder:text-white/35"
                 placeholder="თქვენი სახელი"
                 required
               />
@@ -325,7 +325,7 @@ export default function WebsitePriceCalculator() {
                   type="tel"
                   value={leadForm.phone}
                   onChange={updateLeadForm}
-                  className="w-full rounded-2xl border border-white/10 bg-[#120b2f]/90 px-4 py-3 text-sm text-white outline-none transition placeholder:text-white/35 focus:border-accent/70"
+                  className="nh-input w-full px-4 py-3 text-sm transition placeholder:text-white/35"
                   placeholder="+995"
                 />
               </div>
@@ -340,7 +340,7 @@ export default function WebsitePriceCalculator() {
                   type="email"
                   value={leadForm.email}
                   onChange={updateLeadForm}
-                  className="w-full rounded-2xl border border-white/10 bg-[#120b2f]/90 px-4 py-3 text-sm text-white outline-none transition placeholder:text-white/35 focus:border-accent/70"
+                  className="nh-input w-full px-4 py-3 text-sm transition placeholder:text-white/35"
                   placeholder="name@example.com"
                 />
               </div>
@@ -356,7 +356,7 @@ export default function WebsitePriceCalculator() {
                 type="text"
                 value={leadForm.company}
                 onChange={updateLeadForm}
-                className="w-full rounded-2xl border border-white/10 bg-[#120b2f]/90 px-4 py-3 text-sm text-white outline-none transition placeholder:text-white/35 focus:border-accent/70"
+                className="nh-input w-full px-4 py-3 text-sm transition placeholder:text-white/35"
                 placeholder="კომპანია"
               />
             </div>
@@ -371,7 +371,7 @@ export default function WebsitePriceCalculator() {
                 value={leadForm.comment}
                 onChange={updateLeadForm}
                 rows={4}
-                className="w-full resize-none rounded-2xl border border-white/10 bg-[#120b2f]/90 px-4 py-3 text-sm text-white outline-none transition placeholder:text-white/35 focus:border-accent/70"
+                className="nh-input w-full resize-none px-4 py-3 text-sm transition placeholder:text-white/35"
                 placeholder="მოკლედ აღწერეთ პროექტი"
               />
             </div>

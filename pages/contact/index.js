@@ -180,7 +180,7 @@ const Contact = () => {
                   id="name"
                   name="name"
                   placeholder="სახელი"
-                  className="input text-center w-full"
+                  className="nh-input input text-center w-full"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   required
@@ -190,7 +190,7 @@ const Contact = () => {
                   id="email"
                   name="email"
                   placeholder="ელ-ფოსტა"
-                  className="input text-center w-full"
+                  className="nh-input input text-center w-full"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -201,7 +201,7 @@ const Contact = () => {
                 id="subject"
                 name="subject"
                 placeholder="თემა"
-                className="input text-center w-full"
+                className="nh-input input text-center w-full"
                 value={subject}
                 onChange={(e) => setSubject(e.target.value)}
                 required
@@ -210,7 +210,7 @@ const Contact = () => {
                 id="message"
                 name="message"
                 placeholder="შეტყობინება"
-                className="textarea text-center w-full"
+                className="nh-input textarea text-center w-full"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 required
