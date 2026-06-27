@@ -290,10 +290,10 @@ textarea:-webkit-autofill:active {
   background-color: #120b2f !important;
   background-image: none !important;
 
-  -webkit-text-fill-color: #ffffff !important;
-  color: #ffffff !important;
+  -webkit-text-fill-color: #111827 !important;
+  color: #111827 !important;
 
-  caret-color: #ffffff !important;
+  caret-color: #111827 !important;
 
   border: none !important;
 
