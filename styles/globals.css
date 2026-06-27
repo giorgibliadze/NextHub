@@ -169,7 +169,7 @@ nav {
 input,
 textarea,
 select {
-  color: #120b2f;
+  color: #ffffff;
   caret-color: #ffffff;
 }
 
@@ -202,7 +202,7 @@ input:focus,
 textarea:focus,
 select:focus {
   color: #ffffff !important;
-  caret-color: #ffffff !important;
+  caret-color: #120b2f !important;
   border-color: rgba(255, 45, 45, 0.95) !important;
   box-shadow: 0 0 0 1px rgba(255, 45, 45, 0.45),
     0 0 18px rgba(255, 45, 45, 0.14) !important;
@@ -225,7 +225,7 @@ input:-ms-input-placeholder,
 textarea:-ms-input-placeholder,
 select:-ms-input-placeholder {
   background-color: #120b2f;
-  color: #120b2f;
+  color: #ffffff;
 }
 
 input:-webkit-autofill,
