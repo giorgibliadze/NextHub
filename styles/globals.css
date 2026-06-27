@@ -169,7 +169,7 @@ nav {
 input,
 textarea,
 select {
-  color: #ffffff;
+  color: #120b2f;
   caret-color: #ffffff;
 }
 
@@ -225,7 +225,7 @@ input:-ms-input-placeholder,
 textarea:-ms-input-placeholder,
 select:-ms-input-placeholder {
   background-color: #120b2f;
-  color: #ffffff;
+  color: #120b2f;
 }
 
 input:-webkit-autofill,
