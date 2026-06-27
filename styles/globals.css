@@ -159,7 +159,7 @@ nav {
   .input,
   .textarea,
   select {
-    @apply bg-transparent text-white outline-none focus:ring-1 focus:ring-accent border border-white/10 placeholder:text-white/40 placeholder:font-light;
+    @apply bg-[#120b2f]/90 text-white outline-none focus:ring-1 focus:ring-accent border border-white/10 placeholder:text-white/40 placeholder:font-light;
   }
   .textarea {
     @apply w-full h-[180px] p-6 capitalize rounded-lg resize-none;
@@ -169,11 +169,8 @@ nav {
 input,
 textarea,
 select {
-  background-color: transparent !important;
-  color: #ffffff !important;
-  caret-color: #ffffff !important;
-  border-color: rgba(255, 255, 255, 0.1) !important;
-  border-radius: 0.75rem;
+  color: #ffffff;
+  caret-color: #ffffff;
 }
 
 input::placeholder,
@@ -203,40 +200,38 @@ select:focus {
 }
 
 input:-webkit-autofill,
-textarea:-webkit-autofill,
-select:-webkit-autofill {
-  -webkit-text-fill-color: #ffffff !important;
-  caret-color: #ffffff !important;
-  -webkit-box-shadow: 0 0 0px 1000px rgba(24, 16, 52, 1) inset !important;
-  box-shadow: 0 0 0px 1000px rgba(24, 16, 52, 1) inset !important;
-  border-color: rgba(255, 45, 45, 0.8) !important;
-  transition: background-color 9999s ease-in-out 0s;
-}
-
 input:-webkit-autofill:hover,
-textarea:-webkit-autofill:hover,
-select:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
 textarea:-webkit-autofill:focus,
-select:-webkit-autofill:focus {
+textarea:-webkit-autofill:active,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus,
+select:-webkit-autofill:active {
   -webkit-text-fill-color: #ffffff !important;
   caret-color: #ffffff !important;
-  -webkit-box-shadow: 0 0 0px 1000px rgba(24, 16, 52, 1) inset !important;
-  box-shadow: 0 0 0px 1000px rgba(24, 16, 52, 1) inset !important;
-  border-color: rgba(255, 45, 45, 0.95) !important;
+  background-color: #120b2f !important;
+  -webkit-box-shadow: 0 0 0 1000px #120b2f inset !important;
+  box-shadow: 0 0 0 1000px #120b2f inset !important;
+  border-color: rgba(255, 45, 45, 0.9) !important;
+  transition: background-color 9999s ease-in-out 0s !important;
 }
 
 input:-moz-autofill,
 textarea:-moz-autofill,
 select:-moz-autofill {
-  background-color: rgba(24, 16, 52, 1) !important;
+  background-color: #120b2f !important;
   color: #ffffff !important;
   caret-color: #ffffff !important;
+  box-shadow: 0 0 0 1000px #120b2f inset !important;
 }
 
 input:-ms-input-placeholder,
 textarea:-ms-input-placeholder,
 select:-ms-input-placeholder {
-  background-color: transparent;
+  background-color: #120b2f;
   color: #ffffff;
 }

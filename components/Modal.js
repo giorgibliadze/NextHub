@@ -330,7 +330,7 @@ const Modal = ({ isOpen, onClose, cardData }) => {
               id="name"
               name="name"
               placeholder="სახელი"
-              className="text-white bg-transparent border-b border-gray-500 focus:outline-none focus:border-accent input text-center w-full focus:text-accent focus:bg-transparent"
+              className="text-white bg-[#120b2f]/90 border-b border-gray-500 focus:outline-none focus:border-accent input text-center w-full focus:text-accent focus:bg-[#120b2f]/90"
               value={formData.name}
               onChange={handleInputChange}
               required
@@ -340,7 +340,7 @@ const Modal = ({ isOpen, onClose, cardData }) => {
               id="email"
               name="email"
               placeholder="მაილი"
-              className="text-white bg-transparent border-b border-gray-500 focus:outline-none focus:border-accent input text-center w/full focus:text-accent focus:bg-transparent"
+              className="text-white bg-[#120b2f]/90 border-b border-gray-500 focus:outline-none focus:border-accent input text-center w/full focus:text-accent focus:bg-[#120b2f]/90"
               value={formData.email}
               onChange={handleInputChange}
               required
@@ -351,7 +351,7 @@ const Modal = ({ isOpen, onClose, cardData }) => {
             id="phone"
             name="phone"
             placeholder="ტელეფონი"
-            className="text-white bg-transparent border-b border-gray-500 focus:outline-none focus:border-accent input text-center w-full focus:text-accent focus:bg-transparent"
+            className="text-white bg-[#120b2f]/90 border-b border-gray-500 focus:outline-none focus:border-accent input text-center w-full focus:text-accent focus:bg-[#120b2f]/90"
             value={formData.phone}
             onChange={handleInputChange}
             required
@@ -361,7 +361,7 @@ const Modal = ({ isOpen, onClose, cardData }) => {
             id="subject"
             name="subject"
             placeholder="თემა"
-            className="text-white bg-transparent border-b border-gray-500 focus:outline-none focus:border-accent input text-center w/full focus:text-accent focus:bg-transparent"
+            className="text-white bg-[#120b2f]/90 border-b border-gray-500 focus:outline-none focus:border-accent input text-center w/full focus:text-accent focus:bg-[#120b2f]/90"
             value={formData.subject}
             onChange={handleInputChange}
             required
@@ -370,7 +370,7 @@ const Modal = ({ isOpen, onClose, cardData }) => {
             id="message"
             name="message"
             placeholder="შეტყობინება"
-            className="text-white bg-transparent border-b border-gray-500 focus:outline-none focus:border-accent input text-center w/full focus:text-accent focus:bg-transparent"
+            className="text-white bg-[#120b2f]/90 border-b border-gray-500 focus:outline-none focus:border-accent input text-center w/full focus:text-accent focus:bg-[#120b2f]/90"
             value={formData.message}
             onChange={handleInputChange}
             required

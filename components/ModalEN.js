@@ -310,7 +310,7 @@ const ModalEN = ({ isOpen, onClose, cardData }) => {
               id="name"
               name="name"
               placeholder="Name"
-              className="text-white bg-transparent border-b border-gray-500 focus:outline-none focus:border-accent input text-center w-full focus:text-accent"
+              className="text-white bg-[#120b2f]/90 border-b border-gray-500 focus:outline-none focus:border-accent input text-center w-full focus:text-accent"
               value={formData.name}
               onChange={handleInputChange}
               required
@@ -320,7 +320,7 @@ const ModalEN = ({ isOpen, onClose, cardData }) => {
               id="email"
               name="email"
               placeholder="Email"
-              className="text-white bg-transparent border-b border-gray-500 focus:outline-none focus:border-accent input text-center w-full focus:text-accent"
+              className="text-white bg-[#120b2f]/90 border-b border-gray-500 focus:outline-none focus:border-accent input text-center w-full focus:text-accent"
               value={formData.email}
               onChange={handleInputChange}
               required
@@ -332,7 +332,7 @@ const ModalEN = ({ isOpen, onClose, cardData }) => {
             id="phone"
             name="phone"
             placeholder="Phone"
-            className="text-white bg-transparent border-b border-gray-500 focus:outline-none focus:border-accent input text-center w-full focus:text-accent"
+            className="text-white bg-[#120b2f]/90 border-b border-gray-500 focus:outline-none focus:border-accent input text-center w-full focus:text-accent"
             value={formData.phone}
             onChange={handleInputChange}
             required
@@ -342,7 +342,7 @@ const ModalEN = ({ isOpen, onClose, cardData }) => {
             id="subject"
             name="subject"
             placeholder="Subject"
-            className="text-white bg-transparent border-b border-gray-500 focus:outline-none focus:border-accent input text-center w-full focus:text-accent"
+            className="text-white bg-[#120b2f]/90 border-b border-gray-500 focus:outline-none focus:border-accent input text-center w-full focus:text-accent"
             value={formData.subject}
             onChange={handleInputChange}
             required
@@ -351,7 +351,7 @@ const ModalEN = ({ isOpen, onClose, cardData }) => {
             id="message"
             name="message"
             placeholder="Message"
-            className="text-white bg-transparent border-b border-gray-500 focus:outline-none focus:border-accent input text-center w-full focus:text-accent"
+            className="text-white bg-[#120b2f]/90 border-b border-gray-500 focus:outline-none focus:border-accent input text-center w-full focus:text-accent"
             value={formData.message}
             onChange={handleInputChange}
             required

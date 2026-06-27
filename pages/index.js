@@ -18,6 +18,23 @@ const ParticlesContainer = dynamic(
   }
 );
 
+const WebsitePriceCalculator = dynamic(
+  () => import("../components/WebsitePriceCalculator"),
+  {
+    loading: () => (
+      <div className="mx-auto mb-14 max-w-6xl rounded-[24px] border border-white/10 bg-white/5 px-4 py-8 shadow-2xl backdrop-blur-md md:mb-20 md:rounded-[32px] md:px-6 md:py-12">
+        <div className="h-8 w-64 max-w-full rounded-full bg-white/10" />
+        <div className="mt-5 h-4 w-full max-w-2xl rounded-full bg-white/10" />
+        <div className="mt-8 grid gap-4 md:grid-cols-3">
+          <div className="h-28 rounded-2xl bg-white/10" />
+          <div className="h-28 rounded-2xl bg-white/10" />
+          <div className="h-28 rounded-2xl bg-white/10" />
+        </div>
+      </div>
+    ),
+  }
+);
+
 const Home = () => {
   const [showParticles, setShowParticles] = useState(false);
   const words = ["ვებსაიტები ", "ონლაინ მაღაზიები ", "ვებ აპლიკაციები "];
@@ -400,6 +417,8 @@ const Home = () => {
       </div>
 
       <main className="bg-primary/60 px-4 md:px-8 xl:px-10 py-16 md:py-24 overflow-x-hidden">
+        <WebsitePriceCalculator />
+
         <motion.section
           variants={fadeIn("up", 0.1)}
           initial="hidden"

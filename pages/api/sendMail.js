@@ -1,26 +1,11 @@
-// pages/api/sendMail.js
-import nodemailer from "nodemailer";
+import { sendContactMail } from "../../lib/contactMailer";
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
     const { to, subject, body } = req.body;
-    const { SMTP_EMAIL, SMTP_PASSWORD } = process.env;
-
-    const transport = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: SMTP_EMAIL,
-        pass: SMTP_PASSWORD,
-      },
-      tls: {
-        rejectUnauthorized: false,
-      },
-    });
 
     try {
-      await transport.verify();
-      const sendResult = await transport.sendMail({
-        from: SMTP_EMAIL,
+      const sendResult = await sendContactMail({
         to,
         subject,
         html: body,
