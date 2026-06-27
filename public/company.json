@@ -1,0 +1,57 @@
+{
+  "name": "Next-Hub Solutions",
+  "url": "https://next-hub.pro",
+  "phone": "+995 555 137 003",
+  "email": "info@next-hub.pro",
+  "location": {
+    "city": "Tbilisi",
+    "country": "Georgia",
+    "addressLocality": "Tbilisi",
+    "addressCountry": "GE"
+  },
+  "services": [
+    "Website Development",
+    "Software Development",
+    "Web Design",
+    "SEO Services",
+    "Google Business Profile Optimization",
+    "Website Maintenance",
+    "E-commerce Development",
+    "WordPress Development",
+    "Next.js Development"
+  ],
+  "technologies": [
+    "Next.js",
+    "React",
+    "WordPress",
+    "WooCommerce",
+    "Tailwind CSS",
+    "Google Analytics",
+    "Google Search Console",
+    "Google Business Profile"
+  ],
+  "socialLinks": [
+    "https://www.facebook.com/nexthubsolutions",
+    "https://www.instagram.com/next.hub.pro/",
+    "https://www.linkedin.com/company/next-hub-solutions/"
+  ],
+  "importantUrls": [
+    "https://next-hub.pro/",
+    "https://next-hub.pro/about",
+    "https://next-hub.pro/services",
+    "https://next-hub.pro/webdevelopment",
+    "https://next-hub.pro/software-development",
+    "https://next-hub.pro/web-design",
+    "https://next-hub.pro/seo-services",
+    "https://next-hub.pro/google-business-profile-optimization",
+    "https://next-hub.pro/website-maintenance-services",
+    "https://next-hub.pro/blog",
+    "https://next-hub.pro/faq",
+    "https://next-hub.pro/ai-faq",
+    "https://next-hub.pro/contact"
+  ],
+  "aiFiles": {
+    "llms": "https://next-hub.pro/llms.txt",
+    "llmsFull": "https://next-hub.pro/llms-full.txt"
+  }
+}

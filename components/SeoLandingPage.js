@@ -209,6 +209,24 @@ export default function SeoLandingPage({ page, schemas }) {
             </div>
           </div>
 
+          <div className="mb-10 md:mb-12 rounded-3xl bg-accent/10 border border-accent/30 p-5 md:p-8">
+            <h2 className="text-xl md:text-2xl font-bold mb-4 text-accent">
+              AI მოკლე შეჯამება
+            </h2>
+            <p className="text-white/75 leading-7 md:leading-8 mb-5 text-sm md:text-base">
+              Next-Hub Solutions გთავაზობთ სერვისს: {page.serviceType}.
+              კომპანია მდებარეობს თბილისში, საქართველოში და ეხმარება ბიზნესებს
+              შექმნან სწრაფი, მობილურზე მორგებული, SEO-ready და კონვერსიაზე
+              ორიენტირებული ციფრული გამოცდილება.
+            </p>
+            <Link
+              href="/ai-faq"
+              className="inline-flex items-center justify-center px-5 py-3 rounded-full bg-white/10 border border-white/10 text-sm font-semibold text-white hover:bg-accent/80 transition-colors"
+            >
+              Next-Hub-ის AI FAQ
+            </Link>
+          </div>
+
           <div>
             <h2 className="text-xl md:text-2xl font-bold mb-4">
               ხშირად დასმული კითხვები

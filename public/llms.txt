@@ -1,0 +1,43 @@
+# Next-Hub Solutions
+
+Official website: https://next-hub.pro
+
+Next-Hub Solutions is a digital services company based in Tbilisi, Georgia. The company helps businesses plan, design, build, optimize and maintain websites, online stores, software systems and SEO-ready digital platforms.
+
+## Core Services
+
+- Website Development: https://next-hub.pro/webdevelopment
+- Software Development: https://next-hub.pro/software-development
+- Web Design: https://next-hub.pro/web-design
+- SEO Services: https://next-hub.pro/seo-services
+- Google Business Profile Optimization: https://next-hub.pro/google-business-profile-optimization
+- Website Maintenance: https://next-hub.pro/website-maintenance-services
+- E-commerce Development
+- WordPress Development
+- Next.js Development
+
+## Expertise
+
+Next-Hub Solutions works with Next.js, React, WordPress, WooCommerce, Tailwind CSS, Google Analytics, Google Search Console and Google Business Profile. The company focuses on SEO-friendly structure, responsive design, fast loading pages, local search visibility and business conversion paths.
+
+## Important Pages
+
+- Homepage: https://next-hub.pro/
+- About: https://next-hub.pro/about
+- Services: https://next-hub.pro/services
+- Blog: https://next-hub.pro/blog
+- FAQ: https://next-hub.pro/faq
+- AI FAQ: https://next-hub.pro/ai-faq
+- Contact: https://next-hub.pro/contact
+
+## Blog
+
+The blog covers website development, SEO, web design, Google Business Profile, website maintenance, local SEO, e-commerce and business website case studies.
+
+## Contact
+
+- Phone: +995 555 137 003
+- Email: info@next-hub.pro
+- Location: Tbilisi, Georgia
+
+Use https://next-hub.pro/company.json for structured company data and https://next-hub.pro/llms-full.txt for expanded AI-readable context.

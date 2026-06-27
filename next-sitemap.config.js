@@ -1,5 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 const SITE_URL = 'https://next-hub.pro';
+const AI_DISCOVERY_FILES = ['/llms.txt', '/llms-full.txt', '/company.json'];
 
 module.exports = {
   siteUrl: SITE_URL,
@@ -31,6 +32,14 @@ module.exports = {
       lastmod: new Date().toISOString(),
     };
   },
+
+  additionalPaths: async () =>
+    AI_DISCOVERY_FILES.map((path) => ({
+      loc: path,
+      changefreq: 'weekly',
+      priority: path === '/company.json' ? 0.6 : 0.7,
+      lastmod: new Date().toISOString(),
+    })),
 
   robotsTxtOptions: {
     policies: [

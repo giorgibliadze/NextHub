@@ -6,6 +6,7 @@ import Header from "../components/Header";
 import TopLeftImg from "../components/TopLeftImg";
 import { faviconIcons } from "../lib/faviconConfig";
 import MicrosoftClarity from "../components/MicrosoftClarity";
+import { companyProfile, siteUrl } from "../lib/aiSeo";
 
 export const metadata = {
   metadataBase: new URL("https://next-hub.pro"),
@@ -18,11 +19,69 @@ export const metadata = {
   icons: faviconIcons,
 };
 
+const siteEntitySchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["Organization", "LocalBusiness"],
+      "@id": `${siteUrl}/#organization`,
+      name: companyProfile.name,
+      url: siteUrl,
+      logo: `${siteUrl}/favicon.jpg`,
+      image: `${siteUrl}/og-image.jpg`,
+      telephone: companyProfile.phone,
+      email: companyProfile.email,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: companyProfile.location.addressLocality,
+        addressCountry: companyProfile.location.addressCountry,
+      },
+      areaServed: [
+        { "@type": "Country", name: "Georgia" },
+        { "@type": "City", name: "Tbilisi" },
+      ],
+      sameAs: companyProfile.socialLinks,
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          telephone: companyProfile.phone,
+          email: companyProfile.email,
+          contactType: "customer support",
+          areaServed: "GE",
+          availableLanguage: ["ka-GE", "en"],
+        },
+      ],
+      makesOffer: companyProfile.services.map((service) => ({
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: service,
+          provider: { "@id": `${siteUrl}/#organization` },
+        },
+      })),
+      knowsAbout: companyProfile.technologies,
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      url: siteUrl,
+      name: companyProfile.name,
+      publisher: { "@id": `${siteUrl}/#organization` },
+      inLanguage: "ka-GE",
+    },
+  ],
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="ka-GE">
       <head>
         <meta httpEquiv="content-language" content="ka-GE" />
+        <script
+          id="site-entity-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteEntitySchema) }}
+        />
       </head>
       <body>
         <MicrosoftClarity />

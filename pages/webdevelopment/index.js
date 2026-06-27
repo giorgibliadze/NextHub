@@ -176,6 +176,7 @@ const WebDevelopment = () => {
       href: "/website-maintenance-services",
       label: "საიტის მხარდაჭერა",
     },
+    { href: "/ai-faq", label: "AI FAQ" },
     { href: "/blog", label: "ბლოგი" },
     { href: "/contact", label: "კონტაქტი" },
   ];
@@ -592,6 +593,36 @@ const WebDevelopment = () => {
                   იყოს სწრაფი, მოქნილი და მარტივად განვითარებადი.
                 </p>
               </div>
+            </div>
+          </motion.section>
+
+          <motion.section
+            variants={fadeIn("up", 0.1)}
+            initial="hidden"
+            animate="show"
+            exit="hidden"
+            className="max-w-6xl mx-auto mb-14 md:mb-20 px-4 md:px-6"
+          >
+            <div className="rounded-[24px] md:rounded-[32px] border border-accent/30 bg-accent/10 p-6 md:p-8">
+              <span className="inline-block mb-4 px-4 py-2 rounded-full bg-black/25 text-accent text-xs md:text-sm font-semibold">
+                AI შეჯამება
+              </span>
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 leading-tight">
+                ვებსაიტის დამზადება Next-Hub Solutions-ში
+              </h2>
+              <p className="text-white/75 leading-7 md:leading-8 text-sm md:text-base max-w-4xl">
+                Next-Hub Solutions თბილისში ქმნის SEO-ზე მორგებულ ბიზნეს
+                ვებსაიტებს, ონლაინ მაღაზიებს, WordPress და Next.js პროექტებს.
+                სერვისი აერთიანებს სტრუქტურას, ვებ დიზაინს, დეველოპმენტს,
+                სიჩქარის ოპტიმიზაციას, schema markup-ს და გაშვების შემდეგ
+                ტექნიკურ მხარდაჭერას.
+              </p>
+              <Link
+                href="/ai-faq"
+                className="inline-flex mt-5 text-accent font-semibold hover:text-white transition-colors"
+              >
+                Next-Hub-ის AI FAQ
+              </Link>
             </div>
           </motion.section>
 

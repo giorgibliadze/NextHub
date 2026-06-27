@@ -7,9 +7,63 @@ import Script from "next/script";
 import Head from "next/head";
 import { DefaultSeo } from "next-seo";
 import { faviconLinks } from "../lib/faviconConfig";
+import { companyProfile } from "../lib/aiSeo";
 
 // ✅ default to non-www canonical root
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://next-hub.pro";
+
+const siteEntitySchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["Organization", "LocalBusiness"],
+      "@id": `${SITE_URL}/#organization`,
+      name: companyProfile.name,
+      url: SITE_URL,
+      logo: `${SITE_URL}/favicon.jpg`,
+      image: `${SITE_URL}/og-image.jpg`,
+      telephone: companyProfile.phone,
+      email: companyProfile.email,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: companyProfile.location.addressLocality,
+        addressCountry: companyProfile.location.addressCountry,
+      },
+      areaServed: [
+        { "@type": "Country", name: "Georgia" },
+        { "@type": "City", name: "Tbilisi" },
+      ],
+      sameAs: companyProfile.socialLinks,
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          telephone: companyProfile.phone,
+          email: companyProfile.email,
+          contactType: "customer support",
+          areaServed: "GE",
+          availableLanguage: ["ka-GE", "en"],
+        },
+      ],
+      makesOffer: companyProfile.services.map((service) => ({
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: service,
+          provider: { "@id": `${SITE_URL}/#organization` },
+        },
+      })),
+      knowsAbout: companyProfile.technologies,
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: companyProfile.name,
+      publisher: { "@id": `${SITE_URL}/#organization` },
+      inLanguage: "ka-GE",
+    },
+  ],
+};
 
 export default function Layout({ children }) {
   return (
@@ -59,19 +113,13 @@ export default function Layout({ children }) {
         </Script>
       )}
 
-      {/* Organization JSON-LD (uses non-www SITE_URL) */}
+      {/* Organization/WebSite/LocalBusiness JSON-LD (uses non-www SITE_URL) */}
       <Script
-        id="org-schema"
+        id="site-entity-schema"
         type="application/ld+json"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            url: SITE_URL,
-            name: "Next-Hub Solutions",
-            logo: `${SITE_URL}/favicon.jpg`,
-          }),
+          __html: JSON.stringify(siteEntitySchema),
         }}
       />
 

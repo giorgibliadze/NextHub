@@ -127,6 +127,10 @@ const Home = () => {
       href: "/blog/printerman-website-case-study",
       title: "Printerman ვებსაიტის ქეისი",
     },
+    {
+      href: "/ai-faq",
+      title: "AI FAQ Next-Hub Solutions-ის შესახებ",
+    },
   ];
 
   const schemaData = {
