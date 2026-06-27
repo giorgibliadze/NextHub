@@ -2,11 +2,15 @@
   "name": "esportfolio",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=24 <25",
+    "npm": ">=11"
+  },
   "scripts": {
     "dev": "next dev",
-    "build": "next build --webpack",
+    "build": "node scripts/run-with-current-browser-data.js next build --webpack",
     "start": "next start",
-    "lint": "eslint .",
+    "lint": "node scripts/run-with-current-browser-data.js eslint .",
     "seo:audit": "node scripts/seo-audit.js",
     "indexnow": "node scripts/indexnow-submit.js",
     "postbuild": "next-sitemap",
@@ -30,7 +34,7 @@
     "next": "^16.0.10",
     "next-seo": "^6.5.0",
     "next-sitemap": "^4.2.3",
-    "node": "^22.18.0",
+    "node": "^24.0.0",
     "nodemailer": "^6.9.13",
     "qs": "^6.13.0",
     "raw-body": "^3.0.0",
@@ -54,6 +58,7 @@
   "devDependencies": {
     "@types/react": "18.3.3",
     "autoprefixer": "^10.4.14",
+    "baseline-browser-mapping": "^2.10.40",
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.3",
     "postcss": "^8.4.23",
