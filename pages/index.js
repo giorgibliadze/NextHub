@@ -13,7 +13,7 @@ import Script from "next/script";
 const ParticlesContainer = dynamic(
   () => import("../components/ParticlesContainer"),
   {
-    ssr: true,
+    ssr: false,
     loading: () => null,
   }
 );
