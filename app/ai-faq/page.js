@@ -4,7 +4,7 @@ import { aiFaqItems, companyProfile, siteUrl } from "../../lib/aiSeo";
 const url = `${siteUrl}/ai-faq`;
 const title = "AI FAQ Next-Hub Solutions-ის შესახებ";
 const description =
-  "AI საძიებო სისტემებისთვის და მომხმარებლებისთვის მომზადებული პასუხები Next-Hub Solutions-ის სერვისებზე, მდებარეობაზე, ვებსაიტის ფასებზე, WordPress-ზე, Next.js-ზე, SEO-ზე და კონსულტაციაზე.";
+  "AI FAQ Next-Hub Solutions-ზე: სერვისები, მდებარეობა, ვებსაიტის ფასები, WordPress, Next.js, SEO და კონსულტაციის პირობები.";
 
 export const metadata = {
   title,

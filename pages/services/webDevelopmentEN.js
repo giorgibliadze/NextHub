@@ -170,7 +170,7 @@ const WebDevelopmentEN = () => {
       <NextSeo
         canonical={CANONICAL}
         title="Web Development Services | WordPress, React & Next.js | Next-Hub Solutions"
-        description="Professional web development services by Next-Hub Solutions. We build SEO-friendly websites, WordPress platforms, React and Next.js applications, e-commerce stores and custom business websites."
+        description="Next-Hub Solutions builds SEO-friendly business websites, WordPress platforms, React and Next.js apps, ecommerce stores and custom web projects."
         openGraph={{
           type: "website",
           locale: "en_US",
@@ -221,7 +221,7 @@ const WebDevelopmentEN = () => {
             serviceType: "Web Development",
             url: CANONICAL,
             description:
-              "Professional web development services including WordPress websites, React and Next.js applications, e-commerce stores, SEO-friendly websites and ongoing technical support.",
+              "Next-Hub Solutions builds SEO-friendly business websites, WordPress platforms, React and Next.js apps, ecommerce stores and custom web projects.",
             provider: {
               "@type": "Organization",
               name: "Next-Hub Solutions",

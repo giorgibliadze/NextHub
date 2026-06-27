@@ -120,7 +120,7 @@ const Analytics = () => {
       <NextSeo
         canonical={CANONICAL}
         title="ვებ ანალიტიკა | Google Analytics 4 და მონაცემთა ანალიზი | Next-Hub"
-        description="ვებ ანალიტიკა, Google Analytics 4-ის გამართვა, Google Search Console, მონაცემთა ანალიზი, კონვერსიების მონიტორინგი, აუდიტორიის ქცევის ანალიზი და ბიზნესის ზრდისთვის საჭირო ანგარიშები."
+        description="ვებ ანალიტიკა ბიზნესისთვის: GA4, Search Console, კონვერსიების მონიტორინგი, მომხმარებლის ქცევის ანალიზი და ზრდის ანგარიშები."
         openGraph={{
           type: "website",
           locale: "ka_GE",

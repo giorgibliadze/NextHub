@@ -19,7 +19,7 @@ const Header = () => {
                 src={"/file.png"}
                 width={220}
                 height={70}
-                alt=""
+                alt="Next-Hub Solutions ლოგო"
                 priority={true}
               />
             </div>

@@ -120,7 +120,7 @@ const TechSupport = () => {
       <NextSeo
         canonical={CANONICAL}
         title="საიტის მართვა და ტექნიკური მხარდაჭერა | SEO და Google Ads | Next-Hub"
-        description="ვებსაიტის ტექნიკური მხარდაჭერა, საიტის მართვა, SEO ოპტიმიზაცია, Google Ads მართვა, უსაფრთხოების მონიტორინგი, სიჩქარის ოპტიმიზაცია და ვებსაიტის მუდმივი განვითარება."
+        description="ვებსაიტის ტექნიკური მხარდაჭერა ბიზნესისთვის: უსაფრთხოება, სიჩქარე, SEO კონტროლი, განახლებები და საიტის სტაბილური მუშაობა."
         openGraph={{
           type: "website",
           locale: "ka_GE",
@@ -171,7 +171,7 @@ const TechSupport = () => {
             serviceType: "Website Maintenance and Technical Support",
             url: CANONICAL,
             description:
-              "ვებსაიტის ტექნიკური მხარდაჭერა, საიტის მართვა, SEO ოპტიმიზაცია, Google Ads მართვა, სიჩქარის გაუმჯობესება, უსაფრთხოების მონიტორინგი და ციფრული მარკეტინგის მომსახურება.",
+              "ვებსაიტის ტექნიკური მხარდაჭერა ბიზნესისთვის: უსაფრთხოება, სიჩქარე, SEO კონტროლი, განახლებები და საიტის სტაბილური მუშაობა.",
             provider: {
               "@type": "Organization",
               name: "Next-Hub Solutions",

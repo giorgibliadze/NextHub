@@ -39,6 +39,8 @@ const Home = () => {
   const [showParticles, setShowParticles] = useState(false);
   const words = ["ვებსაიტები ", "ონლაინ მაღაზიები ", "ვებ აპლიკაციები "];
   const canonical = "https://next-hub.pro";
+  const metaDescription =
+    "Next-Hub Solutions ქმნის სწრაფ, თანამედროვე და SEO-ზე მორგებულ ვებსაიტებს, ონლაინ მაღაზიებსა და ვებ აპლიკაციებს ბიზნესისთვის.";
 
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia(
@@ -61,14 +63,14 @@ const Home = () => {
       href: "/webdevelopment",
       url: "https://next-hub.pro/webdevelopment",
       description:
-        "ვქმნით სწრაფ, თანამედროვე და SEO-ზე მორგებულ ვებსაიტებს ბიზნესისთვის. საიტის შექმნა მოიცავს სტრუქტურას, დიზაინს, დეველოპმენტს და კონვერსიაზე ორიენტირებულ CTA-ებს.",
+        "ვქმნით სწრაფ, თანამედროვე და SEO-ზე მორგებულ ვებსაიტებს ბიზნესისთვის, მკაფიო სტრუქტურით, დიზაინით და კონვერსიულ CTA-ებით.",
     },
     {
       title: "პროგრამული უზრუნველყოფის შექმნა",
       href: "/software-development",
       url: "https://next-hub.pro/software-development",
       description:
-        "ვამზადებთ ინდივიდუალურ ვებ აპლიკაციებს, პორტალებს, CRM სისტემებს და ბიზნეს პროცესებზე მორგებულ ციფრულ პროდუქტებს.",
+        "ვამზადებთ ინდივიდუალურ ვებ აპლიკაციებს, პორტალებს, CRM სისტემებს და პროცესებზე მორგებულ ციფრულ პროდუქტებს ბიზნესისთვის ონლაინ.",
     },
     {
       title: "ვებ დიზაინი",
@@ -171,7 +173,7 @@ const Home = () => {
         telephone: "+995555137003",
         email: "info@next-hub.pro",
         description:
-          "ვებსაიტის დამზადება, ვებ დეველოპმენტი, ონლაინ მაღაზიის შექმნა, ვებ დიზაინი, SEO ოპტიმიზაცია, Google Business Profile ოპტიმიზაცია და საიტის ტექნიკური მხარდაჭერა საქართველოში.",
+          "ვებსაიტის დამზადება, ონლაინ მაღაზიის შექმნა, ვებ დიზაინი, SEO ოპტიმიზაცია, Google Business Profile და საიტის მხარდაჭერა საქართველოში.",
         priceRange: "₾₾",
         address: {
           "@type": "PostalAddress",
@@ -237,15 +239,14 @@ const Home = () => {
       <NextSeo
         canonical={canonical}
         title="ვებსაიტის დამზადება და ვებ დეველოპმენტი საქართველოში | Next-Hub"
-        description="Next-Hub Solutions ქმნის სწრაფ, თანამედროვე და SEO-ზე მორგებულ ვებსაიტებს, ონლაინ მაღაზიებსა და ვებ აპლიკაციებს. ვებ დიზაინი, SEO ოპტიმიზაცია, Google Business Profile და საიტის ტექნიკური მხარდაჭერა."
+        description={metaDescription}
         openGraph={{
           type: "website",
           locale: "ka_GE",
           url: canonical,
           site_name: "Next-Hub Solutions",
           title: "ვებსაიტის დამზადება, ვებ დიზაინი და SEO | Next-Hub Solutions",
-          description:
-            "Next-Hub Solutions ქმნის სწრაფ, თანამედროვე და SEO-ზე მორგებულ ვებსაიტებს, ონლაინ მაღაზიებსა და ვებ აპლიკაციებს.",
+          description: metaDescription,
           images: [
             {
               url: "https://next-hub.pro/nexthub.png",
@@ -402,12 +403,11 @@ const Home = () => {
           <div className="w-full h-full absolute right-0 bottom-0">
             <Image
               src="/bg-explosion.webp"
-              alt=""
+              alt="ვებსაიტის დამზადება და ვებ დეველოპმენტი"
               fill
               priority
               fetchPriority="high"
               sizes="100vw"
-              aria-hidden="true"
               className="hidden xl:block object-cover object-right mix-blend-color-dodge translate-z-0"
             />
 

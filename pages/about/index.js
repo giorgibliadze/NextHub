@@ -147,7 +147,7 @@ const About = () => {
       <NextSeo
         canonical={CANONICAL}
         title="ჩვენ შესახებ | Next-Hub Solutions - ვებსაიტები, SEO და ციფრული გადაწყვეტილებები"
-        description="Next-Hub Solutions ქმნის ვებსაიტებს, SEO ოპტიმიზაციას, Google Business Profile ოპტიმიზაციას და ციფრულ გადაწყვეტილებებს ბიზნესებისთვის საქართველოში. გაიგეთ ჩვენი მიდგომა, ტექნოლოგიები და გამოცდილება."
+        description="Next-Hub Solutions ქმნის ვებსაიტებს, SEO-ს და ციფრულ სისტემებს ქართული ბიზნესებისთვის, რომ ონლაინ სივრცე გახდეს სანდო გაყიდვების არხი."
         openGraph={{
           type: "website",
           locale: "ka_GE",

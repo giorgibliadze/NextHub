@@ -66,7 +66,7 @@ const Contact = () => {
       <NextSeo
         canonical={CANONICAL}
         title="კონტაქტი | ვებსაიტის დამზადება და SEO მომსახურება | Next-Hub"
-        description="დაუკავშირდით Next-Hub Solutions-ს ვებსაიტის დამზადების, საიტის შექმნის, SEO ოპტიმიზაციის, სოციალური მედიის მართვის, Google Ads-ისა და ციფრული სერვისების შესახებ."
+        description="დაუკავშირდით Next-Hub Solutions-ს ვებსაიტის დამზადების, SEO ოპტიმიზაციის, ვებ დიზაინისა და ციფრული სერვისების დასაგეგმად."
         openGraph={{
           type: "website",
           locale: "ka_GE",

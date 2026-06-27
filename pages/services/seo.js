@@ -126,7 +126,7 @@ const Seo = () => {
       <NextSeo
         canonical={CANONICAL}
         title="SEO ოპტიმიზაცია | Google-ში პირველ გვერდზე გამოსვლა | Next-Hub"
-        description="SEO ოპტიმიზაცია, ტექნიკური SEO, საკვანძო სიტყვების კვლევა, Google Search Console-ის გამართვა, ლოკალური SEO და Google Business Profile ოპტიმიზაცია. გაზარდეთ თქვენი ვებსაიტის ხილვადობა Google-ში."
+        description="SEO ოპტიმიზაცია ბიზნესისთვის: ტექნიკური აუდიტი, საკვანძო სიტყვები, on-page SEO, ლოკალური SEO და Search Console-ის გამართვა."
         openGraph={{
           type: "website",
           locale: "ka_GE",

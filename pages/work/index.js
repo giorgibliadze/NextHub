@@ -16,7 +16,7 @@ const Work = () => {
       <NextSeo
         canonical="https://next-hub.pro/work"
         title="ჩვენი ნამუშევრები | ვებსაიტების პორტფოლიო | Next-Hub Solutions"
-        description="დაათვალიერეთ Next-Hub Solutions-ის შესრულებული პროექტები. ვებსაიტების პორტფოლიო, WordPress და Next.js პროექტები, ონლაინ მაღაზიები და ბიზნესზე მორგებული ციფრული გადაწყვეტილებები."
+        description="დაათვალიერეთ Next-Hub Solutions-ის პორტფოლიო: ვებსაიტები, ონლაინ მაღაზიები, WordPress და Next.js პროექტები ბიზნესისთვის."
         openGraph={{
           type: "website",
           locale: "ka_GE",
@@ -25,7 +25,7 @@ const Work = () => {
           title:
             "ჩვენი ნამუშევრები | ვებსაიტების პორტფოლიო | Next-Hub Solutions",
           description:
-            "დაათვალიერეთ Next-Hub Solutions-ის შესრულებული პროექტები. ვებსაიტების პორტფოლიო, WordPress და Next.js პროექტები, ონლაინ მაღაზიები და ბიზნესზე მორგებული ციფრული გადაწყვეტილებები.",
+            "დაათვალიერეთ Next-Hub Solutions-ის პორტფოლიო: ვებსაიტები, ონლაინ მაღაზიები, WordPress და Next.js პროექტები ბიზნესისთვის.",
           images: [
             {
               url: "https://next-hub.pro/nexthub.jpg",

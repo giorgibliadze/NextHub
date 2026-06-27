@@ -368,7 +368,7 @@ const WebDevelopment = () => {
       <NextSeo
         canonical={CANONICAL}
         title="ვებსაიტის დამზადება საქართველოში | საიტის შექმნა | Next-Hub"
-        description="ვებსაიტის დამზადება თბილისში და საქართველოში: ბიზნეს ვებსაიტი, კორპორატიული ვებსაიტი, ონლაინ მაღაზიის შექმნა, WordPress და Next.js დეველოპმენტი SEO-ready სტრუქტურით."
+        description="ვებსაიტის დამზადება საქართველოში: ბიზნეს საიტები, ონლაინ მაღაზიები, WordPress და Next.js დეველოპმენტი SEO-ready სტრუქტურით."
         openGraph={{
           type: "website",
           locale: "ka_GE",

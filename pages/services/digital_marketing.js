@@ -148,7 +148,7 @@ const DigitalMarketing = () => {
       <NextSeo
         canonical={CANONICAL}
         title="ციფრული მარკეტინგი | Google Ads და Meta რეკლამები | Next-Hub"
-        description="ციფრული მარკეტინგი ბიზნესისთვის: Google Ads, Facebook Ads, Instagram რეკლამები, E-mail მარკეტინგი, კონტენტის სტრატეგია და შედეგზე ორიენტირებული სარეკლამო კამპანიები."
+        description="ციფრული მარკეტინგი ბიზნესისთვის: Google Ads, სოციალური რეკლამები, კონტენტის სტრატეგია და შედეგზე ორიენტირებული კამპანიები."
         openGraph={{
           type: "website",
           locale: "ka_GE",
