@@ -228,6 +228,19 @@ select:-ms-input-placeholder {
   color: #ffffff;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:active {
+  -webkit-text-fill-color: #111827 !important;
+  color: #111827 !important;
+  caret-color: #111827 !important;
+}
+
 .nh-field {
   width: 100%;
   min-height: 58px;
@@ -263,9 +276,9 @@ textarea.nh-field {
 .nh-field:-webkit-autofill:hover,
 .nh-field:-webkit-autofill:focus,
 .nh-field:-webkit-autofill:active {
-  -webkit-text-fill-color: #ffffff !important;
-  color: #ffffff !important;
-  caret-color: #ffffff !important;
+  -webkit-text-fill-color: #111827 !important;
+  color: #111827 !important;
+  caret-color: #111827 !important;
   background-color: #120b2f !important;
   background-image: linear-gradient(180deg, #120b2f, #120b2f) !important;
   -webkit-box-shadow: 0 0 0 1000px #120b2f inset !important;
