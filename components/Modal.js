@@ -325,56 +325,75 @@ const Modal = ({ isOpen, onClose, cardData }) => {
           onSubmit={send}
         >
           <div className="flex flex-col md:flex-row gap-6 w-full">
+            <div className="form-field-shell w-full">
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="სახელი"
+                className="nh-field text-center"
+                value={formData.name}
+                onChange={handleInputChange}
+                autoComplete="name"
+                data-autofill-safe="true"
+                required
+              />
+            </div>
+            <div className="form-field-shell w-full">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="მაილი"
+                className="nh-field text-center"
+                value={formData.email}
+                onChange={handleInputChange}
+                autoComplete="email"
+                data-autofill-safe="true"
+                required
+              />
+            </div>
+          </div>
+          <div className="form-field-shell w-full">
             <input
               type="text"
-              id="name"
-              name="name"
-              placeholder="სახელი"
-              className="nh-field input text-center w-full"
-              value={formData.name}
+              id="phone"
+              name="phone"
+              placeholder="ტელეფონი"
+              className="nh-field text-center"
+              value={formData.phone}
               onChange={handleInputChange}
-              required
-            />
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="მაილი"
-              className="nh-field input text-center w-full"
-              value={formData.email}
-              onChange={handleInputChange}
+              autoComplete="tel"
+              data-autofill-safe="true"
               required
             />
           </div>
-          <input
-            type="text"
-            id="phone"
-            name="phone"
-            placeholder="ტელეფონი"
-            className="nh-field input text-center w-full"
-            value={formData.phone}
-            onChange={handleInputChange}
-            required
-          />
-          <input
-            type="text"
-            id="subject"
-            name="subject"
-            placeholder="თემა"
-            className="nh-field input text-center w-full"
-            value={formData.subject}
-            onChange={handleInputChange}
-            required
-          />
-          <textarea
-            id="message"
-            name="message"
-            placeholder="შეტყობინება"
-            className="nh-field input text-center w-full"
-            value={formData.message}
-            onChange={handleInputChange}
-            required
-          ></textarea>
+          <div className="form-field-shell w-full">
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              placeholder="თემა"
+              className="nh-field text-center"
+              value={formData.subject}
+              onChange={handleInputChange}
+              autoComplete="off"
+              data-autofill-safe="true"
+              required
+            />
+          </div>
+          <div className="form-field-shell w-full">
+            <textarea
+              id="message"
+              name="message"
+              placeholder="შეტყობინება"
+              className="nh-field text-center"
+              value={formData.message}
+              onChange={handleInputChange}
+              autoComplete="off"
+              required
+            ></textarea>
+          </div>
           <div className="flex justify-center">
             <button
               type="submit"
