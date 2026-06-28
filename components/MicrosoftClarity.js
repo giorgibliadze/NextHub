@@ -1,13 +1,13 @@
 "use client";
 
 import { useEffect } from "react";
-import Clarity from "@microsoft/clarity";
 
 let clarityInitialized = false;
 
 export default function MicrosoftClarity() {
   useEffect(() => {
     const projectId = process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID;
+    let isCancelled = false;
 
     if (
       !projectId ||
@@ -18,8 +18,11 @@ export default function MicrosoftClarity() {
       return;
     }
 
-    const initializeClarity = () => {
+    const initializeClarity = async () => {
       if (clarityInitialized) return;
+
+      const { default: Clarity } = await import("@microsoft/clarity");
+      if (isCancelled || clarityInitialized) return;
 
       Clarity.init(projectId);
       Clarity.setTag("site", "next-hub");
@@ -32,12 +35,18 @@ export default function MicrosoftClarity() {
         timeout: 3000,
       });
 
-      return () => window.cancelIdleCallback(idleId);
+      return () => {
+        isCancelled = true;
+        window.cancelIdleCallback(idleId);
+      };
     }
 
-    const timer = window.setTimeout(initializeClarity, 1500);
+    const timer = window.setTimeout(initializeClarity, 2500);
 
-    return () => window.clearTimeout(timer);
+    return () => {
+      isCancelled = true;
+      window.clearTimeout(timer);
+    };
   }, []);
 
   return null;

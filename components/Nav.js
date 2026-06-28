@@ -11,12 +11,13 @@ import {
 
 // nav data
 export const navData = [
-  { name: "home", path: "/", icon: <HiHome /> },
-  { name: "about", path: "/about", icon: <HiUser /> },
-  { name: "services", path: "/services", icon: <HiRectangleGroup /> },
-  { name: "work", path: "/work", icon: <HiViewColumns /> },
+  { name: "home", label: "მთავარი გვერდი", path: "/", icon: <HiHome /> },
+  { name: "about", label: "ჩვენ შესახებ", path: "/about", icon: <HiUser /> },
+  { name: "services", label: "სერვისები", path: "/services", icon: <HiRectangleGroup /> },
+  { name: "work", label: "პორტფოლიო", path: "/work", icon: <HiViewColumns /> },
   {
     name: "contact",
+    label: "კონტაქტი",
     path: "/contact",
     icon: <HiEnvelope />,
   },
@@ -64,6 +65,7 @@ const Nav = () => {
               } relative flex item-center group hover:text-accent transition-all duration-300`}
               key={index}
               href={link.path}
+              aria-label={link.label}
             >
               {/* tooltip */}
               <div className="absolute pr-14 right-0 hidden xl:group-hover:flex">

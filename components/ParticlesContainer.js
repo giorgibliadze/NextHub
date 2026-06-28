@@ -1,10 +1,10 @@
 import { Particles } from "react-tsparticles";
-import { loadFull } from "tsparticles";
+import { loadSlim } from "tsparticles-slim";
 import React, { useCallback } from "react";
 
 const ParticlesContainer = () => {
   const particlesInit = useCallback(async (engine) => {
-    await loadFull(engine);
+    await loadSlim(engine);
   }, []);
 
   return (
@@ -58,7 +58,7 @@ const ParticlesContainer = () => {
           number: {
             density: {
               enable: true,
-              area: 900,
+              area: 950,
             },
             value: 150,
           },

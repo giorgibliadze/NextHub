@@ -41,6 +41,7 @@ const WebsitePriceCalculator = dynamic(
 const Home = () => {
   const [showParticles, setShowParticles] = useState(false);
   const [showCalculator, setShowCalculator] = useState(false);
+  const [disableBelowFoldMotion, setDisableBelowFoldMotion] = useState(false);
   const calculatorRef = useRef(null);
   const words = ["ვებსაიტები ", "ონლაინ მაღაზიები ", "ვებ აპლიკაციები "];
   const canonical = "https://next-hub.pro";
@@ -61,21 +62,53 @@ const Home = () => {
     const loadParticles = () => {
       timer = window.setTimeout(() => {
         if (canUseParticles()) setShowParticles(true);
-      }, 1200);
+      }, 1500);
     };
 
-    if ("requestIdleCallback" in window) {
-      const idleId = window.requestIdleCallback(loadParticles, {
-        timeout: 2400,
-      });
-      cancelIdle = () => window.cancelIdleCallback(idleId);
-    } else {
+    const scheduleParticles = () => {
+      if ("requestIdleCallback" in window) {
+        const idleId = window.requestIdleCallback(loadParticles, {
+          timeout: 3000,
+        });
+        cancelIdle = () => window.cancelIdleCallback(idleId);
+        return;
+      }
+
       loadParticles();
+    };
+
+    if (document.readyState === "complete") {
+      scheduleParticles();
+    } else {
+      window.addEventListener("load", scheduleParticles, { once: true });
     }
 
     return () => {
+      window.removeEventListener("load", scheduleParticles);
       if (timer) window.clearTimeout(timer);
       if (cancelIdle) cancelIdle();
+    };
+  }, []);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 767px)");
+    const updateMotionPreference = () => {
+      setDisableBelowFoldMotion(mediaQuery.matches);
+    };
+
+    updateMotionPreference();
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener("change", updateMotionPreference);
+    } else {
+      mediaQuery.addListener(updateMotionPreference);
+    }
+
+    return () => {
+      if (mediaQuery.removeEventListener) {
+        mediaQuery.removeEventListener("change", updateMotionPreference);
+      } else {
+        mediaQuery.removeListener(updateMotionPreference);
+      }
     };
   }, []);
 
@@ -104,13 +137,22 @@ const Home = () => {
 
         window.setTimeout(loadCalculator, 250);
       },
-      { rootMargin: "0px", threshold: 0.01 }
+      { rootMargin: "600px 0px", threshold: 0 }
     );
 
     observer.observe(node);
 
     return () => observer.disconnect();
   }, [showCalculator]);
+
+  const belowFoldMotionProps = disableBelowFoldMotion
+    ? { initial: false }
+    : {
+        variants: fadeIn("up", 0.1),
+        initial: "hidden",
+        whileInView: "show",
+        viewport: { once: true, amount: 0.2 },
+      };
 
   const services = [
     {
@@ -457,6 +499,7 @@ const Home = () => {
               fill
               priority
               fetchPriority="high"
+              quality={70}
               sizes="100vw"
               className="hidden xl:block object-cover object-right mix-blend-color-dodge translate-z-0"
             />
@@ -472,10 +515,7 @@ const Home = () => {
         </div>
 
         <motion.section
-          variants={fadeIn("up", 0.1)}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
+          {...belowFoldMotionProps}
           className="max-w-6xl mx-auto mb-14 md:mb-20 px-4 md:px-6 py-8 md:py-12 rounded-[24px] md:rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-md shadow-2xl"
         >
           <div className="text-center mb-8 md:mb-10">
@@ -515,10 +555,7 @@ const Home = () => {
         </motion.section>
 
         <motion.section
-          variants={fadeIn("up", 0.1)}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
+          {...belowFoldMotionProps}
           className="max-w-6xl mx-auto mb-14 md:mb-20 px-4 md:px-6 py-8 md:py-12 rounded-[24px] md:rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-md shadow-2xl"
         >
           <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-8 md:gap-10">
@@ -560,10 +597,7 @@ const Home = () => {
         </motion.section>
 
         <motion.section
-          variants={fadeIn("up", 0.1)}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
+          {...belowFoldMotionProps}
           className="max-w-6xl mx-auto mb-14 md:mb-20 px-4 md:px-6 py-8 md:py-12 rounded-[24px] md:rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-md shadow-2xl"
         >
           <div className="text-center mb-8 md:mb-10">
@@ -598,10 +632,7 @@ const Home = () => {
         </motion.section>
 
         <motion.section
-          variants={fadeIn("up", 0.1)}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
+          {...belowFoldMotionProps}
           className="max-w-6xl mx-auto mb-14 md:mb-20 px-4 md:px-6 py-8 md:py-12 rounded-[24px] md:rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-md shadow-2xl"
         >
           <div className="grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] gap-8 md:gap-10 items-center">
@@ -641,10 +672,7 @@ const Home = () => {
         </motion.section>
 
         <motion.section
-          variants={fadeIn("up", 0.1)}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
+          {...belowFoldMotionProps}
           className="max-w-6xl mx-auto mb-14 md:mb-20 px-4 md:px-6 py-8 md:py-12 rounded-[24px] md:rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-md shadow-2xl"
         >
           <div className="text-center mb-8 md:mb-10">
@@ -676,10 +704,7 @@ const Home = () => {
         </motion.section>
 
         <motion.section
-          variants={fadeIn("up", 0.1)}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
+          {...belowFoldMotionProps}
           className="mobile-bottom-safe-space max-w-6xl mx-auto px-4 md:px-6 py-8 md:py-10 rounded-[24px] md:rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-md shadow-2xl"
         >
           <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-6 md:gap-8 items-center">

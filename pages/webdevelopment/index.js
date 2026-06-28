@@ -21,6 +21,10 @@ const WebsitePriceCalculator = dynamic(
 const WebDevelopment = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedCardData, setSelectedCardData] = useState(null);
+  const [disableCalculatorMotion, setDisableCalculatorMotion] = useState(() => {
+    if (typeof window === "undefined") return false;
+    return window.matchMedia("(max-width: 767px)").matches;
+  });
 
   const handlePurchaseClick = (cardData) => {
     setSelectedCardData(cardData);
@@ -30,6 +34,28 @@ const WebDevelopment = () => {
   useEffect(() => {
     document.body.classList.toggle("modal-open", isModalOpen);
   }, [isModalOpen]);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 767px)");
+    const updateCalculatorMotion = () => {
+      setDisableCalculatorMotion(mediaQuery.matches);
+    };
+
+    updateCalculatorMotion();
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener("change", updateCalculatorMotion);
+    } else {
+      mediaQuery.addListener(updateCalculatorMotion);
+    }
+
+    return () => {
+      if (mediaQuery.removeEventListener) {
+        mediaQuery.removeEventListener("change", updateCalculatorMotion);
+      } else {
+        mediaQuery.removeListener(updateCalculatorMotion);
+      }
+    };
+  }, []);
 
   const images = [
     {
@@ -603,10 +629,10 @@ const WebDevelopment = () => {
           </motion.section>
 
           <motion.section
-            variants={fadeIn("up", 0.1)}
-            initial="hidden"
-            animate="show"
-            exit="hidden"
+            variants={disableCalculatorMotion ? undefined : fadeIn("up", 0.1)}
+            initial={disableCalculatorMotion ? false : "hidden"}
+            animate={disableCalculatorMotion ? false : "show"}
+            exit={disableCalculatorMotion ? undefined : "hidden"}
             className="w-full max-w-6xl mx-auto mb-14 md:mb-20 px-4 md:px-6"
           >
             <div className="mb-8 text-center md:mb-10">

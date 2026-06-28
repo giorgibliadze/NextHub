@@ -273,10 +273,14 @@ export default function WebsitePriceCalculator() {
               {features.map((feature) => (
                 <label
                   key={feature.value}
-                  className="flex cursor-pointer items-start gap-3 rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-sm text-white/80 transition hover:border-accent/40 hover:bg-accent/10"
+                  htmlFor={`calculator-feature-${feature.value}`}
+                  className="calculator-option-card flex cursor-pointer items-start gap-3 rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-sm text-white/80 transition hover:border-accent/40 hover:bg-accent/10"
                 >
                   <input
+                    id={`calculator-feature-${feature.value}`}
                     type="checkbox"
+                    name="features"
+                    value={feature.value}
                     checked={selectedFeatures.includes(feature.value)}
                     onChange={() => toggleFeature(feature.value)}
                     className="mt-1 h-4 w-4 accent-accent"
@@ -424,8 +428,12 @@ export default function WebsitePriceCalculator() {
               </div>
             </div>
 
-            <label className="flex cursor-pointer items-start gap-3 rounded-2xl border border-white/10 bg-black/20 p-4 text-sm leading-6 text-white/75">
+            <label
+              htmlFor="calculator-consent"
+              className="calculator-option-card flex cursor-pointer items-start gap-3 rounded-2xl border border-white/10 bg-black/20 p-4 text-sm leading-6 text-white/75"
+            >
               <input
+                id="calculator-consent"
                 type="checkbox"
                 name="consent"
                 checked={leadForm.consent}
@@ -493,13 +501,15 @@ function OptionGroup({ title, name, options, value, onChange }) {
         {options.map((option) => (
           <label
             key={option.value}
-            className={`cursor-pointer rounded-2xl border p-4 transition ${
+            htmlFor={`${name}-${option.value}`}
+            className={`calculator-option-card cursor-pointer rounded-2xl border p-4 transition ${
               value === option.value
                 ? "border-accent/70 bg-accent/15 text-white"
                 : "border-white/10 bg-white/[0.03] text-white/75 hover:border-accent/40 hover:bg-accent/10"
             }`}
           >
             <input
+              id={`${name}-${option.value}`}
               type="radio"
               name={name}
               value={option.value}

@@ -6,6 +6,7 @@ import Head from "next/head";
 import { faviconLinks } from "../lib/faviconConfig";
 import { companyProfile } from "../lib/aiSeo";
 import LazyVercelInsights from "../components/LazyVercelInsights";
+import DelayedThirdPartyScripts from "../components/DelayedThirdPartyScripts";
 
 // ✅ default to non-www canonical root
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://next-hub.pro";
@@ -68,6 +69,11 @@ const siteEntitySchema = {
 };
 
 export default function Layout({ children }) {
+  const gtmId = process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID;
+  const gaId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;
+  const googleAdsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID;
+  const facebookPixelId = process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID;
+
   return (
     <>
       <Head>
@@ -78,42 +84,12 @@ export default function Layout({ children }) {
         <meta name="theme-color" content="#0b0b0b" />
       </Head>
 
-      {/* Google Analytics via gtag (optional if you use only GTM) */}
-      {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID && (
-        <>
-          <Script
-            strategy="lazyOnload"
-            async
-            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`}
-          />
-          <Script id="ga-gtag" strategy="lazyOnload">
-            {`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}', { anonymize_ip: true });
-            `}
-          </Script>
-        </>
-      )}
-
-      {/* GTM (safe to keep with GA, or use GTM only) */}
-      {process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID && (
-        <Script id="google-tag-manager" strategy="lazyOnload">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push({
-              'gtm.start': new Date().getTime(),
-              event: 'gtm.js'
-            });
-            var firstScript = document.getElementsByTagName('script')[0];
-            var gtmScript = document.createElement('script');
-            gtmScript.async = true;
-            gtmScript.src = 'https://www.googletagmanager.com/gtm.js?id=${process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID}';
-            firstScript.parentNode.insertBefore(gtmScript, firstScript);
-          `}
-        </Script>
-      )}
+      <DelayedThirdPartyScripts
+        gaId={gtmId ? "" : gaId}
+        googleAdsId={googleAdsId}
+        gtmId={gtmId}
+        facebookPixelId={facebookPixelId}
+      />
 
       {/* Organization/WebSite/LocalBusiness JSON-LD (uses non-www SITE_URL) */}
       <Script
@@ -125,25 +101,15 @@ export default function Layout({ children }) {
         }}
       />
 
-      {/* Facebook Pixel (optional) */}
-      {process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID && (
+      {facebookPixelId && (
         <>
-          <Script id="fb-pixel" strategy="lazyOnload">
-            {`!function(f,b,e,v,n,t,s){if(f.fbq)return;
-              n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
-              t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];
-              s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-              fbq('init','${process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID}');
-              fbq('track','PageView');`}
-          </Script>
           <noscript>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               height="1"
               width="1"
               style={{ display: "none" }}
-              src={`https://www.facebook.com/tr?id=${process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID}&ev=PageView&noscript=1`}
+              src={`https://www.facebook.com/tr?id=${facebookPixelId}&ev=PageView&noscript=1`}
               alt=""
             />
           </noscript>
