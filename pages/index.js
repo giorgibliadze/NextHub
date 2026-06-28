@@ -509,7 +509,7 @@ const Home = () => {
         </div>
       </div>
 
-      <main className="bg-primary/60 px-4 md:px-8 xl:px-10 pt-16 pb-0 md:py-24 overflow-x-hidden">
+      <main className="homepage-scroll-content bg-primary/60 px-4 md:px-8 xl:px-10 pt-16 pb-0 md:py-24 overflow-x-hidden">
         <div ref={calculatorRef}>
           {showCalculator ? <WebsitePriceCalculator /> : <CalculatorSkeleton />}
         </div>

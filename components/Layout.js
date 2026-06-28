@@ -7,6 +7,8 @@ import { faviconLinks } from "../lib/faviconConfig";
 import { companyProfile } from "../lib/aiSeo";
 import LazyVercelInsights from "../components/LazyVercelInsights";
 import DelayedThirdPartyScripts from "../components/DelayedThirdPartyScripts";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 
 // ✅ default to non-www canonical root
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://next-hub.pro";
@@ -69,10 +71,20 @@ const siteEntitySchema = {
 };
 
 export default function Layout({ children }) {
+  const router = useRouter();
   const gtmId = process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID;
   const gaId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;
   const googleAdsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID;
   const facebookPixelId = process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID;
+  const isHomePage = router.pathname === "/";
+
+  useEffect(() => {
+    document.body.classList.toggle("homepage-route", isHomePage);
+
+    return () => {
+      document.body.classList.remove("homepage-route");
+    };
+  }, [isHomePage]);
 
   return (
     <>
@@ -118,7 +130,9 @@ export default function Layout({ children }) {
 
       {/* Page wrapper */}
       <div
-        className="page bg-site text-white bg-cover bg-no-repeat font-sora relative overflow-y-auto"
+        className={`page bg-site text-white bg-cover bg-no-repeat font-sora relative overflow-y-auto${
+          isHomePage ? " homepage-page" : ""
+        }`}
       >
         <LazyVercelInsights />
         <TopLeftImg />

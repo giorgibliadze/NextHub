@@ -78,6 +78,11 @@ body.loading-active {
   -webkit-overflow-scrolling: touch;
 }
 
+.homepage-scroll-content {
+  min-height: auto;
+  overflow: visible;
+}
+
 .website-calculator {
   touch-action: pan-y;
   overscroll-behavior: auto;
@@ -190,6 +195,23 @@ button.calculator-option-card {
 }
 
 @media (max-width: 768px) {
+  body.homepage-route {
+    overflow: auto;
+  }
+
+  .page.homepage-page {
+    height: auto !important;
+    min-height: 100dvh;
+    overflow-x: hidden !important;
+    overflow-y: visible !important;
+  }
+
+  .homepage-scroll-content {
+    height: auto !important;
+    min-height: auto;
+    overflow: visible !important;
+  }
+
   body:has(.website-calculator) {
     overflow: auto;
   }
