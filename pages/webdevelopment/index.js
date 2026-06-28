@@ -1,6 +1,7 @@
 // components/WebDevelopment.jsx
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import PriceCard from "../../components/PriceCard";
 import ImageGallery from "../../components/ImageGallery";
 import Modal from "../../components/Modal";
@@ -11,6 +12,11 @@ import { NextSeo } from "next-seo";
 import Script from "next/script";
 
 const CANONICAL = "https://next-hub.pro/webdevelopment";
+
+const WebsitePriceCalculator = dynamic(
+  () => import("../../components/WebsitePriceCalculator"),
+  { loading: () => null }
+);
 
 const WebDevelopment = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -594,6 +600,29 @@ const WebDevelopment = () => {
                 </p>
               </div>
             </div>
+          </motion.section>
+
+          <motion.section
+            variants={fadeIn("up", 0.1)}
+            initial="hidden"
+            animate="show"
+            exit="hidden"
+            className="w-full max-w-6xl mx-auto mb-14 md:mb-20 px-4 md:px-6"
+          >
+            <div className="mb-8 text-center md:mb-10">
+              <span className="inline-block mb-4 px-4 md:px-5 py-2 rounded-full bg-accent/10 text-accent text-xs md:text-sm font-semibold">
+                კალკულატორი
+              </span>
+              <h2 className="text-2xl md:text-4xl font-bold mb-5 leading-tight">
+                გაიგეთ ვებსაიტის სავარაუდო ფასი
+              </h2>
+              <p className="max-w-3xl mx-auto text-white/70 text-sm md:text-base leading-7 md:leading-8">
+                აირჩიეთ საჭირო ტიპი, გვერდების რაოდენობა, დიზაინის დონე და
+                ფუნქციონალი — კალკულატორი დაგითვლით სავარაუდო ბიუჯეტს.
+              </p>
+            </div>
+
+            <WebsitePriceCalculator />
           </motion.section>
 
           <motion.section
