@@ -10,8 +10,9 @@ const TopLeftImg = () => {
         src="/top-left-img-removebg-preview.png"
         width={400}
         height={400}
-        alt=""
-        priority
+        alt="top-left-img"
+        loading="lazy"
+        fetchPriority="low"
         sizes="(max-width: 768px) 200px, 400px"
       />
     </div>

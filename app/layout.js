@@ -1,12 +1,11 @@
 import "../styles/globals.css";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import Nav from "../components/Nav";
 import Header from "../components/Header";
 import TopLeftImg from "../components/TopLeftImg";
 import { faviconIcons } from "../lib/faviconConfig";
 import MicrosoftClarity from "../components/MicrosoftClarity";
 import { companyProfile, siteUrl } from "../lib/aiSeo";
+import LazyVercelInsights from "../components/LazyVercelInsights";
 
 export const metadata = {
   metadataBase: new URL("https://next-hub.pro"),
@@ -90,8 +89,7 @@ export default function RootLayout({ children }) {
       <body>
         <MicrosoftClarity />
         <div className="page bg-site text-white bg-cover bg-no-repeat font-sora relative overflow-y-auto">
-          <Analytics />
-          <SpeedInsights />
+          <LazyVercelInsights />
           <TopLeftImg />
           <Nav />
           <Header />

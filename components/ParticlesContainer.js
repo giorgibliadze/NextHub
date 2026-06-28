@@ -3,18 +3,15 @@ import { loadFull } from "tsparticles";
 import React, { useCallback } from "react";
 
 const ParticlesContainer = () => {
-  //init
   const particlesInit = useCallback(async (engine) => {
     await loadFull(engine);
   }, []);
 
-  const particlesLoaded = useCallback(async () => {}, []);
   return (
     <Particles
       className="w-full h-full absolute translate-z-0"
       id="tsparticles"
       init={particlesInit}
-      loaded={particlesLoaded}
       options={{
         fullScreen: { enable: false },
         background: {
@@ -22,27 +19,16 @@ const ParticlesContainer = () => {
             value: "",
           },
         },
-        fpsLimit: 120,
+        fpsLimit: 45,
         interactivity: {
           events: {
             onClick: {
               enable: false,
-              mode: "push",
             },
             onHover: {
-              enable: true,
-              mode: "repulse",
+              enable: false,
             },
             resize: true,
-          },
-          modes: {
-            push: {
-              quantity: 120,
-            },
-            repulse: {
-              distance: 200,
-              duration: 0.4,
-            },
           },
         },
         particles: {
@@ -51,42 +37,42 @@ const ParticlesContainer = () => {
           },
           links: {
             color: "#f5d393",
-            distance: 150,
+            distance: 130,
             enable: true,
-            opacity: 0.5,
+            opacity: 0.28,
             width: 1,
           },
           collisions: {
-            enable: true,
+            enable: false,
           },
           move: {
             direction: "none",
             enable: true,
             outModes: {
-              default: "bounce",
+              default: "out",
             },
             random: false,
-            speed: 1,
+            speed: 0.45,
             straight: false,
           },
           number: {
             density: {
               enable: true,
-              area: 800,
+              area: 900,
             },
-            value: 170,
+            value: 150,
           },
           opacity: {
-            value: 0.5,
+            value: 0.42,
           },
           shape: {
             type: "circle",
           },
           size: {
-            value: { min: 1, max: 5 },
+            value: { min: 1, max: 3 },
           },
         },
-        detectRetina: true,
+        detectRetina: false,
       }}
     />
   );

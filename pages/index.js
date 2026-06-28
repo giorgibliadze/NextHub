@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
@@ -18,25 +18,30 @@ const ParticlesContainer = dynamic(
   }
 );
 
+const CalculatorSkeleton = () => (
+  <div className="mx-auto mb-14 max-w-6xl rounded-[24px] border border-white/10 bg-white/5 px-4 py-8 shadow-2xl backdrop-blur-md md:mb-20 md:rounded-[32px] md:px-6 md:py-12">
+    <div className="h-8 w-64 max-w-full rounded-full bg-white/10" />
+    <div className="mt-5 h-4 w-full max-w-2xl rounded-full bg-white/10" />
+    <div className="mt-8 grid gap-4 md:grid-cols-3">
+      <div className="h-28 rounded-2xl bg-white/10" />
+      <div className="h-28 rounded-2xl bg-white/10" />
+      <div className="h-28 rounded-2xl bg-white/10" />
+    </div>
+  </div>
+);
+
 const WebsitePriceCalculator = dynamic(
   () => import("../components/WebsitePriceCalculator"),
   {
-    loading: () => (
-      <div className="mx-auto mb-14 max-w-6xl rounded-[24px] border border-white/10 bg-white/5 px-4 py-8 shadow-2xl backdrop-blur-md md:mb-20 md:rounded-[32px] md:px-6 md:py-12">
-        <div className="h-8 w-64 max-w-full rounded-full bg-white/10" />
-        <div className="mt-5 h-4 w-full max-w-2xl rounded-full bg-white/10" />
-        <div className="mt-8 grid gap-4 md:grid-cols-3">
-          <div className="h-28 rounded-2xl bg-white/10" />
-          <div className="h-28 rounded-2xl bg-white/10" />
-          <div className="h-28 rounded-2xl bg-white/10" />
-        </div>
-      </div>
-    ),
+    ssr: false,
+    loading: CalculatorSkeleton,
   }
 );
 
 const Home = () => {
   const [showParticles, setShowParticles] = useState(false);
+  const [showCalculator, setShowCalculator] = useState(false);
+  const calculatorRef = useRef(null);
   const words = ["ვებსაიტები ", "ონლაინ მაღაზიები ", "ვებ აპლიკაციები "];
   const canonical = "https://next-hub.pro";
   const metaDescription =
@@ -45,19 +50,67 @@ const Home = () => {
     "ვებსაიტის დამზადება საქართველოში | Next-Hub";
 
   useEffect(() => {
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
-    const isDesktop = window.matchMedia("(min-width: 769px)").matches;
+    const canUseParticles = () =>
+      window.matchMedia("(min-width: 1024px)").matches &&
+      !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    if (!isDesktop || prefersReducedMotion) return;
+    if (!canUseParticles()) return undefined;
 
-    const timer = window.setTimeout(() => {
-      setShowParticles(true);
-    }, 800);
+    let timer;
+    let cancelIdle;
+    const loadParticles = () => {
+      timer = window.setTimeout(() => {
+        if (canUseParticles()) setShowParticles(true);
+      }, 1200);
+    };
 
-    return () => window.clearTimeout(timer);
+    if ("requestIdleCallback" in window) {
+      const idleId = window.requestIdleCallback(loadParticles, {
+        timeout: 2400,
+      });
+      cancelIdle = () => window.cancelIdleCallback(idleId);
+    } else {
+      loadParticles();
+    }
+
+    return () => {
+      if (timer) window.clearTimeout(timer);
+      if (cancelIdle) cancelIdle();
+    };
   }, []);
+
+  useEffect(() => {
+    if (showCalculator) return undefined;
+
+    const node = calculatorRef.current;
+    if (!node) return undefined;
+
+    const loadCalculator = () => setShowCalculator(true);
+
+    if (!("IntersectionObserver" in window)) {
+      const timer = window.setTimeout(loadCalculator, 1800);
+      return () => window.clearTimeout(timer);
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        observer.disconnect();
+
+        if ("requestIdleCallback" in window) {
+          window.requestIdleCallback(loadCalculator, { timeout: 800 });
+          return;
+        }
+
+        window.setTimeout(loadCalculator, 250);
+      },
+      { rootMargin: "0px", threshold: 0.01 }
+    );
+
+    observer.observe(node);
+
+    return () => observer.disconnect();
+  }, [showCalculator]);
 
   const services = [
     {
@@ -302,8 +355,14 @@ const Home = () => {
       <div className="bg-primary/60 h-screen w-full smx:h-[640px] sm:h-[600px] lg:h-[847px] xxl:h-[990px] xll:h-[885px]">
         <div className="w-full h-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10">
           <div className="text-center flex flex-col justify-center xl:text-left h-full container mx-auto">
-            {/* title */}
-            <div
+            <motion.div
+              variants={fadeIn("up", 0.12)}
+              initial="hidden"
+              animate="show"
+              exit="hidden"
+            >
+              {/* title */}
+              <div
               className="
                 mt-[60px]
                 sm:mt-[80px]
@@ -314,24 +373,14 @@ const Home = () => {
                 xl:text-[64px]
                 font-bold
               "
-            >
-              <motion.h1
-                variants={fadeIn("down", 0.2)}
-                initial="hidden"
-                animate="show"
-                exit="hidden"
-                className="inline font-bold"
               >
+              <h1 className="inline font-bold">
                 ვებსაიტის დამზადება <span className="text-accent">.</span>
-              </motion.h1>
+              </h1>
 
               <br />
 
-              <motion.div
-                variants={fadeIn("down", 0.25)}
-                initial="hidden"
-                animate="show"
-                exit="hidden"
+              <div
                 className="
     inline
     text-accent
@@ -342,13 +391,9 @@ const Home = () => {
   "
               >
                 <RotatingWords words={words} />
-              </motion.div>
+              </div>
 
-              <motion.span
-                variants={fadeIn("down", 0.3)}
-                initial="hidden"
-                animate="show"
-                exit="hidden"
+              <span
                 className="
     inline
     font-bold
@@ -358,16 +403,12 @@ const Home = () => {
   "
               >
                 ბიზნესისთვის
-              </motion.span>
-            </div>
+              </span>
+              </div>
 
-            {/* subtitle */}
-            <motion.p
-              variants={fadeIn("down", 0.35)}
-              initial="hidden"
-              animate="show"
-              exit="hidden"
-              className="
+              {/* subtitle */}
+              <p
+                className="
                 max-w-sm
                 text-[15px]
                 leading-8
@@ -378,20 +419,14 @@ const Home = () => {
                 mb-10
                 xl:mb-16
               "
-            >
+              >
               Next-Hub გთავაზობთ თანამედროვე ვებსაიტების, ონლაინ მაღაზიებისა და
               ვებ აპლიკაციების შექმნას. ვამზადებთ სწრაფ, SEO-ზე მორგებულ და
               ბიზნესის მიზნებზე შექმნილ საიტებს.
-            </motion.p>
+              </p>
 
-            {/* contact button */}
-            <motion.div
-              variants={fadeIn("down", 0.4)}
-              initial="hidden"
-              animate="show"
-              exit="hidden"
-              className="mobile-bottom-safe-space flex justify-center xl:justify-start relative z-50"
-            >
+              {/* contact button */}
+              <div className="mobile-bottom-safe-space flex justify-center xl:justify-start relative z-50">
               <a
                 href="tel:+995555137003"
                 className="
@@ -411,6 +446,7 @@ const Home = () => {
               >
                 დაგვიკავშირდით
               </a>
+              </div>
             </motion.div>
           </div>
 
@@ -431,7 +467,9 @@ const Home = () => {
       </div>
 
       <main className="bg-primary/60 px-4 md:px-8 xl:px-10 py-16 md:py-24 overflow-x-hidden">
-        <WebsitePriceCalculator />
+        <div ref={calculatorRef}>
+          {showCalculator ? <WebsitePriceCalculator /> : <CalculatorSkeleton />}
+        </div>
 
         <motion.section
           variants={fadeIn("up", 0.1)}
