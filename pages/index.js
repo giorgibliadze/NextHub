@@ -48,7 +48,7 @@ const Home = () => {
   const metaDescription =
     "Next-Hub Solutions ქმნის სწრაფ, თანამედროვე და SEO-ზე მორგებულ ვებსაიტებს, ონლაინ მაღაზიებსა და ვებ აპლიკაციებს ბიზნესისთვის.";
   const homeTitle =
-    "ვებსაიტის დამზადება საქართველოში | Next-Hub";
+    "ვებსაიტის დამზადება და ვებ დეველოპმენტი საქართველოში | Next-Hub";
 
   useEffect(() => {
     const canUseParticles = () =>

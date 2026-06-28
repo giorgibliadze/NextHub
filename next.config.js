@@ -6,6 +6,16 @@ const nextConfig = {
   async redirects() {
   return [
     {
+      source: '/webDevelopmentEN',
+      destination: '/services/webDevelopmentEN',
+      permanent: true,
+    },
+    {
+      source: '/webdevelopmenten',
+      destination: '/services/webDevelopmentEN',
+      permanent: true,
+    },
+    {
       source: '/:path*',
       has: [{ type: 'host', value: 'www.next-hub.pro' }],
       destination: 'https://next-hub.pro/:path*',

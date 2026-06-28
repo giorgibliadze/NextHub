@@ -144,6 +144,11 @@ const Analytics = () => {
         }}
         additionalMetaTags={[
           {
+            name: "twitter:title",
+            content:
+              "ვებ ანალიტიკა | Google Analytics 4 და მონაცემთა ანალიზი | Next-Hub",
+          },
+          {
             name: "author",
             content: "Next-Hub Solutions",
           },

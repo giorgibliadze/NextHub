@@ -13,6 +13,7 @@
     "lint": "node scripts/run-with-current-browser-data.js eslint .",
     "seo:audit": "node scripts/seo-audit.js",
     "seo:health": "node scripts/seo-health-check.js",
+    "bing:geo-audit": "node scripts/bing-geo-audit.js",
     "indexnow": "node scripts/indexnow-submit.js",
     "postbuild": "next-sitemap",
     "postinstall": "prisma generate"

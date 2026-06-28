@@ -171,6 +171,10 @@ const DigitalMarketing = () => {
         }}
         additionalMetaTags={[
           {
+            name: "twitter:title",
+            content: "ციფრული მარკეტინგი | Google Ads და Meta რეკლამები | Next-Hub",
+          },
+          {
             name: "author",
             content: "Next-Hub Solutions",
           },

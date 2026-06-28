@@ -401,6 +401,11 @@ const WebDevelopment = () => {
         canonical={CANONICAL}
         title="ვებსაიტის დამზადება საქართველოში | საიტის შექმნა | Next-Hub"
         description="ვებსაიტის დამზადება საქართველოში: ბიზნეს საიტები, ონლაინ მაღაზიები, WordPress და Next.js დეველოპმენტი SEO-ready სტრუქტურით."
+        languageAlternates={[
+          { hrefLang: "ka-GE", href: "https://next-hub.pro/webdevelopment" },
+          { hrefLang: "en", href: "https://next-hub.pro/services/webDevelopmentEN" },
+          { hrefLang: "x-default", href: "https://next-hub.pro/webdevelopment" },
+        ]}
         openGraph={{
           type: "website",
           locale: "ka_GE",

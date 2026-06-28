@@ -11,7 +11,7 @@ export const metadata = {
   metadataBase: new URL("https://next-hub.pro"),
   title: {
     default: "Next-Hub Solutions",
-    template: "%s | Next-Hub Solutions",
+    template: "%s",
   },
   description:
     "Next-Hub Solutions ქმნის SEO-ზე მორგებულ ვებსაიტებს, პროგრამულ სისტემებს, ვებ დიზაინს, ლოკალურ SEO კამპანიებს და საიტის მოვლის გეგმებს ბიზნესებისთვის.",

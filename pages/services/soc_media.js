@@ -164,6 +164,11 @@ const SocMedia = () => {
         }}
         additionalMetaTags={[
           {
+            name: "twitter:title",
+            content:
+              "სოციალური მედიის მართვა | Facebook და Instagram მარკეტინგი | Next-Hub",
+          },
+          {
             name: "author",
             content: "Next-Hub Solutions",
           },

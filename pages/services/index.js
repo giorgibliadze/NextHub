@@ -132,6 +132,11 @@ const Services = () => {
         }}
         additionalMetaTags={[
           {
+            name: "twitter:title",
+            content:
+              "სერვისები | ვებსაიტის დამზადება, SEO, ვებ დიზაინი და პროგრამული უზრუნველყოფა | Next-Hub",
+          },
+          {
             name: "author",
             content: "Next-Hub Solutions",
           },

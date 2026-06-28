@@ -171,6 +171,11 @@ const WebDevelopmentEN = () => {
         canonical={CANONICAL}
         title="Web Development Services | WordPress, React & Next.js | Next-Hub Solutions"
         description="Next-Hub Solutions builds SEO-friendly business websites, WordPress platforms, React and Next.js apps, ecommerce stores and custom web projects."
+        languageAlternates={[
+          { hrefLang: "ka-GE", href: "https://next-hub.pro/webdevelopment" },
+          { hrefLang: "en", href: "https://next-hub.pro/services/webDevelopmentEN" },
+          { hrefLang: "x-default", href: "https://next-hub.pro/webdevelopment" },
+        ]}
         openGraph={{
           type: "website",
           locale: "en_US",
@@ -193,6 +198,11 @@ const WebDevelopmentEN = () => {
           cardType: "summary_large_image",
         }}
         additionalMetaTags={[
+          {
+            name: "twitter:title",
+            content:
+              "Web Development Services | WordPress, React & Next.js | Next-Hub Solutions",
+          },
           {
             name: "author",
             content: "Next-Hub Solutions",

@@ -101,6 +101,10 @@ const Contact = () => {
         }}
         additionalMetaTags={[
           {
+            name: "twitter:title",
+            content: "კონტაქტი | ვებსაიტის დამზადება და SEO მომსახურება | Next-Hub",
+          },
+          {
             name: "author",
             content: "Next-Hub Solutions",
           },

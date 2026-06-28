@@ -38,6 +38,10 @@ const GraphicDesign = () => {
         }}
         additionalMetaTags={[
           {
+            name: "twitter:title",
+            content: "გრაფიკული დიზაინი | ლოგოს დიზაინი და ბრენდინგი | Next-Hub",
+          },
+          {
             name: "author",
             content: "Next-Hub Solutions",
           },
