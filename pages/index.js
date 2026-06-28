@@ -146,7 +146,11 @@ const Home = () => {
   }, [showCalculator]);
 
   const belowFoldMotionProps = disableBelowFoldMotion
-    ? { initial: false }
+    ? {
+        variants: fadeIn("up", 0),
+        initial: "show",
+        animate: "show",
+      }
     : {
         variants: fadeIn("up", 0.1),
         initial: "hidden",
@@ -516,7 +520,7 @@ const Home = () => {
 
         <motion.section
           {...belowFoldMotionProps}
-          className="max-w-6xl mx-auto mb-14 md:mb-20 px-4 md:px-6 py-8 md:py-12 rounded-[24px] md:rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-md shadow-2xl"
+          className="homepage-below-fold-section max-w-6xl mx-auto mb-14 md:mb-20 px-4 md:px-6 py-8 md:py-12 rounded-[24px] md:rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-md shadow-2xl"
         >
           <div className="text-center mb-8 md:mb-10">
             <span className="inline-block mb-4 px-4 md:px-5 py-2 rounded-full bg-accent/10 text-accent text-xs md:text-sm font-semibold">
@@ -556,7 +560,7 @@ const Home = () => {
 
         <motion.section
           {...belowFoldMotionProps}
-          className="max-w-6xl mx-auto mb-14 md:mb-20 px-4 md:px-6 py-8 md:py-12 rounded-[24px] md:rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-md shadow-2xl"
+          className="homepage-below-fold-section max-w-6xl mx-auto mb-14 md:mb-20 px-4 md:px-6 py-8 md:py-12 rounded-[24px] md:rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-md shadow-2xl"
         >
           <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-8 md:gap-10">
             <div>
@@ -598,7 +602,7 @@ const Home = () => {
 
         <motion.section
           {...belowFoldMotionProps}
-          className="max-w-6xl mx-auto mb-14 md:mb-20 px-4 md:px-6 py-8 md:py-12 rounded-[24px] md:rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-md shadow-2xl"
+          className="homepage-below-fold-section max-w-6xl mx-auto mb-14 md:mb-20 px-4 md:px-6 py-8 md:py-12 rounded-[24px] md:rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-md shadow-2xl"
         >
           <div className="text-center mb-8 md:mb-10">
             <span className="inline-block mb-4 px-4 md:px-5 py-2 rounded-full bg-accent/10 text-accent text-xs md:text-sm font-semibold">
@@ -633,7 +637,7 @@ const Home = () => {
 
         <motion.section
           {...belowFoldMotionProps}
-          className="max-w-6xl mx-auto mb-14 md:mb-20 px-4 md:px-6 py-8 md:py-12 rounded-[24px] md:rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-md shadow-2xl"
+          className="homepage-below-fold-section max-w-6xl mx-auto mb-14 md:mb-20 px-4 md:px-6 py-8 md:py-12 rounded-[24px] md:rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-md shadow-2xl"
         >
           <div className="grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] gap-8 md:gap-10 items-center">
             <div>
@@ -673,7 +677,7 @@ const Home = () => {
 
         <motion.section
           {...belowFoldMotionProps}
-          className="max-w-6xl mx-auto mb-14 md:mb-20 px-4 md:px-6 py-8 md:py-12 rounded-[24px] md:rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-md shadow-2xl"
+          className="homepage-below-fold-section max-w-6xl mx-auto mb-14 md:mb-20 px-4 md:px-6 py-8 md:py-12 rounded-[24px] md:rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-md shadow-2xl"
         >
           <div className="text-center mb-8 md:mb-10">
             <span className="inline-block mb-4 px-4 md:px-5 py-2 rounded-full bg-accent/10 text-accent text-xs md:text-sm font-semibold">
@@ -705,7 +709,7 @@ const Home = () => {
 
         <motion.section
           {...belowFoldMotionProps}
-          className="home-page-end-safe max-w-6xl mx-auto px-4 md:px-6 py-8 md:py-10 rounded-[24px] md:rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-md shadow-2xl"
+          className="homepage-below-fold-section home-page-end-safe max-w-6xl mx-auto px-4 md:px-6 py-8 md:py-10 rounded-[24px] md:rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-md shadow-2xl"
         >
           <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-6 md:gap-8 items-center">
             <div>

@@ -212,6 +212,11 @@ button.calculator-option-card {
     overflow: visible !important;
   }
 
+  .homepage-below-fold-section {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
   body:has(.website-calculator) {
     overflow: auto;
   }
