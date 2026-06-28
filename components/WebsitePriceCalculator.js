@@ -69,6 +69,8 @@ const initialCalculatorState = {
   selectedFeatures: ["contact-form", "seo"],
 };
 
+const TAP_SCROLL_THRESHOLD = 8;
+
 const blurActiveElement = () => {
   if (typeof document !== "undefined") {
     document.activeElement?.blur?.();
@@ -88,6 +90,8 @@ export default function WebsitePriceCalculator() {
   const [formError, setFormError] = useState("");
   const [formSuccess, setFormSuccess] = useState("");
   const leadFormRef = useRef(null);
+  const featureTouchStartY = useRef(0);
+  const featureMovedRef = useRef(false);
 
   const resetCalculatorLeadForm = () => {
     leadFormRef.current?.reset();
@@ -135,6 +139,25 @@ export default function WebsitePriceCalculator() {
         ? current.filter((feature) => feature !== value)
         : [...current, value]
     );
+  };
+
+  const trackFeatureTouchStart = (event) => {
+    featureTouchStartY.current = event.touches[0].clientY;
+    featureMovedRef.current = false;
+  };
+
+  const trackFeatureTouchMove = (event) => {
+    if (
+      Math.abs(event.touches[0].clientY - featureTouchStartY.current) >
+      TAP_SCROLL_THRESHOLD
+    ) {
+      featureMovedRef.current = true;
+    }
+  };
+
+  const toggleFeatureFromCard = (value) => {
+    if (featureMovedRef.current) return;
+    toggleFeature(value);
   };
 
   const updateLeadForm = (event) => {
@@ -269,10 +292,11 @@ export default function WebsitePriceCalculator() {
             <SectionTitle>ფუნქციონალი</SectionTitle>
             <div className="grid gap-3 sm:grid-cols-2">
               {features.map((feature) => (
-                <label
+                <div
                   key={feature.value}
-                  htmlFor={`calculator-feature-${feature.value}`}
                   className="calculator-option-card flex cursor-pointer items-start gap-3 rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-sm text-white/80 transition hover:border-accent/40 hover:bg-accent/10"
+                  onTouchStart={trackFeatureTouchStart}
+                  onTouchMove={trackFeatureTouchMove}
                 >
                   <input
                     id={`calculator-feature-${feature.value}`}
@@ -280,16 +304,29 @@ export default function WebsitePriceCalculator() {
                     name="features"
                     value={feature.value}
                     checked={selectedFeatures.includes(feature.value)}
-                    onChange={() => toggleFeature(feature.value)}
+                    onMouseDown={() => {
+                      featureMovedRef.current = false;
+                    }}
+                    onChange={() => {
+                      if (featureMovedRef.current) return;
+                      toggleFeature(feature.value);
+                    }}
                     className="mt-1 h-4 w-4 shrink-0 accent-accent"
                   />
-                  <span className="flex-1">
+                  <button
+                    type="button"
+                    className="block flex-1 text-left"
+                    onMouseDown={() => {
+                      featureMovedRef.current = false;
+                    }}
+                    onClick={() => toggleFeatureFromCard(feature.value)}
+                  >
                     <span className="block font-semibold text-white">
                       {feature.label}
                     </span>
                     <span className="text-white/60">+{formatPrice(feature.price)} ₾</span>
-                  </span>
-                </label>
+                  </button>
+                </div>
               ))}
             </div>
           </section>
@@ -426,8 +463,7 @@ export default function WebsitePriceCalculator() {
               </div>
             </div>
 
-            <label
-              htmlFor="calculator-consent"
+            <div
               className="calculator-option-card flex cursor-pointer items-start gap-3 rounded-2xl border border-white/10 bg-black/20 p-4 text-sm leading-6 text-white/75"
             >
               <input
@@ -439,11 +475,11 @@ export default function WebsitePriceCalculator() {
                 className="mt-1 h-4 w-4 shrink-0 accent-accent"
                 required
               />
-              <span>
+              <label htmlFor="calculator-consent" className="flex-1 cursor-pointer">
                 ვეთანხმები, რომ Next-Hub Solutions დამიკავშირდეს ჩემს მიერ
                 მითითებულ საკონტაქტო მონაცემებზე.
-              </span>
-            </label>
+              </label>
+            </div>
 
             {formError && (
               <p className="rounded-2xl border border-red-500/30 bg-red-500/10 p-3 text-sm text-red-200">
@@ -490,36 +526,62 @@ export default function WebsitePriceCalculator() {
 }
 
 function OptionGroup({ title, name, options, value, onChange }) {
+  const touchStartY = useRef(0);
+  const movedRef = useRef(false);
+
+  const trackTouchStart = (event) => {
+    touchStartY.current = event.touches[0].clientY;
+    movedRef.current = false;
+  };
+
+  const trackTouchMove = (event) => {
+    if (
+      Math.abs(event.touches[0].clientY - touchStartY.current) >
+      TAP_SCROLL_THRESHOLD
+    ) {
+      movedRef.current = true;
+    }
+  };
+
+  const selectOption = (optionValue) => {
+    if (movedRef.current) return;
+    onChange(optionValue);
+  };
+
   return (
-    <section className="calculator-section">
+    <section className="calculator-section" role="radiogroup" aria-label={title}>
       <SectionTitle>{title}</SectionTitle>
       <div className="grid gap-3 sm:grid-cols-2">
         {options.map((option) => (
-          <label
+          <button
             key={option.value}
-            htmlFor={`${name}-${option.value}`}
-            className={`calculator-option-card cursor-pointer rounded-2xl border p-4 transition ${
+            type="button"
+            role="radio"
+            aria-checked={value === option.value}
+            aria-pressed={value === option.value}
+            aria-label={`${option.label}, ${
+              option.price === 0 ? "+0 ₾" : `+${formatPrice(option.price)} ₾`
+            }`}
+            name={name}
+            className={`calculator-option-card block w-full cursor-pointer rounded-2xl border p-4 text-left transition ${
               value === option.value
                 ? "border-accent/70 bg-accent/15 text-white"
                 : "border-white/10 bg-white/[0.03] text-white/75 hover:border-accent/40 hover:bg-accent/10"
             }`}
+            onTouchStart={trackTouchStart}
+            onTouchMove={trackTouchMove}
+            onMouseDown={() => {
+              movedRef.current = false;
+            }}
+            onClick={() => selectOption(option.value)}
           >
-            <input
-              id={`${name}-${option.value}`}
-              type="radio"
-              name={name}
-              value={option.value}
-              checked={value === option.value}
-              onChange={() => onChange(option.value)}
-              className="calculator-native-input"
-            />
             <span className="block text-sm font-semibold md:text-base">
               {option.label}
             </span>
             <span className="mt-2 block text-sm text-white/60">
               {option.price === 0 ? "+0 ₾" : `+${formatPrice(option.price)} ₾`}
             </span>
-          </label>
+          </button>
         ))}
       </div>
     </section>

@@ -81,6 +81,7 @@ body.loading-active {
 .website-calculator {
   touch-action: pan-y;
   overscroll-behavior: auto;
+  overscroll-behavior-y: contain;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -94,16 +95,27 @@ body.loading-active {
   -webkit-user-select: none;
 }
 
-.calculator-option-card input {
-  touch-action: manipulation;
+.calculator-option-card,
+.calculator-option-card button {
+  -webkit-tap-highlight-color: transparent;
 }
 
-.calculator-native-input {
-  position: absolute;
-  opacity: 0;
-  width: 1px;
-  height: 1px;
-  pointer-events: none;
+.calculator-option-card > button {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  padding: 0;
+}
+
+button.calculator-option-card {
+  appearance: none;
+  font: inherit;
+}
+
+.calculator-option-card input {
+  touch-action: manipulation;
 }
 
 .calculator-section {
