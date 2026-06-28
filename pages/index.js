@@ -394,9 +394,9 @@ const Home = () => {
         }}
       />
 
-      <div className="bg-primary/60 h-screen w-full smx:h-[640px] sm:h-[600px] lg:h-[847px] xxl:h-[990px] xll:h-[885px]">
-        <div className="w-full h-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10">
-          <div className="text-center flex flex-col justify-center xl:text-left h-full container mx-auto">
+      <div className="relative min-h-screen w-full overflow-hidden bg-primary/60 smx:min-h-[640px] sm:min-h-[600px] lg:min-h-[847px] xxl:min-h-[990px] xll:min-h-[885px]">
+        <div className="relative min-h-screen w-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10 smx:min-h-[640px] sm:min-h-[600px] lg:min-h-[847px] xxl:min-h-[990px] xll:min-h-[885px]">
+          <div className="relative z-10 text-center flex min-h-screen flex-col justify-center xl:text-left container mx-auto smx:min-h-[640px] sm:min-h-[600px] lg:min-h-[847px] xxl:min-h-[990px] xll:min-h-[885px]">
             <motion.div
               variants={fadeIn("up", 0.12)}
               initial="hidden"
@@ -492,7 +492,7 @@ const Home = () => {
             </motion.div>
           </div>
 
-          <div className="w-full h-full absolute right-0 bottom-0">
+          <div className="absolute inset-0">
             <Image
               src="/bg-explosion.webp"
               alt="ვებსაიტის დამზადება და ვებ დეველოპმენტი"

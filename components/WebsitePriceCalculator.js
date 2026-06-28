@@ -217,7 +217,7 @@ export default function WebsitePriceCalculator() {
   return (
     <section
       aria-labelledby="website-price-calculator-title"
-      className="mx-auto mb-14 max-w-6xl rounded-[24px] border border-white/10 bg-white/5 px-4 py-8 shadow-2xl backdrop-blur-md md:mb-20 md:rounded-[32px] md:px-6 md:py-12"
+      className="website-calculator mx-auto mb-14 max-w-6xl rounded-[24px] border border-white/10 bg-white/5 px-4 py-8 shadow-2xl backdrop-blur-md md:mb-20 md:rounded-[32px] md:px-6 md:py-12"
     >
       <div className="mb-8 text-center md:mb-10">
         <span className="mb-4 inline-block rounded-full bg-accent/10 px-4 py-2 text-xs font-semibold text-accent md:px-5 md:text-sm">
@@ -235,7 +235,7 @@ export default function WebsitePriceCalculator() {
       </div>
 
       <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
-        <div className="space-y-6">
+        <div>
           <OptionGroup
             title="ვებსაიტის ტიპი"
             name="website-type"
@@ -265,11 +265,9 @@ export default function WebsitePriceCalculator() {
             onChange={setTechnology}
           />
 
-          <fieldset className="rounded-2xl border border-white/10 bg-black/20 p-4 md:p-5">
-            <legend className="px-1 text-base font-semibold text-white md:text-lg">
-              ფუნქციონალი
-            </legend>
-            <div className="mt-4 grid gap-3 sm:grid-cols-2">
+          <section className="calculator-section">
+            <SectionTitle>ფუნქციონალი</SectionTitle>
+            <div className="grid gap-3 sm:grid-cols-2">
               {features.map((feature) => (
                 <label
                   key={feature.value}
@@ -283,7 +281,7 @@ export default function WebsitePriceCalculator() {
                     value={feature.value}
                     checked={selectedFeatures.includes(feature.value)}
                     onChange={() => toggleFeature(feature.value)}
-                    className="mt-1 h-4 w-4 accent-accent"
+                    className="mt-1 h-4 w-4 shrink-0 accent-accent"
                   />
                   <span className="flex-1">
                     <span className="block font-semibold text-white">
@@ -294,7 +292,7 @@ export default function WebsitePriceCalculator() {
                 </label>
               ))}
             </div>
-          </fieldset>
+          </section>
         </div>
 
         <aside className="self-start rounded-[24px] border border-accent/30 bg-accent/10 p-5 shadow-[0_24px_80px_rgba(241,48,36,0.12)] md:p-7 lg:sticky lg:top-24">
@@ -438,7 +436,7 @@ export default function WebsitePriceCalculator() {
                 name="consent"
                 checked={leadForm.consent}
                 onChange={updateLeadForm}
-                className="mt-1 h-4 w-4 accent-accent"
+                className="mt-1 h-4 w-4 shrink-0 accent-accent"
                 required
               />
               <span>
@@ -493,11 +491,9 @@ export default function WebsitePriceCalculator() {
 
 function OptionGroup({ title, name, options, value, onChange }) {
   return (
-    <fieldset className="rounded-2xl border border-white/10 bg-black/20 p-4 md:p-5">
-      <legend className="px-1 text-base font-semibold text-white md:text-lg">
-        {title}
-      </legend>
-      <div className="mt-4 grid gap-3 sm:grid-cols-2">
+    <section className="calculator-section">
+      <SectionTitle>{title}</SectionTitle>
+      <div className="grid gap-3 sm:grid-cols-2">
         {options.map((option) => (
           <label
             key={option.value}
@@ -515,7 +511,7 @@ function OptionGroup({ title, name, options, value, onChange }) {
               value={option.value}
               checked={value === option.value}
               onChange={() => onChange(option.value)}
-              className="sr-only"
+              className="calculator-native-input"
             />
             <span className="block text-sm font-semibold md:text-base">
               {option.label}
@@ -526,6 +522,15 @@ function OptionGroup({ title, name, options, value, onChange }) {
           </label>
         ))}
       </div>
-    </fieldset>
+    </section>
+  );
+}
+
+function SectionTitle({ children }) {
+  return (
+    <div className="calculator-section-title-wrap">
+      <h3 className="calculator-section-title">{children}</h3>
+      <span className="calculator-section-accent" aria-hidden="true" />
+    </div>
   );
 }
