@@ -1,5 +1,4 @@
 import Link from "next/link";
-import TeamMember from "../../components/TeamMember";
 import { motion } from "framer-motion";
 import { NextSeo } from "next-seo";
 import Script from "next/script";
@@ -7,45 +6,96 @@ import { fadeIn } from "../../variants";
 
 const CANONICAL = "https://next-hub.pro/about";
 
-const serviceCards = [
+const title =
+  "ჩვენ შესახებ | ვებსაიტის დამზადება და ციფრული განვითარება | Next-Hub";
+const description =
+  "Next-Hub Solutions ქმნის ვებსაიტებს, ონლაინ მაღაზიებს, SEO-ზე მორგებულ ციფრულ გადაწყვეტილებებს და ბიზნესის განვითარებაზე ორიენტირებულ ვებ პლატფორმებს.";
+
+const services = [
   {
     title: "ვებსაიტის დამზადება",
     href: "/webdevelopment",
-    text: "ვქმნით სწრაფ, მობილურზე მორგებულ და SEO-ზე დაფუძნებულ ვებსაიტებს ქართული ბიზნესებისთვის.",
+    text: "ვამზადებთ სწრაფ, მობილურზე მორგებულ და SEO-სთვის სწორად სტრუქტურირებულ ვებსაიტებს. მთავარი მიზანია საიტმა გააჩინოს ნდობა, მკაფიოდ აჩვენოს სერვისები და ვიზიტორი კონტაქტამდე მიიყვანოს.",
   },
   {
-    title: "ვებ დიზაინი",
-    href: "/web-design",
-    text: "ვაწყობთ ვიზუალურ სისტემას, რომელიც ბრენდს სანდოდ აჩვენებს და მომხმარებელს მარტივად ატარებს მოქმედებამდე.",
-  },
-  {
-    title: "SEO ოპტიმიზაცია",
-    href: "/seo-services",
-    text: "ვამუშავებთ ტექნიკურ SEO-ს, კონტენტს, metadata-ს, შიდა ბმულებს და სტრუქტურას Google-ში უკეთესი ხილვადობისთვის.",
-  },
-  {
-    title: "Google Business Profile ოპტიმიზაცია",
-    href: "/google-business-profile-optimization",
-    text: "ვაუმჯობესებთ ლოკალურ ძიებას, Google Maps ხილვადობას და მომხმარებლისთვის საჭირო ბიზნეს ინფორმაციას.",
+    title: "ონლაინ მაღაზიის შექმნა",
+    href: "/webdevelopment",
+    text: "ვქმნით ecommerce პლატფორმებს პროდუქციის კატალოგით, გადახდებით, შეკვეთის ლოგიკით და მართვის კომფორტული სისტემით. ონლაინ მაღაზია იგეგმება გაყიდვების, სიჩქარისა და მომხმარებლის მარტივი გზის მიხედვით.",
   },
   {
     title: "პროგრამული უზრუნველყოფის შექმნა",
     href: "/software-development",
-    text: "ვამზადებთ ინდივიდუალურ ვებ აპლიკაციებს, პორტალებს და ბიზნეს პროცესებზე მორგებულ ციფრულ სისტემებს.",
+    text: "ვქმნით ინდივიდუალურ ვებ აპლიკაციებს, პორტალებს, CRM ტიპის სისტემებს და ბიზნეს პროცესებზე მორგებულ ხელსაწყოებს. გადაწყვეტილება იგეგმება ისე, რომ რეალურად გაამარტივოს ოპერაციები.",
   },
   {
-    title: "საიტის მოვლა",
+    title: "ვებ დიზაინი",
+    href: "/web-design",
+    text: "ვქმნით თანამედროვე UI/UX დიზაინს, რომელიც ბრენდს პრემიუმად და სანდოდ აჩვენებს. განსაკუთრებულ ყურადღებას ვაქცევთ მობილურ გამოცდილებას, კონტენტის იერარქიას და CTA-ებს.",
+  },
+  {
+    title: "SEO ოპტიმიზაცია",
+    href: "/seo-services",
+    text: "ვამუშავებთ ტექნიკურ SEO-ს, metadata-ს, გვერდების სტრუქტურას, შიდა ბმულებს და კონტენტის ლოგიკას. მიზანია Google-მა უკეთ გაიგოს თქვენი სერვისები და მომხმარებელმა მარტივად გიპოვოთ.",
+  },
+  {
+    title: "Google Business Profile ოპტიმიზაცია",
+    href: "/google-business-profile-optimization",
+    text: "ვამზადებთ და ვაუმჯობესებთ Google Business Profile-ს ლოკალური ძიებისა და Google Maps ხილვადობისთვის. ეს განსაკუთრებით მნიშვნელოვანია სერვისულ და ლოკალურ ბიზნესებში.",
+  },
+  {
+    title: "საიტის მოვლა და ტექნიკური მხარდაჭერა",
     href: "/website-maintenance-services",
-    text: "ვზრუნავთ უსაფრთხოებაზე, განახლებებზე, სიჩქარეზე, შეცდომების გასწორებაზე და სტაბილურ მუშაობაზე.",
+    text: "ვზრუნავთ საიტის უსაფრთხოებაზე, განახლებებზე, შეცდომების გასწორებაზე, სიჩქარეზე და სტაბილურ მუშაობაზე. მხარდაჭერა ეხმარება ბიზნესს საიტი მუდმივად აქტიური და გამართული ჰქონდეს.",
+  },
+  {
+    title: "ანალიტიკა და Conversion Tracking",
+    href: "/services/analytics",
+    text: "ვაყენებთ Google Analytics-ს, Search Console-ს, Microsoft Clarity-ს და კონვერსიების გაზომვის სისტემებს. მონაცემები გეხმარებათ გაიგოთ, საიდან მოდიან მომხმარებლები და რა მუშაობს უკეთ.",
   },
 ];
 
-const reasons = [
-  "ბიზნესზე მორგებული მიდგომა",
-  "SEO-ზე ორიენტირებული სტრუქტურა",
-  "სწრაფი და თანამედროვე ტექნოლოგიები",
-  "რეალური პროექტების გამოცდილება",
-  "მხარდაჭერა გაშვების შემდეგ",
+const benefits = [
+  {
+    title: "ბიზნესზე მორგებული მიდგომა",
+    text: "პროექტს ვგეგმავთ ბიზნეს მიზნებიდან, აუდიტორიიდან და გაყიდვების პროცესიდან გამომდინარე.",
+  },
+  {
+    title: "SEO პირველივე დღიდან",
+    text: "სტრუქტურა, სათაურები, URL-ები და ტექნიკური საფუძველი თავიდანვე Google-ისთვის სწორად ეწყობა.",
+  },
+  {
+    title: "სწრაფი და თანამედროვე ტექნოლოგიები",
+    text: "ვიყენებთ Next.js-ს, React-ს, WordPress-ს და სხვა ტექნოლოგიებს პროექტის საჭიროების მიხედვით.",
+  },
+  {
+    title: "მობილურზე იდეალური გამოცდილება",
+    text: "გვერდები იგეგმება ისე, რომ ტელეფონიდან კითხვა, ნავიგაცია და კონტაქტი მარტივი იყოს.",
+  },
+  {
+    title: "უსაფრთხოება და სტაბილურობა",
+    text: "ყურადღებას ვაქცევთ დაცვას, განახლებებს, სარეზერვო მიდგომებს და საიტის საიმედო მუშაობას.",
+  },
+  {
+    title: "მხარდაჭერა გაშვების შემდეგ",
+    text: "გაშვების შემდეგაც ვეხმარებით ბიზნესს ტექნიკურ მოვლაში, გაუმჯობესებასა და განვითარებაში.",
+  },
+];
+
+const processSteps = [
+  ["01", "კონსულტაცია", "ვიგებთ იდეას, მიზანს, ვადებს, ბიუჯეტს და ვარჩევთ პროექტისთვის სწორ მიმართულებას."],
+  ["02", "ბიზნესის ანალიზი", "ვაფასებთ აუდიტორიას, კონკურენტებს, სერვისებს, გაყიდვების გზას და ციფრულ შესაძლებლობებს."],
+  ["03", "სტრუქტურა და UI/UX დიზაინი", "ვაწყობთ გვერდების ლოგიკას, კონტენტის იერარქიას, CTA-ებს და ვიზუალურ სისტემას."],
+  ["04", "დეველოპმენტი", "ვქმნით სწრაფ, responsive და მართვად ვებსაიტს, მაღაზიას ან ინდივიდუალურ ვებ აპლიკაციას."],
+  ["05", "SEO და ტექნიკური ოპტიმიზაცია", "ვამზადებთ metadata-ს, schema-ს, სიჩქარეს, ანალიტიკას და Search Console-ის საფუძველს."],
+  ["06", "გაშვება", "ვტესტავთ მობილურს, ფორმებს, ბმულებს, სიჩქარეს, უსაფრთხოებას და პროექტს ვუშვებთ რეალურ გარემოში."],
+  ["07", "მხარდაჭერა და განვითარება", "ვაგრძელებთ ტექნიკურ მხარდაჭერას, გაუმჯობესებებს, კონტენტის განახლებას და შედეგების ანალიზს."],
+];
+
+const stats = [
+  ["40+", "დასრულებული პროექტი"],
+  ["95%", "კმაყოფილი მომხმარებელი"],
+  ["99%", "ტექნიკური სტაბილურობის მიზანი"],
+  ["24/7", "მხარდაჭერის შესაძლებლობა"],
 ];
 
 const technologies = [
@@ -57,14 +107,51 @@ const technologies = [
   "Google Analytics",
   "Search Console",
   "Microsoft Clarity",
+  "Vercel",
+  "Prisma",
 ];
 
-const trustSignals = [
-  "ბიზნეს ვებსაიტები",
-  "ონლაინ მაღაზიები",
-  "სერვისის ვებსაიტები",
-  "ლოკალური SEO",
-  "Google Business Profile",
+const faqs = [
+  {
+    question: "რას აკეთებს Next-Hub Solutions?",
+    answer:
+      "Next-Hub Solutions ქმნის ვებსაიტებს, ონლაინ მაღაზიებს, ვებ აპლიკაციებს, SEO სტრუქტურას, Google Business Profile ოპტიმიზაციას და საიტის ტექნიკურ მხარდაჭერას ბიზნესებისთვის საქართველოში.",
+  },
+  {
+    question: "რა ტიპის ვებსაიტებს ქმნით?",
+    answer:
+      "ვამზადებთ ბიზნეს ვებსაიტებს, landing page-ებს, კორპორატიულ გვერდებს, ecommerce მაღაზიებს, სერვისის საიტებს, კატალოგებს და ინდივიდუალურ ვებ აპლიკაციებს.",
+  },
+  {
+    question: "მუშაობთ თუ არა WordPress-ზე?",
+    answer:
+      "დიახ. WordPress-ს ვიყენებთ მაშინ, როცა ბიზნესს სჭირდება მარტივად სამართავი საიტი, ბლოგი, მომსახურებების გვერდები ან WooCommerce ონლაინ მაღაზია.",
+  },
+  {
+    question: "მუშაობთ თუ არა Next.js-ზე?",
+    answer:
+      "დიახ. Next.js-ს ვიყენებთ სწრაფი, SEO-ზე მორგებული და მასშტაბირებადი ვებსაიტებისა და ვებ აპლიკაციებისთვის, სადაც მნიშვნელოვანია სიჩქარე და მოქნილი არქიტექტურა.",
+  },
+  {
+    question: "აკეთებთ თუ არა SEO ოპტიმიზაციას?",
+    answer:
+      "დიახ. ვამზადებთ ტექნიკურ SEO-ს, metadata-ს, schema markup-ს, შიდა ბმულებს, გვერდების სტრუქტურას და Search Console-ის საფუძველს.",
+  },
+  {
+    question: "რამდენ ხანში მზადდება ვებსაიტი?",
+    answer:
+      "ვადა დამოკიდებულია პროექტის ზომასა და ფუნქციონალზე. მარტივი ვებსაიტი ხშირად მზადდება რამდენიმე კვირაში, ხოლო ონლაინ მაღაზია ან ინდივიდუალური სისტემა საჭიროებს უფრო დეტალურ დაგეგმვას.",
+  },
+  {
+    question: "გთავაზობთ თუ არა ტექნიკურ მხარდაჭერას?",
+    answer:
+      "დიახ. გთავაზობთ საიტის მოვლას, უსაფრთხოების განახლებებს, შეცდომების გასწორებას, სიჩქარის გაუმჯობესებას, ანალიტიკის მონიტორინგს და განვითარების მხარდაჭერას.",
+  },
+  {
+    question: "როგორ მივიღო კონსულტაცია?",
+    answer:
+      "კონსულტაციის მისაღებად გადადით კონტაქტის გვერდზე, მოგვწერეთ პროექტის შესახებ ან დაგვიკავშირდით მითითებულ საკონტაქტო არხებზე.",
+  },
 ];
 
 const schemaData = {
@@ -77,10 +164,9 @@ const schemaData = {
       url: "https://next-hub.pro",
       logo: "https://next-hub.pro/favicon.jpg",
       image: "https://next-hub.pro/nexthub.jpg",
-      description:
-        "Next-Hub Solutions ქმნის ვებსაიტებს, SEO სტრუქტურას, Google Business Profile ოპტიმიზაციას და ციფრულ გადაწყვეტილებებს ბიზნესებისთვის საქართველოში.",
       email: "info@next-hub.pro",
       telephone: "+995555137003",
+      description,
       address: {
         "@type": "PostalAddress",
         addressLocality: "Tbilisi",
@@ -90,28 +176,8 @@ const schemaData = {
         "@type": "Country",
         name: "Georgia",
       },
-      founder: [
-        {
-          "@type": "Person",
-          name: "თეო ოთხოზორია",
-          jobTitle: "CEO",
-        },
-        {
-          "@type": "Person",
-          name: "გიორგი ბლიაძე",
-          jobTitle: "CTO",
-        },
-      ],
-      knowsAbout: [
-        "Website Development",
-        "Web Design",
-        "SEO Optimization",
-        "Google Business Profile Optimization",
-        "Software Development",
-        "Website Maintenance",
-        "Local SEO Georgia",
-      ],
-      makesOffer: serviceCards.map((service) => ({
+      knowsAbout: technologies,
+      makesOffer: services.map((service) => ({
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
@@ -138,24 +204,41 @@ const schemaData = {
         },
       ],
     },
+    {
+      "@type": "FAQPage",
+      "@id": `${CANONICAL}/#faq`,
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
+    },
   ],
 };
+
+const SectionLabel = ({ children }) => (
+  <span className="mb-4 inline-block rounded-full bg-accent/10 px-4 py-2 text-xs font-semibold text-accent md:text-sm">
+    {children}
+  </span>
+);
 
 const About = () => {
   return (
     <>
       <NextSeo
         canonical={CANONICAL}
-        title="ჩვენ შესახებ | Next-Hub Solutions - ვებსაიტები, SEO და ციფრული გადაწყვეტილებები"
-        description="Next-Hub Solutions ქმნის ვებსაიტებს, SEO-ს და ციფრულ სისტემებს ქართული ბიზნესებისთვის, რომ ონლაინ სივრცე გახდეს სანდო გაყიდვების არხი."
+        title={title}
+        description={description}
         openGraph={{
           type: "website",
           locale: "ka_GE",
           url: CANONICAL,
           site_name: "Next-Hub Solutions",
-          title: "ჩვენ შესახებ | Next-Hub Solutions",
-          description:
-            "Next-Hub Solutions ეხმარება ქართულ ბიზნესებს ვებსაიტების შექმნით, SEO ოპტიმიზაციით და შედეგზე ორიენტირებული ციფრული სისტემებით.",
+          title,
+          description,
           images: [
             {
               url: "https://next-hub.pro/nexthub.jpg",
@@ -169,18 +252,14 @@ const About = () => {
           cardType: "summary_large_image",
         }}
         additionalMetaTags={[
-          {
-            name: "author",
-            content: "Next-Hub Solutions",
-          },
-          {
-            name: "robots",
-            content: "index,follow,max-image-preview:large",
-          },
+          { name: "twitter:title", content: title },
+          { name: "twitter:description", content: description },
+          { name: "author", content: "Next-Hub Solutions" },
+          { name: "robots", content: "index,follow,max-image-preview:large" },
           {
             name: "keywords",
             content:
-              "Next-Hub Solutions, ჩვენ შესახებ, ვებსაიტის დამზადება საქართველოში, საიტის შექმნა, ვებ დიზაინი, SEO ოპტიმიზაცია, Google Business Profile ოპტიმიზაცია, პროგრამული უზრუნველყოფის შექმნა, საიტის მოვლა, ციფრული სააგენტო საქართველო",
+              "Next-Hub Solutions, ვებსაიტის დამზადება საქართველოში, ციფრული განვითარება, SEO ოპტიმიზაცია, ვებ დიზაინი, ონლაინ მაღაზიის შექმნა, Next.js, WordPress",
           },
         ]}
       />
@@ -189,12 +268,10 @@ const About = () => {
         id="about-schema"
         type="application/ld+json"
         strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(schemaData),
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
 
-      <main className="min-h-screen bg-primary/30 px-4 py-28 text-white md:px-8 md:py-32 xl:px-10">
+      <main className="min-h-screen overflow-x-hidden bg-primary/40 px-4 py-28 text-white md:px-8 md:py-32 xl:px-10">
         <div className="mx-auto max-w-6xl">
           <motion.section
             variants={fadeIn("up", 0.1)}
@@ -203,142 +280,159 @@ const About = () => {
             exit="hidden"
             className="mb-14 text-center md:mb-20"
           >
-            <span className="mb-5 inline-block rounded-full bg-accent/10 px-5 py-2 text-sm font-semibold text-accent">
-              Next-Hub Solutions
-            </span>
-            <h1 className="text-4xl font-bold leading-tight md:text-6xl">
-              ჩვენ შესახებ <span className="text-accent">.</span>
+            <SectionLabel>Next-Hub Solutions</SectionLabel>
+            <h1 className="mx-auto max-w-5xl text-3xl font-bold leading-tight md:text-5xl xl:text-6xl">
+              ვებსაიტის დამზადება და ბიზნესის ციფრული განვითარება საქართველოში
+              <span className="text-accent">.</span>
             </h1>
-            <p className="mx-auto mt-6 max-w-3xl text-sm leading-7 text-white/80 md:text-lg md:leading-8">
-              Next-Hub ქმნის ვებსაიტებს, SEO სტრუქტურას და ციფრულ გადაწყვეტილებებს
-              ბიზნესებისთვის საქართველოში, რომ კომპანიებმა მიიღონ მეტი ნდობა,
-              მეტი ხილვადობა და მეტი კვალიფიციური მომხმარებელი ონლაინ სივრციდან.
+            <p className="mx-auto mt-6 max-w-4xl text-sm leading-7 text-white/78 md:text-lg md:leading-9">
+              Next-Hub Solutions ქმნის თანამედროვე ვებსაიტებს, ონლაინ მაღაზიებსა
+              და ვებ აპლიკაციებს, რომლებიც მხოლოდ ლამაზად არ გამოიყურება — ისინი
+              ზრდიან გაყიდვებს, აუმჯობესებენ Google-ში ხილვადობას და ეხმარებიან
+              ბიზნესს განვითარებაში.
             </p>
+            <Link
+              href="/contact"
+              className="mt-8 inline-flex rounded-full bg-accent px-8 py-4 font-semibold text-white shadow-lg shadow-accent/20 transition hover:-translate-y-1 hover:bg-white hover:text-accent"
+            >
+              კონსულტაცია
+            </Link>
           </motion.section>
 
-          <motion.section
-            variants={fadeIn("up", 0.15)}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.2 }}
-            className="mb-14 rounded-[24px] border border-white/10 bg-white/5 p-6 shadow-2xl backdrop-blur-md md:mb-20 md:rounded-[32px] md:p-10"
-          >
-            <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <section className="mb-14 rounded-[24px] border border-white/10 bg-white/5 p-6 shadow-2xl backdrop-blur-md md:mb-20 md:rounded-[32px] md:p-10">
+            <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
               <div>
-                <span className="mb-4 inline-block rounded-full bg-accent/10 px-4 py-2 text-xs font-semibold text-accent md:text-sm">
-                  ჩვენი ისტორია
-                </span>
+                <SectionLabel>ჩვენი ისტორია</SectionLabel>
                 <h2 className="text-2xl font-bold leading-tight md:text-4xl">
-                  დიზაინზე მეტი: პლატფორმა, რომელიც ბიზნესს მუშაობაში ეხმარება
+                  რატომ შეიქმნა Next-Hub?
                 </h2>
               </div>
-              <div className="space-y-5 text-sm leading-7 text-white/70 md:text-base md:leading-8">
+              <div className="space-y-5 text-sm leading-7 text-white/72 md:text-base md:leading-8">
                 <p>
-                  Next-Hub Solutions არის ციფრული გუნდი, რომელიც ბიზნესებს ეხმარება
-                  პროფესიონალური ონლაინ წარმომადგენლობის შექმნაში. ჩვენ ვხედავთ
-                  პრობლემას, რომელსაც ბევრი კომპანია აწყდება: ვებსაიტი შეიძლება
-                  ლამაზად გამოიყურებოდეს, მაგრამ ვერ ყიდიდეს, ვერ ჩანდეს Google-ში
-                  და ვერ აძლევდეს მომხმარებელს მკაფიო გზას კონტაქტამდე.
+                  Next-Hub შეიქმნა იმისთვის, რომ ქართულ ბიზნესებს ჰქონდეთ
+                  თანამედროვე, სწრაფი და სანდო ციფრული პლატფორმები. ბევრ კომპანიას
+                  აქვს ხარისხიანი პროდუქტი ან სერვისი, მაგრამ ონლაინ სივრცეში ვერ
+                  აჩვენებს საკუთარ ღირებულებას ისე, როგორც ბაზარი მოითხოვს.
                 </p>
                 <p>
-                  ამიტომ ყოველი პროექტი იწყება ბიზნეს მიზნებით. ვაანალიზებთ
-                  აუდიტორიას, სერვისებს, კონკურენტებს, ძიების მოთხოვნებს და
-                  კონვერსიის გზას. შემდეგ ვქმნით სტრუქტურას, დიზაინს და ტექნიკურ
-                  გადაწყვეტას, რომელიც არა მხოლოდ ვიზუალურად გამოიყურება
-                  პროფესიონალურად, არამედ რეალურ შედეგს ემსახურება.
+                  ჩვენი მიდგომა მხოლოდ დიზაინით არ იწყება და არც დიზაინით
+                  მთავრდება. ვებსაიტი უნდა პასუხობდეს ბიზნეს მიზნებს, ზრდიდეს
+                  ნდობას, ქმნიდეს ლიდებს, ეხმარებოდეს გაყიდვებს და მომხმარებელს
+                  სწრაფად აძლევდეს საჭირო ინფორმაციას.
+                </p>
+                <p>
+                  ყოველ პროექტში ვაერთიანებთ UX-ს, SEO-ს, სიჩქარეს, უსაფრთხოებას
+                  და მობილურ გამოცდილებას. ასე ვქმნით პლატფორმას, რომელიც კარგად
+                  გამოიყურება, სწრაფად მუშაობს და Google-ისთვისაც გასაგები
+                  სტრუქტურით არის აწყობილი.
+                </p>
+                <p>
+                  ჩვენი მიზანია ბიზნესს არ ჰქონდეს უბრალოდ ონლაინ სავიზიტო ბარათი.
+                  ვქმნით ვებსაიტებს, რომლებიც აძლიერებს რეპუტაციას, ამარტივებს
+                  კონტაქტს და კომპანიას ციფრულ გარემოში უფრო კონკურენტუნარიანს
+                  ხდის.
                 </p>
               </div>
             </div>
-          </motion.section>
+          </section>
 
-          <motion.section
-            variants={fadeIn("up", 0.15)}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.2 }}
-            className="mb-14 md:mb-20"
-          >
+          <section className="mb-14 md:mb-20">
             <div className="mb-8 text-center md:mb-10">
-              <span className="mb-4 inline-block rounded-full bg-accent/10 px-4 py-2 text-xs font-semibold text-accent md:text-sm">
-                რას ვაკეთებთ
-              </span>
-              <h2 className="text-2xl font-bold md:text-4xl">
-                ციფრული სერვისები ბიზნესის ზრდისთვის
-              </h2>
+              <SectionLabel>სერვისები</SectionLabel>
+              <h2 className="text-2xl font-bold md:text-4xl">რას ვაკეთებთ</h2>
             </div>
-
-            <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-              {serviceCards.map((service) => (
+            <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+              {services.map((service) => (
                 <Link
-                  key={service.href}
+                  key={`${service.href}-${service.title}`}
                   href={service.href}
-                  className="group rounded-2xl border border-white/10 bg-white/5 p-5 shadow-2xl backdrop-blur-md transition hover:-translate-y-1 hover:border-accent/50 hover:bg-accent/10 md:p-6"
+                  prefetch={false}
+                  className="group flex min-h-[250px] flex-col rounded-2xl border border-white/10 bg-white/5 p-5 shadow-2xl backdrop-blur-md transition hover:-translate-y-1 hover:border-accent/50 hover:bg-accent/10 md:p-6"
                 >
-                  <h3 className="mb-3 text-lg font-bold text-accent md:text-xl">
+                  <h3 className="mb-3 text-lg font-bold leading-7 text-accent">
                     {service.title}
                   </h3>
-                  <p className="text-sm leading-7 text-white/70 md:text-base">
-                    {service.text}
-                  </p>
-                  <span className="mt-5 inline-block text-sm font-semibold text-white/75 group-hover:text-white">
+                  <p className="text-sm leading-7 text-white/70">{service.text}</p>
+                  <span className="mt-auto pt-5 text-sm font-semibold text-white/75 group-hover:text-white">
                     გაიგე მეტი
                   </span>
                 </Link>
               ))}
             </div>
-          </motion.section>
+          </section>
 
-          <motion.section
-            variants={fadeIn("up", 0.15)}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.2 }}
-            className="mb-14 grid gap-6 md:mb-20 lg:grid-cols-[0.85fr_1.15fr]"
-          >
+          <section className="mb-14 grid gap-6 md:mb-20 lg:grid-cols-[0.8fr_1.2fr]">
             <div className="rounded-[24px] border border-white/10 bg-white/5 p-6 shadow-2xl backdrop-blur-md md:rounded-[32px] md:p-8">
-              <span className="mb-4 inline-block rounded-full bg-accent/10 px-4 py-2 text-xs font-semibold text-accent md:text-sm">
-                რატომ ჩვენ
-              </span>
+              <SectionLabel>უპირატესობები</SectionLabel>
               <h2 className="text-2xl font-bold leading-tight md:text-4xl">
-                სანდო მიდგომა იდეიდან გაშვებამდე
+                რატომ Next-Hub?
               </h2>
               <p className="mt-5 text-sm leading-7 text-white/70 md:text-base md:leading-8">
-                ვმუშაობთ ისე, რომ გადაწყვეტილება იყოს გასაგები, გაზომვადი და
-                მომავალ განვითარებაზე მზად.
+                ვმუშაობთ ისე, რომ თითოეული გადაწყვეტილება იყოს გასაგები,
+                გაზომვადი და მომავალ განვითარებაზე მზად.
               </p>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
-              {reasons.map((reason, index) => (
+              {benefits.map((benefit) => (
                 <div
-                  key={reason}
+                  key={benefit.title}
                   className="rounded-2xl border border-white/10 bg-black/20 p-5"
                 >
-                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full border border-accent/30 bg-accent/15 font-bold text-accent">
-                    {index + 1}
-                  </div>
-                  <h3 className="text-base font-semibold leading-7 text-white">
-                    {reason}
+                  <h3 className="mb-3 text-base font-bold leading-7 text-white md:text-lg">
+                    {benefit.title}
                   </h3>
+                  <p className="text-sm leading-7 text-white/65">{benefit.text}</p>
                 </div>
               ))}
             </div>
-          </motion.section>
+          </section>
 
-          <motion.section
-            variants={fadeIn("up", 0.15)}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.2 }}
-            className="mb-14 rounded-[24px] border border-white/10 bg-white/5 p-6 shadow-2xl backdrop-blur-md md:mb-20 md:rounded-[32px] md:p-10"
-          >
-            <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <section className="mb-14 rounded-[24px] border border-white/10 bg-white/5 p-6 shadow-2xl backdrop-blur-md md:mb-20 md:rounded-[32px] md:p-10">
+            <div className="mb-8 text-center md:mb-10">
+              <SectionLabel>პროცესი</SectionLabel>
+              <h2 className="text-2xl font-bold md:text-4xl">როგორ ვმუშაობთ</h2>
+            </div>
+            <div className="grid gap-4 md:grid-cols-2">
+              {processSteps.map(([number, stepTitle, text]) => (
+                <div
+                  key={number}
+                  className="rounded-2xl border border-white/10 bg-black/20 p-5 md:p-6"
+                >
+                  <div className="mb-4 text-sm font-bold text-accent">{number}</div>
+                  <h3 className="mb-3 text-lg font-bold text-white">{stepTitle}</h3>
+                  <p className="text-sm leading-7 text-white/68">{text}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section className="mb-14 grid gap-4 md:mb-20 sm:grid-cols-2 xl:grid-cols-4">
+            {stats.map(([value, label]) => (
+              <div
+                key={label}
+                className="rounded-[24px] border border-accent/25 bg-accent/10 p-6 text-center shadow-[0_24px_80px_rgba(241,48,36,0.12)] backdrop-blur-md"
+              >
+                <div className="text-3xl font-bold text-white md:text-4xl">
+                  {value}
+                </div>
+                <p className="mt-3 text-sm leading-6 text-white/70">{label}</p>
+              </div>
+            ))}
+          </section>
+
+          <section className="mb-14 rounded-[24px] border border-white/10 bg-white/5 p-6 shadow-2xl backdrop-blur-md md:mb-20 md:rounded-[32px] md:p-10">
+            <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
               <div>
-                <span className="mb-4 inline-block rounded-full bg-accent/10 px-4 py-2 text-xs font-semibold text-accent md:text-sm">
-                  ტექნოლოგიები
-                </span>
+                <SectionLabel>ტექნოლოგიები</SectionLabel>
                 <h2 className="text-2xl font-bold leading-tight md:text-4xl">
-                  ვარჩევთ ტექნოლოგიას პროექტის მიზნის მიხედვით
+                  ტექნოლოგიას ვარჩევთ ბიზნეს ამოცანის მიხედვით
                 </h2>
+                <p className="mt-5 text-sm leading-7 text-white/70 md:text-base md:leading-8">
+                  Next.js და React გვაძლევს სწრაფ, მასშტაბირებად და SEO-ზე
+                  მორგებულ გადაწყვეტებს. WordPress და WooCommerce კარგია მარტივად
+                  სამართავი საიტებისა და ონლაინ მაღაზიებისთვის, ხოლო ანალიტიკის
+                  ხელსაწყოები შედეგების გაზომვაში გვეხმარება.
+                </p>
               </div>
               <div className="flex flex-wrap gap-3">
                 {technologies.map((tech) => (
@@ -351,99 +445,59 @@ const About = () => {
                 ))}
               </div>
             </div>
-          </motion.section>
+          </section>
 
-          <motion.section
-            variants={fadeIn("up", 0.15)}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.2 }}
-            className="mb-14 rounded-[24px] border border-accent/30 bg-accent/10 p-6 shadow-[0_24px_80px_rgba(241,48,36,0.14)] md:mb-20 md:rounded-[32px] md:p-10"
-          >
-            <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-              <div>
-                <span className="mb-4 inline-block rounded-full border border-white/10 bg-white/10 px-4 py-2 text-xs font-semibold text-white/70 md:text-sm">
-                  გამოცდილება და ნდობა
-                </span>
-                <h2 className="text-2xl font-bold leading-tight md:text-4xl">
-                  რეალური გამოცდილება ბიზნეს პროექტებში
-                </h2>
-                <p className="mt-5 text-sm leading-7 text-white/75 md:text-base md:leading-8">
-                  გვაქვს გამოცდილება ბიზნეს ვებსაიტების, ecommerce პროექტების,
-                  სერვისის ვებსაიტების, ლოკალური SEO-ს და Google Business Profile
-                  ოპტიმიზაციის მიმართულებით. შედეგს ვზომავთ ხილვადობით,
-                  სიჩქარით, მომხმარებლის ქცევით და კონტაქტების ხარისხით.
-                </p>
-                <Link
-                  href="/work"
-                  className="mt-6 inline-flex rounded-full bg-white px-6 py-3 font-semibold text-accent transition hover:-translate-y-1 hover:bg-accent hover:text-white"
+          <section className="mb-14 rounded-[24px] border border-white/10 bg-white/5 p-6 shadow-2xl backdrop-blur-md md:mb-20 md:rounded-[32px] md:p-10">
+            <SectionLabel>მისია</SectionLabel>
+            <h2 className="text-2xl font-bold leading-tight md:text-4xl">
+              ჩვენი მისია
+            </h2>
+            <p className="mt-5 max-w-4xl text-sm leading-7 text-white/72 md:text-base md:leading-8">
+              ჩვენი მიზანია, ქართულ ბიზნესებს ჰქონდეთ სწრაფი, უსაფრთხო და
+              თანამედროვე ვებსაიტები, რომლებიც არა მხოლოდ კომპანიის სავიზიტო
+              ბარათია, არამედ რეალურად ქმნის ახალ შესაძლებლობებს, ზრდის ნდობას
+              და ეხმარება გაყიდვების ზრდას.
+            </p>
+          </section>
+
+          <section className="mb-14 md:mb-20">
+            <div className="mb-8 text-center md:mb-10">
+              <SectionLabel>FAQ</SectionLabel>
+              <h2 className="text-2xl font-bold md:text-4xl">
+                ხშირად დასმული კითხვები
+              </h2>
+            </div>
+            <div className="grid gap-4 md:grid-cols-2">
+              {faqs.map((faq) => (
+                <div
+                  key={faq.question}
+                  className="rounded-2xl border border-white/10 bg-white/5 p-5 shadow-2xl backdrop-blur-md md:p-6"
                 >
-                  ნამუშევრები
-                </Link>
-              </div>
-              <div className="grid gap-4 sm:grid-cols-2">
-                {trustSignals.map((signal) => (
-                  <div
-                    key={signal}
-                    className="rounded-2xl border border-white/10 bg-black/20 p-5 text-sm font-semibold text-white/85 md:text-base"
-                  >
-                    {signal}
-                  </div>
-                ))}
-              </div>
+                  <h3 className="mb-3 text-base font-bold leading-7 text-white">
+                    {faq.question}
+                  </h3>
+                  <p className="text-sm leading-7 text-white/68">{faq.answer}</p>
+                </div>
+              ))}
             </div>
-          </motion.section>
+          </section>
 
-          <motion.section
-            variants={fadeIn("up", 0.15)}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.2 }}
-            className="mb-14 md:mb-20"
-          >
-            <h2 className="mb-8 text-center text-3xl font-semibold text-white">
-              ჩვენი გუნდი
+          <section className="mobile-bottom-safe-space rounded-[24px] border border-accent/30 bg-accent/10 p-6 text-center shadow-[0_24px_80px_rgba(241,48,36,0.14)] backdrop-blur-md md:rounded-[32px] md:p-10">
+            <h2 className="mx-auto max-w-4xl text-2xl font-bold leading-tight md:text-4xl">
+              მზად ხართ თქვენი ბიზნესის შემდეგ ეტაპზე გადასასვლელად?
             </h2>
-            <div className="flex flex-wrap justify-center gap-8">
-              <TeamMember
-                name="თეო ოთხოზორია"
-                position="CEO"
-                imageSrc="/teo.webp"
-              />
-              <TeamMember
-                name="გიორგი ბლიაძე"
-                position="CTO"
-                imageSrc="/gio1.webp"
-              />
-              <TeamMember
-                name="თიკო შაიშმელაშვილი"
-                position="Head of Marketing"
-                imageSrc="/tiko1.webp"
-              />
-            </div>
-          </motion.section>
-
-          <motion.section
-            variants={fadeIn("up", 0.15)}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.2 }}
-            className="mobile-bottom-safe-space rounded-[24px] border border-white/10 bg-white/5 p-6 text-center shadow-2xl backdrop-blur-md md:rounded-[32px] md:p-10"
-          >
-            <h2 className="mx-auto max-w-3xl text-2xl font-bold leading-tight md:text-4xl">
-              გსურთ თქვენი ბიზნესისთვის ძლიერი ციფრული პლატფორმა?
-            </h2>
-            <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-white/70 md:text-base md:leading-8">
-              დაგეგმეთ ვებსაიტის დამზადება, SEO ოპტიმიზაცია ან ინდივიდუალური
-              პროგრამული გადაწყვეტა Next-Hub Solutions-თან ერთად.
+            <p className="mx-auto mt-5 max-w-3xl text-sm leading-7 text-white/75 md:text-base md:leading-8">
+              მოგვწერეთ და ერთად შევარჩიოთ სწორი ტექნოლოგია, დიზაინი, SEO
+              სტრუქტურა და ბიუჯეტი თქვენი პროექტისთვის.
             </p>
             <Link
               href="/contact"
-              className="mt-7 inline-flex rounded-full bg-accent px-8 py-4 font-semibold text-white shadow-lg shadow-accent/20 transition hover:-translate-y-1 hover:bg-white hover:text-accent"
+              prefetch={false}
+              className="mt-7 inline-flex rounded-full bg-white px-8 py-4 font-semibold text-accent shadow-lg shadow-black/20 transition hover:-translate-y-1 hover:bg-accent hover:text-white"
             >
-              კონსულტაცია
+              უფასო კონსულტაცია
             </Link>
-          </motion.section>
+          </section>
         </div>
       </main>
     </>
