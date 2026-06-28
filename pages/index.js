@@ -41,6 +41,8 @@ const Home = () => {
   const canonical = "https://next-hub.pro";
   const metaDescription =
     "Next-Hub Solutions ქმნის სწრაფ, თანამედროვე და SEO-ზე მორგებულ ვებსაიტებს, ონლაინ მაღაზიებსა და ვებ აპლიკაციებს ბიზნესისთვის.";
+  const homeTitle =
+    "ვებსაიტის დამზადება და ვებ დეველოპმენტი საქართველოში | Next-Hub";
 
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia(
@@ -195,6 +197,10 @@ const Home = () => {
         "@type": "WebSite",
         "@id": `${canonical}/#website`,
         name: "Next-Hub Solutions",
+        alternateName: [
+          "ვებსაიტის დამზადება საქართველოში",
+          "Next-Hub",
+        ],
         url: `${canonical}/`,
         publisher: {
           "@id": `${canonical}/#organization`,
@@ -238,14 +244,14 @@ const Home = () => {
     <>
       <NextSeo
         canonical={canonical}
-        title="ვებსაიტის დამზადება და ვებ დეველოპმენტი საქართველოში | Next-Hub"
+        title={homeTitle}
         description={metaDescription}
         openGraph={{
           type: "website",
           locale: "ka_GE",
           url: canonical,
           site_name: "Next-Hub Solutions",
-          title: "ვებსაიტის დამზადება, ვებ დიზაინი და SEO | Next-Hub Solutions",
+          title: homeTitle,
           description: metaDescription,
           images: [
             {
@@ -260,6 +266,14 @@ const Home = () => {
           cardType: "summary_large_image",
         }}
         additionalMetaTags={[
+          {
+            name: "twitter:title",
+            content: homeTitle,
+          },
+          {
+            name: "twitter:description",
+            content: metaDescription,
+          },
           {
             name: "author",
             content: "Next-Hub Solutions",

@@ -66,6 +66,10 @@ const siteEntitySchema = {
       "@id": `${siteUrl}/#website`,
       url: siteUrl,
       name: companyProfile.name,
+      alternateName: [
+        "ვებსაიტის დამზადება საქართველოში",
+        "Next-Hub",
+      ],
       publisher: { "@id": `${siteUrl}/#organization` },
       inLanguage: "ka-GE",
     },
