@@ -85,8 +85,12 @@ const GraphicDesign = () => {
         }}
       />
 
-      <div className="flex justify-center items-center min-h-screen bg-primary/30 px-4 overflow-x-hidden">
+      <div className="flex min-h-screen flex-col items-center justify-start bg-primary/30 px-4 py-28 md:py-44 overflow-x-hidden">
         <Circles />
+        <h1 className="text-4xl md:text-6xl font-bold xl:mt-8 text-center">
+          გრაფიკული დიზაინი
+          <span className="text-accent">.</span>
+        </h1>
         {/* <GraphicDesignPriceCard /> */}
         <Portfolio />
         <Bulb />

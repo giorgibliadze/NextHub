@@ -167,7 +167,7 @@ export default function WorkSlider() {
                     <div className="relative w-full h-0 pb-[56.25%]">
                       <Image
                         src={image.path}
-                        alt={image.title}
+                        alt={`${image.title} პროექტის ვიზუალი`}
                         fill
                         sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 450px"
                         style={{ objectFit: "contain" }}

@@ -205,6 +205,10 @@ button.calculator-option-card {
     padding-bottom: calc(120px + env(safe-area-inset-bottom));
   }
 
+  .home-page-end-safe {
+    padding-bottom: calc(88px + env(safe-area-inset-bottom));
+  }
+
   .calculator-option-card {
     transition: border-color 180ms ease, background-color 180ms ease,
       color 180ms ease;

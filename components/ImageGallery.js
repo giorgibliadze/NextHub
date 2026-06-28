@@ -11,7 +11,7 @@ const ImageGallery = ({ images }) => {
         >
           <Image
             src={image.src}
-            alt={image.alt}
+            alt={image.alt || "Next-Hub Solutions პროექტის ვიზუალი"}
             fill
             sizes="(max-width: 768px) 100vw, 40vw"
             className="object-cover transform transition-transform duration-300 hover:scale-110 hover:opacity-80"

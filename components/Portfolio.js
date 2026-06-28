@@ -59,7 +59,7 @@ export default function Portfolio() {
               <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden">
                 <Image
                   src={item.path}
-                  alt={item.title}
+                  alt={`${item.title} პროექტის ვიზუალი`}
                   fill
                   className="object-contain hover:scale-105 transition-transform duration-300"
                 />

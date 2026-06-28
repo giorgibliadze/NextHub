@@ -509,7 +509,7 @@ const Home = () => {
         </div>
       </div>
 
-      <main className="bg-primary/60 px-4 md:px-8 xl:px-10 py-16 md:py-24 overflow-x-hidden">
+      <main className="bg-primary/60 px-4 md:px-8 xl:px-10 pt-16 pb-0 md:py-24 overflow-x-hidden">
         <div ref={calculatorRef}>
           {showCalculator ? <WebsitePriceCalculator /> : <CalculatorSkeleton />}
         </div>
@@ -705,7 +705,7 @@ const Home = () => {
 
         <motion.section
           {...belowFoldMotionProps}
-          className="mobile-bottom-safe-space max-w-6xl mx-auto px-4 md:px-6 py-8 md:py-10 rounded-[24px] md:rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-md shadow-2xl"
+          className="home-page-end-safe max-w-6xl mx-auto px-4 md:px-6 py-8 md:py-10 rounded-[24px] md:rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-md shadow-2xl"
         >
           <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-6 md:gap-8 items-center">
             <div>

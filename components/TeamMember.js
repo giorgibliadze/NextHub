@@ -9,7 +9,7 @@ const TeamMember = ({ name, position, imageSrc, className }) => {
     <div className="max-w-xs text-center">
       <Image
         src={imageSrc}
-        alt={name}
+        alt={name || "Next-Hub Solutions გუნდის წევრი"}
         width={150}
         height={150}
         className={imageClass}
