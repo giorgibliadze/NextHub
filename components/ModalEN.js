@@ -6,14 +6,22 @@ import { motion } from "framer-motion";
 import { fadeIn } from "../variants"; // adjust path if needed
 import { v4 as uuidv4 } from "uuid";
 
+const initialFormData = {
+  email: "",
+  phone: "",
+  subject: "",
+  message: "",
+  name: "",
+};
+
+const blurActiveElement = () => {
+  if (typeof document !== "undefined") {
+    document.activeElement?.blur?.();
+  }
+};
+
 const ModalEN = ({ isOpen, onClose, cardData }) => {
-  const [formData, setFormData] = useState({
-    email: "",
-    phone: "",
-    subject: "",
-    message: "",
-    name: "",
-  });
+  const [formData, setFormData] = useState(initialFormData);
   const [loading, setLoading] = useState(false);
   const [payLoading, setPayLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -72,15 +80,11 @@ const ModalEN = ({ isOpen, onClose, cardData }) => {
 
       const data = await res.json();
       if (res.ok) {
-        setSuccessMessage("Order received");
         formRef.current?.reset();
-        setFormData({
-          email: "",
-          phone: "",
-          subject: "",
-          message: "",
-          name: "",
-        });
+        setFormData(initialFormData);
+        setError(null);
+        setSuccessMessage("Order received");
+        blurActiveElement();
       } else {
         setError(`Failed to submit order: ${data?.message || "Unknown error"}`);
       }

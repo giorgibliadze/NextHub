@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import Link from "next/link";
 
 const websiteTypes = [
@@ -61,16 +61,45 @@ const initialLeadForm = {
   website: "",
 };
 
+const initialCalculatorState = {
+  websiteType: websiteTypes[1].value,
+  pageCount: pageCounts[1].value,
+  designLevel: designLevels[1].value,
+  technology: technologies[0].value,
+  selectedFeatures: ["contact-form", "seo"],
+};
+
+const blurActiveElement = () => {
+  if (typeof document !== "undefined") {
+    document.activeElement?.blur?.();
+  }
+};
+
 export default function WebsitePriceCalculator() {
-  const [websiteType, setWebsiteType] = useState(websiteTypes[1].value);
-  const [pageCount, setPageCount] = useState(pageCounts[1].value);
-  const [designLevel, setDesignLevel] = useState(designLevels[1].value);
-  const [technology, setTechnology] = useState(technologies[0].value);
-  const [selectedFeatures, setSelectedFeatures] = useState(["contact-form", "seo"]);
+  const [websiteType, setWebsiteType] = useState(initialCalculatorState.websiteType);
+  const [pageCount, setPageCount] = useState(initialCalculatorState.pageCount);
+  const [designLevel, setDesignLevel] = useState(initialCalculatorState.designLevel);
+  const [technology, setTechnology] = useState(initialCalculatorState.technology);
+  const [selectedFeatures, setSelectedFeatures] = useState(
+    initialCalculatorState.selectedFeatures
+  );
   const [leadForm, setLeadForm] = useState(initialLeadForm);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formError, setFormError] = useState("");
   const [formSuccess, setFormSuccess] = useState("");
+  const leadFormRef = useRef(null);
+
+  const resetCalculatorLeadForm = () => {
+    leadFormRef.current?.reset();
+    setWebsiteType(initialCalculatorState.websiteType);
+    setPageCount(initialCalculatorState.pageCount);
+    setDesignLevel(initialCalculatorState.designLevel);
+    setTechnology(initialCalculatorState.technology);
+    setSelectedFeatures(initialCalculatorState.selectedFeatures);
+    setLeadForm(initialLeadForm);
+    setFormError("");
+    blurActiveElement();
+  };
 
   const estimate = useMemo(() => {
     const selectedType = websiteTypes.find((item) => item.value === websiteType);
@@ -123,7 +152,7 @@ export default function WebsitePriceCalculator() {
     setFormSuccess("");
 
     if (leadForm.website) {
-      setLeadForm(initialLeadForm);
+      resetCalculatorLeadForm();
       setFormSuccess("მოთხოვნა მიღებულია.");
       return;
     }
@@ -176,7 +205,7 @@ export default function WebsitePriceCalculator() {
         return;
       }
 
-      setLeadForm(initialLeadForm);
+      resetCalculatorLeadForm();
       setFormSuccess("მოთხოვნა წარმატებით გაიგზავნა. მალე დაგიკავშირდებით.");
     } catch {
       setFormError("მოთხოვნის გაგზავნა ვერ მოხერხდა. სცადეთ მოგვიანებით.");
@@ -286,7 +315,7 @@ export default function WebsitePriceCalculator() {
             დეტალების მიხედვით.
           </p>
 
-          <form onSubmit={submitLead} className="mt-6 space-y-4">
+          <form ref={leadFormRef} onSubmit={submitLead} className="mt-6 space-y-4">
             <input
               type="text"
               name="website"

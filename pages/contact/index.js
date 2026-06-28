@@ -13,6 +13,13 @@ const MapComponent = dynamic(() => import("../../components/MapComponent"), {
 });
 
 const CANONICAL = "https://next-hub.pro/contact";
+
+const blurActiveElement = () => {
+  if (typeof document !== "undefined") {
+    document.activeElement?.blur?.();
+  }
+};
+
 const Contact = () => {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
@@ -49,8 +56,14 @@ const Contact = () => {
       });
       const data = await res.json();
       if (res.ok) {
+        formRef.current?.reset();
+        setName("");
+        setEmail("");
+        setSubject("");
+        setMessage("");
+        setError(null);
         setSuccessMessage("Email sent successfully");
-        formRef.current.reset(); // Reset form fields
+        blurActiveElement();
       } else {
         setError(`Failed to send email: ${data.message}`);
       }

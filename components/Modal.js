@@ -4,14 +4,22 @@ import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
 import { v4 as uuidv4 } from "uuid";
 
+const initialFormData = {
+  email: "",
+  phone: "",
+  subject: "",
+  message: "",
+  name: "",
+};
+
+const blurActiveElement = () => {
+  if (typeof document !== "undefined") {
+    document.activeElement?.blur?.();
+  }
+};
+
 const Modal = ({ isOpen, onClose, cardData }) => {
-  const [formData, setFormData] = useState({
-    email: "",
-    phone: "",
-    subject: "",
-    message: "",
-    name: "",
-  });
+  const [formData, setFormData] = useState(initialFormData);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [successMessage, setSuccessMessage] = useState(null);
@@ -67,15 +75,11 @@ const Modal = ({ isOpen, onClose, cardData }) => {
 
       const data = await res.json();
       if (res.ok) {
+        formRef.current?.reset();
+        setFormData(initialFormData);
+        setError(null);
         setSuccessMessage("შეკვეთა მიღებულია");
-        formRef.current.reset(); // Reset form fields
-        setFormData({
-          email: "",
-          phone: "",
-          subject: "",
-          message: "",
-          name: "",
-        });
+        blurActiveElement();
       } else {
         setError(`შეკვეთის მიღება ვერ მოხერხდა: ${data.message}`);
       }
