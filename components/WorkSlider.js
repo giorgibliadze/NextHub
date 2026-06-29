@@ -96,12 +96,12 @@ const workSlides = {
         //   link: "https://teba.ge/",
         //   status: "დასრულებული",
         // },
-        {
-          title: "Bigloans",
-          path: "/Bigloans.png",
-          link: "https://bigloans.ge",
-          status: "დასრულებული",
-        },
+        // {
+        //   title: "Bigloans",
+        //   path: "/Bigloans.png",
+        //   link: "https://bigloans.ge",
+        //   status: "დასრულებული",
+        // },
         // {
         //   title: "WearHouse",
         //   path: "/WearHouse.png",
