@@ -153,6 +153,23 @@ export default function BlogPostLayout({ post, relatedPosts, schemas }) {
                 </section>
               ))}
 
+              {post.calculatorCta && (
+                <section className="rounded-[24px] border border-accent/20 bg-accent/10 p-5 md:p-7">
+                  <h2 className="mb-4 text-2xl font-bold md:text-4xl">
+                    {post.calculatorCta.title}
+                  </h2>
+                  <p className="mb-6 max-w-3xl text-base leading-8 text-white/72 md:text-[17px] md:leading-9">
+                    {post.calculatorCta.text}
+                  </p>
+                  <Link
+                    href={post.calculatorCta.href}
+                    className="inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:scale-105"
+                  >
+                    {post.calculatorCta.button}
+                  </Link>
+                </section>
+              )}
+
               <section className="rounded-[24px] border border-white/10 bg-black/20 p-5 md:p-7">
                 <div className="mb-6">
                   <span className="mb-3 inline-block rounded-full border border-accent/20 bg-accent/10 px-4 py-2 text-xs font-semibold text-accent">
@@ -178,6 +195,25 @@ export default function BlogPostLayout({ post, relatedPosts, schemas }) {
                   ))}
                 </div>
               </section>
+
+              {post.internalLinks && post.internalLinks.length > 0 && (
+                <section className="rounded-[24px] border border-white/10 bg-white/[0.035] p-5 md:p-7">
+                  <h2 className="mb-5 text-2xl font-bold md:text-4xl">
+                    დაკავშირებული გზამკვლევები
+                  </h2>
+                  <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
+                    {post.internalLinks.map((link) => (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-sm leading-6 text-white/75 transition-colors hover:border-accent/30 hover:text-accent"
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                  </div>
+                </section>
+              )}
 
               <section className="rounded-[24px] border border-white/10 bg-black/15 p-5 md:p-7">
                 <h2 className="mb-5 text-2xl font-bold md:text-4xl">
