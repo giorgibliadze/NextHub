@@ -83,6 +83,42 @@ body.loading-active {
   overflow: visible;
 }
 
+.blog-route-shell {
+  position: relative;
+}
+
+.blog-route-shell::before {
+  content: "";
+  display: none;
+  position: absolute;
+  inset: 0 0 auto;
+  height: 180px;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(18, 11, 47, 0.92),
+    rgba(18, 11, 47, 0.45) 58%,
+    rgba(18, 11, 47, 0)
+  );
+  z-index: 0;
+}
+
+.blog-route-shell > * {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 1023px) {
+  .blog-route-shell {
+    background: rgba(18, 11, 47, 0.3);
+    min-height: 100%;
+  }
+
+  .blog-route-shell::before {
+    display: block;
+  }
+}
+
 .website-calculator {
   touch-action: pan-y;
   overscroll-behavior: auto;

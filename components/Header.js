@@ -9,7 +9,7 @@ import Socials from "../components/Socials";
 
 const Header = () => {
   return (
-    <header className="relative z-30 w-full px-16 lg:absolute lg:flex lg:items-center xl:px-0 xl:h-[90px]">
+    <header className="absolute top-0 left-0 z-30 w-full px-16 lg:flex lg:items-center xl:px-0 xl:h-[90px]">
       <div className="container mx-auto">
         <div className="flex flex-col lg:flex-row justify-between items-center gap-y-6 py-8 lg:h-full">
           {/* logo */}
