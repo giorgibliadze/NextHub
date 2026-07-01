@@ -162,7 +162,7 @@ const Services = () => {
       />
 
       <div className="min-h-screen bg-primary/30 py-32 md:py-36 flex p-[20px] overflow-x-hidden">
-        <Circles />
+        {/* <Circles /> */}
 
         <div className="container min-w-full items-center mx-auto">
           <div className="flex flex-col md:mt-[15px] md:flex-row xl:flex-row gap-x-8 items-center mx-auto">

@@ -93,7 +93,7 @@ const Work = () => {
       />
 
       <div className="h-full bg-primary/30">
-        <Circles />
+        {/* <Circles /> */}
 
         <div className="container mx-auto mb-4">
           <div className="flex flex-col xl:flex-row gap-x-8">
