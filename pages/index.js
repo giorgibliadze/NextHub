@@ -46,9 +46,9 @@ const Home = () => {
   const words = ["ვებსაიტები ", "ონლაინ მაღაზიები ", "ვებ აპლიკაციები "];
   const canonical = "https://next-hub.pro";
   const metaDescription =
-    "Next-Hub Solutions ქმნის სწრაფ, თანამედროვე და SEO-ზე მორგებულ ვებსაიტებს, ონლაინ მაღაზიებსა და ვებ აპლიკაციებს ბიზნესისთვის.";
+    "Next-Hub Solutions ქმნის ვებსაიტებს, ონლაინ მაღაზიებსა და SEO-ready ვებ აპლიკაციებს ბიზნესებისთვის საქართველოში.";
   const homeTitle =
-    "ვებსაიტის დამზადება საქართველოში | Next-Hub";
+    "ვებსაიტების დამზადება და ონლაინ მაღაზიები | Next-Hub Solutions";
 
   useEffect(() => {
     const canUseParticles = () =>

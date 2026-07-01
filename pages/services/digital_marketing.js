@@ -147,16 +147,16 @@ const DigitalMarketing = () => {
     <>
       <NextSeo
         canonical={CANONICAL}
-        title="ციფრული მარკეტინგი | Google Ads და Meta რეკლამები | Next-Hub"
-        description="ციფრული მარკეტინგი ბიზნესისთვის: Google Ads, სოციალური რეკლამები, კონტენტის სტრატეგია და შედეგზე ორიენტირებული კამპანიები."
+        title="ციფრული მარკეტინგი | Next-Hub Solutions"
+        description="ციფრული მარკეტინგი ბიზნესისთვის: Google Ads, Meta Ads, ონლაინ რეკლამა, კონტენტის სტრატეგია და შედეგზე ორიენტირებული კამპანიები."
         openGraph={{
           type: "website",
           locale: "ka_GE",
           url: CANONICAL,
           site_name: "Next-Hub Solutions",
-          title: "ციფრული მარკეტინგი | Google Ads და Meta რეკლამები | Next-Hub",
+          title: "ციფრული მარკეტინგი | Next-Hub Solutions",
           description:
-            "Google Ads, Facebook Ads, Instagram რეკლამები, E-mail მარკეტინგი და ბიზნესის ზრდაზე ორიენტირებული ციფრული მარკეტინგის სერვისები.",
+            "ციფრული მარკეტინგი ბიზნესისთვის: Google Ads, Meta Ads, ონლაინ რეკლამა, კონტენტის სტრატეგია და შედეგზე ორიენტირებული კამპანიები.",
           images: [
             {
               url: "https://next-hub.pro/nexthub.jpg",
@@ -172,7 +172,7 @@ const DigitalMarketing = () => {
         additionalMetaTags={[
           {
             name: "twitter:title",
-            content: "ციფრული მარკეტინგი | Google Ads და Meta რეკლამები | Next-Hub",
+            content: "ციფრული მარკეტინგი | Next-Hub Solutions",
           },
           {
             name: "author",

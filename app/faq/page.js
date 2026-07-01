@@ -3,9 +3,9 @@ import { buildFaqSchemas, faqGroups } from "../../lib/seoPages";
 
 const url = "https://next-hub.pro/faq";
 const title =
-  "ხშირად დასმული კითხვები ვებსაიტის დამზადებაზე, SEO-ზე და საიტის მოვლაზე";
+  "ხშირად დასმული კითხვები | Next-Hub Solutions";
 const description =
-  "ხშირად დასმული კითხვები ვებსაიტის დამზადებაზე, პროგრამულ სისტემებზე, ვებ დიზაინზე, SEO-ზე, Google Business Profile-ზე და მოვლაზე.";
+  "პასუხები ხშირ კითხვებზე ვებსაიტების დამზადების, პროგრამული სისტემების, ვებ დიზაინის, SEO ოპტიმიზაციის, Google Business Profile-ისა და საიტის მოვლის შესახებ.";
 const keywords = [
   "ვებსაიტების დამზადება FAQ",
   "საიტის შექმნა",

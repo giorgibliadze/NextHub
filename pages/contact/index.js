@@ -47,9 +47,9 @@ const Contact = () => {
           name,
           subject,
           body: `<div>
-            <h1>${name}</h1>
-            <h1>${email}</h1>
-            <h1>${message}</h1>
+            <p><strong>სახელი:</strong> ${name}</p>
+            <p><strong>ელ-ფოსტა:</strong> ${email}</p>
+            <p><strong>შეტყობინება:</strong> ${message}</p>
           </div>`,
         }),
       });
@@ -77,16 +77,16 @@ const Contact = () => {
     <>
       <NextSeo
         canonical={CANONICAL}
-        title="კონტაქტი | ვებსაიტის დამზადება და SEO მომსახურება | Next-Hub"
-        description="დაუკავშირდით Next-Hub Solutions-ს ვებსაიტის დამზადების, SEO ოპტიმიზაციის, ვებ დიზაინისა და ციფრული სერვისების დასაგეგმად."
+        title="კონტაქტი | Next-Hub Solutions"
+        description="დაუკავშირდით Next-Hub Solutions-ს ვებსაიტის შეკვეთის, SEO ოპტიმიზაციის, ვებ დიზაინისა და ციფრული სერვისების დასაგეგმად."
         openGraph={{
           type: "website",
           locale: "ka_GE",
           url: CANONICAL,
           site_name: "Next-Hub Solutions",
-          title: "კონტაქტი | ვებსაიტის დამზადება და SEO მომსახურება | Next-Hub",
+          title: "კონტაქტი | Next-Hub Solutions",
           description:
-            "დაუკავშირდით Next-Hub Solutions-ს ვებსაიტების შექმნის, SEO ოპტიმიზაციის, სოციალური მედიის მართვისა და ციფრული სერვისების შესახებ.",
+            "დაუკავშირდით Next-Hub Solutions-ს ვებსაიტის შეკვეთის, SEO ოპტიმიზაციის, ვებ დიზაინისა და ციფრული სერვისების დასაგეგმად.",
           images: [
             {
               url: "https://next-hub.pro/nexthub.jpg",
@@ -102,7 +102,7 @@ const Contact = () => {
         additionalMetaTags={[
           {
             name: "twitter:title",
-            content: "კონტაქტი | ვებსაიტის დამზადება და SEO მომსახურება | Next-Hub",
+            content: "კონტაქტი | Next-Hub Solutions",
           },
           {
             name: "author",

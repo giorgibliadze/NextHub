@@ -125,17 +125,16 @@ const Seo = () => {
     <>
       <NextSeo
         canonical={CANONICAL}
-        title="SEO ოპტიმიზაცია | Google-ში პირველ გვერდზე გამოსვლა | Next-Hub"
-        description="SEO ოპტიმიზაცია ბიზნესისთვის: ტექნიკური აუდიტი, საკვანძო სიტყვები, on-page SEO, ლოკალური SEO და Search Console-ის გამართვა."
+        title="SEO მომსახურება | Next-Hub Solutions"
+        description="SEO ოპტიმიზაცია ბიზნესისთვის: ტექნიკური აუდიტი, keyword research, on-page SEO, ლოკალური SEO და Search Console-ის გამართვა."
         openGraph={{
           type: "website",
           locale: "ka_GE",
           url: CANONICAL,
           site_name: "Next-Hub Solutions",
-          title:
-            "SEO ოპტიმიზაცია | Google-ში პირველ გვერდზე გამოსვლა | Next-Hub",
+          title: "SEO მომსახურება | Next-Hub Solutions",
           description:
-            "SEO ოპტიმიზაცია, ტექნიკური SEO, საკვანძო სიტყვების კვლევა, Google Search Console-ის გამართვა და პოზიციების გაუმჯობესება Google-ში.",
+            "SEO ოპტიმიზაცია ბიზნესისთვის: ტექნიკური აუდიტი, keyword research, on-page SEO, ლოკალური SEO და Search Console-ის გამართვა.",
           images: [
             {
               url: "https://next-hub.pro/nexthub.jpg",

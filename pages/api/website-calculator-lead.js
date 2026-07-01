@@ -35,9 +35,9 @@ function buildEmailBody(lead) {
 
   return `
     <div style="font-family:Arial,sans-serif;background:#0b0b0f;color:#ffffff;padding:24px;">
-      <h1 style="margin:0 0 18px;color:#f13024;font-size:24px;">
+      <div style="margin:0 0 18px;color:#f13024;font-size:24px;font-weight:700;">
         ვებსაიტის კალკულატორის ახალი მოთხოვნა
-      </h1>
+      </div>
       <table style="width:100%;border-collapse:collapse;background:#15151b;border:1px solid #2a2a2a;border-radius:12px;overflow:hidden;">
         <tbody>
           ${row("სახელი", escapeHtml(lead.name))}

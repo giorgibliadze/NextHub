@@ -119,17 +119,16 @@ const Analytics = () => {
     <>
       <NextSeo
         canonical={CANONICAL}
-        title="ვებ ანალიტიკა | Google Analytics 4 და მონაცემთა ანალიზი | Next-Hub"
-        description="ვებ ანალიტიკა ბიზნესისთვის: GA4, Search Console, კონვერსიების მონიტორინგი, მომხმარებლის ქცევის ანალიზი და ზრდის ანგარიშები."
+        title="ვებსაიტის ანალიტიკა | Next-Hub Solutions"
+        description="ვებსაიტის ანალიტიკა ბიზნესისთვის: GA4 setup, Google Analytics, Search Console, კონვერსიების მონიტორინგი და მომხმარებლის ქცევის ანალიზი."
         openGraph={{
           type: "website",
           locale: "ka_GE",
           url: CANONICAL,
           site_name: "Next-Hub Solutions",
-          title:
-            "ვებ ანალიტიკა | Google Analytics 4 და მონაცემთა ანალიზი | Next-Hub",
+          title: "ვებსაიტის ანალიტიკა | Next-Hub Solutions",
           description:
-            "Google Analytics 4-ის გამართვა, მონაცემთა ანალიზი, კონვერსიების მონიტორინგი და მომხმარებლის ქცევის ანალიზი ბიზნესის ზრდისთვის.",
+            "ვებსაიტის ანალიტიკა ბიზნესისთვის: GA4 setup, Google Analytics, Search Console, კონვერსიების მონიტორინგი და მომხმარებლის ქცევის ანალიზი.",
           images: [
             {
               url: "https://next-hub.pro/nexthub.jpg",
@@ -145,8 +144,7 @@ const Analytics = () => {
         additionalMetaTags={[
           {
             name: "twitter:title",
-            content:
-              "ვებ ანალიტიკა | Google Analytics 4 და მონაცემთა ანალიზი | Next-Hub",
+            content: "ვებსაიტის ანალიტიკა | Next-Hub Solutions",
           },
           {
             name: "author",

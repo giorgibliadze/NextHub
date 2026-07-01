@@ -107,17 +107,16 @@ const Services = () => {
     <Suspense fallback={null}>
       <NextSeo
         canonical={CANONICAL}
-        title="სერვისები | ვებსაიტის დამზადება, SEO, ვებ დიზაინი და პროგრამული უზრუნველყოფა | Next-Hub"
-        description="Next-Hub Solutions გთავაზობთ ვებსაიტის დამზადებას, ვებ დიზაინს, SEO ოპტიმიზაციას, Google Business Profile-ს და საიტის მოვლას."
+        title="ციფრული სერვისები | Next-Hub Solutions"
+        description="Next-Hub Solutions გთავაზობთ ვებსაიტების დამზადებას, ვებ დიზაინს, SEO ოპტიმიზაციას, Google Business Profile-ს, ანალიტიკას და საიტის მოვლას."
         openGraph={{
           type: "website",
           locale: "ka_GE",
           url: CANONICAL,
           site_name: "Next-Hub Solutions",
-          title:
-            "სერვისები | ვებსაიტის დამზადება, SEO, ვებ დიზაინი და პროგრამული უზრუნველყოფა | Next-Hub",
+          title: "ციფრული სერვისები | Next-Hub Solutions",
           description:
-            "Next-Hub Solutions გთავაზობთ ვებსაიტის დამზადებას, ვებ დიზაინს, SEO ოპტიმიზაციას, Google Business Profile-ს და საიტის მოვლას.",
+            "Next-Hub Solutions გთავაზობთ ვებსაიტების დამზადებას, ვებ დიზაინს, SEO ოპტიმიზაციას, Google Business Profile-ს, ანალიტიკას და საიტის მოვლას.",
           images: [
             {
               url: "https://next-hub.pro/nexthub.jpg",
@@ -133,8 +132,7 @@ const Services = () => {
         additionalMetaTags={[
           {
             name: "twitter:title",
-            content:
-              "სერვისები | ვებსაიტის დამზადება, SEO, ვებ დიზაინი და პროგრამული უზრუნველყოფა | Next-Hub",
+            content: "ციფრული სერვისები | Next-Hub Solutions",
           },
           {
             name: "author",

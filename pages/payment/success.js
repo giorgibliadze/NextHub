@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { NextSeo } from "next-seo";
 
 const CANONICAL = "https://next-hub.pro/payment/success";
-const title = "გადახდა წარმატებით დასრულდა | Next-Hub";
+const title = "გადახდა წარმატებით დასრულდა | Next-Hub Solutions";
 const description =
   "Next-Hub Solutions-ის გადახდის წარმატების გვერდი შეკვეთის ან სერვისის გადახდის დადასტურებისთვის.";
 

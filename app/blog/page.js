@@ -4,9 +4,9 @@ import BlogCard from "../../components/BlogCard";
 import { blogCategories, blogPosts } from "../../lib/blogData";
 
 const url = "https://next-hub.pro/blog";
-const title = "ბლოგი ვებსაიტის დამზადებაზე, SEO-ზე და ვებ დეველოპმენტზე";
+const title = "ბლოგი ვებ დეველოპმენტსა და SEO-ზე | Next-Hub Solutions";
 const description =
-  "Next-Hub Solutions-ის ბლოგი: ვებსაიტის დამზადება, ვებ დიზაინი, SEO ოპტიმიზაცია, Google Business Profile, Next.js, WordPress და რეალური ქეისები.";
+  "Next-Hub Solutions-ის ბლოგი ვებ დეველოპმენტზე, SEO-ზე, ვებ დიზაინზე, Google Business Profile-ზე, Next.js-ზე, WordPress-ზე და რეალურ ქეისებზე.";
 const keywords = [
   "ვებ დეველოპმენტი ბლოგი",
   "SEO რჩევები",

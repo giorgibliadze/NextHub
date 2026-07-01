@@ -5,7 +5,7 @@ const category = blogCategories.find((item) => item.slug === "web-development");
 const url = "https://next-hub.pro/blog/web-development";
 
 export const metadata = {
-  title: `${category.title} | Next-Hub ბლოგი`,
+  title: "ვებ დეველოპმენტი ბლოგი | Next-Hub Solutions",
   description: category.description,
   keywords: [
     "ვებ დეველოპმენტი ბლოგი",
@@ -19,7 +19,7 @@ export const metadata = {
   ],
   alternates: { canonical: url },
   openGraph: {
-    title: `${category.title} | Next-Hub ბლოგი`,
+    title: "ვებ დეველოპმენტი ბლოგი | Next-Hub Solutions",
     description: category.description,
     url,
     siteName: "Next-Hub Solutions",
@@ -27,7 +27,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${category.title} | Next-Hub ბლოგი`,
+    title: "ვებ დეველოპმენტი ბლოგი | Next-Hub Solutions",
     description: category.description,
   },
 };

@@ -7,9 +7,9 @@ import { fadeIn } from "../../variants";
 const CANONICAL = "https://next-hub.pro/about";
 
 const title =
-  "ჩვენ შესახებ | ვებსაიტის დამზადება და ციფრული განვითარება | Next-Hub";
+  "ჩვენს შესახებ | Next-Hub Solutions";
 const description =
-  "Next-Hub Solutions ქმნის ვებსაიტებს, ონლაინ მაღაზიებს, SEO-ზე მორგებულ ციფრულ გადაწყვეტილებებს და ბიზნესის განვითარებაზე ორიენტირებულ ვებ პლატფორმებს.";
+  "გაიგეთ ვინ არის Next-Hub Solutions: ვებსაიტების დამზადების, SEO ოპტიმიზაციის, ვებ დიზაინისა და ციფრული განვითარების გუნდი საქართველოში.";
 
 const services = [
   {

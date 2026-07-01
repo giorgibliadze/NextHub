@@ -139,17 +139,16 @@ const SocMedia = () => {
     <>
       <NextSeo
         canonical={CANONICAL}
-        title="სოციალური მედიის მართვა | Facebook და Instagram მარკეტინგი | Next-Hub"
-        description="სოციალური მედიის მართვა, Facebook და Instagram გვერდების განვითარება, კონტენტის შექმნა, რეკლამების მართვა, ბრენდის სტრატეგია და ციფრული მარკეტინგი ბიზნესისთვის."
+        title="სოციალური მედიის მართვა | Next-Hub Solutions"
+        description="სოციალური მედიის მართვა ბიზნესისთვის: Facebook და Instagram გვერდების განვითარება, content marketing, რეკლამების მართვა და ბრენდის სტრატეგია."
         openGraph={{
           type: "website",
           locale: "ka_GE",
           url: CANONICAL,
           site_name: "Next-Hub Solutions",
-          title:
-            "სოციალური მედიის მართვა | Facebook და Instagram მარკეტინგი | Next-Hub",
+          title: "სოციალური მედიის მართვა | Next-Hub Solutions",
           description:
-            "Next-Hub გთავაზობთ სოციალური მედიის მართვას, კონტენტის შექმნას, რეკლამების მართვას, Facebook და Instagram გვერდების განვითარებას და ბრენდის ზრდის სტრატეგიას.",
+            "სოციალური მედიის მართვა ბიზნესისთვის: Facebook და Instagram გვერდების განვითარება, content marketing, რეკლამების მართვა და ბრენდის სტრატეგია.",
           images: [
             {
               url: "https://next-hub.pro/nexthub.jpg",
@@ -165,8 +164,7 @@ const SocMedia = () => {
         additionalMetaTags={[
           {
             name: "twitter:title",
-            content:
-              "სოციალური მედიის მართვა | Facebook და Instagram მარკეტინგი | Next-Hub",
+            content: "სოციალური მედიის მართვა | Next-Hub Solutions",
           },
           {
             name: "author",

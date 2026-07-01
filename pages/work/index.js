@@ -15,17 +15,16 @@ const Work = () => {
     <>
       <NextSeo
         canonical="https://next-hub.pro/work"
-        title="ჩვენი ნამუშევრები | ვებსაიტების პორტფოლიო | Next-Hub"
-        description="დაათვალიერეთ Next-Hub Solutions-ის პორტფოლიო: ვებსაიტები, ონლაინ მაღაზიები, WordPress და Next.js პროექტები ბიზნესისთვის."
+        title="ჩვენი ნამუშევრები | Next-Hub Solutions"
+        description="დაათვალიერეთ Next-Hub Solutions-ის ვებსაიტების პორტფოლიო: ონლაინ მაღაზიები, WordPress, Next.js და ბიზნესზე მორგებული პროექტები."
         openGraph={{
           type: "website",
           locale: "ka_GE",
           url: "https://next-hub.pro/work",
           site_name: "Next-Hub Solutions",
-          title:
-            "ჩვენი ნამუშევრები | ვებსაიტების პორტფოლიო | Next-Hub",
+          title: "ჩვენი ნამუშევრები | Next-Hub Solutions",
           description:
-            "დაათვალიერეთ Next-Hub Solutions-ის პორტფოლიო: ვებსაიტები, ონლაინ მაღაზიები, WordPress და Next.js პროექტები ბიზნესისთვის.",
+            "დაათვალიერეთ Next-Hub Solutions-ის ვებსაიტების პორტფოლიო: ონლაინ მაღაზიები, WordPress, Next.js და ბიზნესზე მორგებული პროექტები.",
           images: [
             {
               url: "https://next-hub.pro/nexthub.jpg",
@@ -41,8 +40,7 @@ const Work = () => {
         additionalMetaTags={[
           {
             name: "twitter:title",
-            content:
-              "ჩვენი ნამუშევრები | ვებსაიტების პორტფოლიო | Next-Hub",
+            content: "ჩვენი ნამუშევრები | Next-Hub Solutions",
           },
           {
             name: "author",

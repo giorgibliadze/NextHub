@@ -2,9 +2,9 @@ import Link from "next/link";
 import { aiFaqItems, companyProfile, siteUrl } from "../../lib/aiSeo";
 
 const url = `${siteUrl}/ai-faq`;
-const title = "AI FAQ Next-Hub Solutions-ის შესახებ";
+const title = "AI FAQ | Next-Hub Solutions";
 const description =
-  "AI FAQ Next-Hub Solutions-ზე: სერვისები, მდებარეობა, ვებსაიტის ფასები, WordPress, Next.js, SEO და კონსულტაციის პირობები.";
+  "სტრუქტურირებული AI FAQ Next-Hub Solutions-ზე: სერვისები, მდებარეობა, ვებსაიტის ფასები, WordPress, Next.js, SEO და კონსულტაციის პირობები.";
 const keywords = [
   "NextHub",
   "Next-Hub Solutions",
@@ -139,9 +139,9 @@ export default function AiFaqPage() {
                 key={item.question}
                 className="rounded-2xl bg-black/20 border border-white/10 p-5 md:p-6"
               >
-                <h2 className="text-lg md:text-xl font-bold mb-3 text-accent">
+                <h3 className="text-lg md:text-xl font-bold mb-3 text-accent">
                   {item.question}
-                </h2>
+                </h3>
                 <p className="text-white/70 leading-7 text-sm">{item.answer}</p>
               </article>
             ))}

@@ -70,7 +70,7 @@ export default function BlogPostLayout({ post, relatedPosts, schemas }) {
               <p className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-white/35">
                 პროექტი
               </p>
-              <h2 className="text-xl font-bold text-white">{post.project.name}</h2>
+              <h3 className="text-xl font-bold text-white">{post.project.name}</h3>
               <p className="mt-2 text-sm leading-7 text-white/60">
                 {post.project.category}
               </p>

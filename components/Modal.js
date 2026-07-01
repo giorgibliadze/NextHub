@@ -65,10 +65,10 @@ const Modal = ({ isOpen, onClose, cardData }) => {
           to: "info@next-hub.pro",
           ...formData,
           body: `<div>
-            <h1>${formData.name}</h1>
-            <h1>${formData.email}</h1>
-            <h1>${formData.phone}</h1>
-            <h1>${formData.message}</h1>
+            <p><strong>სახელი:</strong> ${formData.name}</p>
+            <p><strong>ელ-ფოსტა:</strong> ${formData.email}</p>
+            <p><strong>ტელეფონი:</strong> ${formData.phone}</p>
+            <p><strong>შეტყობინება:</strong> ${formData.message}</p>
           </div>`,
         }),
       });

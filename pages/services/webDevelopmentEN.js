@@ -169,8 +169,8 @@ const WebDevelopmentEN = () => {
     <>
       <NextSeo
         canonical={CANONICAL}
-        title="Web Development Services | WordPress, React & Next.js | Next-Hub Solutions"
-        description="Next-Hub Solutions builds SEO-friendly business websites, WordPress platforms, React and Next.js apps, ecommerce stores and custom web projects."
+        title="Web Development | Next-Hub Solutions"
+        description="Next-Hub Solutions builds SEO-friendly business websites, WordPress platforms, React and Next.js web apps, ecommerce stores and custom projects."
         languageAlternates={[
           { hrefLang: "ka-GE", href: "https://next-hub.pro/webdevelopment" },
           { hrefLang: "en", href: "https://next-hub.pro/services/webDevelopmentEN" },
@@ -181,10 +181,9 @@ const WebDevelopmentEN = () => {
           locale: "en_US",
           url: CANONICAL,
           site_name: "Next-Hub Solutions",
-          title:
-            "Web Development Services | WordPress, React & Next.js | Next-Hub Solutions",
+          title: "Web Development | Next-Hub Solutions",
           description:
-            "Next-Hub builds fast, SEO-friendly websites, WordPress platforms, React and Next.js applications, e-commerce stores and custom business websites.",
+            "Next-Hub Solutions builds SEO-friendly business websites, WordPress platforms, React and Next.js web apps, ecommerce stores and custom projects.",
           images: [
             {
               url: "https://next-hub.pro/web.jpg",
@@ -200,8 +199,7 @@ const WebDevelopmentEN = () => {
         additionalMetaTags={[
           {
             name: "twitter:title",
-            content:
-              "Web Development Services | WordPress, React & Next.js | Next-Hub Solutions",
+            content: "Web Development | Next-Hub Solutions",
           },
           {
             name: "author",
