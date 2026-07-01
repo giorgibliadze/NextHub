@@ -1,12 +1,39 @@
 import { useRouter } from "next/router";
 import { motion } from "framer-motion";
 import { NextSeo } from "next-seo";
+
+const CANONICAL = "https://next-hub.pro/payment/fail";
+const title = "გადახდა წარუმატებელია | Next-Hub";
+const description =
+  "Next-Hub Solutions-ის გადახდის შეცდომის გვერდი შეკვეთის ან სერვისის გადახდის ხელახლა საცდელად.";
+
 const PaymentFail = () => {
   const router = useRouter();
 
   return (
     <>
-      <NextSeo noindex={true} nofollow={true} />
+      <NextSeo
+        noindex={true}
+        nofollow={true}
+        canonical={CANONICAL}
+        title={title}
+        description={description}
+        openGraph={{
+          type: "website",
+          locale: "ka_GE",
+          url: CANONICAL,
+          site_name: "Next-Hub Solutions",
+          title,
+          description,
+        }}
+        additionalMetaTags={[
+          {
+            name: "keywords",
+            content:
+              "NextHub გადახდა, Next-Hub Solutions payment, ვებსაიტის შეკვეთა, website development Georgia, digital agency Georgia",
+          },
+        ]}
+      />
       <div className="min-h-screen flex items-center justify-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}

@@ -159,7 +159,7 @@ const Analytics = () => {
           {
             name: "keywords",
             content:
-              "ვებ ანალიტიკა, Google Analytics, Google Analytics 4, GA4 გამართვა, Google Search Console, მონაცემთა ანალიზი, კონვერსიების მონიტორინგი, ვებსაიტის ანალიტიკა, მომხმარებლის ქცევის ანალიზი, ანალიტიკის დეშბორდი, ბიზნეს ანალიტიკა, Google Tag Manager, GTM, digital analytics Georgia, web analytics Georgia, Next-Hub Solutions",
+              "Google Analytics, მონაცემთა ანალიზი, ვებსაიტის ანალიტიკა, business analytics Georgia, GA4 setup Georgia, Google Analytics 4, Google Search Console, Google Tag Manager, web analytics Georgia, Next-Hub Solutions",
           },
         ]}
       />

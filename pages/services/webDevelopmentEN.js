@@ -214,7 +214,7 @@ const WebDevelopmentEN = () => {
           {
             name: "keywords",
             content:
-              "web development services, website development, website design, WordPress development, React development, Next.js development, ecommerce website development, custom website development, SEO friendly websites, business website development, web development Georgia, website development Georgia, Next-Hub Solutions",
+              "ვებსაიტების დამზადება, ვებ აპლიკაციების შექმნა, Next.js დეველოპმენტი, WordPress საიტი, React developer Georgia, web development Tbilisi, business website Georgia, website development Georgia, ecommerce website development, Next-Hub Solutions",
           },
         ]}
       />

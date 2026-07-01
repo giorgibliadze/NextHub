@@ -55,7 +55,7 @@ const Work = () => {
           {
             name: "keywords",
             content:
-              "ჩვენი ნამუშევრები, ვებსაიტების პორტფოლიო, საიტების პორტფოლიო, შესრულებული პროექტები, next.js პროექტები, wordpress პროექტები, ონლაინ მაღაზიების დამზადება, ონლაინ მაღაზიების პორტფოლიო, ვებსაიტის დამზადება, საიტის შექმნა, ვებ დეველოპმენტი, web development portfolio, website portfolio georgia, next hub portfolio",
+              "ჩვენი ნამუშევრები, ვებსაიტების პორტფოლიო, შესრულებული პროექტები, ვებსაიტების დამზადება, საიტის შექმნა, Next.js პროექტები, WordPress პროექტები, ონლაინ მაღაზიის შექმნა, web development portfolio Georgia, website portfolio Georgia, web design portfolio Tbilisi, NextHub portfolio",
           },
         ]}
       />

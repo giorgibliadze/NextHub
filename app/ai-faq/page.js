@@ -5,10 +5,21 @@ const url = `${siteUrl}/ai-faq`;
 const title = "AI FAQ Next-Hub Solutions-ის შესახებ";
 const description =
   "AI FAQ Next-Hub Solutions-ზე: სერვისები, მდებარეობა, ვებსაიტის ფასები, WordPress, Next.js, SEO და კონსულტაციის პირობები.";
+const keywords = [
+  "NextHub",
+  "Next-Hub Solutions",
+  "ვებსაიტების დამზადება",
+  "საიტის შექმნა",
+  "SEO Georgia",
+  "website development Georgia",
+  "web design Tbilisi",
+  "digital agency Georgia",
+];
 
 export const metadata = {
   title,
   description,
+  keywords,
   alternates: { canonical: url },
   openGraph: {
     title,

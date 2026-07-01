@@ -147,7 +147,7 @@ const Services = () => {
           {
             name: "keywords",
             content:
-              "ვებსაიტის დამზადება, საიტის შექმნა, ვებ დეველოპმენტი, ვებ დიზაინი, SEO ოპტიმიზაცია, SEO მომსახურება, Google Business Profile ოპტიმიზაცია, Google Maps ოპტიმიზაცია, პროგრამული უზრუნველყოფის შექმნა, საიტის მოვლა, საიტის ტექნიკური მხარდაჭერა, ონლაინ მაღაზიის შექმნა",
+              "ვებსაიტების დამზადება, საიტის შექმნა, SEO ოპტიმიზაცია, ციფრული მარკეტინგი, სოციალური მედიის მართვა, Google Analytics, ვებსაიტის ტექნიკური მხარდაჭერა, გრაფიკული დიზაინი, website development Georgia, SEO services Georgia, digital marketing Georgia, website maintenance Georgia",
           },
         ]}
       />

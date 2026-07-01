@@ -7,6 +7,16 @@ const url = "https://next-hub.pro/blog/web-design";
 export const metadata = {
   title: `${category.title} | Next-Hub ბლოგი`,
   description: category.description,
+  keywords: [
+    "ვებ დიზაინი",
+    "ვებსაიტების დამზადება",
+    "საიტის შექმნა",
+    "landing page დიზაინი",
+    "web design Tbilisi",
+    "web development blog Georgia",
+    "website design Georgia",
+    "SEO რჩევები",
+  ],
   alternates: { canonical: url },
   openGraph: {
     title: `${category.title} | Next-Hub ბლოგი`,

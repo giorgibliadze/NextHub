@@ -19,11 +19,19 @@ export async function generateMetadata({ params }) {
 
   const url = getPostUrl(post);
   const title = post.metaTitle || post.title;
+  const keywords = [
+    ...post.keywords,
+    "ვებ დეველოპმენტი ბლოგი",
+    "SEO რჩევები",
+    "ციფრული მარკეტინგი",
+    "web development blog Georgia",
+    "SEO tips Georgia",
+  ];
 
   return {
     title,
     description: post.description,
-    keywords: post.keywords,
+    keywords,
     alternates: { canonical: url },
     openGraph: {
       title,

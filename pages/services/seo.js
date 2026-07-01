@@ -160,7 +160,7 @@ const Seo = () => {
           {
             name: "keywords",
             content:
-              "SEO ოპტიმიზაცია, SEO მომსახურება, ტექნიკური SEO, Google SEO, საძიებო სისტემების ოპტიმიზაცია, საკვანძო სიტყვების კვლევა, Google Search Console, Google Business Profile, ლოკალური SEO, On Page SEO, Off Page SEO, ვებსაიტის ოპტიმიზაცია, Google-ში პირველ გვერდზე გამოსვლა, SEO სააგენტო, SEO თბილისი, SEO Georgia, Next-Hub Solutions",
+              "SEO ოპტიმიზაცია, გუგლში გამოჩენა, საძიებო სისტემების ოპტიმიზაცია, Google ranking Georgia, SEO services Georgia, local SEO Tbilisi, ტექნიკური SEO, Google Search Console, SEO თბილისი, Next-Hub Solutions",
           },
         ]}
       />

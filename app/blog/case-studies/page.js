@@ -7,6 +7,16 @@ const url = "https://next-hub.pro/blog/case-studies";
 export const metadata = {
   title: `${category.title} | Next-Hub ბლოგი`,
   description: category.description,
+  keywords: [
+    "ვებსაიტების ქეისები",
+    "ვებსაიტების დამზადება",
+    "SEO ოპტიმიზაცია",
+    "ვებ დიზაინი",
+    "web development case studies Georgia",
+    "website portfolio Georgia",
+    "SEO tips Georgia",
+    "NextHub portfolio",
+  ],
   alternates: { canonical: url },
   openGraph: {
     title: `${category.title} | Next-Hub ბლოგი`,

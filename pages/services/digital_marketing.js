@@ -185,7 +185,7 @@ const DigitalMarketing = () => {
           {
             name: "keywords",
             content:
-              "ციფრული მარკეტინგი, Google Ads, Google რეკლამა, Facebook Ads, Instagram რეკლამა, Meta Ads, PPC რეკლამა, E-mail მარკეტინგი, კონტენტის მარკეტინგი, რეკლამის მართვა, Google Ads მართვა, Facebook რეკლამის მართვა, Instagram მარკეტინგი, ბიზნესის რეკლამირება, Digital Marketing Georgia, Next-Hub Solutions",
+              "ციფრული მარკეტინგი, ონლაინ რეკლამა, ბიზნესის ონლაინ განვითარება, digital marketing Georgia, online advertising Tbilisi, Google Ads, Meta Ads, Facebook Ads, Instagram რეკლამა, Next-Hub Solutions",
           },
         ]}
       />

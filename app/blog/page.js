@@ -7,10 +7,21 @@ const url = "https://next-hub.pro/blog";
 const title = "ბლოგი ვებსაიტის დამზადებაზე, SEO-ზე და ვებ დეველოპმენტზე";
 const description =
   "Next-Hub Solutions-ის ბლოგი: ვებსაიტის დამზადება, ვებ დიზაინი, SEO ოპტიმიზაცია, Google Business Profile, Next.js, WordPress და რეალური ქეისები.";
+const keywords = [
+  "ვებ დეველოპმენტი ბლოგი",
+  "SEO რჩევები",
+  "ციფრული მარკეტინგი",
+  "web development blog Georgia",
+  "SEO tips Georgia",
+  "ვებსაიტების დამზადება",
+  "საიტის შექმნა",
+  "Next-Hub Solutions blog",
+];
 
 export const metadata = {
   title,
   description,
+  keywords,
   alternates: { canonical: url },
   openGraph: {
     title,

@@ -259,7 +259,7 @@ const About = () => {
           {
             name: "keywords",
             content:
-              "Next-Hub Solutions, ვებსაიტის დამზადება საქართველოში, ციფრული განვითარება, SEO ოპტიმიზაცია, ვებ დიზაინი, ონლაინ მაღაზიის შექმნა, Next.js, WordPress",
+              "NextHub, Next-Hub Solutions, ვებსაიტების დამზადება, საიტის შექმნა, ვებ დეველოპერი საქართველო, ციფრული სააგენტო საქართველო, website development Georgia, digital agency Georgia, web design Tbilisi, SEO Georgia",
           },
         ]}
       />

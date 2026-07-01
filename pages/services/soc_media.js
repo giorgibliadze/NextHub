@@ -179,7 +179,7 @@ const SocMedia = () => {
           {
             name: "keywords",
             content:
-              "სოციალური მედიის მართვა, სოციალური მედია მენეჯმენტი, Facebook გვერდის მართვა, Instagram გვერდის მართვა, Facebook მარკეტინგი, Instagram მარკეტინგი, კონტენტის შექმნა, რეკლამების მართვა, Meta Ads მართვა, ციფრული მარკეტინგი, სოციალური ქსელების მართვა, ბრენდის სტრატეგია, social media management Georgia, Facebook ads Georgia, Instagram marketing Georgia, Next-Hub Solutions",
+              "სოციალური მედიის მართვა, Facebook გვერდის მართვა, Instagram მარკეტინგი, social media management Georgia, content marketing Tbilisi, სოციალური მედია მენეჯმენტი, Meta Ads მართვა, Facebook ads Georgia, Instagram marketing Georgia, Next-Hub Solutions",
           },
         ]}
       />

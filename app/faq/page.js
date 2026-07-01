@@ -6,10 +6,21 @@ const title =
   "ხშირად დასმული კითხვები ვებსაიტის დამზადებაზე, SEO-ზე და საიტის მოვლაზე";
 const description =
   "ხშირად დასმული კითხვები ვებსაიტის დამზადებაზე, პროგრამულ სისტემებზე, ვებ დიზაინზე, SEO-ზე, Google Business Profile-ზე და მოვლაზე.";
+const keywords = [
+  "ვებსაიტების დამზადება FAQ",
+  "საიტის შექმნა",
+  "SEO რჩევები",
+  "ვებსაიტის ტექნიკური მხარდაჭერა",
+  "website development Georgia",
+  "SEO services Georgia",
+  "website maintenance Georgia",
+  "Next-Hub Solutions FAQ",
+];
 
 export const metadata = {
   title,
   description,
+  keywords,
   alternates: { canonical: url },
   openGraph: {
     title,

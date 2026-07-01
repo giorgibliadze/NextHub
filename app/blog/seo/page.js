@@ -7,6 +7,16 @@ const url = "https://next-hub.pro/blog/seo";
 export const metadata = {
   title: `${category.title} | Next-Hub ბლოგი`,
   description: category.description,
+  keywords: [
+    "SEO რჩევები",
+    "SEO ოპტიმიზაცია",
+    "გუგლში გამოჩენა",
+    "საძიებო სისტემების ოპტიმიზაცია",
+    "Google ranking Georgia",
+    "SEO tips Georgia",
+    "SEO services Georgia",
+    "local SEO Tbilisi",
+  ],
   alternates: { canonical: url },
   openGraph: {
     title: `${category.title} | Next-Hub ბლოგი`,

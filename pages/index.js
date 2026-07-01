@@ -384,7 +384,7 @@ const Home = () => {
           {
             name: "keywords",
             content:
-              "ვებსაიტის დამზადება, საიტის შექმნა, ვებ დეველოპმენტი, ვებ დიზაინი, ონლაინ მაღაზიის შექმნა, პროგრამული უზრუნველყოფის შექმნა, SEO ოპტიმიზაცია, Google Business Profile ოპტიმიზაცია, საიტის ტექნიკური მხარდაჭერა, Next.js, WordPress, WooCommerce, React",
+              "ვებსაიტების დამზადება, საიტის შექმნა, ვებ დეველოპერი საქართველო, NextHub, Next-Hub Solutions, website development Georgia, web design Tbilisi, SEO Georgia, digital agency Georgia",
           },
         ]}
       />

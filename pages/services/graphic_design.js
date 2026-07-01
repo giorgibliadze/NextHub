@@ -52,7 +52,7 @@ const GraphicDesign = () => {
           {
             name: "keywords",
             content:
-              "გრაფიკული დიზაინი, ლოგოს დიზაინი, ლოგოს დამზადება, ბრენდინგი, ბრენდის იდენტობა, სოციალური მედიის დიზაინი, პოსტის დიზაინი, ბანერის დიზაინი, პოსტერის დიზაინი, ვიზუალური მასალები, კრეატიული დიზაინი, დიზაინის სერვისები, graphic design Georgia, logo design Georgia, branding Georgia, Next-Hub Solutions",
+              "გრაფიკული დიზაინი, ლოგოს დიზაინი, ბრენდინგი, graphic design Georgia, branding Tbilisi, ლოგოს დამზადება, ბრენდის იდენტობა, სოციალური მედიის დიზაინი, logo design Georgia, Next-Hub Solutions",
           },
         ]}
       />

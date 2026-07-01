@@ -453,7 +453,7 @@ const WebDevelopment = () => {
           {
             name: "keywords",
             content:
-              "ვებსაიტის დამზადება, საიტის შექმნა, ვებ დეველოპმენტი, ვებ დიზაინი, ონლაინ მაღაზიის შექმნა, WordPress საიტის შექმნა, Next.js ვებსაიტის დამზადება, SEO ოპტიმიზაცია, ბიზნეს ვებსაიტი, კორპორატიული ვებსაიტი, ვებსაიტის დამზადება თბილისში, ვებსაიტის დამზადება საქართველოში",
+              "ვებსაიტების დამზადება, ვებ აპლიკაციების შექმნა, Next.js დეველოპმენტი, WordPress საიტი, React developer Georgia, web development Tbilisi, business website Georgia, საიტის შექმნა, ონლაინ მაღაზიის შექმნა, website development Georgia",
           },
         ]}
       />

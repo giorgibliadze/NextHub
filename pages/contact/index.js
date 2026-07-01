@@ -115,7 +115,7 @@ const Contact = () => {
           {
             name: "keywords",
             content:
-              "Next-Hub კონტაქტი, ვებსაიტის დამზადება, საიტის შექმნა, SEO მომსახურება, SEO ოპტიმიზაცია, სოციალური მედიის მართვა, Google Ads მართვა, ვებ დეველოპმენტი, ციფრული მარკეტინგი, ვებსაიტის დამზადება თბილისში, website development Georgia, Next-Hub Solutions",
+              "NextHub კონტაქტი, ვებსაიტის შეკვეთა, საიტის დამზადება თბილისი, contact web agency Georgia, ვებსაიტების დამზადება, საიტის შექმნა, SEO ოპტიმიზაცია, Next-Hub Solutions, website development Georgia, web design Tbilisi",
           },
         ]}
       />

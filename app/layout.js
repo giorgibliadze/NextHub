@@ -15,6 +15,17 @@ export const metadata = {
   },
   description:
     "Next-Hub Solutions ქმნის SEO-ზე მორგებულ ვებსაიტებს, პროგრამულ სისტემებს, ვებ დიზაინს, ლოკალურ SEO კამპანიებს და საიტის მოვლის გეგმებს ბიზნესებისთვის.",
+  keywords: [
+    "ვებსაიტების დამზადება",
+    "საიტის შექმნა",
+    "ვებ დეველოპერი საქართველო",
+    "NextHub",
+    "Next-Hub Solutions",
+    "website development Georgia",
+    "web design Tbilisi",
+    "SEO Georgia",
+    "digital agency Georgia",
+  ],
   icons: faviconIcons,
 };
 
