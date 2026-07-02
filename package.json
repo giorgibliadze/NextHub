@@ -14,7 +14,7 @@
     "seo:audit": "node scripts/seo-audit.js",
     "seo:health": "node scripts/seo-health-check.js",
     "bing:geo-audit": "node scripts/bing-geo-audit.js",
-    "indexnow": "node scripts/indexnow-submit.js",
+    "indexnow": "node scripts/submit-indexnow.js",
     "postbuild": "next-sitemap",
     "postinstall": "prisma generate"
   },
