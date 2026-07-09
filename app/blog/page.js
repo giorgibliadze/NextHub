@@ -40,8 +40,8 @@ export const metadata = {
 };
 
 export default function BlogPage() {
-  const featuredPosts = blogPosts.filter((post) => post.featured).slice(0, 5);
-  const latestPosts = blogPosts.filter((post) => !post.featured);
+  const featuredPosts = blogPosts.filter((post) => post.buyerJourneyFeatured);
+  const latestPosts = blogPosts.filter((post) => !post.buyerJourneyFeatured);
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-start overflow-x-hidden px-4 py-28 md:px-8 md:py-40 xl:px-10">
@@ -88,9 +88,9 @@ export default function BlogPage() {
               </h2>
             </div>
             <p className="max-w-xl text-sm leading-7 text-white/55">
-              ყველაზე მაღალი საძიებო პოტენციალის მქონე თემები: ფასი,
-              პლატფორმის არჩევანი, SEO, Google Business Profile და რეალური
-              Printerman-ის ქეისი.
+              buyer journey სტატიები, რომლებიც პასუხობს შეძენამდე მთავარ
+              კითხვებს: ფასი, პროცესი, SEO, პლატფორმის არჩევანი, ვადები,
+              შეცდომები და კონვერსია.
             </p>
           </div>
           <div className="grid grid-cols-1 gap-5 lg:grid-cols-[1.15fr_0.85fr]">
