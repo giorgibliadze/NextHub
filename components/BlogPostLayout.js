@@ -3,6 +3,7 @@ import AuthorSection from "./AuthorSection";
 import CTASection from "./CTASection";
 import RelatedPosts from "./RelatedPosts";
 import TableOfContents from "./TableOfContents";
+import WebsitePriceCalculator from "./WebsitePriceCalculator";
 
 function sectionId(title) {
   return title.toLowerCase().trim().replace(/\s+/g, "-");
@@ -38,7 +39,7 @@ export default function BlogPostLayout({ post, relatedPosts, schemas }) {
         />
       ))}
 
-      <article className="flex min-h-screen flex-col items-center justify-start overflow-x-hidden px-4 py-28 md:px-8 md:py-40 xl:px-10">
+      <article className="flex min-h-screen flex-col items-center justify-start overflow-x-clip px-4 py-28 md:px-8 md:py-40 xl:px-10">
         <header className="blog-post-hero relative mx-auto mb-10 flex min-h-[420px] w-full max-w-6xl flex-col items-center justify-center gap-5 overflow-hidden rounded-[30px] border border-white/10 bg-white/[0.045] px-6 py-12 text-center shadow-[0_28px_95px_rgba(0,0,0,0.30)] backdrop-blur-md md:mb-12 md:min-h-[480px] md:gap-6 md:px-10 md:py-14 lg:px-12 xl:min-h-[520px] xl:py-16">
           <div className="absolute inset-x-12 top-0 h-px bg-gradient-to-r from-transparent via-accent/60 to-transparent" />
           <div className="blog-post-hero-meta flex flex-wrap justify-center gap-2">
@@ -63,6 +64,13 @@ export default function BlogPostLayout({ post, relatedPosts, schemas }) {
             {post.description}
           </p>
         </header>
+
+        {post.calculatorCta && (
+          <WebsitePriceCalculator
+            title="გაიგეთ თქვენი ვებსაიტის სავარაუდო ღირებულება"
+            description="მონიშნეთ თქვენთვის საჭირო ფუნქციები და მიიღეთ ვებსაიტის სავარაუდო ღირებულება."
+          />
+        )}
 
         {isCaseStudy && post.project && (
           <section className="mx-auto mb-8 grid w-full max-w-6xl grid-cols-1 gap-4 md:grid-cols-3">
@@ -152,23 +160,6 @@ export default function BlogPostLayout({ post, relatedPosts, schemas }) {
                   </div>
                 </section>
               ))}
-
-              {post.calculatorCta && (
-                <section className="rounded-[24px] border border-accent/20 bg-accent/10 p-5 md:p-7">
-                  <h2 className="mb-4 text-2xl font-bold md:text-4xl">
-                    {post.calculatorCta.title}
-                  </h2>
-                  <p className="mb-6 max-w-3xl text-base leading-8 text-white/72 md:text-[17px] md:leading-9">
-                    {post.calculatorCta.text}
-                  </p>
-                  <Link
-                    href={post.calculatorCta.href}
-                    className="inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:scale-105"
-                  >
-                    {post.calculatorCta.button}
-                  </Link>
-                </section>
-              )}
 
               <section className="rounded-[24px] border border-white/10 bg-black/20 p-5 md:p-7">
                 <div className="mb-6">

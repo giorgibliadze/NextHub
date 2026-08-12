@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import ImageGallery from "./ImageGallery";
+import WebsitePriceCalculator from "./WebsitePriceCalculator";
 import { fadeIn } from "../variants";
 
 const cardClass =
@@ -245,6 +246,8 @@ export default function SeoLandingPage({ page, schemas }) {
             </div>
           </div>
         </motion.section>
+
+        {page.showWebsiteCalculator && <WebsitePriceCalculator />}
 
         <motion.div
           variants={fadeIn("up", 0.3)}

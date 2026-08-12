@@ -1,3 +1,5 @@
+"use client";
+
 import { useMemo, useRef, useState } from "react";
 import Link from "next/link";
 
@@ -45,6 +47,7 @@ function formatPrice(price) {
 }
 
 function getPackageName(price) {
+  if (price === 0) return "აირჩიეთ პარამეტრები";
   if (price >= 7500) return "ინდივიდუალური";
   if (price >= 4500) return "ბიზნესი";
   if (price >= 2500) return "პრემიუმი";
@@ -62,11 +65,11 @@ const initialLeadForm = {
 };
 
 const initialCalculatorState = {
-  websiteType: websiteTypes[1].value,
-  pageCount: pageCounts[1].value,
-  designLevel: designLevels[1].value,
-  technology: technologies[0].value,
-  selectedFeatures: ["contact-form", "seo"],
+  websiteType: "",
+  pageCount: "",
+  designLevel: "",
+  technology: "",
+  selectedFeatures: [],
 };
 
 const TAP_SCROLL_THRESHOLD = 8;
@@ -77,7 +80,11 @@ const blurActiveElement = () => {
   }
 };
 
-export default function WebsitePriceCalculator() {
+export default function WebsitePriceCalculator({
+  compact = false,
+  title = "ვებსაიტის ფასის კალკულატორი",
+  description = "აირჩიეთ საჭირო ფუნქციონალი და მიიღეთ სავარაუდო ბიუჯეტი.",
+}) {
   const [websiteType, setWebsiteType] = useState(initialCalculatorState.websiteType);
   const [pageCount, setPageCount] = useState(initialCalculatorState.pageCount);
   const [designLevel, setDesignLevel] = useState(initialCalculatorState.designLevel);
@@ -93,13 +100,17 @@ export default function WebsitePriceCalculator() {
   const featureTouchStartY = useRef(0);
   const featureMovedRef = useRef(false);
 
-  const resetCalculatorLeadForm = () => {
-    leadFormRef.current?.reset();
+  const resetSelections = () => {
     setWebsiteType(initialCalculatorState.websiteType);
     setPageCount(initialCalculatorState.pageCount);
     setDesignLevel(initialCalculatorState.designLevel);
     setTechnology(initialCalculatorState.technology);
     setSelectedFeatures(initialCalculatorState.selectedFeatures);
+  };
+
+  const resetCalculatorLeadForm = () => {
+    leadFormRef.current?.reset();
+    resetSelections();
     setLeadForm(initialLeadForm);
     setFormError("");
     blurActiveElement();
@@ -115,10 +126,10 @@ export default function WebsitePriceCalculator() {
       .reduce((total, feature) => total + feature.price, 0);
 
     return (
-      selectedType.price +
-      selectedPages.price +
-      selectedDesign.price +
-      selectedTechnology.price +
+      (selectedType?.price || 0) +
+      (selectedPages?.price || 0) +
+      (selectedDesign?.price || 0) +
+      (selectedTechnology?.price || 0) +
       featuresTotal
     );
   }, [designLevel, pageCount, selectedFeatures, technology, websiteType]);
@@ -210,11 +221,11 @@ export default function WebsitePriceCalculator() {
           email: leadForm.email.trim(),
           company: leadForm.company.trim(),
           comment: leadForm.comment.trim(),
-          websiteType: selectedType.label,
-          pageCount: selectedPages.label,
-          designLevel: selectedDesign.label,
+          websiteType: selectedType?.label || "არ არის არჩეული",
+          pageCount: selectedPages?.label || "არ არის არჩეული",
+          designLevel: selectedDesign?.label || "არ არის არჩეული",
           selectedFeatures: selectedFeatureLabels,
-          technology: selectedTechnology.label,
+          technology: selectedTechnology?.label || "არ არის არჩეული",
           estimatedPrice: `${formatPrice(estimate)} ₾`,
           priceRange: `${formatPrice(estimate)} ₾ - ${formatPrice(maximumEstimate)} ₾`,
           packageName,
@@ -250,14 +261,18 @@ export default function WebsitePriceCalculator() {
           id="website-price-calculator-title"
           className="mb-5 text-2xl font-bold leading-tight md:text-4xl"
         >
-          ვებსაიტის ფასის კალკულატორი
+          {title}
         </h2>
         <p className="mx-auto max-w-3xl text-sm leading-7 text-white/70 md:text-base md:leading-8">
-          აირჩიეთ საჭირო ფუნქციონალი და მიიღეთ სავარაუდო ბიუჯეტი.
+          {description}
         </p>
       </div>
 
-      <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
+      <div
+        className={`grid gap-6 ${
+          compact ? "grid-cols-1" : "lg:grid-cols-[1.2fr_0.8fr]"
+        }`}
+      >
         <div>
           <OptionGroup
             title="ვებსაიტის ტიპი"
@@ -332,7 +347,11 @@ export default function WebsitePriceCalculator() {
           </section>
         </div>
 
-        <aside className="self-start rounded-[24px] border border-accent/30 bg-accent/10 p-5 shadow-[0_24px_80px_rgba(241,48,36,0.12)] md:p-7 lg:sticky lg:top-24">
+        <aside
+          className={`self-start rounded-[24px] border border-accent/30 bg-accent/10 p-5 shadow-[0_24px_80px_rgba(241,48,36,0.12)] md:p-7 ${
+            compact ? "" : "lg:sticky lg:top-24"
+          }`}
+        >
           <span className="mb-3 inline-block rounded-full border border-white/10 bg-white/10 px-4 py-2 text-xs font-semibold text-white/70">
             სავარაუდო ღირებულება
           </span>
@@ -349,6 +368,21 @@ export default function WebsitePriceCalculator() {
             <p className="text-sm text-white/60">რეკომენდებული პაკეტი</p>
             <p className="mt-1 text-lg font-semibold text-accent">{packageName}</p>
           </div>
+          <button
+            type="button"
+            onClick={resetSelections}
+            disabled={
+              estimate === 0 &&
+              selectedFeatures.length === 0 &&
+              !websiteType &&
+              !pageCount &&
+              !designLevel &&
+              !technology
+            }
+            className="mt-4 inline-flex w-full items-center justify-center rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white/75 transition hover:border-accent/40 hover:text-white disabled:cursor-not-allowed disabled:opacity-40"
+          >
+            არჩევანის გასუფთავება
+          </button>
           <p className="mt-5 text-sm leading-7 text-white/70">
             ფასი სავარაუდოა და საბოლოო ღირებულება განისაზღვრება პროექტის
             დეტალების მიხედვით.
@@ -545,19 +579,17 @@ function OptionGroup({ title, name, options, value, onChange }) {
 
   const selectOption = (optionValue) => {
     if (movedRef.current) return;
-    onChange(optionValue);
+    onChange(value === optionValue ? "" : optionValue);
   };
 
   return (
-    <section className="calculator-section" role="radiogroup" aria-label={title}>
+    <section className="calculator-section" aria-label={title}>
       <SectionTitle>{title}</SectionTitle>
       <div className="grid gap-3 sm:grid-cols-2">
         {options.map((option) => (
           <button
             key={option.value}
             type="button"
-            role="radio"
-            aria-checked={value === option.value}
             aria-pressed={value === option.value}
             aria-label={`${option.label}, ${
               option.price === 0 ? "+0 ₾" : `+${formatPrice(option.price)} ₾`

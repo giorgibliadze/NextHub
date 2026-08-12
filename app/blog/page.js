@@ -44,7 +44,7 @@ export default function BlogPage() {
   const latestPosts = blogPosts.filter((post) => !post.buyerJourneyFeatured);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-start overflow-x-hidden px-4 py-28 md:px-8 md:py-40 xl:px-10">
+    <main className="flex min-h-screen flex-col items-center justify-start overflow-x-clip px-4 py-28 md:px-8 md:py-40 xl:px-10">
       <section className="mx-auto w-full max-w-6xl">
         <div className="relative mb-10 overflow-hidden rounded-[30px] border border-white/10 bg-white/[0.045] p-6 text-center shadow-[0_28px_95px_rgba(0,0,0,0.30)] backdrop-blur-md md:mb-12 md:p-10 lg:p-12">
           <div className="absolute inset-x-12 top-0 h-px bg-gradient-to-r from-transparent via-accent/60 to-transparent" />
