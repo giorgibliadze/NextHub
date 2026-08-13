@@ -10,12 +10,36 @@ import { fadeIn } from "../variants";
 import { NextSeo } from "next-seo";
 import Script from "next/script";
 
+export const metadata = {
+  metadataBase: new URL("https://next-hub.pro"),
+  title: {
+    default: "Next-Hub Solutions",
+    template: "%s",
+  },
+  description:
+    "Next-Hub Solutions ქმნის SEO-ზე მორგებულ ვებსაიტებს, პროგრამულ სისტემებს, ვებ დიზაინს, ლოკალურ SEO კამპანიებს და საიტის მოვლის გეგმებს ბიზნესებისთვის.",
+  keywords: [
+    "ვებსაიტების დამზადება",
+    "ვებსაიტის დამზადება",
+    "ვებ დეველოპმენტი",
+    "ვებსაიტების შექმნა",
+    "საიტის შექმნა",
+    "ვებ დეველოპერი საქართველო",
+    "NextHub",
+    "Next-Hub Solutions",
+    "website development Georgia",
+    "web design Tbilisi",
+    "SEO Georgia",
+    "digital agency Georgia",
+  ]
+};
+
 const ParticlesContainer = dynamic(
   () => import("../components/ParticlesContainer"),
   {
     ssr: false,
     loading: () => null,
-  }
+  },
 );
 
 const CalculatorSkeleton = () => (
@@ -35,7 +59,7 @@ const WebsitePriceCalculator = dynamic(
   {
     ssr: false,
     loading: CalculatorSkeleton,
-  }
+  },
 );
 
 const Home = () => {
@@ -137,7 +161,7 @@ const Home = () => {
 
         window.setTimeout(loadCalculator, 250);
       },
-      { rootMargin: "600px 0px", threshold: 0 }
+      { rootMargin: "600px 0px", threshold: 0 },
     );
 
     observer.observe(node);
@@ -296,10 +320,7 @@ const Home = () => {
         "@type": "WebSite",
         "@id": `${canonical}/#website`,
         name: "Next-Hub Solutions",
-        alternateName: [
-          "ვებსაიტის დამზადება საქართველოში",
-          "Next-Hub",
-        ],
+        alternateName: ["ვებსაიტის დამზადება საქართველოში", "Next-Hub"],
         url: `${canonical}/`,
         publisher: {
           "@id": `${canonical}/#organization`,
@@ -409,7 +430,7 @@ const Home = () => {
             >
               {/* title */}
               <div
-              className="
+                className="
                 mt-[60px]
                 sm:mt-[80px]
                 xl:mt-[100px]
@@ -420,14 +441,14 @@ const Home = () => {
                 font-bold
               "
               >
-              <h1 className="inline font-bold">
-                ვებსაიტის დამზადება <span className="text-accent">.</span>
-              </h1>
+                <h1 className="inline font-bold">
+                  ვებსაიტის დამზადება <span className="text-accent">.</span>
+                </h1>
 
-              <br />
+                <br />
 
-              <div
-                className="
+                <div
+                  className="
     inline
     text-accent
     font-bold
@@ -435,21 +456,21 @@ const Home = () => {
     sm:text-[34px]
     xl:text-[64px]
   "
-              >
-                <RotatingWords words={words} />
-              </div>
+                >
+                  <RotatingWords words={words} />
+                </div>
 
-              <span
-                className="
+                <span
+                  className="
     inline
     font-bold
     text-[20px]
     sm:text-[34px]
     xl:text-[64px]
   "
-              >
-                ბიზნესისთვის
-              </span>
+                >
+                  ბიზნესისთვის
+                </span>
               </div>
 
               {/* subtitle */}
@@ -466,16 +487,16 @@ const Home = () => {
                 xl:mb-16
               "
               >
-              Next-Hub გთავაზობთ თანამედროვე ვებსაიტების, ონლაინ მაღაზიებისა და
-              ვებ აპლიკაციების შექმნას. ვამზადებთ სწრაფ, SEO-ზე მორგებულ და
-              ბიზნესის მიზნებზე შექმნილ საიტებს.
+                Next-Hub გთავაზობთ თანამედროვე ვებსაიტების, ონლაინ მაღაზიებისა
+                და ვებ აპლიკაციების შექმნას. ვამზადებთ სწრაფ, SEO-ზე მორგებულ და
+                ბიზნესის მიზნებზე შექმნილ საიტებს.
               </p>
 
               {/* contact button */}
               <div className="mobile-bottom-safe-space flex justify-center xl:justify-start relative z-50">
-              <a
-                href="tel:+995555137003"
-                className="
+                <a
+                  href="tel:+995555137003"
+                  className="
                   px-8
                   py-4
                   rounded-full
@@ -489,9 +510,9 @@ const Home = () => {
                   shadow-lg
                   whitespace-nowrap
                 "
-              >
-                დაგვიკავშირდით
-              </a>
+                >
+                  დაგვიკავშირდით
+                </a>
               </div>
             </motion.div>
           </div>
@@ -581,9 +602,9 @@ const Home = () => {
               </p>
               <p>
                 კარგი ვებსაიტი აერთიანებს ვებ დიზაინს, კონტენტს, მობილურ
-                გამოცდილებას და ტექნიკურ სტრუქტურას. ეს ნიშნავს, რომ მომხმარებელი
-                ტელეფონიდანაც კომფორტულად კითხულობს ინფორმაციას, სწრაფად პოულობს
-                საკონტაქტო გზას და არ იკარგება ზედმეტ ნაბიჯებში.
+                გამოცდილებას და ტექნიკურ სტრუქტურას. ეს ნიშნავს, რომ
+                მომხმარებელი ტელეფონიდანაც კომფორტულად კითხულობს ინფორმაციას,
+                სწრაფად პოულობს საკონტაქტო გზას და არ იკარგება ზედმეტ ნაბიჯებში.
               </p>
               <p>
                 SEO ოპტიმიზაცია პირველივე ეტაპზე უნდა იყოს გათვალისწინებული:
@@ -593,8 +614,9 @@ const Home = () => {
               </p>
               <p>
                 პროფესიონალური საიტი რეკლამასაც აძლიერებს და ორგანულ ძიებასაც.
-                როცა landing page მკაფიოა, Google Business Profile მოწესრიგებულია
-                და საიტი სტაბილურად მუშაობს, ბიზნესი მეტ კვალიფიციურ ლიდს იღებს.
+                როცა landing page მკაფიოა, Google Business Profile
+                მოწესრიგებულია და საიტი სტაბილურად მუშაობს, ბიზნესი მეტ
+                კვალიფიციურ ლიდს იღებს.
               </p>
             </div>
           </div>

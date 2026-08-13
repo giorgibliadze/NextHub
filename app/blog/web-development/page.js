@@ -8,6 +8,9 @@ export const metadata = {
   title: "ვებ დეველოპმენტი ბლოგი | Next-Hub Solutions",
   description: category.description,
   keywords: [
+    "ვებსაიტის დამზადება",
+    "ვებ დეველოპმენტი",
+    "ვებსაიტების შექმნა",
     "ვებ დეველოპმენტი ბლოგი",
     "ვებსაიტების დამზადება",
     "საიტის შექმნა",
@@ -19,7 +22,7 @@ export const metadata = {
   ],
   alternates: { canonical: url },
   openGraph: {
-    title: "ვებ დეველოპმენტი ბლოგი | Next-Hub Solutions",
+    title: "ვებსაიტის დამზადება | Next-Hub Solutions",
     description: category.description,
     url,
     siteName: "Next-Hub Solutions",
@@ -27,7 +30,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ვებ დეველოპმენტი ბლოგი | Next-Hub Solutions",
+    title: "ვებსაიტის დამზადება | Next-Hub Solutions",
     description: category.description,
   },
 };
