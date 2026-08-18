@@ -2,8 +2,8 @@ const INDEXNOW_ENDPOINT = "https://api.indexnow.org/IndexNow";
 
 const payload = {
   host: "www.next-hub.pro",
-  key: "694323a9f34241e3b765da27b690fdf0",
-  keyLocation: "https://www.next-hub.pro/694323a9f34241e3b765da27b690fdf0.txt",
+  key: "949e3157c6ae4860a58db4d81fd0de3c",
+  keyLocation: "https://www.next-hub.pro/949e3157c6ae4860a58db4d81fd0de3c.txt",
   urlList: [
     "https://www.next-hub.pro/",
     "https://www.next-hub.pro/about",
