@@ -6,6 +6,7 @@ import { faviconIcons } from "../lib/faviconConfig";
 import MicrosoftClarity from "../components/MicrosoftClarity";
 import { companyProfile, siteUrl } from "../lib/aiSeo";
 import LazyVercelInsights from "../components/LazyVercelInsights";
+import Footer from "../components/Footer";
 
 export const metadata = {
   metadataBase: new URL("https://next-hub.pro"),
@@ -108,6 +109,7 @@ export default function RootLayout({ children }) {
           <Nav />
           <Header />
           {children}
+          <Footer />
         </div>
       </body>
     </html>

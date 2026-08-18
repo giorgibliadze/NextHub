@@ -6,6 +6,7 @@ import Head from "next/head";
 import { faviconLinks } from "../lib/faviconConfig";
 import { companyProfile } from "../lib/aiSeo";
 import LazyVercelInsights from "../components/LazyVercelInsights";
+import Footer from "../components/Footer";
 import DelayedThirdPartyScripts from "../components/DelayedThirdPartyScripts";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
@@ -139,6 +140,7 @@ export default function Layout({ children }) {
         <Nav />
         <Header />
         {children}
+        <Footer />
       </div>
     </>
   );
