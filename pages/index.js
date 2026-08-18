@@ -212,6 +212,13 @@ const Home = () => {
         "ვამუშავებთ ტექნიკურ SEO-ს, გვერდების სტრუქტურას, საკვანძო სიტყვებს, metadata-ს და შიდა ბმულებს, რომ საიტი უკეთ გამოჩნდეს Google-ში.",
     },
     {
+      title: "AI ვიდეოს შექმნა",
+      href: "/ai-video-creation",
+      url: "https://next-hub.pro/ai-video-creation",
+      description:
+        "ვქმნით სარეკლამო ვიდეოებს, Reels-ს, პროდუქტის პრეზენტაციებსა და AI ავატარის ვიდეოებს — სცენარიდან საბოლოო მონტაჟამდე.",
+    },
+    {
       title: "Google Business Profile ოპტიმიზაცია",
       href: "/google-business-profile-optimization",
       url: "https://next-hub.pro/google-business-profile-optimization",

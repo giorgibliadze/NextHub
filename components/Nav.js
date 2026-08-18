@@ -24,6 +24,7 @@ export const navData = [
 ];
 
 const servicePaths = [
+  "/ai-video-creation",
   "/google-business-profile-optimization",
   "/seo-services",
   "/software-development",

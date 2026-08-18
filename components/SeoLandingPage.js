@@ -53,7 +53,7 @@ export default function SeoLandingPage({ page, schemas }) {
         <JsonLd key={schema["@type"] + schema.name} data={schema} />
       ))}
 
-      <div className="flex min-h-screen flex-col items-center justify-start px-4 md:px-8 xl:px-10 py-28 md:py-44 smx:text-center overflow-x-hidden">
+      <div className="flex min-h-screen flex-col items-center justify-start px-4 md:px-8 xl:px-10 py-28 md:py-44 smx:text-center overflow-x-clip">
         <motion.h1
           variants={fadeIn("up", 0.1)}
           initial="hidden"
@@ -248,6 +248,12 @@ export default function SeoLandingPage({ page, schemas }) {
         </motion.section>
 
         {page.showWebsiteCalculator && <WebsitePriceCalculator />}
+
+        {page.pricingNote && (
+          <p className="mb-6 max-w-4xl px-4 text-center text-sm leading-7 text-white/70 md:mb-8 md:text-base">
+            {page.pricingNote}
+          </p>
+        )}
 
         <motion.div
           variants={fadeIn("up", 0.3)}

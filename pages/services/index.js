@@ -53,6 +53,12 @@ const Services = () => {
       description:
         "ვზრუნავთ საიტის სტაბილურ მუშაობაზე, უსაფრთხოების განახლებებზე, სიჩქარეზე, შეცდომების გასწორებაზე და მუდმივ მხარდაჭერაზე.",
     },
+    {
+      title: "AI ვიდეოს შექმნა",
+      href: "/ai-video-creation",
+      description:
+        "ვქმნით სარეკლამო ვიდეოებს, პროდუქტის პრეზენტაციებს, Reels-სა და მრავალენოვან AI ავატარის ვიდეოებს — სცენარიდან საბოლოო მონტაჟამდე.",
+    },
   ];
 
   const schemaData = {
@@ -215,6 +221,7 @@ const Services = () => {
                     href: "/website-maintenance-services",
                     label: "საიტის მხარდაჭერა",
                   },
+                  { href: "/ai-video-creation", label: "AI ვიდეო" },
                   { href: "/blog", label: "ბლოგი" },
                   { href: "/contact", label: "კონტაქტი" },
                 ].map((link) => (

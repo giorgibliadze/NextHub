@@ -15,7 +15,7 @@ import "swiper/css/free-mode";
 import "swiper/css/autoplay";
 import { SiTaichigraphics } from "react-icons/si";
 import { SiGooglemarketingplatform } from "react-icons/si";
-import { FaHandsHelping } from "react-icons/fa";
+import { FaHandsHelping, FaVideo } from "react-icons/fa";
 // import required modules
 import { FreeMode, Autoplay } from "swiper";
 import Link from "next/link";
@@ -70,6 +70,13 @@ const serviceData = [
     description:
       "ვზრუნავთ საიტის მოვლაზე, ტექნიკურ მხარდაჭერაზე, უსაფრთხოების განახლებებზე, სიჩქარეზე და სტაბილურ მუშაობაზე ყოველდღიურად.",
     link: "/website-maintenance-services",
+  },
+  {
+    icon: <FaVideo />,
+    title: "AI ვიდეოს შექმნა",
+    description:
+      "ვქმნით სარეკლამო ვიდეოებს, Reels-ს, პროდუქტის პრეზენტაციებსა და მრავალენოვან AI ავატარის ვიდეოებს ბიზნესისთვის.",
+    link: "/ai-video-creation",
   },
 ];
 
