@@ -399,8 +399,8 @@ const WebDevelopment = () => {
     <>
       <NextSeo
         canonical={CANONICAL}
-        title="ვებსაიტის დამზადება | Next-Hub Solutions"
-        description="ვებსაიტის დამზადება საქართველოში: ბიზნეს საიტები, ონლაინ მაღაზიები, WordPress და Next.js დეველოპმენტი SEO-ready სტრუქტურით."
+        title="ვებსაიტების დამზადება | Next-Hub Solutions"
+        description="ვებსაიტების დამზადება საქართველოში: ბიზნეს საიტები, ონლაინ მაღაზიები, WordPress და Next.js დეველოპმენტი SEO-ready სტრუქტურით."
         languageAlternates={[
           { hrefLang: "ka-GE", href: "https://next-hub.pro/webdevelopment" },
           { hrefLang: "en", href: "https://next-hub.pro/services/webDevelopmentEN" },
@@ -412,9 +412,9 @@ const WebDevelopment = () => {
           url: CANONICAL,
           site_name: "Next-Hub Solutions",
           title:
-            "ვებსაიტის დამზადება | Next-Hub Solutions",
+            "ვებსაიტების დამზადება | Next-Hub Solutions",
           description:
-            "ვებსაიტის დამზადება საქართველოში: ბიზნეს საიტები, ონლაინ მაღაზიები, WordPress და Next.js დეველოპმენტი SEO-ready სტრუქტურით.",
+            "ვებსაიტების დამზადება საქართველოში: ბიზნეს საიტები, ონლაინ მაღაზიები, WordPress და Next.js დეველოპმენტი SEO-ready სტრუქტურით.",
           images: [
             {
               url: "https://next-hub.pro/web.jpg",
@@ -430,7 +430,7 @@ const WebDevelopment = () => {
         additionalMetaTags={[
           {
             name: "twitter:title",
-            content: "ვებსაიტის დამზადება | Next-Hub Solutions",
+            content: "ვებსაიტების დამზადება | Next-Hub Solutions",
           },
           {
             name: "twitter:description",
@@ -452,7 +452,7 @@ const WebDevelopment = () => {
           {
             name: "keywords",
             content:
-              "ვებსაიტის დამზადება, ვებ აპლიკაციების შექმნა, Next.js დეველოპმენტი, WordPress საიტი, React developer Georgia, web development Tbilisi, business website Georgia, საიტის შექმნა, ონლაინ მაღაზიის შექმნა, website development Georgia",
+              "ვებსაიტების დამზადება, ვებ აპლიკაციების შექმნა, Next.js დეველოპმენტი, WordPress საიტი, React developer Georgia, web development Tbilisi, business website Georgia, საიტის შექმნა, ონლაინ მაღაზიის შექმნა, website development Georgia",
           },
         ]}
       />
