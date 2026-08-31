@@ -72,7 +72,7 @@ const Home = () => {
   const metaDescription =
     "Next-Hub Solutions ქმნის ვებსაიტებს, ონლაინ მაღაზიებსა და SEO-ready ვებ აპლიკაციებს ბიზნესებისთვის საქართველოში.";
   const homeTitle =
-    "ვებსაიტების დამზადება და ონლაინ მაღაზიები | Next-Hub Solutions";
+    "ვებსაიტის დამზადება | Next-Hub Solutions";
 
   useEffect(() => {
     const canUseParticles = () =>
@@ -412,7 +412,7 @@ const Home = () => {
           {
             name: "keywords",
             content:
-              "ვებსაიტების დამზადება, საიტის შექმნა, ვებ დეველოპერი საქართველო, NextHub, Next-Hub Solutions, website development Georgia, web design Tbilisi, SEO Georgia, digital agency Georgia",
+              "ვებსაიტის დამზადება, საიტის შექმნა, ვებ დეველოპერი საქართველო, NextHub, Next-Hub Solutions, website development Georgia, web design Tbilisi, SEO Georgia, digital agency Georgia",
           },
         ]}
       />
