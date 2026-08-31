@@ -4,7 +4,7 @@ import { useMemo, useRef, useState } from "react";
 import Link from "next/link";
 
 const websiteTypes = [
-  { label: "ლენდინგ გვერდი", value: "landing", price: 800 },
+  { label: "ლენდინგ გვერდი", value: "landing", price: 500 },
   { label: "ბიზნეს ვებსაიტი", value: "business", price: 1500 },
   { label: "ონლაინ მაღაზია", value: "store", price: 2500 },
   { label: "ინდივიდუალური ვებ აპლიკაცია", value: "app", price: 4000 },
@@ -34,7 +34,7 @@ const features = [
   { label: "ბლოგი", value: "blog", price: 300 },
   { label: "SEO გამართვა", value: "seo", price: 500 },
   { label: "Google Analytics/Search Console", value: "analytics", price: 250 },
-  { label: "ონლაინ გადახდის ინტეგრაცია", value: "payment", price: 800 },
+  { label: "ონლაინ გადახდის ინტეგრაცია", value: "payment", price: 500 },
   { label: "ჯავშნის სისტემა", value: "booking", price: 1000 },
   { label: "მომხმარებლის ანგარიშები", value: "accounts", price: 1200 },
   { label: "მრავალენოვანი საიტი", value: "multilanguage", price: 700 },
