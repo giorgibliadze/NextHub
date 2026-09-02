@@ -13,7 +13,7 @@ import Script from "next/script";
 export const metadata = {
   metadataBase: new URL("https://next-hub.pro"),
   title: {
-    default: "Next-Hub Solutions",
+    default: "ვებსაიტის დამზადება - Next-Hub Solutions",
     template: "%s",
   },
   description:
@@ -290,7 +290,7 @@ const Home = () => {
       {
         "@type": "Organization",
         "@id": `${canonical}/#organization`,
-        name: "Next-Hub Solutions",
+        name: "ვებსაიტის დამზადება - Next-Hub Solutions",
         url: `${canonical}/`,
         logo: "https://next-hub.pro/favicon.ico",
         email: "info@next-hub.pro",
@@ -299,7 +299,7 @@ const Home = () => {
       {
         "@type": "ProfessionalService",
         "@id": `${canonical}/#professional-service`,
-        name: "Next-Hub Solutions",
+        name: "ვებსაიტის დამზადება - Next-Hub Solutions",
         image: "https://next-hub.pro/favicon.ico",
         url: `${canonical}/`,
         telephone: "+995555137003",
@@ -326,7 +326,7 @@ const Home = () => {
       {
         "@type": "WebSite",
         "@id": `${canonical}/#website`,
-        name: "Next-Hub Solutions",
+        name: "ვებსაიტის დამზადება - Next-Hub Solutions",
         alternateName: ["ვებსაიტის დამზადება საქართველოში", "Next-Hub"],
         url: `${canonical}/`,
         publisher: {
@@ -349,7 +349,7 @@ const Home = () => {
       {
         "@type": "OfferCatalog",
         "@id": `${canonical}/#offer-catalog`,
-        name: "Next-Hub Solutions სერვისები",
+        name: "ვებსაიტის დამზადება - Next-Hub Solutions სერვისები",
         itemListElement: services.map((service) => ({
           "@type": "Offer",
           name: service.title,
@@ -377,7 +377,7 @@ const Home = () => {
           type: "website",
           locale: "ka_GE",
           url: canonical,
-          site_name: "ვებსაიტის დამზადება",
+          site_name: "ვებსაიტის დამზადება - Next-Hub Solutions",
           title: homeTitle,
           description: metaDescription,
           images: [
