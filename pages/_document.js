@@ -1,10 +1,10 @@
-import { Html, Head, Main, NextScript } from "next/document";
+import NextDocument, { Html, Head, Main, NextScript } from "next/document";
 
-export default function Document() {
+export default function Document({ pageLang }) {
   return (
-    <Html lang="ka-GE">
+    <Html lang={pageLang}>
       <Head>
-        <meta httpEquiv="content-language" content="ka-GE" />
+        <meta httpEquiv="content-language" content={pageLang} />
       </Head>
       <body>
         <Main />
@@ -13,3 +13,10 @@ export default function Document() {
     </Html>
   );
 }
+
+Document.getInitialProps = async (ctx) => {
+  const initialProps = await NextDocument.getInitialProps(ctx);
+  const pageLang = ctx.pathname === "/services/webDevelopmentEN" ? "en" : "ka-GE";
+
+  return { ...initialProps, pageLang };
+};

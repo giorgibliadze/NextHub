@@ -1,48 +1,6 @@
-const fs = require('fs');
-const path = require('path');
-
 /** @type {import('next-sitemap').IConfig} */
 const SITE_URL = 'https://next-hub.pro';
 const AI_DISCOVERY_FILES = ['/llms.txt', '/llms-full.txt', '/company.json'];
-const DEFAULT_LASTMOD = '2026-06-28T00:00:00.000Z';
-
-function sourceForRoute(routePath) {
-  if (routePath === '/') return 'pages/index.js';
-
-  const normalized = routePath.replace(/^\//, '');
-  const candidates = [
-    `pages/${normalized}/index.js`,
-    `pages/${normalized}.js`,
-    `app/${normalized}/page.js`,
-  ];
-
-  if (routePath.startsWith('/blog/') && !routePath.match(/^\/blog\/(?:web-development|web-design|seo|case-studies)$/)) {
-    candidates.push('lib/blogData.js');
-  }
-
-  return candidates.find((candidate) => fs.existsSync(path.join(__dirname, candidate)));
-}
-
-function lastmodForPath(routePath) {
-  const publicFile = routePath.startsWith('/llms') || routePath === '/company.json'
-    ? path.join(__dirname, 'public', routePath)
-    : null;
-  const sourceFile = publicFile && fs.existsSync(publicFile)
-    ? publicFile
-    : sourceForRoute(routePath);
-
-  if (!sourceFile) return DEFAULT_LASTMOD;
-
-  const absolutePath = path.isAbsolute(sourceFile)
-    ? sourceFile
-    : path.join(__dirname, sourceFile);
-
-  try {
-    return fs.statSync(absolutePath).mtime.toISOString();
-  } catch {
-    return DEFAULT_LASTMOD;
-  }
-}
 
 function changefreqForPath(routePath) {
   if (routePath === '/') return 'weekly';
@@ -90,7 +48,6 @@ module.exports = {
       loc: path,
       changefreq: changefreqForPath(path),
       priority: priorityForPath(path),
-      lastmod: lastmodForPath(path),
     };
   },
 
@@ -99,7 +56,6 @@ module.exports = {
       loc: path,
       changefreq: changefreqForPath(path),
       priority: priorityForPath(path),
-      lastmod: lastmodForPath(path),
     })),
 
   robotsTxtOptions: {

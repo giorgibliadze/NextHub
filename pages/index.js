@@ -13,11 +13,11 @@ import Script from "next/script";
 export const metadata = {
   metadataBase: new URL("https://next-hub.pro"),
   title: {
-    default: "ვებსაიტის დამზადება - Next-Hub Solutions",
+    default: "ვებსაიტების დამზადება საქართველოში — ფასი 500₾-დან | Next-Hub",
     template: "%s",
   },
   description:
-    "Next-Hub Solutions ქმნის SEO-ზე მორგებულ ვებსაიტებს, პროგრამულ სისტემებს, ვებ დიზაინს, ლოკალურ SEO კამპანიებს და საიტის მოვლის გეგმებს ბიზნესებისთვის.",
+    "თანამედროვე ვებსაიტებისა და ონლაინ პლატფორმების შექმნა ბიზნესისთვის. ვებსაიტის დამზადება 500₾-დან. მიიღეთ უფასო კონსულტაცია Next-Hub Solutions-თან.",
   keywords: [
     "ვებსაიტების დამზადება",
     "ვებსაიტის დამზადება",
@@ -70,9 +70,9 @@ const Home = () => {
   const words = ["ვებსაიტები ", "ონლაინ მაღაზიები ", "ვებ აპლიკაციები "];
   const canonical = "https://next-hub.pro";
   const metaDescription =
-    "Next-Hub Solutions ქმნის ვებსაიტებს, ონლაინ მაღაზიებსა და SEO-ready ვებ აპლიკაციებს ბიზნესებისთვის საქართველოში.";
+    "თანამედროვე ვებსაიტებისა და ონლაინ პლატფორმების შექმნა ბიზნესისთვის. ვებსაიტის დამზადება 500₾-დან. მიიღეთ უფასო კონსულტაცია Next-Hub Solutions-თან.";
   const homeTitle =
-    "ვებსაიტის დამზადება | Next-Hub Solutions";
+    "ვებსაიტების დამზადება საქართველოში — ფასი 500₾-დან | Next-Hub";
 
   useEffect(() => {
     const canUseParticles = () =>
@@ -288,15 +288,6 @@ const Home = () => {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Organization",
-        "@id": `${canonical}/#organization`,
-        name: "ვებსაიტის დამზადება - Next-Hub Solutions",
-        url: `${canonical}/`,
-        logo: "https://next-hub.pro/favicon.ico",
-        email: "info@next-hub.pro",
-        telephone: "+995555137003",
-      },
-      {
         "@type": "ProfessionalService",
         "@id": `${canonical}/#professional-service`,
         name: "ვებსაიტის დამზადება - Next-Hub Solutions",
@@ -322,17 +313,6 @@ const Home = () => {
         hasOfferCatalog: {
           "@id": `${canonical}/#offer-catalog`,
         },
-      },
-      {
-        "@type": "WebSite",
-        "@id": `${canonical}/#website`,
-        name: "ვებსაიტის დამზადება - Next-Hub Solutions",
-        alternateName: ["ვებსაიტის დამზადება საქართველოში", "Next-Hub"],
-        url: `${canonical}/`,
-        publisher: {
-          "@id": `${canonical}/#organization`,
-        },
-        inLanguage: "ka-GE",
       },
       {
         "@type": "BreadcrumbList",

@@ -49,17 +49,21 @@ function checkLanguageTags() {
 
   if (fs.existsSync(path.join(root, documentPath))) {
     const source = read(documentPath);
-
-    if (!/<Html\b[^>]*\blang=["']ka-GE["']/.test(source)) {
-      errors.push(`${documentPath}: missing <Html lang="ka-GE">`);
-    }
-
-    if (
-      !/<meta\b[^>]*httpEquiv=["']content-language["'][^>]*content=["']ka-GE["']/.test(
+    const hasStaticGeorgianLanguage =
+      /<Html\b[^>]*\blang=["']ka-GE["']/.test(source) &&
+      /<meta\b[^>]*httpEquiv=["']content-language["'][^>]*content=["']ka-GE["']/.test(
         source
-      )
-    ) {
-      errors.push(`${documentPath}: missing content-language ka-GE meta tag`);
+      );
+    const hasRouteAwareLanguage =
+      /<Html\b[^>]*\blang=\{pageLang\}/.test(source) &&
+      /content=\{pageLang\}/.test(source) &&
+      /ctx\.pathname\s*===\s*["']\/services\/webDevelopmentEN["']/.test(source) &&
+      /\?\s*["']en["']\s*:\s*["']ka-GE["']/.test(source);
+
+    if (!hasStaticGeorgianLanguage && !hasRouteAwareLanguage) {
+      errors.push(
+        `${documentPath}: missing valid Georgian default and English route language handling`
+      );
     }
   }
 

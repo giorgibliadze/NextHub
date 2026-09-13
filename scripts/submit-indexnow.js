@@ -1,22 +1,22 @@
 const INDEXNOW_ENDPOINT = "https://api.indexnow.org/IndexNow";
 
 const payload = {
-  host: "www.next-hub.pro",
+  host: "next-hub.pro",
   key: "949e3157c6ae4860a58db4d81fd0de3c",
-  keyLocation: "https://www.next-hub.pro/949e3157c6ae4860a58db4d81fd0de3c.txt",
+  keyLocation: "https://next-hub.pro/949e3157c6ae4860a58db4d81fd0de3c.txt",
   urlList: [
-    "https://www.next-hub.pro/",
-    "https://www.next-hub.pro/about",
-    "https://www.next-hub.pro/contact",
-    "https://www.next-hub.pro/work",
-    "https://www.next-hub.pro/services",
-    "https://www.next-hub.pro/services/seo",
-    "https://www.next-hub.pro/services/web_development",
-    "https://www.next-hub.pro/services/soc_media",
-    "https://www.next-hub.pro/services/digital_marketing",
-    "https://www.next-hub.pro/services/analytics",
-    "https://www.next-hub.pro/services/tech_support",
-    "https://www.next-hub.pro/services/graphic_design",
+    "https://next-hub.pro/",
+    "https://next-hub.pro/about",
+    "https://next-hub.pro/contact",
+    "https://next-hub.pro/work",
+    "https://next-hub.pro/services",
+    "https://next-hub.pro/seo-services",
+    "https://next-hub.pro/webdevelopment",
+    "https://next-hub.pro/services/soc_media",
+    "https://next-hub.pro/services/digital_marketing",
+    "https://next-hub.pro/services/analytics",
+    "https://next-hub.pro/website-maintenance-services",
+    "https://next-hub.pro/services/graphic_design",
   ],
 };
 
