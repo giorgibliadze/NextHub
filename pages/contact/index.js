@@ -7,6 +7,7 @@ import dynamic from "next/dynamic";
 import Head from "next/head";
 import { NextSeo } from "next-seo";
 import Script from "next/script";
+import { useLanguageState } from "../../components/LanguageStateProvider";
 const MapComponent = dynamic(() => import("../../components/MapComponent"), {
   ssr: false,
 });
@@ -20,10 +21,10 @@ const blurActiveElement = () => {
 };
 
 const Contact = () => {
-  const [email, setEmail] = useState("");
-  const [subject, setSubject] = useState("");
-  const [message, setMessage] = useState("");
-  const [name, setName] = useState("");
+  const [email, setEmail] = useLanguageState("contact-email", "");
+  const [subject, setSubject] = useLanguageState("contact-subject", "");
+  const [message, setMessage] = useLanguageState("contact-message", "");
+  const [name, setName] = useLanguageState("contact-name", "");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [successMessage, setSuccessMessage] = useState(null);

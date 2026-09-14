@@ -1,6 +1,33 @@
 /** @type {import('next-sitemap').IConfig} */
+const fs = require('fs');
+const path = require('path');
+
 const SITE_URL = 'https://next-hub.pro';
 const AI_DISCOVERY_FILES = ['/llms.txt', '/llms-full.txt', '/company.json'];
+
+function getFixedAppRoutes() {
+  const manifestPath = path.join(process.cwd(), '.next/app-path-routes-manifest.json');
+  const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+
+  return [...new Set(Object.values(manifest))].filter(
+    (routePath) => routePath !== '/_not-found' && !routePath.includes('['),
+  );
+}
+
+async function getBlogArticleRoutes() {
+  const bundlePath = path.join(
+    process.cwd(),
+    '.next/server/app/blog/[slug]/page.js',
+  );
+  const bundle = require(bundlePath);
+  const loaderTree = bundle.routeModule.userland.loaderTree;
+  const pageLoader =
+    loaderTree[1].children[1].children[1].children[2].page[0];
+  const pageModule = await pageLoader();
+  const params = await pageModule.generateStaticParams();
+
+  return params.flatMap(({ slug }) => [`/blog/${slug}`, `/en/blog/${slug}`]);
+}
 
 function changefreqForPath(routePath) {
   if (routePath === '/') return 'weekly';
@@ -36,11 +63,11 @@ module.exports = {
     '/login',
     '/api/*',
     '/payment/*',
+    '/en/payment/*',
     '/404',
     '/500',
-    '/services/seo',
-    '/services/tech_support',
     '/services/web_development',
+    '/services/webDevelopmentEN',
   ],
 
   transform: async (config, path) => {
@@ -51,12 +78,19 @@ module.exports = {
     };
   },
 
-  additionalPaths: async () =>
-    AI_DISCOVERY_FILES.map((path) => ({
-      loc: path,
-      changefreq: changefreqForPath(path),
-      priority: priorityForPath(path),
-    })),
+  additionalPaths: async () => {
+    const paths = [
+      ...AI_DISCOVERY_FILES,
+      ...getFixedAppRoutes(),
+      ...(await getBlogArticleRoutes()),
+    ];
+
+    return [...new Set(paths)].map((routePath) => ({
+      loc: routePath,
+      changefreq: changefreqForPath(routePath),
+      priority: priorityForPath(routePath),
+    }));
+  },
 
   robotsTxtOptions: {
     policies: [

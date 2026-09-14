@@ -2,6 +2,7 @@ import Link from "next/link";
 import BlogGrid from "../../components/BlogGrid";
 import BlogCard from "../../components/BlogCard";
 import { blogCategories, blogPosts } from "../../lib/blogData";
+import { getLanguageAlternates } from "../../lib/languageRoutes";
 
 const url = "https://next-hub.pro/blog";
 const title = "ბლოგი ვებ დეველოპმენტსა და SEO-ზე | Next-Hub Solutions";
@@ -22,7 +23,7 @@ export const metadata = {
   title,
   description,
   keywords,
-  alternates: { canonical: url },
+  alternates: getLanguageAlternates("/blog"),
   openGraph: {
     title,
     description,

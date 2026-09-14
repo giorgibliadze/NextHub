@@ -7,6 +7,7 @@ import {
   getPostUrl,
   getRelatedPosts,
 } from "../../../lib/blogData";
+import { getLanguageAlternates } from "../../../lib/languageRoutes";
 
 export function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }));
@@ -32,7 +33,7 @@ export async function generateMetadata({ params }) {
     title,
     description: post.description,
     keywords,
-    alternates: { canonical: url },
+    alternates: getLanguageAlternates(`/blog/${post.slug}`),
     openGraph: {
       title,
       description: post.description,

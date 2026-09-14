@@ -3,10 +3,12 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
+import { isEnglishRoute } from "../lib/languageRoutes";
 
 const Footer = () => {
   const footerRef = useRef(null);
   const pathname = usePathname();
+  const isEnglish = isEnglishRoute(pathname);
   const currentYear = new Date().getFullYear();
 
   useEffect(() => {
@@ -55,12 +57,12 @@ const Footer = () => {
       <div className="container relative z-[160] mx-auto">
         © {currentYear}{" "}
         <Link
-          href="https://next-hub.pro/"
+          href={isEnglish ? "/en" : "/"}
           className="text-white/75 transition-colors hover:text-accent"
         >
           Next-Hub Solutions
         </Link>
-        . ყველა უფლება დაცულია.
+        . {isEnglish ? "All rights reserved." : "ყველა უფლება დაცულია."}
       </div>
     </footer>
   );

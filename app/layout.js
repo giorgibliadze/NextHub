@@ -7,6 +7,9 @@ import MicrosoftClarity from "../components/MicrosoftClarity";
 import { companyProfile, siteUrl } from "../lib/aiSeo";
 import LazyVercelInsights from "../components/LazyVercelInsights";
 import Footer from "../components/Footer";
+import LanguageSwitcher from "../components/LanguageSwitcher";
+import { LanguageStateProvider } from "../components/LanguageStateProvider";
+import { headers } from "next/headers";
 
 export const metadata = {
   metadataBase: new URL("https://next-hub.pro"),
@@ -33,7 +36,8 @@ export const metadata = {
   icons: faviconIcons,
 };
 
-const siteEntitySchema = {
+function buildSiteEntitySchema(isEnglish) {
+  return {
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -80,21 +84,26 @@ const siteEntitySchema = {
       "@id": `${siteUrl}/#website`,
       url: siteUrl,
       name: companyProfile.name,
-      alternateName: [
-        "ვებსაიტის დამზადება საქართველოში",
-        "Next-Hub",
-      ],
+      alternateName: isEnglish
+        ? ["Website development in Georgia", "Next-Hub"]
+        : ["ვებსაიტის დამზადება საქართველოში", "Next-Hub"],
       publisher: { "@id": `${siteUrl}/#organization` },
-      inLanguage: "ka-GE",
+      inLanguage: isEnglish ? "en" : "ka-GE",
     },
   ],
 };
+}
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  const pathname = (await headers()).get("x-next-pathname") || "/";
+  const isEnglish = pathname === "/en" || pathname.startsWith("/en/");
+  const pageLanguage = isEnglish ? "en" : "ka-GE";
+  const siteEntitySchema = buildSiteEntitySchema(isEnglish);
+
   return (
-    <html lang="ka-GE">
+    <html lang={pageLanguage}>
       <head>
-        <meta httpEquiv="content-language" content="ka-GE" />
+        <meta httpEquiv="content-language" content={pageLanguage} />
         <script
           id="site-entity-schema"
           type="application/ld+json"
@@ -102,15 +111,18 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
-        <MicrosoftClarity />
-        <div className="page bg-site text-white bg-cover bg-no-repeat font-sora relative overflow-y-auto">
-          <LazyVercelInsights />
-          <TopLeftImg />
-          <Nav />
-          <Header />
-          {children}
-          <Footer />
-        </div>
+        <LanguageStateProvider>
+          <MicrosoftClarity />
+          <div className="page bg-site text-white bg-cover bg-no-repeat font-sora relative overflow-y-auto">
+            <LazyVercelInsights />
+            <TopLeftImg />
+            <Nav />
+            <Header />
+            {children}
+            <Footer />
+          </div>
+          <LanguageSwitcher />
+        </LanguageStateProvider>
       </body>
     </html>
   );

@@ -5,6 +5,7 @@ import { BsArrowRight } from "react-icons/bs";
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants"; // adjust path if needed
 import { v4 as uuidv4 } from "uuid";
+import { useLanguageState } from "./LanguageStateProvider";
 
 const initialFormData = {
   email: "",
@@ -21,7 +22,10 @@ const blurActiveElement = () => {
 };
 
 const ModalEN = ({ isOpen, onClose, cardData }) => {
-  const [formData, setFormData] = useState(initialFormData);
+  const [formData, setFormData] = useLanguageState(
+    "service-order-form",
+    initialFormData,
+  );
   const [loading, setLoading] = useState(false);
   const [payLoading, setPayLoading] = useState(false);
   const [error, setError] = useState(null);

@@ -1,6 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
+import { isEnglishRoute } from "../lib/languageRoutes";
 
 const orbitDots = [
   "top-1 left-1/2 -translate-x-1/2",
@@ -9,10 +11,12 @@ const orbitDots = [
 ];
 
 const BrandedLoader = ({ fullscreen = true }) => {
+  const pathname = usePathname() || "/";
+
   return (
     <motion.div
       role="status"
-      aria-label="იტვირთება"
+      aria-label={isEnglishRoute(pathname) ? "Loading" : "იტვირთება"}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}

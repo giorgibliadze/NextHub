@@ -17,6 +17,10 @@ const payload = {
     "https://next-hub.pro/services/analytics",
     "https://next-hub.pro/website-maintenance-services",
     "https://next-hub.pro/services/graphic_design",
+    "https://next-hub.pro/en",
+    "https://next-hub.pro/en/real-estate-websites",
+    "https://next-hub.pro/en/clinic-booking-systems",
+    "https://next-hub.pro/en/tourism-websites",
   ],
 };
 

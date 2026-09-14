@@ -1,5 +1,6 @@
 import BlogGrid from "../../../components/BlogGrid";
 import { blogCategories, getPostsByCategory } from "../../../lib/blogData";
+import { getLanguageAlternates } from "../../../lib/languageRoutes";
 
 const category = blogCategories.find((item) => item.slug === "web-design");
 const url = "https://next-hub.pro/blog/web-design";
@@ -17,7 +18,7 @@ export const metadata = {
     "website design Georgia",
     "SEO რჩევები",
   ],
-  alternates: { canonical: url },
+  alternates: getLanguageAlternates("/blog/web-design"),
   openGraph: {
     title: "ვებ დიზაინის ბლოგი | Next-Hub Solutions",
     description: category.description,

@@ -1,0 +1,302 @@
+/* eslint-disable react/no-unescaped-entities */
+import React, { useState, useEffect } from "react";
+import ImageGallery from "../../../components/en/ImageGallery";
+import PriceCard from "../../../components/en/PriceCard";
+import Modal from "../../../components/en/Modal";
+import { motion } from "framer-motion";
+import { fadeIn } from "../../../variants";
+import { NextSeo } from "next-seo";
+import Script from "next/script";
+
+const CANONICAL = "https://next-hub.pro/en/services/tech_support";
+
+const TechSupport = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedCardData, setSelectedCardData] = useState(null);
+
+  const handlePurchaseClick = (cardData) => {
+    setSelectedCardData(cardData);
+    setIsModalOpen(true);
+  };
+
+  useEffect(() => {
+    document.body.classList.toggle("modal-open", isModalOpen);
+  }, [isModalOpen]);
+
+  const images = [
+    {
+      src: "/analytics.webp",
+      alt: "SEO optimization and Google Analytics",
+    },
+    {
+      src: "/customer-satisfaction3.webp",
+      alt: "Web support.",
+    },
+  ];
+
+  const priceCardsData = [
+    {
+      title: "Standard.",
+      price: 700,
+      product_id: 4,
+      features: [
+        "Website optimization.",
+        "Basic SEO management",
+        "Social Media Management.",
+        "regular reports.",
+        "Technical support.",
+      ],
+      onButtonClick: () =>
+        handlePurchaseClick({
+          title: "Standard.",
+          price: 700,
+          product_id: 4,
+          features: [
+            "Website optimization.",
+            "Basic SEO management",
+            "Social Media Management.",
+            "regular reports.",
+            "Technical support.",
+          ],
+        }),
+    },
+    {
+      title: "Premium.",
+      price: 1000,
+      product_id: 5,
+      features: [
+        "Everything is standard.",
+        "extended SEO management",
+        "content strategy.",
+        "Google Ads management",
+        "Social media campaigns.",
+        "custom reports.",
+      ],
+      onButtonClick: () =>
+        handlePurchaseClick({
+          title: "Premium.",
+          price: 1000,
+          product_id: 5,
+          features: [
+            "Everything is standard.",
+            "extended SEO management",
+            "content strategy.",
+            "Google Ads management",
+            "Social media campaigns.",
+            "custom reports.",
+          ],
+        }),
+    },
+    {
+      title: "Business.",
+      price: 1500,
+      product_id: 6,
+      features: [
+        "all in premium.",
+        "ongoing support and consultation.",
+        "Business Strategy Analysis.",
+        "Advanced Analytics.",
+        "A/B Testing and optimization",
+        "Custom digital marketing campaigns.",
+      ],
+      onButtonClick: () =>
+        handlePurchaseClick({
+          title: "Business.",
+          price: 1500,
+          product_id: 6,
+          features: [
+            "all in premium.",
+            "ongoing support and consultation.",
+            "Business Strategy Analysis.",
+            "Advanced Analytics.",
+            "A/B Testing and optimization",
+            "Custom digital marketing campaigns.",
+          ],
+        }),
+    },
+  ];
+
+  return (
+    <>
+      <NextSeo
+        canonical={CANONICAL}
+        title="Next-Hub Solutions."
+        description="Web site technical support for business: site maintenance, security, speed, SEO control, updates and stable operation."
+        openGraph={{
+          type: "website",
+          locale: "en_US",
+          url: CANONICAL,
+          site_name: "Next-Hub Solutions",
+          title: "Next-Hub Solutions.",
+          description:
+            "Web site technical support for business: site maintenance, security, speed, SEO control, updates and stable operation.",
+          images: [
+            {
+              url: "https://next-hub.pro/nexthub.jpg",
+              width: 1200,
+              height: 630,
+              alt: "Site management and technical support.",
+            },
+          ],
+        }}
+        twitter={{
+          cardType: "summary_large_image",
+        }}
+        additionalMetaTags={[
+          {
+            name: "author",
+            content: "Next-Hub Solutions",
+          },
+          {
+            name: "robots",
+            content: "index,follow,max-image-preview:large",
+          },
+          {
+            name: "keywords",
+            content:
+              "Web site technical support, site optimization, website maintenance Georgia, website support Tbilisi, site maintenance, website security, SEO optimization, technical support Tbilisi, Next-Hub Solutions",
+          },
+        ]}
+      />
+
+      <Script
+        id="tech-support-schema"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: "Site management and technical support.",
+            serviceType: "Website Maintenance and Technical Support",
+            url: CANONICAL,
+            description:
+              "Web site technical support for business: security, speed, SEO control, updates and stable site operation.",
+            provider: {
+              "@type": "Organization",
+              name: "Next-Hub Solutions",
+              url: "https://next-hub.pro/en",
+              logo: "https://next-hub.pro/logo.png",
+            },
+            areaServed: {
+              "@type": "Country",
+              name: "Georgia",
+            },
+            offers: {
+              "@type": "Offer",
+              priceCurrency: "GEL",
+              price: "700",
+              availability: "https://schema.org/InStock",
+            },
+          }),
+        }}
+      />
+
+      {isModalOpen ? (
+        <Modal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          cardData={selectedCardData}
+        />
+      ) : (
+        <div className="flex min-h-screen flex-col items-center justify-start px-4 md:px-8 xl:px-10 py-28 md:py-44 smx:text-center overflow-x-hidden">
+          <motion.h1
+            variants={fadeIn("up", 0.1)}
+            initial="hidden"
+            animate="show"
+            exit="hidden"
+            className="text-4xl md:text-6xl font-bold xl:mt-8 text-center"
+          >
+            technical support and website management.
+            <span className="text-accent">.</span>
+          </motion.h1>
+
+          <motion.p
+            variants={fadeIn("up", 0.15)}
+            initial="hidden"
+            animate="show"
+            exit="hidden"
+            className="mt-4 max-w-3xl text-center text-sm md:text-lg leading-7 md:leading-8 text-white/80"
+          >
+            we take care of your website's smooth operation, speed, security, SEO optimization, and digital channel management.
+          </motion.p>
+
+          <motion.div
+            variants={fadeIn("up", 0.2)}
+            initial="hidden"
+            animate="show"
+            exit="hidden"
+            className="my-10 md:my-12 w-full"
+          >
+            <ImageGallery images={images} />
+          </motion.div>
+
+          <motion.section
+            variants={fadeIn("up", 0.22)}
+            initial="hidden"
+            animate="show"
+            exit="hidden"
+            className="max-w-6xl mx-auto mb-14 md:mb-20 px-4 md:px-6 py-8 md:py-12 rounded-[24px] md:rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-md shadow-2xl"
+          >
+            <div className="text-center mb-8 md:mb-10">
+              <span className="inline-block mb-4 px-4 md:px-5 py-2 rounded-full bg-accent/10 text-accent text-xs md:text-sm font-semibold">
+                Website maintenance.
+              </span>
+
+              <h2 className="text-2xl md:text-5xl font-bold mb-5 md:mb-6 leading-tight">
+                Site management, SEO and technical support.
+              </h2>
+
+              <p className="max-w-3xl mx-auto text-white/70 text-sm md:text-lg leading-7 md:leading-8">
+                Next-Hub helps businesses manage their websites regularly, update their technology, monitor their security, speed up, and optimize their search engines.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+              <div className="rounded-2xl bg-black/20 border border-white/10 p-5 md:p-6">
+                <h3 className="text-lg md:text-xl font-bold mb-3 text-accent">
+                  Website technical support
+                </h3>
+                <p className="text-white/70 leading-7 text-sm">
+                  we monitor the proper functioning of the website, fix technical flaws, and help the site to function steadily.
+                </p>
+              </div>
+
+              <div className="rounded-2xl bg-black/20 border border-white/10 p-5 md:p-6">
+                <h3 className="text-lg md:text-xl font-bold mb-3 text-accent">
+                  SEO and site optimization.
+                </h3>
+                <p className="text-white/70 leading-7 text-sm">
+                  we're working on the site structure, metadata, speed and technical SEO to make Google a better reader of your pages.
+                </p>
+              </div>
+
+              <div className="rounded-2xl bg-black/20 border border-white/10 p-5 md:p-6">
+                <h3 className="text-lg md:text-xl font-bold mb-3 text-accent">
+                  Google Ads and analytics.
+                </h3>
+                <p className="text-white/70 leading-7 text-sm">
+                  helping you manage Google Ads campaigns, integrate Analytics-, monitor results and report on them.
+                </p>
+              </div>
+            </div>
+          </motion.section>
+
+          <motion.div
+            variants={fadeIn("up", 0.3)}
+            initial="hidden"
+            animate="show"
+            exit="hidden"
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 px-4 md:px-10 w-full max-w-6xl"
+          >
+            {priceCardsData.map((cardData, index) => (
+              <PriceCard key={index} {...cardData} />
+            ))}
+          </motion.div>
+        </div>
+      )}
+    </>
+  );
+};
+
+export default TechSupport;

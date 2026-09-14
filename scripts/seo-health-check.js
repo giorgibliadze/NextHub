@@ -9,6 +9,7 @@ const componentPageProviders = [
   "SeoLandingPage",
   "SeoFaqPage",
   "BlogPostLayout",
+  "EnglishSolutionPage",
 ];
 
 const errors = [];
@@ -58,6 +59,7 @@ function checkLanguageTags() {
       /<Html\b[^>]*\blang=\{pageLang\}/.test(source) &&
       /content=\{pageLang\}/.test(source) &&
       /ctx\.pathname\s*===\s*["']\/services\/webDevelopmentEN["']/.test(source) &&
+      /ctx\.pathname\.startsWith\(["']\/en["']\)/.test(source) &&
       /\?\s*["']en["']\s*:\s*["']ka-GE["']/.test(source);
 
     if (!hasStaticGeorgianLanguage && !hasRouteAwareLanguage) {
@@ -69,9 +71,19 @@ function checkLanguageTags() {
 
   if (fs.existsSync(path.join(root, layoutPath))) {
     const source = read(layoutPath);
+    const hasStaticGeorgianLanguage = /<html\b[^>]*\blang=["']ka-GE["']/.test(
+      source
+    );
+    const hasRouteAwareLanguage =
+      /<html\b[^>]*\blang=\{pageLanguage\}/.test(source) &&
+      /content=\{pageLanguage\}/.test(source) &&
+      /pathname\.startsWith\(["']\/en\/["']\)/.test(source) &&
+      /isEnglish\s*\?\s*["']en["']\s*:\s*["']ka-GE["']/.test(source);
 
-    if (!/<html\b[^>]*\blang=["']ka-GE["']/.test(source)) {
-      errors.push(`${layoutPath}: missing <html lang="ka-GE">`);
+    if (!hasStaticGeorgianLanguage && !hasRouteAwareLanguage) {
+      errors.push(
+        `${layoutPath}: missing valid Georgian default and English route language handling`
+      );
     }
   }
 }

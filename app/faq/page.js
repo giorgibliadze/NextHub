@@ -1,4 +1,5 @@
 import SeoFaqPage from "../../components/SeoFaqPage";
+import { getLanguageAlternates } from "../../lib/languageRoutes";
 import { buildFaqSchemas, faqGroups } from "../../lib/seoPages";
 
 const url = "https://next-hub.pro/faq";
@@ -21,7 +22,7 @@ export const metadata = {
   title,
   description,
   keywords,
-  alternates: { canonical: url },
+  alternates: getLanguageAlternates("/faq"),
   openGraph: {
     title,
     description,

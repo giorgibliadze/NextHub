@@ -72,18 +72,18 @@ const workSlides = {
           link: "https://jewelrytools.ge/",
           status: "დასრულებული",
         },
-        {
-          title: "NbFurniture",
-          path: "/NbFurniture.png",
-          link: "https://nbfurniture.ge/",
-          status: "დასრულებული",
-        },
-        {
-          title: "Ninos-ia",
-          path: "/ninos-ia.png",
-          link: "https://ninosia.pro/shop/",
-          status: "დასრულებული",
-        },
+        // {
+        //   title: "NbFurniture",
+        //   path: "/NbFurniture.png",
+        //   link: "https://nbfurniture.ge/",
+        //   status: "დასრულებული",
+        // },
+        // {
+        //   title: "Ninos-ia",
+        //   path: "/ninos-ia.png",
+        //   link: "https://ninosia.pro/shop/",
+        //   status: "დასრულებული",
+        // },
         {
           title: "Core",
           path: "/core.png",
@@ -114,24 +114,24 @@ const workSlides = {
         //   link: "https://palocksmithservice.com/",
         //   status: "დასრულებული",
         // },
-        {
-          title: "WakeUp",
-          path: "/WakeUp.png",
-          link: "https://wakeup.ge",
-          status: "მიმდინარე",
-        },
-        {
-          title: "EchelonEngineering",
-          path: "/EchelonEngineering.png",
-          link: "https://echelonengineering.ge",
-          status: "მიმდინარე",
-        },
-        {
-          title: "GeoArtConstruction",
-          path: "/GeoArtConstruction.png",
-          link: "https://geoartconstruction.ge",
-          status: "მიმდინარე",
-        },
+        // {
+        //   title: "WakeUp",
+        //   path: "/WakeUp.png",
+        //   link: "https://wakeup.ge",
+        //   status: "მიმდინარე",
+        // },
+        // {
+        //   title: "EchelonEngineering",
+        //   path: "/EchelonEngineering.png",
+        //   link: "https://echelonengineering.ge",
+        //   status: "მიმდინარე",
+        // },
+        // {
+        //   title: "GeoArtConstruction",
+        //   path: "/GeoArtConstruction.png",
+        //   link: "https://geoartconstruction.ge",
+        //   status: "მიმდინარე",
+        // },
         // {
         //   title: "katta",
         //   path: "/Katta.png",

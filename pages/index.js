@@ -4,11 +4,14 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import RotatingWords from "../components/RotatingWords";
+import IndustrySolutions from "../components/IndustrySolutions";
 
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
 import { NextSeo } from "next-seo";
 import Script from "next/script";
+import { getHomeLanguageAlternates } from "../lib/languageRoutes";
+import { useLanguageState } from "../components/LanguageStateProvider";
 
 export const metadata = {
   metadataBase: new URL("https://next-hub.pro"),
@@ -64,7 +67,10 @@ const WebsitePriceCalculator = dynamic(
 
 const Home = () => {
   const [showParticles, setShowParticles] = useState(false);
-  const [showCalculator, setShowCalculator] = useState(false);
+  const [showCalculator, setShowCalculator] = useLanguageState(
+    "home-calculator-visible",
+    false,
+  );
   const [disableBelowFoldMotion, setDisableBelowFoldMotion] = useState(false);
   const calculatorRef = useRef(null);
   const words = ["ვებსაიტები ", "ონლაინ მაღაზიები ", "ვებ აპლიკაციები "];
@@ -167,7 +173,7 @@ const Home = () => {
     observer.observe(node);
 
     return () => observer.disconnect();
-  }, [showCalculator]);
+  }, [setShowCalculator, showCalculator]);
 
   const belowFoldMotionProps = disableBelowFoldMotion
     ? {
@@ -353,6 +359,7 @@ const Home = () => {
         canonical={canonical}
         title={homeTitle}
         description={metaDescription}
+        languageAlternates={getHomeLanguageAlternates()}
         openGraph={{
           type: "website",
           locale: "ka_GE",
@@ -525,6 +532,8 @@ const Home = () => {
         <div id="website-calculator" ref={calculatorRef}>
           {showCalculator ? <WebsitePriceCalculator /> : <CalculatorSkeleton />}
         </div>
+
+        <IndustrySolutions className="homepage-below-fold-section mb-14 md:mb-20" />
 
         <motion.section
           {...belowFoldMotionProps}

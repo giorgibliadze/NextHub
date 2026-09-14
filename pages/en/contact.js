@@ -1,0 +1,292 @@
+import { useState, useRef } from "react";
+import { BsArrowRight } from "react-icons/bs";
+import { motion } from "framer-motion";
+import { fadeIn } from "../../variants";
+import ModernSection from "../../components/en/ModernSection";
+import dynamic from "next/dynamic";
+import Head from "next/head";
+import { NextSeo } from "next-seo";
+import Script from "next/script";
+import { useLanguageState } from "../../components/LanguageStateProvider";
+const MapComponent = dynamic(() => import("../../components/en/MapComponent"), {
+  ssr: false,
+});
+
+const CANONICAL = "https://next-hub.pro/en/contact";
+
+const blurActiveElement = () => {
+  if (typeof document !== "undefined") {
+    document.activeElement?.blur?.();
+  }
+};
+
+const Contact = () => {
+  const [email, setEmail] = useLanguageState("contact-email", "");
+  const [subject, setSubject] = useLanguageState("contact-subject", "");
+  const [message, setMessage] = useLanguageState("contact-message", "");
+  const [name, setName] = useLanguageState("contact-name", "");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [successMessage, setSuccessMessage] = useState(null);
+
+  const formRef = useRef(null);
+
+  const send = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError(null);
+    setSuccessMessage(null);
+
+    try {
+      const res = await fetch("/api/sendMail", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          to: "info@next-hub.pro",
+          name,
+          subject,
+          body: `<div>
+            <p><strong>Name:</strong>${name}</p>
+            <p><strong>Email:</strong>${email}</p>
+            <p><strong>Message:</strong>${message}</p>
+          </div>`,
+        }),
+      });
+      const data = await res.json();
+      if (res.ok) {
+        formRef.current?.reset();
+        setName("");
+        setEmail("");
+        setSubject("");
+        setMessage("");
+        setError(null);
+        setSuccessMessage("Email sent successfully");
+        blurActiveElement();
+      } else {
+        setError(`Failed to send email: ${data.message}`);
+      }
+    } catch (err) {
+      setError(`Failed to send email: ${err.message}`);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <>
+      <NextSeo
+        canonical={CANONICAL}
+        title="Contact."
+        description="contact Next-Hub Solutions- for website ordering, SEO optimization, web design and digital services."
+        openGraph={{
+          type: "website",
+          locale: "en_US",
+          url: CANONICAL,
+          site_name: "Next-Hub Solutions",
+          title: "Contact.",
+          description:
+            "contact Next-Hub Solutions- for website ordering, SEO optimization, web design and digital services.",
+          images: [
+            {
+              url: "https://next-hub.pro/nexthub.jpg",
+              width: 1200,
+              height: 630,
+              alt: "Next-Hub Solutions contact",
+            },
+          ],
+        }}
+        twitter={{
+          cardType: "summary_large_image",
+        }}
+        additionalMetaTags={[
+          {
+            name: "twitter:title",
+            content: "Contact.",
+          },
+          {
+            name: "author",
+            content: "Next-Hub Solutions",
+          },
+          {
+            name: "robots",
+            content: "index,follow,max-image-preview:large",
+          },
+          {
+            name: "keywords",
+            content:
+              "NextHub Contact, ordering the website, building the website Tbilisi, contact web agency Georgia, building the website, building the website, optimizing the SEO, Next-Hub Solutions, website development Georgia, web design Tbilisi",
+          },
+        ]}
+      />
+
+      <Script
+        id="contact-local-business-schema"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            name: "Next-Hub Solutions",
+            image: "https://next-hub.pro/nexthub.jpg",
+            url: "https://next-hub.pro/en",
+            telephone: "+995555137003",
+            email: "info@next-hub.pro",
+            priceRange: "₾₾",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "Spring 6",
+              addressLocality: "Tbilisi",
+              addressCountry: "GE",
+            },
+            areaServed: {
+              "@type": "Country",
+              name: "Georgia",
+            },
+            contactPoint: {
+              "@type": "ContactPoint",
+              telephone: "+995555137003",
+              contactType: "customer service",
+              email: "info@next-hub.pro",
+              availableLanguage: ["Georgian", "English"],
+            },
+            sameAs: ["https://next-hub.pro/"],
+          }),
+        }}
+      />
+
+      {/* page */}
+      <div className="h-screen bg-primary/30">
+        <motion.div
+          variants={fadeIn("up", 0.4)}
+          initial="hidden"
+          animate="show"
+          exit="hidden"
+          className="flex flex-col items-center p-5 rounded-2xl mb-12 md:mb-20 mt-[80px]"
+        >
+          <MapComponent />
+        </motion.div>
+        <div className="container mx-auto py-24 text-center xl:text-left flex flex-col items-center justify-center h-full mt-[250px] lg:mt-0 lgx-mt-[40px]">
+          <ModernSection />
+          {/* text & form */}
+          <div className="flex flex-col w-full max-w-[700px] px-4 md:px-0 mt-16">
+            <motion.h1
+              variants={fadeIn("up", 0.2)}
+              initial="hidden"
+              animate="show"
+              exit="hidden"
+              className="h2 text-center mb-10 lg:text-[45px] xxx:text-[60px] smx:text-[30px]"
+            >
+              Contact us
+            </motion.h1>
+
+            <motion.form
+              ref={formRef}
+              variants={fadeIn("up", 0.4)}
+              initial="hidden"
+              animate="show"
+              exit="hidden"
+              className="mobile-bottom-safe-space flex-1 items-center flex flex-col gap-4 w-full mx-auto my-auto mb-[200px] lg:mb-[100px]"
+              onSubmit={send}
+            >
+              <div className="flex flex-col md:flex-row gap-4 w-full">
+                <div className="form-field-shell w-full">
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="name."
+                    className="nh-field text-center"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    autoComplete="name"
+                    data-autofill-safe="true"
+                    required
+                  />
+                </div>
+                <div className="form-field-shell w-full">
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Email"
+                    className="nh-field text-center"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    autoComplete="email"
+                    data-autofill-safe="true"
+                    required
+                  />
+                </div>
+              </div>
+              <div className="form-field-shell w-full">
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  placeholder="Topic"
+                  className="nh-field text-center"
+                  value={subject}
+                  onChange={(e) => setSubject(e.target.value)}
+                  autoComplete="off"
+                  data-autofill-safe="true"
+                  required
+                />
+              </div>
+              <div className="form-field-shell w-full">
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="message."
+                  className="nh-field text-center"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  autoComplete="off"
+                  required
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                className="btn rounded-full border border-white/50 max-w-[170px] px-8 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accent group"
+                disabled={loading}
+              >
+                <span className="group-hover:-translate-y-[120%] group-hover:opacity-0 transition-all duration-500">
+                  {loading ? "Send..." : "Send"}
+                </span>
+                <BsArrowRight className="-translate-y-[120%] opacity-0 group-hover:flex group-hover:-translate-y-0 group-hover:opacity-100 transition-all duration-300 absolute text-[22px]" />
+              </button>
+              {error && <p className="text-red-500 mt-2">{error}</p>}
+              {successMessage && (
+                <p className="text-green-500 mt-2">{successMessage}</p>
+              )}
+            </motion.form>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Contact;
+
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      name: "Next-Hub Solutions",
+      url: "https://next-hub.pro/en",
+      telephone: "+995555137003",
+      email: "info@next-hub.pro",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Spring 6",
+        addressLocality: "Tbilisi",
+        addressCountry: "GE",
+      },
+    }),
+  }}
+/>;

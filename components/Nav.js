@@ -31,6 +31,9 @@ const servicePaths = [
   "/web-design",
   "/webdevelopment",
   "/website-maintenance-services",
+  "/real-estate-websites",
+  "/clinic-booking-systems",
+  "/tourism-websites",
 ];
 
 //next link
@@ -38,13 +41,21 @@ import Link from "next/link";
 
 //next navigation
 import { usePathname } from "next/navigation";
+import { isEnglishRoute } from "../lib/languageRoutes";
 
 function isActivePath(pathname, path) {
-  if (path === "/") {
+  if (path === "/" || path === "/en") {
     return pathname === path;
   }
 
   if (path === "/services" && servicePaths.includes(pathname)) {
+    return true;
+  }
+
+  if (
+    path === "/en/services" &&
+    servicePaths.some((servicePath) => pathname === `/en${servicePath}`)
+  ) {
     return true;
   }
 
@@ -53,18 +64,48 @@ function isActivePath(pathname, path) {
 
 const Nav = () => {
   const pathname = usePathname() || "/";
+  const isEnglish = isEnglishRoute(pathname);
+  const links = isEnglish
+    ? [
+        { name: "home", label: "English home", path: "/en", icon: <HiHome /> },
+        {
+          name: "about",
+          label: "About us",
+          path: "/en/about",
+          icon: <HiUser />,
+        },
+        {
+          name: "services",
+          label: "Services",
+          path: "/en/services",
+          icon: <HiRectangleGroup />,
+        },
+        {
+          name: "work",
+          label: "Portfolio",
+          path: "/en/work",
+          icon: <HiViewColumns />,
+        },
+        {
+          name: "contact",
+          label: "Contact Next-Hub Solutions",
+          path: "/en/contact",
+          icon: <HiEnvelope />,
+        },
+      ]
+    : navData;
 
   return (
     <nav className="flex flex-col items-center xl:justify-center gap-y-4 fixed h-max bottom-0 mt-auto xl:right-[2%] z-150 top-0 w-full xl:w-16 xl:max-w-md xl:h-screen">
       {/* inner */}
       <div className="flex w-full xl:flex-col items-center justify-between z-50 xl:justify-center gap-y-10 px-4 md:px-40 xl:px-0 h-[80px] xl:h-max py-8 bg-white/10 backdrop-blur-sm text-3xl xl:text-xl xl:rounded-full">
-        {navData.map((link, index) => {
+        {links.map((link) => {
           return (
             <Link
               className={`${
                 isActivePath(pathname, link.path) ? "text-accent" : ""
               } relative flex item-center group hover:text-accent transition-all duration-300`}
-              key={index}
+              key={link.path}
               href={link.path}
               aria-label={link.label}
             >

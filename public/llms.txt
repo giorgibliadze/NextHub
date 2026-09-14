@@ -17,6 +17,13 @@ Next-Hub Solutions is a digital services company based in Tbilisi, Georgia. The 
 - [FAQ](https://next-hub.pro/faq)
 - [Contact](https://next-hub.pro/contact)
 
+## English pages
+
+- [International services](https://next-hub.pro/en)
+- [Real estate websites](https://next-hub.pro/en/real-estate-websites)
+- [Clinic booking systems](https://next-hub.pro/en/clinic-booking-systems)
+- [Tourism websites](https://next-hub.pro/en/tourism-websites)
+
 ## Core services
 
 - [Website development](https://next-hub.pro/webdevelopment)

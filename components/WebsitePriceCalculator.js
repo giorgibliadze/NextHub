@@ -2,6 +2,7 @@
 
 import { useMemo, useRef, useState } from "react";
 import Link from "next/link";
+import { useLanguageState } from "./LanguageStateProvider";
 
 const websiteTypes = [
   { label: "ლენდინგ გვერდი", value: "landing", price: 500 },
@@ -85,14 +86,30 @@ export default function WebsitePriceCalculator({
   title = "ვებსაიტის ფასის კალკულატორი",
   description = "აირჩიეთ საჭირო ფუნქციონალი და მიიღეთ სავარაუდო ბიუჯეტი.",
 }) {
-  const [websiteType, setWebsiteType] = useState(initialCalculatorState.websiteType);
-  const [pageCount, setPageCount] = useState(initialCalculatorState.pageCount);
-  const [designLevel, setDesignLevel] = useState(initialCalculatorState.designLevel);
-  const [technology, setTechnology] = useState(initialCalculatorState.technology);
-  const [selectedFeatures, setSelectedFeatures] = useState(
+  const [websiteType, setWebsiteType] = useLanguageState(
+    "website-calculator-type",
+    initialCalculatorState.websiteType,
+  );
+  const [pageCount, setPageCount] = useLanguageState(
+    "website-calculator-pages",
+    initialCalculatorState.pageCount,
+  );
+  const [designLevel, setDesignLevel] = useLanguageState(
+    "website-calculator-design",
+    initialCalculatorState.designLevel,
+  );
+  const [technology, setTechnology] = useLanguageState(
+    "website-calculator-technology",
+    initialCalculatorState.technology,
+  );
+  const [selectedFeatures, setSelectedFeatures] = useLanguageState(
+    "website-calculator-features",
     initialCalculatorState.selectedFeatures
   );
-  const [leadForm, setLeadForm] = useState(initialLeadForm);
+  const [leadForm, setLeadForm] = useLanguageState(
+    "website-calculator-lead",
+    initialLeadForm,
+  );
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formError, setFormError] = useState("");
   const [formSuccess, setFormSuccess] = useState("");

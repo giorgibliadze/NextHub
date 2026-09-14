@@ -5,6 +5,8 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import Layout from "../components/Layout";
 import BrandedLoader from "../components/BrandedLoader";
 import MicrosoftClarity from "../components/MicrosoftClarity";
+import { LanguageStateProvider } from "../components/LanguageStateProvider";
+import { isEquivalentLanguageSwitch } from "../lib/languageRoutes";
 
 //router
 import { useRouter } from "next/router";
@@ -22,6 +24,7 @@ function MyApp({ Component, pageProps }) {
   const transitionId = useRef(0);
   const pendingRoute = useRef(null);
   const routeChangeComplete = useRef(false);
+  const languageTransition = useRef(false);
   const loaderShownAt = useRef(Date.now());
   const exitTimer = useRef(null);
   const readyTimer = useRef(null);
@@ -75,6 +78,14 @@ function MyApp({ Component, pageProps }) {
     scheduleReady(transitionId.current);
 
     const handleStart = (url) => {
+      if (isEquivalentLanguageSwitch(router.asPath, url)) {
+        languageTransition.current = true;
+        clearTransitionTimers();
+        updatePhase("ready");
+        return;
+      }
+
+      languageTransition.current = false;
       const currentTransitionId = transitionId.current + 1;
       transitionId.current = currentTransitionId;
       pendingRoute.current = url;
@@ -88,6 +99,14 @@ function MyApp({ Component, pageProps }) {
     };
 
     const handleComplete = () => {
+      if (languageTransition.current) {
+        languageTransition.current = false;
+        pendingRoute.current = null;
+        routeChangeComplete.current = false;
+        updatePhase("ready");
+        return;
+      }
+
       routeChangeComplete.current = true;
 
       if (phaseRef.current === "loading") {
@@ -96,6 +115,7 @@ function MyApp({ Component, pageProps }) {
     };
 
     const handleError = () => {
+      languageTransition.current = false;
       transitionId.current += 1;
       pendingRoute.current = null;
       routeChangeComplete.current = false;
@@ -113,7 +133,14 @@ function MyApp({ Component, pageProps }) {
       router.events.off("routeChangeComplete", handleComplete);
       router.events.off("routeChangeError", handleError);
     };
-  }, [clearTransitionTimers, router.events, scheduleReady, showLoader, updatePhase]);
+  }, [
+    clearTransitionTimers,
+    router.asPath,
+    router.events,
+    scheduleReady,
+    showLoader,
+    updatePhase,
+  ]);
 
   useEffect(() => {
     document.body.classList.toggle("loading-active", phase === "loading");
@@ -126,14 +153,13 @@ function MyApp({ Component, pageProps }) {
   const pageVisible = phase === "idle" || phase === "ready";
 
   return (
-    <>
+    <LanguageStateProvider>
       <MicrosoftClarity />
       <AnimatePresence mode="wait">
         {phase === "loading" && <BrandedLoader key="global-loader" />}
       </AnimatePresence>
       <Layout>
         <motion.div
-          key={router.asPath}
           initial={false}
           animate={{
             opacity: pageVisible ? 1 : 0,
@@ -147,7 +173,7 @@ function MyApp({ Component, pageProps }) {
           <Component {...pageProps} />
         </motion.div>
       </Layout>
-    </>
+    </LanguageStateProvider>
   );
 }
 

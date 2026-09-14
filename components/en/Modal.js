@@ -1,0 +1,450 @@
+import { useState, useRef, useEffect } from "react";
+import { BsArrowRight } from "react-icons/bs";
+import { motion } from "framer-motion";
+import { fadeIn } from "../../variants";
+import { v4 as uuidv4 } from "uuid";
+import { useLanguageState } from "../LanguageStateProvider";
+
+const initialFormData = {
+  email: "",
+  phone: "",
+  subject: "",
+  message: "",
+  name: "",
+};
+
+const blurActiveElement = () => {
+  if (typeof document !== "undefined") {
+    document.activeElement?.blur?.();
+  }
+};
+
+const Modal = ({ isOpen, onClose, cardData }) => {
+  const [formData, setFormData] = useLanguageState(
+    "service-order-form",
+    initialFormData,
+  );
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [successMessage, setSuccessMessage] = useState(null);
+  const [paymentDetails, setPaymentDetails] = useState(null); // State for payment details
+  const [generatedOrderId, setGeneratedOrderId] = useState(null);
+  const formRef = useRef(null);
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const validateForm = () => {
+    if (
+      !formData.name ||
+      !formData.email ||
+      !formData.phone ||
+      !formData.subject ||
+      !formData.message
+    ) {
+      setError("Please fill out all the fields.");
+      return false;
+    }
+    return true;
+  };
+
+  const send = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError(null);
+    setSuccessMessage(null);
+
+    try {
+      const res = await fetch("/api/sendMail", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          to: "info@next-hub.pro",
+          ...formData,
+          body: `<div>
+            <p><strong>Name:</strong>${formData.name}</p>
+            <p><strong>Email:</strong>${formData.email}</p>
+            <p><strong>Phone:</strong>${formData.phone}</p>
+            <p><strong>Message:</strong>${formData.message}</p>
+          </div>`,
+        }),
+      });
+
+      const data = await res.json();
+      if (res.ok) {
+        formRef.current?.reset();
+        setFormData(initialFormData);
+        setError(null);
+        setSuccessMessage("order received.");
+        blurActiveElement();
+      } else {
+        setError(`Could not submit the order:${data.message}`);
+      }
+    } catch (err) {
+      setError(`Could not submit the order:${err.message}`);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const getAuthToken = async () => {
+    try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/getAuthToken`,
+      );
+      const data = await response.json();
+      console.log("Token fetched successfully:", data.access_token);
+      return data.access_token;
+    } catch (error) {
+      console.error("Error fetching auth token:", error);
+      throw new Error("Authentication failed");
+    }
+  };
+
+  const createOrder = async (e) => {
+    e.preventDefault(); // Prevent default form submission
+    setError(null);
+    setSuccessMessage(null);
+
+    // Validate the form first
+    if (!validateForm()) {
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const token = await getAuthToken(); // Retrieve the token first
+      const orderId = uuidv4(); // Generate a unique ID
+      setGeneratedOrderId(orderId); // Store the generated ID
+      const orderDetails = {
+        callback_url: "https://next-hub.pro/api/callback",
+        external_order_id: orderId,
+        purchase_units: {
+          currency: "GEL",
+          total_amount: cardData.price,
+          basket: [
+            {
+              quantity: 1,
+              unit_price: cardData.price,
+              product_id: cardData.product_id,
+            },
+          ],
+        },
+        redirect_urls: {
+          fail: "https://next-hub.pro/en/payment/fail",
+          success: "https://next-hub.pro/en/payment/success",
+        },
+      };
+
+      const res = await fetch("/api/createOrder", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ token, orderDetails }),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        const orderIdFromResponse = data.id; // Get the correct order ID
+        const orderStatus = data.status || "pending"; // Assuming "pending" is a valid status
+
+        await fetchPaymentDetails(orderIdFromResponse); // Pass it to the fetchPaymentDetails function
+        console.log("Order created successfully:", data);
+
+        // Save payment details to MongoDB using Prisma
+        await savePayment({
+          orderId: orderIdFromResponse,
+          status: orderStatus,
+          amount: cardData.price,
+          currency: "GEL",
+          buyerName: formData.name,
+          buyerEmail: formData.email,
+          buyerPhone: formData.phone,
+          subject: formData.subject, // New field
+          message: formData.message, // New field
+        });
+
+        window.location.href = data._links.redirect.href;
+      } else {
+        setError(`Order creation failed: ${data.message}`);
+        console.error("Order creation failed:", data);
+      }
+    } catch (err) {
+      setError(`Order creation failed: ${err.message}`);
+      console.error("Order creation error:", err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Function to save payment details
+  const savePayment = async (paymentData) => {
+    try {
+      const res = await fetch("/api/savePayment", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(paymentData),
+      });
+
+      const responseText = await res.text(); // Capture the raw response text
+
+      // Check if the response is empty
+      if (!responseText) {
+        throw new Error("Empty response from server");
+      }
+
+      // Try to parse the JSON response
+      let data;
+      try {
+        data = JSON.parse(responseText);
+      } catch (parseError) {
+        console.error("Failed to parse JSON response:", responseText);
+        throw new Error("Failed to parse JSON response");
+      }
+
+      if (!res.ok) {
+        console.error("Failed to save payment:", data);
+        return;
+      }
+
+      console.log("Payment saved successfully:", data);
+    } catch (err) {
+      console.error("Error saving payment:", err.message);
+    }
+  };
+
+  const fetchPaymentDetails = async (orderId) => {
+    console.log("Fetching payment details for order ID:", orderId);
+    try {
+      const res = await fetch(`/api/getPaymentDetails?order_id=${orderId}`);
+
+      // Capture the raw response text
+      const responseText = await res.text();
+
+      // Check if the response is empty or invalid before parsing
+      if (!responseText) {
+        throw new Error("Empty response from the server.");
+      }
+
+      // Try to parse the JSON response
+      const data = JSON.parse(responseText);
+
+      if (res.ok) {
+        if (data && Object.keys(data).length > 0) {
+          console.log("Payment Details:", data);
+          setPaymentDetails(data); // Update state with payment details
+        } else {
+          console.error("Payment details are empty or undefined.");
+          setError("Payment details are unavailable.");
+        }
+      } else {
+        console.error("Failed to fetch payment details:", data.message);
+        setError(`Failed to fetch payment details: ${data.message}`);
+      }
+    } catch (err) {
+      console.error("Payment details error:", err.message);
+      setError(`Failed to fetch payment details: ${err.message}`);
+    }
+  };
+
+  useEffect(() => {
+    const handleEscape = (event) => {
+      if (event.key === "Escape") {
+        onClose();
+      }
+    };
+
+    if (isOpen) {
+      document.body.classList.add("modal-open");
+      window.addEventListener("keydown", handleEscape);
+    } else {
+      document.body.classList.remove("modal-open");
+      window.removeEventListener("keydown", handleEscape);
+    }
+
+    return () => {
+      document.body.classList.remove("modal-open");
+      window.removeEventListener("keydown", handleEscape);
+    };
+  }, [isOpen, onClose]);
+
+  if (!isOpen) return null;
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60"
+      onClick={onClose}
+    >
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0.9 }}
+        className="relative flex flex-col items-center p-6 border-4 border-glow bg-black rounded-lg shadow-lg transition-shadow duration-300 ease-in-out hover:shadow-2xl animate-container-glow w-11/12 md:w-1/2 lg:w-1/3 max-h-full overflow-y-auto"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <h3 className="text-2xl font-semibold text-gray-100 mt-4 mb-4">
+          {cardData.title}
+        </h3>
+        <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2 animate-price-glow">
+          ₾ {cardData.price} +
+        </div>
+        <ul className="text-gray-200 mb-4 text-center w-full">
+          {cardData.features.map((feature, index) => (
+            <li key={index} className="mb-2">
+              {feature}
+            </li>
+          ))}
+        </ul>
+
+        {/* Display payment details if available */}
+        {paymentDetails && (
+          <div className="text-white mt-4">
+            <h4 className="text-xl font-bold">Payment Details:</h4>
+            <p>Order ID: {paymentDetails.order_id}</p>
+            <p>Status: {paymentDetails.order_status?.value}</p>
+            <p>
+              Amount: {paymentDetails.purchase_units?.request_amount}{" "}
+              {paymentDetails.purchase_units?.currency_code}
+            </p>
+            {/* Add more fields as needed */}
+          </div>
+        )}
+
+        <motion.form
+          id="card-form"
+          ref={formRef}
+          variants={fadeIn("up", 0.1)}
+          initial="hidden"
+          animate="show"
+          exit="hidden"
+          className="flex-1 flex flex-col gap-6 w-full mx-auto border-glow animate-container-glow text-white"
+          onSubmit={send}
+        >
+          <div className="flex flex-col md:flex-row gap-6 w-full">
+            <div className="form-field-shell w-full">
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="name."
+                className="nh-field text-center"
+                value={formData.name}
+                onChange={handleInputChange}
+                autoComplete="name"
+                data-autofill-safe="true"
+                required
+              />
+            </div>
+            <div className="form-field-shell w-full">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email"
+                className="nh-field text-center"
+                value={formData.email}
+                onChange={handleInputChange}
+                autoComplete="email"
+                data-autofill-safe="true"
+                required
+              />
+            </div>
+          </div>
+          <div className="form-field-shell w-full">
+            <input
+              type="text"
+              id="phone"
+              name="phone"
+              placeholder="Phone"
+              className="nh-field text-center"
+              value={formData.phone}
+              onChange={handleInputChange}
+              autoComplete="tel"
+              data-autofill-safe="true"
+              required
+            />
+          </div>
+          <div className="form-field-shell w-full">
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              placeholder="Topic"
+              className="nh-field text-center"
+              value={formData.subject}
+              onChange={handleInputChange}
+              autoComplete="off"
+              data-autofill-safe="true"
+              required
+            />
+          </div>
+          <div className="form-field-shell w-full">
+            <textarea
+              id="message"
+              name="message"
+              placeholder="message."
+              className="nh-field text-center"
+              value={formData.message}
+              onChange={handleInputChange}
+              autoComplete="off"
+              required
+            ></textarea>
+          </div>
+          <div className="flex justify-center">
+            <button
+              type="submit"
+              className="btn rounded-full border border-white max-w-[170px] px-8 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accent group text-white"
+              disabled={loading}
+            >
+              <span className="group-hover:-translate-y-[120%] group-hover:opacity-0 transition-all duration-500">
+                {loading ? "order..." : "order."}
+              </span>
+              <BsArrowRight className="-translate-y-[120%] opacity-0 group-hover:flex group-hover:-translate-y-0 group-hover:opacity-100 transition-all duration-300 absolute text-[22px]" />
+            </button>
+          </div>
+          <div className="flex justify-center mt-4">
+            <button
+              type="button" // Change to type "button" to avoid form submission
+              className="btn rounded-full border border-white max-w-[170px] px-8 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accent group text-white"
+              onClick={createOrder}
+              disabled={loading}
+            >
+              <span className="group-hover:-translate-y-[120%] group-hover:opacity-0 transition-all duration-500">
+                {loading ? "Payment..." : "Payment."}
+              </span>
+              <BsArrowRight className="-translate-y-[120%] opacity-0 group-hover:flex group-hover:-translate-y-0 group-hover:opacity-100 transition-all duration-300 absolute text-[22px]" />
+            </button>
+          </div>
+
+          {error && <p className="text-red-500 mt-2">{error}</p>}
+          {successMessage && (
+            <p className="text-green-500 mt-2 text-center">{successMessage}</p>
+          )}
+        </motion.form>
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            onClose();
+          }}
+          className="mt-4 text-accent underline"
+        >
+          Close
+        </button>
+      </motion.div>
+    </div>
+  );
+};
+
+export default Modal;

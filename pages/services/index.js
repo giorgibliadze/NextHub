@@ -10,6 +10,7 @@ import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
 import { NextSeo } from "next-seo";
 import Script from "next/script";
+import IndustrySolutions from "../../components/IndustrySolutions";
 
 const ServiceSlider = lazy(() => import("../../components/ServiceSlider"));
 
@@ -246,6 +247,8 @@ const Services = () => {
               <ServiceSlider />
             </motion.div>
           </div>
+
+          <IndustrySolutions className="mt-8 md:mt-12" />
 
           <motion.section
             variants={fadeIn("up", 0.1)}

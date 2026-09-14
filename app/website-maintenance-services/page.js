@@ -1,5 +1,6 @@
 import SeoLandingPage from "../../components/SeoLandingPage";
 import { buildSchemas, seoPages } from "../../lib/seoPages";
+import { getLanguageAlternates } from "../../lib/languageRoutes";
 
 const page = seoPages["website-maintenance-services"];
 
@@ -7,7 +8,7 @@ export const metadata = {
   title: page.title,
   description: page.description,
   keywords: page.keywords,
-  alternates: { canonical: page.url },
+  alternates: getLanguageAlternates("/website-maintenance-services"),
   openGraph: {
     title: page.title,
     description: page.description,

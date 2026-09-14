@@ -1,5 +1,6 @@
 import BlogGrid from "../../../components/BlogGrid";
 import { blogCategories, getPostsByCategory } from "../../../lib/blogData";
+import { getLanguageAlternates } from "../../../lib/languageRoutes";
 
 const category = blogCategories.find((item) => item.slug === "case-studies");
 const url = "https://next-hub.pro/blog/case-studies";
@@ -17,7 +18,7 @@ export const metadata = {
     "SEO tips Georgia",
     "NextHub portfolio",
   ],
-  alternates: { canonical: url },
+  alternates: getLanguageAlternates("/blog/case-studies"),
   openGraph: {
     title: "ვებსაიტების ქეისები | Next-Hub Solutions",
     description: category.description,

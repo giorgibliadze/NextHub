@@ -1,5 +1,6 @@
 import BlogGrid from "../../../components/BlogGrid";
 import { blogCategories, getPostsByCategory } from "../../../lib/blogData";
+import { getLanguageAlternates } from "../../../lib/languageRoutes";
 
 const category = blogCategories.find((item) => item.slug === "web-development");
 const url = "https://next-hub.pro/blog/web-development";
@@ -20,7 +21,7 @@ export const metadata = {
     "React developer Georgia",
     "business website Georgia",
   ],
-  alternates: { canonical: url },
+  alternates: getLanguageAlternates("/blog/web-development"),
   openGraph: {
     title: "ვებსაიტის დამზადება | Next-Hub Solutions",
     description: category.description,

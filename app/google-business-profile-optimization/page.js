@@ -1,5 +1,6 @@
 import SeoLandingPage from "../../components/SeoLandingPage";
 import { buildSchemas, seoPages } from "../../lib/seoPages";
+import { getLanguageAlternates } from "../../lib/languageRoutes";
 
 const page = seoPages["google-business-profile-optimization"];
 
@@ -7,7 +8,7 @@ export const metadata = {
   title: page.title,
   description: page.description,
   keywords: page.keywords,
-  alternates: { canonical: page.url },
+  alternates: getLanguageAlternates("/google-business-profile-optimization"),
   openGraph: {
     title: page.title,
     description: page.description,

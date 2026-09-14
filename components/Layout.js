@@ -8,13 +8,20 @@ import { companyProfile } from "../lib/aiSeo";
 import LazyVercelInsights from "../components/LazyVercelInsights";
 import Footer from "../components/Footer";
 import DelayedThirdPartyScripts from "../components/DelayedThirdPartyScripts";
+import LanguageSwitcher from "../components/LanguageSwitcher";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
+import {
+  getLanguageAlternates,
+  isEnglishRoute,
+  SITE_ORIGIN,
+} from "../lib/languageRoutes";
 
 // ✅ default to non-www canonical root
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://next-hub.pro";
+const SITE_URL = SITE_ORIGIN;
 
-const siteEntitySchema = {
+function buildSiteEntitySchema(isEnglish) {
+  return {
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -61,15 +68,15 @@ const siteEntitySchema = {
       "@id": `${SITE_URL}/#website`,
       url: SITE_URL,
       name: companyProfile.name,
-      alternateName: [
-        "ვებსაიტის დამზადება საქართველოში",
-        "Next-Hub",
-      ],
+      alternateName: isEnglish
+        ? ["Website development in Georgia", "Next-Hub"]
+        : ["ვებსაიტის დამზადება საქართველოში", "Next-Hub"],
       publisher: { "@id": `${SITE_URL}/#organization` },
-      inLanguage: "ka-GE",
+      inLanguage: isEnglish ? "en" : "ka-GE",
     },
   ],
 };
+}
 
 export default function Layout({ children }) {
   const router = useRouter();
@@ -77,7 +84,10 @@ export default function Layout({ children }) {
   const gaId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;
   const googleAdsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID;
   const facebookPixelId = process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID;
-  const isHomePage = router.pathname === "/";
+  const isEnglish = isEnglishRoute(router.asPath);
+  const isHomePage = router.pathname === "/" || router.pathname === "/en";
+  const languageAlternates = getLanguageAlternates(router.asPath);
+  const siteEntitySchema = buildSiteEntitySchema(isEnglish);
 
   useEffect(() => {
     document.body.classList.toggle("homepage-route", isHomePage);
@@ -87,6 +97,15 @@ export default function Layout({ children }) {
     };
   }, [isHomePage]);
 
+  useEffect(() => {
+    document.documentElement.lang = isEnglish ? "en" : "ka-GE";
+
+    const contentLanguage = document.querySelector(
+      'meta[http-equiv="content-language"]',
+    );
+    contentLanguage?.setAttribute("content", isEnglish ? "en" : "ka-GE");
+  }, [isEnglish]);
+
   return (
     <>
       <Head>
@@ -95,6 +114,9 @@ export default function Layout({ children }) {
           <link key={link.rel} {...link} />
         ))}
         <meta name="theme-color" content="#0b0b0b" />
+        {Object.entries(languageAlternates.languages).map(([hrefLang, href]) => (
+          <link key={hrefLang} rel="alternate" hrefLang={hrefLang} href={href} />
+        ))}
       </Head>
 
       <DelayedThirdPartyScripts
@@ -142,6 +164,7 @@ export default function Layout({ children }) {
         {children}
         <Footer />
       </div>
+      <LanguageSwitcher />
     </>
   );
 }

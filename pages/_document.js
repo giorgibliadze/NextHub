@@ -16,7 +16,10 @@ export default function Document({ pageLang }) {
 
 Document.getInitialProps = async (ctx) => {
   const initialProps = await NextDocument.getInitialProps(ctx);
-  const pageLang = ctx.pathname === "/services/webDevelopmentEN" ? "en" : "ka-GE";
+  const pageLang =
+    ctx.pathname === "/services/webDevelopmentEN" || ctx.pathname.startsWith("/en")
+      ? "en"
+      : "ka-GE";
 
   return { ...initialProps, pageLang };
 };

@@ -1,5 +1,6 @@
 import BlogGrid from "../../../components/BlogGrid";
 import { blogCategories, getPostsByCategory } from "../../../lib/blogData";
+import { getLanguageAlternates } from "../../../lib/languageRoutes";
 
 const category = blogCategories.find((item) => item.slug === "ai-video");
 const url = "https://next-hub.pro/blog/ai-video";
@@ -15,7 +16,7 @@ export const metadata = {
     "AI avatar video Georgia",
     "ვიდეო კონტენტი საქართველო",
   ],
-  alternates: { canonical: url },
+  alternates: getLanguageAlternates("/blog/ai-video"),
   openGraph: {
     title: "AI ვიდეო — რჩევები ბიზნესისთვის | Next-Hub Solutions",
     description: category.description,

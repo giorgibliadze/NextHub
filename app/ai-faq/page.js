@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { aiFaqItems, companyProfile, siteUrl } from "../../lib/aiSeo";
+import { getLanguageAlternates } from "../../lib/languageRoutes";
 
 const url = `${siteUrl}/ai-faq`;
 const title = "AI FAQ | Next-Hub Solutions";
@@ -20,7 +21,7 @@ export const metadata = {
   title,
   description,
   keywords,
-  alternates: { canonical: url },
+  alternates: getLanguageAlternates("/ai-faq"),
   openGraph: {
     title,
     description,

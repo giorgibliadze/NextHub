@@ -403,7 +403,7 @@ const WebDevelopment = () => {
         description="ვებსაიტების დამზადება საქართველოში: ბიზნეს საიტები, ონლაინ მაღაზიები, WordPress და Next.js დეველოპმენტი SEO-ready სტრუქტურით."
         languageAlternates={[
           { hrefLang: "ka-GE", href: "https://next-hub.pro/webdevelopment" },
-          { hrefLang: "en", href: "https://next-hub.pro/services/webDevelopmentEN" },
+          { hrefLang: "en", href: "https://next-hub.pro/en/webdevelopment" },
           { hrefLang: "x-default", href: "https://next-hub.pro/webdevelopment" },
         ]}
         openGraph={{

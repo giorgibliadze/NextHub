@@ -1,5 +1,6 @@
 import BlogGrid from "../../../components/BlogGrid";
 import { blogCategories, getPostsByCategory } from "../../../lib/blogData";
+import { getLanguageAlternates } from "../../../lib/languageRoutes";
 
 const category = blogCategories.find((item) => item.slug === "seo");
 const url = "https://next-hub.pro/blog/seo";
@@ -17,7 +18,7 @@ export const metadata = {
     "SEO services Georgia",
     "local SEO Tbilisi",
   ],
-  alternates: { canonical: url },
+  alternates: getLanguageAlternates("/blog/seo"),
   openGraph: {
     title: "SEO რჩევები და სტატიები | Next-Hub Solutions",
     description: category.description,
