@@ -34,7 +34,7 @@ export const metadata = {
     "web design Tbilisi",
     "SEO Georgia",
     "digital agency Georgia",
-  ]
+  ],
 };
 
 const ParticlesContainer = dynamic(
@@ -415,7 +415,7 @@ const Home = () => {
 
       <div className="relative min-h-screen w-full overflow-hidden bg-primary/60 smx:min-h-[640px] sm:min-h-[600px] lg:min-h-[847px] xxl:min-h-[990px] xll:min-h-[885px]">
         <div className="relative min-h-screen w-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10 smx:min-h-[640px] sm:min-h-[600px] lg:min-h-[847px] xxl:min-h-[990px] xll:min-h-[885px]">
-          <div className="relative z-10 text-center flex min-h-screen flex-col justify-center xl:text-left container mx-auto smx:min-h-[640px] sm:min-h-[600px] lg:min-h-[847px] xxl:min-h-[990px] xll:min-h-[885px]">
+          <div className="relative z-10 text-center flex min-h-screen flex-col justify-center xl:text-left container mx-auto smx:min-h-[650px] sm:min-h-[600px] lg:min-h-[847px] xxl:min-h-[990px] xll:min-h-[885px]">
             <motion.div
               variants={fadeIn("up", 0.12)}
               initial="hidden"
@@ -426,7 +426,7 @@ const Home = () => {
               <div
                 className="
                 mt-[60px]
-                sm:mt-[80px]
+                sm:mt-[100px]
                 xl:mt-[100px]
                 text-[34px]
                 leading-tight
