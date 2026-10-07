@@ -5,7 +5,6 @@ import Modal from "../../components/Modal";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
 import { NextSeo } from "next-seo";
-import Script from "next/script";
 
 const CANONICAL = "https://next-hub.pro/services/analytics";
 
@@ -162,10 +161,9 @@ const Analytics = () => {
         ]}
       />
 
-      <Script
+      <script
         id="analytics-service-schema"
         type="application/ld+json"
-        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
@@ -179,7 +177,7 @@ const Analytics = () => {
               "@type": "Organization",
               name: "Next-Hub Solutions",
               url: "https://next-hub.pro",
-              logo: "https://next-hub.pro/logo.png",
+              logo: "https://next-hub.pro/logo.svg",
             },
             areaServed: {
               "@type": "Country",

@@ -9,7 +9,6 @@ import Circles from "../../components/Circles";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
 import { NextSeo } from "next-seo";
-import Script from "next/script";
 import IndustrySolutions from "../../components/IndustrySolutions";
 
 const ServiceSlider = lazy(() => import("../../components/ServiceSlider"));
@@ -157,10 +156,9 @@ const Services = () => {
         ]}
       />
 
-      <Script
+      <script
         id="services-schema"
         type="application/ld+json"
-        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(schemaData),
         }}

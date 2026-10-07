@@ -3,7 +3,6 @@ const fs = require('fs');
 const path = require('path');
 
 const SITE_URL = 'https://next-hub.pro';
-const AI_DISCOVERY_FILES = ['/llms.txt', '/llms-full.txt', '/company.json'];
 
 function getFixedAppRoutes() {
   const manifestPath = path.join(process.cwd(), '.next/app-path-routes-manifest.json');
@@ -36,7 +35,6 @@ function changefreqForPath(routePath) {
   if (routePath.startsWith('/services') || routePath.includes('development') || routePath.includes('design') || routePath.includes('seo')) {
     return 'weekly';
   }
-  if (AI_DISCOVERY_FILES.includes(routePath)) return 'weekly';
   return 'monthly';
 }
 
@@ -44,7 +42,6 @@ function priorityForPath(routePath) {
   if (routePath === '/') return 1.0;
   if (routePath === '/webdevelopment') return 1.0;
   if (routePath.startsWith('/services') || routePath.startsWith('/blog')) return 0.8;
-  if (AI_DISCOVERY_FILES.includes(routePath)) return routePath === '/company.json' ? 0.6 : 0.7;
   return 0.9;
 }
 
@@ -80,7 +77,6 @@ module.exports = {
 
   additionalPaths: async () => {
     const paths = [
-      ...AI_DISCOVERY_FILES,
       ...getFixedAppRoutes(),
       ...(await getBlogArticleRoutes()),
     ];
@@ -97,7 +93,7 @@ module.exports = {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/admin", "/login", "/api/*", "/payment/*"],
+        disallow: ["/admin", "/login", "/api/*"],
       },
     ],
     additionalSitemaps: [`${SITE_URL}/sitemap.xml`],
@@ -108,7 +104,6 @@ module.exports = {
         "Disallow: /admin",
         "Disallow: /login",
         "Disallow: /api/*",
-        "Disallow: /payment/*",
         "",
         `Sitemap: ${SITE_URL}/sitemap.xml`,
         "",

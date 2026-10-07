@@ -6,7 +6,6 @@ import Modal from "../../../components/en/Modal";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../../variants";
 import { NextSeo } from "next-seo";
-import Script from "next/script";
 
 const CANONICAL = "https://next-hub.pro/en/services/tech_support";
 
@@ -159,10 +158,9 @@ const TechSupport = () => {
         ]}
       />
 
-      <Script
+      <script
         id="tech-support-schema"
         type="application/ld+json"
-        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
@@ -176,7 +174,7 @@ const TechSupport = () => {
               "@type": "Organization",
               name: "Next-Hub Solutions",
               url: "https://next-hub.pro/en",
-              logo: "https://next-hub.pro/logo.png",
+              logo: "https://next-hub.pro/logo.svg",
             },
             areaServed: {
               "@type": "Country",

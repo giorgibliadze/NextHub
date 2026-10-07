@@ -9,8 +9,6 @@ import IndustrySolutions from "../components/IndustrySolutions";
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
 import { NextSeo } from "next-seo";
-import Script from "next/script";
-import { getHomeLanguageAlternates } from "../lib/languageRoutes";
 import { useLanguageState } from "../components/LanguageStateProvider";
 
 export const metadata = {
@@ -359,7 +357,6 @@ const Home = () => {
         canonical={canonical}
         title={homeTitle}
         description={metaDescription}
-        languageAlternates={getHomeLanguageAlternates()}
         openGraph={{
           type: "website",
           locale: "ka_GE",
@@ -404,10 +401,9 @@ const Home = () => {
         ]}
       />
 
-      <Script
+      <script
         id="home-schema"
         type="application/ld+json"
-        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(schemaData),
         }}

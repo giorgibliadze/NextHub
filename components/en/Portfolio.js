@@ -61,6 +61,7 @@ export default function Portfolio() {
                   src={item.path}
                   alt={`${item.title} project visual`}
                   fill
+                  sizes="(max-width: 639px) 80vw, (max-width: 767px) 40vw, 27vw"
                   className="object-contain hover:scale-105 transition-transform duration-300"
                 />
               </div>

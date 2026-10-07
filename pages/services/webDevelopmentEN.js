@@ -9,7 +9,6 @@ import TechnologyIcons from "../../components/TechnologyIcons";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
 import { NextSeo } from "next-seo";
-import Script from "next/script";
 
 const CANONICAL = "https://next-hub.pro/services/webDevelopmentEN";
 
@@ -171,11 +170,6 @@ const WebDevelopmentEN = () => {
         canonical={CANONICAL}
         title="Web Development | Next-Hub Solutions"
         description="Next-Hub Solutions builds SEO-friendly business websites, WordPress platforms, React and Next.js web apps, ecommerce stores and custom projects."
-        languageAlternates={[
-          { hrefLang: "ka-GE", href: "https://next-hub.pro/webdevelopment" },
-          { hrefLang: "en", href: "https://next-hub.pro/services/webDevelopmentEN" },
-          { hrefLang: "x-default", href: "https://next-hub.pro/webdevelopment" },
-        ]}
         openGraph={{
           type: "website",
           locale: "en_US",
@@ -217,10 +211,9 @@ const WebDevelopmentEN = () => {
         ]}
       />
 
-      <Script
+      <script
         id="web-development-en-schema"
         type="application/ld+json"
-        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
@@ -234,7 +227,7 @@ const WebDevelopmentEN = () => {
               "@type": "Organization",
               name: "Next-Hub Solutions",
               url: "https://next-hub.pro",
-              logo: "https://next-hub.pro/logo.png",
+              logo: "https://next-hub.pro/logo.svg",
             },
             areaServed: {
               "@type": "Country",

@@ -8,7 +8,6 @@ import Circles from "../../components/Circles";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
 import { NextSeo } from "next-seo";
-import Script from "next/script";
 
 const Work = () => {
   return (
@@ -58,10 +57,9 @@ const Work = () => {
         ]}
       />
 
-      <Script
+      <script
         id="portfolio-schema"
         type="application/ld+json"
-        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
@@ -70,14 +68,14 @@ const Work = () => {
             headline: "ჩვენი ნამუშევრები და ვებსაიტების პორტფოლიო",
             description:
               "Next-Hub Solutions-ის შესრულებული ვებსაიტები, ონლაინ მაღაზიები, WordPress პროექტები, Next.js აპლიკაციები და ბიზნესზე მორგებული ციფრული გადაწყვეტილებები.",
-            url: "https://next-hub.pro/work/",
+            url: "https://next-hub.pro/work",
             image: "https://next-hub.pro/nexthub.jpg",
             inLanguage: "ka-GE",
             creator: {
               "@type": "Organization",
               name: "Next-Hub Solutions",
               url: "https://next-hub.pro",
-              logo: "https://next-hub.pro/logo.png",
+              logo: "https://next-hub.pro/logo.svg",
             },
             about: [
               "ვებსაიტების პორტფოლიო",

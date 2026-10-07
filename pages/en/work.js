@@ -8,7 +8,6 @@ import Circles from "../../components/Circles";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
 import { NextSeo } from "next-seo";
-import Script from "next/script";
 
 const Work = () => {
   return (
@@ -58,10 +57,9 @@ const Work = () => {
         ]}
       />
 
-      <Script
+      <script
         id="portfolio-schema"
         type="application/ld+json"
-        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
@@ -70,14 +68,14 @@ const Work = () => {
             headline: "our work and the portfolio of websites.",
             description:
               "Next-Hub Solutions-'s running websites, online stores, WordPress projects, Next.js apps and business-specific digital solutions.",
-            url: "https://next-hub.pro/en/work/",
+            url: "https://next-hub.pro/en/work",
             image: "https://next-hub.pro/nexthub.jpg",
             inLanguage: "en",
             creator: {
               "@type": "Organization",
               name: "Next-Hub Solutions",
               url: "https://next-hub.pro/en",
-              logo: "https://next-hub.pro/logo.png",
+              logo: "https://next-hub.pro/logo.svg",
             },
             about: [
               "Website portfolio",

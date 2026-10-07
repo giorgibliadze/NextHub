@@ -3,6 +3,5 @@ Allow: /
 Disallow: /admin
 Disallow: /login
 Disallow: /api/*
-Disallow: /payment/*
 
 Sitemap: https://next-hub.pro/sitemap.xml

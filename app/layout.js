@@ -46,7 +46,7 @@ function buildSiteEntitySchema(isEnglish) {
       name: companyProfile.name,
       url: siteUrl,
       logo: `${siteUrl}/favicon.jpg`,
-      image: `${siteUrl}/og-image.jpg`,
+      image: `${siteUrl}/nexthub.png`,
       telephone: companyProfile.phone,
       email: companyProfile.email,
       address: {

@@ -4,7 +4,6 @@ import GraphicDesignPriceCard from "../../components/GraphicDesignPriceCard";
 import Bulb from "../../components/Bulb";
 import Circles from "../../components/Circles";
 import { NextSeo } from "next-seo";
-import Script from "next/script";
 import Portfolio from "../../components/Portfolio";
 
 const CANONICAL = "https://next-hub.pro/services/graphic_design";
@@ -57,10 +56,9 @@ const GraphicDesign = () => {
         ]}
       />
 
-      <Script
+      <script
         id="graphic-design-schema"
         type="application/ld+json"
-        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
@@ -74,7 +72,7 @@ const GraphicDesign = () => {
               "@type": "Organization",
               name: "Next-Hub Solutions",
               url: "https://next-hub.pro",
-              logo: "https://next-hub.pro/logo.png",
+              logo: "https://next-hub.pro/logo.svg",
             },
             areaServed: {
               "@type": "Country",

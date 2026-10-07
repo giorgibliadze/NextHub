@@ -6,7 +6,6 @@ import ModernSection from "../../components/en/ModernSection";
 import dynamic from "next/dynamic";
 import Head from "next/head";
 import { NextSeo } from "next-seo";
-import Script from "next/script";
 import { useLanguageState } from "../../components/LanguageStateProvider";
 const MapComponent = dynamic(() => import("../../components/en/MapComponent"), {
   ssr: false,
@@ -121,10 +120,9 @@ const Contact = () => {
         ]}
       />
 
-      <Script
+      <script
         id="contact-local-business-schema"
         type="application/ld+json"
-        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",

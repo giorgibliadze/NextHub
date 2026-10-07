@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { NextSeo } from "next-seo";
-import Script from "next/script";
 import { fadeIn } from "../../variants";
 
 const CANONICAL = "https://next-hub.pro/about";
@@ -264,10 +263,9 @@ const About = () => {
         ]}
       />
 
-      <Script
+      <script
         id="about-schema"
         type="application/ld+json"
-        strategy="afterInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
 

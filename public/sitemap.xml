@@ -30,9 +30,6 @@
 <url><loc>https://next-hub.pro/tourism-websites</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
 <url><loc>https://next-hub.pro/webdevelopment</loc><changefreq>weekly</changefreq><priority>1</priority></url>
 <url><loc>https://next-hub.pro/work</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-<url><loc>https://next-hub.pro/llms.txt</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://next-hub.pro/llms-full.txt</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://next-hub.pro/company.json</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
 <url><loc>https://next-hub.pro/ai-video-creation</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
 <url><loc>https://next-hub.pro/blog/case-studies</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 <url><loc>https://next-hub.pro/ai-faq</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>

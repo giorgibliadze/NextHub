@@ -5,7 +5,6 @@ import Modal from "../../components/Modal";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
 import { NextSeo } from "next-seo";
-import Script from "next/script";
 
 const CANONICAL = "https://next-hub.pro/services/soc_media";
 
@@ -182,10 +181,9 @@ const SocMedia = () => {
         ]}
       />
 
-      <Script
+      <script
         id="social-media-schema"
         type="application/ld+json"
-        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
@@ -199,7 +197,7 @@ const SocMedia = () => {
               "@type": "Organization",
               name: "Next-Hub Solutions",
               url: "https://next-hub.pro",
-              logo: "https://next-hub.pro/logo.png",
+              logo: "https://next-hub.pro/logo.svg",
             },
             areaServed: {
               "@type": "Country",

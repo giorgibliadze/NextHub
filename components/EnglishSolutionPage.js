@@ -78,7 +78,6 @@ export default function EnglishSolutionPage({
         canonical={page.url}
         title={page.title}
         description={page.description}
-        languageAlternates={page.languageAlternates}
         openGraph={{
           type: "website",
           locale: isEnglish ? "en_US" : "ka_GE",

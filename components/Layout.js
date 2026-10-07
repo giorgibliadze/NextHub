@@ -1,7 +1,6 @@
 import Nav from "../components/Nav";
 import Header from "../components/Header";
 import TopLeftImg from "../components/TopLeftImg";
-import Script from "next/script";
 import Head from "next/head";
 import { faviconLinks } from "../lib/faviconConfig";
 import { companyProfile } from "../lib/aiSeo";
@@ -30,7 +29,7 @@ function buildSiteEntitySchema(isEnglish) {
       name: companyProfile.name,
       url: SITE_URL,
       logo: `${SITE_URL}/favicon.jpg`,
-      image: `${SITE_URL}/og-image.jpg`,
+      image: `${SITE_URL}/nexthub.png`,
       telephone: companyProfile.phone,
       email: companyProfile.email,
       address: {
@@ -86,6 +85,8 @@ export default function Layout({ children }) {
   const facebookPixelId = process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID;
   const isEnglish = isEnglishRoute(router.asPath);
   const isHomePage = router.pathname === "/" || router.pathname === "/en";
+  // The legacy English page remains self-canonical outside the current translation pair.
+  const isLegacyEnglishPage = router.pathname === "/services/webDevelopmentEN";
   const languageAlternates = getLanguageAlternates(router.asPath);
   const siteEntitySchema = buildSiteEntitySchema(isEnglish);
 
@@ -114,9 +115,10 @@ export default function Layout({ children }) {
           <link key={link.rel} {...link} />
         ))}
         <meta name="theme-color" content="#0b0b0b" />
-        {Object.entries(languageAlternates.languages).map(([hrefLang, href]) => (
-          <link key={hrefLang} rel="alternate" hrefLang={hrefLang} href={href} />
-        ))}
+        {!isLegacyEnglishPage &&
+          Object.entries(languageAlternates.languages).map(([hrefLang, href]) => (
+            <link key={hrefLang} rel="alternate" hrefLang={hrefLang} href={href} />
+          ))}
       </Head>
 
       <DelayedThirdPartyScripts
@@ -127,10 +129,9 @@ export default function Layout({ children }) {
       />
 
       {/* Organization/WebSite/LocalBusiness JSON-LD (uses non-www SITE_URL) */}
-      <Script
+      <script
         id="site-entity-schema"
         type="application/ld+json"
-        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(siteEntitySchema),
         }}

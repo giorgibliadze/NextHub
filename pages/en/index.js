@@ -9,8 +9,6 @@ import IndustrySolutions from "../../components/IndustrySolutions";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
 import { NextSeo } from "next-seo";
-import Script from "next/script";
-import { getHomeLanguageAlternates } from "../../lib/languageRoutes";
 import { useLanguageState } from "../../components/LanguageStateProvider";
 
 export const metadata = {
@@ -314,7 +312,7 @@ const Home = () => {
           name: "Georgia",
         },
         parentOrganization: {
-          "@id": `${canonical}/#organization`,
+          "@id": "https://next-hub.pro/#organization",
         },
         hasOfferCatalog: {
           "@id": `${canonical}/#offer-catalog`,
@@ -345,7 +343,7 @@ const Home = () => {
             name: service.title,
             url: service.url,
             provider: {
-              "@id": `${canonical}/#organization`,
+              "@id": "https://next-hub.pro/#organization",
             },
           },
         })),
@@ -359,7 +357,6 @@ const Home = () => {
         canonical={canonical}
         title={homeTitle}
         description={metaDescription}
-        languageAlternates={getHomeLanguageAlternates()}
         openGraph={{
           type: "website",
           locale: "en_US",
@@ -404,10 +401,9 @@ const Home = () => {
         ]}
       />
 
-      <Script
+      <script
         id="home-schema"
         type="application/ld+json"
-        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(schemaData),
         }}

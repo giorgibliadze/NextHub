@@ -4,7 +4,6 @@ import ImageGallery from "../../components/ImageGallery";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
 import { NextSeo } from "next-seo";
-import Script from "next/script";
 
 // Dynamic imports
 const PriceCard = dynamic(() => import("../../components/PriceCard"), {
@@ -190,10 +189,9 @@ const DigitalMarketing = () => {
         ]}
       />
 
-      <Script
+      <script
         id="digital-marketing-schema"
         type="application/ld+json"
-        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
@@ -207,7 +205,7 @@ const DigitalMarketing = () => {
               "@type": "Organization",
               name: "Next-Hub Solutions",
               url: "https://next-hub.pro",
-              logo: "https://next-hub.pro/logo.png",
+              logo: "https://next-hub.pro/logo.svg",
             },
             areaServed: {
               "@type": "Country",
